@@ -1,0 +1,77 @@
+/* css/privacy.css */
+
+.privacy-policy {
+    padding: 40px 20px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+    margin-bottom: 60px;
+    line-height: 1.7;
+    color: var(--text-color-primary);
+}
+
+.privacy-policy h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    color: var(--text-color-primary);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.privacy-policy h3 {
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--primary-color-dark);
+    font-weight: bold;
+}
+
+.privacy-policy p {
+    margin-bottom: 15px;
+}
+
+.privacy-policy ol,
+.privacy-policy ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.privacy-policy li {
+    margin-bottom: 8px;
+}
+
+.privacy-policy strong {
+    font-weight: bold;
+}
+
+.privacy-policy a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.privacy-policy a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* 必要に応じてレスポンシブ対応 */
+@media (max-width: 768px) {
+    .privacy-policy {
+        padding: 30px 15px;
+    }
+
+    .privacy-policy h2 {
+        font-size: 2em;
+    }
+
+    .privacy-policy h3 {
+        font-size: 1.4em;
+    }
+
+    .privacy-policy p,
+    .privacy-policy li {
+        font-size: 1em;
+    }
+}

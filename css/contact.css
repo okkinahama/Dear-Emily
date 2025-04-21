@@ -1,0 +1,98 @@
+/* css/contact.css */
+
+.contact-form {
+    padding: 40px 20px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+    margin-bottom: 60px;
+}
+
+.contact-form h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: var(--text-color-primary);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.contact-form p {
+    font-size: 1.1em;
+    color: var(--text-color-secondary);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-item {
+    margin-bottom: 20px;
+}
+
+.form-item label {
+    display: block;
+    font-size: 1em;
+    color: var(--text-color-primary);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+    color: var(--text-color-primary);
+    background-color: var(--bg-color-secondary);
+}
+
+.form-item textarea {
+    resize: vertical; /* 縦方向のサイズ変更を可能にする */
+}
+
+.form-item input[type="text"]:focus,
+.form-item input[type="email"]:focus,
+.form-item textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(var(--primary-color-rgb), 0.5); /* --primary-color を RGB に変換する必要があるかもしれません */
+}
+
+.contact-form button[type="submit"] {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: var(--bg-color-secondary);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    font-weight: bold;
+    box-shadow: var(--box-shadow-light);
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: var(--primary-color-dark);
+    box-shadow: var(--box-shadow-medium);
+    transform: translateY(-2px);
+}
+
+/* 必要に応じてレスポンシブ対応 */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 30px 15px;
+    }
+
+    .contact-form h2 {
+        font-size: 2em;
+    }
+
+    .contact-form p {
+        font-size: 1em;
+    }
+}
