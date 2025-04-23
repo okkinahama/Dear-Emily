@@ -605,280 +605,219 @@ gtag('config', 'G-2JZSZFDDJ2');
 
     </style>
 </head>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>Dear Emily</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
-    <div class="top-menu-bar">
+  <div class="top-menu-bar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Article-List</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact US</a></li>
+    </ul>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="hamburger-container">
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="scrollable-menu">
+          <div class="scrollable-content">
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Article-List</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact US</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-content">
+        <h1><a href="index.html">Dear Emily</a></h1>
+        <p class="site-description">宇宙をテーマにしたブログ</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container main-content">
+    <section id="apod-hero">
+      <div id="apod-container-hero">
+        <h2 id="apod-title-hero">Comet SWAN</h2>
+        <div id="apod-media-container-hero">
+          <img id="apod-image-hero" src="" alt="">
+        </div>
+        <p id="apod-explanation-hero"></p>
+        <p id="apod-copyright-hero"></p>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-text">
+        <h2>Exploring the Mysteries of the Vast Universe</h2>
+        <p>最新の宇宙に関するあらゆる情報を発信しています。</p>
+        <div class="space-news-section">
+          <h3>🌌 Breaking News from the Cosmos（NASAより）</h3>
+          <div id="space-news"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="parallax-space"></div>
+
+    <div class="pagination"></div>
+
+    <section class="space-weather-container">
+      <div class="space-weather-item">
+        <h2>Today's Solar Flare Information</h2>
+        <div id="solar-flare-container">
+          <p>太陽フレア情報を取得中です...</p>
+        </div>
+      </div>
+      <div class="space-weather-item">
+        <h2>Today's Geomagnetic Storm Information</h2>
+        <div id="geomagnetic-storm-container">
+          <p>地磁気嵐情報を取得中です...</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dear Emily</p>
+      <nav>
         <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Article-List</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact US</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">サイトマップ</a></li>
         </ul>
+      </nav>
     </div>
-    <header>
-        <div class="container">
-            <div class="hamburger-container">
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="scrollable-menu">
-                    <div class="scrollable-content">
-                        <ul>
-                            <li><a href="index.html">HOME</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Article-List</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact US</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="header-content">
-                <h1><a href="index.html">Dear Emily</a></h1>
-                <p class="site-description">宇宙をテーマにしたブログ</p>
-            </div>
-        </div>
-    </header>
+  </footer>
 
-    <div class="container main-content">
-        <section id="apod-hero">
-            <div id="apod-container-hero">
-                <h2 id="apod-title-hero">Comet SWAN</h2>
-                <div id="apod-media-container-hero">
-                    <img id="apod-image-hero" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-                </div>
-                <p id="apod-explanation-hero"></p>
-                <p id="apod-copyright-hero"></p></div>
-        </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const scrollableMenu = document.querySelector('.scrollable-menu');
 
-        <section class="hero">
-            <div class="hero-image"></div>
-            <div class="hero-text">
-                <h2>Exploring the Mysteries of the Vast Universe</h2>
-                <p>最新の宇宙に関するあらゆる情報を発信しています。</p>
-
-                <div class="space-news-section">
-                    <h3>🌌 Breaking News from the Cosmos（NASAより）</h3>
-                    <div id="space-news"></div>
-                </div>
-            </div>
-        </section>
-
-        <div class="parallax-space"></div>
-
-        <section class="articles">
-            <h2>Latest Articles</h2>
-            <div class="article-list">
-                <article class="article">
-                    <div class="article-image">
-                        <img src="images/ブラックホール.jpg" alt="ブラックホールのイメージ">
-                    </div>
-                    <div class="article-content">
-                        <h3>記事のタイトル1</h3>
-                        <div class="article-meta">...</div>
-                        <p class="article-excerpt">...</p>
-                    </div>
-                </article>
-                <article class="article">
-                    <div class="article-image">
-                        <img src="images/火星.jpg" alt="火星のイメージ">
-                    </div>
-                    <div class="article-content">
-                        <h3>記事のタイトル2</h3>
-                        <div class="article-meta">...</div>
-                        <p class="article-excerpt">...</p>
-                    </div>
-                </article>
-            </div>
-            <div class="pagination">...</div>
-        </section>
-
-        <section class="about-emily">
-            <h2>About Emily</h2>
-            <div class="about-content">
-                <img src="images/Gemini_Generated_Image_749bad749bad749b.jpg" alt="Emilyのプロフィール画像" class="profile-image">
-                <p>Dear Emilyへようこそ！このブログは、宇宙の魅力に魅せられたEmilyの為に運営しています。最新の科学ニュース、美しい天体写真、宇宙開発のロマン、そして宇宙に関する様々な考察を、分かりやすくお届けします。</p>
-            </div>
-        </section>
-
-        <section class="space-weather-container">
-            <div class="space-weather-item">
-                <h2>"Today's Solar Flare Information"</h2>
-                <div id="solar-flare-container">
-                    <p>太陽フレア情報を取得中です...</p>
-                </div>
-            </div>
-            <div class="space-weather-item">
-                <h2>"Today's Geomagnetic Storm Information"</h2>
-                <div id="geomagnetic-storm-container">
-                    <p>地磁気嵐情報を取得中です...</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Dear Emily</p>
-            <nav>
-                <ul>
-                    <li><a href="privacy.html">プライバシーポリシー</a></li>
-                    <li><a href="#">利用規約</a></li>
-                    <li><a href="#">サイトマップ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // ハンバーガーメニューの処理
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const scrollableMenu = document.querySelector('.scrollable-menu');
-
-            if (hamburgerMenu && scrollableMenu) {
-                hamburgerMenu.addEventListener('click', function() {
-                    scrollableMenu.classList.toggle('open');
-                    hamburgerMenu.classList.toggle('open'); // ハンバーガーメニューの見た目を変更する場合 (例: バツ印にする)
-                });
-            }
-
-            // APOD (今日の宇宙画像) の取得と表示
-            const apodContainerHero = document.getElementById('apod-container-hero');
-            const apodTitleHero = document.getElementById('apod-title-hero');
-            const apodMediaContainerHero = document.getElementById('apod-media-container-hero');
-            const apodExplanationHero = document.getElementById('apod-explanation-hero');
-            const apodCopyrightHero = document.getElementById('apod-copyright-hero');
-            const apiKeyApod = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // ← ここにあなたのNASA APIキーを入力してください
-            const apodApiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
-
-            fetch(apodApiUrl)
-                .then(response => response.ok ? response.json() : Promise.reject(`HTTP error! status: ${response.status}`))
-                .then(data => {
-                    if (apodTitleHero) apodTitleHero.textContent = data.title;
-                    if (apodExplanationHero) apodExplanationHero.textContent = data.explanation;
-                    if (apodCopyrightHero) apodCopyrightHero.textContent = data.copyright ? `© ${data.copyright}` : '出典: NASA / パブリックドメインの可能性';
-                    if (apodMediaContainerHero) {
-                        apodMediaContainerHero.innerHTML = '';
-                        if (data.media_type === 'video') {
-                            const iframe = document.createElement('iframe');
-                            iframe.src = data.url;
-                            iframe.width = '100%';
-                            iframe.style.aspectRatio = '16 / 9';
-                            iframe.frameBorder = '0';
-                            iframe.allowFullscreen = true;
-                            apodMediaContainerHero.appendChild(iframe);
-                        } else if (data.media_type === 'image') {
-                            const img = document.createElement('img');
-                            img.src = data.url;
-                            img.alt = data.title;
-                            img.style.maxWidth = '100%';
-                            img.style.height = 'auto';
-                            apodMediaContainerHero.appendChild(img);
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.error('APODの取得エラー:', error);
-                    if (apodContainerHero) apodContainerHero.innerHTML = '<p>今日の宇宙画像を取得できませんでした。</p>';
-                    if (apodTitleHero) apodTitleHero.textContent = '今日の宇宙画像を取得できませんでした';
-                });
-
-            // 太陽フレア情報の取得と表示
-            const solarFlareContainer = document.getElementById('solar-flare-container');
-            const apiKeyDonki = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // ← ここにあなたのNASA APIキーを入力してください
-            const todayDonki = new Date().toISOString().slice(0, 10);
-            const solarFlareApiUrl = `https://api.nasa.gov/DONKI/WS/get/FLR?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${apiKeyDonki}`;
-
-            fetch(solarFlareApiUrl)
-                .then(response => response.ok ? response.json() : Promise.reject(`DONKI API error! status: ${response.status}`))
-                .then(data => {
-                    if (solarFlareContainer) {
-                        if (data && data.length > 0) {
-                            let html = '<ul>';
-                            data.forEach(flare => {
-                                html += `
-                                    <li>
-                                        <strong>開始日時:</strong> ${flare.beginTime}<br>
-                                        <strong>ピーク日時:</strong> ${flare.peakTime}<br>
-                                        <strong>終了日時:</strong> ${flare.endTime}<br>
-                                        <strong>強度:</strong> ${flare.class} ${flare.intensity}<br>
-                                        <strong>領域:</strong> ${flare.sourceLocation}
-                                    </li>
-                                `;
-                            });
-                            html += '</ul>';
-                            solarFlareContainer.innerHTML = html;
-                        } else {
-                            solarFlareContainer.innerHTML = '<p>現在のところ、太陽フレアの活動は観測されていません。</p>';
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.error('太陽フレア情報の取得エラー:', error);
-                    if (solarFlareContainer) solarFlareContainer.innerHTML = '<p>太陽フレア情報を取得できませんでした。</p>';
-                });
-
-            // 地磁気嵐情報の取得と表示
-            const geomagneticStormContainer = document.getElementById('geomagnetic-storm-container');
-            const geomagneticStormApiUrl = `https://api.nasa.gov/DONKI/WS/get/GST?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${apiKeyDonki}`;
-
-            fetch(geomagneticStormApiUrl)
-                .then(response => response.ok ? response.json() : Promise.reject(`DONKI API error! status: ${response.status}`))
-                .then(data => {
-                    if (geomagneticStormContainer) {
-                        if (data && data.length > 0) {
-                            let html = '<ul>';
-                            data.forEach(storm => {
-                                html += `
-                                    <li>
-                                        <strong>開始日時:</strong> ${storm.beginTime}<br>
-                                        <strong>Kp指数:</strong> ${storm.kpIndex}<br>
-                                        <strong>強度:</strong> ${storm.class}<br>
-                                        <strong>ソース:</strong> ${storm.source}
-                                    </li>
-                                `;
-                            });
-                            html += '</ul>';
-                            geomagneticStormContainer.innerHTML = html;
-                        } else {
-                            geomagneticStormContainer.innerHTML = '<p>現在のところ、地磁気嵐は観測されていません。</p>';
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.error('地磁気嵐情報の取得エラー:', error);
-                    if (geomagneticStormContainer) geomagneticStormContainer.innerHTML = '<p>地磁気嵐情報を取得できませんでした。</p>';
-                });
+      if (hamburgerMenu && scrollableMenu) {
+        hamburgerMenu.addEventListener('click', function () {
+          scrollableMenu.classList.toggle('open');
+          hamburgerMenu.classList.toggle('open');
         });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const feedUrl = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
-            const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+      }
 
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const newsContainer = document.getElementById("space-news");
-                    if (data && data.items) {
-                        data.items.slice(0, 5).forEach(item => {
-                            const div = document.createElement("div");
-                            div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
-                            newsContainer.appendChild(div);
-                        });
-                    } else {
-                        newsContainer.innerHTML = '<p>宇宙ニュースを取得できませんでした。</p>';
-                    }
-                })
-                .catch(error => {
-                    console.error("RSS取得エラー:", error);
-                    const newsContainer = document.getElementById("space-news");
-                    newsContainer.innerHTML = '<p>宇宙ニュースを取得できませんでした。</p>';
-                });
+      const apodApiUrl = `https://api.nasa.gov/planetary/apod?api_key=2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj`;
+      fetch(apodApiUrl)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('apod-title-hero').textContent = data.title;
+          document.getElementById('apod-explanation-hero').textContent = data.explanation;
+          document.getElementById('apod-copyright-hero').textContent = data.copyright
+            ? `© ${data.copyright}`
+            : '出典: NASA / パブリックドメインの可能性';
+
+          const container = document.getElementById('apod-media-container-hero');
+          container.innerHTML = '';
+
+          if (data.media_type === 'video') {
+            const iframe = document.createElement('iframe');
+            iframe.src = data.url;
+            iframe.width = '100%';
+            iframe.style.aspectRatio = '16 / 9';
+            iframe.frameBorder = '0';
+            iframe.allowFullscreen = true;
+            container.appendChild(iframe);
+          } else {
+            const img = document.createElement('img');
+            img.src = data.url;
+            img.alt = data.title;
+            img.style.maxWidth = '100%';
+            img.style.height = 'auto';
+            container.appendChild(img);
+          }
+        })
+        .catch(error => {
+          console.error('APOD取得エラー:', error);
+          document.getElementById('apod-container-hero').innerHTML = '<p>今日の宇宙画像を取得できませんでした。</p>';
         });
-        </script>
+
+      const today = new Date().toISOString().slice(0, 10);
+      const flareUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${today}&endDate=${today}&api_key=2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj`;
+      fetch(flareUrl)
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById('solar-flare-container');
+          if (data.length > 0) {
+            let html = '<ul>';
+            data.forEach(flare => {
+              html += `<li><strong>開始:</strong> ${flare.beginTime}<br><strong>ピーク:</strong> ${flare.peakTime}<br><strong>終了:</strong> ${flare.endTime}<br><strong>領域:</strong> ${flare.sourceLocation}</li>`;
+            });
+            html += '</ul>';
+            container.innerHTML = html;
+          } else {
+            container.innerHTML = '<p>現在、太陽フレアの活動は観測されていません。</p>';
+          }
+        })
+        .catch(error => {
+          console.error('太陽フレア取得エラー:', error);
+          document.getElementById('solar-flare-container').innerHTML = '<p>太陽フレア情報を取得できませんでした。</p>';
+        });
+
+      const stormUrl = `https://api.nasa.gov/DONKI/GST?startDate=${today}&endDate=${today}&api_key=2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj`;
+      fetch(stormUrl)
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById('geomagnetic-storm-container');
+          if (data.length > 0) {
+            let html = '<ul>';
+            data.forEach(storm => {
+              html += `<li><strong>開始:</strong> ${storm.beginTime}<br><strong>Kp指数:</strong> ${storm.kpIndex}<br><strong>強度:</strong> ${storm.classType}</li>`;
+            });
+            html += '</ul>';
+            container.innerHTML = html;
+          } else {
+            container.innerHTML = '<p>現在、地磁気嵐は観測されていません。</p>';
+          }
+        })
+        .catch(error => {
+          console.error('地磁気嵐取得エラー:', error);
+          document.getElementById('geomagnetic-storm-container').innerHTML = '<p>地磁気嵐情報を取得できませんでした。</p>';
+        });
+
+      const rssUrl = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
+      const rssApi = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+      fetch(rssApi)
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById('space-news');
+          if (data.items) {
+            data.items.slice(0, 5).forEach(item => {
+              const div = document.createElement('div');
+              div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+              container.appendChild(div);
+            });
+          } else {
+            container.innerHTML = '<p>宇宙ニュースを取得できませんでした。</p>';
+          }
+        })
+        .catch(error => {
+          console.error('RSS取得エラー:', error);
+          document.getElementById('space-news').innerHTML = '<p>宇宙ニュースを取得できませんでした。</p>';
+        });
+    });
+  </script>
+  <script src="js/load-about.js"></script>
 </body>
 </html>
