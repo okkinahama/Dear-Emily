@@ -1,617 +1,602 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2JZSZFDDJ2"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-2JZSZFDDJ2');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dear Emily</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* style.cssの内容をここに記述するか、またはstyle.cssファイルを読み込んでください */
-        /* style.cssの内容 */
-        :root {
-            --font-family-serif-popular: 'Merriweather', serif; /* 人気のセリフ体 */
-        }
-
-        body {
-            font-family: var(--font-family-serif-popular); /* フォントをMerriweatherに変更 */
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* 背景色を黒に */
-            color: #fff; /* テキストの色を白に変更 */
-            width: 100%; /* ボディの横幅をいっぱいにする */
-            box-sizing: border-box; /* padding, border を width に含める */
-        }
-
-        .top-menu-bar { /* 新しいメニューバーのスタイル */
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px; /* 左右に余白を追加 */
-            text-align: center;
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-        }
-
-        .top-menu-bar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 auto; /* 中央寄せ */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 960px; /* 必要に応じてコンテンツ幅を制限 */
-        }
-
-        .top-menu-bar ul li {
-            margin: 0 15px;
-        }
-
-        .top-menu-bar ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        header {
-            background-color: transparent; /* ヘッダーの背景を透明にする */
-            color: #fff; /* ヘッダーの文字色を白に */
-            padding: 1em 20px; /* 左右に余白を追加 */
-            text-align: center;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-        }
-
-        header .container {
-            /* background-color: rgba(0, 0, 0, 0.4); /* 半透明な黒 */
-            /* border-radius: 8px; */
-            /* padding: 1em; */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 0 auto; /* 中央寄せ */
-            width: 100%; /* 親要素に合わせて */
-            background-color: transparent; /* ヘッダーコンテナの背景を透明に */
-            padding: 0;
-            border-radius: 0;
-        }
-
-        .hamburger-menu {
-            width: 30px;
-            height: 21px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-        }
-
-        .hamburger-menu span {
-            height: 3px;
-            width: 100%;
-            background-color: #fff;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .hamburger-menu.open span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-
-        .hamburger-menu.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger-menu.open span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        .scrollable-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background-color: #333;
-            color: #fff; /* スクロールメニューの文字色を白に */
-            transform: translateX(-250px);
-            transition: transform 0.3s ease-in-out;
-            overflow-y: auto;
-            z-index: 1000;
-        }
-
-        .scrollable-menu.open {
-            transform: translateX(0);
-        }
-
-        .scrollable-content {
-            padding: 20px;
-        }
-
-        .scrollable-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .scrollable-content ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid #555;
-        }
-
-        .scrollable-content ul li:last-child {
-            border-bottom: none;
-        }
-
-        .scrollable-content a {
-            color: #fff; /* スクロールメニュー内のリンク色を白に */
-            text-decoration: none;
-        }
-
-        .header-content {
-            text-align: center;
-            flex-grow: 1;
-            background-color: transparent; /* ブログ名周りの背景を透明に */
-        }
-
-        .header-content h1 {
-            margin: 0;
-        }
-
-        .header-content h1 a {
-            color: #fff; /* ブログ名テキストの色を白に */
-            text-decoration: none;
-            background-color: transparent; /* ブログ名テキストの背景を透明に */
-            border: none; /* ブログ名テキストのボーダーをなくす */
-        }
-        .parallax-space {
-            background-image: url("images/iss072e278609_large.jpg");
-            height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-        }
-
-
-        .site-description {
-            font-size: 0.9em;
-            color: #fff; /* サイト説明の色を白に */
-            margin-top: 5px;
-        }
-
-        .nav-links {
-            display: none; /* デスクトップでは非表示にする */
-        }
-
-        .nav-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        .nav-links ul li {
-            margin-left: 20px;
-        }
-
-        .nav-links ul li:first-child {
-            margin-left: 0;
-        }
-
-        .nav-links a {
-            color: #fff; /* ナビゲーションリンクの色を白に */
-            text-decoration: none;
-        }
-
-        #apod-hero {
-            margin-bottom: 20px;
-            padding: 0 20px; /* 左右に余白を追加 */
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-        }
-
-        #apod-container-hero {
-            padding: 15px;
-            border: 1px solid #555; /* ボーダーの色を調整 */
-            border-radius: 5px;
-            background-color: #333; /* 背景色を調整 */
-            text-align: center;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 0 auto; /* 中央寄せ */
-        }
-
-        #apod-title-hero {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #fff; /* 今日の宇宙画像のタイトル色を白に */
-        }
-
-        #apod-media-container-hero {
-            margin-bottom: 10px;
-        }
-
-        #apod-image-hero {
-            max-width: 100%;
-            height: auto;
-        }
-
-        #apod-explanation-hero {
-            line-height: 1.6;
-            margin-bottom: 10px;
-            font-size: 0.9em;
-            text-align: left;
-            color: #fff; /* 今日の宇宙画像の説明文の色を白に */
-        }
-
-        #apod-copyright-hero {
-            font-size: 0.8em;
-            color: #fff; /* コピーライトの色を白に */
-            text-align: right;
-        }
-
-        .hero {
-            background-color: transparent;
-            padding: 40px 20px; /* 左右に余白を追加 */
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            border: none;
-            box-shadow: none;
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-        }
-
-        .hero-image {
-            display: none; /* 背景画像エリア自体を非表示に */
-        }
-
-        .hero-text {
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 0 auto; /* 中央寄せ */
-            width: 100%; /* 親要素に合わせて */
-        }
-
-        .hero-text h2 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .hero-text p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .read-more {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #555;
-            color: #fff; /* リードモアボタンの文字色を白に */
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .articles {
-            margin-top: 30px;
-            padding: 0 20px; /* 左右に余白を追加 */
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-        }
-
-        .articles h2 {
-            font-size: 1.6em;
-            margin-bottom: 15px;
-            color: #fff;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 0 auto 15px auto; /* 中央寄せ */
-        }
-
-        .article-list {
-            display: flex;
-            flex-direction: column;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 0 auto; /* 中央寄せ */
-            width: 100%; /* 親要素に合わせて */
-        }
-
-        .article {
-            display: flex;
-            margin-bottom: 20px;
-        }
-
-        .article:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .article:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .article-image {
-            flex: 0 0 500px;
-            margin-right: 20px;
-            max-width: 50%; /* 画像が大きくなりすぎないように */
-        }
-
-        .article:nth-child(even) .article-image {
-            margin-right: 0;
-            margin-left: 20px;
-        }
-
-        .article-image img {
-            width: 100%; /* 親要素いっぱいに表示 */
-            height: auto;
-            display: block;
-        }
-
-        .article-content {
-            flex: 1;
-            color: #fff;
-            padding: 0 15px; /* 左右に余白を追加 */
-        }
-
-        .article-meta {
-            font-size: 0.8em;
-            color: #fff;
-            margin-bottom: 5px;
-        }
-
-        .article-excerpt {
-            font-size: 0.9em;
-            line-height: 1.5;
-            color: #fff;
-        }
-
-        .pagination {
-            margin-top: 20px;
-            text-align: center;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 20px auto; /* 中央寄せ */
-            width: 100%; /* 親要素に合わせて */
-        }
-
-        .pagination a {
-            display: inline-block;
-            padding: 8px 15px;
-            margin: 0 5px;
-            border: 1px solid #555;
-            border-radius: 5px;
-            color: #fff; /* ページネーションリンクの色を白に */
-            text-decoration: none;
-            background-color: #444;
-        }
-
-        .pagination a.current {
-            background-color: #666;
-            border-color: #666;
-            color: #fff; /* 現在のページネーションリンクの色を白に */
-        }
-
-        .about-emily {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 5px;
-            color: #fff; /* About Emilyセクションの文字色を白に */
-            display: flex;
-            align-items: center;
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 40px auto; /* 中央寄せ */
-        }
-
-        .about-content {
-            flex-grow: 1;
-            margin-left: 20px;
-        }
-
-        .profile-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .about-content h2 {
-            font-size: 1.6em;
-            margin-bottom: 10px;
-            color: #fff; /* About Emilyセクションの見出し色を白に */
-        }
-
-        .about-content p {
-            line-height: 1.6;
-            color: #fff; /* About Emilyセクションの段落色を白に */
-        }
-
-        .space-weather-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-            padding: 0 20px; /* 左右に余白を追加 */
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 30px auto; /* 中央寄せ */
-        }
-
-        .space-weather-item h2 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .space-weather-item ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .space-weather-item ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid #555;
-        }
-
-        .space-weather-item ul li:last-child {
-            border-bottom: none;
-        }
-
-        @media (max-width: 768px) {
-            .space-weather-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hamburger-container {
-                display: block; /* モバイルでは表示 */
-            }
-
-            .nav-links {
-                display: none; /* モバイルでは非表示 */
-            }
-
-            .about-emily {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .about-content {
-                margin-left: 0;
-                margin-top: 20px;
-            }
-
-            footer .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            footer nav ul {
-                margin-top: 10px;flex-direction: column;
-                align-items: center;
-            }
-
-            footer nav ul li {
-                margin: 5px 0;
-            }
-
-            .article-list {
-                flex-direction: column; /* モバイルでは縦並び */
-            }
-
-            .article {
-                flex-direction: column; /* モバイルでは縦並び */
-            }
-
-            .article-image {
-                width: 100%; /* モバイルでは画像幅いっぱい */
-                margin-right: 0 !important;
-                margin-left: 0 !important;
-            }
-
-            .article-content {
-                padding-left: 0;
-            }
-        }
-
-        footer {
-            text-align: center;
-            padding: 1em 20px; /* 左右に余白を追加 */
-            margin-top: 20px;
-            background-color: #333;
-            color: #fff; /* フッターの文字色を白に */
-            border-radius: 0 0 8px 8px;
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-        }
-
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 0 auto; /* 中央寄せ */
-
-        }
-
-        footer nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        footer nav ul li {
-            margin-left: 15px;
-        }
-
-        footer nav ul li:first-child {
-            margin-left: 0;
-        }
-
-        footer nav a {
-            color: #fff; /* フッターナビゲーションのリンク色を白に */
-            text-decoration: none;
-        }
-
-        .space-news-section {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            color: #fff; /* ← セクション内のテキスト全体を白に */
-            width: 100%; /* 横幅いっぱい */
-            box-sizing: border-box;
-            max-width: 960px; /* コンテンツ幅を制限 */
-            margin: 20px auto; /* 中央寄せ */
-        }
-
-        .space-news-section h3 {
-            font-size: 1.2em;
-            color: #fff; /* ← 見出しも白に */
-            margin-bottom: 15px;
-        }
-
-        #space-news div {
-            margin-bottom: 10px;
-        }
-
-        #space-news a {
-            color: #fff; /* ← リンクも白に変更 */
-            text-decoration: none;
-        }
-
-        #space-news a:hover {
-            text-decoration: underline;
-        }
-
-
-    </style>
-</head>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
+ <html lang="ja">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dear Emily</title>
   <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  /* style.cssの内容をここに記述するか、またはstyle.cssファイルを読み込んでください */
+  /* style.cssの内容 */
+:root {
+  --font-family-serif-popular: 'Merriweather', serif; /* 人気のセリフ体 */
+}
+
+body {
+  font-family: var(--font-family-serif-popular); /* フォントをMerriweatherに変更 */
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* 背景色を黒に */
+  color: #fff; /* テキストの色を白に変更 */
+  width: 100%; /* ボディの横幅をいっぱいにする */
+  box-sizing: border-box; /* padding, border を width に含める */
+}
+
+.top-menu-bar { /* 新しいメニューバーのスタイル */
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px; /* 左右に余白を追加 */
+  text-align: center;
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+}
+
+.top-menu-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; /* 中央寄せ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 960px; /* 必要に応じてコンテンツ幅を制限 */
+}
+
+.top-menu-bar ul li {
+  margin: 0 15px;
+}
+
+.top-menu-bar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  background-color: transparent; /* ヘッダーの背景を透明にする */
+  color: #fff; /* ヘッダーの文字色を白に */
+  padding: 1em 20px; /* 左右に余白を追加 */
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+}
+
+header .container {
+  /* background-color: rgba(0, 0, 0, 0.4); /* 半透明な黒 */
+  /* border-radius: 8px; */
+  /* padding: 1em; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 0 auto; /* 中央寄せ */
+  width: 100%; /* 親要素に合わせて */
+  background-color: transparent; /* ヘッダーコンテナの背景を透明に */
+  padding: 0;
+  border-radius: 0;
+}
+
+.hamburger-menu {
+  width: 30px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.scrollable-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff; /* スクロールメニューの文字色を白に */
+  transform: translateX(-250px);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.scrollable-menu.open {
+  transform: translateX(0);
+}
+
+.scrollable-content {
+  padding: 20px;
+}
+
+.scrollable-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scrollable-content ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #555;
+}
+
+.scrollable-content ul li:last-child {
+  border-bottom: none;
+}
+
+.scrollable-content a {
+  color: #fff; /* スクロールメニュー内のリンク色を白に */
+  text-decoration: none;
+}
+
+.header-content {
+  text-align: center;
+  flex-grow: 1;
+  background-color: transparent; /* ブログ名周りの背景を透明に */
+}
+
+.header-content h1 {
+  margin: 0;
+}
+
+.header-content h1 a {
+  color: #fff; /* ブログ名テキストの色を白に */
+  text-decoration: none;
+  background-color: transparent; /* ブログ名テキストの背景を透明に */
+  border: none; /* ブログ名テキストのボーダーをなくす */
+}
+.parallax-space {
+  background-image: url("images/iss072e278609_large.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+
+.site-description {
+  font-size: 0.9em;
+  color: #fff; /* サイト説明の色を白に */
+  margin-top: 5px;
+}
+
+.nav-links {
+  display: none; /* デスクトップでは非表示にする */
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links ul li {
+  margin-left: 20px;
+}
+
+.nav-links ul li:first-child {
+  margin-left: 0;
+}
+
+.nav-links a {
+  color: #fff; /* ナビゲーションリンクの色を白に */
+  text-decoration: none;
+}
+
+#apod-hero {
+  margin-bottom: 20px;
+  padding: 0 20px; /* 左右に余白を追加 */
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+}
+
+#apod-container-hero {
+  padding: 15px;
+  border: 1px solid #555; /* ボーダーの色を調整 */
+  border-radius: 5px;
+  background-color: #333; /* 背景色を調整 */
+  text-align: center;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+#apod-title-hero {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #fff; /* 今日の宇宙画像のタイトル色を白に */
+}
+
+#apod-media-container-hero {
+  margin-bottom: 10px;
+}
+
+#apod-image-hero {
+  max-width: 100%;
+  height: auto;
+}
+
+#apod-explanation-hero {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  text-align: left;
+  color: #fff; /* 今日の宇宙画像の説明文の色を白に */
+}
+
+#apod-copyright-hero {
+  font-size: 0.8em;
+  color: #fff; /* コピーライトの色を白に */
+  text-align: right;
+}
+
+.hero {
+  background-color: transparent;
+  padding: 40px 20px; /* 左右に余白を追加 */
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+}
+
+.hero-image {
+  display: none; /* 背景画像エリア自体を非表示に */
+}
+
+.hero-text {
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 0 auto; /* 中央寄せ */
+  width: 100%; /* 親要素に合わせて */
+}
+
+.hero-text h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.hero-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #555;
+  color: #fff; /* リードモアボタンの文字色を白に */
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.articles {
+  margin-top: 30px;
+  padding: 0 20px; /* 左右に余白を追加 */
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+}
+
+.articles h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #fff;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 0 auto 15px auto; /* 中央寄せ */
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 0 auto; /* 中央寄せ */
+  width: 100%; /* 親要素に合わせて */
+}
+
+.article {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.article:nth-child(odd) {
+  flex-direction: row;
+}
+
+.article:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.article-image {
+  flex: 0 0 500px;
+  margin-right: 20px;
+  max-width: 50%; /* 画像が大きくなりすぎないように */
+}
+
+.article:nth-child(even) .article-image {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.article-image img {
+  width: 100%; /* 親要素いっぱいに表示 */
+  height: auto;
+  display: block;
+}
+
+.article-content {
+  flex: 1;
+  color: #fff;
+  padding: 0 15px; /* 左右に余白を追加 */
+}
+
+.article-meta {
+  font-size: 0.8em;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.article-excerpt {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 20px auto; /* 中央寄せ */
+  width: 100%; /* 親要素に合わせて */
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 0 5px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #fff; /* ページネーションリンクの色を白に */
+  text-decoration: none;
+  background-color: #444;
+}
+
+.pagination a.current {
+  background-color: #666;
+  border-color: #666;
+  color: #fff; /* 現在のページネーションリンクの色を白に */
+}
+
+.about-emily {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 5px;
+  color: #fff; /* About Emilyセクションの文字色を白に */
+  display: flex;
+  align-items: center;
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 40px auto; /* 中央寄せ */
+}
+
+.about-content {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-content h2 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  color: #fff; /* About Emilyセクションの見出し色を白に */
+}
+
+.about-content p {
+  line-height: 1.6;
+  color: #fff; /* About Emilyセクションの段落色を白に */
+}
+
+.space-weather-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 0 20px; /* 左右に余白を追加 */
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 30px auto; /* 中央寄せ */
+}
+
+.space-weather-item h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.space-weather-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.space-weather-item ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #555;
+}
+
+.space-weather-item ul li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .space-weather-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hamburger-container {
+    display: block; /* モバイルでは表示 */
+  }
+
+  .nav-links {
+    display: none; /* モバイルでは非表示 */
+  }
+
+  .about-emily {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-content {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer nav ul {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer nav ul li {
+    margin: 5px 0;
+  }
+
+  .article-list {
+    flex-direction: column; /* モバイルでは縦並び */
+  }
+
+  .article {
+    flex-direction: column; /* モバイルでは縦並び */
+  }
+
+  .article-image {
+    width: 100%; /* モバイルでは画像幅いっぱい */
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .article-content {
+    padding-left: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1em 20px; /* 左右に余白を追加 */
+  margin-top: 20px;
+  background-color: #333;
+  color: #fff; /* フッターの文字色を白に */
+  border-radius: 0 0 8px 8px;
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 0 auto; /* 中央寄せ */
+
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+footer nav ul li {
+  margin-left: 15px;
+}
+
+footer nav ul li:first-child {
+  margin-left: 0;
+}
+
+footer nav a {
+  color: #fff; /* フッターナビゲーションのリンク色を白に */
+  text-decoration: none;
+}
+
+.space-news-section {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #fff; /* ← セクション内のテキスト全体を白に */
+  width: 100%; /* 横幅いっぱい */
+  box-sizing: border-box;
+  max-width: 960px; /* コンテンツ幅を制限 */
+  margin: 20px auto; /* 中央寄せ */
+}
+
+.space-news-section h3 {
+  font-size: 1.2em;
+  color: #fff; /* ← 見出しも白に */
+  margin-bottom: 15px;
+}
+
+#space-news div {
+  margin-bottom: 10px;
+}
+
+#space-news a {
+  color: #fff; /* ← リンクも白に変更 */
+  text-decoration: none;
+}
+
+#space-news a:hover {
+  text-decoration: underline;
+}
+
+
+  </style>
+ </head>
+ <body>
   <div class="top-menu-bar">
     <ul>
       <li><a href="index.html">HOME</a></li>
@@ -621,88 +606,110 @@ gtag('config', 'G-2JZSZFDDJ2');
       <li><a href="contact.html">Contact US</a></li>
     </ul>
   </div>
-
   <header>
-    <div class="container">
-      <div class="hamburger-container">
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="scrollable-menu">
-          <div class="scrollable-content">
-            <ul>
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Article-List</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact US</a></li>
-            </ul>
-          </div>
-        </div>
+  <div class="container">
+  <div class="hamburger-container">
+  <div class="hamburger-menu">
+  <span></span>
+  <span></span>
+  <span></span>
+  </div>
+  <div class="scrollable-menu">
+  <div class="scrollable-content">
+  <ul>
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="#">Gallery</a></li>
+  <li><a href="#">Article-List</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact US</a></li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  <div class="header-content">
+  <h1><a href="index.html">Dear Emily</a></h1>
+  <p class="site-description">宇宙をテーマにしたブログ</p>
+  </div>
+  </div>
+  </header>
+
+ <div class="container main-content">
+  <section id="apod-hero">
+  <div id="apod-container-hero">
+  <h2 id="apod-title-hero">Comet SWAN</h2>
+  <div id="apod-media-container-hero">
+  <img id="apod-image-hero" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+  </div>
+  <p id="apod-explanation-hero"></p>
+  <p id="apod-copyright-hero"></p></div>
+</section>
+
+<section class="hero">
+  <div class="hero-image"></div>
+  <div class="hero-text">
+    <h2>Exploring the Mysteries of the Vast Universe</h2>
+    <p>最新の宇宙に関するあらゆる情報を発信しています。</p>
+
+    <!-- 🌌 宇宙ニュースリスト -->
+    <div class="space-news-section">
+      <h3>🌌 Breaking News from the Cosmos（NASAより）</h3>
+      <div id="space-news"></div>
+    </div>
+  </div>
+</section>
+
+<div class="parallax-space"></div>
+
+<section class="articles">
+  <h2>Latest Articles</h2>
+  <div class="article-list">
+    <article class="article">
+      <div class="article-image">
+        <img src="images/ブラックホール.jpg" alt="ブラックホールのイメージ">
       </div>
-      <div class="header-content">
-        <h1><a href="index.html">Dear Emily</a></h1>
-        <p class="site-description">宇宙をテーマにしたブログ</p>
+      <div class="article-content">
+        <h3>記事のタイトル1</h3>
+        <div class="article-meta">...</div>
+        <p class="article-excerpt">...</p>
+      </div>
+    </article>
+    <article class="article">
+      <div class="article-image">
+        <img src="images/火星.jpg" alt="火星のイメージ">
+      </div>
+      <div class="article-content">
+        <h3>記事のタイトル2</h3>
+        <div class="article-meta">...</div>
+        <p class="article-excerpt">...</p>
+      </div>
+    </article>
+    </div>
+  <div class="pagination">...</div>
+</section>
+
+<section class="about-emily">
+  <h2>About Emily</h2>
+  <div class="about-content">
+    <img src="images/Gemini_Generated_Image_749bad749bad749b.jpg" alt="Emilyのプロフィール画像" class="profile-image">
+    <p>Dear Emilyへようこそ！このブログは、宇宙の魅力に魅せられたEmilyの為に運営しています。最新の科学ニュース、美しい天体写真、宇宙開発のロマン、そして宇宙に関する様々な考察を、分かりやすくお届けします。</p>
+  </div>
+</section>
+
+<section class="space-weather-container">
+    <div class="space-weather-item">
+      <h2>Today's Solar Flare Information</h2>
+      <div id="solar-flare-container">
+        <p>太陽フレア情報を取得中です...</p>
       </div>
     </div>
-  </header>
-  <div class="container main-content">
-    <section id="apod-hero">
-      <div id="apod-container-hero">
-        <h2 id="apod-title-hero">Comet SWAN</h2>
-        <div id="apod-media-container-hero">
-          <img id="apod-image-hero" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-        </div>
-        <p id="apod-explanation-hero"></p>
-        <p id="apod-copyright-hero"></p>
+    <div class="space-weather-item">
+      <h2>Today's Geomagnetic Storm Information</h2>
+      <div id="geomagnetic-storm-container">
+        <p>地磁気嵐情報を取得中です...</p>
       </div>
-    </section>
-  <div class="container main-content">
-    <section id="apod-hero">
-      <div id="apod-container-hero">
-        <h2 id="apod-title-hero">Comet SWAN</h2>
-        <div id="apod-media-container-hero">
-          <img id="apod-image-hero" src="" alt="">
-        </div>
-        <p id="apod-explanation-hero"></p>
-        <p id="apod-copyright-hero"></p>
-      </div>
-    </section>
-
-    <section class="hero">
-      <div class="hero-image"></div>
-      <div class="hero-text">
-        <h2>Exploring the Mysteries of the Vast Universe</h2>
-        <p>最新の宇宙に関するあらゆる情報を発信しています。</p>
-        <div class="space-news-section">
-          <h3>🌌 Breaking News from the Cosmos（NASAより）</h3>
-          <div id="space-news"></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="parallax-space"></div>
-
-    <div class="pagination"></div>
-
-    <section class="space-weather-container">
-      <div class="space-weather-item">
-        <h2>Today's Solar Flare Information</h2>
-        <div id="solar-flare-container">
-          <p>太陽フレア情報を取得中です...</p>
-        </div>
-      </div>
-      <div class="space-weather-item">
-        <h2>Today's Geomagnetic Storm Information</h2>
-        <div id="geomagnetic-storm-container">
-          <p>地磁気嵐情報を取得中です...</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
+    </div>
+  </section>
+  
   <footer>
     <div class="container">
       <p>&copy; 2025 Dear Emily</p>
@@ -715,32 +722,37 @@ gtag('config', 'G-2JZSZFDDJ2');
       </nav>
     </div>
   </footer>
-
+  
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const scrollableMenu = document.querySelector('.scrollable-menu');
-
-      if (hamburgerMenu && scrollableMenu) {
-        hamburgerMenu.addEventListener('click', function () {
-          scrollableMenu.classList.toggle('open');
-          hamburgerMenu.classList.toggle('open');
-        });
-      }
-
-      const apodApiUrl = `https://api.nasa.gov/planetary/apod?api_key=2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj`;
-      fetch(apodApiUrl)
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById('apod-title-hero').textContent = data.title;
-          document.getElementById('apod-explanation-hero').textContent = data.explanation;
-          document.getElementById('apod-copyright-hero').textContent = data.copyright
-            ? `© ${data.copyright}`
-            : '出典: NASA / パブリックドメインの可能性';
-
-          const container = document.getElementById('apod-media-container-hero');
-          container.innerHTML = '';
-
+  document.addEventListener('DOMContentLoaded', function() {
+    // ハンバーガーメニューの処理
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const scrollableMenu = document.querySelector('.scrollable-menu');
+  
+    if (hamburgerMenu && scrollableMenu) {
+      hamburgerMenu.addEventListener('click', function() {
+        scrollableMenu.classList.toggle('open');
+        hamburgerMenu.classList.toggle('open');
+      });
+    }
+  
+    // APOD (今日の宇宙画像) の取得と表示
+    const apodContainerHero = document.getElementById('apod-container-hero');
+    const apodTitleHero = document.getElementById('apod-title-hero');
+    const apodMediaContainerHero = document.getElementById('apod-media-container-hero');
+    const apodExplanationHero = document.getElementById('apod-explanation-hero');
+    const apodCopyrightHero = document.getElementById('apod-copyright-hero');
+    const apiKeyApod = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
+    const apodApiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
+  
+    fetch(apodApiUrl)
+      .then(response => response.ok ? response.json() : Promise.reject(`HTTP error! status: ${response.status}`))
+      .then(data => {
+        if (apodTitleHero) apodTitleHero.textContent = data.title;
+        if (apodExplanationHero) apodExplanationHero.textContent = data.explanation;
+        if (apodCopyrightHero) apodCopyrightHero.textContent = data.copyright ? `© ${data.copyright}` : '出典: NASA / パブリックドメインの可能性';
+        if (apodMediaContainerHero) {
+          apodMediaContainerHero.innerHTML = '';
           if (data.media_type === 'video') {
             const iframe = document.createElement('iframe');
             iframe.src = data.url;
@@ -748,86 +760,108 @@ gtag('config', 'G-2JZSZFDDJ2');
             iframe.style.aspectRatio = '16 / 9';
             iframe.frameBorder = '0';
             iframe.allowFullscreen = true;
-            container.appendChild(iframe);
-          } else {
+            apodMediaContainerHero.appendChild(iframe);
+          } else if (data.media_type === 'image') {
             const img = document.createElement('img');
             img.src = data.url;
             img.alt = data.title;
             img.style.maxWidth = '100%';
             img.style.height = 'auto';
-            container.appendChild(img);
+            apodMediaContainerHero.appendChild(img);
           }
-        })
-        .catch(error => {
-          console.error('APOD取得エラー:', error);
-          document.getElementById('apod-container-hero').innerHTML = '<p>今日の宇宙画像を取得できませんでした。</p>';
-        });
-
-      const today = new Date().toISOString().slice(0, 10);
-      const flareUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${today}&endDate=${today}&api_key=2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj`;
-      fetch(flareUrl)
-        .then(response => response.json())
-        .then(data => {
-          const container = document.getElementById('solar-flare-container');
-          if (data.length > 0) {
+        }
+      })
+      .catch(error => {
+        console.error('APODの取得エラー:', error);
+        if (apodContainerHero) apodContainerHero.innerHTML = '<p>今日の宇宙画像を取得できませんでした。</p>';
+        if (apodTitleHero) apodTitleHero.textContent = '今日の宇宙画像を取得できませんでした';
+      });
+  
+    // 太陽フレア情報の取得と表示
+    const solarFlareContainer = document.getElementById('solar-flare-container');
+    const apiKeyDonki = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
+    const todayDonki = new Date().toISOString().slice(0, 10);
+    const solarFlareApiUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${apiKeyDonki}`;
+  
+    fetch(solarFlareApiUrl)
+      .then(response => response.ok ? response.json() : Promise.reject(`DONKI API error! status: ${response.status}`))
+      .then(data => {
+        if (solarFlareContainer) {
+          if (data && data.length > 0) {
             let html = '<ul>';
             data.forEach(flare => {
-              html += `<li><strong>開始:</strong> ${flare.beginTime}<br><strong>ピーク:</strong> ${flare.peakTime}<br><strong>終了:</strong> ${flare.endTime}<br><strong>領域:</strong> ${flare.sourceLocation}</li>`;
+              html += `<li>
+                <strong>開始日時:</strong> ${flare.beginTime}<br>
+                <strong>ピーク日時:</strong> ${flare.peakTime}<br>
+                <strong>終了日時:</strong> ${flare.endTime}<br>
+                <strong>強度:</strong> ${flare.classType}<br>
+                <strong>領域:</strong> ${flare.sourceLocation}
+              </li>`;
             });
             html += '</ul>';
-            container.innerHTML = html;
+            solarFlareContainer.innerHTML = html;
           } else {
-            container.innerHTML = '<p>現在、太陽フレアの活動は観測されていません。</p>';
+            solarFlareContainer.innerHTML = '<p>現在のところ、太陽フレアの活動は観測されていません。</p>';
           }
-        })
-        .catch(error => {
-          console.error('太陽フレア取得エラー:', error);
-          document.getElementById('solar-flare-container').innerHTML = '<p>太陽フレア情報を取得できませんでした。</p>';
-        });
-
-      const stormUrl = `https://api.nasa.gov/DONKI/GST?startDate=${today}&endDate=${today}&api_key=2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj`;
-      fetch(stormUrl)
-        .then(response => response.json())
-        .then(data => {
-          const container = document.getElementById('geomagnetic-storm-container');
-          if (data.length > 0) {
+        }
+      })
+      .catch(error => {
+        console.error('太陽フレア情報の取得エラー:', error);
+        if (solarFlareContainer) solarFlareContainer.innerHTML = '<p>太陽フレア情報を取得できませんでした。</p>';
+      });
+  
+    // 地磁気嵐情報の取得と表示
+    const geomagneticStormContainer = document.getElementById('geomagnetic-storm-container');
+    const geomagneticStormApiUrl = `https://api.nasa.gov/DONKI/GST?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${apiKeyDonki}`;
+  
+    fetch(geomagneticStormApiUrl)
+      .then(response => response.ok ? response.json() : Promise.reject(`DONKI API error! status: ${response.status}`))
+      .then(data => {
+        if (geomagneticStormContainer) {
+          if (data && data.length > 0) {
             let html = '<ul>';
             data.forEach(storm => {
-              html += `<li><strong>開始:</strong> ${storm.beginTime}<br><strong>Kp指数:</strong> ${storm.kpIndex}<br><strong>強度:</strong> ${storm.classType}</li>`;
+              html += `<li>
+                <strong>開始日時:</strong> ${storm.beginTime}<br>
+                <strong>Kp指数:</strong> ${storm.kpIndex}<br>
+                <strong>強度:</strong> ${storm.gstID}<br>
+                <strong>ソース:</strong> ${storm.source}</li>`;
             });
             html += '</ul>';
-            container.innerHTML = html;
+            geomagneticStormContainer.innerHTML = html;
           } else {
-            container.innerHTML = '<p>現在、地磁気嵐は観測されていません。</p>';
+            geomagneticStormContainer.innerHTML = '<p>現在のところ、地磁気嵐は観測されていません。</p>';
           }
-        })
-        .catch(error => {
-          console.error('地磁気嵐取得エラー:', error);
-          document.getElementById('geomagnetic-storm-container').innerHTML = '<p>地磁気嵐情報を取得できませんでした。</p>';
-        });
-
-      const rssUrl = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
-      const rssApi = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-      fetch(rssApi)
-        .then(response => response.json())
-        .then(data => {
-          const container = document.getElementById('space-news');
-          if (data.items) {
-            data.items.slice(0, 5).forEach(item => {
-              const div = document.createElement('div');
-              div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
-              container.appendChild(div);
-            });
-          } else {
-            container.innerHTML = '<p>宇宙ニュースを取得できませんでした。</p>';
-          }
-        })
-        .catch(error => {
-          console.error('RSS取得エラー:', error);
-          document.getElementById('space-news').innerHTML = '<p>宇宙ニュースを取得できませんでした。</p>';
-        });
-    });
+        }
+      })
+      .catch(error => {
+        console.error('地磁気嵐情報の取得エラー:', error);
+        if (geomagneticStormContainer) geomagneticStormContainer.innerHTML = '<p>地磁気嵐情報を取得できませんでした。</p>';
+      });
+  });
   </script>
-  <script src="js/load-about.js"></script>
-</body>
-</html>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const feedUrl = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
+    const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+  
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const newsContainer = document.getElementById("space-news");
+        data.items.slice(0, 5).forEach(item => {
+          const div = document.createElement("div");
+          div.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a>`;
+          newsContainer.appendChild(div);
+        });
+      })
+      .catch(error => {
+        console.error("RSS取得エラー:", error);
+      });
+  });
+  </script>
+  
+  </body>
+  </html>
+  
