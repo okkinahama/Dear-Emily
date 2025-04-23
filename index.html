@@ -661,39 +661,69 @@ footer nav a {
 <div class="parallax-space"></div>
 
 <section class="articles">
-  <h2>Latest Articles</h2>
-  <div class="article-list">
-    <article class="article">
-      <div class="article-image">
-        <img src="images/ブラックホール.jpg" alt="ブラックホールのイメージ">
-      </div>
-      <div class="article-content">
-        <h3>記事のタイトル1</h3>
-        <div class="article-meta">...</div>
-        <p class="article-excerpt">...</p>
-      </div>
-    </article>
-    <article class="article">
-      <div class="article-image">
-        <img src="images/火星.jpg" alt="火星のイメージ">
-      </div>
-      <div class="article-content">
-        <h3>記事のタイトル2</h3>
-        <div class="article-meta">...</div>
-        <p class="article-excerpt">...</p>
-      </div>
-    </article>
+    <h2>記事一覧</h2>
+    <div class="article-list">
+  
+      <article class="article-card">
+        <h3><a href="article1.html">宇宙ってどこから始まるの？</a></h3>
+        <p>「地球を飛び出したら、すぐ宇宙？」そんな疑問にやさしく答える、宇宙のはじまりのお話。</p>
+        <p class="article-date">投稿日：2025年4月21日</p>
+      </article>
+  
+      <article class="article-card">
+        <h3><a href="article2.html">お月さまって、毎晩どうして形がちがうの？</a></h3>
+        <p>セーラームーンを想いながら、月の満ち欠けについてやさしく解説する物語。</p>
+        <p class="article-date">投稿日：2025年4月22日</p>
+      </article>
+  
+      <!-- 追加記事はここに続けて挿入できます -->
+  
     </div>
-  <div class="pagination">...</div>
-</section>
+  </section>
+  
+  <style>
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+  
+    .article-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: background 0.3s;
+    }
+  
+    .article-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  
+    .article-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.3rem;
+      color: #ffd1dc;
+    }
+  
+    .article-card a {
+      text-decoration: none;
+      color: inherit;
+    }
+  
+    .article-card p {
+      color: #ddd;
+      margin: 0.2rem 0;
+    }
+  
+    .article-date {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+  </style>
+<!-- これは残す -->
+<div id="about-emily-container"></div>
 
-<section class="about-emily">
-  <h2>About Emily</h2>
-  <div class="about-content">
-    <img src="images/Gemini_Generated_Image_749bad749bad749b.jpg" alt="Emilyのプロフィール画像" class="profile-image">
-    <p>Dear Emilyへようこそ！このブログは、宇宙の魅力に魅せられたEmilyの為に運営しています。最新の科学ニュース、美しい天体写真、宇宙開発のロマン、そして宇宙に関する様々な考察を、分かりやすくお届けします。</p>
-  </div>
-</section>
 
 <section class="space-weather-container">
     <div class="space-weather-item">
