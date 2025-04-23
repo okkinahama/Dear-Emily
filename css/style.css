@@ -620,7 +620,7 @@ footer nav ul li a:hover {
   }
   
   .profile-image {
-    max-width: 300px; /* 画像の最大幅を設定 */
+    max-width: 50px; /* 画像の最大幅を設定 */
     height: auto; /* 高さは自動調整 */
     border-radius: 50%; /* 丸いプロフィール画像にする */
     border: 3px solid #ffd1dc; /* 画像の枠線を追加 */
