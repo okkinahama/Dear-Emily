@@ -891,6 +891,25 @@ footer nav a {
       });
   });
   </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('about-emily.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('HTMLの読み込みに失敗しました');
+          }
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('about-emily-container').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('About Emily セクションの読み込みエラー:', error);
+        });
+    });
+    </script>
+    
   
   </body>
   </html>
