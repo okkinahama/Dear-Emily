@@ -642,4 +642,130 @@ footer nav ul li a:hover {
     text-align: right; /* 右揃え */
     color: #ffd1dc; /* 著者名の文字色 */
   }
+  .about-emily {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 10px;
+    max-width: 960px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  .about-emily h2 {
+    font-size: 1.6em;
+    text-align: center;
+    color: #ffd6ff;
+    margin-bottom: 20px;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .profile-image {
+    flex: 0 0 120px; /* 1/4サイズに縮小 */
+    max-width: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  .about-text {
+    flex: 1;
+    font-size: 0.95em;
+    line-height: 1.8;
+  }
+  
+  .from-author {
+    margin-top: 1em;
+    font-style: italic;
+    color: #d8d8ff;
+  }
+ /* 共通スタイル */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  .section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* About Emily 専用スタイル */
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  
+  .about-text {
+    max-width: 800px;
+    text-align: left;
+  }
+  
+  .from-author {
+    margin-top: 2rem;
+    font-style: italic;
+    color: var(--text-muted-color);
+    text-align: right;
+  }
+ /* CSS for About Emily section */
+.about-emily {
+    background-color: var(--bg-color-secondary);
+}
+
+.about-emily h2 {
+    font-size: 2em;
+    color: white;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 600px;
+    color: white;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.from-author {
+    margin-top: 20px;
+    font-style: italic;
+}
   
