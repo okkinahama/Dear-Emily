@@ -302,18 +302,62 @@ header .container {
 
 .articles {
   margin-top: 30px;
-  padding: 0 20px; /* 左右に余白を追加 */
-  width: 100%; /* 横幅いっぱい */
+  padding: 0 20px;
+  width: 100%;
   box-sizing: border-box;
+  background: linear-gradient(to bottom, #1a1a2e, #0f0f1f); /* 星空のような背景 */
 }
 
 .articles h2 {
-  font-size: 1.6em;
-  margin-bottom: 15px;
-  color: #fff;
-  max-width: 960px; /* コンテンツ幅を制限 */
-  margin: 0 auto 15px auto; /* 中央寄せ */
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #f9a8d4;
+  max-width: 960px;
+  margin: 0 auto 20px auto;
+  font-family: 'Merriweather', serif;
+  position: relative;
+  text-align: center;
 }
+
+.articles h2::after {
+  content: "✦";
+  font-size: 1.5em;
+  color: #ffb6c1;
+  position: absolute;
+  right: -1.5rem;
+  top: 0;
+}
+
+.article-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.article-links li {
+  display: inline-block;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.article-links li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.article-links a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+}
+
 
 .article-list {
   display: flex;
@@ -324,39 +368,64 @@ header .container {
 }
 
 .article-card {
-  background-color: rgba(255, 255, 255, 0.05); /* ほんのり背景つけると見やすい */
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 20px;
+
+  /* 修正後の順番 ↓ */
+  -webkit-backdrop-filter: blur(5px); /* 先に書く */
+  backdrop-filter: blur(5px);         /* 後に書く */
+
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
 }
+
+
 
 .article-card:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
 }
 
 .article-card h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
   margin-bottom: 10px;
-  color: #fff;
+  color: #ffb6c1;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.article-card h3 a {
+  text-decoration: none;
+  color: #ffd1dc;
+}
+
+.article-card h3 a:hover {
+  color: #f9a8d4;
+  text-decoration: underline;
 }
 
 .article-card p {
   color: #fff;
-  font-size: 0.9em;
-  line-height: 1.5;
+  font-size: 1em;
+  line-height: 1.6;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .article-date {
   font-size: 0.8em;
   opacity: 0.7;
+  color: #ffc0cb;
 }
 
+/* 記事内の構造スタイル */
 
-/* 記事内の画像や内容 */
 .article {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 182, 193, 0.1);
 }
 
 .article:nth-child(odd) {
@@ -368,37 +437,37 @@ header .container {
 }
 
 .article-image {
-  flex: 0 0 500px;
-  margin-right: 20px;
-  max-width: 50%; /* 画像が大きくなりすぎないように */
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 .article:nth-child(even) .article-image {
-  margin-right: 0;
-  margin-left: 20px;
+  margin-left: 0;
 }
 
 .article-image img {
-  width: 100%; /* 親要素いっぱいに表示 */
+  width: 100%;
   height: auto;
   display: block;
+  border-radius: 0;
 }
 
 .article-content {
   flex: 1;
   color: #fff;
-  padding: 0 15px; /* 左右に余白を追加 */
+  padding: 30px;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .article-meta {
   font-size: 0.8em;
-  color: #fff;
-  margin-bottom: 5px;
+  color: #ffd1dc;
+  margin-bottom: 10px;
 }
 
 .article-excerpt {
-  font-size: 0.9em;
-  line-height: 1.5;
+  font-size: 1em;
+  line-height: 1.6;
   color: #fff;
 }
 
@@ -427,6 +496,36 @@ header .container {
   border-color: #666;
   color: #fff; /* 現在のページネーションリンクの色を白に */
 }
+.about-emily-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.about-emily-links li {
+  display: inline-block;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.about-emily-links li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.about-emily-links a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+}
+
 
 .about-emily {
   margin-top: 40px;
@@ -448,11 +547,14 @@ header .container {
 }
 
 .profile-image {
-  width: 100px;
-  height: 100px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* ふんわり光る感じに */
+  border: 2px solid rgba(255, 255, 255, 0.3);       /* 柔らかい白縁 */
 }
+
 
 .about-content h2 {
   font-size: 1.6em;
@@ -626,6 +728,125 @@ footer nav a {
   text-decoration: underline;
 }
 
+.latest-posts {
+  background-color: rgba(40, 40, 60, 0.85); /* 星の夜空っぽい透明ネイビー */
+  padding: 24px;
+  border-radius: 16px;
+  margin: 30px auto;
+  max-width: 800px;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.latest-posts h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.8em;
+  color: #ffe066; /* やさしい月のような黄色 */
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.latest-posts h2::after {
+  content: "✨";
+  position: absolute;
+  right: -24px;
+  top: 0;
+}
+
+.latest-posts div {
+  margin: 12px 0;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.latest-posts div:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.latest-posts a {
+  color: #aad8ff; /* 星空ブルー */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05em;
+  transition: color 0.3s ease;
+}
+
+.latest-posts a:hover {
+  color: #ffccff; /* やさしいピンクに変化 */
+  text-decoration: underline dotted;
+}
+
+.latest-posts span {
+  font-size: 0.85em;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+#sidebar {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 16px;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* ここが修正ポイント */
+  -webkit-backdrop-filter: blur(6px); /* Safari用 */
+  backdrop-filter: blur(6px); /* その他のブラウザ用 */
+}
+
+
+#sidebar h2 {
+  font-size: 1.4em;
+  color: #ffddee; /* ピンク系見出しカラー */
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #ffddee;
+  padding-bottom: 5px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#sidebar li {
+  margin-bottom: 10px;
+}
+
+#sidebar a {
+  color: #aeefff;
+  text-decoration: none;
+  padding: 6px 10px;
+  display: inline-block;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  font-size: 0.95em;
+}
+
+#sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+#sidebar {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
   </style>
  </head>
@@ -635,19 +856,11 @@ footer nav a {
       <li><a href="index.html">HOME</a></li>
       <li><a href="#">Gallery</a></li>
       <li><a href="articles.html">Article-List</a></li>
-      <li><a href="about-emily.html">About</a></li>
+      <li><a href="about-emily">About</a></li>
       <li><a href="contact.html">Contact US</a></li>
     </ul>
   </div>
   <header>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">ホーム</a></li> <!-- トップページへのリンク -->
-        <li><a href="about-emily.html">アバウト</a></li> <!-- アバウトページへのリンク -->
-        <li><a href="articles.html">記事一覧</a></li> <!-- 記事一覧ページへのリンク -->
-      </ul>
-    </nav>
-    
   <div class="container">
   <div class="hamburger-container">
   <div class="hamburger-menu">
@@ -661,7 +874,7 @@ footer nav a {
   <li><a href="index.html">HOME</a></li>
   <li><a href="#">Gallery</a></li>
   <li><a href="articles.html">Article-List</a></li>
-  <li><a href="about-emily.html">About</a></li>
+  <li><a href="about-emily">About</a></li>
   <li><a href="contact.html">Contact US</a></li>
   </ul>
   </div>
@@ -678,6 +891,12 @@ footer nav a {
     <style class="container main-content">
      
     </style>
+
+<aside id="sidebar">
+  <h2>カテゴリーで探す</h2>
+  <!-- JSがここに生成 -->
+</aside>
+
   
     <section id="apod-hero">
         <div id="apod-container-hero">
@@ -706,10 +925,14 @@ footer nav a {
   
     <div class="parallax-space"></div>
   
-    <section class="articles">
-      <h2>Article list</h2>
-      <div class="article-list">
+    <section class="articles" id="articles">
+      <h2>Article List</h2>
     
+      <ul class="article-links">
+        <li><a href="articles.html">Article-List</a></li>
+      </ul>
+    
+      <div class="article-list">
         <article class="article-card">
           <h3><a href="articles/space-boder.html">宇宙ってどこから？</a></h3>
           <p>「地球を飛び出したら、すぐ宇宙？」そんな疑問にやさしく答える、宇宙のはじまりのお話。</p>
@@ -727,29 +950,23 @@ footer nav a {
           <p>宇宙に関心をもつきっかけになってほしい</p>
           <p class="article-date">投稿日：2025年4月24日</p>
         </article>
-    
       </div>
     </section>
-    
-    <div id="about-emily-container"></div>
-  
-    <section class="space-weather-container">
-        <div class="space-weather-item">
-            <h2>Today's Solar Flare Information</h2>
-            <div id="solar-flare-container">
-                <p>太陽フレア情報を取得中です...</p>
-            </div>
-        </div>
-        <div class="space-weather-item">
-            <h2>Today's Geomagnetic Storm Information</h2>
-            <div id="geomagnetic-storm-container">
-                <p>地磁気嵐情報を取得中です...</p>
-            </div>
-        </div>
+
+    <section class="latest-posts">
+      <h2>最新記事</h2>
+      <div id="latest-posts"></div>
     </section>
     
-    <section class="section about-emily">
+    
+    <!-- About Emily Section -->
+    <section class="section about-emily" id="about-emily">
       <h2>About Emily</h2>
+
+      <ul class="about-emily-links">
+        <li><a href="about-emily">About Emily</a></li>
+      </ul>
+
       <div class="about-content">
         <img src="images/Gemini_Generated_Image_749bad749bad749b.jpg" alt="Emilyのプロフィール画像" class="profile-image">
         <div class="about-text">
@@ -769,6 +986,23 @@ footer nav a {
         </div>
       </div>
     </section>
+    
+    <!-- Space Weather Section -->
+    <section class="space-weather-container">
+      <div class="space-weather-item">
+        <h2>Today's Solar Flare Information</h2>
+        <div id="solar-flare-container">
+          <p>太陽フレア情報を取得中です...</p>
+        </div>
+      </div>
+      <div class="space-weather-item">
+        <h2>Today's Geomagnetic Storm Information</h2>
+        <div id="geomagnetic-storm-container">
+          <p>地磁気嵐情報を取得中です...</p>
+        </div>
+      </div>
+    </section>
+    
     
     <footer>
         <div class="container">
@@ -938,6 +1172,50 @@ footer nav a {
                     console.error('About Emily セクションの読み込みエラー:', error);
                 });
         });
-    </script>
+        </script>
+        
+        <script>
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('posts.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById("latest-posts");
+
+      // 日付順に並び替えて最新5件を表示
+      data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      const latest = data.slice(0, 5);
+
+      latest.forEach(post => {
+        const div = document.createElement('div');
+        div.innerHTML = `<a href="${post.url}">${post.title}</a> <span style="color: #ccc;">(${post.date})</span>`;
+        container.appendChild(div);
+      });
+    })
+    .catch(error => console.error("記事の読み込みエラー:", error));
+});
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('posts.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("latest-posts");
+  
+        // 日付順に並び替えて最新5件を表示
+        data.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const latest = data.slice(0, 5);
+  
+        latest.forEach(post => {
+          const div = document.createElement('div');
+          div.innerHTML = `<a href="${post.url}">${post.title}</a> <span style="color: #ccc;">(${post.date})</span>`;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => console.error("記事の読み込みエラー:", error));
+  });
+  </script>
+  
+
 </body>
 </html>
