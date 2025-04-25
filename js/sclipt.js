@@ -132,3 +132,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 他のコードがあればここに記述
 });
+
+const posts = [
+    {
+      title: "火星ってどんな星？",
+      date: "2025-04-25",
+      category: "惑星",
+      link: "articles/mars.html"
+    },
+    {
+      title: "月の満ち欠けのひみつ",
+      date: "2025-04-22",
+      category: "月",
+      link: "articles/moon-phases.html"
+    },
+    // …以下、他の記事
+  ];
+
+  const latestPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
+  const container = document.getElementById("latest-posts");
+  latestPosts.forEach(post => {
+    const div = document.createElement("div");
+    div.innerHTML = `<a href="${post.link}">${post.title}</a>`;
+    container.appendChild(div);
+  });
+ 
+  const categories = {};
+posts.forEach(post => {
+  if (!categories[post.category]) categories[post.category] = [];
+  categories[post.category].push(post);
+});
+
+const sidebar = document.getElementById("sidebar");
+for (let cat in categories) {
+  const section = document.createElement("div");
+  section.innerHTML = `<h3>${cat}</h3>`;
+  categories[cat].forEach(post => {
+    const item = document.createElement("div");
+    item.innerHTML = `<a href="${post.link}">${post.title}</a>`;
+    section.appendChild(item);
+  });
+  sidebar.appendChild(section);
+}
