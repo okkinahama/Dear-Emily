@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dear Emily - アーカイブ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- すべての記事セクション -->
+  <section class="all-posts">
+    <h2>全ての記事</h2>
+    <div id="all-posts"></div> <!-- ここにすべての記事を表示 -->
+  </section>
+
+  <!-- スクリプト -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('posts.json')  <!-- posts.json から記事を読み込む -->
+        .then(response => response.json())  //!-- JSONデータとして読み込む --
+        .then(data => {
+          const container = document.getElementById("all-posts");  // すべての記事を表示する場所
+
+          // すべての記事を表示
+          data.forEach(post => {
+            const div = document.createElement('div');
+            div.innerHTML = `<a href="${post.url}">${post.title}</a> <span style="color: #ccc;">(${post.date})</span>`;
+            container.appendChild(div);  // 記事を全て表示
+          });
+        })
+        .catch(error => console.error("記事の読み込みエラー:", error));  // エラーハンドリング
+    });
+  </script>
+
+</body>
+</html>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dear Emily</title>
   <title>記事カード</title>
+  <title>Dear Emily - 最新記事</title>
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -951,11 +953,11 @@ footer nav a {
       <!-- JSがここに生成 -->
     </aside>
 
-    <section class="latest-posts">
-      <h2>最新記事</h2>
-      <div id="latest-posts"></div>
-    </section>
-    
+<!-- トップページ用（最新記事） -->
+<section class="latest-posts">
+  <h2>最新記事</h2>
+  <div id="latest-posts"></div>  <!-- ここに最新記事を表示 -->
+</section>
     
     <!-- About Emily Section -->
     <section class="section about-emily" id="about-emily">
@@ -1173,46 +1175,29 @@ footer nav a {
         </script>
         
         <script>
-document.addEventListener('DOMContentLoaded', function () {
-  fetch('posts.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById("latest-posts");
-
-      // 日付順に並び替えて最新5件を表示
-      data.sort((a, b) => new Date(b.date) - new Date(a.date));
-      const latest = data.slice(0, 5);
-
-      latest.forEach(post => {
-        const div = document.createElement('div');
-        div.innerHTML = `<a href="${post.url}">${post.title}</a> <span style="color: #ccc;">(${post.date})</span>`;
-        container.appendChild(div);
-      });
-    })
-    .catch(error => console.error("記事の読み込みエラー:", error));
-});
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    fetch('posts.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById("latest-posts");
-  
-        // 日付順に並び替えて最新5件を表示
-        data.sort((a, b) => new Date(b.date) - new Date(a.date));
-        const latest = data.slice(0, 5);
-  
-        latest.forEach(post => {
-          const div = document.createElement('div');
-          div.innerHTML = `<a href="${post.url}">${post.title}</a> <span style="color: #ccc;">(${post.date})</span>`;
-          container.appendChild(div);
-        });
-      })
-      .catch(error => console.error("記事の読み込みエラー:", error));
-  });
-  </script>
+          document.addEventListener('DOMContentLoaded', function () {
+            fetch('posts.json')  <!-- posts.json から記事を読み込む -->
+              .then(response => response.json())  //!-- JSONデータとして読み込む --
+              .then(data => {
+                const container = document.getElementById("latest-posts");  // 最新記事を表示する場所
+      
+                // 記事を日付順に並べ替え（新しい順）
+                data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                // 最新5件を表示
+                const latest = data.slice(0, 5);  // 最新5件を取り出す
+      
+                latest.forEach(post => {
+                  const div = document.createElement('div');
+                  div.innerHTML = `<a href="${post.url}">${post.title}</a> <span style="color: #ccc;">(${post.date})</span>`;
+                  container.appendChild(div);  // 最新記事を表示
+                });
+              })
+              .catch(error => console.error("記事の読み込みエラー:", error));  // エラーハンドリング
+          });
+        </script>
+        
+        
 <script>
   const categories = ["宇宙入門", "月の不思議",, "アニメで学ぶ"];
 
@@ -1229,7 +1214,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   sidebar.appendChild(ul);
 </script>
-  
+
+
 
 </body>
 </html>
