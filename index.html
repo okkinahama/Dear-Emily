@@ -787,53 +787,51 @@ footer nav a {
 }
 
 #sidebar {
-  background-color: rgba(255, 255, 255, 0.08);
-  padding: 25px;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); /* 透明感あるホワイト背景 */
+  border-radius: 16px; /* やさしい丸み */
+  padding: 20px;
+  margin-top: 40px;
+
+  /* Safari対応：-webkit-を先に */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
   color: #fff;
   font-family: 'Noto Sans JP', sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* ふわっとした影 */
 
-  /* ここが修正ポイント */
-  -webkit-backdrop-filter: blur(6px); /* Safari用 */
-  backdrop-filter: blur(6px); /* その他のブラウザ用 */
+  /* おまけ：かわいいアニメーション（任意） */
+  transition: all 0.3s ease;
+}
+#sidebar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.15);
 }
 
 
 #sidebar h2 {
-  font-size: 1.4em;
-  color: #ffddee; /* ピンク系見出しカラー */
+  font-size: 1.5em;
   margin-bottom: 15px;
-  border-bottom: 1px dashed #ffddee;
-  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 8px;
 }
 
-#sidebar ul {
+.category-list {
   list-style: none;
   padding-left: 0;
 }
 
-#sidebar li {
-  margin-bottom: 10px;
+.category-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-#sidebar a {
-  color: #aeefff;
-  text-decoration: none;
-  padding: 6px 10px;
-  display: inline-block;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
-  font-size: 0.95em;
+.category-list li:hover {
+  color: #ffd6f6;
 }
 
-#sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-}
-#sidebar {
-  animation: fadeIn 1.2s ease-in-out;
-}
 
 @keyframes fadeIn {
   from {
@@ -892,11 +890,6 @@ footer nav a {
      
     </style>
 
-<aside id="sidebar">
-  <h2>カテゴリーで探す</h2>
-  <!-- JSがここに生成 -->
-</aside>
-
   
     <section id="apod-hero">
         <div id="apod-container-hero">
@@ -952,6 +945,11 @@ footer nav a {
         </article>
       </div>
     </section>
+
+    <aside id="sidebar">
+      <h2>カテゴリーで探す</h2>
+      <!-- JSがここに生成 -->
+    </aside>
 
     <section class="latest-posts">
       <h2>最新記事</h2>
@@ -1215,6 +1213,22 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(error => console.error("記事の読み込みエラー:", error));
   });
   </script>
+<script>
+  const categories = ["宇宙入門", "月の不思議",, "アニメで学ぶ"];
+
+  const sidebar = document.getElementById("sidebar");
+
+  const ul = document.createElement("ul");
+  ul.classList.add("category-list");
+
+  categories.forEach(cat => {
+    const li = document.createElement("li");
+    li.textContent = cat;
+    ul.appendChild(li);
+  });
+
+  sidebar.appendChild(ul);
+</script>
   
 
 </body>
