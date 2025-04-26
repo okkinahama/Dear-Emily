@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/about-emily.css">
 </head>
 <body>
-  <section class="section about-emily" id="about-emily">
+  <section class="section about-emily fade-up" id="about-emily">
     <h2>About Emily</h2>
 
     <ul class="about-emily-links">
@@ -35,5 +35,20 @@
       </div>
     </div>
   </section>
+
+  <script>
+    // アニメーションの発火
+    window.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.fade-up');
+      const image = document.querySelector('.profile-image');
+      const text = document.querySelector('.about-text');
+
+      setTimeout(() => {
+        section.classList.add('visible');
+        image.classList.add('visible-image');
+        text.classList.add('visible-image');
+      }, 200); // 0.2秒遅れでふわっと
+    });
+  </script>
 </body>
 </html>
