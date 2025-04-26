@@ -853,40 +853,47 @@ footer nav a {
  </head>
  <body>
   <div class="top-menu-bar">
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="articles.html">Article-List</a></li>
-      <li><a href="about-emily.html">About</a></li>
-      <li><a href="contact.html">Contact US</a></li>
-    </ul>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#article-list">Article-List</a></li> <!-- 変更部分 -->
+        <li><a href="about-emily.html">About</a></li>
+        <li><a href="contact.html">Contact US</a></li>
+      </ul>
+    </nav>
   </div>
+    
   <header>
-  <div class="container">
-  <div class="hamburger-container">
-  <div class="hamburger-menu">
-  <span></span>
-  <span></span>
-  <span></span>
-  </div>
-  <div class="scrollable-menu">
-  <div class="scrollable-content">
-  <ul>
-  <li><a href="index.html">HOME</a></li>
-  <li><a href="#">Gallery</a></li>
-  <li><a href="articles.html">Article-List</a></li>
-  <li><a href="about-emily.html">About</a></li>
-  <li><a href="contact.html">Contact US</a></li>
-  </ul>
-  </div>
-  </div>
-  </div>
-  <div class="header-content">
-  <h1><a href="index.html">Dear Emily</a></h1>
-  <p class="site-description">宇宙をテーマにしたブログ</p>
-  </div>
-  </div>
+    <div class="container">
+      <!-- ハンバーガーアイコン -->
+      <div class="hamburger-container">
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+  
+      <!-- ナビゲーションメニュー -->
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="articles.html">Article-List</a></li>
+          <li><a href="about-emily.html">About</a></li>
+          <li><a href="contact.html">Contact US</a></li>
+        </ul>
+      </nav>
+  
+      <!-- サイトタイトル -->
+      <div class="header-content">
+        <h1><a href="index.html">Dear Emily</a></h1>
+        <p class="site-description">宇宙をテーマにしたブログ</p>
+      </div>
+    </div>
   </header>
+  
 
   
     <style class="container main-content">
@@ -921,7 +928,7 @@ footer nav a {
   
     <div class="parallax-space"></div>
   
-    <section class="articles" id="articles">
+    <section id="article-list" class="article-section">
       <h2>Article List</h2>
     
       <ul class="article-links">
@@ -958,7 +965,7 @@ footer nav a {
           <p>ジュピターのひみつと宇宙の嵐</p>
           <p class="article-date">投稿日：2025年4月26日</p>
         </article>
-        
+
       </div>
     </section>
 
