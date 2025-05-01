@@ -1,29 +1,29 @@
 [
     {"title":"きらめきの入口",
-     "url":"2025-04-24.space.openpage.html",
+     "url":"articles/2025-04-24.space.openpage.html",
      "date":"2025-04-24",
      "category":"space"
     },
     {
       "title": "お月さまの秘密",
-      "url": "space-moon.html",
+      "url": "articles/2025-04-23.space-moon.html",
       "date":"2025-04-23",
       "category":"space"
     },
     {
       "title": "宇宙ってどこから？",
-      "url": "space-boder.html",
+      "url": "articles/2025-04-22.space-boder.html",
       "date":"2025-04-22",
       "category":"space"
     },
     {
       "title": "火星ってどんな星？",
-      "url": "2025-04-25.space.mars.html",
+      "url": "articles/2025-04-25.space.mars.html",
       "date":"2025-04-25",
       "category":"space"
     },
     {"title":"ジュピターのひみつと宇宙の嵐",
-     "url":"2025-04-26.space.jupiter.html",
+     "url":"articles/2025-04-26.space.jupiter.html",
      "date":"2025-04-26",
      "category":"space"
     }
