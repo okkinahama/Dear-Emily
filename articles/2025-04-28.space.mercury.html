@@ -2,117 +2,80 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>水星とセーラーマーキュリーのひみつ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>冷静と情熱をあわせ持つ-水星のものがたり</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
     body {
-      font-family: 'Merriweather', 'Noto Sans JP', serif;
-      background: linear-gradient(to bottom, #0b0f1a 0%, #1e213a 100%);
+      font-family: 'Merriweather', serif;
+      background: linear-gradient(to bottom, #0b0f1a, #1e213a);
       color: #f5f5f5;
-      line-height: 2;
-      padding: 3rem 1.5rem;
-      max-width: 820px;
+      padding: 2rem;
+      max-width: 800px;
       margin: auto;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+      line-height: 1.8;
     }
-
-    h1, h2 {
-      color: #ffd8e4;
-      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 1rem;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      border-left: 5px solid #ffd1dc;
-      padding-left: 0.75rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05em;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .caption {
-      font-size: 0.9em;
-      color: #ccc;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    a {
-      color: #ffd1dc;
-      text-decoration: underline;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      text-shadow: 0 0 5px #ffd1dc;
-    }
-
-    .container {
-      animation: fadeIn 2s ease-in-out both;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    h1, h2 { color: #ffd8e4; }
+    h1 { font-size: 2em; text-align: center; margin-bottom: 1rem; }
+    h2 { font-size: 1.4em; margin-top: 2rem; border-left:4px solid #ffd1dc; padding-left:0.5rem; }
+    .section { opacity:0; transform:translateY(20px); transition: .8s; margin-bottom:2rem; }
+    .section.visible { opacity:1; transform:translateY(0); }
+    .points li { margin-bottom:.8rem; padding-left:1.2rem; position:relative; }
+    .points li:before { content:'•'; position:absolute; left:0; color:#ff8888; }
+    .quote { background: rgba(255,209,220,.1); border-left:4px solid #ffd1dc; padding:1rem; margin:1rem 0; font-style:italic; }
+    a { color:#ffd1dc; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>冷静と情熱をあわせ持つ、ちいさな惑星のものがたり</h1>
-  
-    <p>こんにちは、エミリー！</p>
-    <p>今日は、「セーラーマーキュリー」の名前にもなっている、本物の水星（すいせい）についてお話しするね！</p>
-    <p>水星は、太陽のすぐそばをくるくる回っている、とっても小さな惑星。マーキュリー（Mercury）って、英語で水星のことなんだよ！✨</p>
-  
-    <h2>🌟 水野亜美ちゃんと水星の共通点</h2>
-    <p>セーラーマーキュリーは知的で冷静、そして水をあやつるクールな戦士。</p>
-    <p>実は本物の水星も、とてもおもしろい特徴を持っているんだ！</p>
-    <ul>
-      <li>太陽にいちばん近い</li>
-      <li>昼間は400℃以上の暑さ！</li>
-      <li>夜は-170℃以下の寒さ！</li>
-    </ul>
-    <p>昼と夜で600℃以上も差がある水星は、まるで「冷静と情熱」をあわせ持つ亜美ちゃんみたいだね。</p>
-  
-    <h2>🔭 水星を調べたのは？</h2>
-    <p>NASAの探査機「メッセンジャー」が、2011年から4年間水星を観測して、たくさんの秘密を明かしてくれたよ！</p>
-    <p>クレーターだらけの地面や、影になった場所にひっそりと氷があることも発見されたんだ。</p>
-  
-    <h2>🌌 水星のふしぎポイント</h2>
-    <ul>
-      <li>水星の「1日」は地球の176日分！</li>
-      <li>「1年」はたった88日！</li>
-      <li>空気がほとんどない</li>
-      <li>重力が弱く、ジャンプすると高く跳ねられそう！</li>
-    </ul>
-  
-    <h2>最後に…</h2>
-    <p>水星は、熱さと冷たさ、静けさとダイナミックさをあわせ持つふしぎな星。</p>
-    <p>まるで、セーラーマーキュリーの静かな強さそのものだね。</p>
-    <p>いつか宇宙に行ったら、水星のクレーターをのぞいてみようね！🌙</p>
-  </div>
+  <article>
+    <h1>冷静と情熱をあわせ持つ、小さな惑星のものがたり</h1>
+
+    <div class="section">
+      <p>こんにちは、エミリー！今日は「セーラーマーキュリー」の名前にもなっている、“水星”について冒険しようよ。</p>
+      <p>水星は太陽のすぐそばをくるくる回る、小さくて速い惑星。まるで静かな知性と熱い情熱を秘めた水野亜美ちゃんのように、ふたつの顔を持っているんだ。</p>
+    </div>
+
+    <div class="section">
+      <h2>🌟 水星のふしぎポイント</h2>
+      <ul class="points">
+        <li><strong>最速の公転速度：</strong>秒速約47.4kmで、１周わずか88日。まるで全力疾走するヒーローみたい！</li>
+        <li><strong>極端な温度差：</strong>昼は約430℃、夜は-180℃、その差は610℃にもなるんだ。</li>
+        <li><strong>大気ほぼゼロ：</strong>空気がないから音は伝わらず、静寂の世界。</li>
+        <li><strong>クレーターに覆われた表面：</strong>隕石衝突の跡がそのまま残り、月に似た“あばた顔”。</li>
+        <li><strong>カロリス盆地：</strong>直径約1350kmの巨大クレーターは、火星のオリンポス山以上の規模。</li>
+        <li><strong>リンクル・リッジ：</strong>収縮でできた巨大な“シワ”が表面を縦断。</li>
+        <li><strong>氷のかくれが：</strong>永久影のクレーター底に、ひっそり氷が眠っているかも。</li>
+      </ul>
+      <div class="quote">
+        セーラーマーキュリー：「知識の水を得よ！」<br>
+        水星は冷静で深い知恵の象徴。その知的な力と、極端な環境の熱さをあわせ持つ星なんだよ。
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🔭 探査機メッセンジャーの挑戦</h2>
+      <p>NASAの探査機「メッセンジャー」は2011年から水星を4年間周回し、未知の表情を次々に明らかにしたよ。影の中の氷や、くぼみに積もる微細な塵まで、私たちの想像を超える情報を届けてくれたんだ。</p>
+      <p>さらに日本・欧州共同の「ベピ・コロンボ」では、2025年に到着してさらに詳しい観測が続く予定。水星が持つ“知の水滴”を、一滴残さず集めに行くんだね。</p>
+    </div>
+
+    <div class="section">
+      <h2>✨ 学んだことを胸に</h2>
+      <p>水星は、知性と情熱が交錯する不思議な星。昼の厳しい熱、夜の凍える寒さ、その両極を静かに受け入れる佇まいは、水野亜美ちゃんのクールさと優しさを思わせるよね。</p>
+      <p>次は火星で“情熱”を感じ、その次は木星で“守護”の力を学ぼう。Dear Emilyの宇宙探検は、まだまだ続くよ！</p>
+    </div>
+
+    <div class="section">
+      <h2>🔭 次のお話はこちら</h2>
+      <p><a href="mars-mystery.html">「セーラー・マーズに教わる火星のひみつ」</a></p>
+    </div>
+  </article>
+
+  <script>
+    document.querySelectorAll('.section').forEach(sec=>{
+      new IntersectionObserver(entries=>{
+        entries.forEach(e=> e.isIntersecting && e.target.classList.add('visible'));
+      },{threshold:0.3}).observe(sec);
+    });
+  </script>
 </body>
-</html>  
+</html>

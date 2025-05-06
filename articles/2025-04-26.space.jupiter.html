@@ -2,120 +2,130 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ジュピターのひみつと宇宙の嵐</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>大いなる守護の嵐をまといし、木星のものがたり</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Merriweather', serif;
-      background: linear-gradient(to bottom, #0b0f1a, #1a1d2e);
-      color: #f0f0f0;
-      line-height: 1.8;
+      background: linear-gradient(to bottom, #0b0f1a, #1e213a);
+      color: #f5f5f5;
       padding: 2rem;
       max-width: 800px;
       margin: auto;
+      line-height: 1.8;
     }
-    h1, h2 {
-      color: #ffd1dc;
-    }
+    h1, h2 { color: #ffd8e4; }
     h1 {
       font-size: 2em;
-      margin-bottom: 0.5em;
+      text-align: center;
+      margin-bottom: 1rem;
     }
     h2 {
       font-size: 1.4em;
-      margin-top: 2em;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 1rem 0;
-    }
-    .caption {
-      font-size: 0.9em;
-      color: #ccc;
-      text-align: center;
-      margin-bottom: 2rem;
+      margin-top: 2rem;
+      border-left: 4px solid #ffd1dc;
+      padding-left: 0.5rem;
     }
     .section {
-      margin-bottom: 2.5rem;
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
+      transform: translateY(20px);
+      transition: .8s;
+      margin-bottom: 2rem;
     }
     .section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    a {
-      color: #ffd1dc;
-      text-decoration: none;
+    .points li {
+      margin-bottom: .8rem;
+      padding-left: 1.2rem;
+      position: relative;
     }
-    a:hover {
-      text-decoration: underline;
+    .points li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #ff8888;
     }
+    .quote {
+      background: rgba(255,209,220,.1);
+      border-left: 4px solid #ffd1dc;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+    a { color: #ffd1dc; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>ジュピターのひみつと<br>宇宙の嵐 ☁️🪐⚡</h1>
+  <article>
+    <h1>大いなる守護の嵐をまといし、木星のものがたり</h1>
 
-    <p>ねえ、エミリー。<br>
-    夜空を見てると、どの星よりも明るくキラキラしてるの、気づいたことある？</p>
+    <div class="section">
+      <p>こんにちは、エミリー！今日は「セーラー・ジュピター」の名にちなんだ、太陽系最大の惑星・木星（Jupiter）について、一緒に学んでいこうね。</p>
+      <p>あの巨大な嵐と縞模様に包まれた姿は、まるで守護と力を司るジュピターのように、いつも私たちを見守ってくれているみたいだよ。</p>
+    </div>
 
-    <p>それ、もしかしたら「木星（ジュピター）」かもしれないよ。</p>
+    <div class="section">
+      <h2>🌟 木星の基本的な特徴</h2>
+      <ul class="points">
+        <li><strong>太陽系最大の王者：</strong>直径は地球の約11倍、体積は1321倍。質量は318倍を超え、太陽になりそびれた「未完の星」とも呼ばれるよ。</li>
+        <li><strong>ガスのかたまり：</strong>主成分は水素とヘリウム。固体の表面はなく、雲の上層しか見えない柔らかな雲の海なんだ。</li>
+        <li><strong>超高速自転：</strong>わずか約10時間で1回転するから、赤道がぽっこり膨らみ、極はきゅっと潰れた形に。</li>
+      </ul>
+      <div class="quote">
+        セーラー・ジュピター：「天空の雷よ、降りそそげ！」<br>
+        ジュピターは守護と勇気の戦士。木星もまた、荒れ狂う嵐と安定した巨大重力で、仲間を守る強さを示しているんだね。
+      </div>
+    </div>
 
-    <h2>🌀 ジュピターって、どんな星？</h2>
-    <p>木星はね、太陽のまわりを回る惑星の中でいちばん大きいんだよ。<br>
-    地球が約1,300個も入っちゃうくらいのサイズ！</p>
+    <div class="section">
+      <h2>☁️ 大気の縞模様と大赤斑</h2>
+      <ul class="points">
+        <li><strong>縞模様の秘密：</strong>冷たい雲と暖かい雲が帯状に並び、秒速150m以上の風が東西に吹き抜けるからできる波紋みたいな縞。</li>
+        <li><strong>大赤斑：</strong>地球が2個以上入るほどの巨大な高気圧渦。1664年に見つかって以来、300年以上も消えることなく渦巻き続けているんだ。</li>
+        <li><strong>小赤斑の登場：</strong>2005年には大赤斑の半分ほどの新しい渦「小赤斑」が出現し、大気は常にダイナミックに変動しているよ。</li>
+      </ul>
+    </div>
 
-    <p>ふわふわしたガスでできていて、足を踏みしめるような地面はないの。</p>
-    <p>まるで、巨大な雲の玉みたい。</p>
+    <div class="section">
+      <h2>🪐 衛星の王国──ガリレオ衛星たち</h2>
+      <ul class="points">
+        <li><strong>イオ：</strong>木星最接近。潮汐加熱で100以上の活火山が噴火し、表面は硫黄で黄色に輝くまさに「火の星」。</li>
+        <li><strong>エウロパ：</strong>氷に覆われたひび割れ地形の下に、深さ100kmの塩水の海がある可能性大！生命が住むかもしれない夢の海だよ。</li>
+        <li><strong>ガニメデ：</strong>太陽系最大の衛星で、水星より大きい！氷と水の海、酸素の薄い大気をまとい、生命の可能性を秘めているんだ。</li>
+        <li><strong>カリスト：</strong>たくさんのクレーターが残る「あばた顔」の衛星。氷と岩石の混ざった地殻の奥に、まだ秘密の海が眠っているかも？</li>
+      </ul>
+    </div>
 
-    <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/jupiter_true_color.jpg" alt="ジュピターの本物の写真">
-    <div class="caption">▲ NASAがとらえたジュピターの姿。色と模様がまるでアート。</div>
+    <div class="section">
+      <h2>🚀 探査の歩みとジュノーの挑戦</h2>
+      <p>1970年代のボイジャー探査機が初めて大赤斑を間近で撮影し、木星の雲の奥行きを教えてくれたんだ。その後、ガリレオ探査機が1995年から約8年間、衛星たちの詳細な観測を実施。</p>
+      <p>そして2016年、NASAのジュノーが到着。極域の多角形嵐や深い大気構造、強力な磁場を測定し、木星の内部に迫る新たなデータを送り続けているんだよ。</p>
+    </div>
 
-    <h2>🌪️ 宇宙最大の嵐「大赤斑」</h2>
-    <p>ジュピターには、ぐるぐる渦巻く巨大な「嵐」があるの。<br>
-    それが「大赤斑（だいせきはん）」と呼ばれるもの。</p>
+    <div class="section">
+      <h2>✨ まとめ：守護と癒しの星</h2>
+      <p>木星は、巨大な守護の渦と美しい縞模様が織りなす、「守りの力」と「変化のダイナミズム」を持つ星。</p>
+      <p>セーラー・ジュピターの強さと優しさのように、木星もまた、仲間たちを包み込む大きな存在として、太陽系を見守っているんだね。</p>
+      <p>次は、あの神秘的な輪をまとった「土星（セーラー・サターン）」に冒険に行こう！</p>
+    </div>
 
-    <p>この嵐、なんと地球がすっぽり入るほどの大きさなんだよ。</p>
-    <p>しかも、300年以上ずーっと回り続けてるって、すごくない？</p>
+    <div class="section">
+      <h2>🔭 次のお話はこちら</h2>
+      <p><a href="saturn-mystery.html">「セーラー・サターンが誘う、土星の秘密」</a></p>
+    </div>
+  </article>
 
-    <p>まるで宇宙の中にある、止まらないドラムロールのよう。</p>
-
-    <h2>🌕 ジュピターにはおともだちがいっぱい</h2>
-    <p>木星のまわりには、80個以上の「衛星（えいせい）」があるよ。</p>
-    <p>中でも「ガリレオ衛星」って呼ばれる4つの大きな月たちは、すごく個性的！</p>
-    <ul>
-      <li><strong>イオ：</strong>火山がブクブク、いちばん活発！</li>
-      <li><strong>エウロパ：</strong>氷の下に海があるかも？</li>
-      <li><strong>ガニメデ：</strong>太陽系で最大の月！</li>
-      <li><strong>カリスト：</strong>クレーターがいっぱいの古い世界</li>
-    </ul>
-
-    <p>どの月も、ひとつの物語を持ってるようで、まるで宇宙の絵本みたいだね。</p>
-
-    <h2>📡 探査機からのラブレター</h2>
-    <p>NASAの「ジュノー」という探査機が、今もジュピターの秘密を観察してるよ。</p>
-    <p>写真やデータを地球に送ってくれて、わたしたちはだんだんこの巨大な惑星を知りはじめてるの。</p>
-
-    <p>ジュピターはまだまだナゾに満ちた星。<br>
-    でもそれが、きっといちばんの魅力なんだよね。</p>
-
-    <h2>🪐 エミリーへ ― ガスの星からのメッセージ</h2>
-    <p>ジュピターは、遠く離れているけど、<br>
-    その存在はとっても身近にも感じられる。</p>
-
-    <p>空を見上げて、明るい星を見つけたとき、<br>
-    その向こうでぐるぐる回る宇宙の嵐を、ちょっとだけ想像してみて。</p>
-
-    <p>宇宙は大きくて、ちょっぴりこわい。でも、すごく美しい。</p>
-    <p>あなたの心のアンテナで、<br>
-    星たちのささやきを、そっとキャッチしてみてね🌟</p>
-
-    <p>また次のレッスンで、宇宙の旅を続けよう。</p>
-  </div>
+  <script>
+    document.querySelectorAll('.section').forEach(sec => {
+      new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, { threshold: 0.3 }).observe(sec);
+    });
+  </script>
 </body>
 </html>
