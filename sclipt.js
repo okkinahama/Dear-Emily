@@ -255,4 +255,11 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error("記事の読み込みエラー:", error));
   });
-  
+  // AdSense Scriptを追加
+(function() {
+    var script = document.createElement("script");
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954";
+    script.setAttribute("async", "true");
+    script.setAttribute("crossorigin", "anonymous");
+    document.head.appendChild(script);
+})();
