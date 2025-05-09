@@ -6,6 +6,74 @@
   <title>Dear Emily - アーカイブ</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f8f4ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            color: #7a52d1;
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .archive-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .archive-card {
+            background-color: #ffeefc;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .archive-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        .archive-card h2 {
+            font-family: 'Permanent Marker', cursive;
+            color: #ff7eb9;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .archive-card p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+        .archive-card a {
+            color: #7a52d1;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            border: 2px solid #7a52d1;
+            border-radius: 20px;
+            padding: 5px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .archive-card a:hover {
+            background-color: #7a52d1;
+            color: #fff;
+        }
+    </style>
 <body>
 
   <!-- すべての記事セクション -->
