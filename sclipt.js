@@ -186,4 +186,73 @@ document.addEventListener('DOMContentLoaded', () => {
   
     sections.forEach(section => observer.observe(section));
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('../posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        const postContainer = document.getElementById('all-posts');
+        const categoryFilter = document.getElementById('category-filter');
+        const tagFilter = document.getElementById('tag-filter');
+        const categories = new Set();
+        const tags = new Set();
+  
+        // カテゴリーとタグを収集
+        posts.forEach(post => {
+          categories.add(post.category);
+          post.tags.forEach(tag => tags.add(tag));
+        });
+  
+        // カテゴリーフィルタを追加
+        categories.forEach(category => {
+          const option = document.createElement('option');
+          option.value = category;
+          option.textContent = category;
+          categoryFilter.appendChild(option);
+        });
+  
+        // タグフィルタを追加
+        tags.forEach(tag => {
+          const option = document.createElement('option');
+          option.value = tag;
+          option.textContent = tag;
+          tagFilter.appendChild(option);
+        });
+  
+        // 記事を表示する関数
+        function displayPosts(filteredPosts) {
+          postContainer.innerHTML = '';
+          filteredPosts.forEach(post => {
+            const card = `
+              <div class="post-card">
+                <h2><a href="${post.url}">${post.title}</a></h2>
+                <p>${post.date}</p>
+                <p><strong>カテゴリ:</strong> ${post.category}</p>
+                <p><strong>タグ:</strong> ${post.tags.join(', ')}</p>
+              </div>
+            `;
+            postContainer.insertAdjacentHTML('beforeend', card);
+          });
+        }
+  
+        // フィルタ処理
+        function filterPosts() {
+          const selectedCategory = categoryFilter.value;
+          const selectedTag = tagFilter.value;
+          const filteredPosts = posts.filter(post => {
+            const matchCategory = selectedCategory === 'all' || post.category === selectedCategory;
+            const matchTag = selectedTag === 'all' || post.tags.includes(selectedTag);
+            return matchCategory && matchTag;
+          });
+          displayPosts(filteredPosts);
+        }
+  
+        // 初期表示
+        displayPosts(posts);
+  
+        // フィルタが変更されたときに再表示
+        categoryFilter.addEventListener('change', filterPosts);
+        tagFilter.addEventListener('change', filterPosts);
+      })
+      .catch(error => console.error("記事の読み込みエラー:", error));
+  });
   
