@@ -119,49 +119,74 @@
       transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* サイドメニュー全体 */
-    .scrollable-menu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100%;
-      background-color: #333;
-      color: #fff;
-      transform: translateX(-250px);
-      transition: transform 0.3s ease-in-out;
-      overflow-y: auto;
-      z-index: 1000;
-    }
+ /* サイドメニュー全体 */
+.scrollable-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(180deg, #2c2c2c 0%, #1e1e1e 100%);
+  color: #ffffff;
+  transform: translateX(-250px);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
 
-    .scrollable-menu.open {
-      transform: translateX(0);
-    }
+.scrollable-menu.open {
+  transform: translateX(0);
+}
 
-    /* サイドメニュー内のコンテンツ */
-    .scrollable-content {
-      padding: 20px;
-    }
+/* サイドメニュー内のコンテンツ */
+.scrollable-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .scrollable-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+.scrollable-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .scrollable-content ul li {
-      padding: 10px 0;
-      border-bottom: 1px solid #555;
-    }
+.scrollable-content ul li {
+  padding: 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
 
-    .scrollable-content ul li:last-child {
-      border-bottom: none;
-    }
+.scrollable-content ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
-    .scrollable-content a {
-      color: #fff;
-      text-decoration: none;
-    }
+.scrollable-content a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+}
+
+.scrollable-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .scrollable-menu {
+    width: 200px;
+    transform: translateX(-200px);
+  }
+  .scrollable-menu.open {
+    transform: translateX(0);
+  }
+}
+
 
     /* -------------------- */
     /* モバイル対応表示制御 */
@@ -873,7 +898,8 @@
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="archive.html">Archive</a></li>
-          <li><a href="articles.html">Article List</a></li> <li><a href="about-emily.html">About</a></li>
+          <li><a href="articles.html">Article List</a></li> 
+          <li><a href="about-emily.html">About</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
@@ -1194,6 +1220,63 @@
           });
       });
     </script>
+    <script src="script.js"></script>
+     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const posts = [
+        {
+          title: "宇宙ってどこから？",
+          date: "2025-04-21",
+          category: "宇宙",
+          link: "articles/space-boder.html"
+        },
+        {
+          title: "お月さまって、毎晩どうして形がちがうの？",
+          date: "2025-04-22",
+          category: "月",
+          link: "articles/space-moon.html"
+        },
+        {
+          title: "きらめきの入口",
+          date: "2025-04-24",
+          category: "宇宙",
+          link: "articles/2025-04-24.space.openpage.html"
+        },
+        {
+          title: "火星ってどんな星？",
+          date: "2025-04-25",
+          category: "惑星",
+          link: "articles/2025-04-25.space.mars.html"
+        },
+        {
+          title: "ジュピターって、どんな星？",
+          date: "2025-04-26",
+          category: "惑星",
+          link: "articles/2025-04-26.space.jupiter.html"
+        },
+      ];
+
+      const categories = {};
+      posts.forEach(post => {
+        if (!categories[post.category]) {
+          categories[post.category] = [];
+        }
+        categories[post.category].push(post);
+      });
+
+      const sidebar = document.getElementById("sidebar");
+      for (let cat in categories) {
+        const section = document.createElement("div");
+        section.innerHTML = `<h3>${cat}</h3>`;
+        categories[cat].forEach(post => {
+          const item = document.createElement("div");
+          item.innerHTML = `<a href="${post.link}">${post.title}</a>`;
+          section.appendChild(item);
+        });
+        sidebar.appendChild(section);
+      }
+    });
+  </script>
 
 </body>
 

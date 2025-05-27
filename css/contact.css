@@ -1,4 +1,14 @@
-/* css/contact.css */
+:root {
+    --primary-color: #86c1ff;
+    --primary-color-dark: #5aa3e8;
+    --primary-color-rgb: 134, 193, 255;
+    --bg-color-secondary: #1a1b2e;
+    --text-color-primary: #ffffff;
+    --text-color-secondary: #cccccc;
+    --border-color: #444455;
+    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
 .contact-form {
     padding: 40px 20px;
@@ -6,6 +16,9 @@
     border-radius: 8px;
     box-shadow: var(--box-shadow-light);
     margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-form h2 {
@@ -51,7 +64,8 @@
 }
 
 .form-item textarea {
-    resize: vertical; /* 縦方向のサイズ変更を可能にする */
+    resize: vertical;
+    min-height: 120px;
 }
 
 .form-item input[type="text"]:focus,
@@ -59,7 +73,7 @@
 .form-item textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(var(--primary-color-rgb), 0.5); /* --primary-color を RGB に変換する必要があるかもしれません */
+    box-shadow: 0 0 5px rgba(var(--primary-color-rgb), 0.5);
 }
 
 .contact-form button[type="submit"] {
@@ -71,7 +85,7 @@
     border-radius: 6px;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease;
     font-weight: bold;
     box-shadow: var(--box-shadow-light);
 }
@@ -82,7 +96,12 @@
     transform: translateY(-2px);
 }
 
-/* 必要に応じてレスポンシブ対応 */
+.contact-form button[type="submit"]:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
     .contact-form {
         padding: 30px 15px;
@@ -94,5 +113,15 @@
 
     .contact-form p {
         font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form h2 {
+        font-size: 1.6em;
+    }
+
+    .contact-form p {
+        font-size: 0.95em;
     }
 }
