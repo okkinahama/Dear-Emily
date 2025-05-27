@@ -768,4 +768,98 @@ footer nav ul li a:hover {
     margin-top: 20px;
     font-style: italic;
 }
-  
+/* ファイルパス: ../css/style.css */
+
+/* 全体のスタイル */
+body {
+    font-family: 'Merriweather', serif;
+    background: linear-gradient(to bottom, #0b0f1a, #1a1d2e);
+    color: #f5f5f5;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* タイトル (h1) のスタイル */
+h1 {
+    text-align: center;
+    color: #ffd8e4;
+    font-size: 2em;
+    margin-bottom: 1rem;
+}
+
+/* コンテンツ全体を囲むコンテナのスタイル */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background: #1a1a1a;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* 各セクションのスタイル (アニメーション用) */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* transitionプロパティを修正 */
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2em;
+}
+
+/* セクションが表示された時のスタイル */
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ページ番号のスタイル */
+.page-number {
+    font-weight: bold;
+    color: #ffd8e4;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+}
+
+/* 本文テキストのスタイル */
+.text {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+    white-space: pre-line; /* 改行を保持 */
+}
+
+/* 画像とそのキャプションを囲むラッパーのスタイル */
+.image-wrapper {
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+/* 画像のスタイル */
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 影を追加 */
+}
+
+/* 画像キャプション (figcaption) のスタイル */
+figcaption {
+    font-size: 0.95em;
+    background: rgba(142, 202, 230, 0.1);
+    padding: 1em;
+    border-left: 4px solid #8ecae6;
+    border-radius: 5px;
+    color: #f5f5f5;
+    margin-top: 1em; /* 画像とキャプションの間隔 */
+}
+
+/* レスポンシブ対応 (画面幅600px以下の場合) */
+@media (max-width: 600px) {
+    .container {
+        padding: 1em;
+    }
+    .text {
+        font-size: 1.1em;
+    }
+}  
