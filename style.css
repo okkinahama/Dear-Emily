@@ -1,24 +1,22 @@
-/* Google Fontsの読み込み (Noto Sans JP, Montserrat, Merriweather) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+/* Google Fontsの読み込み (Noto Sans JPとMontserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
 
 /* 変数定義 (カラーパレットとタイポグラフィ) */
 :root {
     --primary-color: #2962ff; /* SFアニメ的な明るいブルー (アクセント) */
     --primary-color-dark: #0d47a1;
     --secondary-color: #64b5f6; /* 少し明るいブルー (サブアクセント) */
-    --text-color-primary: #f0f0f0; /* 全体の主要な文字色 (白系) */
-    --text-color-secondary: #cccccc; /* 少し薄めの文字色 (グレー系) */
-    --bg-color-primary: #0b0f1a; /* 主要な背景色 (非常に濃い青) */
-    --bg-color-secondary: #1a1d2e; /* カードなどの背景色 (濃い青) */
-    --border-color: #333; /* ダークテーマのボーダー色 */
-    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.2); /* 軽めの影 */
-    --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4); /* 中程度の影 */
+    --text-color-primary: #2e2e2e; /* より深い黒に近い文字色 */
+    --text-color-secondary: #5a5a5a; /* 少し薄めの文字色 */
+    --bg-color-primary: #f7faff; /* より明るい背景色 */
+    --bg-color-secondary: #fff;
+    --border-color: #e0e0e0;
+    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
     --font-family-japanese: 'Noto Sans JP', sans-serif;
     --font-family-english: 'Montserrat', sans-serif;
-    --font-family-serif-popular: 'Merriweather', serif;
     --line-height-body: 1.8;
     --letter-spacing-body: 0.01em;
-    --highlight-color: #ffd1dc; /* 主要なアクセントカラー (ピンク系) */
 }
 
 /* スムーズスクロール */
@@ -28,12 +26,12 @@ html {
 
 /* 全体的なスタイル */
 body {
-    font-family: var(--font-family-serif-popular), var(--font-family-japanese);
+    font-family: var(--font-family-japanese);
     font-size: 16px;
     line-height: var(--line-height-body);
     letter-spacing: var(--letter-spacing-body);
     margin: 0;
-    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary)); /* 星空のようなグラデーション背景 */
+    background-color: var(--bg-color-primary);
     color: var(--text-color-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -45,17 +43,16 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
-    position: relative; /* ヘッダー内の子要素のposition:absolute基準点 */
 }
 
 a {
-    color: var(--highlight-color);
+    color: var(--primary-color);
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: #ffc0cb; /* ホバー時のリンク色 */
+    color: var(--primary-color-dark);
     text-decoration: underline;
 }
 
@@ -64,20 +61,25 @@ a:focus {
     outline-offset: 2px;
 }
 
-/* --- ヘッダー --- */
+/* ヘッダー */
 header {
-    height: 100vh; /* ヘッダーの高さを画面いっぱいに */
-    background-image: url('../images/Gemini_Generated_Image_wcygglwcygglwcyg.jpg'); /* 背景画像 */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
+    background-color: var(--bg-color-secondary);
+    color: var(--text-color-primary);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow-light);
+    z-index: 100;
     display: flex;
-    align-items: center;
-    justify-content: center; /* コンテンツを中央に配置 */
-    width: 100%;
+    align-items: center; /* 垂直方向中央揃え（コンテンツを中央に配置する場合） */
+    justify-content: space-between; /* ハンバーガーメニューとロゴを左右に配置 */
+    padding: 15px 20px;
     box-sizing: border-box;
-    padding: 0;
+    width: 100%; /* ヘッダーの幅を画面いっぱいに */
+    height: 100vh; /* ← ヘッダーの高さを画面いっぱいに */
+    background-image: url('../images/Gemini_Generated_Image_wcygglwcygglwcyg.jpg'); /* ← 画像のパスを修正 */
+    background-size: cover; /* ヘッダー領域を完全に覆うように画像を拡大縮小 */
+    background-position: center center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    position: relative; /* オーバーレイのためにposition: relative を追加 */
 }
 
 header::before {
@@ -87,69 +89,50 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒色オーバーレイ */
-    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* 半透明の黒色のオーバーレイ (必要に応じて調整) */
+    z-index: 0; /* 背景画像の上に配置 */
 }
 
 header .container {
     display: flex;
-    flex-direction: column; /* コンテンツを縦並びに */
-    align-items: center; /* 水平方向中央揃え */
-    justify-content: center; /* 垂直方向中央揃え */
+    align-items: center; /* 垂直方向中央揃え（コンテンツを中央に配置する場合） */
+    justify-content: space-between; /* ハンバーガーメニューとロゴを左右に配置 */
     width: 100%;
-    height: 100%;
-    max-width: 1080px;
-    position: relative;
-    z-index: 1;
-    text-align: center;
+    height: auto; /* コンテンツの高さは自動調整 */
+    max-width: 1080px; /* コンテンツの最大幅は維持 */
+    margin: 0 auto; /* 中央寄せを維持 */
+    position: relative; /* ヘッダー内の要素の基準位置 */
+    z-index: 1; /* 背景画像とオーバーレイより手前に表示 */
 }
 
 .header-content {
-    color: white;
-    position: relative;
+    color: white; /* 必要に応じてテキストの色を変更 */
+    position: relative; /* オーバーレイより手前に表示 */
     z-index: 2;
-    text-align: center;
-    max-width: 800px; /* テキストの幅を制限 */
-    /* ヘッダーコンテンツを中央に配置するためのマージン調整 */
-    margin: auto; 
-}
-
-.header-content h1 {
-    margin: 0;
-    font-family: var(--font-family-english);
-    font-size: 3.5em;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* 影で光る効果 */
+    text-align: center; /* 必要に応じてテキストを中央揃え */
 }
 
 .header-content h1 a,
 .header-content .site-description {
-    color: white;
+    color: white; /* テキストの色を白に変更 */
 }
 
-.site-description {
-    font-size: 1.2em;
-    margin-top: 10px;
-}
-
-/* --- パララックスセクション (例) --- */
 .parallax-space {
-    background-image: url("images/iss072e278609_large.jpg");
-    height: 500px;
+    background-image: url("images/iss072e278609_large.jpg"); /* 宇宙っぽい画像をここに */
+    height: 500px; /* 高さはお好みで */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* --- ハンバーガーメニューコンテナ (モバイル用) --- */
+/* ハンバーガーメニューコンテナ */
 .hamburger-container {
-    position: absolute; /* header .container 内に配置したのでabsoluteに */
-    top: 20px;
-    left: 20px;
-    display: block; /* デフォルトで表示 (モバイル時) */
+    position: relative; /* .scrollable-menu の基準位置 */
+    display: block; /* モバイル表示で表示 */
     cursor: pointer;
     padding: 10px;
-    z-index: 103; /* ナビゲーションより手前 */
+    z-index: 103;
 }
 
 @media (min-width: 769px) {
@@ -163,8 +146,8 @@ header .container {
     display: block;
     cursor: pointer;
     z-index: 103;
-    width: 30px;
-    height: 24px;
+    width: 30px; /* アイコンの幅を少し大きく */
+    height: 24px; /* アイコンの高さを調整 */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -174,13 +157,13 @@ header .container {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: white;
-    border-radius: 2px;
+    background-color: white; /* ハンバーガーメニューの色を白に変更 */
+    border-radius: 2px; /* 少し角を丸く */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .hamburger-menu.open span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg); /* 移動量を調整 */
 }
 
 .hamburger-menu.open span:nth-child(2) {
@@ -188,30 +171,35 @@ header .container {
 }
 
 .hamburger-menu.open span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg); /* 移動量を調整 */
 }
 
-/* --- スクロール可能なメニュー (サイドメニューとして機能) --- */
+/* スクロール可能なメニュー */
 .scrollable-menu {
-    position: fixed; /* 画面に固定 */
-    top: 0;
+    position: absolute;
+    top: 100%; /* ハンバーガーメニューの下に配置 */
     left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #333; /* ダークな背景 */
-    color: #fff;
-    transform: translateX(-250px); /* 最初は非表示 */
-    transition: transform 0.3s ease-in-out;
-    overflow-y: auto;
-    z-index: 1000; /* 最前面に */
+    width: 220px; /* 幅を少し広く */
+    max-height: 300px; /* 適切な最大高さを設定 */
+    background-color: rgba(255, 255, 255, 0.95); /* より不透明に */
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow-medium); /* 少し強めの影 */
+    overflow-y: auto; /* 縦方向にスクロールバーを表示 */
+    opacity: 0;
+    transform: translateY(-10px); /* 初期位置を少し上に */
+    visibility: hidden;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+    z-index: 102; /* ハンバーガーメニューアイコンより手前に */
 }
 
 .scrollable-menu.open {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .scrollable-content {
-    padding: 20px;
+    padding: 15px; /* パディングを少し大きく */
 }
 
 .scrollable-content ul {
@@ -221,39 +209,37 @@ header .container {
 }
 
 .scrollable-content ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .scrollable-content ul li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* 最後のボーダーを削除 */
 }
 
 .scrollable-content ul li a {
     display: block;
-    padding: 12px 15px;
-    color: #fff;
+    padding: 12px 15px; /* パディングを調整 */
+    color: var(--text-color-primary);
     text-decoration: none;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .scrollable-content ul li a:hover {
-    background-color: #555;
-    color: var(--highlight-color);
+    background-color: var(--bg-color-primary);
+    color: var(--primary-color); /* ホバー時の文字色 */
 }
 
-/* --- ナビゲーション (PC表示) --- */
+/* ナビゲーション (PC表示) */
 .nav-links {
     display: none; /* モバイル表示では非表示 */
-    position: absolute; /* ヘッダーの右上に固定 */
-    top: 20px;
-    right: 20px;
-    z-index: 2;
 }
 
 @media (min-width: 769px) {
     .nav-links {
-        display: block; /* PC表示では表示 */
+        display: flex;
+        align-items: center;
+        position: relative; /* オーバーレイより手前に表示 */
+        z-index: 2;
     }
 
     .nav-links ul {
@@ -273,7 +259,7 @@ header .container {
     }
 
     .nav-links ul li a {
-        color: white;
+        color: white; /* ナビゲーションリンクの色を白に変更 */
         font-size: 1.1em;
         font-weight: 400;
         transition: color 0.2s ease-in-out;
@@ -281,7 +267,7 @@ header .container {
     }
 
     .nav-links ul li a:hover {
-        color: lightgray;
+        color: lightgray; /* ホバー時の色を変更 */
     }
 
     .nav-links ul li a.active {
@@ -290,223 +276,126 @@ header .container {
     }
 }
 
-/* --- APODセクション (今日の宇宙画像) --- */
-#apod-hero {
-    margin-bottom: 40px; /* 下の余白を多めに */
-    padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
+/* ヒーローセクション */
+.hero {
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: none; /* 影をなくす */
+    height: 400px;
+    background-color: transparent; /* セクション全体の背景を透明に */
 }
 
-#apod-container-hero {
-    padding: 25px; /* パディングを調整 */
-    border: 1px solid var(--border-color);
-    border-radius: 12px; /* 角丸を大きく */
-    background-color: var(--bg-color-secondary);
-    text-align: center;
-    max-width: 960px;
-    margin: 0 auto;
-    box-shadow: var(--box-shadow-medium); /* 影を強調 */
+.hero-image {
+    display: none; /* 背景画像を完全に非表示にする */
 }
 
-#apod-title-hero {
-    font-size: 1.8em; /* 見出しを大きく */
-    margin-bottom: 15px;
-    color: var(--highlight-color);
-    font-family: var(--font-family-english);
-    letter-spacing: 0.02em;
-}
-
-#apod-media-container-hero {
-    margin-bottom: 20px;
-}
-
-#apod-image-hero, #apod-media-container-hero iframe { /* iframeにもスタイル適用 */
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: var(--box-shadow-light);
-}
-
-#apod-explanation-hero {
-    line-height: 1.7;
-    margin-bottom: 15px;
-    font-size: 1em;
-    text-align: left;
-    color: var(--text-color-secondary);
-}
-
-#apod-copyright-hero {
-    font-size: 0.85em;
-    color: var(--text-color-secondary);
-    text-align: right;
-    opacity: 0.8;
-}
-
-/* --- 記事一覧セクション (class="articles" に変更) --- */
-.articles {
-    margin-top: 50px;
+.hero-text {
+    position: relative; /* 背景画像がないので絶対配置でなくてもOK */
+    background-color: transparent; /* 背景を完全に透明に */
+    color: #fff; /* 文字を白に */
     padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-.articles h2 { /* HTMLで追加したh2に対応 */
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: var(--highlight-color);
+.hero-text h2 {
+    font-family: var(--font-family-english);
+    font-size: 2.0em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #fff; /* 白に変更 */
+    letter-spacing: -0.01em;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    color: #fff; /* 白に変更 */
+    line-height: 1.7;
+}
+
+.hero .read-more {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: var(--bg-color-secondary);
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: var(--box-shadow-light);
+    margin-top: 15px;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hero .read-more:hover {
+    background-color: var(--primary-color-dark);
+    box-shadow: var(--box-shadow-medium);
+    transform: translateY(-2px);
+}
+
+/* 記事一覧 */
+.articles h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: var(--text-color-primary);
     border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 15px;
+    padding-bottom: 12px;
     font-weight: 700;
     letter-spacing: -0.01em;
-    text-align: center;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-}
-
-.articles h2::after {
-    content: "✦";
-    font-size: 1.5em;
-    color: #ffb6c1;
-    position: absolute;
-    right: 0;
-    bottom: -5px;
-}
-
-.article-links {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto 50px auto;
-    text-align: center;
-    max-width: 960px;
-}
-
-.article-links li {
-    display: inline-block;
-    margin: 0 12px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px 25px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.article-links li:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px);
-}
-
-.article-links a {
-    text-decoration: none;
-    font-family: var(--font-family-english);
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.1em;
 }
 
 .article-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    max-width: 960px;
-    margin: 0 auto 60px auto;
+    margin-bottom: 40px;
 }
 
-.article-card {
+.article-list article a {
+    display: block;
     background-color: var(--bg-color-secondary);
-    padding: 25px;
-    border-radius: 12px;
-    -webkit-backdrop-filter: blur(5px); /* Safari対応 */
-    backdrop-filter: blur(5px);
-    box-shadow: var(--box-shadow-medium);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 182, 193, 0.1);
-}
-
-.article-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(255, 182, 193, 0.4);
-}
-
-.article-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
-    color: var(--highlight-color);
-    font-family: var(--font-family-japanese);
-}
-
-.article-card h3 a {
-    text-decoration: none;
-    color: var(--highlight-color);
-}
-
-.article-card h3 a:hover {
-    color: #f9a8d4;
-    text-decoration: underline;
-}
-
-.article-date {
-    font-size: 0.95em;
-    opacity: 0.8;
-    color: #ffc0cb;
-    margin-top: 10px;
-    display: block;
-}
-
-/* --- 個別記事の構造スタイル (詳細ページ用) --- */
-.article-detail {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background: var(--bg-color-secondary);
-    border-radius: 12px;
-    box-shadow: var(--box-shadow-medium);
-    color: var(--text-color-primary);
-}
-
-.article-detail h1 {
-    font-family: var(--font-family-english);
-    font-size: 2.8em;
-    color: var(--highlight-color);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.article-detail .article-meta {
-    font-size: 0.9em;
-    color: var(--text-color-secondary);
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.article-detail img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: var(--box-shadow-light);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
-.article-detail p {
-    font-family: var(--font-family-japanese);
-    font-size: 1.1em;
-    line-height: 1.8;
-    margin-bottom: 1.5em;
+.article-list article a:hover {
+    box-shadow: var(--box-shadow-medium);
+}
+
+.article-list article img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-list article h3 {
+    font-size: 1.4em;
+    margin: 15px 20px 10px;
     color: var(--text-color-primary);
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
-/* --- ページネーション --- */
+.article-list article .article-meta {
+    font-size: 0.9em;
+    color: var(--text-color-secondary);
+    margin: 0 20px 10px;
+}
+
+.article-list article .article-excerpt {
+    font-size: 1em;
+    color: var(--text-color-secondary);
+    line-height: 1.6;
+    margin: 0 20px 20px;
+}
+
 .pagination {
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .pagination a {
@@ -516,14 +405,13 @@ header .container {
     border: 1px solid var(--border-color);
     border-radius: 4px;
     color: var(--text-color-primary);
-    background-color: var(--bg-color-secondary);
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
 
 .pagination a:hover {
-    background-color: var(--primary-color-dark);
-    color: var(--bg-color-primary);
-    border-color: var(--primary-color-dark);
+    background-color: var(--bg-color-secondary);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .pagination a.current {
@@ -532,239 +420,80 @@ header .container {
     border-color: var(--primary-color);
 }
 
-/* --- About Emilyセクション --- */
+/* About Emily セクション - 統合・整理版 */
 .about-emily {
-    background-color: rgba(255, 255, 255, 0.05); /* 半透明の背景 */
-    padding: 40px;
-    margin: 60px auto;
+    background-color: var(--bg-color-secondary);
+    padding: 40px 20px;
+    margin: 0 auto 60px auto; /* 上下左右中央寄せ、下に60pxのマージン */
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* 光る影 */
-    color: #ffffff;
+    box-shadow: var(--box-shadow-light);
     max-width: 960px;
+    color: var(--text-color-primary);
 }
 
 .about-emily h2 {
-    font-family: var(--font-family-english);
-    font-size: 2.5em;
+    font-size: 2.2em;
+    color: var(--text-color-primary);
+    font-weight: 700;
+    letter-spacing: -0.01em;
     text-align: center;
-    color: var(--highlight-color);
-    margin-bottom: 30px;
-    letter-spacing: 0.05em;
+    margin-bottom: 25px;
 }
 
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: center; /* アイテムを垂直方向中央に揃える */
     gap: 30px;
-    flex-wrap: wrap; /* 小さい画面で折り返す */
-    justify-content: center; /* 折り返した時に中央寄せ */
+    flex-wrap: wrap; /* コンテンツが幅を超える場合に折り返す */
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    flex: 0 0 120px; /* 伸縮せず、基本幅120px */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* 円形画像 */
     object-fit: cover;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* 光る縁 */
-    border: 3px solid var(--highlight-color); /* アクセントカラーの縁 */
-    flex-shrink: 0;
+    box-shadow: var(--box-shadow-light);
 }
 
 .about-text {
-    flex: 1;
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: var(--text-color-secondary);
-    text-align: left;
+    flex: 1; /* 残りのスペースを占める */
+    min-width: 250px; /* 折り返し前の最小幅 */
 }
 
 .about-text p {
-    margin-bottom: 1em;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--text-color-secondary);
+    margin-bottom: 1em; /* 段落間のスペース */
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
 }
 
 .from-author {
-    margin-top: 1.5em;
+    width: 100%; /* .about-content内でflexアイテムの後に改行して表示する場合 */
+    margin-top: 20px;
     font-style: italic;
-    color: var(--highlight-color);
-    text-align: right;
-    font-size: 0.95em;
-}
-
-/* --- 宇宙天気情報コンテナ --- */
-.space-weather-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブな2カラム */
-    gap: 30px; /* アイテム間のスペース */
-    margin-top: 50px;
-    padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.space-weather-item {
-    background-color: var(--bg-color-secondary);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
-}
-
-.space-weather-item h2 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    color: var(--highlight-color);
-    font-family: var(--font-family-english);
-}
-
-.space-weather-item ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.space-weather-item ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 1em;
     color: var(--text-color-secondary);
+    text-align: right;
 }
 
-.space-weather-item ul li:last-child {
-    border-bottom: none;
-}
-
-/* --- 宇宙ニュースセクション --- */
-.space-news-section {
-    background-color: var(--bg-color-secondary);
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 50px; /* このセクションがhero内にネストされている場合、適切なマージンに調整してください */
-    color: var(--text-color-primary);
-    width: 100%;
-    box-sizing: border-box;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
-}
-
-.space-news-section h3 {
-    font-size: 1.6em;
-    color: var(--highlight-color);
-    margin-bottom: 20px;
-    font-family: var(--font-family-english);
-}
-
-#space-news div {
-    margin-bottom: 15px;
-}
-
-#space-news a {
-    color: var(--text-color-primary);
-    text-decoration: none;
-    display: block;
-    padding: 5px 0;
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-#space-news a:hover {
-    text-decoration: underline;
-    color: var(--highlight-color);
-}
-
-/* --- カテゴリーと最新記事セクションのスタイル (追加) --- */
-#sidebar {
-    max-width: 960px;
-    margin: 40px auto;
-    padding: 25px;
-    background-color: var(--bg-color-secondary);
-    border-radius: 12px;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
-}
-
-#sidebar h2, .latest-posts h2 {
-    font-size: 1.8em;
-    color: var(--highlight-color);
-    margin-bottom: 20px;
-    font-family: var(--font-family-english);
-    text-align: center;
-}
-
-#sidebar .category-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-#sidebar .category-list li {
-    background-color: var(--primary-color-dark);
-    color: var(--text-color-primary);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-#sidebar .category-list li:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.latest-posts {
-    max-width: 960px;
-    margin: 40px auto 60px auto;
-    padding: 25px;
-    background-color: var(--bg-color-secondary);
-    border-radius: 12px;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
-}
-
-.latest-posts div {
-    margin-bottom: 10px;
-}
-
-.latest-posts a {
-    color: var(--text-color-primary);
-    text-decoration: none;
-    font-size: 1em;
-}
-
-.latest-posts a:hover {
-    color: var(--highlight-color);
-    text-decoration: underline;
-}
-
-
-/* --- フッター --- */
+/* フッター */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--bg-color-secondary);
+    color: var(--text-color-secondary);
     border-top: 1px solid var(--border-color);
     padding: 30px 20px;
     text-align: center;
     font-size: 0.9em;
-    margin-top: 60px;
-    box-sizing: border-box;
 }
 
 footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1080px;
-    margin: 0 auto;
 }
 
 footer nav ul {
@@ -783,73 +512,97 @@ footer nav ul li:first-child {
 }
 
 footer nav ul li a {
-    color: #fff;
+    color: var(--text-color-secondary);
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
 footer nav ul li a:hover {
-    color: var(--highlight-color);
+    color: var(--primary-color-dark);
 }
 
-/* --- レスポンシブデザイン --- */
+/* レスポンシブデザイン */
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
     }
 
-    header {
-        height: auto;
-        padding-bottom: 40px;
-    }
-
     header .container {
-        padding: 80px 15px 20px 15px;
-        align-items: center;
-        justify-content: flex-start;
-        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        height: auto; /* モバイルでは自動調整 */
     }
 
     .header-content {
-        text-align: center;
-        margin-bottom: 0;
-    }
-
-    .header-content h1 {
-        font-size: 2.5em;
-    }
-
-    .site-description {
-        font-size: 1em;
-    }
-
-    .hamburger-container {
-        position: fixed; /* 常に左上に固定 */
-        top: 15px;
-        left: 15px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    /* About Emilyセクション */
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-image {
+        text-align: left;
         margin-bottom: 20px;
     }
 
-    /* 宇宙天気情報コンテナ */
-    .space-weather-container {
-        grid-template-columns: 1fr; /* 1カラム表示に */
-        gap: 20px; /* アイテム間のスペースを調整 */
+    .nav-links { /* PC用ナビゲーションはモバイルで非表示のまま */
+        /* display: none; は既にデフォルトで設定されている */
+        width: 100%; /* ハンバーガーメニューで開閉する場合のスタイル */
     }
 
-    /* フッター */
+    .nav-links.open { /* ハンバーガーメニューで開いた時のスタイル */
+        display: block; /* JavaScriptで .open クラスをトグルすることを想定 */
+        margin-top: 10px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links ul li {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .nav-links ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .hero {
+        height: auto;
+    }
+
+    .hero-image { /* モバイルではヒーロー画像を表示する想定に戻す場合 */
+        /* display: block; 元のCSSではnoneだったため、必要なら変更 */
+        position: relative;
+        background-attachment: scroll; /* パララックス効果はモバイルでは解除推奨 */
+        height: 300px; /* モバイル用の高さを設定 */
+        /* background-image, size, position等は .hero から継承または再指定 */
+    }
+
+    .hero-text { /* モバイルでのヒーローテキストの調整 */
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: 20px; /* 画像がある場合はマージン調整 */
+        background-color: var(--bg-color-secondary); /* 背景を不透明に */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-light);
+        color: var(--text-color-primary); /* 文字色を通常に戻す */
+    }
+    
+    .hero-text h2, .hero-text p { /* ヒーローテキスト内の文字色を通常に戻す */
+        color: var(--text-color-primary);
+    }
+    /* モバイルのヒーローテキストの文字色を白のままにする場合は上記を削除または調整 */
+
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* .about-text内のテキストも中央揃えになる */
+    }
+
+    .profile-image {
+        margin-bottom: 20px; /* 画像の下にマージン */
+    }
+
     footer .container {
         flex-direction: column;
         align-items: center;
@@ -864,21 +617,5 @@ footer nav ul li a:hover {
     footer nav ul li {
         margin-left: 0;
         margin-bottom: 10px;
-    }
-
-    /* 記事一覧 */
-    .article-list {
-        grid-template-columns: 1fr; /* 1カラム表示に */
-        gap: 30px;
-    }
-
-    /* カテゴリーと最新記事セクション */
-    #sidebar, .latest-posts {
-        margin: 20px auto;
-        padding: 20px;
-    }
-
-    #sidebar h2, .latest-posts h2 {
-        font-size: 1.5em;
     }
 }
