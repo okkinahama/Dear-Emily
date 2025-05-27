@@ -11,8 +11,6 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
         crossorigin="anonymous"></script>
 </head>
@@ -28,25 +26,15 @@
             </ul>
         </div>
     </div>
-
-    <div class="top-menu-bar">
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="archive.html">Archive</a></li>
-                <li><a href="articles.html">Article List</a></li>
-                <li><a href="about-emily.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
     
     <header>
         <div class="container">
-            <div class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hamburger-container">
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
             
             <div class="header-content">
@@ -69,9 +57,9 @@
     <main>
         <section id="apod-hero">
             <div id="apod-container-hero">
-                <h2 id="apod-title-hero">Comet SWAN</h2>
+                <h2 id="apod-title-hero"></h2> 
                 <div id="apod-media-container-hero">
-                    <img id="apod-image-hero" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                    <img id="apod-image-hero" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="今日の宇宙画像">
                 </div>
                 <p id="apod-explanation-hero"></p>
                 <p id="apod-copyright-hero"></p>
@@ -93,8 +81,7 @@
     
         <div class="parallax-space"></div>
     
-        <section id="article-list" class="article-section">
-            <ul class="article-links">
+        <section class="articles"> <h2>最新の記事</h2> <ul class="article-links">
                 <li><a href="articles.html">Go to Article List</a></li>
             </ul>
         
@@ -133,7 +120,7 @@
 
         <aside id="sidebar">
             <h2>カテゴリーで探す</h2>
-            </aside>
+        </aside>
 
         <section class="latest-posts">
             <h2>最新記事</h2>
@@ -145,9 +132,6 @@
                 <img src="images/Gemini_Generated_Image_749bad749bad749b.jpg" alt="Emilyのプロフィール画像" class="profile-image">
                 <div class="about-text">
                     <h2>About Emily</h2>
-                    <ul class="about-emily-links">
-                        <li><a href="about-emily.html">About Emily</a></li>
-                    </ul>
                     <p>
                         ねぇエミリー。<br><br>
                         「なんでこんなに宇宙を扱った作品が多いの？」って、<br>
@@ -207,14 +191,17 @@
                 });
             }
 
+            // APIキーは本番環境ではサーバーサイドの環境変数に設定することを強く推奨します
+            // ここに実際のNASA APIキーを入力してください
+            const NASA_API_KEY = 'YOUR_NASA_API_KEY'; 
+
             // APOD (今日の宇宙画像) の取得と表示
             const apodContainerHero = document.getElementById('apod-container-hero');
             const apodTitleHero = document.getElementById('apod-title-hero');
             const apodMediaContainerHero = document.getElementById('apod-media-container-hero');
             const apodExplanationHero = document.getElementById('apod-explanation-hero');
             const apodCopyrightHero = document.getElementById('apod-copyright-hero');
-            const apiKeyApod = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // APIキーを正しいものに置き換えてください
-            const apodApiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
+            const apodApiUrl = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`;
 
             fetch(apodApiUrl)
                 .then(response => response.ok ? response.json() : Promise.reject(`HTTP error! status: ${response.status}`))
@@ -238,7 +225,10 @@
                             img.alt = data.title;
                             img.style.maxWidth = '100%';
                             img.style.height = 'auto';
-                            apodMediaContainerHero.appendChild(img);
+                            img.appendChild(img); // ここを修正: img要素自体をappendChildする
+                            // 元のコード: apodMediaContainerHero.appendChild(img); で正しかったですが、重複してappendするとエラーになります。
+                            // img.appendChild(img); は間違いです。
+                            apodMediaContainerHero.appendChild(img); // 正しい書き方
                         }
                     }
                 })
@@ -250,9 +240,8 @@
 
             // 太陽フレア情報の取得と表示
             const solarFlareContainer = document.getElementById('solar-flare-container');
-            const apiKeyDonki = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // APIキーを正しいものに置き換えてください
             const todayDonki = new Date().toISOString().slice(0, 10);
-            const solarFlareApiUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${apiKeyDonki}`;
+            const solarFlareApiUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${NASA_API_KEY}`;
 
             fetch(solarFlareApiUrl)
                 .then(response => response.ok ? response.json() : Promise.reject(`DONKI API error! status: ${response.status}`))
@@ -264,9 +253,9 @@
                                 html += `<li>
                                     <strong>開始日時:</strong> ${flare.beginTime}<br>
                                     <strong>ピーク日時:</strong> ${flare.peakTime}<br>
-                                    <strong>終了日時:</strong> ${flare.endTime}<br>
-                                    <strong>強度:</strong> ${flare.classType}<br>
-                                    <strong>領域:</strong> ${flare.sourceLocation}
+                                    <strong>終了日時:</strong> ${flare.endTime || 'N/A'}<br>
+                                    <strong>強度:</strong> ${flare.classType || 'N/A'}<br>
+                                    <strong>領域:</strong> ${flare.sourceLocation || 'N/A'}
                                 </li>`;
                             });
                             html += '</ul>';
@@ -283,7 +272,7 @@
 
             // 地磁気嵐情報の取得と表示
             const geomagneticStormContainer = document.getElementById('geomagnetic-storm-container');
-            const geomagneticStormApiUrl = `https://api.nasa.gov/DONKI/GST?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${apiKeyDonki}`; // APIキーを正しいものに置き換えてください
+            const geomagneticStormApiUrl = `https://api.nasa.gov/DONKI/GST?startDate=${todayDonki}&endDate=${todayDonki}&api_key=${NASA_API_KEY}`;
 
             fetch(geomagneticStormApiUrl)
                 .then(response => response.ok ? response.json() : Promise.reject(`DONKI API error! status: ${response.status}`))
@@ -294,9 +283,9 @@
                             data.forEach(storm => {
                                 html += `<li>
                                     <strong>開始日時:</strong> ${storm.beginTime}<br>
-                                    <strong>Kp指数:</strong> ${storm.kpIndex}<br>
-                                    <strong>強度:</strong> ${storm.gstID}<br>
-                                    <strong>ソース:</strong> ${storm.source}</li>`;
+                                    <strong>Kp指数:</strong> ${storm.kpIndex || 'N/A'}<br>
+                                    <strong>強度:</strong> ${storm.gstID || 'N/A'}<br>
+                                    <strong>ソース:</strong> ${storm.source || 'N/A'}</li>`;
                             });
                             html += '</ul>';
                             geomagneticStormContainer.innerHTML = html;
@@ -311,7 +300,7 @@
                 });
         });
     </script>
-
+        
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const feedUrl = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
@@ -342,12 +331,11 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // "About Emily"セクションを動的に読み込むためのプレースホルダーが存在するか確認
+            // "About Emily"セクションはHTMLに直接記述されているため、動的な読み込みは不要です。
+            // もし外部ファイルから読み込むように変更したい場合は、以下のコメントアウトを解除し、HTMLの該当部分を削除してください。
+            /*
             const aboutEmilySection = document.querySelector('.section.about-emily');
             if (aboutEmilySection) {
-                // ここで動的に読み込むのではなく、直接HTMLに記述されている内容を使用
-                // もし外部ファイルから読み込むように変更したい場合は、以下のコメントアウトを解除し、HTMLの該当部分を削除
-                /*
                 fetch('about-emily.html')
                     .then(response => {
                         if (!response.ok) {
@@ -356,14 +344,13 @@
                         return response.text();
                     })
                     .then(html => {
-                        // 既に存在する.about-emilyの中身を置き換える
                         aboutEmilySection.innerHTML = html; 
                     })
                     .catch(error => {
                         console.error('About Emily セクションの読み込みエラー:', error);
                     });
-                */
             }
+            */
         });
     </script>
         
@@ -394,26 +381,26 @@
         });
     </script>
         
-<script>
-    const categories = ["space", "月の不思議", "アニメで学ぶ", "深宇宙", "星座"]; // カテゴリリストを拡張
+    <script>
+        const categories = ["space", "月の不思議", "アニメで学ぶ", "深宇宙", "星座"]; // カテゴリリストを拡張
 
-    const sidebar = document.getElementById("sidebar");
+        const sidebar = document.getElementById("sidebar");
 
-    if (sidebar) { // sidebar要素が存在するか確認
-        const ul = document.createElement("ul");
-        ul.classList.add("category-list");
+        if (sidebar) { // sidebar要素が存在するか確認
+            const ul = document.createElement("ul");
+            ul.classList.add("category-list");
 
-        categories.forEach(cat => {
-            const li = document.createElement("li");
-            li.textContent = cat;
-            // カテゴリクリックで記事をフィルタリングする機能などをここに追加できます
-            // 例: li.addEventListener('click', () => filterArticlesByCategory(cat));
-            ul.appendChild(li);
-        });
+            categories.forEach(cat => {
+                const li = document.createElement("li");
+                li.textContent = cat;
+                // カテゴリクリックで記事をフィルタリングする機能などをここに追加できます
+                // 例: li.addEventListener('click', () => filterArticlesByCategory(cat));
+                ul.appendChild(li);
+            });
 
-        sidebar.appendChild(ul);
-    }
-</script>
+            sidebar.appendChild(ul);
+        }
+    </script>
 
 </body>
 </html>
