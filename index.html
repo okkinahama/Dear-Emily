@@ -119,72 +119,96 @@
       transform: translateY(-9px) rotate(-45deg);
     }
 
- /* サイドメニュー全体 */
-.scrollable-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background: linear-gradient(180deg, #2c2c2c 0%, #1e1e1e 100%);
-  color: #ffffff;
-  transform: translateX(-250px);
-  transition: transform 0.3s ease-in-out;
-  overflow-y: auto;
-  z-index: 1000;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  #sidebar {
+      background: rgba(255, 255, 255, 0.1); /* 透明感あるホワイト背景 */
+      border-radius: 16px; /* やさしい丸み */
+      padding: 20px;
+      margin-top: 40px;
+      /* Safari対応：-webkit-を先に */
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      font-family: 'Noto Sans JP', sans-serif;
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* ふわっとした影 */
+      /* おまけ：かわいいアニメーション（任意） */
+      transition: all 0.3s ease;
+    }
+
+    #sidebar:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px rgba(255, 255, 255, 0.15);
+    }
+
+    #sidebar h2 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 8px;
+    }
+
+    .category-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .category-list li {
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .category-list li:hover {
+      color: #ffd6f6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* 見出し */
+.sidebar-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+  color: #fff;
 }
 
-.scrollable-menu.open {
-  transform: translateX(0);
-}
-
-/* サイドメニュー内のコンテンツ */
-.scrollable-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.scrollable-content ul {
+/* 最新記事リスト */
+.latest-posts {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
-.scrollable-content ul li {
-  padding: 10px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
+.latest-posts li {
+  padding: 8px 0;
+  border-bottom: 1px solid #555;
 }
 
-.scrollable-content ul li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.latest-posts li:last-child {
+  border-bottom: none;
 }
 
-.scrollable-content a {
-  color: #ffffff;
+.latest-posts a {
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
   display: block;
+  transition: color 0.2s ease;
 }
 
-.scrollable-content a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .scrollable-menu {
-    width: 200px;
-    transform: translateX(-200px);
-  }
-  .scrollable-menu.open {
-    transform: translateX(0);
-  }
+.latest-posts a:hover {
+  color: #ffd700;
 }
 
 
@@ -822,60 +846,6 @@
       margin-left: 10px;
     }
 
-    #sidebar {
-      background: rgba(255, 255, 255, 0.1); /* 透明感あるホワイト背景 */
-      border-radius: 16px; /* やさしい丸み */
-      padding: 20px;
-      margin-top: 40px;
-      /* Safari対応：-webkit-を先に */
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      font-family: 'Noto Sans JP', sans-serif;
-      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* ふわっとした影 */
-      /* おまけ：かわいいアニメーション（任意） */
-      transition: all 0.3s ease;
-    }
-
-    #sidebar:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 20px rgba(255, 255, 255, 0.15);
-    }
-
-    #sidebar h2 {
-      font-size: 1.5em;
-      margin-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 8px;
-    }
-
-    .category-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .category-list li {
-      padding: 8px 0;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .category-list li:hover {
-      color: #ffd6f6;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 </head>
 
@@ -1220,63 +1190,8 @@
           });
       });
     </script>
-    <script src="script.js"></script>
-     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const posts = [
-        {
-          title: "宇宙ってどこから？",
-          date: "2025-04-21",
-          category: "宇宙",
-          link: "articles/space-boder.html"
-        },
-        {
-          title: "お月さまって、毎晩どうして形がちがうの？",
-          date: "2025-04-22",
-          category: "月",
-          link: "articles/space-moon.html"
-        },
-        {
-          title: "きらめきの入口",
-          date: "2025-04-24",
-          category: "宇宙",
-          link: "articles/2025-04-24.space.openpage.html"
-        },
-        {
-          title: "火星ってどんな星？",
-          date: "2025-04-25",
-          category: "惑星",
-          link: "articles/2025-04-25.space.mars.html"
-        },
-        {
-          title: "ジュピターって、どんな星？",
-          date: "2025-04-26",
-          category: "惑星",
-          link: "articles/2025-04-26.space.jupiter.html"
-        },
-      ];
 
-      const categories = {};
-      posts.forEach(post => {
-        if (!categories[post.category]) {
-          categories[post.category] = [];
-        }
-        categories[post.category].push(post);
-      });
-
-      const sidebar = document.getElementById("sidebar");
-      for (let cat in categories) {
-        const section = document.createElement("div");
-        section.innerHTML = `<h3>${cat}</h3>`;
-        categories[cat].forEach(post => {
-          const item = document.createElement("div");
-          item.innerHTML = `<a href="${post.link}">${post.title}</a>`;
-          section.appendChild(item);
-        });
-        sidebar.appendChild(section);
-      }
-    });
-  </script>
+  
 
 </body>
 
