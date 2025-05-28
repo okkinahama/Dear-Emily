@@ -67,7 +67,7 @@ a:focus {
 /* --- ヘッダー --- */
 header {
     height: 100vh; /* ヘッダーの高さを画面いっぱいに */
-    background-image: url('images/iss072e278609_large.jpg');
+    background-image: url('../images/20240913-subaru-fig2-full.jpg');
  /* 背景画像 */
     background-size: cover;
     background-position: center center;
