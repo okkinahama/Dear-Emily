@@ -150,6 +150,15 @@ header .container {
     background-repeat: no-repeat;
     background-size: cover;
 }
+/* モバイル（パララックス非対応端末）向けの調整 */
+@media (max-width: 768px) {
+  .parallax-space {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    height: 300px; /* スマホでは高さを少し縮めると見やすい */
+  }
+}
 
 /* --- ハンバーガーメニューコンテナ (モバイル用) --- */
 .hamburger-container {
@@ -603,30 +612,37 @@ header .container {
 /* --- 宇宙天気情報コンテナ --- */
 .space-weather-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブな2カラム */
-    gap: 30px; /* アイテム間のスペース */
-    margin-top: 50px;
-    padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
-    max-width: 960px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    padding: 0 24px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* 宇宙天気アイテム */
 .space-weather-item {
-    background-color: var(--bg-color-secondary);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.06); /* 半透明の幻想感 */
+    -webkit-backdrop-filter: blur(10px); /* Safari対応 */
+    backdrop-filter: blur(10px); /* ガラスっぽいぼかし */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease;
+}
+.space-weather-item:hover {
+    transform: translateY(-5px);
 }
 
 .space-weather-item h2 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    color: var(--highlight-color);
-    font-family: var(--font-family-english);
+    font-size: 1.8em;
+    margin-bottom: 16px;
+    color: #FFDEB8; /* 柔らかな宇宙色 */
+    font-family: 'Zen Maru Gothic', serif;
 }
 
 .space-weather-item ul {
@@ -637,9 +653,9 @@ header .container {
 
 .space-weather-item ul li {
     padding: 10px 0;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 1em;
-    color: var(--text-color-secondary);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 1.05em;
+    color: #E5F4FF; /* やさしいブルー系 */
 }
 
 .space-weather-item ul li:last-child {
@@ -648,44 +664,46 @@ header .container {
 
 /* --- 宇宙ニュースセクション --- */
 .space-news-section {
-    background-color: var(--bg-color-secondary);
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 50px; /* このセクションがhero内にネストされている場合、適切なマージンに調整してください */
-    color: var(--text-color-primary);
-    width: 100%;
-    box-sizing: border-box;
-    max-width: 960px;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(8px); /* Safari対応 */
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 16px;
+    margin-top: 70px;
+    color: #EAEAEA;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .space-news-section h3 {
-    font-size: 1.6em;
-    color: var(--highlight-color);
+    font-size: 1.8em;
+    color: #FFD3E0; /* ほのかなピンクトーン */
     margin-bottom: 20px;
-    font-family: var(--font-family-english);
+    font-family: 'Zen Maru Gothic', serif;
 }
 
 #space-news div {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 #space-news a {
-    color: var(--text-color-primary);
+    color: #D6F0FF;
     text-decoration: none;
     display: block;
-    padding: 5px 0;
-    font-size: 1em;
-    line-height: 1.5;
+    padding: 6px 0;
+    font-size: 1.05em;
+    line-height: 1.6;
+    transition: all 0.2s ease;
 }
 
 #space-news a:hover {
     text-decoration: underline;
-    color: var(--highlight-color);
+    color: #FFBBE6;
 }
+
 
 /* --- カテゴリーと最新記事セクションのスタイル (追加) --- */
 #sidebar {
@@ -731,30 +749,90 @@ header .container {
     transform: translateY(-2px);
 }
 
-.latest-posts {
-    max-width: 960px;
-    margin: 40px auto 60px auto;
-    padding: 25px;
-    background-color: var(--bg-color-secondary);
-    border-radius: 12px;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
+/* 最新記事リスト */
+#latest-posts h2 {
+  font-size: 1.8rem;
+  color: #ffd7f7;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.latest-posts div {
-    margin-bottom: 10px;
+.latest-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.latest-posts li {
+  display: flex;
+  align-items: center;
+  background-color: #2d2d5a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.latest-posts li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.latest-posts img {
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+
+.latest-posts .post-info {
+  padding: 0.8rem;
+  color: #fff;
+  flex: 1;
 }
 
 .latest-posts a {
-    color: var(--text-color-primary);
-    text-decoration: none;
-    font-size: 1em;
+  color: #ffd7f7;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 4px;
+  transition: color 0.2s ease;
 }
 
 .latest-posts a:hover {
-    color: var(--highlight-color);
-    text-decoration: underline;
+  color: #ff85c1;
 }
+
+.latest-posts .meta {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+/* スマホ用レイアウト調整 */
+@media (max-width: 600px) {
+  .latest-posts li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .latest-posts img {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #444;
+  }
+
+  .latest-posts .post-info {
+    padding: 0.8rem 1rem;
+  }
+
+  .latest-posts a {
+    font-size: 1rem;
+  }
+}
+
 
 
 /* --- フッター --- */

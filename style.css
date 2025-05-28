@@ -66,20 +66,29 @@ a:focus {
 
 /* --- ヘッダー --- */
 header {
-    height: 100vh; /* ヘッダーの高さを画面いっぱいに */
-    background-image: url('images/20240913-subaru-fig2-full.jpg');
- /* 背景画像 */
+    height: 100vh;
+    background-image: url('../images/20240913-subaru-fig2-full.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center top; /* 重要：星雲の密集部分を優先表示 */
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center; /* コンテンツを中央に配置 */
+    justify-content: center;
     width: 100%;
     box-sizing: border-box;
     padding: 0;
+    background-attachment: fixed; /* パララックス風効果 */
 }
+
+/* モバイルなど縦が強調される場合、背景位置を調整 */
+@media (max-width: 768px) {
+    header {
+        background-position: center center;
+        background-size: contain; /* はみ出し防止（または cover のままでも可） */
+    }
+}
+
 
 header::before {
     content: "";
@@ -140,6 +149,15 @@ header .container {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+/* モバイル（パララックス非対応端末）向けの調整 */
+@media (max-width: 768px) {
+  .parallax-space {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    height: 300px; /* スマホでは高さを少し縮めると見やすい */
+  }
 }
 
 /* --- ハンバーガーメニューコンテナ (モバイル用) --- */
@@ -731,30 +749,90 @@ header .container {
     transform: translateY(-2px);
 }
 
-.latest-posts {
-    max-width: 960px;
-    margin: 40px auto 60px auto;
-    padding: 25px;
-    background-color: var(--bg-color-secondary);
-    border-radius: 12px;
-    box-shadow: var(--box-shadow-light);
-    border: 1px solid var(--border-color);
+/* 最新記事リスト */
+#latest-posts h2 {
+  font-size: 1.8rem;
+  color: #ffd7f7;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.latest-posts div {
-    margin-bottom: 10px;
+.latest-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.latest-posts li {
+  display: flex;
+  align-items: center;
+  background-color: #2d2d5a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.latest-posts li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.latest-posts img {
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+
+.latest-posts .post-info {
+  padding: 0.8rem;
+  color: #fff;
+  flex: 1;
 }
 
 .latest-posts a {
-    color: var(--text-color-primary);
-    text-decoration: none;
-    font-size: 1em;
+  color: #ffd7f7;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 4px;
+  transition: color 0.2s ease;
 }
 
 .latest-posts a:hover {
-    color: var(--highlight-color);
-    text-decoration: underline;
+  color: #ff85c1;
 }
+
+.latest-posts .meta {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+/* スマホ用レイアウト調整 */
+@media (max-width: 600px) {
+  .latest-posts li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .latest-posts img {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #444;
+  }
+
+  .latest-posts .post-info {
+    padding: 0.8rem 1rem;
+  }
+
+  .latest-posts a {
+    font-size: 1rem;
+  }
+}
+
 
 
 /* --- フッター --- */
