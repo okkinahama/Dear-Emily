@@ -18,7 +18,8 @@
 </head>
 
 <body>
-  <div class="scrollable-menu">
+  <div class="container">
+    <div class="scrollable-menu" id="sideMenu">
     <div class="scrollable-content">
       <ul>
         <li><a href="index.html">HOME</a></li>
@@ -44,12 +45,12 @@
     </div>
 
     <header>
-      <div class="container">
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <div class="hamburger-container">
+    <div class="hamburger-menu" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
         <nav class="nav-links">
           <ul>
@@ -460,6 +461,7 @@ fetch('posts.json')  // JSONのパスを正しく
     });
 });
 </script>
+
 
 </body>
 

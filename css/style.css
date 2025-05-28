@@ -25,6 +25,52 @@
 html {
     scroll-behavior: smooth;
 }
+/* ナビゲーションの横並びスタイル */
+.top-menu-bar {
+  background-color: #0c0c2d;
+  padding: 12px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.main-nav li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
+}
+
+.main-nav li a:hover {
+  background-color: #ffd700;
+  color: #0c0c2d;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-nav li a {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+}
+
 
 /* 全体的なスタイル */
 body {
@@ -78,7 +124,6 @@ header {
     width: 100%;
     box-sizing: border-box;
     padding: 0;
-    background-attachment: fixed; /* パララックス風効果 */
 }
 
 /* モバイルなど縦が強調される場合、背景位置を調整 */
