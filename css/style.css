@@ -66,20 +66,29 @@ a:focus {
 
 /* --- ヘッダー --- */
 header {
-    height: 100vh; /* ヘッダーの高さを画面いっぱいに */
+    height: 100vh;
     background-image: url('../images/20240913-subaru-fig2-full.jpg');
- /* 背景画像 */
     background-size: cover;
-    background-position: center center;
+    background-position: center top; /* 重要：星雲の密集部分を優先表示 */
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center; /* コンテンツを中央に配置 */
+    justify-content: center;
     width: 100%;
     box-sizing: border-box;
     padding: 0;
+    background-attachment: fixed; /* パララックス風効果 */
 }
+
+/* モバイルなど縦が強調される場合、背景位置を調整 */
+@media (max-width: 768px) {
+    header {
+        background-position: center center;
+        background-size: contain; /* はみ出し防止（または cover のままでも可） */
+    }
+}
+
 
 header::before {
     content: "";
