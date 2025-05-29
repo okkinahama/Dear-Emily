@@ -598,16 +598,21 @@ body {
     opacity: 0.8;
 }
 
-/* About Emilyセクション */
+/* About Emilyセクションの修正 */
 .about-emily {
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 40px;
+    padding: 40px; /* もしcontainerの外で左右いっぱいにするなら0 */
     margin: 60px auto;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     color: #ffffff;
-    max-width: 960px;
-    text-align: center; /* ← 追加 */
+    max-width: none; /* ← これを削除 */
+    width: 100%; /* 親要素の幅いっぱいに広がる */
+    text-align: left; /* テキストを左揃えにする場合 */
+}
+
+.about-emily h2 {
+    text-align: center; /* タイトルは中央揃えを維持 */
 }
 
 .about-text {
@@ -615,17 +620,7 @@ body {
     font-size: 1.1em;
     line-height: 1.8;
     color: var(--text-color-secondary);
-    /* text-align: left; ← これがあると中央揃えにならないので削除またはcenterに変更 */
-    text-align: center; /* ← 変更 */
-}
-
-.from-author {
-    margin-top: 1.5em;
-    font-style: italic;
-    color: var(--highlight-color);
-    /* text-align: right; ← これがあると中央揃えにならないので削除またはcenterに変更 */
-    text-align: center; /* ← 変更 */
-    font-size: 0.95em;
+    text-align: left; /* これは既にleftなのでOK */
 }
 
 /* --- 宇宙天気情報コンテナ --- */
