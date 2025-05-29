@@ -54,9 +54,9 @@ body {
 }
 
 .container {
-    max-width: 1080px;
+    /* max-width: 1080px;  削除 */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px; /* PC表示時のパディングを調整 */
     box-sizing: border-box;
     position: relative; /* ヘッダー内の子要素のposition:absolute基準点 */
 }
@@ -278,7 +278,7 @@ header .container {
         list-style: none;
         padding: 0;
         margin: 0;
-        display: flex;
+        display: flex; /* ここをflexboxに変更して横並びにします */
         align-items: center;
     }
 
@@ -311,7 +311,7 @@ header .container {
 /* --- APODセクション (今日の宇宙画像) --- */
 #apod-hero {
     margin-bottom: 40px; /* 下の余白を多めに */
-    padding: 0 20px;
+    padding: 0 40px; /* PC表示時のパディングを調整 */
     width: 100%;
     box-sizing: border-box;
 }
@@ -322,7 +322,7 @@ header .container {
     border-radius: 12px; /* 角丸を大きく */
     background-color: var(--bg-color-secondary);
     text-align: center;
-    max-width: 960px;
+    max-width: 960px; /* APODセクション自体は読みやすさのため幅を制限 */
     margin: 0 auto;
     box-shadow: var(--box-shadow-medium); /* 影を強調 */
 }
@@ -364,7 +364,7 @@ header .container {
 /* --- 記事一覧セクション (class="articles" に変更) --- */
 .articles {
     margin-top: 50px;
-    padding: 20px;
+    padding: 20px 40px; /* PC表示時のパディングを調整 */
     width: 100%;
     box-sizing: border-box;
     background-color: transparent;
@@ -379,7 +379,7 @@ header .container {
     font-weight: 700;
     letter-spacing: -0.01em;
     text-align: center;
-    max-width: 960px;
+    max-width: 960px; /* h2の幅は制限 */
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -399,7 +399,7 @@ header .container {
     padding: 0;
     margin: 20px auto 50px auto;
     text-align: center;
-    max-width: 960px;
+    max-width: 960px; /* リンクの幅は制限 */
 }
 
 .article-links li {
@@ -429,7 +429,7 @@ header .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    max-width: 960px;
+    max-width: 960px; /* 記事リストの幅は制限 */
     margin: 0 auto 60px auto;
 }
 
@@ -522,7 +522,7 @@ header .container {
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
-    max-width: 960px;
+    max-width: 960px; /* ページネーションの幅は制限 */
     margin-left: auto;
     margin-right: auto;
 }
@@ -558,7 +558,7 @@ header .container {
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* 光る影 */
     color: #ffffff;
-    max-width: 960px;
+    max-width: 960px; /* 幅は制限 */
 }
 
 .about-emily h2 {
@@ -614,10 +614,10 @@ header .container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブな2カラム */
     gap: 30px; /* アイテム間のスペース */
     margin-top: 50px;
-    padding: 0 20px;
+    padding: 0 40px; /* PC表示時のパディングを調整 */
     width: 100%;
     box-sizing: border-box;
-    max-width: 960px;
+    max-width: 960px; /* 幅は制限 */
     margin-left: auto;
     margin-right: auto;
 }
@@ -663,7 +663,7 @@ header .container {
     color: var(--text-color-primary);
     width: 100%;
     box-sizing: border-box;
-    max-width: 960px;
+    max-width: 960px; /* 幅は制限 */
     margin-left: auto;
     margin-right: auto;
     box-shadow: var(--box-shadow-light);
@@ -697,7 +697,7 @@ header .container {
 
 /* --- カテゴリーと最新記事セクションのスタイル (追加) --- */
 #sidebar {
-    max-width: 960px;
+    max-width: 960px; /* 幅は制限 */
     margin: 40px auto;
     padding: 25px;
     background-color: var(--bg-color-secondary);
@@ -740,7 +740,7 @@ header .container {
 }
 
 .latest-posts {
-    max-width: 960px;
+    max-width: 960px; /* 幅は制限 */
     margin: 40px auto 60px auto;
     padding: 25px;
     background-color: var(--bg-color-secondary);
@@ -769,7 +769,7 @@ footer {
     background-color: #333;
     color: #fff;
     border-top: 1px solid var(--border-color);
-    padding: 30px 20px;
+    padding: 30px 40px; /* PC表示時のパディングを調整 */
     text-align: center;
     font-size: 0.9em;
     margin-top: 60px;
@@ -780,7 +780,7 @@ footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1080px;
+    /* max-width: 1080px;  削除 */
     margin: 0 auto;
 }
 
@@ -812,7 +812,7 @@ footer nav ul li a:hover {
 /* --- レスポンシブデザイン --- */
 @media (max-width: 768px) {
     .container {
-        padding: 0 15px;
+        padding: 0 15px; /* モバイル表示時は狭いパディングを維持 */
     }
 
     header {
@@ -864,12 +864,14 @@ footer nav ul li a:hover {
     .space-weather-container {
         grid-template-columns: 1fr; /* 1カラム表示に */
         gap: 20px; /* アイテム間のスペースを調整 */
+        padding: 0 15px;
     }
 
     /* フッター */
     footer .container {
         flex-direction: column;
         align-items: center;
+        padding: 0 15px;
     }
 
     footer nav ul {
@@ -884,6 +886,9 @@ footer nav ul li a:hover {
     }
 
     /* 記事一覧 */
+    .articles {
+        padding: 20px 15px;
+    }
     .article-list {
         grid-template-columns: 1fr; /* 1カラム表示に */
         gap: 30px;
@@ -897,5 +902,9 @@ footer nav ul li a:hover {
 
     #sidebar h2, .latest-posts h2 {
         font-size: 1.5em;
+    }
+
+    .space-news-section {
+        padding: 20px;
     }
 }
