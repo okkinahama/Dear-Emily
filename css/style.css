@@ -841,62 +841,81 @@ footer nav ul li a:hover {
         display: none;
     }
 
-    /* --- About Emilyセクション --- */
+/* --- About Emilyセクション --- */
 .about-emily {
-    background-color: rgba(255, 255, 255, 0.05); /* 半透明の背景 */
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 40px;
     margin: 60px auto;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* 光る影 */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     color: #ffffff;
-    max-width: 960px;
+    max-width: 960px; /* 必要であればmax-widthを調整 */
+    
+    /* ここを元の状態に戻すか、text-align: left; を明示的に指定 */
+    /* text-align: center; ← 削除または left に変更 */
+    text-align: left; /* ← テキストを左揃えに戻す */
+
+    /* Flexboxコンテナとして設定（もし画像とテキストが縦並びになった場合） */
+    display: flex; /* ← これがないと画像とテキストが横並びにならない */
+    flex-direction: row; /* ← 横並び */
+    align-items: flex-start; /* ← 上揃え (必要に応じて center などに調整) */
+    gap: 30px; /* ← 画像とテキストの間の隙間 */
+    flex-wrap: wrap; /* ← モバイルで折り返すため */
+    justify-content: center; /* コンテンツ全体を中央揃えにする場合 */
+}
+
+@media (max-width: 768px) {
+    .about-emily {
+        flex-direction: column; /* モバイルでは縦並び */
+        align-items: center; /* 縦並び時に中央揃え */
+    }
 }
 
 .about-emily h2 {
-    font-family: var(--font-family-english);
-    font-size: 2.5em;
-    text-align: center;
-    color: var(--highlight-color);
-    margin-bottom: 30px;
-    letter-spacing: 0.05em;
+    text-align: center; /* タイトルは中央揃えを維持 */
+    margin-bottom: 30px; /* タイトルとコンテンツの間に余白 */
+    width: 100%; /* Flexアイテム内で幅いっぱいに */
 }
 
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap; /* 小さい画面で折り返す */
-    justify-content: center; /* 折り返した時に中央寄せ */
+.about-image {
+    flex-shrink: 0; /* 画像が縮まないように */
+    margin-bottom: 20px; /* モバイルでの画像下の余白 */
+    width: 250px; /* 画像の幅を固定 (必要に応じて調整) */
+    height: auto; /* 高さは自動調整 */
+    border-radius: 50%; /* 円形にする */
+    object-fit: cover; /* 画像がはみ出さないように */
+    border: 3px solid var(--highlight-color);
+    box-shadow: var(--box-shadow-medium);
 }
 
-.profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* 光る縁 */
-    border: 3px solid var(--highlight-color); /* アクセントカラーの縁 */
-    flex-shrink: 0;
+@media (min-width: 769px) {
+    .about-image {
+        margin-bottom: 0; /* PCでは下の余白をなくす */
+        width: 300px; /* PCでの画像幅を少し大きく (必要に応じて調整) */
+    }
 }
 
 .about-text {
-    flex: 1;
+    flex: 1; /* 残りのスペースを埋める */
     font-size: 1.1em;
     line-height: 1.8;
     color: var(--text-color-secondary);
-    text-align: left;
-}
-
-.about-text p {
-    margin-bottom: 1em;
+    text-align: left; /* ← ここを左揃えに戻す！ */
 }
 
 .from-author {
     margin-top: 1.5em;
     font-style: italic;
     color: var(--highlight-color);
-    text-align: right;
+    text-align: right; /* ← これは右揃えに戻すか、left/centerにするか選択 */
     font-size: 0.95em;
+    width: 100%; /* Flexアイテム内で幅いっぱいに */
+}
+
+/* bodyの全体設定でtext-align: center; を残す場合、個別で上書きが必要 */
+body {
+    /* ... 既存のスタイル ... */
+    text-align: center; /* ← これは残す */
 }
 
     /* 宇宙天気情報コンテナ */
