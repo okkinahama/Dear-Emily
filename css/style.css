@@ -46,13 +46,15 @@ body {
     font-size: 16px;
     line-height: var(--line-height-body);
     letter-spacing: var(--letter-spacing-body);
-    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary)); /* 星空のようなグラデーション背景 */
+    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
     color: var(--text-color-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    /* ここに text-align: center; を追加すると、body内のすべてのテキストがデフォルトで中央揃えになる */
+    /* ただし、一部のセクションで左寄せが望ましい場合は、個別に text-align: left; で上書きする必要がある */
+    text-align: center; /* ← 追加 */
 }
-
 .container {
     /* max-width: 1080px; 削除 */
     margin: 0 auto;
@@ -333,59 +335,34 @@ header .container {
     }
 }
 
-/* --- APODセクション (今日の宇宙画像) --- */
-#apod-hero {
-    margin-bottom: 40px; /* 下の余白を多めに */
-    padding: 0 40px; /* PC表示時のパディングを調整 */
-    width: 100%;
-    box-sizing: border-box;
-}
-
+/* APODセクション (説明文は中央揃えにしないことが多いが、要望に応じて) */
 #apod-container-hero {
-    padding: 25px; /* パディングを調整 */
+    padding: 25px;
     border: 1px solid var(--border-color);
-    border-radius: 12px; /* 角丸を大きく */
+    border-radius: 12px;
     background-color: var(--bg-color-secondary);
-    text-align: center;
-    max-width: 960px; /* APODセクション自体は読みやすさのため幅を制限 */
+    text-align: center; /* ← 変更: 画像や説明文を中央揃えにする */
+    max-width: 960px;
     margin: 0 auto;
-    box-shadow: var(--box-shadow-medium); /* 影を強調 */
-}
-
-#apod-title-hero {
-    font-size: 1.8em; /* 見出しを大きく */
-    margin-bottom: 15px;
-    color: var(--highlight-color);
-    font-family: var(--font-family-english);
-    letter-spacing: 0.02em;
-}
-
-#apod-media-container-hero {
-    margin-bottom: 20px;
-}
-
-#apod-image-hero, #apod-media-container-hero iframe { /* iframeにもスタイル適用 */
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: var(--box-shadow-light);
+    box-shadow: var(--box-shadow-medium);
 }
 
 #apod-explanation-hero {
     line-height: 1.7;
     margin-bottom: 15px;
     font-size: 1em;
-    text-align: left;
+    /* text-align: left; ← これがあると中央揃えにならないので削除またはcenterに変更 */
+    text-align: center; /* ← 変更 */
     color: var(--text-color-secondary);
 }
 
 #apod-copyright-hero {
     font-size: 0.85em;
     color: var(--text-color-secondary);
-    text-align: right;
+    /* text-align: right; ← これがあると中央揃えにならないので削除またはcenterに変更 */
+    text-align: center; /* ← 変更 */
     opacity: 0.8;
 }
-
 /* --- 記事一覧セクション (class="articles" に変更) --- */
 .articles {
     margin-top: 50px;
@@ -575,42 +552,62 @@ header .container {
     border-color: var(--primary-color);
 }
 
-/* --- About Emilyセクション --- */
+
+/* 全体的なスタイル - body内のテキストは基本的に中央揃えにする */
+body {
+    font-family: var(--font-family-serif-popular), var(--font-family-japanese);
+    font-size: 16px;
+    line-height: var(--line-height-body);
+    letter-spacing: var(--letter-spacing-body);
+    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+    color: var(--text-color-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    /* ここに text-align: center; を追加すると、body内のすべてのテキストがデフォルトで中央揃えになる */
+    /* ただし、一部のセクションで左寄せが望ましい場合は、個別に text-align: left; で上書きする必要がある */
+    text-align: center; /* ← 追加 */
+}
+
+/* APODセクション (説明文は中央揃えにしないことが多いが、要望に応じて) */
+#apod-container-hero {
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-color-secondary);
+    text-align: center; /* ← 変更: 画像や説明文を中央揃えにする */
+    max-width: 960px;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow-medium);
+}
+
+#apod-explanation-hero {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1em;
+    /* text-align: left; ← これがあると中央揃えにならないので削除またはcenterに変更 */
+    text-align: center; /* ← 変更 */
+    color: var(--text-color-secondary);
+}
+
+#apod-copyright-hero {
+    font-size: 0.85em;
+    color: var(--text-color-secondary);
+    /* text-align: right; ← これがあると中央揃えにならないので削除またはcenterに変更 */
+    text-align: center; /* ← 変更 */
+    opacity: 0.8;
+}
+
+/* About Emilyセクション */
 .about-emily {
-    background-color: rgba(255, 255, 255, 0.05); /* 半透明の背景 */
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 40px;
     margin: 60px auto;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* 光る影 */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     color: #ffffff;
-    max-width: 960px; /* 幅は制限 */
-}
-
-.about-emily h2 {
-    font-family: var(--font-family-english);
-    font-size: 2.5em;
-    text-align: center;
-    color: var(--highlight-color);
-    margin-bottom: 30px;
-    letter-spacing: 0.05em;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap; /* 小さい画面で折り返す */
-    justify-content: center; /* 折り返した時に中央寄せ */
-}
-
-.profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* 光る縁 */
-    border: 3px solid var(--highlight-color); /* アクセントカラーの縁 */
-    flex-shrink: 0;
+    max-width: 960px;
+    text-align: center; /* ← 追加 */
 }
 
 .about-text {
@@ -618,18 +615,16 @@ header .container {
     font-size: 1.1em;
     line-height: 1.8;
     color: var(--text-color-secondary);
-    text-align: left;
-}
-
-.about-text p {
-    margin-bottom: 1em;
+    /* text-align: left; ← これがあると中央揃えにならないので削除またはcenterに変更 */
+    text-align: center; /* ← 変更 */
 }
 
 .from-author {
     margin-top: 1.5em;
     font-style: italic;
     color: var(--highlight-color);
-    text-align: right;
+    /* text-align: right; ← これがあると中央揃えにならないので削除またはcenterに変更 */
+    text-align: center; /* ← 変更 */
     font-size: 0.95em;
 }
 
@@ -920,12 +915,17 @@ footer nav ul li a:hover {
         gap: 30px;
     }
 
-    /* カテゴリーと最新記事セクション */
-    #sidebar, .latest-posts {
-        margin: 20px auto;
-        padding: 20px;
-    }
-
+    /* カテゴリーと最新記事セクション内のテキストも中央揃えにするなら */
+#sidebar, .latest-posts {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--border-color);
+    text-align: center; /* ← 追加 */
+}
     #sidebar h2, .latest-posts h2 {
         font-size: 1.5em;
     }
