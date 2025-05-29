@@ -82,9 +82,9 @@ header {
     height: 100vh;
     width: 100vw; /* 明示的に画面全体の幅を指定 */
     background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.png');
-    background-size: cover; /* 画像が要素を完全に覆うように拡大縮小 */
+    background-size: 1920px 1280px; /* 指定されたサイズに設定 */
     background-position: center center; /* 画像を常に中央に配置 */
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; /* 繰り返しなし */
     position: relative;
     display: flex;
     align-items: center;
