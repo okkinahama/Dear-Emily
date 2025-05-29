@@ -112,10 +112,10 @@ a:focus {
 
 header {
   height: 100vh;
-  width: 100vw; /* ← 明示的に画面全体の幅を指定 */
+  width: 100vw;
   background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.png');
-  background-size: cover;
-  background-position: center top;
+  background-size: contain; /* ← 画像の全体が見えるように */
+  background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
@@ -124,20 +124,22 @@ header {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow-x: hidden; /* 横スクロールを防止（必要なら） */
+  overflow-x: hidden;
 }
 html, body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
 }
 
 
+
 @media (max-width: 768px) {
   header {
+    background-size: cover;
     background-position: center center;
-    background-size: cover; /* contain だと隙間が出るため cover 継続推奨 */
   }
 }
 
