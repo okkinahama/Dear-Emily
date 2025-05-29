@@ -841,78 +841,105 @@ footer nav ul li a:hover {
         display: none;
     }
 
-/* --- About Emilyセクション (おとぎ話風) --- */
+/* --- About Emilyセクション (画像テイストに合わせた可愛らしいスタイル) --- */
 .about-emily {
-    background-color: rgba(255, 240, 245, 0.5); /* 薄いピンクの背景 */
-    padding: 40px;
+    background-color: rgba(255, 250, 250, 0.7); /* ごく薄いピンク〜白系の半透明背景で柔らかさを */
+    padding: 45px; /* 少しパディングを増やす */
     margin: 60px auto;
-    border-radius: 20px; /* 丸みを帯びた角 */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* 柔らかい影 */
-    color: #555; /* 少し濃いめのグレーのテキスト */
+    border-radius: 25px; /* さらに丸みを強く */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* 柔らかく、ほんのりとした影 */
+    color: #6a5acd; /* 少し落ち着いた藤色系のテキスト */
     max-width: 960px;
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 30px;
+    gap: 40px; /* 画像とテキストの間隔を少し広げる */
     flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid #f2c1d1; /* 薄いピンクの枠線 */
+    border: 2px solid #add8e6; /* 薄い水色系の細い枠線 */
+    position: relative; /* 背景装飾の基準点に */
+    overflow: hidden; /* 背景の装飾がはみ出さないように */
 }
+
+/* 背景に柔らかな水玉模様や星などのテクスチャを追加（オプション） */
+.about-emily::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 15px 15px; /* 小さな水玉模様 */
+    opacity: 0.5; /* 半透明で控えめに */
+    z-index: 0;
+}
+
 
 @media (max-width: 768px) {
     .about-emily {
         flex-direction: column;
         align-items: center;
+        padding: 30px; /* モバイルではパディングを調整 */
     }
 }
 
 .about-emily h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px; /* 見出し下の余白を増やす */
     width: 100%;
-    font-family: 'Georgia', serif; /* 少しクラシカルなフォント */
-    font-size: 2em; /* 大きめの見出し */
-    color: #d87093; /* 濃いめのピンクの見出し */
+    font-family: 'Comic Sans MS', cursive; /* より手書き感のあるフォント、またはWebフォントを検討 */
+    font-size: 2.3em; /* 少し大きめの見出し */
+    color: #ffb6c1; /* 可愛らしいライトピンク */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* ほんのり影をつけて立体感を */
+    letter-spacing: 0.05em; /* 文字間を少し開ける */
 }
 
 .about-image {
-    width: 250px;
-    height: 250px;
+    width: 280px; /* PC/モバイル共通で少し大きく、でも大きすぎないサイズ */
+    height: 280px;
     max-width: 100%;
     flex-shrink: 0;
     flex-grow: 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* モバイル時の画像下の余白を調整 */
     border-radius: 50%;
     object-fit: cover;
-    border: 4px double #f48fb1; /* 二重線の枠 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 影を追加 */
+    border: 5px solid #ffe4e1; /* 薄いピンクの少し太めの枠線 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* 柔らかい影 */
+    transition: transform 0.3s ease-in-out; /* ホバーアニメーション */
+}
+
+.about-image:hover {
+    transform: scale(1.05); /* ホバーで少し拡大 */
 }
 
 @media (min-width: 769px) {
     .about-image {
-        width: 300px;
-        height: 300px;
+        width: 320px; /* PCでの画像幅を調整 */
+        height: 320px;
         margin-bottom: 0;
     }
 }
 
 .about-text {
     flex: 1;
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #777; /* 少し濃いめのグレー */
+    font-size: 1.15em; /* フォントサイズを少し大きく */
+    line-height: 1.9; /* 行の高さをゆったりと */
+    color: #87ceeb; /* 空色系のテキスト */
     text-align: left;
-    font-family: 'Georgia', serif; /* 少しクラシカルなフォント */
+    font-family: 'Comic Sans MS', cursive; /* 手書き感のあるフォント */
+    padding-top: 10px; /* テキストの開始位置を微調整 */
 }
 
 .from-author {
-    margin-top: 1.5em;
+    margin-top: 2em; /* 上の余白を増やす */
     font-style: italic;
-    color: #e91e63; /* 鮮やかなピンク */
+    color: #ff69b4; /* ホットピンク */
     text-align: right;
-    font-size: 0.95em;
+    font-size: 1em; /* 少し大きく */
     width: 100%;
+    font-family: 'Comic Sans MS', cursive; /* 手書き感のあるフォント */
 }
 
 /* bodyの全体設定でtext-align: center; を残す場合、個別で上書きが必要 */
