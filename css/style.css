@@ -25,51 +25,6 @@
 html {
     scroll-behavior: smooth;
 }
-/* ナビゲーションの横並びスタイル */
-.top-menu-bar {
-  background-color: #0c0c2d;
-  padding: 12px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.main-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.main-nav li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 8px 12px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 6px;
-}
-
-.main-nav li a:hover {
-  background-color: #ffd700;
-  color: #0c0c2d;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-  .main-nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .main-nav li a {
-    font-size: 0.95rem;
-    padding: 10px 14px;
-  }
-}
 
 /* 全体的なスタイル */
 body {
@@ -78,7 +33,7 @@ body {
     line-height: var(--line-height-body);
     letter-spacing: var(--letter-spacing-body);
     margin: 0;
-    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary)); /* 星空のようなグラデーション背景 */
     color: var(--text-color-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -90,7 +45,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
-    position: relative;
+    position: relative; /* ヘッダー内の子要素のposition:absolute基準点 */
 }
 
 a {
@@ -100,7 +55,7 @@ a {
 }
 
 a:hover {
-    color: #ffc0cb;
+    color: #ffc0cb; /* ホバー時のリンク色 */
     text-decoration: underline;
 }
 
@@ -109,49 +64,44 @@ a:focus {
     outline-offset: 2px;
 }
 
-/* =============================
-   RESET & BASE
-============================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-/* =============================
-   HEADER
-============================= */
+/* --- ヘッダー --- */
 header {
-  width: 100vw;
   height: 100vh;
-  background-image: url('../images/dear-emily-header.png');
+  width: 100vw; /* ← 明示的に画面全体の幅を指定 */
+  background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.png');
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* 横スクロールを防止（必要なら） */
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 
 @media (max-width: 768px) {
   header {
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat;
   }
 }
+
 
 header::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -159,31 +109,34 @@ header::before {
 }
 
 header .container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  padding: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px; /* スマホでも端がつかえないようにパディング追加 */
+  position: relative;
+  z-index: 1;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .header-content {
   color: white;
-  max-width: 100%;
+  max-width: 100%; /* 横幅いっぱい */
   padding: 0 1rem;
   text-align: center;
+  margin: auto;
   z-index: 2;
+  position: relative;
 }
 
 .header-content h1 {
   margin: 0;
-  font-family: var(--font-family-english, 'Segoe UI', sans-serif);
+  font-family: var(--font-family-english);
   font-size: 3.5em;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .site-description {
@@ -191,11 +144,6 @@ header .container {
   margin-top: 10px;
   color: white;
 }
-
-
-
-
-
 
 /* --- パララックスセクション (例) --- */
 .parallax-space {
@@ -205,15 +153,6 @@ header .container {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-/* モバイル（パララックス非対応端末）向けの調整 */
-@media (max-width: 768px) {
-  .parallax-space {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center center;
-    height: 300px; /* スマホでは高さを少し縮めると見やすい */
-  }
 }
 
 /* --- ハンバーガーメニューコンテナ (モバイル用) --- */
@@ -668,37 +607,30 @@ header .container {
 /* --- 宇宙天気情報コンテナ --- */
 .space-weather-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-    padding: 0 24px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブな2カラム */
+    gap: 30px; /* アイテム間のスペース */
+    margin-top: 50px;
+    padding: 0 20px;
     width: 100%;
     box-sizing: border-box;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* 宇宙天気アイテム */
 .space-weather-item {
-    background: rgba(255, 255, 255, 0.06); /* 半透明の幻想感 */
-    -webkit-backdrop-filter: blur(10px); /* Safari対応 */
-    backdrop-filter: blur(10px); /* ガラスっぽいぼかし */
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: transform 0.3s ease;
-}
-.space-weather-item:hover {
-    transform: translateY(-5px);
+    background-color: var(--bg-color-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--border-color);
 }
 
 .space-weather-item h2 {
-    font-size: 1.8em;
-    margin-bottom: 16px;
-    color: #FFDEB8; /* 柔らかな宇宙色 */
-    font-family: 'Zen Maru Gothic', serif;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--highlight-color);
+    font-family: var(--font-family-english);
 }
 
 .space-weather-item ul {
@@ -709,9 +641,9 @@ header .container {
 
 .space-weather-item ul li {
     padding: 10px 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-    font-size: 1.05em;
-    color: #E5F4FF; /* やさしいブルー系 */
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1em;
+    color: var(--text-color-secondary);
 }
 
 .space-weather-item ul li:last-child {
@@ -720,46 +652,44 @@ header .container {
 
 /* --- 宇宙ニュースセクション --- */
 .space-news-section {
-    background: rgba(255, 255, 255, 0.05);
-    -webkit-backdrop-filter: blur(8px); /* Safari対応 */
-    backdrop-filter: blur(8px);
-    padding: 30px;
-    border-radius: 16px;
-    margin-top: 70px;
-    color: #EAEAEA;
-    max-width: 1000px;
+    background-color: var(--bg-color-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 50px; /* このセクションがhero内にネストされている場合、適切なマージンに調整してください */
+    color: var(--text-color-primary);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--border-color);
 }
 
 .space-news-section h3 {
-    font-size: 1.8em;
-    color: #FFD3E0; /* ほのかなピンクトーン */
+    font-size: 1.6em;
+    color: var(--highlight-color);
     margin-bottom: 20px;
-    font-family: 'Zen Maru Gothic', serif;
+    font-family: var(--font-family-english);
 }
 
 #space-news div {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 #space-news a {
-    color: #D6F0FF;
+    color: var(--text-color-primary);
     text-decoration: none;
     display: block;
-    padding: 6px 0;
-    font-size: 1.05em;
-    line-height: 1.6;
-    transition: all 0.2s ease;
+    padding: 5px 0;
+    font-size: 1em;
+    line-height: 1.5;
 }
 
 #space-news a:hover {
     text-decoration: underline;
-    color: #FFBBE6;
+    color: var(--highlight-color);
 }
-
 
 /* --- カテゴリーと最新記事セクションのスタイル (追加) --- */
 #sidebar {
@@ -805,90 +735,30 @@ header .container {
     transform: translateY(-2px);
 }
 
-/* 最新記事リスト */
-#latest-posts h2 {
-  font-size: 1.8rem;
-  color: #ffd7f7;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
 .latest-posts {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 1.2rem;
+    max-width: 960px;
+    margin: 40px auto 60px auto;
+    padding: 25px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--border-color);
 }
 
-.latest-posts li {
-  display: flex;
-  align-items: center;
-  background-color: #2d2d5a;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.latest-posts li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.latest-posts img {
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-
-
-.latest-posts .post-info {
-  padding: 0.8rem;
-  color: #fff;
-  flex: 1;
+.latest-posts div {
+    margin-bottom: 10px;
 }
 
 .latest-posts a {
-  color: #ffd7f7;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.05rem;
-  display: block;
-  margin-bottom: 4px;
-  transition: color 0.2s ease;
+    color: var(--text-color-primary);
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .latest-posts a:hover {
-  color: #ff85c1;
+    color: var(--highlight-color);
+    text-decoration: underline;
 }
-
-.latest-posts .meta {
-  font-size: 0.85rem;
-  color: #ccc;
-}
-/* スマホ用レイアウト調整 */
-@media (max-width: 600px) {
-  .latest-posts li {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .latest-posts img {
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid #444;
-  }
-
-  .latest-posts .post-info {
-    padding: 0.8rem 1rem;
-  }
-
-  .latest-posts a {
-    font-size: 1rem;
-  }
-}
-
 
 
 /* --- フッター --- */
