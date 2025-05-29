@@ -78,11 +78,12 @@ a:focus {
 }
 
 /* --- ヘッダー --- */
+/* --- ヘッダー --- */
 header {
     height: 100vh;
     width: 100vw; /* 明示的に画面全体の幅を指定 */
-    background-image: url('../images/ヘッダー.jpg');
-    background-size: cover; /* 画像が要素を完全に覆うように拡大縮小 */
+    background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.png');
+    background-size: cover; /* デフォルトはcover (モバイルなど) */
     background-position: center center; /* 画像を常に中央に配置 */
     background-repeat: no-repeat;
     position: relative;
@@ -93,6 +94,13 @@ header {
     padding: 0;
     margin: 0;
 }
+
+@media (min-width: 769px) {
+    header {
+        background-size: contain; /* PC表示ではcontainでトリミングを防ぐ */
+    }
+}
+
 header::before {
     content: "";
     position: absolute;
@@ -109,9 +117,8 @@ header .container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100%; /* containerの幅も100%に */
     height: 100%;
-    /* padding: 0 16px;  この行は削除またはコメントアウト */
     padding: 0; /* PCではパディングなし */
     position: relative;
     z-index: 1;
