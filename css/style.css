@@ -56,11 +56,11 @@ body {
 .container {
     /* max-width: 1080px; 削除 */
     margin: 0 auto;
-    padding: 0 40px; /* PC表示時のパディングを調整 */
+    /* padding: 0 40px; ← この行を削除、または 0 に変更 */
+    padding: 0; /* 左右のパディングをなくす場合 */
     box-sizing: border-box;
-    position: relative; /* ヘッダー内の子要素のposition:absolute基準点 */
+    position: relative;
 }
-
 a {
     color: var(--highlight-color);
     text-decoration: none;
