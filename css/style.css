@@ -293,7 +293,7 @@ header .container {
         list-style: none;
         padding: 0;
         margin: 0;
-        display: flex; /* ここをflexboxに変更して横並びにします */
+        display: flex; /* ★ここに既にflexが適用されており、横並びになっています */
         align-items: center;
     }
 
