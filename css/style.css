@@ -112,7 +112,8 @@ header .container {
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0 16px; /* スマホでも端がつかえないようにパディング追加 */
+    /* padding: 0 16px;  この行は削除またはコメントアウト */
+    padding: 0; /* PCではパディングなし */
     position: relative;
     z-index: 1;
     text-align: center;
@@ -148,10 +149,16 @@ header .container {
         background-position: center center;
     }
 }
+/* モバイル表示の場合のみパディングを適用 */
+@media (max-width: 768px) {
+    header .container {
+        padding: 80px 15px 20px 15px; /* モバイル用のパディングを維持 */
+    }
+}
 
 /* --- パララックスセクション (例) --- */
 .parallax-space {
-    background-image: url("images/iss072e278609_large.jpg");
+    background-image: url("../images/iss072e278609_large.jpg");
     height: 500px;
     background-attachment: fixed;
     background-position: center;
