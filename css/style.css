@@ -3,6 +3,7 @@
 
 /* 変数定義 (カラーパレットとタイポグラフィ) */
 :root {
+    /* カラーパレット */
     --primary-color: #2962ff; /* SFアニメ的な明るいブルー (アクセント) */
     --primary-color-dark: #0d47a1;
     --secondary-color: #64b5f6; /* 少し明るいブルー (サブアクセント) */
@@ -11,14 +12,20 @@
     --bg-color-primary: #0b0f1a; /* 主要な背景色 (非常に濃い青) */
     --bg-color-secondary: #1a1d2e; /* カードなどの背景色 (濃い青) */
     --border-color: #333; /* ダークテーマのボーダー色 */
+    --highlight-color: #ffd1dc; /* 主要なアクセントカラー (ピンク系) */
+
+    /* シャドウ */
     --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.2); /* 軽めの影 */
     --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4); /* 中程度の影 */
+
+    /* フォントファミリー */
     --font-family-japanese: 'Noto Sans JP', sans-serif;
     --font-family-english: 'Montserrat', sans-serif;
     --font-family-serif-popular: 'Merriweather', serif;
+
+    /* タイポグラフィ基本設定 */
     --line-height-body: 1.8;
     --letter-spacing-body: 0.01em;
-    --highlight-color: #ffd1dc; /* 主要なアクセントカラー (ピンク系) */
 }
 
 /* スムーズスクロール */
@@ -27,12 +34,18 @@ html {
 }
 
 /* 全体的なスタイル */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden; /* 横スクロールを防止 */
+}
+
 body {
     font-family: var(--font-family-serif-popular), var(--font-family-japanese);
     font-size: 16px;
     line-height: var(--line-height-body);
     letter-spacing: var(--letter-spacing-body);
-    margin: 0;
     background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary)); /* 星空のようなグラデーション背景 */
     color: var(--text-color-primary);
     -webkit-font-smoothing: antialiased;
@@ -66,83 +79,74 @@ a:focus {
 
 /* --- ヘッダー --- */
 header {
-  height: 100vh;
-  width: 100vw; /* ← 明示的に画面全体の幅を指定 */
-  background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.png');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  overflow-x: hidden; /* 横スクロールを防止（必要なら） */
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-
-@media (max-width: 768px) {
-  header {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.png');
     background-size: cover;
-    background-position: center center;
-  }
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
-
 
 header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
 }
 
 header .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 0 16px; /* スマホでも端がつかえないようにパディング追加 */
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px; /* スマホでも端がつかえないようにパディング追加 */
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .header-content {
-  color: white;
-  max-width: 100%; /* 横幅いっぱい */
-  padding: 0 1rem;
-  text-align: center;
-  margin: auto;
-  z-index: 2;
-  position: relative;
+    color: white;
+    max-width: 100%; /* 横幅いっぱい */
+    padding: 0 1rem;
+    text-align: center;
+    margin: auto;
+    z-index: 2;
+    position: relative;
 }
 
 .header-content h1 {
-  margin: 0;
-  font-family: var(--font-family-english);
-  font-size: 3.5em;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin: 0;
+    font-family: var(--font-family-english);
+    font-size: 3.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .site-description {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: white;
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 /* --- パララックスセクション (例) --- */
@@ -655,7 +659,7 @@ header .container {
     background-color: var(--bg-color-secondary);
     padding: 25px;
     border-radius: 12px;
-    margin-top: 50px; /* このセクションがhero内にネストされている場合、適切なマージンに調整してください */
+    margin-top: 50px;
     color: var(--text-color-primary);
     width: 100%;
     box-sizing: border-box;
@@ -759,7 +763,6 @@ header .container {
     color: var(--highlight-color);
     text-decoration: underline;
 }
-
 
 /* --- フッター --- */
 footer {
