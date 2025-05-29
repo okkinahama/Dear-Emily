@@ -834,7 +834,7 @@ footer nav ul li a:hover {
     }
 
     header .container {
-        padding: 0 15px;
+        padding: 80px 15px 20px 15px; /* モバイル用のパディングを維持 */
         align-items: center;
         justify-content: flex-start;
         height: auto;
