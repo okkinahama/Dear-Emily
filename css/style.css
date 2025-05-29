@@ -1,5 +1,5 @@
 /* Google Fontsの読み込み (Noto Sans JP, Montserrat, Merriweather) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* 変数定義 (カラーパレットとタイポグラフィ) */
 :root {
@@ -37,7 +37,7 @@ html {
 html, body {
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100vw; /* 画面の横幅いっぱいに設定 */
     overflow-x: hidden; /* 横スクロールを防止 */
 }
 
@@ -80,10 +80,10 @@ a:focus {
 /* --- ヘッダー --- */
 header {
     height: 100vh;
-    width: 100vw;
+    width: 100vw; /* 明示的に画面全体の幅を指定 */
     background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.png');
-    background-size: cover;
-    background-position: center top;
+    background-size: cover; /* 画像が要素を完全に覆うように拡大縮小 */
+    background-position: center center; /* 画像を常に中央に配置 */
     background-repeat: no-repeat;
     position: relative;
     display: flex;
