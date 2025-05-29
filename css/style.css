@@ -598,31 +598,6 @@ body {
     opacity: 0.8;
 }
 
-/* About Emilyセクションの修正 */
-.about-emily {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 40px; /* もしcontainerの外で左右いっぱいにするなら0 */
-    margin: 60px auto;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    max-width: none; /* ← これを削除 */
-    width: 100%; /* 親要素の幅いっぱいに広がる */
-    text-align: left; /* テキストを左揃えにする場合 */
-}
-
-.about-emily h2 {
-    text-align: center; /* タイトルは中央揃えを維持 */
-}
-
-.about-text {
-    flex: 1;
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: var(--text-color-secondary);
-    text-align: left; /* これは既にleftなのでOK */
-}
-
 /* --- 宇宙天気情報コンテナ --- */
 .space-weather-container {
     display: grid;
@@ -866,15 +841,63 @@ footer nav ul li a:hover {
         display: none;
     }
 
-    /* About Emilyセクション */
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
+    /* --- About Emilyセクション --- */
+.about-emily {
+    background-color: rgba(255, 255, 255, 0.05); /* 半透明の背景 */
+    padding: 40px;
+    margin: 60px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); /* 光る影 */
+    color: #ffffff;
+    max-width: 960px;
+}
 
-    .profile-image {
-        margin-bottom: 20px;
-    }
+.about-emily h2 {
+    font-family: var(--font-family-english);
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--highlight-color);
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; /* 小さい画面で折り返す */
+    justify-content: center; /* 折り返した時に中央寄せ */
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* 光る縁 */
+    border: 3px solid var(--highlight-color); /* アクセントカラーの縁 */
+    flex-shrink: 0;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-color-secondary);
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1em;
+}
+
+.from-author {
+    margin-top: 1.5em;
+    font-style: italic;
+    color: var(--highlight-color);
+    text-align: right;
+    font-size: 0.95em;
+}
 
     /* 宇宙天気情報コンテナ */
     .space-weather-container {
