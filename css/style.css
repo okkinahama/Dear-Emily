@@ -71,7 +71,6 @@ html {
   }
 }
 
-
 /* 全体的なスタイル */
 body {
     font-family: var(--font-family-serif-popular), var(--font-family-japanese);
@@ -79,7 +78,7 @@ body {
     line-height: var(--line-height-body);
     letter-spacing: var(--letter-spacing-body);
     margin: 0;
-    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary)); /* 星空のようなグラデーション背景 */
+    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
     color: var(--text-color-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -91,7 +90,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
-    position: relative; /* ヘッダー内の子要素のposition:absolute基準点 */
+    position: relative;
 }
 
 a {
@@ -101,7 +100,7 @@ a {
 }
 
 a:hover {
-    color: #ffc0cb; /* ホバー時のリンク色 */
+    color: #ffc0cb;
     text-decoration: underline;
 }
 
@@ -130,7 +129,7 @@ html, body {
 header {
   width: 100vw;
   height: 100vh;
-  background-image: url('../images/dear-emily-header.png'); /* ← ファイル名は安全な英字にリネーム推奨 */
+  background-image: url('../images/dear-emily-header.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -141,7 +140,6 @@ header {
   overflow: hidden;
 }
 
-/* モバイルで画像全体を見せるために contain に変更 */
 @media (max-width: 768px) {
   header {
     background-size: contain;
@@ -150,22 +148,16 @@ header {
   }
 }
 
-/* =============================
-   OVERLAY
-============================= */
 header::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* 画像に被せる優しい暗さ */
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
-/* =============================
-   CONTAINER
-============================= */
 header .container {
   position: relative;
   z-index: 1;
@@ -179,9 +171,6 @@ header .container {
   text-align: center;
 }
 
-/* =============================
-   HEADER CONTENT
-============================= */
 .header-content {
   color: white;
   max-width: 100%;
@@ -202,6 +191,9 @@ header .container {
   margin-top: 10px;
   color: white;
 }
+
+
+
 
 
 
