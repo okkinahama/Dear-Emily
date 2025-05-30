@@ -365,50 +365,69 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     sections.forEach(section => sectionObserver.observe(section));
 
-     // about-emily.html のコンテンツを読み込む関数
+    // --- about-emily.html のコンテンツを読み込む関数 ---
     const loadAboutEmilyContent = async () => {
         const aboutContentArea = document.getElementById('main-content-area');
-        if (aboutContentArea) {
-            try {
-                const response = await fetch('about-emily.html');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const text = await response.text();
-
-                // HTML全体ではなく、<body>タグの中身だけを抽出して挿入する
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const bodyContent = doc.body.innerHTML;
-
-                // h2タイトルはHTML側に既に存在するので、それ以外のコンテンツを挿入
-                // また、HTML側に含まれるheaderやfooterは除外したい場合がある
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = bodyContent;
-                
-                // 例: about-emily.html内に特定のIDやクラスのメインコンテンツ領域がある場合
-                const specificContent = tempDiv.querySelector('.about-page-content') || tempDiv; // about-page-contentがあればそれを使う、なければbodyContent全体
-
-                // 既存のh2とpタグを保持しつつ、その下にコンテンツを追加
-                // または、h2とpタグを置き換えるか、#main-content-areaを完全に置き換えるか
-                aboutContentArea.innerHTML = specificContent.innerHTML; // シンプルに置き換え
-
-            } catch (error) {
-                console.error('about-emily.htmlの読み込みに失敗しました:', error);
-                aboutContentArea.innerHTML = '<h2>About Emily (読み込みエラー)</h2><p>コンテンツの読み込みに失敗しました。</p>';
+        if (!aboutContentArea) {
+            console.warn('#main-content-area が見つかりません。');
+            return;
+        }
+        try {
+            const response = await fetch('about-emily.html');
+            if (!response.ok) {
+                throw new Error(`about-emily.htmlの読み込みエラー: ${response.status} ${response.statusText}`);
             }
+            const text = await response.text();
+
+            // HTML全体ではなく、<body>タグの中身を抽出して挿入する
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, 'text/html');
+            
+            // about-emily.html内に特定のクラスを持つコンテンツ領域がある場合
+            const specificContent = doc.querySelector('.about-page-content');
+            
+            if (specificContent) {
+                // 特定のコンテンツだけを挿入
+                aboutContentArea.innerHTML = specificContent.innerHTML;
+            } else {
+                // .about-page-content が見つからなければ、body全体を挿入 (推奨されないがフォールバック)
+                aboutContentArea.innerHTML = doc.body.innerHTML;
+                console.warn("about-emily.html内に '.about-page-content' が見つかりませんでした。body全体を挿入します。");
+            }
+
+        } catch (error) {
+            console.error('about-emily.htmlの読み込みに失敗しました:', error);
+            aboutContentArea.innerHTML = `<h2>About Emily (読み込みエラー)</h2><p>コンテンツの読み込みに失敗しました。<br><span style="color: red;">${error.message || '不明なエラー'}</span></p>`;
         }
     };
 
+    // --- "About Emily" リンククリックイベントと初期ロード ---
+    const aboutLinks = document.querySelectorAll('.about-emily-links a[href="about-emily.html"]');
+    // const mainContentArea = document.getElementById('main-content-area'); // 上で定義済み
 
-    // 全ての初期化関数を呼び出す
-    fetchApod();
-    fetchSpaceNews();
-    displayLatestPosts();
-    populateCategoryFilter();
-    populateTagFilter();
-    displayAllPosts(); // 初期表示として全ての記事を表示
-    fetchSolarFlares();
-    fetchGeomagneticStorms();
-    loadAboutEmilyContent(); // アバウトコンテンツの読み込み
+    if (aboutLinks.length > 0) { // mainContentAreaの存在チェックはloadAboutEmilyContent内で実施
+        aboutLinks.forEach(aboutLink => {
+            aboutLink.addEventListener('click', (event) => {
+                event.preventDefault(); // デフォルトのリンク遷移を防止
+                loadAboutEmilyContent();
+                // URLを更新して、ブラウザの履歴にエントリーを追加
+                history.pushState(null, '', 'about-emily.html');
+
+                // サイドメニューが開いている場合は閉じる
+                if (scrollableMenu && scrollableMenu.classList.contains('open')) {
+                    scrollableMenu.classList.remove('open');
+                    hamburgerMenu.classList.remove('open');
+                }
+            });
+        });
+
+        // ページが読み込まれたときにURLがabout-emily.htmlであれば、コンテンツをロードする
+        // またはハッシュが#about-emilyであれば
+        if (window.location.pathname.endsWith('about-emily.html') || window.location.hash === '#about-emily') {
+            loadAboutEmilyContent();
+        }
+    }
+
+
+   
 });
