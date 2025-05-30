@@ -321,6 +321,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 }
 
+                // --- ここに filterPosts 関数を定義します ---
+                function filterPosts() {
+                    const selectedCategory = categoryFilter.value;
+                    const selectedTag = tagFilter.value;
+
+                    const filteredPosts = posts.filter(post => {
+                        const categoryMatch = (selectedCategory === 'all' || post.category === selectedCategory);
+                        // post.tags が存在しない場合を考慮
+                        const tagMatch = (selectedTag === 'all' || (post.tags && post.tags.includes(selectedTag)));
+                        return categoryMatch && tagMatch;
+                    });
+
+                    displayPosts(filteredPosts);
+                }
+                // --- filterPosts 関数定義の終わり ---
+
                 // フィルターイベントリスナー
                 categoryFilter.addEventListener('change', filterPosts);
                 tagFilter.addEventListener('change', filterPosts);
