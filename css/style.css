@@ -648,7 +648,7 @@ header::before {
     left: -20px;
     right: -20px;
     bottom: -20px;
-    background: url('images/sparkle-pattern.png') repeat; /* きらめくパターン画像 (後述) */
+    /*background: url('images/sparkle-pattern.png') repeat; /* きらめくパターン画像 (後述) */
     opacity: 0.1; /* 透明度を低くして控えめに */
     z-index: 0;
     pointer-events: none; /* クリックイベントを妨げない */
