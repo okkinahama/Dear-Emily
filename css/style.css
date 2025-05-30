@@ -955,3 +955,155 @@ footer nav ul li a:hover {
         font-size: 1.4em;
     }
 }
+/* ========================================= */
+/* 3. Archive Page Specific Styles (archive.html) */
+/* ========================================= */
+
+/* 基本的なボディスタイル (archive.html固有) */
+/* body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background-color: #fef5f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+} */
+/* 注意: body のスタイルは style.css の全体設定と重複する可能性があります。
+   もし style.css に既に body の基本スタイルがある場合は、重複を避けるためにコメントアウトまたは統合してください。
+   ここでは一貫性のためZen Maru Gothicを推奨しますが、Merriweatherを使いたい場合はfont-familyをMerriweatherにしてください。
+*/
+
+
+/* ヘッダーとフッター (既存の style.css のものを使用) */
+/* archive.html のヘッダーとフッターは、style.css に記述されている共通のヘッダー/フッターのスタイルが適用されます。
+   もし archive.html のヘッダー/フッターを特別にスタイリングしたい場合は、以下のセレクタで調整します。
+*/
+/*
+header.top-menu-bar {
+    background-color: #f2a6bf; /* 既存のヘッダー色に合わせた明るいピンク */
+/* }
+
+.top-menu-bar .main-nav a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.top-menu-bar .main-nav a:hover {
+    color: #ffdce9; /* ホバーでさらに明るく */
+/* }
+
+footer {
+    background-color: #f2a6bf; /* フッターもヘッダーと色を合わせる */
+/* color: white;
+}
+*/
+
+/* 全ての記事セクションのコンテナ */
+.all-posts {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: linear-gradient(135deg, #fcefee 0%, #ffe9e9 100%); /* About Emilyと同じグラデーション */
+    border-radius: 20px; /* 少し大きめの角丸 */
+    box-shadow: 0 15px 30px rgba(255, 100, 150, 0.25), 0 5px 10px rgba(0, 0, 0, 0.1); /* 柔らかな影 */
+    padding: 30px; /* パディングを少し増やす */
+    text-align: center; /* タイトルを中央寄せ */
+}
+
+/* 「全ての記事」見出し */
+.all-posts h2 {
+    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif; /* 手書き風フォント */
+    font-size: 2.5rem; /* 大きめのフォントサイズ */
+    color: #a85888; /* 深みのあるピンク */
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f8c6c8; /* 柔らかな下線 */
+    padding-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* 個々の記事アイテムのコンテナ */
+#all-posts div { /* div はより具体的なセレクタにすることをおすすめしますが、今回はID指定で */
+    background-color: #fff; /* 白い背景 */
+    border-radius: 15px; /* 角丸 */
+    padding: 20px; /* パディングを増やす */
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* 浮き出るような影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
+    text-align: left; /* テキストを左寄せ */
+}
+
+#all-posts div:hover {
+    transform: translateY(-8px); /* ホバーで少し上に移動 */
+    box-shadow: 0 16px 36px rgba(255, 120, 170, 0.3); /* ホバーで影を強調 */
+}
+
+/* 記事タイトルへのリンク */
+#all-posts div a {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.3rem; /* 記事タイトルを大きく */
+    color: #b45578; /* メインカラー */
+    text-decoration: none; /* 下線なし */
+    font-weight: bold;
+    transition: color 0.3s;
+    display: block; /* ブロック要素にしてクリック領域を広げる */
+    margin-bottom: 5px; /* 日付との間に少し余白 */
+}
+
+#all-posts div a:hover {
+    color: #d76a83; /* ホバー色 */
+    text-decoration: underline; /* ホバーで下線 */
+}
+
+/* 記事の日付 */
+#all-posts div span {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 0.95rem; /* 少し大きく */
+    color: #888; /* 落ち着いたグレー */
+    display: block;
+    margin-top: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .all-posts {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .all-posts h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    #all-posts div {
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+
+    #all-posts div a {
+        font-size: 1.1rem;
+    }
+
+    #all-posts div span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .all-posts {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .all-posts h2 {
+        font-size: 1.8rem;
+    }
+
+    #all-posts div a {
+        font-size: 1rem;
+    }
+}
