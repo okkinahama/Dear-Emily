@@ -32,6 +32,7 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1000;
+    overflow: hidden; /* 画像がはみ出さないように */
 }
 
 header .container {
@@ -46,6 +47,8 @@ header .header-content {
     align-items: baseline;
     gap: 15px; /* タイトルと説明の間のスペース */
     flex-wrap: wrap;
+    position: relative; /* 画像より手前に */
+    z-index: 10;
 }
 
 header h1 {
@@ -72,7 +75,31 @@ header .site-description {
     font-family: 'Zen Maru Gothic', sans-serif;
 }
 
+/* ヘッダー画像用のスタイルを追加 */
+.header-image {
+    position: absolute; /* 親要素 (header) に対して絶対配置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 画像がはみ出さないように */
+    z-index: 1; /* コンテンツの下に配置 */
+    opacity: 0.7; /* 好みに応じて透明度を調整 */
+}
+
+.header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* コンテナに合わせて画像をトリミング */
+    object-position: center bottom; /* 画像の下部を基準に表示 */
+}
+
 /* 通常のナビゲーション (PC版) */
+.nav-links {
+    position: relative; /* 画像より手前に */
+    z-index: 10;
+}
+
 .nav-links ul {
     list-style: none;
     margin: 0;
@@ -196,7 +223,6 @@ header .site-description {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
-
 /* --- Hero Section (書籍紹介部分) --- */
 .hero {
     /* ここにhero-background.jpgへの正しいパスを指定してください */
@@ -377,7 +403,7 @@ header .site-description {
     font-family: 'Zen Maru Gothic', sans-serif;
 }
 
-/* ページネーション (今回はHTMLにないため、もし追加するなら使用) */
+/* ページネーション */
 .pagination {
     text-align: center;
     margin-top: 60px;
@@ -524,6 +550,11 @@ footer nav a:hover {
     }
     header .site-description {
         font-size: 1em;
+    }
+
+    /* ヘッダー画像はモバイルでも同様に表示 */
+    .header-image img {
+        object-position: center bottom; /* モバイルでも画像の下部を基準に表示 */
     }
 
     /* ヒーローセクション */
