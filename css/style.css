@@ -623,7 +623,7 @@ header::before {
     color: var(--text-color-primary);
 }
 /* ========================================= */
-/* 2. About Emily Section (おとぎ話のようなスタイル) */
+/* 2. Main Content Area (index.html用) */
 /* ========================================= */
 
 #main-content-area {
@@ -648,7 +648,8 @@ header::before {
     left: -20px;
     right: -20px;
     bottom: -20px;
-    /*background: url('images/sparkle-pattern.png') repeat; /* きらめくパターン画像 (後述) */
+    /* `sparkle-pattern.png` 画像パスを指定 */
+    background: url('images/sparkle-pattern.png') repeat; /* きらめくパターン画像 (例: images/sparkle-pattern.png) */
     opacity: 0.1; /* 透明度を低くして控えめに */
     z-index: 0;
     pointer-events: none; /* クリックイベントを妨げない */
@@ -658,7 +659,7 @@ header::before {
 /* タイトルスタイル */
 #main-content-area h2 {
     font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif; /* 手書き風フォントを優先、フォールバックに日本語フォント */
-    font-size: 2.8em; /* 大きめのフォントサイズ */
+    font-size: 2.2em; /* 前回大きくしたサイズを適用 */
     color: #a85888; /* 深みのあるピンク */
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 
                  -2px -2px 4px rgba(0, 0, 0, 0.1); /* ふわっとした影 */
@@ -670,7 +671,7 @@ header::before {
 /* 段落スタイル */
 #main-content-area p {
     font-family: 'Zen Maru Gothic', sans-serif; /* 日本語フォント */
-    font-size: 1.1em;
+    font-size: 1.15em; /* 前回大きくしたサイズを適用 */
     line-height: 1.8;
     color: #6a445d; /* 落ち着いた色合い */
     margin-bottom: 20px;
@@ -707,17 +708,25 @@ header::before {
     border-bottom: none; /* 最後の項目は下線なし */
 }
 
-/* リストアイテムの前に可愛いアイコン (Font Awesomeが必要) */
+/* リストアイテムの前に可愛いアイコン (画像挿入) */
 #main-content-area ul li::before {
-    content: '\f005'; /* Font Awesomeの星アイコンのUnicode */
-    font-family: 'Font Awesome 5 Free'; /* Font Awesomeのフォントファミリー */
-    font-weight: 900; /* Solidアイコン用 */
-    color: #ffd700; /* ゴールドの星 */
+    content: ''; /* 疑似要素の内容を空にする */
+    display: inline-block; /* 画像を表示するためにブロック要素化 */
+    width: 18px; /* アイコン画像の幅 */
+    height: 18px; /* アイコン画像の高さ */
+    /* ***重要***: ここにリストアイコンの正しい画像パスを指定してください */
+    background-image: url('images/Gemini_Generated_Image_749bad749bad749b.jpg'); /* 例: images/list-icon.png */
+    background-size: contain; /* 画像を要素に収まるように調整 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    background-position: center; /* 画像を中央に配置 */
+
+    /* colorやfont-sizeは画像表示では不要なので削除またはコメントアウト */
+    /* color: #ffd700; */ 
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
 }
 
 /* アニメーション */
@@ -750,11 +759,11 @@ header::before {
     }
 
     #main-content-area h2 {
-        font-size: 2em;
+        font-size: 2em; /* レスポンシブ用調整 */
     }
 
     #main-content-area p {
-        font-size: 1em;
+        font-size: 1.05em; /* レスポンシブ用調整 */
     }
 }
 
@@ -765,7 +774,7 @@ header::before {
     }
 
     #main-content-area h2 {
-        font-size: 1.8em;
+        font-size: 1.8em; /* レスポンシブ用調整 */
     }
 }
 /* --- 宇宙天気情報コンテナ --- */
