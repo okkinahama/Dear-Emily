@@ -14,7 +14,6 @@ body {
 }
 
 /* Google Fonts - Handlee と Zen Maru Gothic の読み込み */
-/* (もし style.css の一番上にまだなければ追加してください) */
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&display=swap');
 
 
@@ -341,6 +340,16 @@ header .site-description {
     text-align: center; /* 絵本のように中央寄せ */
 }
 
+.articles .section .page-number {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    color: #b45578;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
+}
+
 .articles .section .image-wrapper {
     flex: 1; /* 画像が占めるスペース */
     min-width: 280px; /* 最小幅を確保 */
@@ -368,7 +377,7 @@ header .site-description {
     font-family: 'Zen Maru Gothic', sans-serif;
 }
 
-/* ページネーション */
+/* ページネーション (今回はHTMLにないため、もし追加するなら使用) */
 .pagination {
     text-align: center;
     margin-top: 60px;
@@ -565,6 +574,11 @@ footer nav a:hover {
         margin-top: 5px;
         font-size: 0.85em;
     }
+    .articles .section .page-number {
+        margin-bottom: 15px;
+        font-size: 1em;
+    }
+
 
     /* About Emily Section */
     .about-emily {
