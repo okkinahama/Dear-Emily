@@ -365,55 +365,50 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     sections.forEach(section => sectionObserver.observe(section));
 
-    // --- about-emily.html の動的読み込み処理 ---
-    const contentArea = document.getElementById('main-content-area');
-
-    function loadAboutEmilyContent() {
-        fetch('about-emily.html')
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error(`HTMLの読み込みエラー: ${res.status} ${res.statusText}`);
+     // about-emily.html のコンテンツを読み込む関数
+    const loadAboutEmilyContent = async () => {
+        const aboutContentArea = document.getElementById('main-content-area');
+        if (aboutContentArea) {
+            try {
+                const response = await fetch('about-emily.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                return res.text();
-            })
-            .then(html => {
-                if (contentArea) {
-                    // about-emily.htmlの内容全体をmain-content-areaに挿入
-                    contentArea.innerHTML = html;
-                }
-            })
-            .catch(err => {
-                console.error('about-emily.htmlの読み込みエラー:', err);
-                if (contentArea) {
-                    contentArea.innerHTML = '<p>コンテンツの読み込みに失敗しました。</p>';
-                }
-            });
-    }
+                const text = await response.text();
 
-    const aboutLink = document.querySelector('.about-emily-links a[href="about-emily.html"]');
-    if (aboutLink) {
-        aboutLink.addEventListener('click', (event) => {
-            event.preventDefault();
-            loadAboutEmilyContent();
-            // URLを更新して、ブラウザの履歴にエントリーを追加
-            // これはSPAのような動作を模倣するためで、実際のページ遷移は発生しない
-            history.pushState(null, '', 'about-emily.html');
-        });
+                // HTML全体ではなく、<body>タグの中身だけを抽出して挿入する
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const bodyContent = doc.body.innerHTML;
 
-        // ページが読み込まれたときにURLがabout-emily.htmlであれば、コンテンツをロードする
-        if (window.location.pathname.endsWith('about-emily.html') || window.location.hash === '#about-emily') {
-            loadAboutEmilyContent();
+                // h2タイトルはHTML側に既に存在するので、それ以外のコンテンツを挿入
+                // また、HTML側に含まれるheaderやfooterは除外したい場合がある
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = bodyContent;
+                
+                // 例: about-emily.html内に特定のIDやクラスのメインコンテンツ領域がある場合
+                const specificContent = tempDiv.querySelector('.about-page-content') || tempDiv; // about-page-contentがあればそれを使う、なければbodyContent全体
+
+                // 既存のh2とpタグを保持しつつ、その下にコンテンツを追加
+                // または、h2とpタグを置き換えるか、#main-content-areaを完全に置き換えるか
+                aboutContentArea.innerHTML = specificContent.innerHTML; // シンプルに置き換え
+
+            } catch (error) {
+                console.error('about-emily.htmlの読み込みに失敗しました:', error);
+                aboutContentArea.innerHTML = '<h2>About Emily (読み込みエラー)</h2><p>コンテンツの読み込みに失敗しました。</p>';
+            }
         }
-    }
+    };
 
 
-    // --- AdSense Scriptを追加 ---
-    // headからbody直下のscriptタグ内に移動し、DOMContentLoaded後に実行されるように変更
-    (function() {
-        var script = document.createElement("script");
-        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954";
-        script.setAttribute("async", "true");
-        script.setAttribute("crossorigin", "anonymous");
-        document.head.appendChild(script);
-    })();
+    // 全ての初期化関数を呼び出す
+    fetchApod();
+    fetchSpaceNews();
+    displayLatestPosts();
+    populateCategoryFilter();
+    populateTagFilter();
+    displayAllPosts(); // 初期表示として全ての記事を表示
+    fetchSolarFlares();
+    fetchGeomagneticStorms();
+    loadAboutEmilyContent(); // アバウトコンテンツの読み込み
 });
