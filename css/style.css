@@ -420,36 +420,6 @@ header::before {
     box-shadow: var(--box-shadow-light);
 }
 
-/* Heroセクション (Headerとは別の、コンテンツ内のHero) */
-.hero.section {
-    padding-top: 0; /* ヘッダーと分離するために上パディングを調整 */
-    padding-bottom: 60px;
-}
-
-.hero-image {
-    background-image: url('../images/ChatGPT Image 2025年5月28日 18_34_34.jpg'); /* 適切な画像パスを設定 */
-    background-size: cover;
-    background-position: center;
-    height: 300px; /* 画像の高さ */
-    border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: var(--box-shadow-medium);
-}
-
-.hero-text h2 {
-    font-size: 2.2em;
-    color: var(--highlight-color);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.hero-text p {
-    font-size: 1.1em;
-    color: var(--text-color-primary);
-    margin-bottom: 40px;
-    text-align: center;
-}
-
 
 /* --- 宇宙ニュースセクション (hero-text 内に配置) --- */
 .space-news-section {
@@ -507,18 +477,6 @@ header::before {
     font-style: italic;
 }
 
-
-/* --- カテゴリセクション --- */
-#sidebar-categories {
-    /* .sectionのスタイルを継承 */
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-#sidebar-categories p {
-    color: var(--text-color-secondary);
-    font-style: italic;
-}
 
 /* --- 全ての記事セクション --- */
 .filters {
@@ -664,7 +622,152 @@ header::before {
     margin-bottom: 1.5em;
     color: var(--text-color-primary);
 }
+/* ========================================= */
+/* 2. About Emily Section (おとぎ話のようなスタイル) */
+/* ========================================= */
 
+#main-content-area {
+    /* 共通設定：初期の余白や配置を調整 */
+    padding: 60px 40px; /* 上下左右の余白 */
+    margin: 40px auto; /* 中央寄せ */
+    max-width: 900px; /* 最大幅 */
+    background: linear-gradient(135deg, #fcefee 0%, #ffe9e9 100%); /* 柔らかなグラデーション背景 */
+    border-radius: 25px; /* 角を丸く */
+    box-shadow: 0 15px 30px rgba(255, 100, 150, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1); /* 浮き出るような影 */
+    text-align: center; /* テキスト中央寄せ */
+    position: relative; /* 疑似要素のために必要 */
+    overflow: hidden; /* 背景の星がはみ出さないように */
+    animation: fadeInScale 1s ease-out forwards; /* フェードインとわずかなスケールアップ */
+}
+
+/* おとぎ話の雰囲気のための背景要素 */
+#main-content-area::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: url('images/sparkle-pattern.png') repeat; /* きらめくパターン画像 (後述) */
+    opacity: 0.1; /* 透明度を低くして控えめに */
+    z-index: 0;
+    pointer-events: none; /* クリックイベントを妨げない */
+    animation: rotateBackground 20s linear infinite; /* 背景をゆっくり回転 */
+}
+
+/* タイトルスタイル */
+#main-content-area h2 {
+    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif; /* 手書き風フォントを優先、フォールバックに日本語フォント */
+    font-size: 2.8em; /* 大きめのフォントサイズ */
+    color: #a85888; /* 深みのあるピンク */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 
+                 -2px -2px 4px rgba(0, 0, 0, 0.1); /* ふわっとした影 */
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1; /* コンテンツが背景より手前に来るように */
+}
+
+/* 段落スタイル */
+#main-content-area p {
+    font-family: 'Zen Maru Gothic', sans-serif; /* 日本語フォント */
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #6a445d; /* 落ち着いた色合い */
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* リストスタイル */
+#main-content-area ul {
+    list-style: none; /* デフォルトのリストスタイルをなくす */
+    padding: 0;
+    margin: 30px auto;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+#main-content-area ul li {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #7b5b71;
+    padding: 8px 0;
+    border-bottom: 1px dotted rgba(168, 88, 136, 0.3); /* 点線の下線 */
+    position: relative;
+    padding-left: 25px; /* アイコンのための余白 */
+    text-align: left; /* リスト項目を左寄せ */
+}
+
+#main-content-area ul li:last-child {
+    border-bottom: none; /* 最後の項目は下線なし */
+}
+
+/* リストアイテムの前に可愛いアイコン (Font Awesomeが必要) */
+#main-content-area ul li::before {
+    content: '\f005'; /* Font Awesomeの星アイコンのUnicode */
+    font-family: 'Font Awesome 5 Free'; /* Font Awesomeのフォントファミリー */
+    font-weight: 900; /* Solidアイコン用 */
+    color: #ffd700; /* ゴールドの星 */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+}
+
+/* アニメーション */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    #main-content-area {
+        padding: 40px 20px;
+        margin: 20px auto;
+        border-radius: 15px;
+    }
+
+    #main-content-area h2 {
+        font-size: 2em;
+    }
+
+    #main-content-area p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-content-area {
+        padding: 30px 15px;
+        margin: 15px auto;
+    }
+
+    #main-content-area h2 {
+        font-size: 1.8em;
+    }
+}
 /* --- 宇宙天気情報コンテナ --- */
 .space-weather-container {
     display: grid;
