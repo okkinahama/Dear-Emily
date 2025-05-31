@@ -185,14 +185,15 @@ header .container {
     display: flex;
     flex-wrap: wrap; /* 小さい画面で折り返す */
     align-items: center;
-    margin-bottom: 60px; /* 各セクション間の余白 */
+    margin-bottom: 60px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0; /* JSアニメーションのため初期は非表示 */
-    transform: translateY(20px); /* JSアニメーションのため初期位置 */
+    opacity: 0;
+    transform: translateY(20px);
+    flex-direction: row; /* ★ 横並びを基本とする */
 }
 
 .articles .section.visible {
@@ -200,43 +201,40 @@ header .container {
     transform: translateY(0);
 }
 
-/* 奇数番目のセクションは画像が右、偶数番目は画像が左 (CSSで制御) */
-.articles .section:nth-of-type(odd) {
-    flex-direction: row; /* テキスト左、画像右 */
-}
+/* .articles .section:nth-of-type(odd) { デフォルトで row なので不要 } */
 
 .articles .section:nth-of-type(even) {
-    flex-direction: row-reverse; /* テキスト右、画像左 */
+    flex-direction: row-reverse; /* 偶数番目は左右反転 */
 }
 
 .articles .section .text {
-    flex: 1; /* テキストが占めるスペース */
-    flex-basis: 48%; /* テキストの基本幅を調整 */
-    min-width: 300px; /* テキストの最小幅 */
+    flex: 1;
+    flex-basis: 48%; /* テキストの基本幅 */
+    min-width: 300px;
     padding: 10px 20px;
-    font-size: 1.4em; /* 絵本のような大きな文字 */
-    color: #6a445d; /* 落ち着いた色合い */
-    line-height: 2; /* ゆったりとした行間 */
+    font-size: 1.4em;
+    color: #6a445d;
+    line-height: 2;
     font-family: 'Zen Maru Gothic', sans-serif;
-    text-align: left; /* 左寄せ */
-}
-
-.articles .section .page-number {
-    width: 100%;
-    text-align: center;
-    font-size: 1.1em;
-    color: #b45578;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
+    text-align: left;
 }
 
 .articles .section .image-wrapper {
-    flex: 1; /* 画像が占めるスペース */
-    flex-basis: 48%; /* 画像の基本幅を調整 */
-    min-width: 300px; /* 画像の最小幅 */
-    text-align: center; /* 画像を中央に配置 */
+    flex: 1;
+    flex-basis: 48%; /* 画像の基本幅 */
+    min-width: 300px;
+    text-align: center;
     padding: 10px;
+}
+
+.articles .section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .articles .section img {
