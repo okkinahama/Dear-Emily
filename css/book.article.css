@@ -24,207 +24,144 @@ body {
     padding: 0 20px;
 }
 
-    a {
-      text-decoration: none;
-      color: #6495ed; /* 少し明るいリンク色に変更 */
-      transition: color 0.3s ease;
-    }
+a {
+    text-decoration: none;
+    color: #6495ed; /* 少し明るいリンク色に変更 */
+    transition: color 0.3s ease;
+}
 
-    a:hover {
-      color: #4169e1;
-    }
+a:hover {
+    color: #4169e1;
+}
 
-    header {
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-      padding: 0.5rem 0;
-    }
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
+    position: relative; /* ヘッダー画像の位置決めの基準 */
+}
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.header-image {
+    width: 100%;
+    height: 200px; /* 画像の高さ */
+    overflow: hidden; /* はみ出した部分を隠す */
+    position: relative;
+    margin-bottom: 1rem; /* ヘッダーコンテンツとの間に余白 */
+}
 
-    .header-content h1 {
-      font-size: 1.5rem;
-      font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
-      font-weight: bold;
-    }
+.header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 縦横比を維持しつつ、要素を覆う */
+    object-position: center bottom; /* 画像の下部を基準に表示 */
+}
 
-    .site-description {
-      font-size: 0.8rem;
-      color: #777;
-    }
+header .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .nav-links ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
+.header-content h1 {
+    font-size: 1.5rem;
+    font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
+    font-weight: bold;
+}
 
-    .nav-links li a {
-      font-size: 0.9rem;
-    }
+.site-description {
+    font-size: 0.8rem;
+    color: #777;
+}
 
-    .hamburger-container {
-      display: none;
-    }
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
 
-    .scrollable-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 10;
-    }
+.nav-links li a {
+    font-size: 0.9rem;
+}
 
-    .scrollable-menu ul {
-      list-style: none;
-      padding: 1rem;
-      text-align: center;
-    }
+.hamburger-container {
+    display: none;
+}
 
-    .scrollable-menu li {
-      padding: 0.5rem 0;
-    }
+.scrollable-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
 
-    .scrollable-menu li a {
-      color: #333;
-      font-size: 1rem;
-    }
+.scrollable-menu ul {
+    list-style: none;
+    padding: 1rem;
+    text-align: center;
+}
 
-    .scrollable-menu.open {
-      display: block;
-    }
+.scrollable-menu li {
+    padding: 0.5rem 0;
+}
 
-    .hero {
-      background: linear-gradient(to bottom, #e0f7fa, #fff);
-      padding: 3rem 20px;
-      text-align: center;
-    }
+.scrollable-menu li a {
+    color: #333;
+    font-size: 1rem;
+}
 
-    .hero-text h2 {
-      font-size: 2rem;
-      font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
-      margin-bottom: 1rem;
-    }
+.scrollable-menu.open {
+    display: block;
+}
 
-    .hero-text p {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 1.5rem;
-    }
+.hero {
+    background: linear-gradient(to bottom, #e0f7fa, #fff);
+    padding: 3rem 20px;
+    text-align: center;
+}
 
-    .read-more {
-      display: inline-block;
-      background-color: #fdd835;
-      color: #222;
-      padding: 0.6rem 1rem;
-      border-radius: 15px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
+.hero-text h2 {
+    font-size: 2rem;
+    font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
+    margin-bottom: 1rem;
+}
 
-    .read-more:hover {
-      background-color: #fbc02d;
-    }
+.hero-text p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
 
-    .parallax-space {
-      background-image: url('../images/space-background.jpg');
-      height: 200px; /* 高さを少し低く調整 */
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
-      margin-bottom: 2rem; /* 下マージンを追加 */
-    }
+.read-more {
+    display: inline-block;
+    background-color: #fdd835;
+    color: #222;
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-.articles {
-      padding: 2rem 20px;
-      background-color: #fff;
-    }
+.read-more:hover {
+    background-color: #fbc02d;
+}
 
-    .articles h2 {
-      font-size: 1.6rem;
-      font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
+.parallax-space {
+    background-image: url('../images/space-background.jpg');
+    height: 200px; /* 高さを少し低く調整 */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem; /* 下マージンを追加 */
+}
 
-    .section {
-      margin-bottom: 2rem; /* セクション間のマージンを調整 */
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease-out;
-      text-align: center; /* 画像と文章を中央揃え */
-    }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section .image {
-      margin-bottom: 1rem; /* 画像と文章の間のマージン */
-    }
-
-    .section img {
-      max-width: 100%; /* 画像が親要素の幅を超えないように */
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .section .text {
-      padding: 0 1rem;
-    }
-
-    .section .text h3 {
-      font-size: 1.2rem;
-      font-family: 'Zen Maru Gothic', sans-serif; /* サブ見出しフォント */
-      margin-bottom: 0.5rem;
-    }
-
-    .section .text p {
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 15px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger-container {
-        display: block;
-      }
-
-      .hero {
-        padding: 2rem 15px;
-      }
-
-      .hero-text h2 {
-        font-size: 1.8rem;
-      }
-
-      .articles {
-        padding: 1.5rem 15px;
-      }
-
-      .section {
-        margin-bottom: 1.5rem;
-      }
-    }/* --- 物語のページ (Articles Section) --- */
+/* --- 物語のページ (Articles Section) --- */
 .articles {
     padding: 60px 20px;
     background-color: #fff8f8; /* わずかにピンクがかった白 */
@@ -264,17 +201,17 @@ body {
 }
 
 /* 奇数番目のセクションは画像が右、偶数番目は画像が左 (CSSで制御) */
-.articles .section:nth-of-type(odd) { /* :nth-child は div もカウントするので :nth-of-type に変更 */
+.articles .section:nth-of-type(odd) {
     flex-direction: row; /* テキスト左、画像右 */
 }
 
-.articles .section:nth-of-type(even) { /* :nth-child は div もカウントするので :nth-of-type に変更 */
+.articles .section:nth-of-type(even) {
     flex-direction: row-reverse; /* テキスト右、画像左 */
 }
 
 .articles .section .text {
     flex: 1; /* テキストが占めるスペース */
-    min-width: 280px; /* 最小幅を確保 */
+    flex-basis: 55%; /* テキストがやや広めに表示されるように調整 */
     padding: 10px 20px;
     font-size: 1.4em; /* 絵本のような大きな文字 */
     color: #6a445d; /* 落ち着いた色合い */
@@ -295,7 +232,7 @@ body {
 
 .articles .section .image-wrapper {
     flex: 1; /* 画像が占めるスペース */
-    min-width: 280px; /* 最小幅を確保 */
+    flex-basis: 40%; /* 画像がやや狭めに表示されるように調整 */
     text-align: center; /* 画像を中央に配置 */
     padding: 10px;
 }
@@ -314,8 +251,8 @@ body {
 
 .articles .section figcaption {
     font-style: italic;
-    font-size: 0.9em;
-    color: #888;
+    font-size: 0.8em; /* キャプションを少し小さくして、本文と区別 */
+    color: #a0a0a0; /* 薄めの色で目立ちすぎないように */
     margin-top: 10px;
     font-family: 'Zen Maru Gothic', sans-serif;
 }
@@ -470,6 +407,11 @@ footer nav a:hover {
     }
 
     /* ヘッダー画像はモバイルでも同様に表示 */
+    .header-image {
+        height: 150px; /* モバイルでの高さを調整 */
+        margin-bottom: 0.5rem;
+    }
+
     .header-image img {
         object-position: center bottom; /* モバイルでも画像の下部を基準に表示 */
     }
@@ -507,7 +449,7 @@ footer nav a:hover {
     .articles .section .text,
     .articles .section .image-wrapper {
         padding: 0; /* 余白をリセット */
-        min-width: unset; /* 最小幅制限を解除 */
+        flex-basis: auto; /* flex-basisを自動に設定 */
         width: 100%; /* 全幅を使う */
     }
     .articles .section .text {
