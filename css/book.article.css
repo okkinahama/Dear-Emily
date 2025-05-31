@@ -140,7 +140,7 @@
       margin-bottom: 2rem; /* 下マージンを追加 */
     }
 
-    .articles {
+.articles {
       padding: 2rem 20px;
       background-color: #fff;
     }
@@ -219,4 +219,378 @@
       .section {
         margin-bottom: 1.5rem;
       }
+    }/* --- 物語のページ (Articles Section) --- */
+.articles {
+    padding: 60px 20px;
+    background-color: #fff8f8; /* わずかにピンクがかった白 */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 150, 200, 0.1);
+    margin-top: -50px; /* パララックスと少し重ねる */
+    position: relative;
+    z-index: 1;
+}
+
+.articles h2 {
+    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
+    font-size: 3em; /* セクション見出しのサイズ */
+    color: #a85888; /* 深みのあるピンク */
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.articles .section {
+    display: flex;
+    flex-wrap: wrap; /* 小さい画面で折り返す */
+    align-items: center;
+    margin-bottom: 60px; /* 各セクション間の余白 */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* JSアニメーションのため初期は非表示 */
+    transform: translateY(20px); /* JSアニメーションのため初期位置 */
+}
+
+.articles .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 奇数番目のセクションは画像が右、偶数番目は画像が左 (CSSで制御) */
+.articles .section:nth-of-type(odd) { /* :nth-child は div もカウントするので :nth-of-type に変更 */
+    flex-direction: row; /* テキスト左、画像右 */
+}
+
+.articles .section:nth-of-type(even) { /* :nth-child は div もカウントするので :nth-of-type に変更 */
+    flex-direction: row-reverse; /* テキスト右、画像左 */
+}
+
+.articles .section .text {
+    flex: 1; /* テキストが占めるスペース */
+    min-width: 280px; /* 最小幅を確保 */
+    padding: 10px 20px;
+    font-size: 1.4em; /* 絵本のような大きな文字 */
+    color: #6a445d; /* 落ち着いた色合い */
+    line-height: 2; /* ゆったりとした行間 */
+    font-family: 'Zen Maru Gothic', sans-serif;
+    text-align: center; /* 絵本のように中央寄せ */
+}
+
+.articles .section .page-number {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    color: #b45578;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
+}
+
+.articles .section .image-wrapper {
+    flex: 1; /* 画像が占めるスペース */
+    min-width: 280px; /* 最小幅を確保 */
+    text-align: center; /* 画像を中央に配置 */
+    padding: 10px;
+}
+
+.articles .section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* 角丸の画像 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.articles .section img:hover {
+    transform: scale(1.02); /* ホバーで少し拡大 */
+}
+
+.articles .section figcaption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 10px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+/* ページネーション */
+.pagination {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px dotted #f2a6bf;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 0 8px;
+    background-color: #d76a83; /* ページネーションボタンの色 */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.pagination a.current,
+.pagination a:hover {
+    background-color: #a85888; /* ホバーと現在ページの強調色 */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* --- About Emily Section (この本について) --- */
+.about-emily {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #fcefee 0%, #ffe9e9 100%); /* やや淡いグラデーション */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 100, 150, 0.2);
+    margin-top: 60px;
+    text-align: center;
+}
+
+.about-emily h2 {
+    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
+    font-size: 3em;
+    color: #a85888;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+.about-emily .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* 上揃え */
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-emily .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* 丸い画像 */
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-emily .about-text {
+    flex: 2; /* テキストが多めにスペースを占める */
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-emily p {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #6a445d;
+    margin-bottom: 20px;
+}
+
+.about-emily .from-author {
+    font-style: italic;
+    font-weight: bold;
+    color: #b45578;
+    text-align: right; /* 署名を右寄せ */
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+/* --- フッター --- */
+footer {
+    background-color: #f2a6bf; /* ヘッダーと同じ色 */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 80px;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center;
+    gap: 15px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* 折り返し */
+    justify-content: center;
+    gap: 15px;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+    color: #ffdce9;
+}
+
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 768px) {
+    /* ヘッダー */
+    .nav-links {
+        display: none; /* 通常ナビゲーションを非表示に */
     }
+
+    .hamburger-container {
+        display: block; /* ハンバーガーメニューを表示 */
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+    header .site-description {
+        font-size: 1em;
+    }
+
+    /* ヘッダー画像はモバイルでも同様に表示 */
+    .header-image img {
+        object-position: center bottom; /* モバイルでも画像の下部を基準に表示 */
+    }
+
+    /* ヒーローセクション */
+    .hero {
+        min-height: 400px;
+        padding: 60px 15px;
+    }
+    .hero h2 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+    .hero .read-more {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    /* 物語のページ */
+    .articles {
+        padding: 40px 15px;
+        margin-top: -30px;
+    }
+    .articles h2 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+    .articles .section {
+        flex-direction: column !important; /* スマホでは縦並びを強制 */
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+    .articles .section .text,
+    .articles .section .image-wrapper {
+        padding: 0; /* 余白をリセット */
+        min-width: unset; /* 最小幅制限を解除 */
+        width: 100%; /* 全幅を使う */
+    }
+    .articles .section .text {
+        font-size: 1.2em;
+        order: 2; /* テキストを画像の下に */
+    }
+    .articles .section .image-wrapper {
+        margin-bottom: 20px; /* 画像の下に余白 */
+        order: 1; /* 画像をテキストの上に */
+    }
+    .articles .section figcaption {
+        margin-top: 5px;
+        font-size: 0.85em;
+    }
+    .articles .section .page-number {
+        margin-bottom: 15px;
+        font-size: 1em;
+    }
+
+
+    /* About Emily Section */
+    .about-emily {
+        padding: 60px 15px;
+    }
+    .about-emily h2 {
+        font-size: 2.5em;
+    }
+    .about-emily .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .about-emily .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    .about-emily .about-text {
+        text-align: center; /* 中央寄せ */
+    }
+    .about-emily p {
+        font-size: 1.05em;
+    }
+    .about-emily .from-author {
+        text-align: center;
+    }
+
+    /* フッター */
+    footer nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    header .site-description {
+        font-size: 0.9em;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 40px 10px;
+    }
+    .hero h2 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+
+    .articles h2 {
+        font-size: 1.8em;
+    }
+    .articles .section .text {
+        font-size: 1.1em;
+    }
+
+    .about-emily h2 {
+        font-size: 2em;
+    }
+    .about-emily p {
+        font-size: 1em;
+    }
+
+    .pagination a {
+        padding: 8px 14px;
+        font-size: 0.9em;
+    }
+}
