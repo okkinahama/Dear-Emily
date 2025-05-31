@@ -2,22 +2,27 @@
 /* 絵本記事ページ (例: 2025-05-23.space.egg1.html など) 専用スタイル */
 /* ========================================= */
 
+/* 基本的なボディスタイル */
+body {
+    font-family: 'Zen Maru Gothic', sans-serif; /* 日本語は丸ゴシック */
+    background-color: #fcefee; /* 優しいクリームピンク */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8; /* 読みやすい行間 */
+    overflow-x: hidden; /* 横スクロールバーを出さない */
+}
+
 /* Google Fonts - Handlee と Zen Maru Gothic の読み込み */
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&display=swap');
 
-/* 基本的なボディスタイル */
-* {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Handlee', cursive; /* 絵本らしい手書き風フォントに変更 */
-      line-height: 1.7; /* 行間を少し広げて読みやすく */
-      color: #555; /* 少し落ち着いた色合いに変更 */
-      background-color: #f8f0e3; /* 温かみのある背景色に変更 */
-    }
+/* 全体のコンテナ設定 */
+.container {
+    max-width: 1000px; /* コンテンツの最大幅を少し広げる */
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
     a {
       text-decoration: none;
