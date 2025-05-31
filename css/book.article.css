@@ -13,87 +13,77 @@
     }
 
     body {
-      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #fefbf5;
+      font-family: 'Handlee', cursive; /* 絵本らしい手書き風フォントに変更 */
+      line-height: 1.7; /* 行間を少し広げて読みやすく */
+      color: #555; /* 少し落ち着いた色合いに変更 */
+      background-color: #f8f0e3; /* 温かみのある背景色に変更 */
     }
 
     a {
       text-decoration: none;
-      color: #4a4a4a;
+      color: #6495ed; /* 少し明るいリンク色に変更 */
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #4169e1;
     }
 
     header {
-      background-color: #ffffff;
-      border-bottom: 2px solid #e6e6e6;
-      position: relative;
-    }
-
-    .header-image-container img {
-      width: 100%;
-      height: auto;
-      display: block;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 0;
     }
 
     .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      flex-wrap: wrap;
     }
 
     .header-content h1 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+      font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
       font-weight: bold;
     }
 
     .site-description {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #777;
     }
 
     .nav-links ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
     }
 
-    .nav-links li a:hover {
-      color: #1e90ff;
+    .nav-links li a {
+      font-size: 0.9rem;
     }
 
     .hamburger-container {
       display: none;
     }
 
-    .hamburger-menu {
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .hamburger-menu span {
-      width: 25px;
-      height: 3px;
-      background: #333;
-    }
-
     .scrollable-menu {
       display: none;
-      background: #fff;
       position: absolute;
       top: 100%;
+      left: 0;
       width: 100%;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      z-index: 1000;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 10;
     }
 
     .scrollable-menu ul {
       list-style: none;
       padding: 1rem;
+      text-align: center;
     }
 
     .scrollable-menu li {
@@ -102,7 +92,7 @@
 
     .scrollable-menu li a {
       color: #333;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .scrollable-menu.open {
@@ -110,62 +100,64 @@
     }
 
     .hero {
-      background: linear-gradient(to bottom, #d9f0ff, #ffffff);
-      padding: 4rem 2rem;
+      background: linear-gradient(to bottom, #e0f7fa, #fff);
+      padding: 3rem 20px;
       text-align: center;
     }
 
     .hero-text h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
+      font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
       margin-bottom: 1rem;
     }
 
     .hero-text p {
-      font-size: 1.1rem;
-      color: #444;
+      font-size: 1rem;
+      color: #555;
       margin-bottom: 1.5rem;
     }
 
     .read-more {
-      background-color: #ffb347;
-      padding: 0.7rem 1.2rem;
-      border-radius: 20px;
-      color: #fff;
+      display: inline-block;
+      background-color: #fdd835;
+      color: #222;
+      padding: 0.6rem 1rem;
+      border-radius: 15px;
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
     .read-more:hover {
-      background-color: #ff9842;
+      background-color: #fbc02d;
     }
 
     .parallax-space {
       background-image: url('../images/space-background.jpg');
-      height: 300px;
+      height: 200px; /* 高さを少し低く調整 */
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
+      margin-bottom: 2rem; /* 下マージンを追加 */
     }
 
     .articles {
-      padding: 3rem 2rem;
-      background-color: #fff8e7;
+      padding: 2rem 20px;
+      background-color: #fff;
     }
 
     .articles h2 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      font-family: 'Zen Maru Gothic', sans-serif; /* 見出しフォント */
+      margin-bottom: 1.5rem;
       text-align: center;
     }
 
     .section {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem; /* セクション間のマージンを調整 */
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease-out;
+      transform: translateY(20px);
+      transition: all 0.5s ease-out;
+      text-align: center; /* 画像と文章を中央揃え */
     }
 
     .section.visible {
@@ -173,23 +165,37 @@
       transform: translateY(0);
     }
 
-    .section .text {
-      flex: 1;
-      padding: 1rem;
-    }
-
     .section .image {
-      flex: 1;
-      padding: 1rem;
+      margin-bottom: 1rem; /* 画像と文章の間のマージン */
     }
 
     .section img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 100%; /* 画像が親要素の幅を超えないように */
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .section .text {
+      padding: 0 1rem;
+    }
+
+    .section .text h3 {
+      font-size: 1.2rem;
+      font-family: 'Zen Maru Gothic', sans-serif; /* サブ見出しフォント */
+      margin-bottom: 0.5rem;
+    }
+
+    .section .text p {
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+
       .nav-links {
         display: none;
       }
@@ -198,8 +204,19 @@
         display: block;
       }
 
+      .hero {
+        padding: 2rem 15px;
+      }
+
+      .hero-text h2 {
+        font-size: 1.8rem;
+      }
+
+      .articles {
+        padding: 1.5rem 15px;
+      }
+
       .section {
-        flex-direction: column;
+        margin-bottom: 1.5rem;
       }
     }
-  
