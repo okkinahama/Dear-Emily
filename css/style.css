@@ -315,6 +315,7 @@ header::before {
         padding: 8px 25px; /* パディングを調整 */
         border-radius: 50px; /* 角を丸くする */
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* 影を追加 */
+        -webkit-backdrop-filter: blur(5px); /* Safari対応 */
         backdrop-filter: blur(5px); /* 背景をぼかす */
         border: 1px solid rgba(255, 255, 255, 0.2); /* 薄いボーダー */
     }

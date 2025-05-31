@@ -2,6 +2,9 @@
 /* 絵本記事ページ (例: 2025-05-23.space.egg1.html など) 専用スタイル */
 /* ========================================= */
 
+/* Google Fonts - Handlee と Zen Maru Gothic の読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&display=swap');
+
 /* 基本的なボディスタイル */
 body {
     font-family: 'Zen Maru Gothic', sans-serif; /* 日本語は丸ゴシック */
@@ -13,13 +16,9 @@ body {
     overflow-x: hidden; /* 横スクロールバーを出さない */
 }
 
-/* Google Fonts - Handlee と Zen Maru Gothic の読み込み */
-@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&display=swap');
-
-
 /* 全体のコンテナ設定 */
 .container {
-    max-width: 1000px; /* コンテンツの最大幅を少し広げる */
+    max-width: 1000px; /* コンテンツの最大幅 */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -28,27 +27,50 @@ body {
 header {
     background: linear-gradient(to right, #f2a6bf, #d76a83); /* 暖かく優しいグラデーション */
     color: #fff;
-    padding: 15px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
+    position: relative; /* 子要素 (header-image-container) の絶対配置の基準 */
     z-index: 1000;
-    overflow: hidden; /* 画像がはみ出さないように */
+    overflow: hidden; /* 画像やコンテンツがはみ出さないように */
+    /* ヘッダーの高さは、内部のコンテンツと画像によって自動調整されます */
 }
 
+/* ヘッダー画像用のコンテナ */
+.header-image-container {
+    position: absolute; /* 親要素 (header) に対して絶対配置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 親要素 (header) の高さに合わせる */
+    overflow: hidden; /* 画像がはみ出さないように */
+    z-index: 1; /* コンテンツの下に配置 */
+    opacity: 0.7; /* 好みに応じて透明度を調整 */
+}
+
+.header-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* コンテナに合わせて画像をトリミング */
+    object-position: center bottom; /* 画像の下部を基準に表示 */
+    display: block; /* img要素の下にできる余白をなくす */
+}
+
+/* ヘッダー内のコンテンツを保持するコンテナ */
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap; /* レスポンシブ対応で折り返す */
+    position: relative; /* 画像より手前に */
+    z-index: 10; /* header-image-container (z-index: 1) より手前に */
+    padding: 25px 20px; /* コンテンツの上部と下部にパディングを追加し、画像との重なりを調整 */
+    max-width: 1000px; /* 絵本記事ページのcontainer設定に合わせる */
 }
 
 header .header-content {
     display: flex;
-    align-items: baseline;
+    align-items: baseline; /* タイトルと説明をベースラインで揃える */
     gap: 15px; /* タイトルと説明の間のスペース */
-    flex-wrap: wrap;
-    position: relative; /* 画像より手前に */
-    z-index: 10;
+    flex-wrap: wrap; /* 小さい画面で折り返す */
 }
 
 header h1 {
@@ -56,6 +78,7 @@ header h1 {
     font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif; /* 手書き風タイトル */
     font-size: 2.2em; /* タイトルサイズ */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    line-height: 1; /* 行の高さを調整 */
 }
 
 header h1 a {
@@ -73,25 +96,7 @@ header .site-description {
     font-size: 1.1em;
     color: rgba(255, 255, 255, 0.9);
     font-family: 'Zen Maru Gothic', sans-serif;
-}
-
-/* ヘッダー画像用のスタイルを追加 */
-.header-image {
-    position: absolute; /* 親要素 (header) に対して絶対配置 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* 画像がはみ出さないように */
-    z-index: 1; /* コンテンツの下に配置 */
-    opacity: 0.7; /* 好みに応じて透明度を調整 */
-}
-
-.header-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* コンテナに合わせて画像をトリミング */
-    object-position: center bottom; /* 画像の下部を基準に表示 */
+    line-height: 1; /* 行の高さを調整 */
 }
 
 /* 通常のナビゲーション (PC版) */
@@ -183,6 +188,7 @@ header .site-description {
     width: 100%;
     height: 100%;
     background-color: rgba(242, 166, 191, 0.95); /* 半透明のピンク背景 */
+    -webkit-backdrop-filter: blur(5px); /* Safari対応 */
     backdrop-filter: blur(5px); /* 背景を少しぼかす */
     z-index: 999;
     overflow-y: auto;
@@ -223,6 +229,7 @@ header .site-description {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
 }
+
 /* --- Hero Section (書籍紹介部分) --- */
 .hero {
     /* ここにhero-background.jpgへの正しいパスを指定してください */
@@ -257,6 +264,7 @@ header .site-description {
     background-color: rgba(255, 255, 255, 0.2); /* 半透明のカード背景 */
     padding: 30px;
     border-radius: 20px;
+    -webkit-backdrop-filter: blur(5px); /* Safari対応 */
     backdrop-filter: blur(5px); /* 背景をぼかす効果 */
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
@@ -347,11 +355,11 @@ header .site-description {
 }
 
 /* 奇数番目のセクションは画像が右、偶数番目は画像が左 (CSSで制御) */
-.articles .section:nth-of-type(odd) { /* :nth-child は div もカウントするので :nth-of-type に変更 */
+.articles .section:nth-of-type(odd) {
     flex-direction: row; /* テキスト左、画像右 */
 }
 
-.articles .section:nth-of-type(even) { /* :nth-child は div もカウントするので :nth-of-type に変更 */
+.articles .section:nth-of-type(even) {
     flex-direction: row-reverse; /* テキスト右、画像左 */
 }
 
@@ -506,6 +514,7 @@ footer .container {
     flex-direction: column; /* 縦並び */
     align-items: center;
     gap: 15px;
+    max-width: 1000px; /* 絵本記事ページのcontainer設定に合わせる */
 }
 
 footer p {
@@ -533,7 +542,6 @@ footer nav a:hover {
     color: #ffdce9;
 }
 
-
 /* --- レスポンシブ対応 --- */
 @media (max-width: 768px) {
     /* ヘッダー */
@@ -550,11 +558,6 @@ footer nav a:hover {
     }
     header .site-description {
         font-size: 1em;
-    }
-
-    /* ヘッダー画像はモバイルでも同様に表示 */
-    .header-image img {
-        object-position: center bottom; /* モバイルでも画像の下部を基準に表示 */
     }
 
     /* ヒーローセクション */
@@ -609,7 +612,6 @@ footer nav a:hover {
         margin-bottom: 15px;
         font-size: 1em;
     }
-
 
     /* About Emily Section */
     .about-emily {
