@@ -36,27 +36,33 @@ a:hover {
 
 /* --- ヘッダー --- */
 header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    padding: 0.5rem 0;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 軽い影を追加 */
+    /* 画像を背景として設定 */
+    background-image: url('../images/ヘッダー.jpg');
+    background-size: cover; /* 全体を覆うようにリサイズ */
+    background-position: center bottom; /* 下部中央を基準に表示 */
+    background-color: #fff; /* fallback color */
+    color: white; /* テキスト色を白に */
+    padding: 2rem 0; /* 上下のパディング */
+    position: relative; /* 子要素のabsolute配置の基準 */
+    height: 200px; /* ヘッダーの固定高さを設定 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; /* Flexboxを適用してコンテンツを中央配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: center; /* 水平方向の中央揃え（コンテンツが少ない場合） */
+    overflow: hidden; /* 背景画像がはみ出さないように */
 }
 
-/* ヘッダー画像コンテナ */
-.header-image-container { /* HTMLの要素名に合わせて修正 */
-    width: 100%;
-    height: 200px; /* 画像の高さ */
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 1rem; /* ヘッダーコンテンツとの間に余白 */
-}
-
-.header-image-container img { /* HTMLの要素名に合わせて修正 */
+/* 背景のオーバーレイ */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 縦横比を維持しつつ、要素を覆う */
-    object-position: center bottom; /* 画像の下部を基準に表示 */
+    background-color: rgba(0, 0, 0, 0.4); /* 黒色の半透明オーバーレイ */
+    /* background-color: rgba(168, 88, 136, 0.3); /* ピンク系の半透明オーバーレイ */
+    z-index: 1; /* コンテンツより下 */
 }
 
 header .container {
@@ -66,23 +72,29 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* オーバーレイより上に表示 */
+    z-index: 2;
+    width: 100%; /* コンテナ幅を100%に設定し、paddingを有効にする */
 }
 
 .header-content h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'Zen Maru Gothic', sans-serif;
     font-weight: bold;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
 }
 
 .header-content h1 a {
-    color: #333; /* ヘッダータイトルのリンク色 */
+    color: white; /* ヘッダータイトルを白に */
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 読みやすく影を追加 */
 }
 
 .site-description {
-    font-size: 0.8rem;
-    color: #777;
-    margin-top: 5px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8); /* 少し透明度のある白 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 読みやすく影を追加 */
 }
 
 .nav-links ul {
@@ -94,12 +106,15 @@ header .container {
 }
 
 .nav-links li a {
-    font-size: 0.95rem; /* 少し大きく */
+    font-size: 1.1rem;
     font-weight: 500;
-    color: #555;
+    color: white;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 読みやすく影を追加 */
 }
+
 .nav-links li a:hover {
-    color: #a85888; /* ホバー色 */
+    color: #ffdce9; /* ホバー時の色 */
 }
 
 /* ハンバーガーメニュー */
@@ -121,7 +136,7 @@ header .container {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: #333;
+    background-color: white; /* 白い線に統一 */
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -144,9 +159,9 @@ header .container {
     top: 100%; /* ヘッダーのすぐ下 */
     left: 0;
     width: 100%;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.85); /* 暗い背景 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10; /* 通常コンテンツより上に */
     max-height: 0; /* 初期高さ0で隠す */
     overflow: hidden;
     transition: max-height 0.4s ease-out; /* スムーズな開閉 */
@@ -166,20 +181,20 @@ header .container {
 
 .scrollable-menu li {
     padding: 0.7rem 0;
-    border-bottom: 1px solid #eee; /* メニュー項目間の区切り線 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* メニュー項目間の区切り線 */
 }
 .scrollable-menu li:last-child {
     border-bottom: none;
 }
 
 .scrollable-menu li a {
-    color: #333;
+    color: white; /* モバイルメニューのリンクも白に */
     font-size: 1.1rem; /* 少し大きく */
     display: block; /* リンク全体をクリック可能に */
     padding: 5px 0;
 }
 .scrollable-menu li a:hover {
-    color: #a85888;
+    color: #ffdce9;
 }
 
 /* --- ヒーローセクション --- */
@@ -479,27 +494,25 @@ footer nav a:hover {
 /* --- レスポンシブ対応 --- */
 @media (max-width: 768px) {
     /* ヘッダー */
+    header {
+        height: 150px; /* モバイルでの高さを調整 */
+        padding: 1.5rem 0;
+    }
+    header .container {
+        padding: 0 15px;
+    }
     .nav-links {
         display: none; /* 通常ナビゲーションを非表示に */
     }
-
     .hamburger-container {
         display: block; /* ハンバーガーメニューを表示 */
     }
-
     header h1 {
         font-size: 1.6em;
     }
     header .site-description {
         font-size: 0.9em;
     }
-
-    /* ヘッダー画像はモバイルでも同様に表示 */
-    .header-image-container { /* HTMLの要素名に合わせて修正 */
-        height: 150px; /* モバイルでの高さを調整 */
-        margin-bottom: 0.5rem;
-    }
-
     /* ヒーローセクション */
     .hero {
         padding: 60px 15px;
@@ -517,7 +530,6 @@ footer nav a:hover {
     .parallax-space {
         height: 180px;
     }
-
 
     /* 物語のページ */
     .articles {
