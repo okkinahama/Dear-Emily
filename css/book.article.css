@@ -211,13 +211,14 @@ header .container {
 
 .articles .section .text {
     flex: 1; /* テキストが占めるスペース */
-    flex-basis: 55%; /* テキストがやや広めに表示されるように調整 */
+    flex-basis: 48%; /* テキストの基本幅を調整 */
+    min-width: 300px; /* テキストの最小幅 */
     padding: 10px 20px;
     font-size: 1.4em; /* 絵本のような大きな文字 */
     color: #6a445d; /* 落ち着いた色合い */
     line-height: 2; /* ゆったりとした行間 */
     font-family: 'Zen Maru Gothic', sans-serif;
-    text-align: center; /* 絵本のように中央寄せ */
+    text-align: left; /* 左寄せ */
 }
 
 .articles .section .page-number {
@@ -232,7 +233,8 @@ header .container {
 
 .articles .section .image-wrapper {
     flex: 1; /* 画像が占めるスペース */
-    flex-basis: 40%; /* 画像がやや狭めに表示されるように調整 */
+    flex-basis: 48%; /* 画像の基本幅を調整 */
+    min-width: 300px; /* 画像の最小幅 */
     text-align: center; /* 画像を中央に配置 */
     padding: 10px;
 }
@@ -243,6 +245,8 @@ header .container {
     border-radius: 15px; /* 角丸の画像 */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+    display: block; /* インライン要素による余白を防ぐ */
+    margin: 0 auto; /* 中央揃え */
 }
 
 .articles .section img:hover {
@@ -255,6 +259,7 @@ header .container {
     color: #a0a0a0; /* 薄めの色で目立ちすぎないように */
     margin-top: 10px;
     font-family: 'Zen Maru Gothic', sans-serif;
+    text-align: center;
 }
 
 /* ページネーション */
@@ -442,31 +447,57 @@ footer nav a:hover {
         margin-bottom: 40px;
     }
     .articles .section {
-        flex-direction: column !important; /* スマホでは縦並びを強制 */
+        flex-direction: row; /* モバイルでも横並びを維持 */
+        flex-wrap: wrap; /* ただし、狭い場合は折り返す */
         padding: 20px;
         margin-bottom: 40px;
+        align-items: flex-start; /* 上揃え */
     }
     .articles .section .text,
     .articles .section .image-wrapper {
-        padding: 0; /* 余白をリセット */
-        flex-basis: auto; /* flex-basisを自動に設定 */
-        width: 100%; /* 全幅を使う */
+        flex-basis: calc(50% - 20px); /* 半分の幅で左右に並べる (左右のマージンを考慮) */
+        min-width: auto; /* 最小幅を解除して flex-basis に従う */
+        margin-bottom: 20px; /* 下マージンを追加して折り返し時のスペースを確保 */
+    }
+    .articles .section:nth-of-type(odd) .text,
+    .articles .section:nth-of-type(even) .text {
+        order: 2; /* 基本はテキストを右に */
+    }
+    .articles .section:nth-of-type(odd) .image-wrapper,
+    .articles .section:nth-of-type(even) .image-wrapper {
+        order: 1; /* 基本は画像を左に */
+    }
+    /* 偶数番目のセクションでは画像の順序を逆にする */
+    .articles .section:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+    .articles .section:nth-of-type(even) .text {
+        order: 1; /* 偶数番目ではテキストを左に */
+    }
+    .articles .section:nth-of-type(even) .image-wrapper {
+        order: 2; /* 偶数番目では画像を右に */
+    }
+    .articles .section img {
+        max-width: 100%; /* モバイルでも画像の最大幅は100% */
+        margin: 0 auto;
     }
     .articles .section .text {
-        font-size: 1.2em;
-        order: 2; /* テキストを画像の下に */
+        text-align: left; /* モバイルではテキストを左寄せ */
+        padding: 0 15px;
     }
     .articles .section .image-wrapper {
-        margin-bottom: 20px; /* 画像の下に余白 */
-        order: 1; /* 画像をテキストの上に */
+        padding: 0 15px;
     }
     .articles .section figcaption {
         margin-top: 5px;
         font-size: 0.85em;
+        text-align: center;
     }
     .articles .section .page-number {
-        margin-bottom: 15px;
+        width: 100%;
+        text-align: center;
         font-size: 1em;
+        margin-bottom: 15px;
     }
 
 
@@ -504,40 +535,21 @@ footer nav a:hover {
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em;
-    }
-    header .site-description {
-        font-size: 0.9em;
-    }
-
-    .hero {
-        min-height: 350px;
-        padding: 40px 10px;
-    }
-    .hero h2 {
-        font-size: 2em;
-    }
-    .hero p {
-        font-size: 1em;
-    }
-
-    .articles h2 {
-        font-size: 1.8em;
+    .articles .section .text,
+    .articles .section .image-wrapper {
+        flex-basis: 100%; /* さらに狭い画面では縦に並べる */
     }
     .articles .section .text {
-        font-size: 1.1em;
+        order: 2;
     }
-
-    .about-emily h2 {
-        font-size: 2em;
+    .articles .section .image-wrapper {
+        order: 1;
+        margin-bottom: 15px;
     }
-    .about-emily p {
-        font-size: 1em;
+    .articles .section:nth-of-type(even) .text {
+        order: 2; /* 狭い画面では偶数番目もテキストを下に */
     }
-
-    .pagination a {
-        padding: 8px 14px;
-        font-size: 0.9em;
+    .articles .section:nth-of-type(even) .image-wrapper {
+        order: 1;
     }
 }
