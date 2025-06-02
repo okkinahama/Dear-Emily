@@ -199,75 +199,101 @@ header::before {
   text-decoration: none;
 }
 
-/* === Heroセクション（透明・白文字） === */
+/* === ヒーローヘッダーセクション（透明・白文字が浮き上がる） === */
 .hero-header-section {
   text-align: center;
   padding: 3rem 1rem;
-  background: transparent; /* 背景を透明に */
+  background: transparent;
   border-top: 2px dashed rgba(255, 255, 255, 0.3);
   border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
 }
 
-.hero-text h2 {
+.hero-header-section h2 {
   font-size: 2.8rem;
   font-family: 'Handlee', cursive;
-  color: #ffffff; /* 白文字 */
+  color: #ffffff;
   margin-bottom: 1.2rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 白が映える影 */
+  text-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(255, 255, 255, 0.4); /* 白のぼかし光追加 */
 }
 
-.hero-text p {
+.hero-header-section p {
   max-width: 720px;
   margin: 0 auto 2rem auto;
   font-size: 1.2rem;
-  color: #ffffff; /* 白文字 */
-  background-color: rgba(255, 255, 255, 0.05); /* ほぼ透明な背景（かすかなグロー） */
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   line-height: 1.9;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* やわらかい発光 */
-  -webkit-backdrop-filter: blur(3px); /* Safari対応 透明感に奥行き */
-  backdrop-filter: blur(3px); /* 透明感に奥行き */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 
-/* === ボタン（透明背景に映えるスタイル） === */
-.read-more {
+
+/* === ヒーローセクション（おとぎ話風・可愛らしい） === */
+.hero {
+  padding: 4rem 1rem 5rem;
+  background: linear-gradient(to bottom, #fdf5ff 0%, #fffaf0 100%);
+  text-align: center;
+  border-top: 2px dotted #f3d6ff;
+  border-bottom: 2px dotted #fde2ff;
+}
+
+.hero .hero-text p {
+  font-size: 1.25rem;
+  color: #704c5e;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  line-height: 2;
+  max-width: 750px;
+  margin: 0 auto 2rem auto;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  box-shadow: 0 0 12px rgba(255, 180, 255, 0.2);
+}
+
+/* === メルヘンボタン === */
+.hero .read-more {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.15); /* 半透明の白 */
-  color: #ffffff;
-  padding: 0.8rem 2rem;
+  background: linear-gradient(145deg, #ffe4ec, #ffd9fa);
+  color: #5a2a5f;
+  padding: 0.9rem 2.2rem;
   border-radius: 30px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  -webkit-backdrop-filter: blur(2px); /* Safari/iOS対応 */
-  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 10px rgba(204, 153, 255, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.read-more:hover {
-  background: rgba(255, 255, 255, 0.25);
+.hero .read-more:hover {
+  background: linear-gradient(145deg, #ffcbe7, #f3cfff);
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 16px rgba(204, 153, 255, 0.4);
 }
 
-/* === レスポンシブ調整 === */
+
+/* === レスポンシブ対応 === */
 @media screen and (max-width: 768px) {
-  .hero-text h2 {
+  .hero-header-section h2 {
     font-size: 2rem;
   }
 
-  .hero-text p {
+  .hero-header-section p,
+  .hero .hero-text p {
     font-size: 1rem;
     padding: 0.75rem 1rem;
   }
 
-  .read-more {
+  .hero .read-more {
     font-size: 1rem;
     padding: 0.6rem 1.5rem;
   }
 }
+
 
 
 
