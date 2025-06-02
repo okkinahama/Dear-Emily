@@ -199,123 +199,76 @@ header::before {
   text-decoration: none;
 }
 
-/* === Heroセクション（おとぎ話風） === */
+/* === Heroセクション（透明・白文字） === */
 .hero-header-section {
   text-align: center;
-  padding: 2.5rem 1rem;
-  background: linear-gradient(to bottom, #e3f2fd, #fffaf5); /* 空と光のグラデ */
-  border-top: 2px dashed #dcb7ff;
-  border-bottom: 2px dashed #dcb7ff;
+  padding: 3rem 1rem;
+  background: transparent; /* 背景を透明に */
+  border-top: 2px dashed rgba(255, 255, 255, 0.3);
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
 }
 
 .hero-text h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-family: 'Handlee', cursive;
-  color: #ffffff; /* 白 */
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 白文字に合う影に変更 */
+  color: #ffffff; /* 白文字 */
+  margin-bottom: 1.2rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 白が映える影 */
 }
 
 .hero-text p {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto 2rem auto;
-  font-size: 1.1rem;
-  color: #ffffff; /* 白 */
-  background-color: rgba(0, 0, 0, 0.3); /* 白文字と対比を出す背景に変更 */
-  padding: 1rem;
+  font-size: 1.2rem;
+  color: #ffffff; /* 白文字 */
+  background-color: rgba(255, 255, 255, 0.05); /* ほぼ透明な背景（かすかなグロー） */
+  padding: 1rem 1.5rem;
   border-radius: 1rem;
-  line-height: 1.8;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 白に合うやわらか影 */
+  line-height: 1.9;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* やわらかい発光 */
+  -webkit-backdrop-filter: blur(3px); /* Safari対応 透明感に奥行き */
+  backdrop-filter: blur(3px); /* 透明感に奥行き */
 }
 
-
-/* === ボタン（メルヘン風） === */
+/* === ボタン（透明背景に映えるスタイル） === */
 .read-more {
   display: inline-block;
-  background: linear-gradient(145deg, #ffe4ec, #ffccf9);
-  color: #5a2a5f;
-  padding: 0.75rem 2rem;
+  background: rgba(255, 255, 255, 0.15); /* 半透明の白 */
+  color: #ffffff;
+  padding: 0.8rem 2rem;
   border-radius: 30px;
   font-weight: bold;
   font-size: 1.1rem;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(204, 153, 255, 0.3);
-  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(2px); /* Safari/iOS対応 */
+  backdrop-filter: blur(2px);
 }
 
 .read-more:hover {
-  background: linear-gradient(145deg, #ffcbe7, #eacaff);
+  background: rgba(255, 255, 255, 0.25);
   transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
 }
 
-
-/* === レスポンシブ === */
+/* === レスポンシブ調整 === */
 @media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger-container {
-    display: block;
-  }
-
-  .header-content h1 {
-    font-size: 2rem;
-  }
-
   .hero-text h2 {
     font-size: 2rem;
   }
 
   .hero-text p {
     font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .read-more {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
   }
 }
 
-/* --- ヒーローセクション --- */
-.hero {
-    background: linear-gradient(to bottom, #e0f7fa, #fff); /* 淡いグラデーション */
-    padding: 4rem 20px 5rem; /* 上下のパディングを増やす */
-    text-align: center;
-    /* ヘッダーの下に配置するために調整 */
-    margin-top: 0; /* If header is sticky, adjust body padding-top instead */
-}
-
-.hero-text h2 {
-    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
-    font-size: 3.5rem; /* 見出しを大きく */
-    color: #a85888; /* 深みのあるピンク */
-    margin-bottom: 1.5rem;
-    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6); /* 軽い影 */
-}
-
-.hero-text p {
-    font-size: 1.25rem; /* 本文よりかなり大きめに */
-    color: #555;
-    margin-bottom: 2.5rem; /* ボタンとの間に余白 */
-    max-width: 750px; /* 読みやすい行長に制限 */
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 2; /* ゆったりとした行間 */
-}
-
-.read-more {
-    display: inline-block;
-    background-color: #fdd835; /* 明るい黄色 */
-    color: #222;
-    padding: 1rem 2rem; /* ボタンを大きく */
-    border-radius: 30px; /* 角丸を強調 */
-    font-weight: bold;
-    font-size: 1.15rem; /* ボタンの文字サイズ */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.15); /* 影を強調 */
-}
-
-.read-more:hover {
-    background-color: #fbc02d;
-    transform: translateY(-3px); /* 少し浮き上がる */
-    box-shadow: 0 7px 15px rgba(0,0,0,0.25);
-}
 
 
 /* --- 物語のページ (Articles Section) --- */
