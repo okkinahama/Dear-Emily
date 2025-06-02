@@ -50,6 +50,10 @@ header {
     align-items: center; /* 垂直方向の中央揃え */
     justify-content: center; /* 水平方向の中央揃え（コンテンツが少ない場合） */
     overflow: hidden; /* 背景画像がはみ出さないように */
+    /* ヘッダーがコンテンツに重ならないように追加 */
+    margin-bottom: 0; /* Reset default margin */
+    /* If you want to push content down, you can set a min-height for the main content area or add padding-top to the body if the header is fixed.
+    For this example, we'll ensure the content below starts after the header's height. */
 }
 
 /* 背景のオーバーレイ */
@@ -202,6 +206,8 @@ header .container {
     background: linear-gradient(to bottom, #e0f7fa, #fff); /* 淡いグラデーション */
     padding: 4rem 20px 5rem; /* 上下のパディングを増やす */
     text-align: center;
+    /* ヘッダーの下に配置するために調整 */
+    margin-top: 0; /* If header is sticky, adjust body padding-top instead */
 }
 
 .hero-text h2 {
@@ -308,7 +314,7 @@ header .container {
     max-width: 50%; /* 幅を均等に保つ */
     min-width: 350px; /* **テキストがこれ以上小さくならないようにする最小幅を増やす** */
     padding: 0; /* 内側の余白をリセット（gapで調整） */
-    font-size: 1.75em; /* **絵本のような大きな文字** */
+    font-size: 0.58em; /* **絵本のような大きな文字を約1/3に調整 (元1.75em -> 0.58em)** */
     color: #6a445d; /* 落ち着いた色合い */
     line-height: 2.2; /* **ゆったりとした行間** */
     font-family: 'Zen Maru Gothic', sans-serif;
@@ -534,7 +540,8 @@ footer nav a:hover {
     /* 物語のページ */
     .articles {
         padding: 50px 15px;
-        margin-top: -50px;
+        /* margin-topを調整してヘッダーとの重なりを解消 */
+        margin-top: 20px; /* Adjust as needed based on overall layout */
     }
     .articles h2 {
         font-size: 2.5em;
@@ -560,7 +567,7 @@ footer nav a:hover {
     }
     .articles .section .text {
         order: 2; /* テキストを画像の下に */
-        font-size: 1.4em; /* モバイルでの文字サイズ */
+        font-size: 0.47em; /* モバイルでの文字サイズを約1/3に調整 (元1.4em -> 0.47em) */
         line-height: 1.9;
         text-align: left; /* モバイルでも左寄せを維持 */
     }
@@ -639,7 +646,7 @@ footer nav a:hover {
         padding: 20px;
     }
     .articles .section .text {
-        font-size: 1.2em;
+        font-size: 0.4em; /* モバイルでの文字サイズをさらに調整 (元1.2em -> 0.4em) */
         line-height: 1.8;
     }
     .articles .section img {
