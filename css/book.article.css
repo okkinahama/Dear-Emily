@@ -199,44 +199,55 @@ header::before {
   text-decoration: none;
 }
 
-/* === Heroセクション === */
+/* === Heroセクション（おとぎ話風） === */
 .hero-header-section {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(to bottom, #e3f2fd, #fffaf5); /* 空と光のグラデ */
+  border-top: 2px dashed #dcb7ff;
+  border-bottom: 2px dashed #dcb7ff;
 }
 
 .hero-text h2 {
   font-size: 2.5rem;
   font-family: 'Handlee', cursive;
+  color: #ffffff; /* 白 */
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* 白文字に合う影に変更 */
 }
 
 .hero-text p {
   max-width: 700px;
   margin: 0 auto 2rem auto;
   font-size: 1.1rem;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  color: #ffffff; /* 白 */
+  background-color: rgba(0, 0, 0, 0.3); /* 白文字と対比を出す背景に変更 */
+  padding: 1rem;
+  border-radius: 1rem;
   line-height: 1.8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 白に合うやわらか影 */
 }
 
+
+/* === ボタン（メルヘン風） === */
 .read-more {
   display: inline-block;
-  background: #ffd700;
-  color: #333;
+  background: linear-gradient(145deg, #ffe4ec, #ffccf9);
+  color: #5a2a5f;
   padding: 0.75rem 2rem;
   border-radius: 30px;
   font-weight: bold;
   font-size: 1.1rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: background 0.3s ease, transform 0.2s ease;
   text-decoration: none;
+  box-shadow: 0 4px 10px rgba(204, 153, 255, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .read-more:hover {
-  background: #ffcc00;
-  transform: translateY(-3px);
+  background: linear-gradient(145deg, #ffcbe7, #eacaff);
+  transform: scale(1.05);
 }
+
 
 /* === レスポンシブ === */
 @media screen and (max-width: 768px) {
