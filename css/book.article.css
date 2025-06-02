@@ -5,7 +5,7 @@
 /* 基本的なボディスタイル */
 body {
     font-family: 'Zen Maru Gothic', sans-serif; /* 日本語は丸ゴシック */
-    background-color: #fcefee; /* 優しいクリームピンク */
+    background-color: #FFFBF8; /* ごく淡いアイボリー - より明るく清潔感のある背景に */
     color: #333;
     margin: 0;
     padding: 0;
@@ -26,12 +26,12 @@ body {
 
 a {
     text-decoration: none;
-    color: #6495ed; /* 少し明るいリンク色 */
+    color: #A85888; /* 深みのあるピンク - メインカラーに調和しつつ視認性の高いリンク色に */
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #4169e1;
+    color: #D76A83; /* より明るいピンク - ホバー時の色 */
 }
 
 /* --- ヘッダー --- */
@@ -76,7 +76,7 @@ header::before {
     margin: 0;
     font-family: var(--font-family-english);
     font-size: 3.5em;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* 影を濃くして視認性アップ */
 }
 
 .header-content h1 a {
@@ -278,7 +278,7 @@ header::before {
     color: #a85888; /* 深みのあるピンク */
     text-align: center;
     margin-bottom: 70px; /* 見出しの下にゆったりとした余白 */
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); /* 影を強調 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* 影を強調して文字をはっきりさせる */
 }
 
 .articles .section {
@@ -294,7 +294,7 @@ header::before {
     transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* アニメーションを長く滑らかに */
     opacity: 0; /* JSアニメーションのため初期は非表示 */
     transform: translateY(40px); /* JSアニメーションのため初期位置 */
-    gap: 40px; /* **画像と文字の間隔を広げる** */
+    gap: 40px; /* 画像と文字の間隔を広げる */
 }
 
 .articles .section.visible {
@@ -316,13 +316,13 @@ header::before {
     flex: 1; /* 残りのスペースを均等に分配 */
     flex-basis: calc(50% - 20px); /* gapの半分を考慮した幅 */
     max-width: 50%; /* 幅を均等に保つ */
-    min-width: 350px; /* **テキストがこれ以上小さくならないようにする最小幅を増やす** */
+    min-width: 350px; /* テキストがこれ以上小さくならないようにする最小幅を増やす */
     padding: 0; /* 内側の余白をリセット（gapで調整） */
-    font-size: 0.58em; /* **絵本のような大きな文字を約1/3に調整 (元1.75em -> 0.58em)** */
-    color: #6a445d; /* 落ち着いた色合い */
-    line-height: 2.2; /* **ゆったりとした行間** */
+    font-size: 1.2em; /* 絵本のような読みやすい文字サイズに調整 */
+    color: #4A2E3D; /* 濃いベリー色 - コントラストを高めて文字をはっきりと */
+    line-height: 2.2; /* ゆったりとした行間 */
     font-family: 'Zen Maru Gothic', sans-serif;
-    text-align: left; /* **左寄せ（物語を読み進める感覚）** */
+    text-align: left; /* 左寄せ（物語を読み進める感覚） */
 }
 
 .articles .section .page-number {
@@ -340,7 +340,7 @@ header::before {
     flex: 1; /* 残りのスペースを均等に分配 */
     flex-basis: calc(50% - 20px); /* gapの半分を考慮した幅 */
     max-width: 50%; /* 幅を均等に保つ */
-    min-width: 350px; /* **画像がこれ以上小さくならないようにする最小幅を増やす** */
+    min-width: 350px; /* 画像がこれ以上小さくならないようにする最小幅を増やす */
     padding: 0; /* 内側の余白をリセット（gapで調整） */
     text-align: center; /* 画像は中央揃え */
 }
@@ -380,7 +380,7 @@ header::before {
     display: inline-block;
     padding: 14px 28px; /* ボタンを大きく */
     margin: 0 12px;
-    background-color: #d76a83;
+    background-color: #FFC0CB; /* 桜色 - より鮮やかで目を引くボタンに */
     color: #fff;
     text-decoration: none;
     border-radius: 35px; /* 角丸を強調 */
@@ -392,7 +392,7 @@ header::before {
 
 .pagination a.current,
 .pagination a:hover {
-    background-color: #a85888;
+    background-color: #A85888; /* 深みのあるピンク - ホバー時・現在ページの色 */
     transform: translateY(-4px); /* 浮き上がるアニメーションを強調 */
     box-shadow: 0 8px 18px rgba(0,0,0,0.3);
 }
@@ -459,7 +459,7 @@ header::before {
 
 /* --- フッター --- */
 footer {
-    background-color: #f2a6bf; /* ヘッダーと同じ色 */
+    background-color: #F9D0DF; /* 淡いローズピンク - 全体との調和を考慮 */
     color: white;
     padding: 40px 20px; /* パディングを増やす */
     text-align: center;
@@ -552,7 +552,7 @@ footer nav a:hover {
         margin-bottom: 50px;
     }
     .articles .section {
-        flex-direction: column !important; /* **モバイルでは強制的に縦並び** */
+        flex-direction: column !important; /* モバイルでは強制的に縦並び */
         padding: 30px;
         margin-bottom: 60px;
         gap: 25px; /* 縦並びになった時の間隔 */
@@ -571,7 +571,7 @@ footer nav a:hover {
     }
     .articles .section .text {
         order: 2; /* テキストを画像の下に */
-        font-size: 0.47em; /* モバイルでの文字サイズを約1/3に調整 (元1.4em -> 0.47em) */
+        font-size: 1em; /* モバイルでの文字サイズを読みやすく調整 */
         line-height: 1.9;
         text-align: left; /* モバイルでも左寄せを維持 */
     }
@@ -650,7 +650,7 @@ footer nav a:hover {
         padding: 20px;
     }
     .articles .section .text {
-        font-size: 0.4em; /* モバイルでの文字サイズをさらに調整 (元1.2em -> 0.4em) */
+        font-size: 0.9em; /* モバイルでの文字サイズをさらに調整 */
         line-height: 1.8;
     }
     .articles .section img {
