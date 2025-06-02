@@ -42,24 +42,37 @@ a:hover {
 /* ヘッダーセクションのスタイル */
 /* ========================================= */
 
+/* リセットCSS */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* フォントの設定 */
+body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+}
+
 /* ヘッダー全体の設定 */
 header {
-    height: 100vh; /* 画面いっぱいの高さ */
+    height: 100vh;
     width: 100%;
     background-image: url('../images/ヘッダー.jpg'); /* 画像パスを再度確認してください */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-    display: flex; /* Flexboxで子要素を配置 */
-    flex-direction: column; /* 要素を縦並びにする */
-    align-items: center; /* 水平方向の中央揃え */
-    justify-content: center; /* 垂直方向の中央揃え */
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    overflow: hidden; /* はみ出しを隠す */
-    color: white; /* ヘッダー内のデフォルトの文字色 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
     z-index: 1;
 }
 
@@ -71,7 +84,7 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* オーバーレイの濃度を調整 */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
 
@@ -79,94 +92,88 @@ header::before {
 header > .container {
     position: relative;
     width: 100%;
-    max-width: 1000px; /* コンテンツの最大幅を維持 */
-    padding: 30px 20px; /* 上下のパディングを増やして要素間の空間を確保 */
+    max-width: 1000px;
+    padding: 30px 20px;
     z-index: 10;
-    box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* このコンテナ内の要素も縦並びにする */
-    align-items: center; /* 水平方向の中央揃え */
-    justify-content: center; /* コンテンツを中央に配置 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100%;
-    flex-grow: 0;
 }
 
 /* ヘッダーコンテンツ（タイトルとサイト説明） */
 .header-content {
-    text-align: center; /* 中央寄せ */
-    margin-bottom: 30px; /* ナビとの間に十分な余白 */
-    flex-shrink: 0;
-    /* タイトルが見切れないように、max-width を調整 */
-    max-width: 90%; /* 親コンテナの幅に合わせつつ、少し余裕を持たせる */
-    word-break: keep-all; /* 単語の途中で改行しない */
-    white-space: nowrap; /* 強制的に改行しない */
-    overflow: hidden; /* はみ出した部分は隠す */
-    text-overflow: ellipsis; /* 必要であれば省略記号を表示 */
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 90%;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header-content h1 {
     margin: 0;
     font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
-    font-size: 3.5em; /* **タイトルサイズを一段階小さく調整** */
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* 影を濃くして文字を際立たせる */
-    line-height: 1.1; /* 行間を詰める */
-    min-width: 0; /* flexアイテムの最小幅をリセット */
+    font-size: 3.5em;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    line-height: 1.1;
 }
 
 .header-content h1 a {
-    color: inherit; /* **文字色を白に統一** */
+    color: inherit;
     text-decoration: none;
 }
 
 .site-description {
-    font-size: 1.4em; /* 説明文のサイズを調整 */
+    font-size: 1.4em;
     margin-top: 10px;
-    color: white; /* **文字色を白に統一** */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* 影を濃く */
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* デスクトップ用ナビゲーションリンク */
 .nav-links {
     display: block;
     z-index: 10;
-    margin-bottom: 50px; /* ヒーローセクションとの間に広い余白 */
-    flex-shrink: 0;
-    width: 100%; /* 親要素の幅いっぱいに広げる */
-    text-align: center; /* ここで中央揃え */
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
 }
 
 .nav-links ul {
     list-style: none;
-    display: flex; /* 横並びは維持 */
-    justify-content: center; /* **ナビリンクを中央揃えにする** */
-    gap: 2rem; /* リンク間のスペースを広げる */
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li a {
     font-family: 'Zen Maru Gothic', sans-serif;
-    font-size: 1.25rem; /* ナビリンクの文字サイズを調整 */
+    font-size: 1.25rem;
     font-weight: 500;
-    color: white; /* **文字色を白に統一** */
+    color: white;
     transition: color 0.3s ease, text-shadow 0.3s ease;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* 影を濃く */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .nav-links li a:hover {
-    color: #ffdce9; /* ホバー時の色を調整 */
+    color: #ffdce9;
     text-shadow: 1px 1px 8px rgba(255,255,255,0.9);
 }
 
 /* ハンバーガーメニューコンテナ（モバイル用） */
 .hamburger-container {
-    display: none; /* デスクトップでは非表示 */
+    display: none;
     cursor: pointer;
     z-index: 20;
-    position: absolute; /* ヘッダーの右上に固定 */
+    position: absolute;
     top: 20px;
     right: 20px;
 }
@@ -208,7 +215,7 @@ header > .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.98); /* 完全に背景コンテンツを覆う */
+    background-color: rgba(0, 0, 0, 0.98);
     overflow-y: auto;
     display: flex;
     align-items: center;
@@ -240,23 +247,24 @@ header > .container {
     width: 90%;
     text-align: center;
 }
+
 .scrollable-menu li:last-child {
     border-bottom: none;
 }
 
 .scrollable-menu li a {
-    color: white; /* **文字色を白に統一** */
+    color: white;
     font-family: 'Zen Maru Gothic', sans-serif;
-    font-size: 1.7rem; /* モバイルメニューの文字サイズ */
+    font-size: 1.7rem;
     display: block;
     padding: 5px 0;
     transition: color 0.3s ease;
     text-decoration: none;
 }
+
 .scrollable-menu li a:hover {
     color: #ffdce9;
 }
-
 
 /* ヘッダーの背景上に表示されるヒーローセクション */
 header > section#hero {
@@ -265,10 +273,8 @@ header > section#hero {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-    text-align: center; /* **全て中央揃え** */
+    text-align: center;
     z-index: 5;
-    box-sizing: border-box;
-    flex-grow: 1; /* 残りのスペースを占めるようにする */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -276,86 +282,84 @@ header > section#hero {
 }
 
 header > section#hero .hero-text {
-    color: white; /* **文字色を白に統一** */
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.8); /* 影を非常に濃く */
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
 }
 
 header > section#hero .hero-text h2 {
     font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif;
-    font-size: 3.0rem; /* 見出しサイズを調整 */
-    color: white; /* **文字色を白に統一** */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* 影を濃く */
-    margin-bottom: 1.5rem; /* 下の余白を調整 */
+    font-size: 3.0rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.5rem;
     line-height: 1.3;
 }
 
 header > section#hero .hero-text p {
     font-family: 'Zen Maru Gothic', sans-serif;
-    font-size: 1.1rem; /* 本文のサイズを調整 */
-    color: white; /* **文字色を白に統一** */
+    font-size: 1.1rem;
+    color: white;
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.8;
-    margin-bottom: 2.5rem; /* 下の余白を調整 */
+    margin-bottom: 2.5rem;
 }
 
 header > section#hero .read-more {
     display: inline-block;
-    background-color: #fdd835; /* 黄色系を維持 */
-    color: #333; /* ボタンの文字色を濃くしてコントラストを高める */
-    padding: 1rem 2.8rem; /* ボタンを大きく */
+    background-color: #fdd835;
+    color: #333;
+    padding: 1rem 2.8rem;
     border-radius: 35px;
     font-family: 'Zen Maru Gothic', sans-serif;
     font-weight: bold;
-    font-size: 1.2rem; /* ボタンの文字サイズを調整 */
+    font-size: 1.2rem;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     text-decoration: none;
 }
 
 header > section#hero .read-more:hover {
-    background-color: #fbc02d; /* ホバー時の色を調整 */
-    transform: translateY(-4px); /* ホバー時の動きを調整 */
+    background-color: #fbc02d;
+    transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* ========================================= */
 /* モバイルレスポンシブの調整（ヘッダー部分のみ） */
-/* ========================================= */
 @media (max-width: 768px) {
     header {
         height: 100vh;
         align-items: center;
         justify-content: center;
-        padding-top: 80px; /* ハンバーガーメニューが被らないように上部パディングを増やす */
-        padding-bottom: 40px; /* 下部にもパディング */
+        padding-top: 80px;
+        padding-bottom: 40px;
     }
-    
+
     header > .container {
         padding: 15px;
         height: auto;
         flex-direction: column;
         justify-content: flex-start;
-        min-height: unset;
     }
 
     .header-content {
         margin-bottom: 15px;
-        max-width: 95%; /* モバイルでも見切れにくいように調整 */
+        max-width: 95%;
     }
 
     .header-content h1 {
-        font-size: 1.8em; /* **モバイルでのタイトルサイズをさらに小さく調整** */
+        font-size: 1.8em;
         line-height: 1.2;
     }
+
     .site-description {
-        font-size: 0.9em; /* モバイルでの説明文サイズ */
+        font-size: 0.9em;
         margin-top: 5px;
     }
 
     .nav-links {
-        display: none; /* モバイルではデスクトップナビを非表示 */
+        display: none;
     }
 
     .hamburger-container {
@@ -366,7 +370,6 @@ header > section#hero .read-more:hover {
         z-index: 30;
     }
 
-    /* モバイルでのヒーローセクション */
     header > section#hero {
         padding: 0 15px;
         margin-top: 20px;
@@ -376,42 +379,12 @@ header > section#hero .read-more:hover {
         width: 100%;
     }
 
-    header > section#hero .hero-text h2 {
-        font-size: 2.2em; /* モバイルでの見出しサイズ */
-        margin-bottom: 1rem;
-        line-height: 1.3;
+        header > section#hero .hero-text h2 {
+            font-size: 2em;
+        }
     }
+ 
 
-    header > section#hero .hero-text p {
-        font-size: 1.0em; /* モバイルでの本文サイズ */
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-    }
-
-    header > section#hero .read-more {
-        font-size: 1.0em;
-        padding: 12px 25px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-content h1 {
-        font-size: 1.4em; /* **さらに小さい画面でのタイトルサイズを調整** */
-    }
-    .site-description {
-        font-size: 0.8em;
-    }
-    header > section#hero .hero-text h2 {
-        font-size: 1.8em;
-    }
-    header > section#hero .hero-text p {
-        font-size: 0.9em;
-    }
-    header > section#hero .read-more {
-        font-size: 0.9em;
-        padding: 10px 20px;
-    }
-}
 /* --- ヒーローセクション --- */
 .hero {
     background: linear-gradient(to bottom, #e0f7fa, #fff); /* 淡いグラデーション */
