@@ -36,71 +36,75 @@ a:hover {
 
 /* --- ヘッダー --- */
 header {
-    /* 画像を背景として設定 */
+    height: 100vh;
+    width: 100%; /* bodyの幅に合わせて設定 */
     background-image: url('../images/ヘッダー.jpg');
-    background-size: cover; /* 全体を覆うようにリサイズ */
-    background-position: center bottom; /* 下部中央を基準に表示 */
-    background-color: #fff; /* fallback color */
-    color: white; /* テキスト色を白に */
-    padding: 2rem 0; /* 上下のパディング */
-    position: relative; /* 子要素のabsolute配置の基準 */
-    height: 200px; /* ヘッダーの固定高さを設定 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    display: flex; /* Flexboxを適用してコンテンツを中央配置 */
-    align-items: center; /* 垂直方向の中央揃え */
-    justify-content: center; /* 水平方向の中央揃え（コンテンツが少ない場合） */
-    overflow: hidden; /* 背景画像がはみ出さないように */
-    /* ヘッダーがコンテンツに重ならないように追加 */
-    margin-bottom: 0; /* Reset default margin */
-    /* If you want to push content down, you can set a min-height for the main content area or add padding-top to the body if the header is fixed.
-    For this example, we'll ensure the content below starts after the header's height. */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-/* 背景のオーバーレイ */
 header::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* 黒色の半透明オーバーレイ */
-    /* background-color: rgba(168, 88, 136, 0.3); /* ピンク系の半透明オーバーレイ */
-    z-index: 1; /* コンテンツより下 */
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
 }
 
-header .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative; /* オーバーレイより上に表示 */
+.header-content {
+    color: white;
+    max-width: 100%;
+    padding: 0 1rem;
+    text-align: center;
+    margin: auto;
     z-index: 2;
-    width: 100%; /* コンテナ幅を100%に設定し、paddingを有効にする */
+    position: relative;
 }
 
 .header-content h1 {
-    font-size: 1.8rem;
-    font-family: 'Zen Maru Gothic', sans-serif;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+    margin: 0;
+    font-family: var(--font-family-english);
+    font-size: 3.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .header-content h1 a {
-    color: white; /* ヘッダータイトルを白に */
-    text-decoration: none;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 読みやすく影を追加 */
+    color: inherit; /* 親要素の色を継承 */
 }
 
 .site-description {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8); /* 少し透明度のある白 */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 読みやすく影を追加 */
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: white;
 }
 
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .header-content {
+        padding: 80px 15px 20px 15px;
+        height: auto;
+    }
+    .header-content h1 {
+        font-size: 2.5em;
+    }
+    .site-description {
+        font-size: 1em;
+    }
+}
 .nav-links ul {
     list-style: none;
     display: flex;
