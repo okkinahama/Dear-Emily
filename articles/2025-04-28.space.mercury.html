@@ -1,83 +1,317 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>冷静と情熱をあわせ持つ-水星のものがたり</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
-     crossorigin="anonymous"></script>
-  <style>
-    body {
-      font-family: 'Merriweather', serif;
-      background: linear-gradient(to bottom, #0b0f1a, #1e213a);
-      color: #f5f5f5;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.8;
-    }
-    h1, h2 { color: #ffd8e4; }
-    h1 { font-size: 2em; text-align: center; margin-bottom: 1rem; }
-    h2 { font-size: 1.4em; margin-top: 2rem; border-left:4px solid #ffd1dc; padding-left:0.5rem; }
-    .section { opacity:0; transform:translateY(20px); transition: .8s; margin-bottom:2rem; }
-    .section.visible { opacity:1; transform:translateY(0); }
-    .points li { margin-bottom:.8rem; padding-left:1.2rem; position:relative; }
-    .points li:before { content:'•'; position:absolute; left:0; color:#ff8888; }
-    .quote { background: rgba(255,209,220,.1); border-left:4px solid #ffd1dc; padding:1rem; margin:1rem 0; font-style:italic; }
-    a { color:#ffd1dc; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>💧セーラーマーキュリーと学ぶ、水星のものがたり | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-  <article>
-    <h1>冷静と情熱をあわせ持つ、小さな惑星のものがたり</h1>
 
-    <div class="section">
-      <p>こんにちは、エミリー！今日は「セーラーマーキュリー」の名前にもなっている、“水星”について冒険しようよ。</p>
-      <p>水星は太陽のすぐそばをくるくる回る、小さくて速い惑星。まるで静かな知性と熱い情熱を秘めた水野亜美ちゃんのように、ふたつの顔を持っているんだ。</p>
-    </div>
+    <article class="article-detail">
+        <h1>💧セーラーマーキュリーと学ぶ、水星のものがたり<br><small>〜冷静と情熱をあわせ持つ、小さな惑星のものがたり〜</small></h1>
 
-    <div class="section">
-      <h2>🌟 水星のふしぎポイント</h2>
-      <ul class="points">
-        <li><strong>最速の公転速度：</strong>秒速約47.4kmで、１周わずか88日。まるで全力疾走するヒーローみたい！</li>
-        <li><strong>極端な温度差：</strong>昼は約430℃、夜は-180℃、その差は610℃にもなるんだ。</li>
-        <li><strong>大気ほぼゼロ：</strong>空気がないから音は伝わらず、静寂の世界。</li>
-        <li><strong>クレーターに覆われた表面：</strong>隕石衝突の跡がそのまま残り、月に似た“あばた顔”。</li>
-        <li><strong>カロリス盆地：</strong>直径約1350kmの巨大クレーターは、火星のオリンポス山以上の規模。</li>
-        <li><strong>リンクル・リッジ：</strong>収縮でできた巨大な“シワ”が表面を縦断。</li>
-        <li><strong>氷のかくれが：</strong>永久影のクレーター底に、ひっそり氷が眠っているかも。</li>
-      </ul>
-      <div class="quote">
-        セーラーマーキュリー：「知識の水を得よ！」<br>
-        水星は冷静で深い知恵の象徴。その知的な力と、極端な環境の熱さをあわせ持つ星なんだよ。
-      </div>
-    </div>
+        <img src="https://images.unsplash.com/photo-1536709873919-dd77348e3e4a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="クレーターに覆われた水星の表面" />
+        <p class="caption">水星は、太陽に一番近い小さな惑星だよ。</p>
 
-    <div class="section">
-      <h2>🔭 探査機メッセンジャーの挑戦</h2>
-      <p>NASAの探査機「メッセンジャー」は2011年から水星を4年間周回し、未知の表情を次々に明らかにしたよ。影の中の氷や、くぼみに積もる微細な塵まで、私たちの想像を超える情報を届けてくれたんだ。</p>
-      <p>さらに日本・欧州共同の「ベピ・コロンボ」では、2025年に到着してさらに詳しい観測が続く予定。水星が持つ“知の水滴”を、一滴残さず集めに行くんだね。</p>
-    </div>
+        <div class="section">
+            <h2>【導入】</h2>
+            <p>こんにちは、エミリー！今日は「セーラーマーキュリー」の名前にもなっている、“**水星**”について冒険しようよ。</p>
+            <p>水星は太陽のすぐそばをくるくる回る、小さくて速い惑星。まるで静かな知性と熱い情熱を秘めた水野亜美ちゃんのように、ふたつの顔を持っているんだ。</p>
+        </div>
 
-    <div class="section">
-      <h2>✨ 学んだことを胸に</h2>
-      <p>水星は、知性と情熱が交錯する不思議な星。昼の厳しい熱、夜の凍える寒さ、その両極を静かに受け入れる佇まいは、水野亜美ちゃんのクールさと優しさを思わせるよね。</p>
-      <p>次は火星で“情熱”を感じ、その次は木星で“守護”の力を学ぼう。Dear Emilyの宇宙探検は、まだまだ続くよ！</p>
-    </div>
+        <div class="section">
+            <h2>🌟 水星のふしぎポイント</h2>
+            <img src="https://images.unsplash.com/photo-1614728512275-d1fb07842b0e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="水星のクレーターと影のイメージ" />
+            <p class="caption">極端な温度差が水星の大きな特徴だよ。</p>
+            <ul class="points">
+                <li><strong>最速の公転速度：</strong>秒速約47.4kmで、１周わずか88日。まるで全力疾走するヒーローみたい！</li>
+                <li><strong>極端な温度差：</strong>昼は約430℃、夜は-180℃、その差は610℃にもなるんだ。</li>
+                <li><strong>大気ほぼゼロ：</strong>空気がないから音は伝わらず、静寂の世界。</li>
+                <li><strong>クレーターに覆われた表面：</strong>隕石衝突の跡がそのまま残り、月に似た“あばた顔”。</li>
+                <li><strong>カロリス盆地：</strong>直径約1350kmの巨大クレーターは、火星のオリンポス山以上の規模。</li>
+                <li><strong>リンクル・リッジ：</strong>収縮でできた巨大な“シワ”が表面を縦断。</li>
+                <li><strong>氷のかくれが：</strong>永久影のクレーター底に、ひっそり氷が眠っているかも。</li>
+            </ul>
+            <div class="quote">
+                セーラーマーキュリー：「知識の水を得よ！」<br>
+                水星は冷静で深い知恵の象徴。その知的な力と、極端な環境の熱さをあわせ持つ星なんだよ。
+            </div>
+        </div>
 
-    <div class="section">
-      <h2>🔭 次のお話はこちら</h2>
-      <p><a href="mars-mystery.html">「セーラー・マーズに教わる火星のひみつ」</a></p>
-    </div>
-  </article>
+        <div class="section">
+            <h2>🔭 探査機メッセンジャーの挑戦</h2>
+            <img src="https://images.unsplash.com/photo-1543722530-d2c320790d1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="メッセンジャー探査機が水星を周回するイメージ" />
+            <p class="caption">メッセンジャー探査機が水星の秘密をたくさん教えてくれたよ！</p>
+            <p>NASAの探査機「**メッセンジャー**」は2011年から水星を4年間周回し、未知の表情を次々に明らかにしたよ。影の中の氷や、くぼみに積もる微細な塵まで、私たちの想像を超える情報を届けてくれたんだ。</p>
+            <p>さらに日本・欧州共同の「**ベピ・コロンボ**」では、2025年に到着してさらに詳しい観測が続く予定。水星が持つ“知の水滴”を、一滴残さず集めに行くんだね。</p>
+        </div>
 
-  <script>
-    document.querySelectorAll('.section').forEach(sec=>{
-      new IntersectionObserver(entries=>{
-        entries.forEach(e=> e.isIntersecting && e.target.classList.add('visible'));
-      },{threshold:0.3}).observe(sec);
-    });
-  </script>
+        <div class="section">
+            <h2>✨ 学んだことを胸に</h2>
+            <p>水星は、知性と情熱が交錯する不思議な星。昼の厳しい熱、夜の凍える寒さ、その両極を静かに受け入れる佇まいは、水野亜美ちゃんのクールさと優しさを思わせるよね。</p>
+            <p>次は火星で“情熱”を感じ、その次は木星で“守護”の力を学ぼう。Dear Emilyの宇宙探検は、まだまだ続くよ！</p>
+        </div>
+
+        <div class="next-article-section">
+            <h2>🔭 次のお話はこちら</h2>
+            <p><a href="../articles/2025-04-30.space.moon2.html">「セーラームーンと学ぶ、月のふしぎな物語」</a></p>
+        </div>
+
+        <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+                </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+
+    </article>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+        fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>

@@ -1,131 +1,304 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>きらめきの入り口 ― 宇宙への関心レポート</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
-     crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>きらめきの入り口 ✨ 宇宙への関心レポート | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨";
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
 
-  <style>
-    body {
-      font-family: 'Merriweather', 'Noto Sans JP', serif;
-      background: linear-gradient(to bottom, #0b0f1a 0%, #1e213a 100%);
-      color: #f5f5f5;
-      line-height: 2;
-      padding: 3rem 1.5rem;
-      max-width: 820px;
-      margin: auto;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-    }
+        /* 次の記事へのリンクセクション (もしあれば追加) */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
 
-    h1, h2 {
-      color: #ffd8e4;
-      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 1rem;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      border-left: 5px solid #ffd1dc;
-      padding-left: 0.75rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05em;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .caption {
-      font-size: 0.9em;
-      color: #ccc;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    a {
-      color: #ffd1dc;
-      text-decoration: underline;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      text-shadow: 0 0 5px #ffd1dc;
-    }
-
-    .container {
-      animation: fadeIn 2s ease-in-out both;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        /* APODセクションのスタイルを直接ここに組み込み */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>きらめきの入り口 ✨<br>宇宙への関心レポート</h1>
+    <article class="article-detail">
+        <h1>きらめきの入り口 ✨<br><small>宇宙への関心レポート</small></h1>
 
-    <p>ねえ、エミリー。夜空を見上げて、星の光に心を奪われたことってある？</p>
-    <p>昔の人たちは、星のきらめきを見て、こう思ったんだって。</p>
-    <p>「この光の向こうには、どんな秘密があるんだろう？」</p>
+        <img src="https://images.unsplash.com/photo-1517976135836-e0e67610113f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="きらめく星空と宇宙への扉のイメージ" />
+        <p class="caption">夜空を見上げると、どんなきらめきが見えるかな？</p>
 
-    <p>でもね、私たちの毎日はとても忙しいよね。気づいたら、星空よりスマホの画面を見てる時間の方が長くなっちゃったりして。</p>
-    <p>だから今日は、“宇宙っておもしろそう！”って感じる心と、<br>
-    “ちょっと遠くてむずかしそう…”って感じる心の両方を、そっと見つめてみようと思うの。</p>
+        <div class="section">
+            <h2>【導入】</h2>
+            <p>ねえ、エミリー。夜空を見上げて、星の光に心を奪われたことってある？</p>
+            <p>昔の人たちは、星のきらめきを見て、こう思ったんだって。</p>
+            <p>「この光の向こうには、どんな秘密があるんだろう？」</p>
 
-    <h2>🌠 心をくすぐる宇宙のきらめき</h2>
-    <p>エミリー、流れ星がシュッと横切ったとき、お願いごとをしたくなったことあるよね？</p>
-    <p>宇宙飛行士の話、きれいな星の写真、映画やアニメの感動シーン…<br>
-    宇宙への扉は、意外とたくさん開いてるんだ。</p>
-    <p>まるで星座の点と点を結ぶように、<br>
-    一人ひとり違う“好き”のルートで、宇宙とつながっているんだよ。</p>
+            <p>でもね、私たちの毎日はとても忙しいよね。気づいたら、星空よりスマホの画面を見てる時間の方が長くなっちゃったりして。</p>
+            <p>だから今日は、“宇宙っておもしろそう！”って感じる心と、<br>
+            “ちょっと遠くてむずかしそう…”って感じる心の両方を、そっと見つめてみようと思うの。</p>
+        </div>
 
-    <h2>🌘 それでも「ちょっと難しそう…」と感じるとき</h2>
-    <p>専門用語や長い解説、図や数式…。<br>
-    なんだかテストみたいに感じてしまったり、眠くなっちゃったり。</p>
-    <p>それに、毎日忙しい中では、「今はちょっと余裕がないな」ってなることもあるよね。</p>
-    <p>だから“宇宙に興味がない人”がいるというよりも、<br>
-    “まだ心が宇宙に向かうタイミングじゃない人”がいるだけなんだと思うの。</p>
+        <div class="section">
+            <h2>🌠 心をくすぐる宇宙のきらめき</h2>
+            <img src="https://images.unsplash.com/photo-1543722530-d2c320790d1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="満天の星空と流れ星のイラスト" />
+            <p class="caption">流れ星に、どんなお願いをする？</p>
+            <p>エミリー、流れ星がシュッと横切ったとき、お願いごとをしたくなったことあるよね？</p>
+            <p>宇宙飛行士の話、きれいな星の写真、映画やアニメの感動シーン…<br>
+            宇宙への扉は、意外とたくさん開いてるんだ。</p>
+            <p>まるで星座の点と点を結ぶように、<br>
+            一人ひとり違う“好き”のルートで、宇宙とつながっているんだよ。</p>
+        </div>
 
-    <h2>📚 わたしたちが見つけたこと</h2>
-    <p><strong>宇宙との出会い方は、自由でいい</strong></p>
-    <p>本で知ってもいい。<br>
-    写真に感動してもいい。<br>
-    誰かの言葉に共感しても、VRでワープしても。</p>
-    <p>どんな方法でも、あなたに合った“きっかけ”でいいんだ。</p>
+        <div class="section">
+            <h2>🌘 それでも「ちょっと難しそう…」と感じるとき</h2>
+            <img src="https://images.unsplash.com/photo-1520625391307-e547343e2f5f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="難しい本を前に悩む子どものイメージ" />
+            <p class="caption">時には「うーん…」ってなることもあるよね。</p>
+            <p>専門用語や長い解説、図や数式…。<br>
+            なんだかテストみたいに感じてしまったり、眠くなっちゃったり。</p>
+            <p>それに、毎日忙しい中では、「今はちょっと余裕がないな」ってなることもあるよね。</p>
+            <p>だから“宇宙に興味がない人”がいるというよりも、<br>
+            “まだ心が宇宙に向かうタイミングじゃない人”がいるだけなんだと思うの。</p>
+        </div>
 
-    <p><strong>そしてね、</strong><br>
-    宇宙を知ることは、遠い星だけの話じゃない。</p>
-    <p>わたしたちが生きるこの地球のこと、<br>
-    そして自分自身の心にだって、やさしく光をあててくれるんだよ。</p>
+        <div class="section">
+            <h2>📚 わたしたちが見つけたこと</h2>
+            <p><strong>宇宙との出会い方は、自由でいい</strong></p>
+            <p>本で知ってもいい。<br>
+            写真に感動してもいい。<br>
+            誰かの言葉に共感しても、VRでワープしても。</p>
+            <p>どんな方法でも、あなたに合った“きっかけ”でいいんだ。</p>
 
-    <h2>🌌 エミリーへ ― 星空の教室から</h2>
-    <p>宇宙を知ることは、テストのためじゃなくて、<br>
-    自分の世界をほんの少しだけ広げること。</p>
-    <p>今日も明日も、星は空で待ってる。</p>
-    <p>あなたのペースで、きらめきの入り口を見つけてね🌟</p>
+            <p><strong>そしてね、</strong><br>
+            宇宙を知ることは、遠い星だけの話じゃない。</p>
+            <p>わたしたちが生きるこの地球のこと、<br>
+            そして自分自身の心にだって、やさしく光をあててくれるんだよ。</p>
+        </div>
 
-    <p>また次のレッスンで、星の物語を一緒に読もうね。</p>
-  </div>
+        <div class="section">
+            <h2>🌌 エミリーへ ― 星空の教室から</h2>
+            <p>宇宙を知ることは、テストのためじゃなくて、<br>
+            自分の世界をほんの少しだけ広げること。</p>
+            <p>今日も明日も、星は空で待ってる。</p>
+            <p>あなたのペースで、きらめきの入り口を見つけてね🌟</p>
+
+            <p>また次のレッスンで、星の物語を一緒に読もうね。</p>
+        </div>
+
+        <div class="next-article-section">
+            <h2>🔭 次のお話はこちら</h2>
+            <p><a href="../articles/2025-04-25.space.mars.html">「セーラー・マーズに教えてもらう火星のひみつ」</a></p>
+        </div>
+
+        <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+                </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+
+    </article>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+        fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>

@@ -1,164 +1,374 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>深海の青い謎を探る — 海王星のものがたり</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
-      crossorigin="anonymous"></script>
-<style>
-  body {
-    font-family: 'Merriweather', serif;
-    background: linear-gradient(to bottom, #0b0f1a, #1a1d2e);
-    color: #f5f5f5; /* Changed from #f0f0f0 to #f5f5f5 for consistency */
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-  }
-  h1, h2 { color: #ffd8e4; } /* Changed from #88d4ff to #ffd8e4 for consistency */
-  h1 {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  h2 {
-    font-size: 1.4em;
-    margin-top: 2rem;
-    border-left: 4px solid #ffd1dc; /* Changed from #88d4ff to #ffd1dc for consistency */
-    padding-left: 0.5rem;
-  }
-  .section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: .8s;
-    margin-bottom: 2rem;
-  }
-  .section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .points li {
-    margin-bottom: .8rem;
-    padding-left: 1.2rem;
-    position: relative;
-  }
-  .points li:before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #8ecae6; /* Changed from #2aa6ff to #8ecae6 for consistency */
-  }
-  .quote {
-    background: rgba(142, 202, 230, 0.1); /* Changed from rgba(136,212,255,.1) to rgba(142, 202, 230, 0.1) for consistency */
-    border-left: 4px solid #8ecae6; /* Changed from #88d4ff to #8ecae6 for consistency */
-    padding: 1rem;
-    margin: 1rem 0;
-    font-style: italic;
-  }
-  a { color: #ffd1dc; text-decoration: none; } /* Changed from #88d4ff to #ffd1dc for consistency */
-  a:hover { text-decoration: underline; }
-</style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🌊セーラー・ネプチューンと学ぶ、海王星のものがたり | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
+
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+        .quote {
+            background: rgba(142, 202, 230, 0.1); /* 海王星の色に合わせた背景 */
+            border-left: 4px solid #8ecae6; /* 海王星の色に合わせたボーダー */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-  <article>
-        <h1>深海の青い謎を探る — 海王星のひみつ</h1>
-      
-        <div class="section">
-        <p>こんにちは、エミリー。今日は宇宙のいちばん遠くにある、青くて静かな惑星「海王星（かいおうせい）」についてのお話をするね。</p>
-        </div>
+    <article class="article-detail">
+        <h1>🌊セーラー・ネプチューンと学ぶ、海王星のものがたり<br><small>〜深海の青い謎を探る〜</small></h1>
 
-        <div class="section">
-        <h2>🔍 発見のものがたり</h2>
-        <ul class="points">
-          <li><strong>計算から先に発見：</strong> 天王星の動きのズレから、まだ見つかっていない惑星の存在が予測されたんだ。</li>
-          <li><strong>1846年の発見：</strong> 計算をもとに探し出され、史上初めて「計算から発見された」惑星となったよ。</li>
-        </ul>
-        </div>
-      
-        <div class="section">
-        <h2>🌍 太陽系での位置</h2>
-        <ul class="points">
-          <li><strong>太陽系最遠の惑星：</strong>冥王星が準惑星に分類された今、太陽系で最も遠い惑星が海王星だよ。</li>
-          <li><strong>長い公転周期：</strong>太陽から約30天文単位離れており、公転には約165年かかるんだ。発見後、初めて太陽を一周したのは2011年だよ。</li>
-        </ul>
-        </div>
-      
-        <div class="section">
-        <h2>🌀 不思議な大気と嵐</h2>
-        <ul class="points">
-          <li><strong>大暗斑の発見と消失：</strong>1989年のボイジャー2号の接近で「大暗斑」という巨大な嵐が見つかったけど、ハッブル宇宙望遠鏡ではその後消滅が確認されたんだ。</li>
-          <li><strong>太陽系最速の強風：</strong>秒速400メートルもの強風が吹き荒れているよ。これは太陽系で一番の風速なんだ！</li>
-          <li><strong>謎の熱源：</strong>太陽から遠いのに活発なのは、内部にかくれた熱源があるためだと考えられているよ。</li>
-        </ul>
-        </div>
+        <img src="https://images.unsplash.com/photo-1610212720239-c12853177897?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="海王星のイメージ、濃い青色のガス惑星" />
+        <p class="caption">海王星は、宇宙の深海に浮かぶような、美しい青い惑星だよ。</p>
 
-        <div class="section">
-        <p>
-          海の守り神、セーラー・ネプチューン：「深海の潮の満ち引きよ、私に力を！」<br>
-          ネプチューンの深い青色のように、海王星はまるで宇宙の深海に浮かぶ青い宝石さ。
-        </p>
-        </div>
-      
-        <div class="section">
-        <h2>💍 隠れたリングとふしぎな衛星たち</h2>
-        <ul class="points">
-          <li><strong>4本のリング：</strong>土星ほどはっきり見えないけれど、海王星にも4本のリングがあるんだ。</li>
-          <li><strong>14個の衛星：</strong>これまでに14個の衛星（お月さまのようなもの）が見つかっているよ。</li>
-        </ul>
-        </div>
-      
-        <div class="section">
-        <h2>🌠 トリトン：さかさまにまわる不思議な月</h2>
-        <ul class="points">
-          <li><strong>逆行軌道：</strong>一番大きな衛星のトリトンは、海王星の自転とは逆向きにまわっている、とても珍しい衛星だよ。</li>
-          <li><strong>捕獲された衛星説：</strong>科学者たちは、トリトンはもともと別の場所で生まれ、海王星に後から捕らえられたと考えているんだ。</li>
-          <li><strong>窒素の間欠泉：</strong>表面は約−235℃と極寒だけど、窒素の間欠泉が吹き出しているんだ。まるで「冷たい火山」みたいだね。</li>
-          <li><strong>カンタロープ地形：</strong>表面にはマスクメロンのようなでこぼこ模様、「カンタロープ地形」が見られるよ。</li>
-        </ul>
-        </div>
-      
-        <div class="section">
-        <h2>📡 探査の歴史</h2>
-        <ul class="points">
-          <li><strong>ボイジャー2号のみ：</strong>これまでに海王星に接近した探査機は、たった一つ、ボイジャー2号だけなんだ。</li>
-          <li><strong>残された謎：</strong>そのため、まだまだわからないことがたくさんある、謎に満ちた惑星なんだよ。</li>
-        </ul>
-        </div>
-      
-        <div class="section">
-        <h2>🔭 天王星との共通点</h2>
-        <ul class="points">
-          <li><strong>氷の巨人：</strong>天王星と海王星は「氷の巨人（氷惑星）」と呼ばれ、水やメタン、アンモニアなどの氷成分が多いのが特徴だよ。</li>
-          <li><strong>青い輝き：</strong>メタンが赤い光を吸収するため、どちらも深い青色に見えるんだ。</li>
-          <li><strong>リングとダイヤモンドの雨：</strong>二つともリングを持ち、大気中では「ダイヤモンドの雨」が降っていると言われているよ…まるで宇宙のファンタジーだね✨</li>
-        </ul>
-        </div>
-      
-        <div class="section">
-        <h2>🌌 おわりに</h2>
-        <p>
-          海王星は、遠くて静かなのに、心の奥に熱を秘めているふしぎな星。活発な嵐、逆さまにまわる月、
-          そして誰も知らない未来の物語がそこにあるかもしれないの。いつか、エミリーもこの青い星に
-          自分の夢を届けてみてね。
-        </p>
-        </div>
-      
-      <div class="section">
-      <h2>🔭 次のお話はこちら</h2>
-      <p><a href="pluto-tiny-kingdom.html">「小さな氷の王国 — 冥王星のものがたり」</a></p>
-    </div>
-  </article>
+        <div class="section">
+            <h2>【導入】</h2>
+            <p>こんにちは、エミリー。今日は宇宙のいちばん遠くにある、青くて静かな惑星「**海王星（かいおうせい）**」についてのお話をするね。</p>
+            <p>海王星は、まるで「**セーラー・ネプチューン**」が守る深海のように、神秘的で、まだたくさんの謎に包まれているんだ。</p>
+        </div>
 
-  <script>
-    document.querySelectorAll('.section').forEach(sec => {
-      new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      }, { threshold: 0.3 }).observe(sec);
-    });
-  </script>
+        <div class="section">
+            <h2>🔍 発見のものがたり</h2>
+            <img src="https://images.unsplash.com/photo-1543722530-d2c320790d1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="天文学者が計算するイメージ" />
+            <p class="caption">海王星は、望遠鏡で見つける前に、数学の計算で存在が予測されたんだ。</p>
+            <ul class="points">
+                <li><strong>計算から先に発見：</strong>天王星の動きのズレから、まだ見つかっていない惑星の存在が予測されたんだ。</li>
+                <li><strong>1846年の発見：</strong>計算をもとに探し出され、史上初めて「**計算から発見された**」惑星となったよ。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌍 太陽系での位置</h2>
+            <img src="https://images.unsplash.com/photo-1614728512275-d1fb07842b0e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="太陽系における海王星の位置" />
+            <p class="caption">海王星は、太陽から最も遠い惑星だよ。</p>
+            <ul class="points">
+                <li><strong>太陽系最遠の惑星：</strong>冥王星が準惑星に分類された今、太陽系で最も遠い惑星が海王星だよ。</li>
+                <li><strong>長い公転周期：</strong>太陽から約30天文単位離れており、公転には約**165年**かかるんだ。発見後、初めて太陽を一周したのは2011年だよ。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌀 不思議な大気と嵐</h2>
+            <p>
+                <img src="https://images.unsplash.com/photo-1520625391307-e547343e2f5f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="海王星の大暗斑のイメージ" />
+                <p class="caption">海王星には、地球よりも大きな嵐の渦があるんだ。</p>
+            </p>
+            <ul class="points">
+                <li><strong>大暗斑の発見と消失：</strong>1989年のボイジャー2号の接近で「**大暗斑**」という巨大な嵐が見つかったけど、ハッブル宇宙望遠鏡ではその後消滅が確認されたんだ。</li>
+                <li><strong>太陽系最速の強風：</strong>秒速**400メートル**もの強風が吹き荒れているよ。これは太陽系で一番の風速なんだ！</li>
+                <li><strong>謎の熱源：</strong>太陽から遠いのに活発なのは、内部にかくれた熱源があるためだと考えられているよ。</li>
+            </ul>
+            <div class="quote">
+                海の守り神、セーラー・ネプチューン：「深海の潮の満ち引きよ、私に力を！」<br>
+                ネプチューンの深い青色のように、海王星はまるで宇宙の深海に浮かぶ青い宝石さ。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💍 隠れたリングとふしぎな衛星たち</h2>
+            <p>
+                <img src="https://images.unsplash.com/photo-1518156170942-88748303f848?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="海王星のリングと衛星のイラスト" />
+                <p class="caption">海王星にも、薄くて見えにくいけれど、リングがあるんだ。</p>
+            </p>
+            <ul class="points">
+                <li><strong>4本のリング：</strong>土星ほどはっきり見えないけれど、海王星にも4本のリングがあるんだ。</li>
+                <li><strong>14個の衛星：</strong>これまでに14個の衛星（お月さまのようなもの）が見つかっているよ。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌠 トリトン：さかさまにまわる不思議な月</h2>
+            <img src="https://images.unsplash.com/photo-1543722530-d2c320790d1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="トリトンの表面、間欠泉のイメージ" />
+            <p class="caption">海王星の一番大きな月、トリトンは、宇宙でも珍しい動きをするんだ。</p>
+            <ul class="points">
+                <li><strong>逆行軌道：</strong>一番大きな衛星の**トリトン**は、海王星の自転とは逆向きにまわっている、とても珍しい衛星だよ。</li>
+                <li><strong>捕獲された衛星説：</strong>科学者たちは、トリトンはもともと別の場所で生まれ、海王星に後から捕らえられたと考えているんだ。</li>
+                <li><strong>窒素の間欠泉：</strong>表面は約−235℃と極寒だけど、窒素の**間欠泉**が吹き出しているんだ。まるで「冷たい火山」みたいだね。</li>
+                <li><strong>カンタロープ地形：</strong>表面にはマスクメロンのようなでこぼこ模様、「**カンタロープ地形**」が見られるよ。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📡 探査の歴史</h2>
+            <p>
+                <img src="https://images.unsplash.com/photo-1517976135836-e0e67610113f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="ボイジャー探査機が海王星に接近するイメージ" />
+                <p class="caption">海王星を訪れた探査機は、今のところ「ボイジャー2号」だけだよ。</p>
+            </p>
+            <ul class="points">
+                <li><strong>ボイジャー2号のみ：</strong>これまでに海王星に接近した探査機は、たった一つ、**ボイジャー2号**だけなんだ。</li>
+                <li><strong>残された謎：</strong>そのため、まだまだわからないことがたくさんある、謎に満ちた惑星なんだよ。</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔭 天王星との共通点</h2>
+            <ul class="points">
+                <li><strong>氷の巨人：</strong>天王星と海王星は「**氷の巨人（氷惑星）**」と呼ばれ、水やメタン、アンモニアなどの氷成分が多いのが特徴だよ。</li>
+                <li><strong>青い輝き：</strong>メタンが赤い光を吸収するため、どちらも深い青色に見えるんだ。</li>
+                <li><strong>リングとダイヤモンドの雨：</strong>二つともリングを持ち、大気中では「**ダイヤモンドの雨**」が降っていると言われているよ…まるで宇宙のファンタジーだね✨</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌌 おわりに</h2>
+            <p>
+                海王星は、遠くて静かなのに、心の奥に熱を秘めているふしぎな星。活発な嵐、逆さまにまわる月、
+                そして誰も知らない未来の物語がそこにあるかもしれないの。いつか、エミリーもこの青い星に
+                自分の夢を届けてみてね。
+            </p>
+        </div>
+
+        <div class="next-article-section">
+            <h2>🔭 次のお話はこちら</h2>
+            <p><a href="articles/2025-05-30.space-pluto.html">「小さな氷の王国 — 冥王星のものがたり」</a></p>
+        </div>
+
+        <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+            </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+
+    </article>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+        fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>

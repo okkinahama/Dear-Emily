@@ -1,179 +1,338 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌕 お月さまは、どうしていつも見ているの？</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
-  <script src="../js/script.js" defer></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
-     crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌕 セーラームーンと学ぶ、月のふしぎな物語 | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
 
-  <style>
-    body {
-      font-family: 'Merriweather', 'Noto Sans JP', serif;
-      background: linear-gradient(to bottom, #0b0f1a 0%, #1e213a 100%);
-      color: #f5f5f5;
-      line-height: 2;
-      padding: 3rem 1.5rem;
-      max-width: 820px;
-      margin: auto;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-    }
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
 
-    h1, h2 {
-      color: #ffd8e4;
-      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 1rem;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      border-left: 5px solid #ffd1dc;
-      padding-left: 0.75rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.05em;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .caption {
-      font-size: 0.9em;
-      color: #ccc;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    a {
-      color: #ffd1dc;
-      text-decoration: underline;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      text-shadow: 0 0 5px #ffd1dc;
-    }
-
-    .container {
-      animation: fadeIn 2s ease-in-out both;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
 
-  <article>
-    <h1>🌕 お月さまは、どうしていつも見ているの？<br><small>セーラームーンと学ぶ、月のふしぎな物語</small></h1>
+    <article class="article-detail">
+        <h1>🌕 セーラームーンと学ぶ、月のふしぎな物語<br><small>〜お月さまは、どうしていつも見ているの？〜</small></h1>
 
-    <img src="../images/emily-looking-up.png" alt="夜空を見上げるエミリーのイラスト" />
-    <p class="caption">まるでお月さまに見守られているような夜──</p>
+        <img src="https://images.unsplash.com/photo-1514088924190-28564f899dfd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="夜空に輝く満月" />
+        <p class="caption">まるでお月さまに見守られているような夜──</p>
 
-    <div class="section">
-      <h2>【導入】</h2>
-      <p>
-        こんにちは、エミリー。
-        今夜も、まあるいお月さまが空からそっと私たちを見守ってくれているね。
-        セーラームーン、月のプリンセスとして戦う彼女が活躍するあの世界。
-        でも、現実のお月さまにも、ほんとうにたくさんのふしぎが詰まっているの。
-        今日は、「月と地球の物語」について、いっしょに旅をしてみよう！
-      </p>
-    </div>
+        <div class="section">
+            <h2>【導入】</h2>
+            <p>
+                こんにちは、エミリー。
+                今夜も、まあるいお月さまが空からそっと私たちを見守ってくれているね。
+                **セーラームーン**、月のプリンセスとして戦う彼女が活躍するあの世界。
+                でも、現実のお月さまにも、ほんとうにたくさんのふしぎが詰まっているの。
+                今日は、「**月と地球の物語**」について、いっしょに旅をしてみよう！
+            </p>
+        </div>
 
-    <div class="section">
-      <h2>【月は地球の「永遠のパートナー」】</h2>
-      <p>
-        昔むかしから、人間はお月さまにいろんな想像をしてきたの。
-        日本の昔話『竹取物語』では、かぐや姫が月からやってきて、また月へ帰っていく──。
-        ロマンチックでちょっぴり切ない、そんなお話もあるね。
-        <br><br>
-        でも実はね、月と地球って、とても深く結びついた「相棒」なの。
-        まるでセーラームーンとタキシード仮面みたいに、切っても切れない関係なんだよ。
-      </p>
-    </div>
+        <div class="section">
+            <h2>【月は地球の「永遠のパートナー」】</h2>
+            <img src="https://images.unsplash.com/photo-1520625391307-e547343e2f5f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="地球と月が一緒に写る宇宙空間のイメージ" />
+            <p class="caption">地球と月は、ずっと一緒のパートナーだよ。</p>
+            <p>
+                昔むかしから、人間はお月さまにいろんな想像をしてきたの。
+                日本の昔話『竹取物語』では、かぐや姫が月からやってきて、また月へ帰っていく──。
+                ロマンチックでちょっぴり切ない、そんなお話もあるね。
+                <br><br>
+                でも実はね、**月と地球**って、とても深く結びついた「**相棒**」なの。
+                まるでセーラームーンとタキシード仮面みたいに、切っても切れない関係なんだよ。
+            </p>
+        </div>
 
-    <div class="section">
-      <h2>【月の誕生のひみつ】</h2>
-      <p>
-        月がどうやって生まれたか──実は、今でも完全にはわかっていないの。
-        いろんな学者さんたちが「捕獲説」「親子説」「双子説」などを考えてきたけれど、
-        いちばん有力なのは「ジャイアント・インパクト説」なの。
-        <br><br>
-        むかし、火星くらいの大きさの星が地球にぶつかって、そのときのかけらが集まって月が生まれた。
-        その90%が、たった1か月でできて、1年で現在の位置に落ち着いたんだって。
-        セーラー戦士たちが力を合わせるように、宇宙のかけらたちがひとつになったんだね。
-      </p>
-    </div>
+        <div class="section">
+            <h2>【月の誕生のひみつ】</h2>
+            <img src="https://images.unsplash.com/photo-1614728512275-d1fb07842b0e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="地球に小惑星が衝突して月が形成されるイメージ" />
+            <p class="caption">大きな衝突から月が生まれたと考えられているよ。</p>
+            <p>
+                月がどうやって生まれたか──実は、今でも完全にはわかっていないの。
+                いろんな学者さんたちが「捕獲説」「親子説」「双子説」などを考えてきたけれど、
+                いちばん有力なのは「**ジャイアント・インパクト説**」なの。
+                <br><br>
+                むかし、火星くらいの大きさの星が地球にぶつかって、そのときのかけらが集まって月が生まれた。
+                その90%が、たった1か月でできて、1年で現在の位置に落ち着いたんだって。
+                セーラー戦士たちが力を合わせるように、宇宙のかけらたちがひとつになったんだね。
+            </p>
+        </div>
 
-    <div class="section">
-      <h2>【地球と月の仲良しさの証明】</h2>
-      <p>
-        月から持ち帰られた岩を調べると、地球ととってもよく似た成分が含まれていたの。
-        鉄やニッケル、ケイ酸塩──どれも私たちの星とそっくり。
-        <br><br>
-        だからこそ、ジャイアント・インパクト説は「もっとも有力」って言われているの。
-        でもね、それだけじゃまだすべては説明できないこともある。
-        宇宙には、まだまだナゾがたくさん眠っているんだね。
-      </p>
-    </div>
+        <div class="section">
+            <h2>【地球と月の仲良しさの証明】</h2>
+            <p>
+                月から持ち帰られた岩を調べると、地球ととってもよく似た成分が含まれていたの。
+                鉄やニッケル、ケイ酸塩──どれも私たちの星とそっくり。
+                <br><br>
+                だからこそ、ジャイアント・インパクト説は「もっとも有力」って言われているの。
+                でもね、それだけじゃまだすべては説明できないこともある。
+                宇宙には、まだまだナゾがたくさん眠っているんだね。
+            </p>
+        </div>
 
-    <div class="section">
-      <h2>【月はどこまでもついてくる？】</h2>
-      <p>
-        夜のおさんぽで「お月さまがついてくる！」って感じたこと、ある？
-        実はこれ、「視差」っていう目のトリックによるものなんだ。
-        <br><br>
-        月までの距離は約38万km。とっても遠いから、私たちが移動しても見える角度がほとんど変わらないの。
-        まるでセーラームーンがどこまでも見守ってくれているみたいだね。
-      </p>
-    </div>
+        <div class="section">
+            <h2>【月はどこまでもついてくる？】</h2>
+            <img src="https://images.unsplash.com/photo-1543722530-d2c320790d1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="道を歩く人から遠くに見える月" />
+            <p class="caption">お散歩中に、お月さまがついてくるように感じるのは目の錯覚だよ。</p>
+            <p>
+                夜のおさんぽで「**お月さまがついてくる！**」って感じたこと、ある？
+                実はこれ、「**視差**」っていう目のトリックによるものなんだ。
+                <br><br>
+                月までの距離は約38万km。とっても遠いから、私たちが移動しても見える角度がほとんど変わらないの。
+                まるでセーラームーンがどこまでも見守ってくれているみたいだね。
+            </p>
+        </div>
 
-    <div class="section">
-      <h2>【なぜ月の裏側は見えないの？】</h2>
-      <p>
-        月は地球のまわりをまわるだけじゃなく、自分でもくるくる自転しているんだよ。
-        でも、その「自転」と「公転」が、どちらも約27.3日でピッタリなの！
-        <br><br>
-        そのせいで、いつも同じ面だけが地球に向いているの。
-        つまり「月の裏側」は、地球からは決して見えない“ひみつの場所”なんだ。
-        ミステリアスなセーラームーンのように、月にも隠された顔があるんだね。
-      </p>
-    </div>
+        <div class="section">
+            <h2>【なぜ月の裏側は見えないの？】</h2>
+            <img src="https://images.unsplash.com/photo-1517976135836-e0e67610113f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="月の裏側を想像したイラスト" />
+            <p class="caption">月の裏側は、地球からは見ることができないんだ。</p>
+            <p>
+                月は地球のまわりをまわるだけじゃなく、自分でもくるくる**自転**しているんだよ。
+                でも、その「自転」と「**公転**」が、どちらも約27.3日でピッタリなの！
+                <br><br>
+                そのせいで、いつも同じ面だけが地球に向いているの。
+                つまり「**月の裏側**」は、地球からは決して見えない“ひみつの場所”なんだ。
+                ミステリアスなセーラームーンのように、月にも隠された顔があるんだね。
+            </p>
+        </div>
 
-    <div class="section">
-      <h2>【まとめ】</h2>
-      <p>
-        お月さまって、やさしくて静かに見えるけれど、
-        実はとてもダイナミックな歴史を持っているんだね。
-        <br><br>
-        地球といっしょに生まれて、ずっとそばで私たちを見守ってくれている月。
-        今夜も空を見上げたら、セーラームーンのようにやさしいまなざしで、
-        君のことをそっと照らしてくれているかもしれないよ。
-      </p>
-    </div>
+        <div class="section">
+            <h2>【まとめ】</h2>
+            <p>
+                お月さまって、やさしくて静かに見えるけれど、
+                実はとてもダイナミックな歴史を持っているんだね。
+                <br><br>
+                地球といっしょに生まれて、ずっとそばで私たちを見守ってくれている月。
+                今夜も空を見上げたら、セーラームーンのようにやさしいまなざしで、
+                君のことをそっと照らしてくれているかもしれないよ。
+            </p>
+        </div>
 
-  </article>
+        <div class="next-article-section">
+            <h2>🔭 次のお話はこちら</h2>
+            <p><a href="../articles/2025-05-06.space.venus.html">「セーラーヴィーナスと学ぶ、金星のものがたり」</a></p>
+        </div>
 
+        <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+            </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+
+    </article>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>

@@ -1,134 +1,342 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>大いなる守護の嵐をまといし、木星のものがたり</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
-     crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>⚡️セーラー・ジュピターと学ぶ、木星のものがたり | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
 
-  <style>
-    body {
-      font-family: 'Merriweather', serif;
-      background: linear-gradient(to bottom, #0b0f1a, #1e213a);
-      color: #f5f5f5;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.8;
-    }
-    h1, h2 { color: #ffd8e4; }
-    h1 {
-      font-size: 2em;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      font-size: 1.4em;
-      margin-top: 2rem;
-      border-left: 4px solid #ffd1dc;
-      padding-left: 0.5rem;
-    }
-    .section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: .8s;
-      margin-bottom: 2rem;
-    }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .points li {
-      margin-bottom: .8rem;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-    .points li:before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #ff8888;
-    }
-    .quote {
-      background: rgba(255,209,220,.1);
-      border-left: 4px solid #ffd1dc;
-      padding: 1rem;
-      margin: 1rem 0;
-      font-style: italic;
-    }
-    a { color: #ffd1dc; }
-  </style>
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-  <article>
-    <h1>大いなる守護の嵐をまといし、木星のものがたり</h1>
 
-    <div class="section">
-      <p>こんにちは、エミリー！今日は「セーラー・ジュピター」の名にちなんだ、太陽系最大の惑星・木星（Jupiter）について、一緒に学んでいこうね。</p>
-      <p>あの巨大な嵐と縞模様に包まれた姿は、まるで守護と力を司るジュピターのように、いつも私たちを見守ってくれているみたいだよ。</p>
-    </div>
+    <article class="article-detail">
+        <h1>⚡️セーラー・ジュピターと学ぶ、木星のものがたり<br><small>〜大いなる守護の嵐をまといし、木星のものがたり〜</small></h1>
 
-    <div class="section">
-      <h2>🌟 木星の基本的な特徴</h2>
-      <ul class="points">
-        <li><strong>太陽系最大の王者：</strong>直径は地球の約11倍、体積は1321倍。質量は318倍を超え、太陽になりそびれた「未完の星」とも呼ばれるよ。</li>
-        <li><strong>ガスのかたまり：</strong>主成分は水素とヘリウム。固体の表面はなく、雲の上層しか見えない柔らかな雲の海なんだ。</li>
-        <li><strong>超高速自転：</strong>わずか約10時間で1回転するから、赤道がぽっこり膨らみ、極はきゅっと潰れた形に。</li>
-      </ul>
-      <div class="quote">
-        セーラー・ジュピター：「天空の雷よ、降りそそげ！」<br>
-        ジュピターは守護と勇気の戦士。木星もまた、荒れ狂う嵐と安定した巨大重力で、仲間を守る強さを示しているんだね。
-      </div>
-    </div>
+        <img src="https://images.unsplash.com/photo-1610212720239-c12853177897?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="木星の巨大な嵐と縞模様" />
+        <p class="caption">巨大な嵐をまとった木星は、まるで守護の戦士みたい！</p>
 
-    <div class="section">
-      <h2>☁️ 大気の縞模様と大赤斑</h2>
-      <ul class="points">
-        <li><strong>縞模様の秘密：</strong>冷たい雲と暖かい雲が帯状に並び、秒速150m以上の風が東西に吹き抜けるからできる波紋みたいな縞。</li>
-        <li><strong>大赤斑：</strong>地球が2個以上入るほどの巨大な高気圧渦。1664年に見つかって以来、300年以上も消えることなく渦巻き続けているんだ。</li>
-        <li><strong>小赤斑の登場：</strong>2005年には大赤斑の半分ほどの新しい渦「小赤斑」が出現し、大気は常にダイナミックに変動しているよ。</li>
-      </ul>
-    </div>
+        <div class="section">
+            <h2>【導入】</h2>
+            <p>こんにちは、エミリー！今日は「セーラー・ジュピター」の名にちなんだ、太陽系最大の惑星・**木星（Jupiter）**について、一緒に学んでいこうね。</p>
+            <p>あの巨大な嵐と縞模様に包まれた姿は、まるで守護と力を司るジュピターのように、いつも私たちを見守ってくれているみたいだよ。</p>
+        </div>
 
-    <div class="section">
-      <h2>🪐 衛星の王国──ガリレオ衛星たち</h2>
-      <ul class="points">
-        <li><strong>イオ：</strong>木星最接近。潮汐加熱で100以上の活火山が噴火し、表面は硫黄で黄色に輝くまさに「火の星」。</li>
-        <li><strong>エウロパ：</strong>氷に覆われたひび割れ地形の下に、深さ100kmの塩水の海がある可能性大！生命が住むかもしれない夢の海だよ。</li>
-        <li><strong>ガニメデ：</strong>太陽系最大の衛星で、水星より大きい！氷と水の海、酸素の薄い大気をまとい、生命の可能性を秘めているんだ。</li>
-        <li><strong>カリスト：</strong>たくさんのクレーターが残る「あばた顔」の衛星。氷と岩石の混ざった地殻の奥に、まだ秘密の海が眠っているかも？</li>
-      </ul>
-    </div>
+        <div class="section">
+            <h2>🌟 木星の基本的な特徴</h2>
+            <img src="https://images.unsplash.com/photo-1610212720239-c12853177897?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="木星の全体像とサイズ比較" />
+            <p class="caption">地球とは比べ物にならないくらい大きな木星！</p>
+            <ul class="points">
+                <li><strong>太陽系最大の王者：</strong>直径は地球の約11倍、体積は1321倍。質量は318倍を超え、太陽になりそびれた「未完の星」とも呼ばれるよ。</li>
+                <li><strong>ガスのかたまり：</strong>主成分は水素とヘリウム。固体の表面はなく、雲の上層しか見えない柔らかな雲の海なんだ。</li>
+                <li><strong>超高速自転：</strong>わずか約10時間で1回転するから、赤道がぽっこり膨らみ、極はきゅっと潰れた形に。</li>
+            </ul>
+            <div class="quote">
+                セーラー・ジュピター：「天空の雷よ、降りそそげ！」<br>
+                ジュピターは守護と勇気の戦士。木星もまた、荒れ狂う嵐と安定した巨大重力で、仲間を守る強さを示しているんだね。
+            </div>
+        </div>
 
-    <div class="section">
-      <h2>🚀 探査の歩みとジュノーの挑戦</h2>
-      <p>1970年代のボイジャー探査機が初めて大赤斑を間近で撮影し、木星の雲の奥行きを教えてくれたんだ。その後、ガリレオ探査機が1995年から約8年間、衛星たちの詳細な観測を実施。</p>
-      <p>そして2016年、NASAのジュノーが到着。極域の多角形嵐や深い大気構造、強力な磁場を測定し、木星の内部に迫る新たなデータを送り続けているんだよ。</p>
-    </div>
+        <div class="section">
+            <h2>☁️ 大気の縞模様と大赤斑</h2>
+            <img src="https://images.unsplash.com/photo-1614728512275-d1fb07842b0e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="木星の大赤斑と縞模様" />
+            <p class="caption">木星のシンボル、大赤斑は地球よりずっと大きいんだ！</p>
+            <ul class="points">
+                <li><strong>縞模様の秘密：</strong>冷たい雲と暖かい雲が帯状に並び、秒速150m以上の風が東西に吹き抜けるからできる波紋みたいな縞。</li>
+                <li><strong>大赤斑：</strong>地球が2個以上入るほどの巨大な高気圧渦。1664年に見つかって以来、300年以上も消えることなく渦巻き続けているんだ。</li>
+                <li><strong>小赤斑の登場：</strong>2005年には大赤斑の半分ほどの新しい渦「小赤斑」が出現し、大気は常にダイナミックに変動しているよ。</li>
+            </ul>
+        </div>
 
-    <div class="section">
-      <h2>✨ まとめ：守護と癒しの星</h2>
-      <p>木星は、巨大な守護の渦と美しい縞模様が織りなす、「守りの力」と「変化のダイナミズム」を持つ星。</p>
-      <p>セーラー・ジュピターの強さと優しさのように、木星もまた、仲間たちを包み込む大きな存在として、太陽系を見守っているんだね。</p>
-      <p>次は、あの神秘的な輪をまとった「土星（セーラー・サターン）」に冒険に行こう！</p>
-    </div>
+        <div class="section">
+            <h2>🪐 衛星の王国──ガリレオ衛星たち</h2>
+            <img src="https://images.unsplash.com/photo-1610212720239-c12853177897?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="木星とそのガリレオ衛星のイメージ" />
+            <p class="caption">木星の周りには、個性豊かな衛星がたくさん！</p>
+            <ul class="points">
+                <li><strong>イオ：</strong>木星最接近。潮汐加熱で100以上の活火山が噴火し、表面は硫黄で黄色に輝くまさに「火の星」。</li>
+                <li><strong>エウロパ：</strong>氷に覆われたひび割れ地形の下に、深さ100kmの塩水の海がある可能性大！生命が住むかもしれない夢の海だよ。</li>
+                <li><strong>ガニメデ：</strong>太陽系最大の衛星で、水星より大きい！氷と水の海、酸素の薄い大気をまとい、生命の可能性を秘めているんだ。</li>
+                <li><strong>カリスト：</strong>たくさんのクレーターが残る「あばた顔」の衛星。氷と岩石の混ざった地殻の奥に、まだ秘密の海が眠っているかも？</li>
+            </ul>
+        </div>
 
-    <div class="section">
-      <h2>🔭 次のお話はこちら</h2>
-      <p><a href="saturn-mystery.html">「セーラー・サターンが誘う、土星の秘密」</a></p>
-    </div>
-  </article>
+        <div class="section">
+            <h2>🚀 探査の歩みとジュノーの挑戦</h2>
+            <img src="https://images.unsplash.com/photo-1543722530-d2c320790d1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="ジュノー探査機が木星を周回するイメージ" />
+            <p class="caption">ジュノー探査機が木星の秘密を解き明かしているよ。</p>
+            <p>1970年代の**ボイジャー探査機**が初めて大赤斑を間近で撮影し、木星の雲の奥行きを教えてくれたんだ。その後、**ガリレオ探査機**が1995年から約8年間、衛星たちの詳細な観測を実施。</p>
+            <p>そして2016年、NASAの**ジュノー**が到着。極域の多角形嵐や深い大気構造、強力な磁場を測定し、木星の内部に迫る新たなデータを送り続けているんだよ。</p>
+            <div class="quote">
+                ジュノー：「ぼくは木星の内部を探っているよ！この巨大な星の謎を解き明かすんだ。」<br>
+                まるでアルテミスのように、探査機たちも木星の謎を解くために大活躍しているんだね。
+            </div>
+        </div>
 
-  <script>
-    document.querySelectorAll('.section').forEach(sec => {
-      new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.classList.add('visible');
-        });
-      }, { threshold: 0.3 }).observe(sec);
-    });
-  </script>
+        <div class="section">
+            <h2>✨ まとめ：守護と癒しの星</h2>
+            <p>木星は、巨大な守護の渦と美しい縞模様が織りなす、「守りの力」と「変化のダイナミズム」を持つ星。</p>
+            <p>セーラー・ジュピターの強さと優しさのように、木星もまた、仲間たちを包み込む大きな存在として、太陽系を見守っているんだね。</p>
+            <p>次は、あの神秘的な輪をまとった「**土星（セーラー・サターン）**」に冒険に行こう！</p>
+        </div>
+
+        <div class="next-article-section">
+            <h2>🔭 次のお話はこちら</h2>
+            <p><a href="../articles/2025-04-28.space.mercury.html">「セーラーマーキュリーと学ぶ、水星のものがたり」</a></p>
+        </div>
+
+        <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+                </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+
+    </article>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+       // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
+        const apodApiKey = 'YOUR_NASA_APOD_API_KEY';
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>

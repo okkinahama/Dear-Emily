@@ -1,88 +1,322 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>愛と美と灼熱の星―金星のものがたり</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
-     crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>💖セーラーヴィーナスと学ぶ、金星のものがたり | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
 
-  <style>
-    body {
-      font-family: 'Merriweather', serif;
-      background: linear-gradient(to bottom, #1a0f1a, #341a34);
-      color: #f3f3f3;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.8;
-    }
-    h1, h2 { color: #ffd6ff; }
-    h1 { font-size:2em; text-align:center; margin-bottom:1rem; }
-    h2 { font-size:1.4em; margin-top:2rem; border-left:4px solid #ff88cc; padding-left:.5rem; }
-    .section { opacity:0; transform:translateY(20px); transition:.8s; margin-bottom:2rem; }
-    .section.visible { opacity:1; transform:translateY(0); }
-    .points li { margin-bottom:.8rem; padding-left:1.2rem; position:relative; }
-    .points li:before { content:'★'; position:absolute; left:0; color:#ffdd88; }
-    .quote { background:rgba(255,200,220,.1); border-left:4px solid #ff88cc; padding:1rem; margin:1rem 0; font-style:italic; }
-    a { color:#ff88cc; }
-  </style>
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-  <article>
-    <h1>愛と美と灼熱の星―金星のひみつ</h1>
+    <article class="article-detail">
+        <h1>💖セーラーヴィーナスと学ぶ、金星のものがたり<br><small>〜愛と美と灼熱の星〜</small></h1>
 
-    <div class="section">
-      <p>こんにちは、エミリー。今日は「セーラーヴィーナス」になりきって、美しくも過酷な“金星”の世界を探検しよう。</p>
-      <p>ヴィーナスは愛と美を司る女神。その名を冠した金星もまた、空でひときわ明るく輝き、神秘とドラマを秘めているんだよ。</p>
-    </div>
+        <img src="https://images.unsplash.com/photo-1610212720239-c12853177897?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="金星のイメージ、厚い雲に覆われている" />
+        <p class="caption">美しく輝く金星の表面は、厚い雲に覆われているよ。</p>
 
-    <div class="section">
-      <h2>🌟 金星の基本特徴</h2>
-      <ul class="points">
-        <li><strong>宵の明星・明けの明星：</strong>太陽と月を除けば最も明るく、夕暮れや夜明けに黄金色の輝きを放つ。</li>
-        <li><strong>地球の“双子惑星”：</strong>大きさも質量も地球とほぼ同じなのに、環境はまったく別世界。</li>
-        <li><strong>逆行自転：</strong>太陽系で唯一、公転とは逆方向にゆっくり243日かけて自転する不思議な動き。</li>
-        <li><strong>スーパーローテーション：</strong>秒速100mを超す猛烈な雲の風が約4日で金星一周。</li>
-        <li><strong>灼熱地獄：</strong>表面温度は約475℃、気圧は地球の90倍。かつてのベネラ探査機が唱えた“絶対に生きられない世界”。</li>
-      </ul>
-      <div class="quote">
-        セーラーヴィーナス：「愛の力、ヴィーナス・ラブ＆ビューティー！」<br>
-        金星はその名の通り、愛と美の象徴だけど、実際は激しい温室効果と灼熱の嵐が渦巻いているんだ。
-      </div>
-    </div>
+        <div class="section">
+            <h2>【導入】</h2>
+            <p>こんにちは、エミリー。今日は「**セーラーヴィーナス**」になりきって、美しくも過酷な“**金星**”の世界を探検しよう。</p>
+            <p>ヴィーナスは愛と美を司る女神。その名を冠した金星もまた、空でひときわ明るく輝き、神秘とドラマを秘めているんだよ。</p>
+        </div>
 
-    <div class="section">
-      <h2>🔥 過酷な環境のヒミツ</h2>
-      <p>厚い酸性の雲はほぼ二酸化炭素でできており、その下では表面が475℃、さらに硫酸の雨が舞うこともあるという過酷さ。地球の未来を映す“温暖化の鏡”とも呼ばれるんだ。</p>
-      <p>大気質量は地球の100倍。大気循環と内部対流のバランスにより、逆行自転や超高速の風が生まれる―まさに“美しき灼熱の嵐”が金星を支配しているよ。</p>
-    </div>
+        <div class="section">
+            <h2>🌟 金星の基本特徴</h2>
+            <img src="https://images.unsplash.com/photo-1614728512275-d1fb07842b0e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="金星の表面を描いた想像図、火山と荒れた大地" />
+            <p class="caption">金星は地球の「双子惑星」だけど、環境は大きく違うんだ。</p>
+            <ul class="points">
+                <li><strong>宵の明星・明けの明星：</strong>太陽と月を除けば最も明るく、夕暮れや夜明けに黄金色の輝きを放つ。</li>
+                <li><strong>地球の“双子惑星”：</strong>大きさも質量も地球とほぼ同じなのに、環境はまったく別世界。</li>
+                <li><strong>逆行自転：</strong>太陽系で唯一、公転とは逆方向にゆっくり243日かけて自転する不思議な動き。</li>
+                <li><strong>スーパーローテーション：</strong>秒速100mを超す猛烈な雲の風が約4日で金星一周。</li>
+                <li><strong>灼熱地獄：</strong>表面温度は約475℃、気圧は地球の90倍。かつてのベネラ探査機が唱えた“絶対に生きられない世界”。</li>
+            </ul>
+            <div class="quote">
+                セーラーヴィーナス：「愛の力、ヴィーナス・ラブ＆ビューティー！」<br>
+                金星はその名の通り、愛と美の象徴だけど、実際は激しい温室効果と灼熱の嵐が渦巻いているんだ。
+            </div>
+        </div>
 
-    <div class="section">
-      <h2>🔭 すばる望遠鏡も見た金星</h2>
-      <p>日本の「あかつき」探査機は2015年から金星周回軌道で観測を続け、雲の動き、雷活動、そして噴き上がる火山ガスの痕跡までキャッチしているんだ。</p>
-      <p>そのデータを見ると、金星がまるで生き物のようにうごめく“ドラマ”を感じることができるよ。</p>
-    </div>
+        <div class="section">
+            <h2>🔥 過酷な環境のヒミツ</h2>
+            <img src="https://images.unsplash.com/photo-1543722530-d2c320790d1e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="金星の厚い硫酸の雲のイメージ" />
+            <p class="caption">厚い雲の下は、想像を絶する過酷な世界なんだ。</p>
+            <p>厚い酸性の雲はほぼ二酸化炭素でできており、その下では表面が**475℃**、さらに硫酸の雨が舞うこともあるという過酷さ。地球の未来を映す“**温暖化の鏡**”とも呼ばれるんだ。</p>
+            <p>大気質量は地球の100倍。大気循環と内部対流のバランスにより、逆行自転や超高速の風が生まれる—まさに“美しき灼熱の嵐”が金星を支配しているよ。</p>
+        </div>
 
-    <div class="section">
-      <h2>✨ まとめ：金星からのメッセージ</h2>
-      <p>金星はとびきりの美しさと、想像を超える過酷さをあわせ持つ惑星。愛と美の象徴でありながら、灼熱と酸の嵐をまとうその姿は、セーラーヴィーナスの強さの裏にある優しさを思わせるかもね。</p>
-      <p>次は、情熱の火星―セーラー・マーズの世界に飛び込んでみよう！</p>
-    </div>
+        <div class="section">
+            <h2>🔭 すばる望遠鏡も見た金星</h2>
+            <img src="https://images.unsplash.com/photo-1518156170942-88748303f848?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="日本のあかつき探査機のイメージ" />
+            <p class="caption">「あかつき」探査機が金星の様子を詳しく調べてくれているよ。</p>
+            <p>日本の「**あかつき**」探査機は2015年から金星周回軌道で観測を続け、雲の動き、雷活動、そして噴き上がる火山ガスの痕跡までキャッチしているんだ。</p>
+            <p>そのデータを見ると、金星がまるで生き物のようにうごめく“ドラマ”を感じることができるよ。</p>
+        </div>
 
-    <div class="section">
-      <h2>🔭 次のお話はこちら</h2>
-      <p><a href="mars-mystery.html">「セーラー・マーズに教わる火星のひみつ」</a></p>
-    </div>
-  </article>
+        <div class="section">
+            <h2>✨ まとめ：金星からのメッセージ</h2>
+            <p>金星はとびきりの美しさと、想像を超える過酷さをあわせ持つ惑星。愛と美の象徴でありながら、灼熱と酸の嵐をまとうその姿は、セーラーヴィーナスの強さの裏にある優しさを思わせるかもね。</p>
+            <p>次は、情熱の火星―**セーラー・マーズ**の世界に飛び込んでみよう！</p>
+        </div>
 
-  <script>
-    document.querySelectorAll('.section').forEach(sec=>{
-      new IntersectionObserver(entries=>{
-        entries.forEach(e=> e.isIntersecting && e.target.classList.add('visible'));
-      },{threshold:0.3}).observe(sec);
-    });
-  </script>
+        <div class="next-article-section">
+            <h2>🔭 次のお話はこちら</h2>
+            <p><a href="../articles/2025-05-08.space.saturn.html">「セーラー・サターンと学ぶ、土星のものがたり」</a></p>
+        </div>
+
+        <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+            </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+
+    </article>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+        fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>

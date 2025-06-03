@@ -1,161 +1,337 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>赤い情熱の星が語るもの-火星のものがたり</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
-     crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🔥セーラー・マーズに教えてもらう火星のひみつ | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
 
-  <style>
-    body {
-      font-family: 'Merriweather', serif;
-      background: linear-gradient(to bottom, #0b0f1a, #1a1d2e);
-      color: #f0f0f0;
-      line-height: 1.8;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #ffd1dc;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    h2 {
-      font-size: 1.4em;
-      margin-top: 2em;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 1rem 0;
-    }
-    .caption {
-      font-size: 0.9em;
-      color: #ccc;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .section {
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    a {
-      color: #ffd1dc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .quote {
-      background: rgba(255, 209, 220, 0.1);
-      border-left: 4px solid #ffd1dc;
-      padding: 1rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-    }
-    .points {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-    }
-    .points li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    .points li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #ff8888;
-    }
-  </style>
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
 
-  <article>
-    <h1>🔥セーラー・マーズに教えてもらう火星のひみつ</h1>
+    <article class="article-detail">
+        <h1>🔥セーラー・マーズに教えてもらう火星のひみつ<br><small>〜赤い情熱の星が語るもの〜</small></h1>
 
-    <div class="section">
-      <p>ねえエミリー、火星って聞いたことあるかな？あの赤くてキラキラ光る星が、夜空でひときわ目立つのを見つけたことはない？太陽のあたたかい日差しを遠くに感じつつ、そのまわりをくるくる回っている小さな赤い惑星…今日はその火星の魅力を、セーラー・マーズになりきって一緒に探検してみよう！</p>
-      <p>セーラー・マーズは、情熱と強さを象徴する火星の戦士。彼女のように火星も、私たちに「自分を信じる強さ」や「内に秘めた炎」のようなものをそっと教えてくれるんだよ。</p>
-    </div>
+        <img src="https://images.unsplash.com/photo-1628103091924-a3f12b6b0c2a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="夜空に輝く火星のイメージ" />
+        <p class="caption">夜空に輝く火星は、どんな物語を語っているんだろう？</p>
 
-    <div class="section">
-      <h2>🌕 火星ってどんな星？</h2>
-      <p>火星（Mars）は太陽系の4番目、地球のひとつ外側をまわっている惑星。赤い色をしているから「レッドプラネット」と呼ばれるんだ。その赤さは、火星の表面にふくまれる鉄分が太陽光でサビ化し、まるで情熱の色をまとったかのように輝いているからなんだよ。</p>
-      <p>昼間は晴れると20℃くらいまで気温が上がる日もあるけれど、夜になると−60℃以下まで冷え込むこともあるの。まるで炎と氷を同時に感じるような、極端な温度差が火星の大きな特徴なんだ。</p>
-      <div class="quote">
-        セーラー・マーズ：「火星の力、メイクアップ！」<br>
-        火星は昔から“戦いの星”や“情熱の星”と言われているよ。まさにセーラー・マーズのように、強さと美しさを兼ね備えた存在なんだね。
-      </div>
-    </div>
+        <div class="section">
+            <h2>【導入】</h2>
+            <p>ねえエミリー、火星って聞いたことあるかな？あの赤くてキラキラ光る星が、夜空でひときわ目立つのを見つけたことはない？太陽のあたたかい日差しを遠くに感じつつ、そのまわりをくるくる回っている小さな赤い惑星…今日はその火星の魅力を、セーラー・マーズになりきって一緒に探検してみよう！</p>
+            <p>セーラー・マーズは、情熱と強さを象徴する火星の戦士。彼女のように火星も、私たちに「自分を信じる強さ」や「内に秘めた炎」のようなものをそっと教えてくれるんだよ。</p>
+        </div>
 
-    <div class="section">
-      <h2>🔴 火星の主なポイントまとめ</h2>
-      <ul class="points">
-        <li><strong>赤い大地：</strong>鉄酸化物（赤サビ）が表面を覆い、夕陽を受けるとまるで燃えるかのように赤く輝く。</li>
-        <li><strong>地球との似ている点：</strong>1日の長さは約24時間39分。自転軸が傾いているため、四季のような変化もあるんだ。</li>
-        <li><strong>極端な気候：</strong>大気はとても薄く、昼夜の温度差は最大100℃にもなる。砂嵐が惑星全体を覆うこともあるよ。</li>
-        <li><strong>極冠の氷：</strong>極地に二酸化炭素のドライアイスが凍っているほか、地下には水の氷が眠っている。</li>
-        <li><strong>巨大地形：</strong>オリンポス山（標高約21,000m）やマリネリス峡谷（深さ約8km・長さ約4,800km）など、地球をはるかに超えるスケール。</li>
-        <li><strong>探査の歩み：</strong>マリナー4号、マリナー9号、バイキング、そしてキュリオシティやパーサヴィアランスまで続く、火星を知るための長い旅路。</li>
-        <li><strong>ふたつの衛星：</strong>フォボスとダイモスは小さく不規則な形で、火星に衝突した天体のかけらとも言われているよ。</li>
-      </ul>
-    </div>
+        <div class="section">
+            <h2>🌕 火星ってどんな星？</h2>
+            <img src="https://images.unsplash.com/photo-1640528634862-23057199c0ac?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="火星の表面のクローズアップ画像" />
+            <p class="caption">赤サビ色の大地が火星の特徴だよ。</p>
+            <p>火星（Mars）は太陽系の4番目、地球のひとつ外側をまわっている惑星。赤い色をしているから「**レッドプラネット**」と呼ばれるんだ。その赤さは、火星の表面にふくまれる鉄分が太陽光でサビ化し、まるで情熱の色をまとったかのように輝いているからなんだよ。</p>
+            <p>昼間は晴れると20℃くらいまで気温が上がる日もあるけれど、夜になると−60℃以下まで冷え込むこともあるの。まるで炎と氷を同時に感じるような、極端な温度差が火星の大きな特徴なんだ。</p>
+            <div class="quote">
+                セーラー・マーズ：「火星の力、メイクアップ！」<br>
+                火星は昔から“戦いの星”や“情熱の星”と言われているよ。まさにセーラー・マーズのように、強さと美しさを兼ね備えた存在なんだね。
+            </div>
+        </div>
 
-    <div class="section">
-      <h2>🌌 火星の昔と未来</h2>
-      <p>NASAの観測によると、かつて火星の表面には川や湖があった証拠が見つかっているんだ。まるで地球のように水の時代を経験した火星は、今は乾いた荒野だけれど、その地下にはまだたくさんの氷が残っているんだよ。</p>
-      <p>未来の人類が火星に住む日は来るだろうか？パーサヴィアランスや他の探査機たちは、そのヒントを一つずつ集め続けているんだ。</p>
-      <div class="quote">
-        パーサヴィアランス：「ぼくは火星で岩や大気を調べているよ！いつか君たちが来る日まで、しっかり任務を果たすんだ。」<br>
-        まるでアルテミスのように、探査機たちも火星の謎を解くために大活躍しているんだね。
-      </div>
-    </div>
+        <div class="section">
+            <h2>🔴 火星の主なポイントまとめ</h2>
+            <img src="https://images.unsplash.com/photo-1518156170942-88748303f848?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="火星の極冠と地形のイメージ" />
+            <p class="caption">火星には巨大な地形もあるんだよ！</p>
+            <ul class="points">
+                <li><strong>赤い大地：</strong>鉄酸化物（赤サビ）が表面を覆い、夕陽を受けるとまるで燃えるかのように赤く輝く。</li>
+                <li><strong>地球との似ている点：</strong>1日の長さは約24時間39分。自転軸が傾いているため、四季のような変化もあるんだ。</li>
+                <li><strong>極端な気候：</strong>大気はとても薄く、昼夜の温度差は最大100℃にもなる。砂嵐が惑星全体を覆うこともあるよ。</li>
+                <li><strong>極冠の氷：</strong>極地に二酸化炭素のドライアイスが凍っているほか、地下には水の氷が眠っている。</li>
+                <li><strong>巨大地形：</strong>オリンポス山（標高約21,000m）やマリネリス峡谷（深さ約8km・長さ約4,800km）など、地球をはるかに超えるスケール。</li>
+                <li><strong>探査の歩み：</strong>マリナー4号、マリナー9号、バイキング、そしてキュリオシティやパーサヴィアランスまで続く、火星を知るための長い旅路。</li>
+                <li><strong>ふたつの衛星：</strong>フォボスとダイモスは小さく不規則な形で、火星に衝突した天体のかけらとも言われているよ。</li>
+            </ul>
+        </div>
 
-    <div class="section">
-      <h2>🔭 赤く見えるヒミツは？</h2>
-      <p>火星の土や石には鉄分が多く含まれていて、空気と触れて酸化することで赤いサビ色に変わるんだ。これは何億年もの時間をかけて進んだ自然の化学変化の証し。</p>
-      <p>だから、火星はまるで自ら情熱をまとったように、夜空の中でもひときわ赤く輝いているんだよ。</p>
-    </div>
+        <div class="section">
+            <h2>🌌 火星の昔と未来</h2>
+            <img src="https://images.unsplash.com/photo-1541873117490-48245550a1b6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="火星の地形を探索する探査機のイメージ" />
+            <p class="caption">パーサヴィアランスのような探査機たちが、火星の秘密を探っているよ。</p>
+            <p>NASAの観測によると、かつて火星の表面には川や湖があった証拠が見つかっているんだ。まるで地球のように水の時代を経験した火星は、今は乾いた荒野だけれど、その地下にはまだたくさんの氷が残っているんだよ。</p>
+            <p>未来の人類が火星に住む日は来るだろうか？パーサヴィアランスや他の探査機たちは、そのヒントを一つずつ集め続けているんだ。</p>
+            <div class="quote">
+                パーサヴィアランス：「ぼくは火星で岩や大気を調べているよ！いつか君たちが来る日まで、しっかり任務を果たすんだ。」<br>
+                まるでアルテミスのように、探査機たちも火星の謎を解くために大活躍しているんだね。
+            </div>
+        </div>
 
-    <div class="section">
-      <h2>✨ まとめ：火星とエミリー</h2>
-      <p>火星はただの赤い星じゃない。昔の水の記憶、極端な寒暖差、巨大な地形、そして未来への可能性……そのすべてが情熱的な物語を紡いでいるんだ。</p>
-      <p>セーラー・マーズのように、自分の信じる道を強く、優しく進む勇気を、火星からもらえるかもしれないね。</p>
-      <p>次は、太陽系最大の守護者「ジュピター」の嵐と秘密を探りに行こう！</p>
-    </div>
+        <div class="section">
+            <h2>🔭 赤く見えるヒミツは？</h2>
+            <p>火星の土や石には鉄分が多く含まれていて、空気と触れて酸化することで赤いサビ色に変わるんだ。これは何億年もの時間をかけて進んだ自然の化学変化の証し。</p>
+            <p>だから、火星はまるで自ら情熱をまとったように、夜空の中でもひときわ赤く輝いているんだよ。</p>
+        </div>
 
-    <div class="section">
-      <h2>🔭 次のお話はこちら</h2>
-      <p><a href="jupiter-mystery.html">「ジュピターのひみつと宇宙の大嵐」</a></p>
-    </div>
-  </article>
+        <div class="section">
+            <h2>✨ まとめ：火星とエミリー</h2>
+            <p>火星はただの赤い星じゃない。昔の水の記憶、極端な寒暖差、巨大な地形、そして未来への可能性……そのすべてが情熱的な物語を紡いでいるんだ。</p>
+            <p>セーラー・マーズのように、自分の信じる道を強く、優しく進む勇気を、火星からもらえるかもしれないね。</p>
+            <p>次は、太陽系最大の守護者「ジュピター」の嵐と秘密を探りに行こう！</p>
+        </div>
 
-  <script>
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+        <div class="next-article-section">
+            <h2>🔭 次のお話はこちら</h2>
+            <p><a href="../articles/2025-04-26.space.jupiter.html">「セーラー・ジュピターと学ぶ、木星のものがたり」</a></p>
+        </div>
+
+        <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+                </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+
+    </article>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
+        const apodApiKey = 'YOUR_NASA_APOD_API_KEY';
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
         }
-      });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-  </script>
 
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>
