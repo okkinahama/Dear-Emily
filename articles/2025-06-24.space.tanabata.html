@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🌌織姫と彦星の本当の願い 〜七夕と宇宙の祈り〜 | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで定義済みのスタイルを継承し、必要に応じて調整 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            line-height: var(--line-height-body);
+            font-family: var(--font-family-japanese);
+            font-size: 1.1em;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english);
+            font-size: 2.5em;
+            color: var(--highlight-color);
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+        .article-detail h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5em;
+        }
+        .article-detail h3 {
+            font-size: 1.4em;
+            color: var(--text-color-primary);
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+        }
+        .article-detail h4 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+        .article-detail h5 {
+            font-size: 1.1em;
+            color: var(--text-color-secondary);
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        .article-detail p {
+            margin-bottom: 1.2em;
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5em auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .article-detail ul {
+            padding-left: 2em;
+            margin-bottom: 1.2em;
+        }
+        .article-detail li {
+            margin-bottom: 0.5em;
+            list-style-type: disc;
+        }
+        .article-detail strong {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+        .next-article-section {
+            margin-top: 3em;
+            padding: 2em;
+            background-color: var(--bg-color-tertiary);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .next-article-section h2 {
+            color: var(--highlight-color);
+            margin-bottom: 1em;
+        }
+        .next-article-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .next-article-section a:hover {
+            text-decoration: underline;
+        }
+        .memo {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 1em;
+            border-radius: 4px;
+            margin-bottom: 1em;
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5em;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8em;
+            text-align: left;
+        }
+        th {
+            background-color: var(--bg-color-tertiary);
+            color: var(--primary-color);
+        }
+        .product-section {
+            background-color: var(--bg-color-tertiary);
+            padding: 2em;
+            border-radius: 12px;
+            margin-top: 3em;
+        }
+        .product-section h3 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1.5em;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5em;
+            padding: 1em;
+            background-color: var(--bg-color-secondary);
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .product-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 1em;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .product-info h4 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            color: var(--highlight-color);
+        }
+        .product-info p {
+            margin-bottom: 0.8em;
+            font-size: 0.9em;
+        }
+        .product-info .buy-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .product-info .buy-link:hover {
+            background-color: var(--highlight-color);
+        }
+        .center-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <article class="article-detail">
+        <h1>🌌織姫と彦星の本当の願い 〜七夕と宇宙の祈り〜</h1>
+
+        <img src="https://source.unsplash.com/800x450/?milky,way,tanabata,star,night,sky,girl,making,wish" alt="天の川が輝く七夕の夜空を見上げるエミリー" />
+
+        <p>夜の帳（とばり）が静かに降りて、街の灯りがひとつ、またひとつと消えていく。</p>
+        <p>エミリーは、屋上のベンチに腰かけ、胸の前でそっと手を合わせた。</p>
+        <p>その視線の先には、細くきらめく天の川が、空の真ん中を横切っていた。</p>
+        <p>──どうして、私たちは星に願いごとをするんだろう？</p>
+        <p>七夕の夜。</p>
+        <p>幼いころに書いた短冊は、ただの遊びだったかもしれない。</p>
+        <p>けれど今夜、ふと湧き上がるこの問いに、エミリーは耳を澄ませていた。</p>
+        <p>ポケットから取り出したのは、一冊の古びた星図帳。</p>
+        <p>「乞巧奠（きこうでん）」、聞きなれない言葉の横に、「女性たちが手芸の上達を祈った儀式」とある。</p>
+        <p>「星って、願いを叶える存在なんじゃなくて、もっと奥深い“祈りの象徴”だったんだ…」</p>
+        <p>そのとき、風が吹き抜け、どこか懐かしい香りがした。</p>
+        <p>短冊が揺れ、エミリーはそっと目を閉じる。</p>
+        <p>──宇宙と祈りをめぐる、時空の旅が始まった。</p>
+
+        ---
+
+        <h2>② 七夕のはじまり｜祈りと星の物語</h2>
+        <img src="https://source.unsplash.com/800x450/?ancient,chinese,court,princess,praying,sewing,ritual" alt="古代中国の宮廷で手芸の上達を願う女性たち" />
+        <p>エミリーが最初に辿り着いたのは、古代中国の宮廷。</p>
+        <p>煌びやかな衣を纏った女性たちが、七月七日の夜、庭先に小さな祭壇を設けて、針や糸を並べている。</p>
+        <p>「これは“乞巧奠”といって、織姫に“技芸の上達”を願う夜なのよ」</p>
+        <p>そう囁いたのは、宮女のひとりだった。</p>
+        <p>星は、ただ美しいだけではない。人間の努力と成長を導く存在でもあった。</p>
+        <p>やがて日本に伝わると、その風習は「棚機津女（たなばたつめ）」という神聖な巫女の信仰と重なった。</p>
+        <p>乙女が清流のほとりで神に捧げる布を織る──それが、“清め”と“祈り”の行事となったのだ。</p>
+        <p>「七夕は、女性の手仕事の願いだけじゃなく、心を清めて神様に近づく“浄化の夜”だったんだ…」</p>
+        <p>と、エミリーはノートに書き記した。</p>
+        <p>星に願うという行為は、自分自身の“奥深く”と向き合うこと。</p>
+        <p>それはただのお願いではなく、「心を整える儀式」だったのだ。</p>
+
+        ---
+
+        <h2>③ 星の正体｜ベガとアルタイルのほんとうの距離</h2>
+        <img src="https://source.unsplash.com/800x450/?vega,altair,milky,way,summer,triangle,astronomy,light,years" alt="ベガとアルタイルが輝く夏の夜空と天の川" />
+        <p>夜空に輝く2つの星──織姫星ベガと、彦星アルタイル。</p>
+        <p>夏の大三角を形づくるこの星たちは、七夕伝説の主人公として有名だが、本当はどんな星なのか？</p>
+        <p>エミリーは再び現代に戻り、プラネタリウムの解説を聞いていた。</p>
+        <p>「ベガまでの距離はおよそ25光年。アルタイルは約16光年。つまり、私たちが見ているのは、それだけ昔の光なんですね」</p>
+        <p>「じゃあ、今夜見えるベガは、私が生まれた頃の光かも…」</p>
+        <p>そうつぶやいたエミリーの胸に、<strong>時空を越える“光の手紙”</strong>というイメージが浮かぶ。</p>
+        <p>ベガとアルタイルは、七夕伝説のように“年に一度だけ会える”わけではない。</p>
+        <p>実際にはどちらも恒星で、それぞれが太陽のように輝きながら宇宙空間を旅している。</p>
+        <p>けれど、その距離があるからこそ──その想いの遠さがあるからこそ、</p>
+        <p>星に託された<strong>“会いたいという祈り”</strong>は、私たちの心に響くのだろう。</p>
+        <p>「星って、届かないからこそ、心を向ける価値があるんだね」</p>
+
+        ---
+
+        <h2>④ エミリーの気づき｜本当の願いとは？</h2>
+        <img src="https://source.unsplash.com/800x450/?girl,meditation,wish,starlight,self,reflection,notebook,light" alt="自分の願いと向き合い、ノートに書き出すエミリー" />
+        <p>短冊に「願いごと」を書く。</p>
+        <p>けれど、ただ“叶いますように”と書くのは、どこか空虚だった。</p>
+        <p>ある本で、エミリーはこんな言葉に出会った。</p>
+        <p>「本当の願いは、自分の中の“星”に気づくこと」</p>
+        <p>その言葉に導かれ、エミリーは小さく目を閉じた。</p>
+        <p>深呼吸とともに、心の中のざわめきが静まっていく。</p>
+        <p>──「私は、なにを願いたいんだろう？」</p>
+        <p>それは誰かに評価されることでも、すぐに叶うことでもなかった。</p>
+        <p>自分の奥底に眠っていた、光のような想い。</p>
+        <p>「私は、“私であること”を願いたい。小さな祈りでもいい、自分の言葉で書きたい──」</p>
+        <p>その夜、エミリーは、風に揺れる短冊に</p>
+        <p>「ありのままで、誰かを照らす光になれますように」と記した。</p>
+
+        ---
+
+        <h2>⑤ 実践と導線｜祈りをかたちにする方法</h2>
+        <img src="https://source.unsplash.com/800x450/?meditation,stargazing,notebook,wish,journaling,mindfulness" alt="七夕瞑想ワークのイメージ" />
+        <p>七夕の夜に、自分の願いと向き合う時間をもつこと。</p>
+        <p>それは、季節と心をつなげる美しい儀式でもある。</p>
+        <p>エミリーが試したのは、たった3分の「願いごと瞑想」。</p>
+
+        <h3>🌟七夕瞑想ワーク｜星に願いを託す方法</h3>
+        <ul>
+            <li>静かな場所で目を閉じる</li>
+            <li>1年前の自分を思い浮かべる</li>
+            <li>そこから今までにあった「変化」や「頑張ったこと」に光を当てる</li>
+            <li>今の自分が、なにを願いたいのかを感じる</li>
+            <li>それを、短冊やノートに書く</li>
+        </ul>
+
+        <p class="memo">📩PDF配布中：『星と向き合う願いごとノート』</p>
+        <ul>
+            <li>自分と向き合う問い7選</li>
+            <li>ベガとアルタイルの星図つき</li>
+        </ul>
+        
+
+        ---
+
+        <h2>⑥ エピローグ｜空と心を結ぶ夜に</h2>
+        <img src="https://source.unsplash.com/800x450/?tanabata,night,sky,stars,wishes,connection,soul,universe" alt="七夕の夜空を見上げ、空と心のつながりを感じる" />
+        <p>夜空を見上げると、ふたつの星が微かにきらめいていた。</p>
+        <p>距離はあっても、想いは届く──そう信じたくなる光。</p>
+        <p>エミリーは、七夕を通して気づいた。</p>
+        <p><strong>願いごととは、自分自身の中心に戻るための“星の儀式”</strong>なのだと。</p>
+        <p>今夜も、誰かが空を見上げ、心の奥の祈りに耳を澄ませている。</p>
+        <p>きっと、それこそが、織姫と彦星が伝えたかった「本当の願い」なのかもしれない。</p>
+
+        ---
+
+        <div class="product-section">
+            <h3>🎁関連アイテム紹介</h3>
+            <div class="product-item">
+                <img src="https://source.unsplash.com/100x100/?tanabata,tanzaku,star,set" alt="織姫と彦星の短冊セット" />
+                <div class="product-info">
+                    <h4>織姫と彦星の短冊セット</h4>
+                    <p>天の川を模した短冊と星型ピン付き。親子でも楽しめるデザインです。</p>
+                    <a href="[楽天ショップへのURL]" class="buy-link">🛒楽天で見る</a>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="https://source.unsplash.com/100x100/?wish,journal,notebook,constellation,star,book" alt="願いごとノート（星座入り）" />
+                <div class="product-info">
+                    <h4>願いごとノート（星座入り）</h4>
+                    <p>自己対話ができる願いワークブック。ベガとアルタイルのイラスト入りです。</p>
+                    <a href="[AmazonショップへのURL]" class="buy-link">🛒Amazonで見る</a>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="https://source.unsplash.com/100x100/?constellation,garland,led,lights,star,decor" alt="星座ガーランド" />
+                <div class="product-info">
+                    <h4>星座ガーランド</h4>
+                    <p>七夕飾りにぴったり。LEDライトとセットで幻想的な夜を演出します。</p>
+                    <a href="[楽天ショップへのURL]" class="buy-link">🛒楽天で見る</a>
+                </div>
+            </div>
+        </div>
+
+        ---
+
+        <h2>📝編集後記 by Emily</h2>
+        <img src="https://source.unsplash.com/800x450/?girl,writing,journal,night,sky,reflection,stargazing" alt="日記を書くエミリー" />
+        <p>季節と星と心が交差するこの夜。</p>
+        <p>ひとときでも、あなたの祈りが星に触れますように。</p>
+        <p>また、次の季節の空でお会いしましょう──</p>
+
+        ---
+        <div class="next-article-section">
+            <h2>📚 これまでの「宙ガール育成ステップ」まとめ</h2>
+            <ul>
+                <li><a href="articles\2025-06-04.space.soragirl1.html">ステップ1｜【宙ガール入門①】星座ってなあに？ エミリーと夜空の散歩</a></li>
+                <li><a href="articles\2025-06-05.space.soragirl2.html">ステップ2｜【宙ガール入門②】まずは北極星を探してみよう！</a></li>
+                <li><a href="articles\2025-06-07.space.soragirl3.html">ステップ3｜【宙ガール入門③】星に名前をつけた人たち</a></li>
+                <li><a href="articles\2025-06-08.space.soragirl4.html">ステップ4｜【宙ガール入門④】星の一生って知ってる？</a></li>
+                <li><a href="articles\2025-06-09.space.soragirl5.html">ステップ5｜【宙ガール入門⑤】天体観測ってどうやるの？</a></li>
+            </ul>
+        </div>
+    </article>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
+</body>
+</html>

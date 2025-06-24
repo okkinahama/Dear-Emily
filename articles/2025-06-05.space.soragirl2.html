@@ -80,7 +80,7 @@
 <h3>～夜空の中の「道しるべ」を見つけよう～</h3>
 
 <div class="image-block">
-  <img src="images/star_intro.jpg" alt="ベランダで星空を見上げる少女のイラスト">
+  <img src="../images/2025-06-04-1.jpg" alt="ベランダで星空を見上げる少女のイラスト">
   <div class="image-caption">ベランダで星空を見上げるエミリー</div>
 </div>
 
@@ -110,7 +110,7 @@
 <p>安心してください。これらの疑問は、誰もが星空に興味を持った時に抱く、ごく自然なものです。そして、実は北極星を見つける方法は、あなたが思っているよりもずっと簡単なんです。</p>
 <p>さあ、好奇心いっぱいのエミリーと一緒に、夜空に輝く「宇宙のコンパス」を見つける冒険に出かけましょう！ この旅の終点には、きっとあなたの夜空への見方が大きく変わる、素晴らしい発見が待っていますよ。</p>
 <div class="image-block">
-  <img src="images/polaris_marker.jpg" alt="北極星を指し示す空の図">
+  <img src="../images/2025-06-05-2.jpg" alt="北極星を指し示す空の図">
   <div class="image-caption">夜空の中の北極星</div>
 </div>
 
@@ -157,7 +157,7 @@
 <p>北斗七星はおおきな柄杓（ひしゃく）のような形をしています。</p>
 
 <div class="image-block">
-  <img src="images/big_dipper.jpg" alt="北斗七星のイラスト">
+  <img src="../images/2025-06-05-3.jpg" alt="北斗七星のイラスト">
   <div class="image-caption">北斗七星の形（ひしゃくのような形）</div>
 </div>
 
@@ -241,5 +241,60 @@
 <p>【宙ガール入門③】では、さらに夜空の散歩を深めます。</p>
 <p>次回は<strong>「星に名前をつけた人たち」</strong>と題して、私たちが当たり前のように使っている星の名前のルーツや、世界中にあった「空の文化」を、エミリーと一緒に探っていきます。</p>
 <p>東洋と西洋で異なる星の見方、伝説や神話が星に与えた影響など、知れば知るほど奥深い星の世界へご案内します。お楽しみに🌍✨</p>
+<script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
 </body>
 </html>
