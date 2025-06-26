@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>星座を知ろう｜星の名前と神話の扉を開く | Dear Emily</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで定義済みのスタイルを継承し、必要に応じて調整 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            line-height: var(--line-height-body);
+            font-family: var(--font-family-japanese);
+            font-size: 1.1em;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english);
+            font-size: 2.5em;
+            color: var(--highlight-color);
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+        .article-detail h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5em;
+        }
+        .article-detail h3 {
+            font-size: 1.4em;
+            color: var(--text-color-primary);
+            margin-top: 1.5em;
+            margin-bottom: 1em;
+        }
+        .article-detail h4 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+        .article-detail h5 {
+            font-size: 1.1em;
+            color: var(--text-color-secondary);
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        .article-detail p {
+            margin-bottom: 1.2em;
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5em auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .article-detail ul {
+            padding-left: 2em;
+            margin-bottom: 1.2em;
+        }
+        .article-detail li {
+            margin-bottom: 0.5em;
+            list-style-type: disc;
+        }
+        .article-detail strong {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+        .next-article-section {
+            margin-top: 3em;
+            padding: 2em;
+            background-color: var(--bg-color-tertiary);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .next-article-section h2 {
+            color: var(--highlight-color);
+            margin-bottom: 1em;
+        }
+        .next-article-section a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .next-article-section a:hover {
+            text-decoration: underline;
+        }
+        .memo {
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 1em;
+            border-radius: 4px;
+            margin-bottom: 1em;
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5em;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.8em;
+            text-align: left;
+        }
+        th {
+            background-color: var(--bg-color-tertiary);
+            color: var(--primary-color);
+        }
+        .item-list-section {
+            background-color: var(--bg-color-tertiary);
+            padding: 2em;
+            border-radius: 12px;
+            margin-top: 3em;
+        }
+        .item-list-section h3 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 1.5em;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .item-list-section .item-link {
+            display: block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8em 1.5em;
+            margin: 1em auto;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            max-width: 60%;
+            text-align: center;
+        }
+        .item-list-section .item-link:hover {
+            background-color: var(--highlight-color);
+        }
+        .item-list-section ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5em;
+        }
+        .item-list-section li {
+            margin-bottom: 1em;
+            font-size: 1em;
+        }
+        .item-list-section li strong {
+            color: var(--highlight-color);
+        }
+        .star-table td:first-child, .star-table td:nth-child(2) {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <article class="article-detail">
+        <h1>星座を知ろう｜星の名前と神話の扉を開く</h1>
+
+        <img src="https://source.unsplash.com/800x450/?girl,stargazing,constellation,mythology,night,sky,wonder" alt="夜空のオリオン座を見上げるエミリー" />
+
+        <h2>1. プロローグ：星の形に意味はあるの？</h2>
+        <p>静かな夜が訪れました。高層ビルの隙間から見える空には、先日アプリで教えてもらったオリオン座が瞬いています。エミリーは温かいココアを片手に、ベランダに出て、じっと夜空を見上げていました。</p>
+        <p>「オリオン座って…狩人の星座なんだよね？ でも、あれが狩人に見えるって、どういうこと？」</p>
+        <p>アプリで表示されるオリオン座のイラストは、確かに凛々しい狩人の姿をしていました。しかし、夜空に輝く星の点と点を結んでみても、どうもその形がピンとこない。エミリーの頭の中には、新たな疑問が浮かび上がっていました。なぜ、はるか昔の人は、ばらばらに見える星の集まりに、動物や神様の形を見出したのだろう？そして、そこに物語を与えたのだろう？</p>
+        <p>星の点と点を結んで形を作る<strong>「星座」</strong>。そこには、古代の人々の豊かな想像力と、壮大な物語が込められています。彼らはなぜ、星に特別な意味を見出したのでしょうか。</p>
+        <p>エミリーの心に、新たな疑問と好奇心の扉が開かれようとしていました。それは、単に星の名前を知るだけでなく、人類が夜空とどのように向き合ってきたのか、その深い歴史と文化に触れる旅の始まりでもあったのです。</p>
+
+        ---
+
+        <h2>2. 星座とは何か？｜夜空を旅するための地図</h2>
+        <img src="https://source.unsplash.com/800x450/?constellation,map,star,chart,night,sky,astronomy,history" alt="星座の地図と星空" />
+        <p>「星座って、たくさんの星が集まってできてるんでしょう？でも、なんであんなにたくさんの種類があるんだろう？」</p>
+        <p>エミリーは、星座アプリを眺めながら首を傾げました。たくさんの線で結ばれた星の絵が、彼女の好奇心をくすぐります。</p>
+        <p><strong>星座とは、夜空に輝く星々を、特定のパターンでグループ化し、それに名前や物語を与えたものです。</strong>まるで、広大な夜空に描かれた地図の目印のような役割を果たしています。現代では、<strong>国際天文学連合（IAU）によって、88個の星座が正式に定められています。</strong>この88個の星座は、地球上のどこからでも観測できるように、空全体を分割して割り当てられています。これによって、どの国の人も、どの時代の人も、同じ星の並びを同じ名前で呼ぶことができるようになったのです。</p>
+
+        <h3>■ 星座のはじまり</h3>
+        <p>では、なぜ人々は星に形や名前をつけたのでしょうか？その歴史は非常に古く、人類の文明が始まった頃にまで遡ります。</p>
+        <p>古代バビロニア、ギリシャ、中国、そして日本…世界中の多くの文明が、それぞれ独自の**「星座文化」**を持っていました。彼らは、夜空の星の並びを観察し、そこに自分たちの文化や信仰に基づいた意味を見出しました。</p>
+        <p>その主な理由は、大きく分けて三つあります。</p>
+        <ul>
+            <li><strong>空を記録し、時を知るため</strong>：昔の人々にとって、夜空は唯一無二の「時計」であり「カレンダー」でした。特定の星座が特定の季節に昇ることから、農耕の時期を知り、季節の変化を予測するために利用されました。星の動きを記録することで、暦を作り、生活のリズムを整えていたのです。エジプトのナイル川の氾濫（はんらん）時期をシリウスの出現で知ったように、星は生存に不可欠な情報源でした。</li>
+            <li><strong>神話や信仰を結びつけるため</strong>：夜空は、古代の人々にとって神聖な場所であり、神々が住まう世界と考えられていました。彼らは、自分たちの信仰する神々や英雄、動物たちの物語を星の並びに投影し、天空に永遠の物語を描き出しました。星座は、単なる目印ではなく、彼らの世界観や哲学を表現する媒体だったのです。</li>
+            <li><strong>航海の目印とするため</strong>：船乗りたちは、広大な海の上で方角を見失わないよう、星の並びを頼りに航海しました。特に、常に同じ位置に見える北極星は、進むべき方向を示す重要な道標となりました。星座は、まさに夜空を旅するための「地図」であり、人々を目的地へと導く羅針盤（らしんばん）の役割も果たしていました。</li>
+        </ul>
+        <p>夜空を見て、「あの星の並びが弓に見える」「あの星は獅子のたてがみのようだ」と想像することは、人間の根源的な美意識と知性の証でもあります。エミリーがオリオン座に興味を持ったように、私たちは本能的に、混沌（こんとん）としたものの中に秩序や意味を見出そうとするのです。星座は、そうした人間の知的好奇心と想像力が生み出した、天空の芸術作品と言えるでしょう。</p>
+
+        ---
+
+        <h2>3. 今夜の星座ガイド｜季節で変わる夜空の模様</h2>
+        <img src="https://source.unsplash.com/800x450/?seasonal,constellations,night,sky,star,chart,spring,summer,autumn,winter" alt="季節ごとの星座と夜空" />
+        <p>エミリーが宙ガールになろうとしていたのは、ちょうど春の終わり。少しずつ夜空の顔ぶれが変わり始める季節です。</p>
+        <p>「春の星座って、どんなのがあるんだろう？」</p>
+        <p>彼女は、星座アプリを開き、今日見える星座を調べてみました。季節によって夜空の景色がガラリと変わることに、エミリーは驚きました。まるで、四季の移ろいに合わせて、夜空が新しい物語を演じているかのようです。</p>
+        <p>この時期、夜9時ごろに見える主な星座は以下の通りです。</p>
+        <table class="star-table">
+            <thead>
+                <tr>
+                    <th>季節</th>
+                    <th>星座名</th>
+                    <th>特徴・神話</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>春</td>
+                    <td>しし座</td>
+                    <td>ライオンの形をした星座です。古代ギリシャの英雄ヘラクレスが退治した、ネメアの森の化け物獅子に由来すると言われています。この時期、堂々とした姿で夜空を駆けているように見えます。</td>
+                </tr>
+                <tr>
+                    <td>夏</td>
+                    <td>さそり座</td>
+                    <td>燃えるような赤い星アンタレスが輝く、サソリの姿をした星座。ギリシャ神話では、オリオンを刺し殺したとされるサソリが天に上げられたものです。夏の夜空の低い位置に、その長い尾を引くように見えます。</td>
+                </tr>
+                <tr>
+                    <td>秋</td>
+                    <td>ペガスス座</td>
+                    <td>翼を持つ天馬（てんま）の星座です。ギリシャ神話の英雄ペルセウスがメドゥーサを倒した際に、その血から生まれたとされています。秋の夜空に広がる大きな四辺形は「ペガススの四辺形」と呼ばれ、見つけやすい目印となります。</td>
+                </tr>
+                <tr>
+                    <td>冬</td>
+                    <td>オリオン座</td>
+                    <td>巨大な狩人の姿をした星座で、冬の星座の王様とも呼ばれます。ベテルギウスとリゲルという二つの明るい星を持ち、三ツ星がその特徴的なベルトを形作っています。エミリーが最初に魅せられた星座ですね。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>🌌<strong>おすすめ：</strong></p>
+        <p>星座アプリを使って、実際に空の星の形を指でなぞってみましょう。線と線をつないでいくと、徐々に物語が浮かび上がってくるような感覚になるはずです。最初は「本当にこれ、獅子に見える？」と思うかもしれませんが、何度も見ているうちに、不思議とその形が頭に焼き付いてきます。それはまるで、幼い頃に絵本を読んでもらう時のように、想像力が刺激される体験です。</p>
+
+        ---
+
+        <h2>4. 星に名前があるって知ってた？</h2>
+        <img src="https://source.unsplash.com/800x450/?star,names,constellation,bright,stars,betelgeuse,sirius,altair" alt="明るい星々の名前" />
+        <p>夜空にきらめく星々には、一つ一つに個性的な名前が付けられています。</p>
+        <p>「星にも名前があるなんて、なんだか感動しちゃうな…」</p>
+        <p>エミリーは、スマートフォンを空にかざし、オリオン座の明るい星々をタップしてみました。すると、「ベテルギウス」「リゲル」といった、異国の響きを持つ名前が次々と現れます。これらの名前は、その多くがギリシャ語、アラビア語、ラテン語を起源としており、その語源もまた、神秘的で奥深いものです。星の名前を知ることは、彼らが誕生した文化の歴史に触れることにもつながります。</p>
+
+        <h3>■ 有名な恒星とその意味</h3>
+        <p>いくつか有名な恒星とその名前の意味を見てみましょう。</p>
+        <table class="star-table">
+            <thead>
+                <tr>
+                    <th>星の名前</th>
+                    <th>星座</th>
+                    <th>意味・由来</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ベテルギウス</td>
+                    <td>オリオン座</td>
+                    <td>アラビア語の「イブト・アル・ジャウザ（巨人の脇の下）」に由来すると言われています。その名の通り、オリオン座の右肩（地球から見て左上）に位置し、赤く輝く特徴的な星です。エミリーが最初に見つけた時、「狩人の肩にあるこの赤っぽい星が、ベテルギウスか！」と嬉しそうに微笑みました。</td>
+                </tr>
+                <tr>
+                    <td>シリウス</td>
+                    <td>おおいぬ座</td>
+                    <td>ギリシャ語で「焼き焦がすもの」「光り輝くもの」という意味を持ちます。夜空で最も明るい星として知られ、冬の夜空にひときわ強く輝きます。古代エジプトでは、この星がナイル川の氾濫を告げる「夏の大犬星」として非常に重要視されていました。</td>
+                </tr>
+                <tr>
+                    <td>アルタイル</td>
+                    <td>わし座</td>
+                    <td>アラビア語で「飛翔する鷲」を意味します。夏の夜空に輝く、明るい白い星で、日本では七夕伝説の織姫星と彦星（わし座のアルタイルとこと座のベガ）のうち、彦星として親しまれています。天の川を挟んでベガと向かい合う姿は、まさにロマンチックな物語を想起させます。</td>
+                </tr>
+                <tr>
+                    <td>スピカ</td>
+                    <td>おとめ座</td>
+                    <td>ラテン語で「穀物の穂先」を意味します。おとめ座の最も明るい星で、春の夜空に白く輝きます。古代の人々にとって、豊作を祈る農耕の象徴として崇められていました。この星が見える季節は、種まきや収穫の時期を知る目安にもなっていました。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>星の名前を知ることで、ただの光の点が、遥か遠くの宇宙に存在する個性を持った存在として感じられるようになります。それは、まるで新しい友だちに出会うような、発見の喜びをエミリーに与えてくれました。</p>
+
+        ---
+
+        <h2>5. 星座神話｜空に描かれた物語</h2>
+        <img src="https://source.unsplash.com/800x450/?constellation,myths,greek,roman,chinese,japanese,storytelling,night,sky" alt="星座神話の世界" />
+        <p>星座の世界には、数えきれないほどの神話が込められています。エミリーは、星の名前を調べると同時に、それらの星が属する星座の神話も読み漁るようになりました。</p>
+        <p>「それぞれの星座に、こんなに奥深い物語があるなんて…」</p>
+        <p>彼女は、図書館で借りてきた星座の神話の本を広げ、ページをめくるたびに、古代の人々の豊かな想像力に驚かされました。夜空は、単なる天文現象の場ではなく、<strong>「人間の願いや恐れ、愛、勇気」</strong>といった普遍的な感情が投影された、壮大な舞台だったのです。</p>
+
+        <h3>■ エミリーが出会った神話たち</h3>
+        <h4>オリオン座</h4>
+        <p>エミリーが最初に魅了されたオリオン座の物語は、ギリシャ神話に登場する、狩りの名手オリオンの悲劇的な生涯を描いています。オリオンは非常に美しく、狩りの腕も天才的でしたが、その自信過剰な性格が災いし、大地の女神ガイア（またはアルテミス）に怒りを買い、サソリ（さそり座）に刺されて命を落とします。しかし、その功績を称えられ、天空に上げられ星座になったと言われています。</p>
+        <p>この神話を知ってから、エミリーは冬の夜空にオリオン座とさそり座が同時に見えないことに気づきました。オリオンとサソリは宿敵（しゅくてき）であるため、同じ空には決して現れないのだと語り継がれているのです。この、星の配置と神話が結びついていることに、エミリーは深い感動を覚えました。</p>
+        <h4>おとめ座とスピカ</h4>
+        <p>春の夜空に輝くおとめ座は、豊穣の女神デメテルの娘、ペルセポネの神話が元になっています。ペルセポネが冥界（めいかい）の王ハデスにさらわれたため、母デメテルは深い悲しみに暮れ、地上には作物が育たなくなってしまいました。ゼウスの仲裁により、ペルセポネは一年のうち一定期間を地上で過ごせることになりますが、彼女が冥界にいる間は地上は冬となり、戻ってくると春が訪れる、という物語です。おとめ座のスピカは、この女神が手に持つ「穀物の穂先」を表していると言われています。この神話は、季節の移り変わり、そして生命の再生という、自然の摂理（せつり）を物語っています。</p>
+        <h4>北斗七星と中国神話</h4>
+        <p>おおぐま座の一部である北斗七星は、日本では柄杓（ひしゃく）の形としておなじみです。西洋の神話とは異なり、中国では道教の信仰と深く結びついていました。北斗七星は、天の中心に位置し、死後の魂を導くとされる「太一（たいいち）」の象徴であり、人々の運命を司る星として崇（あが）められていました。また、その並びが時期によって向きを変えることから、時間の流れや暦（こよみ）を定める基準にも使われました。この星の動きを見て、昔の人々は農作業の時期を決めたり、国の政治を動かしたりしたのです。</p>
+        <p>🌠<strong>ワンポイント：</strong></p>
+        <p>西洋神話と東洋神話では、同じ星の並びでもまったく異なる物語が語られていることがあり、その違いを比較するのも非常に興味深いものです。例えば、西洋の星座はギリシャ・ローマ神話が中心ですが、東洋では中国の思想や伝説が強く反映されています。これらの神話は、後の占星術や陰陽道（おんみょうどう）といった思想にもつながっており、星が単なる光の点ではなく、人々の生活、文化、信仰に深く根ざしていたことが分かります。</p>
+
+        ---
+
+        <h2>6. エミリーのノート：星に導かれて</h2>
+        <img src="https://source.unsplash.com/800x450/?girl,writing,journal,notebook,stargazing,reflection,discovery" alt="星空の気づきをノートに書くエミリー" />
+        <p>星座の神話を学ぶたびに、エミリーの心は深く揺さぶられました。彼女は、その感動と気づきをノートに書き留めました。</p>
+        <p class="memo">📝エミリーのメモより</p>
+        <p class="memo">「今日、オリオン座の三ツ星が、まるで夜空にまっすぐ伸びた『空の道しるべ』みたいに見えた。神話を知る前はただの星の並びだったのに、今は狩人のベルトだと思うと、なんだか勇気をもらえる気がする。</p>
+        <p class="memo">それに、星の神話って、昔の人が空に書いた『ラブレター』なんだって気づいた。喜びや悲しみ、希望や絶望…人間の感情のすべてが、星々を通して語り継がれている。それは、時代を超えて私たちに語りかけてくるメッセージみたいだ。</p>
+        <p class="memo">私も、自分だけの『星の物語』を探してみたいな。夜空を見上げて、自分だけの意味を見つけたり、誰かにとって大切な物語になるような星を見つけられたら、素敵だろうな。夜空は、本当に奥が深い。知れば知るほど、もっと知りたくなる。この旅は、まだまだ始まったばかりだ。」</p>
+        <p>エミリーのノートには、星と神話が彼女の心に与えた深い影響が綴られていました。彼女は、星を見上げることが、単なる趣味ではなく、自分自身と向き合い、内面を豊かにする時間になっていることに気づき始めていました。</p>
+
+        ---
+
+        <h2>7. 次回予告：星を観る時間と場所の選び方</h2>
+        <img src="https://source.unsplash.com/800x450/?stargazing,time,location,light,pollution,weather,night,sky,city" alt="星を見るための時間と場所選びのイメージ" />
+        <p>エミリーが星座の物語に魅了されたように、夜空は私たちに無限の知識と感動を与えてくれます。しかし、美しい星空を楽しむためには、少しだけ準備が必要です。</p>
+        <p>次回は、宙ガールへの旅の第三歩、ステップ3「星を見る準備をしよう｜時間・方角・天気と光の話」です。</p>
+        <p>星座をより見つけやすい時間帯や、方角の見つけ方、そして都会の夜空で星を見る上で避けて通れない<strong>光害（こうがい）</strong>の影響、さらに観測に最適な天気のチェック方法などを学びます。</p>
+        <p>🧭 <strong>星を見つける旅は、「いつ、どこで、どう見るか」でもっと楽しくなる！</strong></p>
+        <p>最適な条件で星空を眺めるための、実践的なヒントをエミリーと一緒に学びましょう。</p>
+
+        ---
+
+        <div class="item-list-section">
+            <h2>8. 宙ガールにおすすめの星座本やグッズ</h2>
+            <p>エミリーが星座の知識を深めるために使ったように、あなたの宙ガールライフをさらに充実させるためのアイテムをご紹介します。</p>
+            <h3>🌟 宙ガールにおすすめの星座本やグッズはこちら：</h3>
+            <ul>
+                <li>
+                    <strong>星座図鑑（大人向けビジュアルガイド）</strong>：美しい写真やイラストで、88星座すべての情報が網羅されています。神話や由来、見つけ方まで詳しく解説されており、眺めているだけでも楽しい一冊です。
+                    <a href="https://books.rakuten.co.jp/search/rb/%E6%98%9F%E5%BA%A7%E5%9B%B3%E9%91%91/" class="item-link" target="_blank" rel="noopener noreferrer">→ 楽天ブックスで見る</a>
+                    <a href="https://www.amazon.co.jp/s?k=%E6%98%9F%E5%BA%A7%E5%9B%B3%E9%91%91" class="item-link" target="_blank" rel="noopener noreferrer">→ Amazonで見る</a>
+                </li>
+                <li>
+                    <strong>星空ノート（観察記録用）</strong>：観測した日付、場所、天候、見えた星座や星、感じたことなどを自由に書き込める専用ノートです。自分だけの「星空の記録」を残すことで、観測がより楽しくなります。
+                    <a href="[文具店やオンラインストアの紹介リンク]" class="item-link" target="_blank" rel="noopener noreferrer">→ おすすめノートをチェックする</a>
+                </li>
+                <li>
+                    <strong>星座カード（神話付き）</strong>：それぞれの星座の絵と、その背景にある神話が簡潔にまとめられたカードセットです。手軽に持ち運べ、夜空を見上げながら神話を読み、星と物語を結びつけるのに最適です。
+                    <a href="[教育グッズやオンラインショップのリンク]" class="item-link" target="_blank" rel="noopener noreferrer">→ 星座カードをゲットする</a>
+                </li>
+            </ul>
+            <p>これらのアイテムは、あなたの星空への理解を深め、より豊かな体験を提供してくれるでしょう。</p>
+        </div>
+
+        ---
+
+        <h2>9. まとめ：星を見上げる時間が、あなたを変える</h2>
+        <img src="https://source.unsplash.com/800x450/?stargazing,transformation,self-discovery,night,sky,dream,wonder" alt="星空を見上げる女性" />
+        <p>星座を知ることは、宇宙との距離をぐっと縮めること。そして、そこに込められた名前や神話に触れると、夜空はただの「点」ではなく、記憶と文化と夢が詰まった、壮大な絵本になります。</p>
+        <p>エミリーは、星を見上げることが、自分自身の内面と向き合う大切な時間になっていることに気づきました。都会の喧騒（けんそう）から離れて、夜空に広がる無限の物語に触れることで、心が落ち着き、明日への活力が湧いてくるのを感じています。</p>
+        <p>あなたもエミリーと一緒に、「星の物語」を旅しませんか？夜空はいつも、私たちに優しく語りかけてくれています。</p>
+        <p>次はステップ3「星を見る準備をしよう｜時間・方角・天気と光の話」です。ご希望があれば続けて作成いたします。</p>
+    </article>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
+</body>
+</html>
