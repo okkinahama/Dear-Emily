@@ -60,62 +60,63 @@
     {"title":"うちゅうのはじまりとおはなしのたまご",
      "url":"articles/2025-05-22.space.egg1.html",
      "date":"2025-05-22",
-     "category":"宇宙と科学"
+     "category":"宇宙と絵本"
     }, 
     {"title":"絵本から学ぶ、宇宙の始まり",
      "url":"articles/2025-05-23.space.beginning.html",
      "date":"2025-05-23",
-     "category":"宇宙と科学"
+     "category":"宇宙と絵本"
     }, 
     {"title":"ほしのたまごとちきゅうのケーキ",
      "url":"articles/2025-05-24.space.egg2.html",
      "date":"2025-05-24",
-     "category":"宇宙と科学"
+     "category":"宇宙と絵本"
     } , 
     {"title":"宇宙からのとくべつなプレゼント",
      "url":"articles/2025-05-25.space.egg3.html",
      "date":"2025-05-25",
-     "category":"宇宙と科学"
+     "category":"宇宙と絵本"
     } , 
     {"title":"【宙ガール入門①】星座ってなあに？ エミリーと夜空の散歩",
      "url":"articles/2025-06-04.space.soragirl1.html",
      "date":"2025-06-04",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
     }, 
     {"title":"宙ガール入門②｜北極星を探してみよう",
      "url":"articles/2025-06-05.space.soragirl2.html",
      "date":"2025-06-05",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
     } , 
     {"title":"【宙ガール入門③】星に名前をつけた人たち",
      "url":"articles/2025-06-07.space.soragirl3.html",
      "date":"2025-06-07",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
     }, 
     {"title":"【宙ガール入門④】星の一生って知ってる？",
      "url":"articles/2025-06-08.space.soragirl4.html",
      "date":"2025-06-08",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
     }, 
     {"title":"【宙ガール入門⑤】天体観測ってどうやるの？",
      "url":"articles/2025-06-09.space.soragirl5.html",
      "date":"2025-06-09",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
     }, 
     {"title":"【宙ガールのスペシャルガイド｜星空をもっと身近に！全国の観測スポット徹底解説 ",
      "url":"articles/2025-06-17.space.place.html",
      "date":"2025-06-17",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
     }, 
     {"title":"織姫と彦星の本当の願い 〜七夕と宇宙の祈り〜 ",
      "url":"articles/2025-06-24.space.tanabata.html",
      "date":"2025-06-24",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
     }, 
     {"title":"エミリーと選ぶ、はじめての天体望遠鏡｜初心者でも感動できるおすすめ3モデル ",
      "url":"articles/2025-06-25.space.telescope.html",
      "date":"2025-06-25",
-     "category":"宇宙と科学"
+     "category":["宇宙と科学","宇宙と体験"]
+
     }
   ]
   
