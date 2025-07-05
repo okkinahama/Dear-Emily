@@ -685,13 +685,22 @@ header::before {
 
 /* リストスタイル */
 #main-content-area ul {
-    list-style: none; /* デフォルトのリストスタイルをなくす */
-    padding: 0;
-    margin: 30px auto;
-    max-width: 600px;
-    position: relative;
-    z-index: 1;
+  list-style: none;         /* デフォルトのリストスタイルをなくす */
+  padding: 0;
+  margin: 30px auto;        /* 上下30px、左右中央揃え */
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  text-align: center;       /* 子要素のインライン要素を中央揃え */
 }
+
+.main-content-area ul li {
+  display: inline-block;    /* リストアイテムを横並びにしたい場合はこれを使用 */
+  margin: 10px 0;
+  text-align: center;       /* 各リストアイテム内のテキストを中央に */
+  width: 100%;              /* 1列にしたい場合。複数列にしたいなら幅調整 */
+}
+
 
 #main-content-area ul li {
     font-family: 'Zen Maru Gothic', sans-serif;
