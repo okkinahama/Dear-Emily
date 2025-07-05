@@ -623,6 +623,34 @@ header::before {
     margin-bottom: 1.5em;
     color: var(--text-color-primary);
 }
+.article-card {
+  background-color: var(--bg-color-secondary);
+  padding: 25px;
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: var(--box-shadow-medium);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 182, 193, 0.1);
+  text-align: left;
+  overflow: hidden; /* 角丸で画像はみ出しを防止 */
+}
+
+.article-card img.article-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: var(--box-shadow-light);
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover img.article-thumbnail {
+  transform: scale(1.02);
+}
+
 /* ========================================= */
 /* 2. Main Content Area (index.html用) */
 /* ========================================= */
