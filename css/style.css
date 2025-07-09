@@ -1,7 +1,7 @@
 /* Google Fontsの読み込み */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Handlee&family=Zen+Maru+Gothic:wght@400;700&display=swap');
 
-/* 変数定義 (カラーパレットとタイポグラフィ) */
+/* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
 :root {
     /* カラーパレット */
     --primary-color: #2962ff; /* SFアニメ的な明るいブルー (アクセント) */
@@ -13,35 +13,37 @@
     --bg-color-secondary: #1a1d2e; /* カードなどの背景色 (濃い青) */
     --border-color: #333; /* ダークテーマのボーダー色 */
     --highlight-color: #ffd1dc; /* 主要なアクセントカラー (ピンク系) */
+    --highlight-color-light: #ffc0cb; /* ホバー時のリンク色や軽めの強調 */
+    --highlight-color-dark: #f9a8d4; /* 濃いめのピンク */
 
     /* シャドウ */
-    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.2); /* 軽めの影 */
-    --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4); /* 中程度の影 */
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2); /* 軽めの影 */
+    --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3); /* 中程度の影 */
+    --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2); /* ピンク系の軽めの影 */
+    --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4); /* ピンク系の強調影 */
 
     /* フォントファミリー */
     --font-family-japanese: 'Noto Sans JP', sans-serif;
     --font-family-english: 'Montserrat', sans-serif;
     --font-family-serif-popular: 'Merriweather', serif;
+    --font-family-handlee: 'Handlee', cursive; /* 手書き風 */
+    --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif; /* 日本語の手書き風 */
 
     /* タイポグラフィ基本設定 */
     --line-height-body: 1.8;
     --letter-spacing-body: 0.01em;
 }
 
-/* スムーズスクロール */
+/* --- 全体的な基本スタイル --- */
 html {
     scroll-behavior: smooth;
 }
 
-/* 全体的なスタイル */
-html, body {
+body {
     margin: 0;
     padding: 0;
-    width: 100%; /* 画面の横幅いっぱいに設定 */
-    overflow-x: hidden; /* 横スクロールを防止 */
-}
-
-body {
+    width: 100%;
+    overflow-x: hidden;
     font-family: var(--font-family-serif-popular), var(--font-family-japanese);
     font-size: 16px;
     line-height: var(--line-height-body);
@@ -73,7 +75,7 @@ a {
 }
 
 a:hover {
-    color: #ffc0cb; /* ホバー時のリンク色 */
+    color: var(--highlight-color-light); /* ホバー時のリンク色 */
     text-decoration: underline;
 }
 
@@ -82,7 +84,7 @@ a:focus {
     outline-offset: 2px;
 }
 
-/* セクションの共通スタイル */
+/* --- セクションの共通スタイル --- */
 .section {
     padding: 60px 20px;
     margin: 0 auto;
@@ -106,17 +108,16 @@ a:focus {
 .section h2::after {
     content: "✦";
     font-size: 1.5em;
-    color: #ffb6c1;
+    color: var(--highlight-color-light); /* ピンク系の輝き */
     position: absolute;
     right: -25px; /* アイコンの位置調整 */
     bottom: -5px;
 }
 
-
 /* --- ヘッダー --- */
 header {
     height: 100vh;
-    width: 100%; /* bodyの幅に合わせて設定 */
+    width: 100%;
     background-image: url('../images/ヘッダー.jpg');
     background-size: cover;
     background-position: center center;
@@ -197,8 +198,8 @@ header::before {
 
 /* --- ハンバーガーメニューコンテナ (モバイル用) --- */
 .hamburger-container {
-    position: fixed; /* 常に左上に固定 */
-    top: 15px; 
+    position: fixed;
+    top: 15px;
     left: 15px;
     display: none; /* デフォルトで非表示 */
     cursor: pointer;
@@ -296,7 +297,7 @@ header::before {
     color: var(--highlight-color);
 }
 
-/* --- ナビゲーション (PC表示) の修正とスタイリング --- */
+/* --- ナビゲーション (PC表示) --- */
 .main-nav {
     display: none; /* モバイル表示では非表示 */
     z-index: 2;
@@ -378,11 +379,11 @@ header::before {
     }
 }
 
-/* APODセクション */
+/* --- APODセクション --- */
 #apod-hero {
     padding: 60px 20px;
     margin: 0 auto;
-    max-width: 960px; /* 各コンテンツセクションの最大幅 */
+    max-width: 960px;
     box-sizing: border-box;
 }
 
@@ -391,7 +392,7 @@ header::before {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     background-color: var(--bg-color-secondary);
-    text-align: center; /* ← 変更: 画像や説明文を中央揃えにする */
+    text-align: center;
     max-width: 960px;
     margin: 0 auto;
     box-shadow: var(--box-shadow-medium);
@@ -412,7 +413,8 @@ header::before {
     opacity: 0.8;
 }
 
-#apod-media-container-hero img, #apod-media-container-hero iframe {
+#apod-media-container-hero img,
+#apod-media-container-hero iframe {
     max-width: 100%;
     height: auto;
     display: block; /* 画像やiframeを中央寄せするためにブロック要素にする */
@@ -421,8 +423,7 @@ header::before {
     box-shadow: var(--box-shadow-light);
 }
 
-
-/* --- 宇宙ニュースセクション (hero-text 内に配置) --- */
+/* --- 宇宙ニュースセクション --- */
 .space-news-section {
     background-color: var(--bg-color-secondary);
     padding: 25px;
@@ -431,7 +432,7 @@ header::before {
     color: var(--text-color-primary);
     width: 100%;
     box-sizing: border-box;
-    max-width: 960px; /* 幅は制限 */
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: var(--box-shadow-light);
@@ -465,21 +466,140 @@ header::before {
     color: var(--highlight-color);
 }
 
+/* --- 記事関連の共通スタイル (最新記事、全記事一覧、カテゴリ表示に使用) --- */
 
-/* --- 最新記事セクション --- */
+/* 記事カードの基本スタイル */
+.article-card {
+    background-color: var(--bg-color-secondary);
+    padding: 25px;
+    border-radius: 16px; /* 少し大きめに調整 */
+    -webkit-backdrop-filter: blur(6px); /* Safari対応 */
+    backdrop-filter: blur(6px);
+    box-shadow: var(--box-shadow-pink-light); /* ピンク系の影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 182, 193, 0.15); /* ピンク系の薄いボーダー */
+    text-align: left;
+    overflow: hidden; /* 角丸で画像はみ出しを防止 */
+    display: flex; /* flexboxで内部要素を構成 */
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-pink-medium); /* ホバーで影を強調 */
+}
+
+/* 記事カード内のサムネイル画像 */
+.article-card img.article-thumbnail {
+    width: 100%;
+    height: 180px; /* 一定の高さに設定 */
+    object-fit: cover; /* 縦横比を維持しつつ全体を覆う */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 通常の影 */
+    display: block; /* 中央寄せや余白調整のため */
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover img.article-thumbnail {
+    transform: scale(1.03); /* ホバーで少し拡大 */
+}
+
+/* 記事カード内のタイトル */
+.article-card h3 {
+    font-size: 1.4em; /* 元のサイズを維持 */
+    margin: 0 0 10px;
+    color: var(--highlight-color);
+    font-family: var(--font-family-japanese);
+    line-height: 1.3; /* 行間を調整 */
+}
+
+.article-card h3 a {
+    text-decoration: none;
+    color: inherit; /* 親要素の色を継承 */
+}
+
+.article-card h3 a:hover {
+    text-decoration: underline;
+    color: var(--highlight-color-dark); /* ホバー色を統一 */
+}
+
+/* 記事カード内の日付 */
+.article-date {
+    font-size: 0.9em; /* 元のサイズを維持 */
+    color: var(--highlight-color-light); /* ホバー時のリンク色と統一 */
+    margin-bottom: 8px;
+    display: block;
+    text-align: right;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* 記事カード内の概要テキスト */
+.article-card p.summary {
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--text-color-secondary);
+    margin-bottom: 10px;
+    flex-grow: 1; /* 残りのスペースを埋める */
+}
+
+/* --- 最新記事セクション (index.html用) --- */
 #latest-posts {
     /* .sectionのスタイルを継承 */
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
-#latest-posts p {
-    color: var(--text-color-secondary);
-    font-style: italic;
+/* 最新記事リスト内の個々の記事アイテム（article-card を適用） */
+#latest-posts .post-item { /* JSで .post-item を追加している場合 */
+    /* article-card スタイルを適用 */
+    /* 純粋なCSSでは個別にスタイルを再定義するか、HTML側で .article-card を追加 */
+    /* 現状のJSでは .post-item のみにしているので、以下に調整 */
+    background-color: var(--bg-color-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--box-shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color); /* 既存のボーダー */
+    text-align: left;
+    margin-bottom: 20px; /* 各アイテム間のスペース */
 }
 
+#latest-posts .post-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 182, 193, 0.4);
+}
 
-/* --- 全ての記事セクション --- */
+#latest-posts .post-item h3 {
+    font-size: 1.6em; /* #latest-posts のh3は少し大きめ */
+    margin-bottom: 10px;
+    color: var(--highlight-color);
+    font-family: var(--font-family-japanese);
+}
+
+#latest-posts .post-item h3 a {
+    text-decoration: none;
+    color: var(--highlight-color);
+}
+
+#latest-posts .post-item h3 a:hover {
+    color: var(--highlight-color-dark);
+    text-decoration: underline;
+}
+
+#latest-posts .post-item p { /* 日付とカテゴリの行 */
+    font-size: 0.95em;
+    opacity: 0.8;
+    color: var(--highlight-color-light);
+    margin-top: 10px;
+    display: block;
+    text-align: right; /* 日付を右寄せ */
+}
+
+/* --- 記事フィルター --- */
 .filters {
     margin-bottom: 30px;
     display: flex;
@@ -492,7 +612,7 @@ header::before {
     border-radius: 12px;
     box-shadow: var(--box-shadow-light);
     border: 1px solid var(--border-color);
-    max-width: 960px; /* 幅は制限 */
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -511,7 +631,7 @@ header::before {
     color: var(--text-color-primary);
     font-size: 1em;
     cursor: pointer;
-    appearance: none; /* デフォルトの矢印を非表示 */
+    appearance: none;
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23cccccc%22%20d%3D%22M287%2C197.398L154.7%2C65.098c-3.1-3.1-8.2-3.1-11.3%2C0l-132.3%2C132.3c-3.1%2C3.1-3.1%2C8.2%2C0%2C11.3s8.2%2C3.1%2C11.3%2C0l126.6-126.6l126.6%2C126.6c3.1%2C3.1%2C8.2%2C3.1%2C11.3%2C0C290.1%2C205.598%2C290.1%2C200.498%2C287%2C197.398z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     background-position: right 10px top 50%;
@@ -524,64 +644,77 @@ header::before {
     box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.5);
 }
 
+/* --- 全ての記事セクション (archive.html など、記事一覧ページ用) --- */
 #all-posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     max-width: 960px; /* 記事リストの幅は制限 */
     margin: 60px auto;
+    padding: 0 20px; /* 左右にパディングを追加 */
 }
 
+/* #all-posts 内の個々の記事カード (JSで .post-card が付与される想定) */
+/* article-card のスタイルを直接継承させるために、HTML/JS側で .article-card クラスを付与してください */
+/* もし .post-card クラスを使用するなら、以下のように定義します */
+.post-card {
+    /* .article-card のスタイルを適用 */
+    background-color: var(--bg-color-secondary);
+    padding: 25px;
+    border-radius: 16px;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: var(--box-shadow-pink-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 182, 193, 0.15);
+    text-align: left;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-pink-medium);
+}
+
+.post-card h2 { /* h2を想定（archive.htmlのh2） */
+    font-size: 1.4em; /* .article-card h3 と同じサイズ */
+    margin: 0 0 10px;
+    color: var(--highlight-color);
+    font-family: var(--font-family-japanese);
+    line-height: 1.3;
+}
+
+.post-card h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-card h2 a:hover {
+    text-decoration: underline;
+    color: var(--highlight-color-dark);
+}
+
+.post-card .post-date { /* 日付 */
+    font-size: 0.9em;
+    color: var(--highlight-color-light);
+    margin-bottom: 8px;
+    display: block;
+    text-align: right;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* #all-posts の中の記事が見つからない場合のメッセージ */
 #all-posts p {
     color: var(--text-color-secondary);
     font-style: italic;
+    grid-column: 1 / -1; /* グリッド全体に表示 */
 }
 
-/* Article Card (latest-posts と all-posts で共通) */
-.article-card {
-    background-color: var(--bg-color-secondary);
-    padding: 25px;
-    border-radius: 12px;
-    -webkit-backdrop-filter: blur(5px); /* Safari対応 */
-    backdrop-filter: blur(5px);
-    box-shadow: var(--box-shadow-medium);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 182, 193, 0.1);
-    text-align: left; /* 記事カード内のテキストは左揃え */
-}
-
-.article-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(255, 182, 193, 0.4);
-}
-
-.article-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
-    color: var(--highlight-color);
-    font-family: var(--font-family-japanese);
-}
-
-.article-card h3 a {
-    text-decoration: none;
-    color: var(--highlight-color);
-}
-
-.article-card h3 a:hover {
-    color: #f9a8d4;
-    text-decoration: underline;
-}
-
-.article-date {
-    font-size: 0.95em;
-    opacity: 0.8;
-    color: #ffc0cb;
-    margin-top: 10px;
-    display: block;
-}
-
-/* --- 個別記事の構造スタイル (詳細ページ用, #main-content-areaでも使用) --- */
-.article-detail, #main-content-area {
+/* --- 個別記事の構造スタイル (詳細ページ用) --- */
+.article-detail {
     max-width: 800px;
     margin: 40px auto;
     padding: 30px;
@@ -589,10 +722,10 @@ header::before {
     border-radius: 12px;
     box-shadow: var(--box-shadow-medium);
     color: var(--text-color-primary);
-    text-align: left; /* コンテンツテキストは左揃え */
+    text-align: left;
 }
 
-.article-detail h1, #main-content-area h2 {
+.article-detail h1 {
     font-family: var(--font-family-english);
     font-size: 2.8em;
     color: var(--highlight-color);
@@ -607,7 +740,7 @@ header::before {
     margin-bottom: 30px;
 }
 
-.article-detail img, #main-content-area img {
+.article-detail img {
     max-width: 100%;
     height: auto;
     display: block;
@@ -616,60 +749,28 @@ header::before {
     box-shadow: var(--box-shadow-light);
 }
 
-.article-detail p, #main-content-area p {
+.article-detail p {
     font-family: var(--font-family-japanese);
     font-size: 1.1em;
     line-height: 1.8;
     margin-bottom: 1.5em;
     color: var(--text-color-primary);
 }
-.article-card {
-  background-color: var(--bg-color-secondary);
-  padding: 25px;
-  border-radius: 12px;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  box-shadow: var(--box-shadow-medium);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 182, 193, 0.1);
-  text-align: left;
-  overflow: hidden; /* 角丸で画像はみ出しを防止 */
-}
 
-.article-card img.article-thumbnail {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  box-shadow: var(--box-shadow-light);
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.article-card:hover img.article-thumbnail {
-  transform: scale(1.02);
-}
-
-/* ========================================= */
-/* 2. Main Content Area (index.html用) */
-/* ========================================= */
-
+/* --- About Emily / カテゴリ詳細ページなどのメインコンテンツエリア (`#main-content-area`) --- */
 #main-content-area {
-    /* 共通設定：初期の余白や配置を調整 */
-    padding: 60px 40px; /* 上下左右の余白 */
-    margin: 40px auto; /* 中央寄せ */
-    max-width: 900px; /* 最大幅 */
+    padding: 60px 40px;
+    margin: 40px auto;
+    max-width: 900px;
     background: linear-gradient(135deg, #fcefee 0%, #ffe9e9 100%); /* 柔らかなグラデーション背景 */
-    border-radius: 25px; /* 角を丸く */
-    box-shadow: 0 15px 30px rgba(255, 100, 150, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1); /* 浮き出るような影 */
-    text-align: center; /* テキスト中央寄せ */
-    position: relative; /* 疑似要素のために必要 */
-    overflow: hidden; /* 背景の星がはみ出さないように */
-    animation: fadeInScale 1s ease-out forwards; /* フェードインとわずかなスケールアップ */
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(255, 100, 150, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInScale 1s ease-out forwards;
 }
 
-/* おとぎ話の雰囲気のための背景要素 */
 #main-content-area::before {
     content: '';
     position: absolute;
@@ -677,32 +778,28 @@ header::before {
     left: -20px;
     right: -20px;
     bottom: -20px;
-    /* `sparkle-pattern.png` 画像パスを指定 */
-    background: url('images/sparkle-pattern.png') repeat; /* きらめくパターン画像 (例: images/sparkle-pattern.png) */
-    opacity: 0.1; /* 透明度を低くして控えめに */
+    background: url('../images/sparkle-pattern.png') repeat; /* 画像パスを修正 */
+    opacity: 0.1;
     z-index: 0;
-    pointer-events: none; /* クリックイベントを妨げない */
-    animation: rotateBackground 20s linear infinite; /* 背景をゆっくり回転 */
+    pointer-events: none;
+    animation: rotateBackground 20s linear infinite;
 }
 
-/* タイトルスタイル */
 #main-content-area h2 {
-    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif; /* 手書き風フォントを優先、フォールバックに日本語フォント */
-    font-size: 2.2em; /* 前回大きくしたサイズを適用 */
-    color: #a85888; /* 深みのあるピンク */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), 
-                 -2px -2px 4px rgba(0, 0, 0, 0.1); /* ふわっとした影 */
+    font-family: var(--font-family-handlee), var(--font-family-zen-maru-gothic);
+    font-size: 2.2em;
+    color: #a85888;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), -2px -2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     position: relative;
-    z-index: 1; /* コンテンツが背景より手前に来るように */
+    z-index: 1;
 }
 
-/* 段落スタイル */
 #main-content-area p {
-    font-family: 'Zen Maru Gothic', sans-serif; /* 日本語フォント */
-    font-size: 1.15em; /* 前回大きくしたサイズを適用 */
+    font-family: var(--font-family-zen-maru-gothic);
+    font-size: 1.15em;
     line-height: 1.8;
-    color: #6a445d; /* 落ち着いた色合い */
+    color: #6a445d;
     margin-bottom: 20px;
     max-width: 700px;
     margin-left: auto;
@@ -711,63 +808,51 @@ header::before {
     z-index: 1;
 }
 
-/* リストスタイル */
 #main-content-area ul {
-  list-style: none;         /* デフォルトのリストスタイルをなくす */
-  padding: 0;
-  margin: 30px auto;        /* 上下30px、左右中央揃え */
-  max-width: 600px;
-  position: relative;
-  z-index: 1;
-  text-align: center;       /* 子要素のインライン要素を中央揃え */
+    list-style: none;
+    padding: 0;
+    margin: 30px auto;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
 }
-
-.main-content-area ul li {
-  display: inline-block;    /* リストアイテムを横並びにしたい場合はこれを使用 */
-  margin: 10px 0;
-  text-align: center;       /* 各リストアイテム内のテキストを中央に */
-  width: 100%;              /* 1列にしたい場合。複数列にしたいなら幅調整 */
-}
-
 
 #main-content-area ul li {
-    font-family: 'Zen Maru Gothic', sans-serif;
+    display: block; /* 縦並び */
+    margin: 10px 0;
+    text-align: left; /* リスト項目を左寄せ */
+    width: 100%;
+    font-family: var(--font-family-zen-maru-gothic);
     font-size: 1em;
     line-height: 1.6;
     color: #7b5b71;
     padding: 8px 0;
-    border-bottom: 1px dotted rgba(168, 88, 136, 0.3); /* 点線の下線 */
+    border-bottom: 1px dotted rgba(168, 88, 136, 0.3);
     position: relative;
     padding-left: 25px; /* アイコンのための余白 */
-    text-align: left; /* リスト項目を左寄せ */
 }
 
 #main-content-area ul li:last-child {
-    border-bottom: none; /* 最後の項目は下線なし */
+    border-bottom: none;
 }
 
-/* リストアイテムの前に可愛いアイコン (画像挿入) */
 #main-content-area ul li::before {
-    content: ''; /* 疑似要素の内容を空にする */
-    display: inline-block; /* 画像を表示するためにブロック要素化 */
-    width: 18px; /* アイコン画像の幅 */
-    height: 18px; /* アイコン画像の高さ */
-    /* ***重要***: ここにリストアイコンの正しい画像パスを指定してください */
-    background-image: url('images/Gemini_Generated_Image_749bad749bad749b.jpg'); /* 例: images/list-icon.png */
-    background-size: contain; /* 画像を要素に収まるように調整 */
-    background-repeat: no-repeat; /* 画像を繰り返さない */
-    background-position: center; /* 画像を中央に配置 */
-
-    /* colorやfont-sizeは画像表示では不要なので削除またはコメントアウト */
-    /* color: #ffd700; */ 
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url('../images/Gemini_Generated_Image_749bad749bad749b.jpg'); /* 画像パスを修正 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    /* font-size: 0.8em; */
 }
 
-/* アニメーション */
+/* --- アニメーション --- */
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -788,43 +873,16 @@ header::before {
     }
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    #main-content-area {
-        padding: 40px 20px;
-        margin: 20px auto;
-        border-radius: 15px;
-    }
-
-    #main-content-area h2 {
-        font-size: 2em; /* レスポンシブ用調整 */
-    }
-
-    #main-content-area p {
-        font-size: 1.05em; /* レスポンシブ用調整 */
-    }
-}
-
-@media (max-width: 480px) {
-    #main-content-area {
-        padding: 30px 15px;
-        margin: 15px auto;
-    }
-
-    #main-content-area h2 {
-        font-size: 1.8em; /* レスポンシブ用調整 */
-    }
-}
 /* --- 宇宙天気情報コンテナ --- */
 .space-weather-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* レスポンシブな2カラム */
-    gap: 30px; /* アイテム間のスペース */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin-top: 50px;
-    padding: 0 20px; /* PC表示時のパディングを調整 */
+    padding: 0 20px;
     width: 100%;
     box-sizing: border-box;
-    max-width: 960px; /* 幅は制限 */
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -835,7 +893,7 @@ header::before {
     border-radius: 12px;
     box-shadow: var(--box-shadow-light);
     border: 1px solid var(--border-color);
-    text-align: left; /* 天気情報は左揃え */
+    text-align: left;
 }
 
 .space-weather-item h2 {
@@ -843,7 +901,7 @@ header::before {
     margin-bottom: 15px;
     color: var(--highlight-color);
     font-family: var(--font-family-english);
-    text-align: center; /* タイトルは中央揃え */
+    text-align: center;
 }
 
 .space-weather-item ul {
@@ -868,7 +926,7 @@ footer {
     background-color: #333;
     color: #fff;
     border-top: 1px solid var(--border-color);
-    padding: 30px 20px; /* PC表示時のパディングを調整 */
+    padding: 30px 20px;
     text-align: center;
     font-size: 0.9em;
     margin-top: 60px;
@@ -880,8 +938,8 @@ footer .container {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    max-width: 960px; /* フッターコンテンツの最大幅 */
-    flex-wrap: wrap; /* レスポンシブ対応 */
+    max-width: 960px;
+    flex-wrap: wrap;
 }
 
 footer nav ul {
@@ -912,7 +970,7 @@ footer nav ul li a:hover {
 /* --- レスポンシブデザイン --- */
 @media (max-width: 768px) {
     .section {
-        padding: 40px 15px; /* モバイル表示時は狭いパディングを維持 */
+        padding: 40px 15px;
     }
 
     .section h2 {
@@ -956,10 +1014,6 @@ footer nav ul li a:hover {
         margin: 40px auto;
     }
 
-    .article-card {
-        padding: 20px;
-    }
-
     /* フィルター */
     .filters {
         padding: 15px;
@@ -974,14 +1028,17 @@ footer nav ul li a:hover {
     }
 
     /* 個別記事とAboutページ */
-    .article-detail, #main-content-area {
+    .article-detail,
+    #main-content-area {
         margin: 30px auto;
         padding: 20px;
     }
-    .article-detail h1, #main-content-area h2 {
+    .article-detail h1,
+    #main-content-area h2 {
         font-size: 2em;
     }
-    .article-detail p, #main-content-area p {
+    .article-detail p,
+    #main-content-area p {
         font-size: 1em;
     }
 
@@ -993,155 +1050,14 @@ footer nav ul li a:hover {
         font-size: 1.4em;
     }
 }
-/* ========================================= */
-/* 3. Archive Page Specific Styles (archive.html) */
-/* ========================================= */
-
-/* 基本的なボディスタイル (archive.html固有) */
-/* body {
-    font-family: 'Zen Maru Gothic', sans-serif;
-    background-color: #fef5f7;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-} */
-/* 注意: body のスタイルは style.css の全体設定と重複する可能性があります。
-   もし style.css に既に body の基本スタイルがある場合は、重複を避けるためにコメントアウトまたは統合してください。
-   ここでは一貫性のためZen Maru Gothicを推奨しますが、Merriweatherを使いたい場合はfont-familyをMerriweatherにしてください。
-*/
-
-
-/* ヘッダーとフッター (既存の style.css のものを使用) */
-/* archive.html のヘッダーとフッターは、style.css に記述されている共通のヘッダー/フッターのスタイルが適用されます。
-   もし archive.html のヘッダー/フッターを特別にスタイリングしたい場合は、以下のセレクタで調整します。
-*/
-/*
-header.top-menu-bar {
-    background-color: #f2a6bf; /* 既存のヘッダー色に合わせた明るいピンク */
-/* }
-
-.top-menu-bar .main-nav a {
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.top-menu-bar .main-nav a:hover {
-    color: #ffdce9; /* ホバーでさらに明るく */
-/* }
-
-footer {
-    background-color: #f2a6bf; /* フッターもヘッダーと色を合わせる */
-/* color: white;
-}
-*/
-
-/* 全ての記事セクションのコンテナ */
-.all-posts {
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto;
-    background: linear-gradient(135deg, #fcefee 0%, #ffe9e9 100%); /* About Emilyと同じグラデーション */
-    border-radius: 20px; /* 少し大きめの角丸 */
-    box-shadow: 0 15px 30px rgba(255, 100, 150, 0.25), 0 5px 10px rgba(0, 0, 0, 0.1); /* 柔らかな影 */
-    padding: 30px; /* パディングを少し増やす */
-    text-align: center; /* タイトルを中央寄せ */
-}
-
-/* 「全ての記事」見出し */
-.all-posts h2 {
-    font-family: 'Handlee', cursive, 'Zen Maru Gothic', sans-serif; /* 手書き風フォント */
-    font-size: 2.5rem; /* 大きめのフォントサイズ */
-    color: #a85888; /* 深みのあるピンク */
-    text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #f8c6c8; /* 柔らかな下線 */
-    padding-bottom: 15px;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
-}
-
-/* 個々の記事アイテムのコンテナ */
-#all-posts div { /* div はより具体的なセレクタにすることをおすすめしますが、今回はID指定で */
-    background-color: #fff; /* 白い背景 */
-    border-radius: 15px; /* 角丸 */
-    padding: 20px; /* パディングを増やす */
-    margin-bottom: 20px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* 浮き出るような影 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーアニメーション */
-    text-align: left; /* テキストを左寄せ */
-}
-
-#all-posts div:hover {
-    transform: translateY(-8px); /* ホバーで少し上に移動 */
-    box-shadow: 0 16px 36px rgba(255, 120, 170, 0.3); /* ホバーで影を強調 */
-}
-
-/* 記事タイトルへのリンク */
-#all-posts div a {
-    font-family: 'Zen Maru Gothic', sans-serif;
-    font-size: 1.3rem; /* 記事タイトルを大きく */
-    color: #b45578; /* メインカラー */
-    text-decoration: none; /* 下線なし */
-    font-weight: bold;
-    transition: color 0.3s;
-    display: block; /* ブロック要素にしてクリック領域を広げる */
-    margin-bottom: 5px; /* 日付との間に少し余白 */
-}
-
-#all-posts div a:hover {
-    color: #d76a83; /* ホバー色 */
-    text-decoration: underline; /* ホバーで下線 */
-}
-
-/* 記事の日付 */
-#all-posts div span {
-    font-family: 'Zen Maru Gothic', sans-serif;
-    font-size: 0.95rem; /* 少し大きく */
-    color: #888; /* 落ち着いたグレー */
-    display: block;
-    margin-top: 0;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .all-posts {
-        width: 95%;
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 15px;
-    }
-
-    .all-posts h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    #all-posts div {
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 10px;
-    }
-
-    #all-posts div a {
-        font-size: 1.1rem;
-    }
-
-    #all-posts div span {
-        font-size: 0.85rem;
-    }
-}
 
 @media (max-width: 480px) {
-    .all-posts {
-        padding: 15px;
+    #main-content-area {
+        padding: 30px 15px;
         margin: 15px auto;
     }
 
-    .all-posts h2 {
-        font-size: 1.8rem;
-    }
-
-    #all-posts div a {
-        font-size: 1rem;
+    #main-content-area h2 {
+        font-size: 1.8em;
     }
 }
