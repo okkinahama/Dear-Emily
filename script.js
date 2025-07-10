@@ -264,8 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const div = document.createElement('div');
                     div.className = 'post-item';
                     div.innerHTML = `
+                        ${post.image ? `<img src="${post.image}" alt="${post.title}のサムネイル" class="article-thumbnail-small">` : ''}
                         <h3><a href="${post.url || post.link}">${post.title}</a></h3>
-                        <p>${post.date} ｜ カテゴリ：${post.category}</p>
+                        <p>${post.date} ｜ カテゴリ：${Array.isArray(post.category) ? post.category.join(', ') : post.category}</p>
                     `;
                     latestPostsContainer.appendChild(div);
                 });
@@ -278,10 +279,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sidebarCategoriesContainer) {
             const categoriesMap = {};
             posts.forEach(post => {
-                if (!categoriesMap[post.category]) {
-                    categoriesMap[post.category] = [];
-                }
-                categoriesMap[post.category].push(post);
+                // カテゴリが配列の場合も対応
+                const categories = Array.isArray(post.category) ? post.category : [post.category];
+                categories.forEach(cat => {
+                    if (!categoriesMap[cat]) {
+                        categoriesMap[cat] = [];
+                    }
+                    categoriesMap[cat].push(post);
+                });
             });
 
             const categoryListHtml = `
@@ -301,7 +306,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const tags = new Set();
 
             posts.forEach(post => {
-                categories.add(post.category);
+                // カテゴリが配列の場合も対応
+                const postCategories = Array.isArray(post.category) ? post.category : [post.category];
+                postCategories.forEach(cat => categories.add(cat));
+                
                 if (post.tags) {
                     post.tags.forEach(tag => tags.add(tag));
                 }
@@ -336,11 +344,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
                 filtered.forEach(post => {
+                    // サムネイル用の<img>タグを追加し、post.imageを使用
                     const card = `
                         <div class="post-card">
+                            ${post.image ? `<img src="${post.image}" alt="${post.title}のサムネイル" class="article-thumbnail">` : ''}
                             <h2><a href="${post.url || post.link}">${post.title}</a></h2>
                             <p class="post-date">${post.date}</p>
-                            <p><strong>カテゴリ:</strong> ${post.category}</p>
+                            <p><strong>カテゴリ:</strong> ${Array.isArray(post.category) ? post.category.join(', ') : post.category}</p>
                             <p><strong>タグ:</strong> ${post.tags ? post.tags.join(', ') : ''}</p>
                         </div>`;
                     allPostsContainer.insertAdjacentHTML('beforeend', card);
@@ -355,7 +365,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const selectedTag = tagFilter.value;
 
                 const filteredPosts = posts.filter(post => {
-                    const categoryMatch = (selectedCategory === 'all' || post.category === selectedCategory);
+                    const postCategories = Array.isArray(post.category) ? post.category : [post.category];
+                    const categoryMatch = (selectedCategory === 'all' || postCategories.includes(selectedCategory));
                     const tagMatch = (selectedTag === 'all' || (post.tags && post.tags.includes(selectedTag)));
                     return categoryMatch && tagMatch;
                 });
