@@ -42,7 +42,7 @@
             left: 0;
         }
         .article-detail h2::before {
-            content: "✨";
+            content: "✨"; /* キラキラの絵文字を追加 */
             margin-right: 10px;
             font-size: 0.8em;
         }
@@ -90,7 +90,38 @@
             text-decoration: underline;
         }
 
-        /* 次の記事へのリンクセクション (もしあれば追加) */
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
         .next-article-section {
             margin-top: 60px;
             text-align: center;
@@ -123,7 +154,7 @@
             box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
         }
 
-        /* APODセクションのスタイルを直接ここに組み込み */
+        /* APODセクションのスタイル */
         #apod-container-article {
             padding: 25px;
             border: 1px solid var(--border-color);

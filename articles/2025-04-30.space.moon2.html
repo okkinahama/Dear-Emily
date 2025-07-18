@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🌕 セーラームーンと学ぶ、月のふしぎな物語 | Dear Emily</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -88,6 +88,37 @@
         a:hover {
             color: #ffc0cb;
             text-decoration: underline;
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
         }
 
         /* 次の記事へのリンクセクション */

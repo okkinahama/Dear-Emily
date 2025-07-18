@@ -4,14 +4,14 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ステップ7｜星に願いを。天文イベントとわたしの1年 | Dear Emily</title>
-    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
     <style>
-        /* style.cssで定義済みのスタイルを継承し、必要に応じて調整 */
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
         .article-detail {
             max-width: 800px;
             margin: 40px auto;
@@ -20,144 +20,178 @@
             border-radius: 12px;
             box-shadow: var(--box-shadow-medium);
             color: var(--text-color-primary);
-            line-height: var(--line-height-body);
-            font-family: var(--font-family-japanese);
-            font-size: 1.1em;
+            text-align: left;
         }
         .article-detail h1 {
-            font-family: var(--font-family-english);
-            font-size: 2.5em;
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
             color: var(--highlight-color);
+            margin-bottom: 20px;
             text-align: center;
-            margin-bottom: 1.5em;
         }
         .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
             font-size: 1.8em;
             color: var(--primary-color);
-            margin-top: 2em;
+            margin-top: 2.5em;
             margin-bottom: 1em;
-            border-bottom: 2px solid var(--border-color);
+            position: relative;
             padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
         }
-        .article-detail h3 {
-            font-size: 1.4em;
-            color: var(--text-color-primary);
-            margin-top: 1.5em;
-            margin-bottom: 1em;
-        }
-        .article-detail h4 {
-            font-size: 1.2em;
-            color: var(--primary-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-        }
-        .article-detail h5 {
-            font-size: 1.1em;
-            color: var(--text-color-secondary);
-            margin-top: 1em;
-            margin-bottom: 0.5em;
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
         }
         .article-detail p {
-            margin-bottom: 1.2em;
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
         }
         .article-detail img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 1.5em auto;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
             border-radius: 8px;
             box-shadow: var(--box-shadow-light);
         }
-        .article-detail ul {
-            padding-left: 2em;
-            margin-bottom: 1.2em;
-        }
-        .article-detail li {
-            margin-bottom: 0.5em;
-            list-style-type: disc;
-        }
-        .article-detail strong {
-            color: var(--highlight-color);
-            font-weight: bold;
-        }
-        .next-article-section {
-            margin-top: 3em;
-            padding: 2em;
-            background-color: var(--bg-color-tertiary);
-            border-radius: 8px;
-            text-align: center;
-        }
-        .next-article-section h2 {
-            color: var(--highlight-color);
-            margin-bottom: 1em;
-        }
-        .next-article-section a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .next-article-section a:hover {
-            text-decoration: underline;
-        }
-        .memo {
-            background-color: rgba(0, 0, 0, 0.05);
-            padding: 1em;
-            border-radius: 4px;
-            margin-bottom: 1em;
-            font-size: 0.9em;
-            color: var(--text-color-secondary);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1.5em;
-        }
-        th, td {
-            border: 1px solid var(--border-color);
-            padding: 0.8em;
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
             text-align: left;
-        }
-        th {
-            background-color: var(--bg-color-tertiary);
-            color: var(--primary-color);
-        }
-        .event-table th, .event-table td {
-            vertical-align: top;
-            padding: 10px;
-        }
-        .event-table th {
-            width: 20%;
-        }
-        .event-table td {
-            width: 80%;
-        }
-        .calendar-table th, .calendar-table td {
-            vertical-align: top;
-            padding: 10px;
-        }
-        .calendar-table th {
-            width: 15%;
-        }
-        .calendar-table td {
-            width: 40%;
-        }
-        .calendar-table td:nth-child(3) {
-            width: 45%;
-        }
-        .tip-table th, .tip-table td {
-            vertical-align: top;
-            padding: 10px;
-        }
-        .tip-table th {
-            width: 25%;
-        }
-        .tip-table td {
-            width: 75%;
-        }
-        .article-detail-lead {
-            text-align: center;
-            font-style: italic;
             color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -384,14 +418,6 @@
         <p>ご希望があれば、各月の「今月の宙ごよみ」シリーズの深掘り、イベントごとのアフィリエイト導線（例えば、月見団子の紹介や、特定の流星群観測に最適なキャンプ用品、双眼鏡など）、さらにはPDF冊子化やLP化、メールマガジン連携なども可能ですので、お気軽にお申し付けください。</p>
         <p>宇宙は、私たちに無限の問いと、無限の感動を与え続けてくれます。これからも一緒に、この壮大な宇宙の旅を楽しみましょう！</p>
     </article>
-    <section id="apod-container-article">
-            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
-            <div id="apod-media-container-article">
-                <p>コンテンツを読み込み中...</p>
-            </div>
-            <p id="apod-explanation-article"></p>
-            <p id="apod-copyright-article"></p>
-        </section>
     <script>
         const sections = document.querySelectorAll('.section');
         const observer = new IntersectionObserver((entries) => {
