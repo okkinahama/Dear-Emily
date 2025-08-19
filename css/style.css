@@ -554,7 +554,7 @@ header::before {
 /* 最新記事リスト内の個々の記事アイテム（article-card を適用） */
 #latest-posts .post-item { /* JSで .post-item を追加している場合 */
     /* article-card スタイルを適用 */
-    @extend .article-card; /* Sass/Less などのプリプロセッサを使うなら */
+    /* .article-card のスタイルは個別に再定義するか、HTML側で .article-card を追加してください */
     /* 純粋なCSSでは個別にスタイルを再定義するか、HTML側で .article-card を追加 */
     /* 現状のJSでは .post-item のみにしているので、以下に調整 */
     background-color: var(--bg-color-secondary);
