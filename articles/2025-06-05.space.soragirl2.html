@@ -36,6 +36,14 @@
             margin-right: 10px;
             font-size: 0.8em;
         }
+        
+        .article-detail h3 {
+            font-family: var(--font-family-japanese);
+            font-size: 1.5em;
+            color: var(--highlight-color);
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+        }
 
         .article-detail p {
             font-family: var(--font-family-japanese);
@@ -94,15 +102,92 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
+
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
 
 <article class="article-detail">
-    <header>
-        <h1>宙ガール入門②｜北極星を探してみよう</h1>
-        <h3>～夜空の中の「道しるべ」を見つけよう～</h3>
-    </header>
+
+    <h1>宙ガール入門②｜北極星を探してみよう</h1>
+    <h3>～夜空の中の「道しるべ」を見つけよう～</h3>
 
     <figure>
         <img src="../images/2025-06-04-1.jpg" alt="ベランダで星空を見上げる少女のイラスト">
@@ -148,11 +233,13 @@
         <h2>🌟 解決｜北極星は「宇宙のコンパス」！</h2>
         <p>いよいよ、夜空の「道しるべ」こと、北極星の謎に迫ります。</p>
         <p>この章を読み終える頃には、あなたもきっと、夜空を見上げるのがもっと楽しくなっているはずです。</p>
+        
         <h3>🔭 北極星ってどんな星？ 見た目は地味でも超重要！</h3>
         <p>北極星は、地球上から見ると、まるでその場に張り付いているかのように、ほとんど動かずに一年中、真北の空で輝いています。他の星々が時間の経過とともに東から昇り、西へ沈むように移動していくのに対し、北極星だけはまるで不動の支点のように見えるのです。</p>
         <p>なぜそんなことが起こるのでしょうか？ その秘密は、地球の自転の軸にあります。地球はコマのように自転していますが、その自転軸を北の空へとぐーっと伸ばしていくと、ちょうどその延長線上に位置するのが北極星なのです。例えるなら、地球というコマが回っていても、その軸の先端にある北極星は、私たちから見ると常に同じ場所にあるように見える、というわけです。</p>
         <p>この特別な位置のおかげで、北極星は昔から人類にとって非常に重要な役割を果たしてきました。特に、大航海時代には、船乗りたちが羅針盤のなかった時代に、この星を目印にして北の方位を正確に知り、広大な海原を航海していました。夜空の道しるべ、それが北極星なのです。</p>
         <p>ちなみに、北極星は<strong>「こぐま座」の尻尾の部分（最も先端）で輝く星で、「ポラリス」</strong>という美しい固有名も持っています。実は、夜空で特別明るく輝く一等星というわけではなく、むしろ比較的穏やかな明るさの星です。そのため、他の明るい星々の中で見つけるのは少しコツがいりますが、一度見つけてしまえば、その見つけやすさにきっと驚くはずです。</p>
+        
         <h3>🧭 見つけ方：北斗七星（ほくとしちせい）からたどろう！</h3>
         <p>さて、いよいよ北極星を見つける実践編です。一番簡単で確実な方法は、有名な<strong>「北斗七星（ほくとしちせい）」</strong>を使うことです。</p>
         <ul>
@@ -169,6 +256,7 @@
             <img src="../images/2025-06-05-4.jpg" alt="北斗七星から北極星への探し方の図解">
             <figcaption>北斗七星から北極星をたどる方法</figcaption>
         </figure>
+
         <h3>🔢 他にもある！「こぶし」を使った北極星の見つけ方</h3>
         <p>北斗七星が見つけにくい日や、もっと手軽に北極星の位置を知りたい時には、自分の「こぶし」を使った簡単な方法も試せます。これは、星の高度（地平線からの高さ）を測るのに便利な方法です。</p>
         <ul>
@@ -186,15 +274,10 @@
         <p>もしあなたが他の地域に住んでいるなら、その地域の緯度を調べてみてください。それが、だいたい北極星の高度になります。例えば、緯度40度の場所なら、こぶしを4つ分積み重ねたあたりに北極星が見えるはずです。</p>
         <p>この方法は、特に北斗七星が見えにくい場所や、より手軽に高度を測りたい時に役立つ、昔ながらの知恵です。</p>
     </section>
-
+    
     <figure>
         <img src="../images/2025-06-05-3.jpg" alt="北斗七星のイラスト">
         <figcaption>北斗七星の形（ひしゃくのような形）</figcaption>
-    </figure>
-
-    <figure>
-        <img src="../images/2025-06-05-4.jpg" alt="北斗七星から北極星への探し方の図解">
-        <figcaption>北斗七星から北極星をたどる方法</figcaption>
     </figure>
 
     <section>
@@ -202,18 +285,21 @@
         <p>さあ、北極星の見つけ方を知ったあなたは、もう夜空の初心者ではありません！<br>
         知識を得たら、次はいよいよ行動です。今夜、早速北極星を探しに出かけてみましょう。</p>
         <p>夜空の散歩に出かける前に、いくつか準備をしておくと、より楽しく、より確実に北極星を見つけることができますよ。</p>
+        
         <h3>✅ ステップ1：まずは「北」を向く</h3>
         <p>最も大切な最初のステップです。</p>
         <ul>
             <li><strong>自宅の場合：</strong> お家の地図や、スマートフォンの「コンパス」アプリを使って、おおよその「北」の方角を確認してみましょう。窓から見る場合は、北向きの窓がベストです。</li>
             <li><strong>屋外の場合：</strong> 近くに街灯が少なく、空が広く見える場所（公園や広場など）を選び、スマホのコンパスで真北を確認してから、北極星探しをスタートしましょう。安全な場所を選ぶことが何よりも大切です。</li>
         </ul>
+        
         <h3>✅ ステップ2：北斗七星を探す（またはこぶしを使う）</h3>
         <p>さあ、北を向いたら、いよいよ星探しの始まりです！</p>
         <ul>
             <li><strong>北斗七星から：</strong> 春から夏にかけては、北東から北の空の高い位置に、大きなひしゃくの形をした北斗七星が見えやすいでしょう。冬の夜は少し見つけにくくなりますが、星図アプリを使えば見つけられます。</li>
             <li><strong>こぶしを使う：</strong> もし北斗七星が見つけにくい場合や、目印となる明るい星がない場合は、上記で紹介した「こぶし」を使った方法で、おおよその高度（高さ）から北極星を探してみましょう。</li>
         </ul>
+        
         <h3>✅ ステップ3：注ぎ口をたどると、そこに…</h3>
         <p>北斗七星のひしゃくの水をすくう部分の二つの星を結び、その線を5倍伸ばした先に視線を移してください。<br>
         あるいは、こぶしを積み重ねて、おおよその高度の場所をじっと眺めてみてください。</p>
@@ -275,67 +361,67 @@
 
 </article>
 <section id="apod-container-article">
-            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
-            <div id="apod-media-container-article">
-                <p>コンテンツを読み込み中...</p>
-            </div>
-            <p id="apod-explanation-article"></p>
-            <p id="apod-copyright-article"></p>
-        </section>
+    <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+    <div id="apod-media-container-article">
+        <p>コンテンツを読み込み中...</p>
+    </div>
+    <p id="apod-explanation-article"></p>
+    <p id="apod-copyright-article"></p>
+</section>
 <script>
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-        sections.forEach(section => observer.observe(section));
-
-        // APOD API Integration (仮のJavaScript)
-        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
-        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
-
-        async function fetchAPOD() {
-            try {
-                const response = await fetch(apodUrl);
-                const data = await response.json();
-
-                const apodTitle = document.getElementById('apod-title-article');
-                const apodMediaContainer = document.getElementById('apod-media-container-article');
-                const apodExplanation = document.getElementById('apod-explanation-article');
-                const apodCopyright = document.getElementById('apod-copyright-article');
-
-                apodTitle.textContent = data.title;
-                apodExplanation.textContent = data.explanation;
-                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
-
-                if (data.media_type === 'image') {
-                    const img = document.createElement('img');
-                    img.src = data.url;
-                    img.alt = data.title;
-                    apodMediaContainer.innerHTML = '';
-                    apodMediaContainer.appendChild(img);
-                } else if (data.media_type === 'video') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = data.url;
-                    iframe.frameBorder = '0';
-                    iframe.allow = 'autoplay; encrypted-media';
-                    iframe.allowFullscreen = true;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px'; // 適宜調整
-                    apodMediaContainer.innerHTML = '';
-                    apodMediaContainer.appendChild(iframe);
-                }
-            } catch (error) {
-                console.error('Error fetching APOD:', error);
-                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+    const sections = document.querySelectorAll('.article-detail > section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
-        }
+        });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
 
-         fetchAPOD(); // APIキーを設定したらコメント解除してください
-    </script>
+    // APOD API Integration (仮のJavaScript)
+    const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+    const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+    async function fetchAPOD() {
+        try {
+            const response = await fetch(apodUrl);
+            const data = await response.json();
+
+            const apodTitle = document.getElementById('apod-title-article');
+            const apodMediaContainer = document.getElementById('apod-media-container-article');
+            const apodExplanation = document.getElementById('apod-explanation-article');
+            const apodCopyright = document.getElementById('apod-copyright-article');
+
+            apodTitle.textContent = data.title;
+            apodExplanation.textContent = data.explanation;
+            apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+            if (data.media_type === 'image') {
+                const img = document.createElement('img');
+                img.src = data.url;
+                img.alt = data.title;
+                apodMediaContainer.innerHTML = '';
+                apodMediaContainer.appendChild(img);
+            } else if (data.media_type === 'video') {
+                const iframe = document.createElement('iframe');
+                iframe.src = data.url;
+                iframe.frameBorder = '0';
+                iframe.allow = 'autoplay; encrypted-media';
+                iframe.allowFullscreen = true;
+                iframe.style.width = '100%';
+                iframe.style.height = '400px'; // 適宜調整
+                apodMediaContainer.innerHTML = '';
+                apodMediaContainer.appendChild(iframe);
+            }
+        } catch (error) {
+            console.error('Error fetching APOD:', error);
+            document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+        }
+    }
+    
+    fetchAPOD();
+</script>
 </body>
 </html>
