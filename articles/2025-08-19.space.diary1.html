@@ -1,305 +1,243 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>エミリーの星日記｜2025年8月18日〜24日の夜空より</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* --- Root Variables for Theming and Consistency --- */
-:root {
-  --bg-color-primary: rgba(255, 255, 255, 0.8);
-  --bg-color-secondary: #f9f9f9;
-  --text-color-primary: #333;
-  --text-color-secondary: #666;
-  --highlight-color: #ff69b4; /* Pink highlight color */
-  --border-color: #eee;
-  --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --border-radius: 1rem;
-  --font-family-japanese: 'Zen Maru Gothic', sans-serif;
-  --font-family-english: 'Montserrat', sans-serif;
-  --line-height-body: 1.8;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記｜2025年8月18日〜24日の夜空より</title>
+    <style>
+        /*
+        ここに、提供されたダークテーマのCSS（:root, body, .section, .article-detail などの全スタイル）を貼り付けてください。
+        このHTMLを単体で表示する場合は、styleタグ内に記述します。
+        外部ファイルとして管理する場合は、linkタグで読み込みます。
+        */
 
-/* --- Basic and General Styles --- */
-.section {
-  margin: 3rem 0;
-  padding: 1.5rem;
-  background: var(--bg-color-primary);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-medium);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+        /* Google Fontsの読み込み */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Handlee&family=Zen+Maru+Gothic:wght@400;700&display=swap');
 
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            /* カラーパレット */
+            --primary-color: #2962ff;
+            --primary-color-dark: #0d47a1;
+            --secondary-color: #64b5f6;
+            --text-color-primary: #f0f0f0;
+            --text-color-secondary: #cccccc;
+            --bg-color-primary: #0b0f1a;
+            --bg-color-secondary: #1a1d2e;
+            --border-color: #333;
+            --highlight-color: #ffd1dc;
+            --highlight-color-light: #ffc0cb;
+            --highlight-color-dark: #f9a8d4;
 
-.intro {
-  font-family: 'Handlee', cursive;
-  font-size: 1.2rem;
-  line-height: var(--line-height-body);
-}
+            /* シャドウ */
+            --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
+            --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
 
-.closing {
-  font-family: 'Merriweather', serif;
-  font-size: 1.1rem;
-  line-height: 1.9;
-}
+            /* フォントファミリー */
+            --font-family-japanese: 'Noto Sans JP', sans-serif;
+            --font-family-english: 'Montserrat', sans-serif;
+            --font-family-serif-popular: 'Merriweather', serif;
+            --font-family-handlee: 'Handlee', cursive;
+            --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
 
-/* --- Article Layout and Typography --- */
-.article-detail {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 30px;
-  background: var(--bg-color-secondary);
-  border-radius: 12px;
-  box-shadow: var(--box-shadow-medium);
-  color: var(--text-color-primary);
-  text-align: left;
-}
+            /* タイポグラフィ基本設定 */
+            --line-height-body: 1.8;
+            --letter-spacing-body: 0.01em;
+        }
 
-.article-detail h1 {
-  font-family: var(--font-family-english);
-  font-size: 2.8em;
-  color: var(--highlight-color);
-  margin-bottom: 20px;
-  text-align: center;
-}
+        /* --- 全体的な基本スタイル --- */
+        html {
+            scroll-behavior: smooth;
+        }
 
-.article-detail h2 {
-  font-family: var(--font-family-japanese);
-  font-size: 1.8em;
-  color: var(--highlight-color);
-  margin-top: 2.5em;
-  margin-bottom: 1em;
-  position: relative;
-  padding-bottom: 0.5em;
-  border-bottom: 2px solid var(--border-color);
-  display: inline-block;
-  left: 0;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: var(--font-family-serif-popular), var(--font-family-japanese);
+            font-size: 16px;
+            line-height: var(--line-height-body);
+            letter-spacing: var(--letter-spacing-body);
+            background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+            color: var(--text-color-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
 
-.article-detail h2::before {
-  content: "✨";
-  margin-right: 10px;
-  font-size: 0.8em;
-}
+        .container {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 1200px;
+        }
 
-.article-detail p {
-  font-family: var(--font-family-japanese);
-  font-size: 1.1em;
-  line-height: var(--line-height-body);
-  margin-bottom: 1.5em;
-  color: var(--text-color-primary);
-}
+        .main-content {
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* --- Images and Media --- */
-.section img, .article-detail img, #apod-media-container-article img, #apod-media-container-article iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem auto 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-light);
-}
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
 
-.caption {
-  font-family: var(--font-family-japanese);
-  font-size: 0.9em;
-  color: var(--text-color-secondary);
-  text-align: center;
-  margin-top: -10px;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
+        a:hover {
+            color: var(--highlight-color-light);
+            text-decoration: underline;
+        }
 
-/* --- Interactive and List Elements --- */
-a {
-  color: var(--highlight-color);
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
+        a:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
 
-a:hover {
-  color: #ffc0cb; /* Lighter pink on hover */
-  text-decoration: underline;
-}
+        /* --- セクションの共通スタイル --- */
+        .section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 960px;
+            box-sizing: border-box;
+            text-align: center;
+        }
 
-.quote {
-  background: rgba(255, 209, 220, 0.1);
-  border-left: 4px solid var(--highlight-color);
-  padding: 1rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  border-radius: 4px;
-  color: var(--text-color-primary);
-}
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--highlight-color);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            position: relative;
+            display: inline-block;
+        }
 
-.points {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
+        .section h2::after {
+            content: "✦";
+            font-size: 1.5em;
+            color: var(--highlight-color-light);
+            position: absolute;
+            right: -25px;
+            bottom: -5px;
+        }
 
-.points li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
-  font-family: var(--font-family-japanese);
-  font-size: 1.05em;
-  line-height: 1.6;
-}
+        /* --- 個別記事の構造スタイル (詳細ページ用) --- */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
 
-.points li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--highlight-color);
-  font-size: 1.2em;
-  top: 0;
-}
+        .article-detail h1 {
+            font-family: var(--font-family-english);
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-/* --- Next Article Link Section --- */
-.next-article-section {
-  margin-top: 60px;
-  text-align: center;
-  padding: 30px;
-  background: var(--bg-color-secondary);
-  border-radius: 12px;
-  box-shadow: var(--box-shadow-medium);
-  border: 1px solid var(--border-color);
-}
+        .article-detail .article-meta {
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-.next-article-section h2 {
-  font-family: var(--font-family-japanese);
-  color: var(--highlight-color);
-  margin-bottom: 20px;
-  font-size: 2em;
-}
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
 
-.next-article-section a {
-  font-family: var(--font-family-japanese);
-  font-size: 1.2em;
-  font-weight: bold;
-  display: inline-block;
-  padding: 10px 20px;
-  border: 2px solid var(--highlight-color);
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
+        .article-detail p {
+            font-family: var(--font-family-japanese);
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+    </style>
+</head>
+<body>
+    <article class="article-detail">
+        <header class="intro section">
+            <h1>エミリーの星日記 ✎</h1>
+            <p>―― 2025年8月18日〜24日の夜空より</p>
+            <p>こんにちは、愛しいあなたへ。<br>
+            今週も空は、小さな驚きと静かな物語を私たちに贈ってくれます。<br>
+            手紙を綴るように、今週の夜空のレシピをあなたへ届けます。</p>
+            <img src="../images/intro-night-sky.jpg" alt="夜空のイメージ">
+        </header>
 
-.next-article-section a:hover {
-  background-color: var(--highlight-color);
-  color: var(--bg-color-primary);
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
-}
+        <section class="section">
+            <h2>🌌 夢見る惑星パレード（2025年8月18〜20日早朝）</h2>
+            <img src="../images/planet-parade.jpg" alt="惑星パレードの想像イメージ">
+            <p>夜明け前の静けさの中で、東の空がほんのり白みはじめる頃。
+            六つの惑星たちが、まるで宇宙の舞踏会に招かれたように、一列に並びます。<br>
+            金色の衣をまとった金星、雄大に構える木星、地平線すれすれに煌めく水星、そして少し離れて土星。<br>
+            さらに望遠鏡を覗けば、ウラヌスやネプチューンまでもが小さな声で参加しているのが分かります。<br><br>
+            それは、宇宙のレシピに秘密のスパイスを加えるような、不思議で繊細な味わい。<br>
+            18日から20日の早朝には、細い月がその行列に加わり、まるで静かな舞曲をそっと照らしているようでした。</p>
+            <p><strong>観測ポイント：</strong>東の空、午前4時前後。肉眼で見えるのは水星・金星・木星・土星。双眼鏡や望遠鏡があればウラヌス・ネプチューンも探せます。</p>
+        </section>
 
-/* --- APOD Section (Astronomy Picture of the Day) --- */
-#apod-container-article {
-  padding: 25px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  background-color: var(--bg-color-secondary);
-  text-align: center;
-  max-width: 960px;
-  margin: 40px auto;
-  box-shadow: var(--box-shadow-medium);
-}
+        <section class="section">
+            <h2>✨ 願いをかけるペルセウス座流星群の残響（2025年8月12〜13日夜の余韻）</h2>
+            <img src="../images/perseid-meteors.jpg" alt="流れ星のイメージ">
+            <p>夏の風物詩、ペルセウス座流星群。ピークは先週でしたが、その余韻はまだ空に残っていました。<br>
+            満月に近い光が空を照らし、流星の輝きを隠してしまう夜。それでも、闇に紛れてふと現れるひとすじの光は、まるで星屑を散りばめたケーキにふわりとかかった粉砂糖のよう。<br><br>
+            あなたは、ひとつでも願いを託せましたか？<br>
+            その短い一瞬に、心の奥で揺れた想いが、夜空のキャンバスに描かれているのかもしれません。</p>
+            <p><strong>観測ポイント：</strong>深夜から明け方にかけて北東の空。月明かりが強いため、暗い場所で視界を広く取るのがコツです。</p>
+        </section>
 
-#apod-title-article {
-  font-family: var(--font-family-english);
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: var(--highlight-color);
-  text-align: center;
-}
+        <section class="section">
+            <h2>🪐 水星のひそやかなささやき（2025年8月19日早朝）</h2>
+            <img src="../images/mercury-dawn.jpg" alt="水星が地平線近くに輝くイメージ">
+            <p>静かな明け方。地平線のすぐ上に、小さな銀色の粒のように光る水星。<br>
+            それは、夜のレシピにひとつまみのスパイスを加えたような存在。大きくは目立たないけれど、確かに味わいを変えるもの。<br><br>
+            19日の朝、水星は西方最大離角を迎え、もっとも観測しやすいタイミングを迎えます。<br>
+            ほんの短い時間しか顔を見せませんが、それこそが水星の魅力。すぐに消えてしまう儚い味わいは、見つけた人だけが感じられる小さな奇跡です。</p>
+            <p><strong>観測ポイント：</strong>東の空の低い位置。建物や山にさえぎられない開けた場所がおすすめです。</p>
+        </section>
 
-#apod-explanation-article {
-  line-height: 1.7;
-  margin-bottom: 15px;
-  font-size: 1em;
-  text-align: left;
-  color: var(--text-color-secondary);
-}
+        <section class="section">
+            <h2>🌙 月と惑星たちの静かな再会（2025年8月19〜21日早朝）</h2>
+            <img src="../images/moon-conjunction.jpg" alt="月と惑星の共演イメージ">
+            <p>細い月は、惑星たちのそばへと静かに寄り添っていきます。<br>
+            19日から20日にかけては、月が木星や金星のそばに滑り込むように寄り添い、21日には水星との距離を縮めます。<br><br>
+            まるで親しい友人たちと再会して、肩を並べながら歩いているよう。<br>
+            その姿は、心の奥にあるやさしい感情を呼び覚まし、空を見上げる私たちを静かに包み込んでくれます。</p>
+            <p><strong>観測ポイント：</strong>日の出前の東の空。肉眼で十分楽しめますが、双眼鏡があればさらに鮮明に。</p>
+        </section>
 
-#apod-copyright-article {
-  font-size: 0.85em;
-  color: var(--text-color-secondary);
-  text-align: right;
-  opacity: 0.8;
-}
-</style>
-  
-    <article>
-      <header class="intro section">
-        <h1>エミリーの星日記 ✎</h1>
-        <p>―― 2025年8月18日〜24日の夜空より</p>
-        <p>こんにちは、愛しいあなたへ。<br>
-        今週も空は、小さな驚きと静かな物語を私たちに贈ってくれます。<br>
-        手紙を綴るように、今週の夜空のレシピをあなたへ届けます。</p>
-        <img src="../images/intro-night-sky.jpg" alt="夜空のイメージ">
-      </header>
-
-      <section class="section">
-        <h2>🌌 夢見る惑星パレード（2025年8月18〜20日早朝）</h2>
-        <img src="../images/planet-parade.jpg" alt="惑星パレードの想像イメージ">
-        <p>夜明け前の静けさの中で、東の空がほんのり白みはじめる頃。
-        六つの惑星たちが、まるで宇宙の舞踏会に招かれたように、一列に並びます。<br>
-        金色の衣をまとった金星、雄大に構える木星、地平線すれすれに煌めく水星、そして少し離れて土星。<br>
-        さらに望遠鏡を覗けば、ウラヌスやネプチューンまでもが小さな声で参加しているのが分かります。<br><br>
-        それは、宇宙のレシピに秘密のスパイスを加えるような、不思議で繊細な味わい。<br>
-        18日から20日の早朝には、細い月がその行列に加わり、まるで静かな舞曲をそっと照らしているようでした。</p>
-        <p><strong>観測ポイント：</strong>東の空、午前4時前後。肉眼で見えるのは水星・金星・木星・土星。双眼鏡や望遠鏡があればウラヌス・ネプチューンも探せます。</p>
-      </section>
-
-      <section class="section">
-        <h2>✨ 願いをかけるペルセウス座流星群の残響（2025年8月12〜13日夜の余韻）</h2>
-        <img src="../images/perseid-meteors.jpg" alt="流れ星のイメージ">
-        <p>夏の風物詩、ペルセウス座流星群。ピークは先週でしたが、その余韻はまだ空に残っていました。<br>
-        満月に近い光が空を照らし、流星の輝きを隠してしまう夜。それでも、闇に紛れてふと現れるひとすじの光は、まるで星屑を散りばめたケーキにふわりとかかった粉砂糖のよう。<br><br>
-        あなたは、ひとつでも願いを託せましたか？<br>
-        その短い一瞬に、心の奥で揺れた想いが、夜空のキャンバスに描かれているのかもしれません。</p>
-        <p><strong>観測ポイント：</strong>深夜から明け方にかけて北東の空。月明かりが強いため、暗い場所で視界を広く取るのがコツです。</p>
-      </section>
-
-      <section class="section">
-        <h2>🪐 水星のひそやかなささやき（2025年8月19日早朝）</h2>
-        <img src="../images/mercury-dawn.jpg" alt="水星が地平線近くに輝くイメージ">
-        <p>静かな明け方。地平線のすぐ上に、小さな銀色の粒のように光る水星。<br>
-        それは、夜のレシピにひとつまみのスパイスを加えたような存在。大きくは目立たないけれど、確かに味わいを変えるもの。<br><br>
-        19日の朝、水星は西方最大離角を迎え、もっとも観測しやすいタイミングを迎えます。<br>
-        ほんの短い時間しか顔を見せませんが、それこそが水星の魅力。すぐに消えてしまう儚い味わいは、見つけた人だけが感じられる小さな奇跡です。</p>
-        <p><strong>観測ポイント：</strong>東の空の低い位置。建物や山にさえぎられない開けた場所がおすすめです。</p>
-      </section>
-
-      <section class="section">
-        <h2>🌙 月と惑星たちの静かな再会（2025年8月19〜21日早朝）</h2>
-        <img src="../images/moon-conjunction.jpg" alt="月と惑星の共演イメージ">
-        <p>細い月は、惑星たちのそばへと静かに寄り添っていきます。<br>
-        19日から20日にかけては、月が木星や金星のそばに滑り込むように寄り添い、21日には水星との距離を縮めます。<br><br>
-        まるで親しい友人たちと再会して、肩を並べながら歩いているよう。<br>
-        その姿は、心の奥にあるやさしい感情を呼び覚まし、空を見上げる私たちを静かに包み込んでくれます。</p>
-        <p><strong>観測ポイント：</strong>日の出前の東の空。肉眼で十分楽しめますが、双眼鏡があればさらに鮮明に。</p>
-      </section>
-
-      <footer class="closing section">
-        <h2>エミリーから、あなたへ</h2>
-        <img src="../images/emily-letter.jpg" alt="エミリーからの手紙イメージ">
-        <p>今週の空は、まるで宇宙の小さなお茶会のようでした。<br>
-        惑星たちが列をなし、月がそっと寄り添い、流れ星が短い物語を描き去っていく。<br><br>
-        それぞれの出来事は、宇宙のレシピに添えられた甘いお菓子や香り高いスパイスのよう。<br>
-        あなたの心にもきっと、淡い余韻を残していることでしょう。<br><br>
-        また夜空でお会いできますように。<br>
-        あなたの見上げるその先に、いつも小さな魔法を。<br><br>
-        ―― エミリーより 🌙</p>
-      </footer>
+        <footer class="closing section">
+            <h2>エミリーから、あなたへ</h2>
+            <img src="../images/emily-letter.jpg" alt="エミリーからの手紙イメージ">
+            <p>今週の空は、まるで宇宙の小さなお茶会のようでした。<br>
+            惑星たちが列をなし、月がそっと寄り添い、流れ星が短い物語を描き去っていく。<br><br>
+            それぞれの出来事は、宇宙のレシピに添えられた甘いお菓子や香り高いスパイスのよう。<br>
+            あなたの心にもきっと、淡い余韻を残していることでしょう。<br><br>
+            また夜空でお会いできますように。<br>
+            あなたの見上げるその先に、いつも小さな魔法を。<br><br>
+            ―― エミリーより 🌙</p>
+        </footer>
     </article>
+
   <section id="apod-container-article">
             <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
             <div id="apod-media-container-article">
