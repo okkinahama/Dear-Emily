@@ -206,7 +206,7 @@
      "image":"../images/2025-08-09-1.jpg",
      "category":["宇宙と科学"]
     }, 
-    {"title":"月月の記憶に出会う旅｜エミリー、かぐやと白い地平を渡る ",
+    {"title":"月の記憶に出会う旅｜エミリー、かぐやと白い地平を渡る ",
      "url":"articles/2025-08-10.space.selene.html",
      "date":"2025-08-10",
      "image":"../images/2025-08-10-1.jpg",
@@ -216,6 +216,12 @@
      "url":"articles/2025-08-11.space.destiny.html",
      "date":"2025-08-11",
      "image":"../images/2025-08-11-1.jpg",
+     "category":["宇宙と科学"]
+    }, 
+    {"title":"エミリーの星日記｜2025年8月18日〜24日の夜空より ",
+     "url":"articles/2025-08-19.space.diary1.html",
+     "date":"2025-08-19",
+     "image":"../images/2025-08-19-1.jpg",
      "category":["宇宙と科学"]
     }
   ]
