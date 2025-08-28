@@ -268,21 +268,14 @@
       <p><a href="#">『金星が微笑むとき』</a></p>
     </section>
 
-    <section id="apod-container-article" class="section">
-      <h2 id="apod-title-article">Today's Space Photo</h2>
-      <div id="apod-media-container-article"></div>
-      <p id="apod-explanation-article"></p>
-      <p id="apod-copyright-article"></p>
-    </section>
-  </article>
-<section id="apod-container-article">
+    <section id="apod-container-article">
             <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
             <div id="apod-media-container-article">
                 <p>コンテンツを読み込み中...</p>
             </div>
             <p id="apod-explanation-article"></p>
             <p id="apod-copyright-article"></p>
-        </section>
+        
    <script>
         const sections = document.querySelectorAll('.section');
         const observer = new IntersectionObserver((entries) => {
@@ -338,5 +331,6 @@
 
          fetchAPOD(); // APIキーを設定したらコメント解除してください
     </script>
+    </section>
 </body>
 </html>
