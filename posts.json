@@ -231,9 +231,15 @@
      "category":["宇宙と科学"]
     }, 
     {"title":"エミリーの星日記｜2025年8月25日〜9月1日の夜空より ",
-     "url":"articles/2025-08-25.space.diary1.html",
+     "url":"articles/2025-08-25.space.diary2.html",
      "date":"2025-08-25",
      "image":"../images/2025-08-25-1.jpg",
+     "category":["宇宙と科学"]
+    }, 
+    {"title":"エミリーの星日記｜2025年9月1日〜9月7日の夜空より ",
+     "url":"articles/2025-09-01.space.diary3.html",
+     "date":"2025-09-01",
+     "image":"../images/2025-09-01-1.jpg",
      "category":["宇宙と科学"]
     }
   ]
