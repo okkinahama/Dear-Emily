@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>エミリーの星日記｜2025年9月8日〜14日の夜空より</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+  <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+  <main>
+
+    <!-- 起：冒頭 -->
+    <section class="section">
+      <h2>秋の風に包まれて──星日記の始まり</h2>
+      <p>
+        こんばんは、エミリーです。<br>
+        9月の夜空は、不思議な透明感を宿しています。夏の熱をそっと手放しながら、秋の深まりを予感させる風が頬を撫でると、胸の奥が静かに高鳴ります。<br>
+        私はこの時期の空が大好きです。昼間の喧騒が遠のき、星たちがより澄んだ声で囁きかけてくるから。<br>
+        もしあなたが今この文章を読んでいるなら、どうか心を柔らかくほどいて、星と語らう準備をしてみてください。<br>
+        これから綴るのは、2025年9月8日から14日までの、空と心をつなぐ小さな旅の記録です。あなたを夜空の散歩へと招待します。<br>
+      </p>
+      <img src="../images/2025-09-08-1.jpg" alt="秋の夜空の導入イメージ">
+    </section>
+
+    <!-- 承：週間天体イベントまとめ -->
+    <section class="section">
+      <h2>今週の夜空を旅する──9月8日から14日の星の予定表</h2>
+      <p>
+        星や月は、黙っているようでいて、実はとても饒舌です。<br>
+        彼らは日々の動きの中で、愛や別れ、始まりや終わりを語っています。<br>
+        今週は、特に「月」が大きな役割を果たす一週間です。満ちた月が赤銅色に染まり、その後、欠けていく過程で私たちに数多くのことを語りかけてくれるのです。<br>
+        日付ごとに訪れる星の瞬間を、一緒に辿ってみましょう。<br>
+      </p>
+
+      <h3>◆ 9月8日（月） ：皆既月食を伴う満月（ブラッドムーン）</h3>
+      <p>
+        夜更け、あるいは早朝。夜空を仰げば、満月が赤銅色に染まります。<br>
+        この月は「ハーベストムーン」とも呼ばれ、秋の収穫を見守るように輝きます。<br>
+        今回の満月は特別です。皆既月食を伴い、月は地球の影に完全に隠れ、やがて血のような赤に染まります。<br>
+        その色合いは、宇宙が奏でるドラマの最高潮。科学的には大気の散乱によって生じる赤ですが、私には「心の奥にある炎」が一瞬外に現れるように感じられます。<br>
+        占星術的にも、この満月は魚座で起こります。魚座の満月は、夢や直感、そして「見えない心のつながり」を強調するもの。<br>
+        赤く染まった月の下で、私たちは普段見過ごしていた感情や関係に気づくのかもしれません。<br>
+      </p>
+      <img src="../images/2025-09-08-2.jpg" alt="皆既月食の赤い満月">
+
+      <h3>◆ 9月9日〜13日：欠けてゆく月の時間</h3>
+      <p>
+        満ちきった月は、やがて少しずつ光を失い始めます。<br>
+        夜ごとに細く欠けていく月は、まるで何かを手放すよう。<br>
+        9日から13日にかけての夜空では、欠けてゆく月が南から東へと姿を変えながら昇ります。<br>
+        占星術的には、この時期は「整理と浄化」のプロセス。満月で気づいたことを抱えながら、不要なものをそっと手放すのにふさわしい時期です。<br>
+        私はこの期間を「心の掃除の時間」と呼んでいます。夜空を見上げながら、自分にとって本当に必要なものを選び取る作業をすると、不思議と心が軽やかになるのです。<br>
+      </p>
+      <img src="../images/2025-09-08-3.jpg" alt="欠けてゆく月">
+
+      <h3>◆ 9月14日（土）:下弦の月</h3>
+      <p>
+        週の終わり、空に現れるのは「下弦の月」。<br>
+        西の空に浮かぶその姿は、半分が光り、半分が影に沈んでいます。<br>
+        この月相は、太陽・地球・月が直角に並ぶときに訪れます。天文学的にはシンプルな現象ですが、私にとっては「選択の象徴」です。<br>
+        占星術的に下弦の月は「決断のとき」とされます。満月から新月に向かう過程で、自分が残すものと手放すものを決める時間なのです。<br>
+        その静かな光を見つめていると、自分の心の中で迷っていたことが不思議と形を成していきます。<br>
+        もし今、あなたの心に小さな迷いがあるのなら、この夜にそっと問いかけてみてください。月は必ず、静かな答えを示してくれるはずです。<br>
+      </p>
+      <img src="../images/2025-09-08-4.jpg" alt="下弦の月">
+    </section>
+
+    <!-- 転：深い語り -->
+    <section class="section">
+      <h2>赤い満月と欠けゆく光──心が語る宇宙</h2>
+      <p>
+        今週を通して私の心に最も強く残るのは、やはり9月8日の赤い満月です。<br>
+        あの瞬間、私は空を見上げながら、自分の心の奥にある言葉にならない想いに気づきました。<br>
+        満ちては欠ける月のリズムは、人の感情ととてもよく似ています。<br>
+        喜びや悲しみが満ちてあふれ出す時もあれば、やがて静かにしぼんでいく時もある。<br>
+        それは決して「失う」ことではなく、「循環」の一部。<br>
+        赤い満月は私に、燃えるような心の衝動を思い出させ、欠けゆく月は「手放していい」という優しい声を囁いてくれました。<br>
+        そして下弦の月は、未来への扉を開く勇気をくれます。<br>
+        夜空は、私たちが自分自身を映す鏡。そこに広がる光と影は、私たちの心のあり方そのものなのです。<br>
+      </p>
+      <img src="../images/2025-09-08-5.jpg" alt="赤い満月と欠けゆく光の語らい">
+    </section>
+
+    <!-- 結：締めくくり -->
+    <section class="section">
+      <h2>夜空に残された余韻</h2>
+      <p>
+        一週間の星旅を振り返ると、心の奥にたくさんの声が残っています。<br>
+        赤く染まる月は「変容の瞬間」を、欠けゆく光は「手放す勇気」を、下弦の月は「選択の智慧」を。<br>
+        夜空を見上げることは、宇宙を学ぶことだけではなく、自分自身を知ることにつながるのだと改めて感じました。<br>
+        どうか今夜、ほんの数分でいいので空を仰いでみてください。<br>
+        あなたの心に寄り添う光が、きっとそこにあります。<br>
+        そして来週もまた、星たちの物語を一緒に綴りましょう。<br>
+      </p>
+      <img src="../images/2025-09-08-6.jpg" alt="星空の余韻">
+    </section>
+
+    <!-- 次のお話へ導線 -->
+    <section class="next-article-section">
+      <p><a href="./0915.html">▶ 次のお話を読む</a></p>
+    </section>
+
+  </main>
+  <section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+            </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
+</body>
+</html>
