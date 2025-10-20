@@ -1,364 +1,170 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟宇宙ってどこから始まるの？〜エミリーと探す「空のその先」〜 | Dear Emily</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
-    <style>
-        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
-        .article-detail {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            background: var(--bg-color-secondary);
-            border-radius: 12px;
-            box-shadow: var(--box-shadow-medium);
-            color: var(--text-color-primary);
-            text-align: left;
-        }
-        .article-detail h1 {
-            font-family: var(--font-family-english); /* Montserrat */
-            font-size: 2.8em;
-            color: var(--highlight-color);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .article-detail h2 {
-            font-family: var(--font-family-japanese); /* Noto Sans JP */
-            font-size: 1.8em;
-            color: var(--primary-color);
-            margin-top: 2.5em;
-            margin-bottom: 1em;
-            position: relative;
-            padding-bottom: 0.5em;
-            border-bottom: 2px solid var(--border-color);
-            display: inline-block;
-            left: 0;
-        }
-        .article-detail h2::before {
-            content: "✨"; /* キラキラの絵文字を追加 */
-            margin-right: 10px;
-            font-size: 0.8em;
-        }
-        .article-detail p {
-            font-family: var(--font-family-japanese); /* Noto Sans JP */
-            font-size: 1.1em;
-            line-height: var(--line-height-body);
-            margin-bottom: 1.5em;
-            color: var(--text-color-primary);
-        }
-        .article-detail img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 12px;
-            box-shadow: var(--box-shadow-light);
-        }
-        .caption {
-            font-family: var(--font-family-japanese); /* Noto Sans JP */
-            font-size: 0.9em;
-            color: var(--text-color-secondary);
-            text-align: center;
-            margin-top: -10px;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        .section {
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        a {
-            color: var(--highlight-color);
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-        a:hover {
-            color: #ffc0cb;
-            text-decoration: underline;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宇宙ってどこから始まるの？</title>
+  <link rel="stylesheet" href="../css/style.css">
+<img src="../images/emily-looking-up.png" alt="..." />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
+     crossorigin="anonymous"></script>
 
-        .quote {
-            background: rgba(255, 209, 220, 0.1);
-            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
-            padding: 1rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            border-radius: 4px;
-            color: var(--text-color-primary);
-        }
-        .points {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-        .points li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-            font-family: var(--font-family-japanese);
-            font-size: 1.05em;
-            line-height: 1.6;
-        }
-        .points li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--highlight-color); /* CSS変数を使用 */
-            font-size: 1.2em;
-            top: 0;
-        }
-
-        /* 次の記事へのリンクセクション */
-        .next-article-section {
-            margin-top: 60px;
-            text-align: center;
-            padding: 30px;
-            background: var(--bg-color-secondary);
-            border-radius: 12px;
-            box-shadow: var(--box-shadow-medium);
-            border: 1px solid var(--border-color);
-        }
-        .next-article-section h2 {
-            font-family: var(--font-family-japanese);
-            color: var(--highlight-color);
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-        .next-article-section a {
-            font-family: var(--font-family-japanese);
-            font-size: 1.2em;
-            font-weight: bold;
-            display: inline-block;
-            padding: 10px 20px;
-            border: 2px solid var(--highlight-color);
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        .next-article-section a:hover {
-            background-color: var(--highlight-color);
-            color: var(--bg-color-primary);
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
-        }
-
-        /* APODセクションのスタイル */
-        #apod-container-article {
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            background-color: var(--bg-color-secondary);
-            text-align: center;
-            max-width: 960px;
-            margin: 40px auto;
-            box-shadow: var(--box-shadow-medium);
-        }
-        #apod-title-article {
-            font-family: var(--font-family-english);
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: var(--highlight-color);
-            text-align: center;
-        }
-        #apod-media-container-article img, #apod-media-container-article iframe {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: var(--box-shadow-light);
-        }
-        #apod-explanation-article {
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-size: 1em;
-            text-align: left;
-            color: var(--text-color-secondary);
-        }
-        #apod-copyright-article {
-            font-size: 0.85em;
-            color: var(--text-color-secondary);
-            text-align: right;
-            opacity: 0.8;
-        }
-    </style>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      background: linear-gradient(to bottom, #0b0f1a, #1a1d2e);
+      color: #f0f0f0;
+      line-height: 1.8;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #ffd1dc;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    h2 {
+      font-size: 1.4em;
+      margin-top: 2em;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+    .caption {
+      font-size: 0.9em;
+      color: #ccc;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    a {
+      color: #ffd1dc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-    <article class="article-detail">
-        <h1>🌟宇宙ってどこから始まるの？<br><small>〜エミリーと探す「空のその先」〜</small></h1>
+  <article>
+    <h1>🌟宇宙ってどこから始まるの？<br><small>〜エミリーと探す「空のその先」〜</small></h1>
 
-        <img src="../images/emily2.jpg" alt="エミリーが夜空を見上げる幻想的なイラスト" />
-        <p class="caption">星空の向こうに、何が待ってるんだろう。エミリーの冒険が始まる。</p>
+    <img src="images/空の世界.png" alt="夜空を見上げるエミリーのイラスト" />
+    <p class="caption">星空の向こうに、何が待ってるんだろう。エミリーの冒険が始まる。</p>
 
-        <div class="section">
-            <h2>ねえ、エミリー。</h2>
-            <p>
-                
-                晴れた日の午後、空を見上げたことってある？雲がふわふわ浮かんでたり、鳥が羽ばたいていたり、飛行機がゆっくりと横切ったり…。私たちの頭の上には、そんなにぎやかな「空の世界」が広がっているよね。
-            </p>
-            <p>
-                でも、そのもっともっと上――雲も風も届かない、その先にはね、「**宇宙（うちゅう）**」って呼ばれる、ちょっと不思議でとっても広い世界があるんだよ。
-                まるで物語のページをめくるように、空の向こう側には、新しい冒険が待っているの。<br>
-                今日はその入り口を、こっそり一緒にのぞいてみようか🌌
-            </p>
-        </div>
+    <div class="section">
+      <h2>【導入】</h2>
+      <p>
+        ねえ、エミリー。<br>
+        晴れた日の午後、空を見上げたことってある？雲がふわふわ浮かんでたり、鳥が羽ばたいていたり、飛行機がゆっくりと横切ったり…。私たちの頭の上には、そんなにぎやかな「空の世界」が広がっているよね。
+      </p>
+      <p>
+        でも、そのもっともっと上――雲も風も届かない、その先にはね、「宇宙（うちゅう）」って呼ばれる、ちょっと不思議でとっても広い世界があるんだよ。
+        まるで物語のページをめくるように、空の向こう側には、新しい冒険が待っているの。<br>
+        今日はその入り口を、こっそり一緒にのぞいてみようか🌌
+      </p>
+    </div>
 
-        <div class="section">
-            <h2>🌌 宇宙って、どんな場所？</h2>
-            <img src="../images/宇宙のイメージ.jpg" alt="真っ暗な宇宙空間に輝く星々">
-            <p class="caption">まるで宝石箱みたいにキラキラしてるね！</p>
-            <p>
-                宇宙は、空気がなくて、音がしない、とても静かな場所なんだ。<br>
-                地球では風がふいたり、鳥の声が聞こえたり、音があふれているけど、宇宙ではそれが全部消えちゃうの。
-                **音は空気がないと伝わらないから**ね。
-            </p>
-            <p>
-                昼も夜もない。太陽の光が当たるところはまぶしくて、影の部分は真っ暗。
-                そんな「**光と闇のコントラスト**」が、宇宙らしさでもあるんだよ。
-            </p>
-        </div>
+    <div class="section">
+      <h2>🌌 宇宙って、どんな場所？</h2>
+      <img src="宇宙のイメージ.png" alt="真っ暗な宇宙空間">
+      <p>
+        宇宙は、空気がなくて、音がしない、とても静かな場所なんだ。<br>
+        地球では風がふいたり、鳥の声が聞こえたり、音があふれているけど、宇宙ではそれが全部消えちゃうの。
+        音は空気がないと伝わらないからね。
+      </p>
+      <p>
+        昼も夜もない。太陽の光が当たるところはまぶしくて、影の部分は真っ暗。
+        そんな「光と闇のコントラスト」が、宇宙らしさでもあるんだよ。
+      </p>
+    </div>
 
-        <div class="section">
-            <h2>🚀 宇宙は、どこから始まるの？</h2>
-            <img src="../images/カーマンライン.jpg" alt="大気圏と宇宙の境目、カーマン・ラインの概念図">
-            <p class="caption">この線を越えたら、宇宙飛行士の仲間入り！</p>
-            <p>
-                「宇宙って、どこからが“宇宙”なの？」<br>
-                その答えは、地球の表面から**約100km上**にある「**カーマン・ライン**」。
-                ここを越えると、「宇宙に出た」とみなされるの。
-            </p>
-            <p>
-                東京から静岡くらいの距離を真上に進んだ場所。<br>
-                そう思うと、宇宙って、意外とすぐそこにあると思わない？
-            </p>
-        </div>
+    <div class="section">
+      <h2>🚀 宇宙は、どこから始まるの？</h2>
+      <img src="カーマンライン.png" alt="カーマン・ラインの概念図">
+      <p>
+        「宇宙って、どこからが“宇宙”なの？」<br>
+        その答えは、地球の表面から約100km上にある「カーマン・ライン」。
+        ここを越えると、「宇宙に出た」とみなされるの。
+      </p>
+      <p>
+        東京から静岡くらいの距離を真上に進んだ場所。<br>
+        そう思うと、宇宙って、意外とすぐそこにあると思わない？
+      </p>
+    </div>
 
-        <div class="section">
-            <h2>🌠 『ふしぎの海のナディア』と宇宙の旅</h2>
-            <img src="../images/旅.jpg" alt="エミリーが未知の旅に出るような幻想的なイラスト">
-            <p class="caption">ナディアたちも、きっと宇宙の神秘に魅せられたはず。</p>
-            <p>
-                『ふしぎの海のナディア』では、ナディアたちが未知の世界へと旅に出るよね。<br>
-                空、海、そしてその先――。宇宙って、そんな**“まだ見ぬ世界”そのもの**なんだ。
-            </p>
-            <p>
-                『宇宙よりも遠い場所』の女の子たちも、南極という憧れに向かって旅をしたね。<br>
-                その姿はまるで、宇宙を目指す冒険者たちのよう。<br>
-                エミリーも、きっとそうなれるよ。
-            </p>
-        </div>
+    <div class="section">
+      <h2>🌊 『ふしぎの海のナディア』と宇宙</h2>
+      <img src="旅.png" alt="ナディアと未知への旅">
+      <p>
+        『ふしぎの海のナディア』では、ナディアたちが未知の世界へと旅に出るよね。<br>
+        空、海、そしてその先――。宇宙って、そんな“まだ見ぬ世界”そのものなんだ。
+      </p>
+      <p>
+        『宇宙よりも遠い場所』の女の子たちも、南極という憧れに向かって旅をしたね。<br>
+        その姿はまるで、宇宙を目指す冒険者たちのよう。<br>
+        エミリーも、きっとそうなれるよ。
+      </p>
+    </div>
 
-        <div class="section">
-            <h2>🌍 宇宙を知るって、どうして大切なの？</h2>
-            <p>
-                宇宙を知ると、地球のことがもっと特別に思えるようになるの。<br>
-                「水がある」「空気がある」「生命がある」――それが、どれほど奇跡的なことかって、宇宙を知れば知るほど感じるんだよ。
-            </p>
-            <p>
-                そしていつか、エミリーが宇宙に行きたくなったときのために。<br>
-                今からちょっとずつ冒険の準備、始めてみよう♪
-            </p>
-        </div>
+    <div class="section">
+      <h2>🌍 宇宙を知るって、どうして大切なの？</h2>
+      <p>
+        宇宙を知ると、地球のことがもっと特別に思えるようになるの。<br>
+        「水がある」「空気がある」「生命がある」――それが、どれほど奇跡的なことかって、宇宙を知れば知るほど感じるんだよ。
+      </p>
+      <p>
+        そしていつか、エミリーが宇宙に行きたくなったときのために。<br>
+        今からちょっとずつ冒険の準備、始めてみよう♪
+      </p>
+    </div>
 
-        <div class="section">
-            <h2>✨宇宙への最初の一歩</h2>
-            <p>
-                宇宙って、とっても遠いようで、実はすぐ隣にあるんだ。<br>
-                たった100kmのその先には、星の海が広がっている。
-            </p>
-            <p>
-                これから一緒に、Dear Emilyの宇宙探検をはじめよう。<br>
-                星の地図を手に、次に出会う星を探しに行こうね――。
-            </p>
-        </div>
+    <div class="section">
+      <h2>✨ まとめ：宇宙への最初の一歩</h2>
+      <p>
+        宇宙って、とっても遠いようで、実はすぐ隣にあるんだ。<br>
+        たった100kmのその先には、星の海が広がっている。
+      </p>
+      <p>
+        これから一緒に、Dear Emilyの宇宙探検をはじめよう。<br>
+        星の地図を手に、次に出会う星を探しに行こうね――。
+      </p>
+    </div>
 
-        <div class="next-article-section">
-            <h2>🔭 次のお話はこちら</h2>
-            <p><a href="../articles/2025-04-23.space-moon.html">「お月さまって、どうして形がちがうの？」</a></p>
-        </div>
+    <div class="section">
+      <h2>🔭 次のお話はこちら</h2>
+      <p><a href="moon-phase.html">「お月さまって、どうして形がちがうの？」</a></p>
+    </div>
+  </article>
 
-        <section id="apod-container-article">
-            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
-            <div id="apod-media-container-article">
-                <p>コンテンツを読み込み中...</p>
-                </div>
-            <p id="apod-explanation-article"></p>
-            <p id="apod-copyright-article"></p>
-        </section>
-
-    </article>
-
-    <script>
-        // Intersection Observer for section animations
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // 一度表示されたら監視を停止
-                }
-            });
-        }, { threshold: 0.2 });
-
-        sections.forEach(section => observer.observe(section));
-
-        // APOD API Integration (仮のJavaScript)
-        // 実際のAPIキーとエンドポイントを使用してください
-        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
-        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
-
-        async function fetchAPOD() {
-            try {
-                const response = await fetch(apodUrl);
-                const data = await response.json();
-
-                const apodTitle = document.getElementById('apod-title-article');
-                const apodMediaContainer = document.getElementById('apod-media-container-article');
-                const apodExplanation = document.getElementById('apod-explanation-article');
-                const apodCopyright = document.getElementById('apod-copyright-article');
-
-                apodTitle.textContent = data.title;
-                apodExplanation.textContent = data.explanation;
-                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
-
-                if (data.media_type === 'image') {
-                    const img = document.createElement('img');
-                    img.src = data.url;
-                    img.alt = data.title;
-                    apodMediaContainer.innerHTML = ''; // Clear loading text
-                    apodMediaContainer.appendChild(img);
-                } else if (data.media_type === 'video') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = data.url;
-                    iframe.frameBorder = '0';
-                    iframe.allow = 'autoplay; encrypted-media';
-                    iframe.allowFullscreen = true;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px'; // Adjust as needed
-                    apodMediaContainer.innerHTML = ''; // Clear loading text
-                    apodMediaContainer.appendChild(iframe);
-                }
-            } catch (error) {
-                console.error('Error fetching APOD:', error);
-                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
-            }
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
+      });
+    }, { threshold: 0.2 });
 
-        // ページロード時にAPODを読み込む
-        fetchAPOD(); // APIキーを設定したらコメント解除してください
-    </script>
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
