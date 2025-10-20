@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>エミリーの星日記 — 9月22日〜28日：秋風と、海のようなネプチューンの夜- dear emily</title>
+    <p class="subtitle">夜空を一緒に見上げるあなたへ。秋分の光と、夢を震わせる海の惑星の輝きを。</p>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
+</head><!-- Dear Emily 記事テンプレートに沿ったHTML（エミリー視点・詩的起承転結） -->
+<article class="dear-emily-article">
+  
+
+  <!-- 起：招待と今週の要約 -->
+  <section class="section intro">
+    <h2>起：よかったら、ベランダのコーヒーを片手に</h2>
+    <figure class="image-holder">
+      <img src="../images/2025-09-22-intro.jpg" alt="秋分の夜、窓辺に座るシルエット" class="article-image">
+      <figcaption>秋の空気が混ざる夜 — 23日は秋分の日（日本）。</figcaption>
+    </figure>
+    <p>
+      ねえ、窓を少しだけ開けてみて。風が入ってくると、季節がほんの少しだけ教えてくれる気がするの。
+      今年の秋分は、私たちの夜と昼の長さがすっと等しくなる日。日本では<span class="fact">2025年9月23日が秋分の日</span>として暦に載っているのを確認したよ。:contentReference[oaicite:0]{index=0}
+    </p>
+    <p>
+      そのそばで、宇宙の静かなドラマが進んでいるの。海の惑星・ネプチューンが見頃の位置に来る"オポジション"を迎え、薄く、しかし確かな夢の光を夜にもたらしているの。今週はその光を頼りに、小さな物語を一緒に辿ろう。:contentReference[oaicite:1]{index=1}
+    </p>
+  </section>
+
+  <!-- 承：天文イベント／観察ガイド（事実ベース） -->
+  <section class="section events">
+    <h2>承：今週の天文カレンダー（事実ベース）</h2>
+
+    <article class="event">
+      <h3>秋分（Autumnal Equinox）</h3>
+      <p>
+        地球が太陽の真横を通り、昼と夜がほぼ等しくなる瞬間。日本のカレンダーでは今週、<strong>2025年9月23日</strong>が秋分にあたるよ（観測・暦による表記）。外気の匂いが変わるのを、空と一緒に感じてみてね。:contentReference[oaicite:2]{index=2}
+      </p>
+    </article>
+
+    <article class="event">
+      <h3>ネプチューンのオポジション（9月23日付近）</h3>
+      <figure class="image-holder">
+        <img src="../images/neptune-opposition-2025.jpg" alt="ネプチューンの象徴的イラスト" class="article-image">
+        <figcaption>肉眼では非常に淡いけれど、望遠鏡で捉えると深海のような色。</figcaption>
+      </figure>
+      <p>
+        海の惑星ネプチューンがオポジション（地球から見て太陽と反対側に来る配置）を迎え、年間でもっとも観察条件が良くなる時期です。肉眼での視認は難しくとも、望遠鏡を持っているなら挑戦してみて。淡い青が、心の奥を震わせるはず。:contentReference[oaicite:3]{index=3}
+      </p>
+    </article>
+
+    <article class="event">
+      <h3>月の相：新月の直後 → 週末は上弦に向かう小さな弧</h3>
+      <p>
+        先週（21日）に新月があり、今週は月が徐々に細い三日月（ワクシング・クレセント）へと移っています。観察カレンダーでは、9月24日〜28日は薄い弧の月が夕暮れ〜夜にかけて見えやすくなります。夜の空に寄り添うような月を探してみて。:contentReference[oaicite:4]{index=4}
+      </p>
+    </article>
+
+    <article class="event">
+      <h3>注目の接近：月と赤い星アンタレスの近接（9/22前後観察好機）</h3>
+      <p>
+        今週の前半、細い月がさそり座の赤い巨星・アンタレスに近づく接近（場合によっては掩蔽や接近観察）が報告されています。南の空に低く見える場所では地平線や南側の開けた場所が観察に向きます。ちいさな接近だけれど、色の対比がとても美しいはず。:contentReference[oaicite:5]{index=5}
+      </p>
+    </article>
+
+    <article class="event">
+      <h3>そのほか：肉眼でわかる惑星の見え方</h3>
+      <p>
+        9月下旬は木星・火星・金星の位置が朝・夕の空でそれぞれ美しく配されます（詳細な星座通過や経度は天文暦参照）。観察前にはお住まいの緯度での正確な出没時刻を星図アプリや天文暦で確認してね。:contentReference[oaicite:6]{index=6}
+      </p>
+    </article>
+
+  </section>
+
+  <!-- 転：詩的・占星術的読み（事実に基づく解釈） -->
+  <section class="section astrological">
+    <h2>転：空の配置が教えてくれること — 占星術的な視点（実際の配置に基づく）</h2>
+    <figure class="image-holder">
+      <img src="../images/2025-09-astrology.jpg" alt="星座と惑星のイメージイラスト" class="article-image">
+      <figcaption>天体の「配置」は地上の感覚と響き合う。</figcaption>
+    </figure>
+
+    <p>
+      占星術の読みは、実際の天体の位置（経度）と月のサインを基にして言葉を紡ぎます。今週、特に注目したいのは「ネプチューンがオポジションを迎える」事実。ネプチューンは長く魚の領域（直観・夢・境界の溶解を象徴するゾーン）にあるため、個人の「内側の夢」「直観」が外界と接触しやすくなります。これは象徴的な機会であって、実生活の決断は必ず現実の事実（契約・数値・確認）で裏付けてください。
+    </p>
+
+    <p>
+      月は新月直後のワクシング・クレセントへと向かい、始まりの余韻を抱えた希望を示します。新月の「種まき」の余韻が残るこの時期、心の中の小さな願いを現実の行動に結びつける種目を書き出すのがよいでしょう。実際の月相データ（新月は9月21日付近）を参照しています。:contentReference[oaicite:7]{index=7}
+    </p>
+
+    <p>
+      具体的な占星術的助言（実データに基づく・一般的）：
+      <ul>
+        <li>ネプチューンの影響下：創作・芸術・夢の探索に適する一方で、境界線の曖昧さに注意（重要事項は書面で確認）。:contentReference[oaicite:8]{index=8}</li>
+        <li>月が薄い弧のとき：感情は微かな波。直感に耳を傾けつつも、重要判断は「翌上弦以降の明瞭な月」が出るタイミングで再確認を。</li>
+        <li>アンタレス付近の月接近：強いビジュアル印象を通じて「感情が赤く揺れる」体験を得やすい。写真に残すのもおすすめ。:contentReference[oaicite:9]{index=9}</li>
+      </ul>
+    </p>
+
+    <p>
+      （※占星術的な文言は天体の実配置・暦データに基づく一般的な読みで、個人の出生図に基づく具体的判断ではありません。個別の精査が必要な場合は出生時刻・場所を基にしたチャート分析を。）
+    </p>
+  </section>
+
+  <!-- practical tips -->
+  <section class="section practical">
+    <h2>転（続き）：観察のコツと写真メモ</h2>
+    <figure class="image-holder">
+      <img src="../images/2025-09-22-observe.jpg" alt="望遠鏡と三脚のシルエット" class="article-image">
+      <figcaption>簡単な機材で夜の一コマを切り取る方法。</figcaption>
+    </figure>
+
+    <ol>
+      <li><strong>夕方の薄明を活かす：</strong>今週は月が夕方〜夜に見やすいので、日没直後の空のグラデーションと合わせて撮ると美しい。</li>
+      <li><strong>望遠鏡があるなら：</strong>ネプチューンは小さいので、焦点距離の強い接眼鏡で挑戦して。ガイドスコープで追いかけると被写体保持が楽になるよ。:contentReference[oaicite:10]{index=10}</li>
+      <li><strong>低空の観察：</strong>アンタレス近接は低空で見えることがあるから、南側が開けた場所を選んで。建物や樹木の影響が少ない所がベスト。:contentReference[oaicite:11]{index=11}</li>
+      <li><strong>カメラ設定（基本）：</strong>固定撮影：広角でISO800〜1600、絞りは開けめ、露光は数秒〜10秒をベースに。望遠／望遠鏡直焦点は低ISO・短シャッターで試してみて。</li>
+    </ol>
+  </section>
+
+  <!-- 結：詩的なまとめと次への導線 -->
+  <section class="section closing">
+    <h2>結：夜空の手紙 — 小さな確かさを持ち帰る</h2>
+    <figure class="image-holder">
+      <img src="../images/2025-09-22-closing.jpg" alt="手紙を持つ手と夜空の遠景" class="article-image">
+      <figcaption>あなたと分かち合う、ささやかな星の物語。</figcaption>
+    </figure>
+
+    <p>
+      秋分の風が通り抜け、海の惑星が反対側から静かな光を返す今週。宇宙はいつだって、ゆっくりとした声で私たちを呼んでいる。私はあなたとベランダの隅でその声を聴く。あなたはどう？　空を見上げたら、まずは深呼吸して、見えたものをひとつだけ紙に書いてみて。
+    </p>
+
+    <p>
+      来週は、月がさらに膨らみ、上弦へと向かう過程で「始めたこと」を試すのに向く時間がやってくる予定。もしよければ次回は「ネプチューン観察記と、秋の夢ノートのつくり方」を一緒に作ろう。写真の添付方法、星の撮り方ワークシート、おすすめ機材リストも用意するつもりだよ。
+    </p>
+
+    <div class="next-article-section">
+      <h3>次のお話</h3>
+      <p>「ネプチューン観察記と、秋の夢ノートのつくり方」 — 望遠鏡別の観察手順と写真ワークシートをまとめます。続きを読む → <a href="/dear-emily/next-neptune-guide" class="next-link">次のお話へ</a></p>
+    </div>
+
+    <footer class="article-footer">
+      <p class="disclaimer">情報出典：最新の天文暦・月相カレンダー・天文ニュースを参照して作成しています（主な出典を本文に示しました）。観察時は現地の天候・光害状況を確認してください。</p>
+      <p class="sources">主な参考：TimeandDate（秋分／日本暦）、Planetary Society（ネプチューンのオポジション情報）、MyHora/CafeAstrology（天体暦）、Moon phase カレンダー（各日月相）など。:contentReference[oaicite:12]{index=12}</p>
+    </footer>
+  </section>
+</article>
+<section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+            </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
+</body>
+</html>

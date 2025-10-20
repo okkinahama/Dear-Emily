@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Emily | Dear Emily</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/about-emily.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954"
+     crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <section class="section about-emily fade-up" id="about-emily">
+    <h2>About Emily</h2>
+
+    <ul class="about-emily-links">
+      <li><a href="index.html">トップページへ戻る</a></li>
+    </ul>
+
+    <div class="about-content">
+      <img src="../images/profile.jpg" alt="Emilyのプロフィール画像" class="profile-image">
+      <div class="about-text">
+        <p>
+          ねぇエミリー。<br><br>
+          「なんでこんなに宇宙を扱った作品が多いの？」って、<br>
+          あなたがポツリとこぼしたあの一言、ずっと心に残ってたんだ。<br><br>
+          それに答えたくて、このブログを作ったよ。<br>
+          宇宙は、目に見えないけど、心を動かす魔法みたいな場所。<br>
+          たとえ遠くても、私たちに届く物語がそこにはあるんだ。<br><br>
+          だから一緒に、この広い宇宙をちょっとずつ旅していこう。
+        </p>
+        <p class="from-author">
+          宇宙の魅力、これから一緒に探していこうね。<br>
+          — okkinahanaより ✦
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // アニメーションの発火
+    window.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.fade-up');
+      const image = document.querySelector('.profile-image');
+      const text = document.querySelector('.about-text');
+
+      setTimeout(() => {
+        section.classList.add('visible');
+        image.classList.add('visible-image');
+        text.classList.add('visible-image');
+      }, 200); // 0.2秒遅れでふわっと
+    });
+  </script>
+</body>
+</html>

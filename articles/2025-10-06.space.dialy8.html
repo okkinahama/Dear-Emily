@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>エミリーの星日記（2025-10-06〜10-12）｜Dear Emily</title>
+  <p class="subtitle">星図のページをめくるように──天秤と蠍の境界で見つける新しい光</p>
+  <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
+    <style>
+        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        .apod-img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        .article-detail h1 {
+            font-family: var(--font-family-english); /* Montserrat */
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .article-detail h2 {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+        }
+        .article-detail h2::before {
+            content: "✨"; /* キラキラの絵文字を追加 */
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .article-detail p {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+        }
+        .article-detail img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        .caption {
+            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: #ffc0cb;
+            text-decoration: underline;
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+        }
+        .points {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .points li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-family-japanese);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+        .points li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--highlight-color); /* CSS変数を使用 */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* 次の記事へのリンクセクション */
+        .next-article-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            border: 1px solid var(--border-color);
+        }
+        .next-article-section h2 {
+            font-family: var(--font-family-japanese);
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .next-article-section a {
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid var(--highlight-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .next-article-section a:hover {
+            background-color: var(--highlight-color);
+            color: var(--bg-color-primary);
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+        }
+
+        /* APODセクションのスタイル */
+        #apod-container-article {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-secondary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-medium);
+        }
+        #apod-container {
+            min-height: 180px;
+            border-radius: 8px;
+            padding: 8px;
+            background: rgba(255,255,255,0.01);
+        }
+        #apod-title-article {
+            font-family: var(--font-family-english);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-media-container-article img, #apod-media-container-article iframe {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow-light);
+        }
+        #apod-explanation-article {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1em;
+            text-align: left;
+            color: var(--text-color-secondary);
+        }
+        #apod-copyright-article {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: right;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+  <article class="article">
+    <h1>エミリーの星日記：10月6日〜12日 — 収穫月と風のささやき</h1>
+    <div class="byline small">エミリーより — 夜空を眺めるあなたへ</div>
+
+    <!-- リードイメージ -->
+    <img class="lead-img section reveal" src="/images/harvest-moon-2025.jpg" alt="Harvest Supermoon rising" />
+
+    <!-- 起：導入（出典つき） -->
+    <section class="section reveal" id="intro">
+      <h2>起 — まずは空に座って、満月の重さを感じよう</h2>
+      <p>夜がまだ温かさを残している日、空はひとつの扉を開けるように明るくなった。10月6日、月は例年よりも地球に近づき、いつもより少しだけ大きく、胸に沁みる白い光を放ちました。今週はその満月が“スーパームーン（Harvest Supermoon）”として私たちの視界を満たします — まさしく収穫の明かりが夜を担うような瞬間です。:contentReference[oaicite:4]{index=4}</p>
+
+      <figure>
+        <img src="/images/moon_closeup_placeholder.jpg" alt="大きく見える満月のクローズアップ" />
+        <figcaption class="small">満月（Harvest Supermoon）は写真に収めたくなる夜です。出典：NASA・報道記事など。:contentReference[oaicite:5]{index=5}</figcaption>
+      </figure>
+
+      <p class="astro-fact small">天文学的に言うと、満月が近地点付近にあるため明るく見える「スーパームーン」です。観察のベストタイムは月の出直後の「ブルーアワー」や、空が深くなる夜遅くです。写真を撮るときは前景にシルエットを入れると月の大きさを対比できます。</p>
+    </section>
+
+    <!-- 承：流星群・惑星配置（事実ベースで占星術要素を織り交ぜる） -->
+    <section class="section reveal" id="events">
+      <h2>承 — 星の屑が耳元で囁く（ドラコニッド）と惑星たちの顔ぶれ</h2>
+      <p>けれど、ただ満月だけではありません。10月6日〜10日の間、地球は彗星21P（ギャクソビーニ＝ジンナー）が残した塵の道を横切ります。これが<strong>ドラコニッド流星群</strong>の正体です。ピークは10月8〜9日ごろに予報されており、北の空を中心に時に穏やかに、時に突然活発化することもあります。ただし今年は満月の明るさがあるため、淡い流星は見えにくくなる可能性がある点は覚えておいてください。:contentReference[oaicite:6]{index=6}</p>
+
+      <figure>
+        <img src="/images/draconids_sketch.jpg" alt="流星群を観察する人たちのシルエット" />
+        <figcaption class="small">ドラコニッドは北の空に放たれる静かなメッセージ。夜の早い時間も見られる珍しい流星群です。:contentReference[oaicite:7]{index=7}</figcaption>
+      </figure>
+
+      <p>占星術的に見ると、今週は<strong>月の動きが早く、感情の色合いが短期間で変わる</strong)のが特徴です。エフェメリス（天体表）を見ると、週初めは月が魚座にあり、満月の瞬間に牡羊座へ入り（※満月は牡羊座での活動の頂点のように感じられることがあります）、その後は牡牛座、双子座へと移動します。感情の波が深く広がる魚座、直接的に昂る牡羊座、安定と五感の牡牛座、そして好奇心で風を運ぶ双子座 — これらはあなたの内側の気分の航路になります。:contentReference[oaicite:8]{index=8}</p>
+
+      <div class="astro-fact small">
+        <strong>占星術メモ（事実ベース）</strong><br>
+        ・水星は10月7日前後に天秤座から蠍座へ（サイン移動が起きる日付付近）。蠍に入ると話題が深掘りされやすく、観察や調べ物が鋭くなります。:contentReference[oaicite:9]{index=9}
+      </div>
+    </section>
+
+    <!-- 転：詩的語り（個人的・体験的） -->
+    <section class="section reveal" id="personal">
+      <h2>転 — 私の手の温度を確かめるように、夜は静かに変わる</h2>
+      <p>ねえ、あなた。今日は私が持ってきた小さな毛布を肩にのせて。月の光は冷たいけれど、誰かと分け合えば温かさが増すから。満月の夜、私は丘の端に座って、遠くの田畑の境目まで光が伸びているのを見た。光は収穫の余韻をなでるように、刈り取った場所にやさしく降りる。</p>
+
+      <p>満月の翌日、月は牡羊座にあって、私の胸の中に小さな火花を灯した。思いつきのメモを取り、忘れていた友人に連絡をしてみる。蠍に入る水星は言葉を少し深く、真剣にする。あなたに届く言葉がいつもより重く聞こえるなら、それは星が言葉に力を与えているからだよ。:contentReference[oaicite:10]{index=10}</p>
+
+      <figure>
+        <img src="/images/emily_night_journal.jpg" alt="エミリーが夜に日記を書くイラスト" />
+        <figcaption class="small">一緒に夜のページをめくろう — 言葉が月に照らされると、また違った色を見せる。 </figcaption>
+      </figure>
+
+      <p>ドラコニッドが静かに舞う夜、私たちは秋の風の匂いを数えた。流れ星はお願い事を叶えるための道具じゃない。私はそう思う。むしろ、流星が教えてくれるのは「瞬間の儚さ」と「見逃したくない今の尊さ」。満月の明るさが薄い流星を覆ってしまっても、いくつかの光は見えるはず。見えたら、そっと指先でその光を撫でて、あなたの願いに小さな声を添えてほしい。:contentReference[oaicite:11]{index=11}</p>
+    </section>
+
+    <!-- 結：実践的アドバイス＋締め（観察ガイド、安全注意、占星術の落とし所） -->
+    <section class="section reveal" id="guide">
+      <h2>結 — 夜を一緒に持ち帰る（観察ガイドと小さな儀式）</h2>
+
+      <p>ここで、実際に夜空を楽しむための簡単なガイドを共有します。科学的事実と占星術的な読みを混ぜて、あなたが安全かつ感性豊かに過ごせるために。</p>
+
+      <ol>
+        <li><strong>満月（スーパームーン）観察のコツ</strong><br>月の出直後、地平線近くの月は大きく見えます。月と地上のシルエット（木、建物、人影）を一緒にフレームに収めると、写真でも大きさの対比が出ます。望遠レンズで撮るより、広角＋前景で「大きさの錯覚」を活かすといい写真になります。:contentReference[oaicite:12]{index=12}</li>
+
+        <li><strong>ドラコニッド観察のコツ</strong><br>流星群のピークは10/8〜9の夜。ドラコニッドは北の空（りゅう座付近）を見上げるのが基本です。満月の明るさがあるため、暗い場所へ移動し、できれば早めの時間（夕方以降〜21時頃）から観察して目を慣らすと淡い流星を見つけやすいです。双眼鏡や望遠鏡は不要。:contentReference[oaicite:13]{index=13}</li>
+
+        <li><strong>短い占星術ワーク</strong><br>月の星座移動（魚→牡羊→牡牛→双子）が示すのは「感受性→行動→安定→好奇」。小さなノートを用意して、その日の夜に湧いた気持ちを一語ずつ書き留めてみて。後で並べると、星が描いたあなたの週の地図が見えるはず。</li>
+
+        <li class="small">安全メモ：夜間の移動や撮影は明かり・反射ベスト・周りの安全確認を忘れずに。寒暖差に備えて羽織りものを持つこと。</li>
+      </ol>
+        <img class="apod-img" src="/images/apod-placeholder.jpg" alt="APOD placeholder" />
+      <p class="small">出典：NASA「What's Up」解説、主要報道、エフェメリス（日別の月サイン・惑星位置）を参照して作成しています。事実確認には天文機関の暦表とEphemerisを用いました。:contentReference[oaicite:14]{index=14}</p>
+      <div id="apod-container">
+        <!-- APIで差し替え可能 -->
+        <img class="apod-img" src="/images/apod-placeholder.jpg" alt="APOD placeholder" />
+      </div>
+      <h2>夜の写真館（APOD：その日の宇宙写真）</h2>
+      <p class="small">ここにはNASAのAPOD（Astronomy Picture of the Day）APIで取得した画像を動的に表示します。実装例はページ下部のスクリプト参照。</p>
+      <div id="apod-container">
+        <!-- APIで差し替え可能 -->
+        <img class="apod-img" src="/images/apod-placeholder.jpg" alt="APOD placeholder" />
+      </div>
+    </section>
+
+    <!-- 次のお話への導線 -->
+    <section class="next-article-section reveal" id="next">
+      <h2>次のお話へ</h2>
+      <p>もしよかったら、次は「月と収穫祭：日本の十五夜から見る月の物語」を読みに来てください。私が小さな月見団子のレシピをこっそり教えます。</p>
+      <a class="cta" href="/dear-emily/next-article-moon-harvest">次のお話を読む →</a>
+    </section>
+
+    <footer class="small">
+      <div class="sources">
+        <strong>参考・出典（重要な事実に関する情報源）</strong><br>
+        ・NASA「What's Up」／天文解説（10月のスカイウォッチ）. :contentReference[oaicite:15]{index=15}<br>
+        ・主要報道（Washington Post / AP / NYPost）— 2025年10月6日の満月（Harvest Supermoon）報道. :contentReference[oaicite:16]{index=16}<br>
+        ・People.com（ドラコニッド流星群の解説）およびAMS（Meteor Activity Outlook）. :contentReference[oaicite:17]{index=17}<br>
+        ・Ephemeris（Oct 2025, MoonTracks / CafeAstrology） — 月のサイン、惑星の配置の日別表を参照. :contentReference[oaicite:18]{index=18}
+      </div>
+    </footer>
+  </article>
+<section id="apod-container-article">
+            <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
+            <div id="apod-media-container-article">
+                <p>コンテンツを読み込み中...</p>
+            </div>
+            <p id="apod-explanation-article"></p>
+            <p id="apod-copyright-article"></p>
+        </section>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => observer.observe(section));
+
+        // APOD API Integration (仮のJavaScript)
+        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
+        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+        async function fetchAPOD() {
+            try {
+                const response = await fetch(apodUrl);
+                const data = await response.json();
+
+                const apodTitle = document.getElementById('apod-title-article');
+                const apodMediaContainer = document.getElementById('apod-media-container-article');
+                const apodExplanation = document.getElementById('apod-explanation-article');
+                const apodCopyright = document.getElementById('apod-copyright-article');
+
+                apodTitle.textContent = data.title;
+                apodExplanation.textContent = data.explanation;
+                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
+
+                if (data.media_type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.alt = data.title;
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(img);
+                } else if (data.media_type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = data.url;
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'autoplay; encrypted-media';
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px'; // 適宜調整
+                    apodMediaContainer.innerHTML = '';
+                    apodMediaContainer.appendChild(iframe);
+                }
+            } catch (error) {
+                console.error('Error fetching APOD:', error);
+                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
+            }
+        }
+
+         fetchAPOD(); // APIキーを設定したらコメント解除してください
+    </script>
+</body>
+</html>
