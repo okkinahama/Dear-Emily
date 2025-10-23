@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --- UI要素のセレクタと初期化 ---
     const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const scrollableMenu = document.querySelector('.scrollable-menu');
+    const scrollableMenu = document.querySelector('.scrollable-menu'); // 最初のブロックで使用
+    const navLinks = document.querySelector('.nav-links'); // 2番目のブロックで使用
+    const menuToToggle = scrollableMenu || navLinks; // どちらかのメニュー要素を使う
+
     const scrollProgress = document.getElementById('scroll-progress');
 
     // APOD (Astronomy Picture of the Day) 関連要素
@@ -14,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // 宇宙天気情報 (DONKI) 関連要素
-    const solarFlareContainer = document.getElementById('solar-flare-container');
+    const solarFlareContainer = document.getElementById('solar-flare-container') || document.getElementById('space-weather-container'); // どちらのIDもサポート
     const geomagneticStormContainer = document.getElementById('geomagnetic-storm-container');
 
     // NASAニュース関連要素
@@ -42,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function fetchData(url, errorTargetElement, errorMessage) {
         try {
             const response = await fetch(url);
+            // DONKI APIはエラー時に空配列を返す場合があるため、response.okのみで判定
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -49,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error(`${errorMessage}エラー:`, error);
             if (errorTargetElement) {
+                // エラーメッセージの表示は一箇所にまとめる
                 errorTargetElement.innerHTML = `<p>${errorMessage}を取得できませんでした。</p>`;
             }
             throw error; // エラーを再スローして、呼び出し元でさらに処理できるようにする
@@ -81,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
      * ハンバーガーメニューの開閉を処理
      */
     function setupHamburgerMenu() {
-        if (hamburgerMenu && scrollableMenu) {
+        if (hamburgerMenu && menuToToggle) {
             hamburgerMenu.addEventListener('click', function() {
-                scrollableMenu.classList.toggle('open');
+                menuToToggle.classList.toggle('open');
                 hamburgerMenu.classList.toggle('open');
             });
         }
@@ -93,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
      * 各種アニメーション (フェードイン、スライドイン) を設定
      */
     function setupAnimations() {
+        // setupIntersectionObserverに統合することで重複を解消
         setupIntersectionObserver('.fade-in');
         setupIntersectionObserver('.slide-in-left');
         setupIntersectionObserver('.slide-in-right');
@@ -148,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         } catch (error) {
-            // fetchData関数で既にエラーメッセージが表示されているため、ここでは特別な処理は不要
+            // エラー処理はfetchDataで実施済み
         }
     }
 
@@ -157,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     async function fetchAndDisplaySolarFlares() {
         if (!solarFlareContainer) return;
+        // DONKI APIのURLを統合 (最初のブロックのURLを採用)
         const flareUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${TODAY_DATE}&endDate=${TODAY_DATE}&api_key=${NASA_API_KEY}`;
 
         try {
@@ -167,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            // HTML生成ロジックは最初のブロックのものを採用し、'class'と'classType'のフォールバックを維持
             solarFlareContainer.innerHTML = '<ul>' + data.map(f => `
                 <li>
                     <div><strong>開始日時:</strong> ${f.beginTime}</div>
@@ -176,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div><strong>領域:</strong> ${f.sourceLocation}</div>
                 </li>`).join('') + '</ul>';
         } catch (error) {
-            // fetchData関数で既にエラーメッセージが表示されているため、ここでは特別な処理は不要
+            // エラー処理はfetchDataで実施済み
         }
     }
 
@@ -203,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <strong>ソース:</strong> ${s.source || 'N/A'}
                 </li>`).join('') + '</ul>';
         } catch (error) {
-            // fetchData関数で既にエラーメッセージが表示されているため、ここでは特別な処理は不要
+            // エラー処理はfetchDataで実施済み
         }
     }
 
@@ -229,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 spaceNewsContainer.innerHTML = '<p>新しいニュースはありません。</p>';
             }
         } catch (error) {
-            // fetchData関数で既にエラーメッセージが表示されているため、ここでは特別な処理は不要
+            // エラー処理はfetchDataで実施済み
         }
     }
 
@@ -237,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
      * 投稿データをフェッチし、最新記事、カテゴリリスト、全記事表示とフィルタリングを設定
      */
     async function setupPosts() {
+        // posts.jsonから記事を読み込む (ハードコードされたposts配列は削除)
         let posts = [];
         try {
             const response = await fetch('posts.json');
@@ -249,24 +258,26 @@ document.addEventListener('DOMContentLoaded', function() {
             if (latestPostsContainer) latestPostsContainer.innerHTML = '<p>記事の読み込みに失敗しました。</p>';
             if (sidebarCategoriesContainer) sidebarCategoriesContainer.innerHTML = '<p>カテゴリ情報の読み込みに失敗しました。</p>';
             if (allPostsContainer) allPostsContainer.innerHTML = '<p>記事の読み込みに失敗しました。</p>';
-            return; // エラー時は以降の処理を行わない
+            return; 
         }
 
-        // 最新記事の表示
+        // --- 最新記事の表示 (最初のブロックのロジックを採用) ---
         if (latestPostsContainer) {
-            latestPostsContainer.innerHTML = ''; // ロード中のメッセージをクリア
+            latestPostsContainer.innerHTML = ''; 
             const latestPosts = posts
                 .sort((a, b) => new Date(b.date) - new Date(a.date))
-                .slice(0, 5); // 最新5件を表示
+                .slice(0, 5); 
 
             if (latestPosts.length > 0) {
                 latestPosts.forEach(post => {
                     const div = document.createElement('div');
                     div.className = 'post-item';
+                    // カテゴリが配列の場合にも対応
+                    const categoryText = Array.isArray(post.category) ? post.category.join(', ') : post.category;
                     div.innerHTML = `
                         ${post.image ? `<img src="${post.image}" alt="${post.title}のサムネイル" class="article-thumbnail-small">` : ''}
                         <h3><a href="${post.url || post.link}">${post.title}</a></h3>
-                        <p>${post.date} ｜ カテゴリ：${Array.isArray(post.category) ? post.category.join(', ') : post.category}</p>
+                        <p>${post.date} ｜ カテゴリ：${categoryText}</p>
                     `;
                     latestPostsContainer.appendChild(div);
                 });
@@ -275,11 +286,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // カテゴリ別の表示 (サイドバーを想定)
+        // --- カテゴリ別の表示 (サイドバー) ---
         if (sidebarCategoriesContainer) {
             const categoriesMap = {};
             posts.forEach(post => {
-                // カテゴリが配列の場合も対応
                 const categories = Array.isArray(post.category) ? post.category : [post.category];
                 categories.forEach(cat => {
                     if (!categoriesMap[cat]) {
@@ -300,13 +310,13 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebarCategoriesContainer.innerHTML = categoryListHtml;
         }
 
-        // 全投稿表示 + フィルタ機能 (記事一覧ページを想定)
+        // --- 全投稿表示 + フィルタ機能 (記事一覧ページ) ---
         if (allPostsContainer && categoryFilter && tagFilter) {
             const categories = new Set();
             const tags = new Set();
 
             posts.forEach(post => {
-                // カテゴリが配列の場合も対応
+                // カテゴリとタグを収集
                 const postCategories = Array.isArray(post.category) ? post.category : [post.category];
                 postCategories.forEach(cat => categories.add(cat));
                 
@@ -335,7 +345,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             /**
              * フィルタリングされた記事を表示する
-             * @param {Array<Object>} filtered - フィルタリングされた記事の配列
              */
             function displayFilteredPosts(filtered) {
                 allPostsContainer.innerHTML = '';
@@ -344,14 +353,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
                 filtered.forEach(post => {
-                    // サムネイル用の<img>タグを追加し、post.imageを使用
+                    // post.urlまたはpost.linkを使用
+                    const linkUrl = post.url || post.link; 
+                    const tagsText = post.tags ? post.tags.join(', ') : '';
+                    const categoryText = Array.isArray(post.category) ? post.category.join(', ') : post.category;
+
                     const card = `
                         <div class="post-card">
                             ${post.image ? `<img src="${post.image}" alt="${post.title}のサムネイル" class="article-thumbnail">` : ''}
-                            <h2><a href="${post.url || post.link}">${post.title}</a></h2>
+                            <h2><a href="${linkUrl}">${post.title}</a></h2>
                             <p class="post-date">${post.date}</p>
-                            <p><strong>カテゴリ:</strong> ${Array.isArray(post.category) ? post.category.join(', ') : post.category}</p>
-                            <p><strong>タグ:</strong> ${post.tags ? post.tags.join(', ') : ''}</p>
+                            <p><strong>カテゴリ:</strong> ${categoryText}</p>
+                            <p><strong>タグ:</strong> ${tagsText}</p>
                         </div>`;
                     allPostsContainer.insertAdjacentHTML('beforeend', card);
                 });
@@ -366,7 +379,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const filteredPosts = posts.filter(post => {
                     const postCategories = Array.isArray(post.category) ? post.category : [post.category];
+                    // カテゴリが配列の場合、いずれかのカテゴリに一致すればOK
                     const categoryMatch = (selectedCategory === 'all' || postCategories.includes(selectedCategory));
+                    // タグが配列の場合、いずれかのタグに一致すればOK
                     const tagMatch = (selectedTag === 'all' || (post.tags && post.tags.includes(selectedTag)));
                     return categoryMatch && tagMatch;
                 });
@@ -392,4 +407,13 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchAndDisplayGeomagneticStorms();
     fetchAndDisplayNasaNews();
     setupPosts();
+
+    // AdSense Scriptの追加（DOMContentLoaded内に追加）
+    (function() {
+        var script = document.createElement("script");
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954";
+        script.setAttribute("async", "true");
+        script.setAttribute("crossorigin", "anonymous");
+        document.head.appendChild(script);
+    })();
 });
