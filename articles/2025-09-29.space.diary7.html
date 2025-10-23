@@ -4,14 +4,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>エミリーの星日記｜今週の星めぐり（2025年9月29日〜10月5日） | Dear Emily</title>
-    <p class="subtitle">あなた—夜空を眺める友人—へ。窓の外に広がる小さな物語を、ふたりで見上げよう。</p>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
-     <style>
+    <style>
         /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
         .article-detail {
             max-width: 800px;
@@ -23,6 +22,7 @@
             color: var(--text-color-primary);
             text-align: left;
         }
+        /* ご提示のHTMLではarticleに`article-detail`が付いていないため、追加します */
         .article-detail h1 {
             font-family: var(--font-family-english); /* Montserrat */
             font-size: 2.8em;
@@ -132,7 +132,7 @@
             box-shadow: var(--box-shadow-medium);
             border: 1px solid var(--border-color);
         }
-        .next-article-section h2 {
+        .next-article-section h3 { /* h2からh3に変更 */
             font-family: var(--font-family-japanese);
             color: var(--highlight-color);
             margin-bottom: 20px;
@@ -181,6 +181,12 @@
             border-radius: 8px;
             box-shadow: var(--box-shadow-light);
         }
+        #apod-media-container-article iframe {
+            /* ビデオのアスペクト比を16:9に設定 */
+            aspect-ratio: 16 / 9;
+            width: 100%; /* 親要素に合わせて幅を確保 */
+            height: auto; /* aspect-ratioで高さを制御 */
+        }
         #apod-explanation-article {
             line-height: 1.7;
             margin-bottom: 15px;
@@ -197,105 +203,112 @@
     </style>
 </head>
 <body>
-  <article class="article">
-    <h1>エミリーの星日記 — 2025年9月29日〜10月5日</h1>
-    <p class="meta">詩的宇宙体験 × 事実に基づく天体ガイド（ムーンフェイズとムーンサイン中心）</p>
+    <main>
+        <article class="article-detail article"> <h1>エミリーの星日記 — 2025年9月29日〜10月5日</h1>
+            <p class="subtitle">あなた—夜空を眺める友人—へ。窓の外に広がる小さな物語を、ふたりで見上げよう。</p>
+            <p class="meta">詩的宇宙体験 × 事実に基づく天体ガイド（ムーンフェイズとムーンサイン中心）</p>
 
-    <!-- 起 -->
-    <section class="section reveal" id="ki">
-      <h2>起 — 夜の口火を一緒に灯そう</h2>
-      <p>ねえ、窓を開けて。ひんやりした夜風が髪を撫でる。私は今、カップに残ったお茶の湯気を見つめながら、あなたを夜空の小さな散歩に誘いたいと思っている。週のはじめ、月は半分に近い顔で私たちを迎える——その切れ長の影が、静かに地形を描く時間が好きなの。毎週、同じ星座が同じ場所にあるわけじゃない。空は静かに位置を変え、私たちの心に新しい文節を落としていく。</p>
+            <section class="section reveal" id="ki">
+                <h2>起 — 夜の口火を一緒に灯そう</h2>
+                <p>ねえ、窓を開けて。ひんやりした夜風が髪を撫でる。私は今、カップに残ったお茶の湯気を見つめながら、あなたを夜空の小さな散歩に誘いたいと思っている。週のはじめ、月は半分に近い顔で私たちを迎える——その切れ長の影が、静かに地形を描く時間が好きなの。毎週、同じ星座が同じ場所にあるわけじゃない。空は静かに位置を変え、私たちの心に新しい文節を落としていく。</p>
 
-      <p class="astro-fact">事実メモ（要点）：
-      今週の始まり、**9月29日**は月が**第一四分（First Quarter）**の頃に当たり、月はやぎ座に入るタイミングを迎えます。ムーンサインの入替（やぎ座→みずがめ座→うお座）は週の間に起きるため、占星術的な語りも実際の天体配置に基づいて描きます。:contentReference[oaicite:0]{index=0}</p>
+                <p class="astro-fact">事実メモ（要点）：
+                今週の始まり、**9月29日**は月が**第一四分（First Quarter）**の頃に当たり、月はやぎ座に入るタイミングを迎えます。ムーンサインの入替（やぎ座→みずがめ座→うお座）は週の間に起きるため、占星術的な語りも実際の天体配置に基づいて描きます。</p>
 
-      <img src="" alt="窓辺で星を眺めるエミリーのイラスト（挿入可）">
-    </section>
+                <figure class="image-holder">
+                    <img src="../images/2025-09-29-intro.jpg" alt="窓辺で星を眺めるエミリーのイラスト（挿入可）" class="article-image">
+                    <figcaption>秋の夜長、静かに空を見上げる時間。</figcaption>
+                </figure>
+            </section>
 
-    <!-- 承 -->
-    <section class="section reveal" id="sho">
-      <h2>承 — 事実で辿る、今週の空の地図</h2>
+            <section class="section reveal" id="sho">
+                <h2>承 — 事実で辿る、今週の空の地図</h2>
 
-      <h3>◆ 月のフェーズとサイン移動</h3>
-      <p>天文暦の記録によれば、月は9月29日にやぎ座へ入る記録があり、その後10月1日夕刻にみずがめ座へ、さらに10月4日早朝にうお座へと移ります。これらは天文学的な月の「ルナーイングレス（Moon ingress）」のデータで確認されています。移動の時刻は地域差で若干のズレが生じるけれど、地球を回る月の順路がこの週の感情の輪郭を形作る。夜を計画するなら、これらの遷移時刻を控えておくと、"気分の変わり目"を空に重ねて観察できます。:contentReference[oaicite:1]{index=1}</p>
+                <h3>◆ 月のフェーズとサイン移動</h3>
+                <p>天文暦の記録によれば、月は9月29日にやぎ座へ入る記録があり、その後10月1日夕刻にみずがめ座へ、さらに10月4日早朝にうお座へと移ります。これらは天文学的な月の「ルナーイングレス（Moon ingress）」のデータで確認されています。移動の時刻は地域差で若干のズレが生じるけれど、地球を回る月の順路がこの週の感情の輪郭を形作る。夜を計画するなら、これらの遷移時刻を控えておくと、"気分の変わり目"を空に重ねて観察できます。</p>
 
-      <h3>◆ 上弦（First Quarter）と観察の目安</h3>
-      <p>9月29日の上弦に向かう月は、夜の早い時間帯に東〜南の空に見え、地形がはっきりと浮かび上がる「ターミナルライン（影と光の境界）」が観察の妙味です。望遠鏡や双眼鏡で月の地形を追うと、クレーターの輪郭や山脈の陰影が詩のように映る。データ上の照度は半月付近で、光の加減は毎日少しずつ変わります。:contentReference[oaicite:2]{index=2}</p>
+                <h3>◆ 上弦（First Quarter）と観察の目安</h3>
+                <p>9月29日の上弦に向かう月は、夜の早い時間帯に東〜南の空に見え、地形がはっきりと浮かび上がる「ターミナルライン（影と光の境界）」が観察の妙味です。望遠鏡や双眼鏡で月の地形を追うと、クレーターの輪郭や山脈の陰影が詩のように映る。データ上の照度は半月付近で、光の加減は毎日少しずつ変わります。</p>
 
-      <h3>◆ 秋の明るい星：Fomalhaut（南方の魚座）</h3>
-      <p>夜の低空には、秋の一等星<strong>Fomalhaut（フォーマルハウト）</strong>が低めに姿を見せ始めます。天文学情報によると、9月下旬から10月にかけて北半球の中緯度でも南〜南東の低空で見つけやすく、10月3日前後は観望の好機です。地平線近くのため、視界を遮るもののない開けた南方の場所を確保してください。近くに土星が見える夜もあり、低空で黄金色のプラネットと並ぶ光景は秋の風情そのものです。:contentReference[oaicite:3]{index=3}</p>
+                <h3>◆ 秋の明るい星：Fomalhaut（南方の魚座）</h3>
+                <p>夜の低空には、秋の一等星<strong>Fomalhaut（フォーマルハウト）</strong>が低めに姿を見せ始めます。天文学情報によると、9月下旬から10月にかけて北半球の中緯度でも南〜南東の低空で見つけやすく、10月3日前後は観望の好機です。地平線近くのため、視界を遮るもののない開けた南方の場所を確保してください。近くに土星が見える夜もあり、低空で黄金色のプラネットと並ぶ光景は秋の風情そのものです。</p>
 
-      <h3>◆ オーロラ／太陽活動の注意点（高緯度向け）</h3>
-      <p>最近の宇宙天気関連の報告では、9月30日付近に強めの磁気嵐（G3相当）が観測・予想されるといった情報が出ています。これは高緯度地域でオーロラを見やすくする要因となりますが、観望の可否は短期予報（NOAA SWPCなど）を参照してください。日本の低緯度地域から見るにはタイミングと太陽活動の強さ次第ですが、オーロラ情報はこの数日のうちに更新が出やすいので、現地予報のチェックをお勧めします。:contentReference[oaicite:4]{index=4}</p>
+                <h3>◆ オーロラ／太陽活動の注意点（高緯度向け）</h3>
+                <p>最近の宇宙天気関連の報告では、9月30日付近に強めの磁気嵐（G3相当）が観測・予想されるといった情報が出ています。これは高緯度地域でオーロラを見やすくする要因となりますが、観望の可否は短期予報（NOAA SWPCなど）を参照してください。日本の低緯度地域から見るにはタイミングと太陽活動の強さ次第ですが、オーロラ情報はこの数日のうちに更新が出やすいので、現地予報のチェックをお勧めします。</p>
 
-      <img src="" alt="秋の低空に昇るFomalhautと土星のイメージ（挿入可）">
-    </section>
+                <figure class="image-holder">
+                    <img src="../images/fomalhaut-saturn-autumn.jpg" alt="秋の低空に昇るFomalhautと土星のイメージ（挿入可）" class="article-image">
+                    <figcaption>南の低空に輝く秋の一等星フォーマルハウト。</figcaption>
+                </figure>
+            </section>
 
-    <!-- 転 -->
-    <section class="section reveal" id="ten">
-      <h2>転 — 私の目線で語る、月が教えてくれること（占星術的読み取り）</h2>
-      <p>ここからは、あなたにだけそっと話す私の感想。占星術的な語りは、虚構ではありません。出発点は上で示した月の実際の位置（やぎ座→みずがめ座→うお座の遷移）—その実測データをもとに、私たちの感じるテンポを言葉にします。月のサインは"気分の舞台装置"のようなもの。舞台の色が変わると、同じ台詞でも響きが違って聞こえるのよ。</p>
+            <section class="section reveal" id="ten">
+                <h2>転 — 私の目線で語る、月が教えてくれること（占星術的読み取り）</h2>
+                <p>ここからは、あなたにだけそっと話す私の感想。占星術的な語りは、虚構ではありません。出発点は上で示した月の実際の位置（やぎ座→みずがめ座→うお座の遷移）—その実測データをもとに、私たちの感じるテンポを言葉にします。月のサインは"気分の舞台装置"のようなもの。舞台の色が変わると、同じ台詞でも響きが違って聞こえるのよ。</p>
 
-      <h3>やぎ座の月（週のはじめ） — 計画と優しい責任</h3>
-      <p>やぎ座の月が夜を占めると、私は不思議とデスクに向かいたくなる。小さなリストを作って、重ねては消す。書きかけの手紙、洗いかけの皿、翌日の準備——そうした"世話を焼く"手つきが、夜の中で深い安心感になっていく。やぎは地のサインらしく、実務の美しさを教えてくれる。上弦の月の輪郭は、その端にある影をくっきりと示し、私たちに「ここに焦点を合わせなさい」と優しく促す。</p>
+                <h3>やぎ座の月（週のはじめ） — 計画と優しい責任</h3>
+                <p>やぎ座の月が夜を占めると、私は不思議とデスクに向かいたくなる。小さなリストを作って、重ねては消す。書きかけの手紙、洗いかけの皿、翌日の準備——そうした"世話を焼く"手つきが、夜の中で深い安心感になっていく。やぎは地のサインらしく、実務の美しさを教えてくれる。上弦の月の輪郭は、その端にある影をくっきりと示し、私たちに「ここに焦点を合わせなさい」と優しく促す。</p>
 
-      <h3>みずがめ座の月（週の中ごろ） — 風が運ぶ小さな革新</h3>
-      <p>みずがめに月が移る夜は、会話のトーンが変わる。突然、「そうだ、こうしてみたら？」という言葉が湧いてくる。技術やコミュニティ、離れた誰かと繋がるアイデア。私は星図アプリを開いて誰かにメッセージを送りたくなることがある。みずがめは個人の中に共同体を見るサインだから、星を一緒に見るという行為自体が小さな共同体を生むのだと感じるの。</p>
+                <h3>みずがめ座の月（週の中ごろ） — 風が運ぶ小さな革新</h3>
+                <p>みずがめに月が移る夜は、会話のトーンが変わる。突然、「そうだ、こうしてみたら？」という言葉が湧いてくる。技術やコミュニティ、離れた誰かと繋がるアイデア。私は星図アプリを開いて誰かにメッセージを送りたくなることがある。みずがめは個人の中に共同体を見るサインだから、星を一緒に見るという行為自体が小さな共同体を生むのだと感じるの。</p>
 
-      <h3>うお座の月（週の終わり） — 夢みる余白</h3>
-      <p>週の終わりにうお座の月が訪れると、空気が柔らかくなる。記憶の端の匂いや、昔誰かに言われた言葉がふっと蘇る。観望機を片付けて、ただ空を見上げるだけでいい夜。うお座は境界を曖昧にするサインだから、私たちが普段区別している「自分」と「他人」の境界も薄くなって、見知らぬ星と同じ呼吸をしているように感じられる。</p>
+                <h3>うお座の月（週の終わり） — 夢みる余白</h3>
+                <p>週の終わりにうお座の月が訪れると、空気が柔らかくなる。記憶の端の匂いや、昔誰かに言われた言葉がふっと蘇る。観望機を片付けて、ただ空を見上げるだけでいい夜。うお座は境界を曖昧にするサインだから、私たちが普段区別している「自分」と「他人」の境界も薄くなって、見知らぬ星と同じ呼吸をしているように感じられる。</p>
 
-      <p class="astro-fact">出典注記（占星術的読み取りの出発点）：ここで述べた月のサイン遷移（日時）はMoonTracksのルナーイングレス表に基づきます。占星的な解釈は私の語りとして提供していますが、位置情報は実測データです。:contentReference[oaicite:5]{index=5}</p>
+                <p class="astro-fact">出典注記（占星術的読み取りの出発点）：ここで述べた月のサイン遷移（日時）はMoonTracksのルナーイングレス表に基づきます。占星的な解釈は私の語りとして提供していますが、位置情報は実測データです。</p>
 
-      <img src="" alt="やぎ→みずがめ→うおのイメージイラスト（挿入可）">
-    </section>
+                <figure class="image-holder">
+                    <img src="../images/moon-ingress-pisces-aquarius.jpg" alt="やぎ→みずがめ→うおのイメージイラスト（挿入可）" class="article-image">
+                    <figcaption>月のサインの移り変わりは、感情の潮の満ち引きのよう。</figcaption>
+                </figure>
+            </section>
 
-    <!-- 実用技術 -->
-    <section class="section reveal" id="tech">
-      <h2>観望／撮影メモ — 今週の実用チェックリスト</h2>
+            <section class="section reveal" id="tech">
+                <h2>観望／撮影メモ — 今週の実用チェックリスト</h2>
 
-      <p>夜に出る前の小さな準備メモをまとめるね。私はこのリストをポケットに入れて、寒くても夜に出る勇気をもらっている。</p>
+                <p>夜に出る前の小さな準備メモをまとめるね。私はこのリストをポケットに入れて、寒くても夜に出る勇気をもらっている。</p>
 
-      <ul>
-        <li><strong>9/29（上弦期）</strong>：夕暮れ〜夜の早い時間に月が高すぎず低すぎず、ちょうど良い高さにあります。月面の影の境界（ターミナルライン）を双眼鏡や小型望遠鏡で観察して、クレーターの陰影を楽しんで。:contentReference[oaicite:6]{index=6}</li>
-        <li><strong>10/1（みずがめへの移行）</strong>：月の移動タイミングに軽い観察メモを取ると面白い。夜の雰囲気が切り替わる「時間の印」として記録してみて。</li>
-        <li><strong>10/3（Fomalhautが見え始める日）</strong>：南〜南東低空の視界を確保。地平線近くなので見えにくい場所も多い。双眼鏡で探すと見つけやすい。土星が近くに見える場合はそちらと対比して撮影するのも秋らしい構図になる。:contentReference[oaicite:7]{index=7}</li>
-        <li><strong>オーロラ注意（高緯度）</strong>：9/30付近の磁気嵐情報はNOAA SWPCの短期予報を参照。高緯度の旅程があるならば、当日のSWPCアラートを確認してから出かけて。G3クラスの嵐は写真写りも鮮やかにします。:contentReference[oaicite:8]{index=8}</li>
-        <li><strong>撮影のコツ（スマホ）</strong>：低空の星は街明かりの影響を受けやすい。地平線近くを狙うときは地元の光害を避け、スマホでは長時間露光モード（ナイトモード）と三脚が効果的。月のディテールを狙うなら短時間露光で手振れを抑える設定に。私はいつも二台のデバイスを持って出る—一つは風景用（長露光）、もう一つは月のディテール用。</li>
-      </ul>
+                <ul>
+                    <li><strong>9/29（上弦期）</strong>：夕暮れ〜夜の早い時間に月が高すぎず低すぎず、ちょうど良い高さにあります。月面の影の境界（ターミナルライン）を双眼鏡や小型望遠鏡で観察して、クレーターの陰影を楽しんで。</li>
+                    <li><strong>10/1（みずがめへの移行）</strong>：月の移動タイミングに軽い観察メモを取ると面白い。夜の雰囲気が切り替わる「時間の印」として記録してみて。</li>
+                    <li><strong>10/3（Fomalhautが見え始める日）</strong>：南〜南東低空の視界を確保。地平線近くなので見えにくい場所も多い。双眼鏡で探すと見つけやすい。土星が近くに見える場合はそちらと対比して撮影するのも秋らしい構図になる。</li>
+                    <li><strong>オーロラ注意（高緯度）</strong>：9/30付近の磁気嵐情報はNOAA SWPCの短期予報を参照。高緯度の旅程があるならば、当日のSWPCアラートを確認してから出かけて。G3クラスの嵐は写真写りも鮮やかにします。</li>
+                    <li><strong>撮影のコツ（スマホ）</strong>：低空の星は街明かりの影響を受けやすい。地平線近くを狙うときは地元の光害を避け、スマホでは長時間露光モード（ナイトモード）と三脚が効果的。月のディテールを狙うなら短時間露光で手振れを抑える設定に。私はいつも二台のデバイスを持って出る—一つは風景用（長露光）、もう一つは月のディテール用。</li>
+                </ul>
 
-      <img src="" alt="観望セット（双眼鏡、三脚、赤ライト、ノート）のフラットレイ（挿入可）">
-    </section>
+                <figure class="image-holder">
+                    <img src="../images/observing-checklist.jpg" alt="観望セット（双眼鏡、三脚、赤ライト、ノート）のフラットレイ（挿入可）" class="article-image">
+                    <figcaption>観望の必需品。赤ライトは暗順応を妨げないための小さな工夫。</figcaption>
+                </figure>
+            </section>
 
-    <!-- 結 -->
-    <section class="section reveal" id="ketsu">
-      <h2>結 — 今日はどんな星を見つけた？</h2>
+            <section class="section reveal" id="ketsu">
+                <h2>結 — 今日はどんな星を見つけた？</h2>
 
-      <p>あなたが今夜見るものを想像している。月の凛とした半分の輪郭、低空にちらりと顔を出す秋の明星、あるいは空一面を舞うオーロラの淡いカーテン。天体の位置は事実としてそこにあり、私たちの語りはその周囲を回る細い糸。私はあなたを夜空の友人として招き、この週の空を一緒に辿れたらとても嬉しい。</p>
+                <p>あなたが今夜見るものを想像している。月の凛とした半分の輪郭、低空にちらりと顔を出す秋の明星、あるいは空一面を舞うオーロラの淡いカーテン。天体の位置は事実としてそこにあり、私たちの語りはその周囲を回る細い糸。私はあなたを夜空の友人として招き、この週の空を一緒に辿れたらとても嬉しい。</p>
 
-      <p>ところで、来週の満月（ハーベストムーン）は<strong>10月6日</strong）に近く、大きく明るい満月の余韻が続きます。だから今週はその前夜祭のような時間——静かに準備をして、満月の光をより深く味わうために体を休めるのも悪くない。満月の正確な時刻と距離などのデータは満月カレンダーの公表値に基づきますので、観望や撮影を計画する場合は当日の詳細を再確認してください。:contentReference[oaicite:9]{index=9}</p>
+                <p>ところで、来週の満月（ハーベストムーン）は<strong>10月6日</strong>に近く、大きく明るい満月の余韻が続きます。だから今週はその前夜祭のような時間——静かに準備をして、満月の光をより深く味わうために体を休めるのも悪くない。満月の正確な時刻と距離などのデータは満月カレンダーの公表値に基づきますので、観望や撮影を計画する場合は当日の詳細を再確認してください。</p>
 
-      <p class="byline">— エミリー</p>
+                <p class="byline">— エミリー</p>
 
-      <div class="next-article-section">
-        <h3>次のお話（予告）</h3>
-        <p>次回は「ハーベストムーンの夜に撮る、スマホと一眼の具体的撮影設定ガイド」をお届けします。光の量が増す満月期でも魅力的な写真を撮るための露出メモや、低空のFomalhautを活かした構図案を用意するよ。もし希望があれば、あなたの観望地（街中・郊外・山地）を教えてくれたら、場所別の設定も作るね。</p>
-        <a class="btn" href="/dear-emily/next-article">次のお話を読む ▶</a>
-      </div>
+                <div class="next-article-section">
+                    <h3>次のお話（予告）</h3>
+                    <p>次回は「ハーベストムーンの夜に撮る、スマホと一眼の具体的撮影設定ガイド」をお届けします。光の量が増す満月期でも魅力的な写真を撮るための露出メモや、低空のFomalhautを活かした構図案を用意するよ。もし希望があれば、あなたの観望地（街中・郊外・山地）を教えてくれたら、場所別の設定も作るね。</p>
+                    <a class="btn" href="/dear-emily/next-article">次のお話を読む ▶</a>
+                </div>
 
-      <pre class="cites">
+                <pre class="cites">
 重要出典（参照した主なソース）：
-- 月相（First Quarter : 2025-09-29）と照度情報 — MoonGiant / Moon phases. :contentReference[oaicite:10]{index=10}
-- 月のサイン（ルナーイングレス）時刻一覧 — MoonTracks（Moon's Ingress by Sign: 2025-09-29 09:55 UTC → Capricorn / 2025-10-01 19:51 UTC → Aquarius / 2025-10-04 02:07 UTC → Pisces）。:contentReference[oaicite:11]{index=11}
-- 秋の一等星 Fomalhaut の見え方（9月下旬〜10月の低空で見やすい） — EarthSky / Forbes / People 記事。:contentReference[oaicite:12]{index=12}
-- 太陽風・磁気嵐（G3相当）とオーロラ情報（短期予報の確認先） — NOAA / SWPC 宇宙天気報（G3観測・予想の告知あり）。:contentReference[oaicite:13]{index=13}
-- 次週満月（Harvest Moon：2025-10-06）情報 — LiveScience（月の年間カレンダー）。:contentReference[oaicite:14]{index=14}
-      </pre>
-    </section>
+- 月相（First Quarter : 2025-09-29）と照度情報 — MoonGiant / Moon phases.
+- 月のサイン（ルナーイングレス）時刻一覧 — MoonTracks（Moon's Ingress by Sign: 2025-09-29 09:55 UTC → Capricorn / 2025-10-01 19:51 UTC → Aquarius / 2025-10-04 02:07 UTC → Pisces）。
+- 秋の一等星 Fomalhaut の見え方（9月下旬〜10月の低空で見やすい） — EarthSky / Forbes / People 記事。
+- 太陽風・磁気嵐（G3相当）とオーロラ情報（短期予報の確認先） — NOAA / SWPC 宇宙天気報（G3観測・予想の告知あり）。
+- 次週満月（Harvest Moon：2025-10-06）情報 — LiveScience（月の年間カレンダー）。
+                </pre>
+            </section>
+        </article>
 
-  </article>
-
-<section id="apod-container-article">
+        <section id="apod-container-article">
             <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
             <div id="apod-media-container-article">
                 <p>コンテンツを読み込み中...</p>
@@ -303,60 +316,81 @@
             <p id="apod-explanation-article"></p>
             <p id="apod-copyright-article"></p>
         </section>
+    </main>
     <script>
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+        document.addEventListener('DOMContentLoaded', function() {
+            // スクロール時のフェードインアニメーション
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            sections.forEach(section => observer.observe(section));
+
+            // APOD API Integration
+            const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // カスタムNASA APIキーを設定
+            const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
+
+            async function fetchAPOD() {
+                try {
+                    const response = await fetch(apodUrl);
+                    const data = await response.json();
+
+                    const apodContainer = document.getElementById('apod-container-article');
+                    const apodTitle = document.getElementById('apod-title-article');
+                    const apodMediaContainer = document.getElementById('apod-media-container-article');
+                    const apodExplanation = document.getElementById('apod-explanation-article');
+                    const apodCopyright = document.getElementById('apod-copyright-article');
+
+                    // エラーチェック（データがない、あるいはエラーメッセージがある場合）
+                    if (data.code || data.error) {
+                         throw new Error(data.msg || 'APOD APIエラー');
+                    }
+
+                    apodTitle.textContent = data.title;
+                    apodExplanation.textContent = data.explanation;
+                    apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : 'Public Domain'; // Copyrightがない場合はPublic Domainと表示
+
+                    if (data.media_type === 'image') {
+                        const img = document.createElement('img');
+                        img.src = data.url;
+                        img.alt = data.title;
+                        apodMediaContainer.innerHTML = '';
+                        apodMediaContainer.appendChild(img);
+                    } else if (data.media_type === 'video') {
+                        const iframe = document.createElement('iframe');
+                        // YouTube埋め込みURLの調整（embed化）
+                        let videoUrl = data.url;
+                        if (videoUrl.includes('youtube.com/watch')) {
+                             videoUrl = videoUrl.replace('watch?v=', 'embed/');
+                        } else if (videoUrl.includes('youtu.be/')) {
+                             videoUrl = videoUrl.replace('youtu.be/', 'youtube.com/embed/');
+                        }
+                        
+                        iframe.src = videoUrl;
+                        iframe.frameBorder = '0';
+                        iframe.allow = 'autoplay; encrypted-media; fullscreen'; // fullscreenを追加
+                        iframe.allowFullscreen = true;
+                        // iframe.style.width, iframe.style.heightはCSSの`aspect-ratio`に任せる
+                        apodMediaContainer.innerHTML = '';
+                        apodMediaContainer.appendChild(iframe);
+                    }
+                } catch (error) {
+                    console.error('Error fetching APOD:', error);
+                    const apodContainer = document.getElementById('apod-container-article');
+                    if (apodContainer) {
+                        // エラー時、セクション全体を非表示に
+                        apodContainer.style.display = 'none';
+                    }
                 }
-            });
-        }, { threshold: 0.2 });
-        sections.forEach(section => observer.observe(section));
-
-        // APOD API Integration (仮のJavaScript)
-        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
-        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
-
-        async function fetchAPOD() {
-            try {
-                const response = await fetch(apodUrl);
-                const data = await response.json();
-
-                const apodTitle = document.getElementById('apod-title-article');
-                const apodMediaContainer = document.getElementById('apod-media-container-article');
-                const apodExplanation = document.getElementById('apod-explanation-article');
-                const apodCopyright = document.getElementById('apod-copyright-article');
-
-                apodTitle.textContent = data.title;
-                apodExplanation.textContent = data.explanation;
-                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
-
-                if (data.media_type === 'image') {
-                    const img = document.createElement('img');
-                    img.src = data.url;
-                    img.alt = data.title;
-                    apodMediaContainer.innerHTML = '';
-                    apodMediaContainer.appendChild(img);
-                } else if (data.media_type === 'video') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = data.url;
-                    iframe.frameBorder = '0';
-                    iframe.allow = 'autoplay; encrypted-media';
-                    iframe.allowFullscreen = true;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px'; // 適宜調整
-                    apodMediaContainer.innerHTML = '';
-                    apodMediaContainer.appendChild(iframe);
-                }
-            } catch (error) {
-                console.error('Error fetching APOD:', error);
-                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
             }
-        }
 
-         fetchAPOD(); // APIキーを設定したらコメント解除してください
+            fetchAPOD(); // API呼び出しを実行
+        });
     </script>
 </body>
 </html>
