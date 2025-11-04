@@ -10,14 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
-    </head>
-     <style>
+    <style>
         /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
         .apod-img {
             max-width: 100%;
             border-radius: 8px;
         }
-        .article-detail {
+        .article-detail, .dear-emily-article { /* .dear-emily-articleを追加 */
             max-width: 800px;
             margin: 40px auto;
             padding: 30px;
@@ -27,14 +26,14 @@
             color: var(--text-color-primary);
             text-align: left;
         }
-        .article-detail h1 {
+        .article-detail h1, .dear-emily-article h1 {
             font-family: var(--font-family-english); /* Montserrat */
             font-size: 2.8em;
             color: var(--highlight-color);
             margin-bottom: 20px;
             text-align: center;
         }
-        .article-detail h2 {
+        .article-detail h2, .dear-emily-article h2 {
             font-family: var(--font-family-japanese); /* Noto Sans JP */
             font-size: 1.8em;
             color: var(--primary-color);
@@ -46,20 +45,19 @@
             display: inline-block;
             left: 0;
         }
-        .article-detail h2::before {
+        .article-detail h2::before, .dear-emily-article h2::before {
             content: "✨"; /* キラキラの絵文字を追加 */
             margin-right: 10px;
             font-size: 0.8em;
         }
-        .article-detail p {
+        .article-detail p, .dear-emily-article p {
             font-family: var(--font-family-japanese); /* Noto Sans JP */
             font-size: 1.1em;
             line-height: var(--line-height-body);
             margin-bottom: 1.5em;
             color: var(--text-color-primary);
-            /* .article-detail内のpタグに対してtext-align: left;が既に適用されています */
         }
-        .article-detail img {
+        .article-detail img, .dear-emily-article img {
             max-width: 100%;
             height: auto;
             display: block;
@@ -206,6 +204,7 @@
             opacity: 0.8;
         }
     </style>
+</head>
 <body>
     <article class="dear-emily-article">
         <header class="article-header">
@@ -215,9 +214,8 @@
         </header>
 
         <section class="section intro">
-            <h2>起 — ほら、今日は夜空を一緒に見に行かない？</h2>
+            <h2> ほら、今日は夜空を一緒に見に行かない？</h2>
             <figure>
-                
                 <img src="/images/week-2025-11-03-09-intro.jpg" alt="夜空を見上げる二人（挿絵）" class="article-image" />
                 <figcaption>（ここに季節感のある夜景画像を差し替えてください）</figcaption>
             </figure>
@@ -230,7 +228,7 @@
         </section>
 
         <section class="section events">
-            <h2>承 — 今週（11/3〜11/9）の天体イベント（事実）</h2>
+            <h2> 今週（11/3〜11/9）の天体イベント（事実）</h2>
             <ul class="points">
                 <li>
                     <strong>満月（ビーバームーン）</strong> — **11月5日**（世界標準時のピークは11/5。日本では夜〜早朝にかけて観察）で、2025年のうちでもっとも大きく見える満月のひとつとされています。観察は11/4〜11/6の夜が見やすいでしょう。
@@ -257,12 +255,8 @@
         </section>
 
         <section class="section interpretation">
-            <h2>転 — 月と惑星が紡ぐ「心の地図」：詩的な読み</h2>
+            <h2> 月と惑星が紡ぐ「心の地図」：詩的な読み</h2>
             <figure>
-                
-
-[Image of large, bright full moon]
-
                 <img src="/images/week-2025-11-03-09-moon.jpg" alt="満月と木々（挿絵）" class="article-image" />
                 <figcaption>（満月の夜、あなたの影が長く伸びる）</figcaption>
             </figure>
@@ -281,7 +275,7 @@
         </section>
 
         <section class="section guidance">
-            <h2>結 — 今週の観察リストと小さな祈り</h2>
+            <h2> 今週の観察リストと小さな祈り</h2>
             <ol class="points">
                 <li><strong>11/4〜11/6：</strong>満月の夜は近所の暗い場所で月明かりを浴びる。写真を撮るなら露出は短めに。</li>
                 <li><strong>11/4以降：</strong>夜は低空に惑星の並び（特に水星・金星・火星の動き）に注目。火星の動きが射手座へ入る兆しを心で感じてみて。</li>
@@ -309,13 +303,12 @@
             <p>参考・データ出典（観察時間や星座・惑星移動は観測条件で若干前後することがあります）：NASA系月暦・天文台データ、EarthSky、TimeandDate、CafeAstrology、アルマンac（一覧参照）。</p>
         </footer>
     </article>
-     <div class="section apod reveal" id="apod">
-            <h3>今週の宇宙の一枚（NASA APOD）</h3>
-            <div id="apod-container">
-                <p>（ここにNASAのAPODが自動で表示されます）</p>
-            </div>
+    
+    <div class="section apod reveal" id="apod">
+        <h3>今週の宇宙の一枚（NASA APOD）</h3>
+        <div id="apod-container">
+            <p>（ここにNASAのAPODが自動で表示されます）</p>
         </div>
-
     </div>
 
     <section id="apod-container-article">
@@ -338,9 +331,9 @@
                 }
             });
         }, { threshold: 0.2 });
-        // .article-detail内の.section要素を監視
-        document.querySelectorAll('.article-detail .section').forEach(section => observer.observe(section));
-        // APODセクションも監視対象に含める（ただし、元のコードでは`sections`にしか入っていないため、再取得）
+        // .dear-emily-article内の.section要素を監視
+        document.querySelectorAll('.dear-emily-article .section').forEach(section => observer.observe(section));
+        // APODセクションも監視対象に含める
         document.querySelectorAll('#apod').forEach(section => observer.observe(section));
 
 
@@ -390,5 +383,5 @@
         // 実際のAPIキーを設定したらコメント解除してください
         // fetchAPOD();
     </script>
-    </body>
+</body>
 </html>
