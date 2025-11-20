@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- UI要素のセレクタと初期化 ---
+    // --- 定数と初期化 ---
+    
+    // UI要素のセレクタ
     const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const scrollableMenu = document.querySelector('.scrollable-menu'); // 最初のブロックで使用
-    const navLinks = document.querySelector('.nav-links'); // 2番目のブロックで使用
-    const menuToToggle = scrollableMenu || navLinks; // どちらかのメニュー要素を使う
-
+    // scrollable-menu または nav-links のいずれかをメニュー要素として使用
+    const menuToToggle = document.querySelector('.scrollable-menu') || document.querySelector('.nav-links');
     const scrollProgress = document.getElementById('scroll-progress');
+
+    // NASA APIキーと今日の日付 (NASA APIの仕様上、endDateを省略すると現在の日付になるため、startDateのみを使用)
+    const NASA_API_KEY = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
+    const TODAY_DATE = new Date().toISOString().slice(0, 10);
 
     // APOD (Astronomy Picture of the Day) 関連要素
     const apodElements = {
@@ -17,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // 宇宙天気情報 (DONKI) 関連要素
-    const solarFlareContainer = document.getElementById('solar-flare-container') || document.getElementById('space-weather-container'); // どちらのIDもサポート
+    const solarFlareContainer = document.getElementById('solar-flare-container') || document.getElementById('space-weather-container');
     const geomagneticStormContainer = document.getElementById('geomagnetic-storm-container');
 
     // NASAニュース関連要素
@@ -30,11 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryFilter = document.getElementById('category-filter');
     const tagFilter = document.getElementById('tag-filter');
 
-    // NASA APIキーと今日の日付
-    const NASA_API_KEY = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj';
-    const TODAY_DATE = new Date().toISOString().slice(0, 10);
 
     // --- ヘルパー関数 ---
+    
     /**
      * APIからデータをフェッチする共通関数
      * @param {string} url - フェッチするAPIのURL
@@ -45,18 +47,23 @@ document.addEventListener('DOMContentLoaded', function() {
     async function fetchData(url, errorTargetElement, errorMessage) {
         try {
             const response = await fetch(url);
-            // DONKI APIはエラー時に空配列を返す場合があるため、response.okのみで判定
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            return await response.json();
+            const data = await response.json();
+            
+            // DONKI APIなどで空の配列が正常応答として返された場合も、データがないと判断できる
+            if (Array.isArray(data) && data.length === 0) {
+                 return data; // 空配列を返して呼び出し元で処理
+            }
+            return data;
         } catch (error) {
-            console.error(`${errorMessage}エラー:`, error);
+            console.error(`${errorMessage}取得エラー:`, error);
             if (errorTargetElement) {
-                // エラーメッセージの表示は一箇所にまとめる
                 errorTargetElement.innerHTML = `<p>${errorMessage}を取得できませんでした。</p>`;
             }
-            throw error; // エラーを再スローして、呼び出し元でさらに処理できるようにする
+            // エラーを再スローして、呼び出し元でさらに処理できるようにする
+            throw error;
         }
     }
 
@@ -80,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elements.forEach(element => observer.observe(element));
     }
 
+
     // --- 機能ごとの処理 ---
 
     /**
@@ -98,12 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
      * 各種アニメーション (フェードイン、スライドイン) を設定
      */
     function setupAnimations() {
-        // setupIntersectionObserverに統合することで重複を解消
+        // 汎用アニメーションクラスとセクション要素に対して設定
         setupIntersectionObserver('.fade-in');
         setupIntersectionObserver('.slide-in-left');
         setupIntersectionObserver('.slide-in-right');
         setupIntersectionObserver('.slide-in-bottom');
-        setupIntersectionObserver('.section'); // 汎用セクション表示
+        setupIntersectionObserver('.section'); 
     }
 
     /**
@@ -128,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const data = await fetchData(apodUrl, apodElements.mainContainer, '今日の宇宙画像');
 
+            if (!data) return; 
+
             if (apodElements.title) apodElements.title.textContent = data.title;
             if (apodElements.explanation) apodElements.explanation.textContent = data.explanation;
             if (apodElements.copyright) {
@@ -136,9 +146,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (apodElements.mediaContainer) {
                 apodElements.mediaContainer.innerHTML = ''; // 既存の内容をクリア
-                if (data.media_type === 'video') {
+                const isVideo = data.media_type === 'video';
+                const mediaUrl = data.url || data.hdurl;
+
+                if (isVideo) {
                     const iframe = document.createElement('iframe');
-                    iframe.src = data.url;
+                    iframe.src = mediaUrl;
                     iframe.width = '100%';
                     iframe.style.aspectRatio = '16 / 9'; // アスペクト比を固定
                     iframe.frameBorder = '0';
@@ -146,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     apodElements.mediaContainer.appendChild(iframe);
                 } else if (data.media_type === 'image') {
                     const img = document.createElement('img');
-                    img.src = data.url;
+                    img.src = mediaUrl;
                     img.alt = data.title;
                     img.style.maxWidth = '100%';
                     img.style.height = 'auto';
@@ -154,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         } catch (error) {
-            // エラー処理はfetchDataで実施済み
+            // fetchDataでエラー表示済み
         }
     }
 
@@ -163,28 +176,28 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     async function fetchAndDisplaySolarFlares() {
         if (!solarFlareContainer) return;
-        // DONKI APIのURLを統合 (最初のブロックのURLを採用)
+        // 過去2日間のデータが必要な場合もあるため、endDateを省略しない
         const flareUrl = `https://api.nasa.gov/DONKI/FLR?startDate=${TODAY_DATE}&endDate=${TODAY_DATE}&api_key=${NASA_API_KEY}`;
 
         try {
             const data = await fetchData(flareUrl, solarFlareContainer, '太陽フレア情報');
 
-            if (data.length === 0) {
+            if (!data || data.length === 0) {
                 solarFlareContainer.innerHTML = '<p>現在のところ、太陽フレアの活動は観測されていません。</p>';
                 return;
             }
 
-            // HTML生成ロジックは最初のブロックのものを採用し、'class'と'classType'のフォールバックを維持
+            // HTML生成ロジック
             solarFlareContainer.innerHTML = '<ul>' + data.map(f => `
                 <li>
                     <div><strong>開始日時:</strong> ${f.beginTime}</div>
                     <div><strong>ピーク日時:</strong> ${f.peakTime}</div>
-                    <div><strong>終了日時:</strong> ${f.endTime}</div>
+                    <div><strong>終了日時:</strong> ${f.endTime || 'N/A'}</div>
                     <div><strong>強度:</strong> ${f.classType || f.class} ${f.intensity ? f.intensity : ''}</div>
-                    <div><strong>領域:</strong> ${f.sourceLocation}</div>
+                    <div><strong>領域:</strong> ${f.sourceLocation || 'N/A'}</div>
                 </li>`).join('') + '</ul>';
         } catch (error) {
-            // エラー処理はfetchDataで実施済み
+            // fetchDataでエラー表示済み
         }
     }
 
@@ -198,20 +211,24 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const data = await fetchData(stormUrl, geomagneticStormContainer, '地磁気嵐情報');
 
-            if (data.length === 0) {
+            if (!data || data.length === 0) {
                 geomagneticStormContainer.innerHTML = '<p>現在のところ、地磁気嵐は観測されていません。</p>';
                 return;
             }
 
-            geomagneticStormContainer.innerHTML = '<ul>' + data.map(s => `
+            geomagneticStormContainer.innerHTML = '<ul>' + data.map(s => {
+                // GSTデータ構造の確認：`allID`が地磁気嵐のレベル情報を含む
+                const stormLevel = s.allID && s.allID.length > 0 ? s.allID.map(id => `${id.level} (${id.time})`).join(', ') : 'N/A';
+                
+                return `
                 <li>
                     <strong>開始日時:</strong> ${s.beginTime}<br>
-                    <strong>Kp指数:</strong> ${s.kpIndex || 'N/A'}<br>
-                    <strong>強度:</strong> ${s.gstID || 'N/A'}<br>
+                    <strong>嵐レベル:</strong> ${stormLevel}<br>
                     <strong>ソース:</strong> ${s.source || 'N/A'}
-                </li>`).join('') + '</ul>';
+                </li>`;
+            }).join('') + '</ul>';
         } catch (error) {
-            // エラー処理はfetchDataで実施済み
+            // fetchDataでエラー表示済み
         }
     }
 
@@ -221,6 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function fetchAndDisplayNasaNews() {
         if (!spaceNewsContainer) return;
         const rssFeedUrl = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
+        // CORS対策としてRSS-to-JSONプロキシサービスを使用
         const rssApiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssFeedUrl);
 
         try {
@@ -230,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 spaceNewsContainer.innerHTML = ''; // ロード中のメッセージをクリア
                 data.items.slice(0, 5).forEach(item => {
                     const div = document.createElement("div");
+                    div.className = 'news-item';
                     div.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>`;
                     spaceNewsContainer.appendChild(div);
                 });
@@ -237,15 +256,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 spaceNewsContainer.innerHTML = '<p>新しいニュースはありません。</p>';
             }
         } catch (error) {
-            // エラー処理はfetchDataで実施済み
+            // fetchDataでエラー表示済み
         }
     }
-
+    
     /**
      * 投稿データをフェッチし、最新記事、カテゴリリスト、全記事表示とフィルタリングを設定
      */
     async function setupPosts() {
-        // posts.jsonから記事を読み込む (ハードコードされたposts配列は削除)
         let posts = [];
         try {
             const response = await fetch('posts.json');
@@ -253,30 +271,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             posts = await response.json();
+            // 日付でソート（最新順）
+            posts.sort((a, b) => new Date(b.date) - new Date(a.date));
         } catch (error) {
             console.error('記事の読み込みに失敗しました:', error);
-            if (latestPostsContainer) latestPostsContainer.innerHTML = '<p>記事の読み込みに失敗しました。</p>';
-            if (sidebarCategoriesContainer) sidebarCategoriesContainer.innerHTML = '<p>カテゴリ情報の読み込みに失敗しました。</p>';
-            if (allPostsContainer) allPostsContainer.innerHTML = '<p>記事の読み込みに失敗しました。</p>';
-            return; 
+            // 記事関連のコンテナ全てにエラーを表示
+            [latestPostsContainer, sidebarCategoriesContainer, allPostsContainer].forEach(container => {
+                if (container) container.innerHTML = '<p>記事の読み込みに失敗しました。</p>';
+            });
+            return;
         }
 
-        // --- 最新記事の表示 (最初のブロックのロジックを採用) ---
+        // --- 最新記事の表示 (トップページなど) ---
         if (latestPostsContainer) {
             latestPostsContainer.innerHTML = ''; 
-            const latestPosts = posts
-                .sort((a, b) => new Date(b.date) - new Date(a.date))
-                .slice(0, 5); 
+            const latestPosts = posts.slice(0, 5); 
 
             if (latestPosts.length > 0) {
                 latestPosts.forEach(post => {
                     const div = document.createElement('div');
                     div.className = 'post-item';
-                    // カテゴリが配列の場合にも対応
                     const categoryText = Array.isArray(post.category) ? post.category.join(', ') : post.category;
+                    const linkUrl = post.url || post.link || '#';
+                    
                     div.innerHTML = `
                         ${post.image ? `<img src="${post.image}" alt="${post.title}のサムネイル" class="article-thumbnail-small">` : ''}
-                        <h3><a href="${post.url || post.link}">${post.title}</a></h3>
+                        <h3><a href="${linkUrl}">${post.title}</a></h3>
                         <p>${post.date} ｜ カテゴリ：${categoryText}</p>
                     `;
                     latestPostsContainer.appendChild(div);
@@ -292,10 +312,9 @@ document.addEventListener('DOMContentLoaded', function() {
             posts.forEach(post => {
                 const categories = Array.isArray(post.category) ? post.category : [post.category];
                 categories.forEach(cat => {
-                    if (!categoriesMap[cat]) {
-                        categoriesMap[cat] = [];
-                    }
-                    categoriesMap[cat].push(post);
+                    if (!cat) return; // カテゴリがnullや空文字列の場合はスキップ
+                    if (!categoriesMap[cat]) categoriesMap[cat] = 0;
+                    categoriesMap[cat]++;
                 });
             });
 
@@ -303,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h2>カテゴリー</h2>
                 <ul class="category-list">
                     ${Object.keys(categoriesMap).map(cat => `
-                        <li><a href="category.html?name=${encodeURIComponent(cat)}">${cat} (${categoriesMap[cat].length})</a></li>
+                        <li><a href="category.html?name=${encodeURIComponent(cat)}">${cat} (${categoriesMap[cat]})</a></li>
                     `).join('')}
                 </ul>
             `;
@@ -316,31 +335,24 @@ document.addEventListener('DOMContentLoaded', function() {
             const tags = new Set();
 
             posts.forEach(post => {
-                // カテゴリとタグを収集
                 const postCategories = Array.isArray(post.category) ? post.category : [post.category];
-                postCategories.forEach(cat => categories.add(cat));
+                postCategories.forEach(cat => cat && categories.add(cat));
                 
                 if (post.tags) {
-                    post.tags.forEach(tag => tags.add(tag));
+                    post.tags.forEach(tag => tag && tags.add(tag));
                 }
             });
 
             // カテゴリフィルターオプションの追加
             categoryFilter.innerHTML = '<option value="all">全てのカテゴリ</option>';
-            categories.forEach(category => {
-                const option = document.createElement('option');
-                option.value = category;
-                option.textContent = category;
-                categoryFilter.appendChild(option);
+            [...categories].sort().forEach(category => {
+                categoryFilter.insertAdjacentHTML('beforeend', `<option value="${category}">${category}</option>`);
             });
 
             // タグフィルターオプションの追加
             tagFilter.innerHTML = '<option value="all">全てのタグ</option>';
-            tags.forEach(tag => {
-                const option = document.createElement('option');
-                option.value = tag;
-                option.textContent = tag;
-                tagFilter.appendChild(option);
+            [...tags].sort().forEach(tag => {
+                tagFilter.insertAdjacentHTML('beforeend', `<option value="${tag}">${tag}</option>`);
             });
 
             /**
@@ -352,14 +364,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     allPostsContainer.innerHTML = '<p>表示する記事がありません。</p>';
                     return;
                 }
+                
                 filtered.forEach(post => {
-                    // post.urlまたはpost.linkを使用
-                    const linkUrl = post.url || post.link; 
+                    const linkUrl = post.url || post.link || '#'; 
                     const tagsText = post.tags ? post.tags.join(', ') : '';
                     const categoryText = Array.isArray(post.category) ? post.category.join(', ') : post.category;
 
                     const card = `
-                        <div class="post-card">
+                        <div class="post-card fade-in">
                             ${post.image ? `<img src="${post.image}" alt="${post.title}のサムネイル" class="article-thumbnail">` : ''}
                             <h2><a href="${linkUrl}">${post.title}</a></h2>
                             <p class="post-date">${post.date}</p>
@@ -368,6 +380,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>`;
                     allPostsContainer.insertAdjacentHTML('beforeend', card);
                 });
+                
+                // フィルタリング後の表示にもアニメーションを適用
+                setupIntersectionObserver('.post-card'); 
             }
 
             /**
@@ -379,9 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const filteredPosts = posts.filter(post => {
                     const postCategories = Array.isArray(post.category) ? post.category : [post.category];
-                    // カテゴリが配列の場合、いずれかのカテゴリに一致すればOK
                     const categoryMatch = (selectedCategory === 'all' || postCategories.includes(selectedCategory));
-                    // タグが配列の場合、いずれかのタグに一致すればOK
                     const tagMatch = (selectedTag === 'all' || (post.tags && post.tags.includes(selectedTag)));
                     return categoryMatch && tagMatch;
                 });
@@ -398,6 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
     // --- 全ての機能を初期化 ---
     setupHamburgerMenu();
     setupAnimations();
@@ -408,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchAndDisplayNasaNews();
     setupPosts();
 
-    // AdSense Scriptの追加（DOMContentLoaded内に追加）
+    // AdSense Scriptの追加
     (function() {
         var script = document.createElement("script");
         script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954";
@@ -417,77 +431,3 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(script);
     })();
 });
-// =======================================================
-// スクロール時のセクション・フェードインアニメーション処理
-// =======================================================
-document.addEventListener('DOMContentLoaded', function(){
-    // Intersection Observerで各セクションを監視
-    const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-            // 要素がビューポートに入ったら 'visible' クラスを追加
-            if(e.isIntersecting) e.target.classList.add('visible');
-        });
-    }, {threshold: 0.12}); // 12%が見えたら発火
-
-    // 全ての.section要素を監視対象に設定
-    document.querySelectorAll('.section').forEach(s => io.observe(s));
-});
-
-
-// =======================================================
-// APOD (Astronomy Picture of the Day) 読み込み処理
-// =======================================================
-(function(){
-    const apodEl = document.getElementById('apod-content');
-    // 実運用時は自身のAPIキーに置き換える必要があります
-    const API_KEY = 'DEMO_KEY'; 
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
-
-    // APODデータを取得
-    fetch(url)
-        .then(r => r.json())
-        .then(data => {
-            if(data && data.url){
-                const isImage = data.media_type === 'image';
-                apodEl.innerHTML = '';
-                
-                // タイトルと日付
-                const title = document.createElement('div'); 
-                title.textContent = data.title || 'APOD';
-                const date = document.createElement('div'); 
-                date.className = 'meta'; 
-                date.textContent = data.date || '';
-                apodEl.appendChild(title); 
-                apodEl.appendChild(date);
-                
-                // メディア (画像または動画リンク)
-                if(isImage){
-                    const img = document.createElement('img'); 
-                    img.src = data.url; 
-                    img.alt = data.title || 'APOD image'; 
-                    img.style.maxWidth = '100%'; 
-                    img.style.borderRadius = '8px'; // スタイルはCSSファイルに移動するのが理想的ですが、インラインスタイルを元のコードから継承
-                    apodEl.appendChild(img);
-                } else {
-                    const link = document.createElement('a'); 
-                    link.href = data.url; 
-                    link.textContent = 'APODを表示する'; 
-                    link.target = '_blank'; 
-                    apodEl.appendChild(link);
-                }
-                
-                // 説明文
-                if(data.explanation){
-                    const ex = document.createElement('p'); 
-                    ex.textContent = data.explanation; 
-                    apodEl.appendChild(ex);
-                }
-            } else {
-                apodEl.textContent = 'APODデータの取得に失敗しました。';
-            }
-        })
-        .catch(err => {
-            apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
-            console.error(err);
-        });
-})();
