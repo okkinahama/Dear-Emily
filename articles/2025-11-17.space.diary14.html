@@ -5,24 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>エミリーの星日記 — 2025年11月17日〜11月23日</title>
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* CSSの定義はそのまま維持 */
-    .section { padding: 2rem 1rem; max-width:900px; margin:0 auto; }
-    .hero { text-align:center; padding-top:3rem; padding-bottom:2rem; }
-    .hero h1 { font-family: 'Handlee', sans-serif; font-size:2.2rem; }
-    /* .img-placeholderのスタイルは、画像の視覚的価値を高めるために維持 */
-    .img-placeholder { width:100%; height:360px; background:#111; color:#fff;
-      display:flex; align-items:center; justify-content:center;
-      border-radius:12px; margin:1rem 0; overflow: hidden; }
-    .img-placeholder img { width: 100%; height: 100%; object-fit: cover; } /* 画像フィットスタイルを追加 */
-    .caption { font-size:0.9rem; color:#666; margin-top:0.5rem; text-align:center; }
-    .next-article-section { border-top:1px solid #ddd; padding:2rem 1rem;
-      text-align:center; margin-top:3rem; }
-    .meta { font-size:0.9rem; color:#888; margin-bottom:1rem; text-align:center; }
-    .lead { font-size:1.05rem; line-height:2; }
-    .poem { font-style:italic; margin:1rem 0; }
-  </style>
-</head>
+  </head>
 <body>
 
 <article>
@@ -31,7 +14,7 @@
     <h1>エミリーの星日記 — 11/17〜11/23</h1>
     <p class="meta">秋の深い夜、流星のささやきと新月の静寂が共鳴する七つの夜</p>
     <div class="img-placeholder" role="img" aria-label="週の夜空イメージ（挿入可）">
-      
+      <img src="images/deep_autumn_night_sky.jpg" alt="夜空の深い青と星々の光、流星群が予想される夜のイメージ">
     </div>
     <p class="lead">
       親愛なる夜空を眺める友人へ。  
@@ -52,7 +35,7 @@
       観測には深夜～明け方が適しており、暗い空を見渡すことで流れ星を捉えやすくなるでしょう。
     </p>
     <div class="img-placeholder">
-      
+      <img src="images/leonids_meteor_shower.jpg" alt="しし座を放射点とするレオニッド流星群が夜空を横切る様子">
     </div>
     <p class="caption">
       流星の放射点はしし座ですが、空全体を眺めるのがコツです。
@@ -65,10 +48,7 @@
       この日は月が最遠点（地球との距離が最も離れている日）でもあり、視直径が小さく、空はさらに暗く、星や深宇宙を観察しやすくなります。:contentReference[oaicite:4]{index=4}  
     </p>
     <div class="img-placeholder">
-      
-
-[Image of a diagram showing the new moon phase with the Moon positioned between the Sun and Earth]
-
+      <img src="images/new_moon_diagram.jpg" alt="太陽と地球の間に月が位置する新月の図">
     </div>
 
     <h3>水星の内合（Mercury Inner Conjunction）</h3>
@@ -83,7 +63,7 @@
       衝の時期は天王星が地球に対して最も明るく見える時期です。望遠鏡があれば、淡い緑がかったその姿をとらえられることがあります。
     </p>
     <div class="img-placeholder">
-      
+      <img src="images/uranus_opposition_diagram.jpg" alt="太陽と地球、天王星が一直線に並ぶ衝の図">
     </div>
 
   </section>
@@ -181,7 +161,7 @@
     </p>
 
     <div class="img-placeholder">
-      
+      <img src="images/winter_constellations_rising.jpg" alt="11月下旬の夜空の星図、東から昇るオリオン座やおうし座">
     </div>
   </section>
 
@@ -227,25 +207,6 @@
   </footer>
 
 </article>
-<script>
-        // このスクリプトは、APOD（今日の宇宙の画像）の読み込みや、セクションのフェードインアニメーション（.section.visibleの追加）を制御するためのものです。
-        // 外部ファイル script.js の内容は不明なため、機能の動作保証はできませんが、構造上のエラーを防ぐために配置を維持します。
-        
-        // --- 簡易的なスクロールアニメーション用JSの追加（元のCSSを参照） ---
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // 一度表示されたら監視を停止
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-
-        sections.forEach(section => observer.observe(section));
-        // --- APODの仮のJS関数は、APIキーがないため省略します ---
-    </script>
 
 </body>
 </html>
