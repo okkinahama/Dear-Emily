@@ -1,244 +1,335 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>エミリーの星日記 — 2025年11月17日〜11月23日</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エミリーの星日記 — 2025年11月17日〜11月23日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
+<link rel="stylesheet" href="style.css"> 
+<style>
+  /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+  :root {
+    /* カラーパレット */
+    --primary-color: #2962ff; /* 青系 */
+    --secondary-color: #64b5f6; /* 水色系 */
+    --text-color-primary: #f0f0f0; /* 明るい文字 */
+    --text-color-secondary: #cccccc; /* やや薄い文字 */
+    --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
+    --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
+    --border-color: #333; /* 線の色 */
+    --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
+    --highlight-color-light: #ffc0cb;
+    --highlight-color-dark: #f9a8d4;
+
+    /* シャドウ */
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+    --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
+    --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
+
+    /* フォントファミリー */
+    --font-family-japanese: 'Noto Sans JP', sans-serif;
+    --font-family-english: 'Montserrat', sans-serif;
+    --font-family-serif-popular: 'Merriweather', serif;
+    --font-family-handlee: 'Handlee', cursive;
+    --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+
+    /* タイポグラフィ基本設定 */
+    --line-height-body: 1.8;
+    --letter-spacing-body: 0.01em;
+  }
+
+  /* --- 全体的な基本スタイル --- */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+    font-size: 16px;
+    line-height: var(--line-height-body);
+    letter-spacing: var(--letter-spacing-body);
+    background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+    color: var(--text-color-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    max-width: 1200px;
+  }
+
+  /* --- リンクスタイル --- */
+  a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  a:hover {
+    color: var(--highlight-color-light);
+    text-decoration: underline;
+  }
+
+  /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
+  #scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--highlight-color);
+    z-index: 1000;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  /* --- セクションの共通スタイル --- */
+  .section {
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 960px;
+    box-sizing: border-box;
+    text-align: center;
+    /* script.jsによるアニメーションの初期設定 */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  /* script.jsによって追加されるクラス */
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --- 個別記事の構造スタイル (article-detail内) --- */
   
-  <link rel="stylesheet" href="style.css"> 
-    <style>
-    /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
-    :root {
-      /* カラーパレット */
-      --primary-color: #2962ff; /* 青系 */
-      --secondary-color: #64b5f6; /* 水色系 */
-      --text-color-primary: #f0f0f0; /* 明るい文字 */
-      --text-color-secondary: #cccccc; /* やや薄い文字 */
-      --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
-      --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
-      --border-color: #333; /* 線の色 */
-      --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
-      --highlight-color-light: #ffc0cb;
-      --highlight-color-dark: #f9a8d4;
+  article {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--bg-color-secondary);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-medium);
+    color: var(--text-color-primary);
+    /* article内を基本は左揃えにする */
+    text-align: left; 
+  }
+  
+  /* === 修正箇所 1: 文章の段違い防止 (本文を左揃えに) === */
+  article p {
+    font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+    font-size: 1.1em;
+    line-height: var(--line-height-body);
+    margin-bottom: 1.5em;
+    color: var(--text-color-primary);
+    text-align: left; /* 均等割り付けを解除し左揃えに */
+    overflow-wrap: break-word; /* 長い単語の折り返し */
+    word-break: break-all;
+  }
+  .article-header .lead {
+    font-size: 1.25em;
+    line-height: 2.0;
+    margin: 30px 0 0;
+    padding: 20px;
+    border-left: 5px solid var(--highlight-color);
+    background-color: rgba(26, 29, 46, 0.5); /* bg-color-secondaryを少し透過 */
+    text-align: left; /* 左揃えを維持 */
+    color: var(--text-color-primary);
+    font-style: italic;
+  }
 
-      /* シャドウ */
-      --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
-      --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
-      --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
-      --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
 
-      /* フォントファミリー */
-      --font-family-japanese: 'Noto Sans JP', sans-serif;
-      --font-family-english: 'Montserrat', sans-serif;
-      --font-family-serif-popular: 'Merriweather', serif;
-      --font-family-handlee: 'Handlee', cursive;
-      --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+  .article-header .hero {
+    /* Handlee: 手書き風のロマンチックなフォント */
+    font-family: var(--font-family-handlee), cursive;
+    font-size: 3.2em;
+    color: var(--highlight-color);
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    text-shadow: 1px 1px 10px rgba(255, 182, 193, 0.4);
+    text-align: center; /* ヒーロータイトルは中央維持 */
+  }
+  
+  article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+  }
+  /* `img-wrap`内の画像に対するスタイル継承を修正 */
+  .img-wrap img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-light);
+  }
+  
+  /* === 修正箇所 2: 記事内 h2 スタイルを左揃えに統一 === */
+  article h2 {
+    font-family: var(--font-family-japanese);
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    position: relative;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid var(--border-color);
+    display: block; /* 全幅を使う */
+    text-align: left; /* 左揃えに */
+  }
+  article h2::before {
+    content: "✨"; /* キラキラの絵文字を追加 */
+    margin-right: 10px;
+    font-size: 0.8em;
+    margin-left: 0;
+  }
+  
+  /* 記事内 h3/h4 も左揃えに統一 */
+  article h3 {
+    font-family: var(--font-family-montserrat), sans-serif;
+    font-size: 1.6em;
+    color: var(--text-color-primary);
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 4px solid var(--highlight-color);
+    text-align: left;
+  }
+  article h4 {
+    font-family: var(--font-family-japanese), sans-serif;
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--text-color-secondary);
+    text-align: left;
+  }
+  
 
-      /* タイポグラフィ基本設定 */
-      --line-height-body: 1.8;
-      --letter-spacing-body: 0.01em;
-    }
+  /* 引用スタイル */
+  .quote {
+    background: rgba(255, 209, 220, 0.1);
+    border-left: 4px solid var(--highlight-color);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    border-radius: 4px;
+    color: var(--text-color-primary);
+    font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+    text-align: left; /* 一般引用は左寄せ */
+  }
+  /* 詩的な引用は中央寄せを維持 */
+  .quote.poem {
+    font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+    font-size: 1.3em;
+    color: var(--highlight-color);
+    border-left: none;
+    border-top: 1px solid var(--highlight-color);
+    border-bottom: 1px solid var(--highlight-color);
+    padding: 25px 30px;
+    margin: 40px auto;
+    background-color: rgba(255, 209, 220, 0.05); 
+    line-height: 1.7;
+    text-align: center; 
+    font-style: normal;
+    white-space: pre-wrap;
+  }
 
-    /* --- 全体的な基本スタイル --- */
-    html {
-      scroll-behavior: smooth;
-    }
 
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-      font-size: 16px;
-      line-height: var(--line-height-body);
-      letter-spacing: var(--letter-spacing-body);
-      background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
-      color: var(--text-color-primary);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    }
+  /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
+  #apod {
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-color-primary); /* 背景色を濃くして目立たせる */
+    text-align: center;
+    max-width: 960px;
+    margin: 40px auto;
+    box-shadow: var(--box-shadow-pink-medium); /* ピンクのシャドウでハイライト */
+  }
+  .apod-card {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--bg-color-secondary);
+    color: var(--highlight-color);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  #apod-content > div:first-child {
+    font-family: var(--font-family-english);
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: var(--highlight-color);
+    text-align: center;
+  }
+  #apod-content p {
+    line-height: 1.6;
+    margin-top: 10px;
+    font-size: 0.95em;
+    text-align: left;
+    color: var(--text-color-secondary);
+    font-family: var(--font-family-japanese);
+  }
 
-    .container {
-      margin: 0 auto;
-      padding: 0;
-      box-sizing: border-box;
-      position: relative;
-      max-width: 1200px;
-    }
-
-    /* --- リンクスタイル --- */
-    a {
-      color: var(--highlight-color);
-      text-decoration: none;
-      transition: color 0.2s ease-in-out;
-    }
-
-    a:hover {
-      color: var(--highlight-color-light);
-      text-decoration: underline;
-    }
-
-    /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
-    #scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      background: var(--highlight-color);
-      z-index: 1000;
-      width: 0%;
-      transition: width 0.1s linear;
-    }
-
-    /* --- セクションの共通スタイル --- */
-    .section {
-      padding: 60px 20px;
-      margin: 0 auto;
-      max-width: 960px;
-      box-sizing: border-box;
-      text-align: center;
-      /* script.jsによるアニメーションの初期設定 */
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    /* script.jsによって追加されるクラス */
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* --- 個別記事の構造スタイル (article-detail内) --- */
-    .article-detail {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
-      background: var(--bg-color-secondary);
-      border-radius: 12px;
-      box-shadow: var(--box-shadow-medium);
-      color: var(--text-color-primary);
-      text-align: left;
-    }
-    /* article-detailの代わりに、article全体が背景を持つと想定し、`.article-detail`から`.article`へ移動 */
-    article {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-        background: var(--bg-color-secondary);
-        border-radius: 12px;
-        box-shadow: var(--box-shadow-medium);
-        color: var(--text-color-primary);
-        text-align: left;
-    }
-    .article-detail h1 {
-      font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
-      font-size: 2.8em;
-      color: var(--highlight-color);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .article-detail p, article p {
-      font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-      font-size: 1.1em;
-      line-height: var(--line-height-body);
-      margin-bottom: 1.5em;
-      color: var(--text-color-primary);
-    }
-    .article-detail img, article img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: var(--box-shadow-light);
-    }
-    /* `img-wrap`内の画像に対するスタイル継承を修正 */
-    .img-wrap img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 20px auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow-light);
-    }
-    
-    /* 記事内 h2 スタイル */
-    .article-detail h2, article h2 {
-      font-family: var(--font-family-japanese);
-      font-size: 1.8em;
-      color: var(--primary-color);
-      margin-top: 2.5em;
-      margin-bottom: 1em;
-      position: relative;
-      padding-bottom: 0.5em;
-      border-bottom: 2px solid var(--border-color);
-      display: inline-block;
-      left: 0;
-    }
-    .article-detail h2::before, article h2::before {
-      content: "✨"; /* キラキラの絵文字を追加 */
-      margin-right: 10px;
-      font-size: 0.8em;
-    }
-
-    /* 引用スタイル */
-    .quote {
-      background: rgba(255, 209, 220, 0.1);
-      border-left: 4px solid var(--highlight-color);
-      padding: 1rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-      border-radius: 4px;
-      color: var(--text-color-primary);
-      font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-    }
-
-    /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
-    #apod {
-      padding: 25px;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      background-color: var(--bg-color-primary); /* 背景色を濃くして目立たせる */
-      text-align: center;
-      max-width: 960px;
-      margin: 40px auto;
-      box-shadow: var(--box-shadow-pink-medium); /* ピンクのシャドウでハイライト */
-    }
-    .apod-card {
-        padding: 15px;
-        border-radius: 8px;
-        background-color: var(--bg-color-secondary);
-        color: var(--highlight-color);
-        font-size: 1.2em;
-        margin-bottom: 15px;
-    }
-    #apod-content > div:first-child {
-        font-family: var(--font-family-english);
-        font-size: 1.5em;
-        margin-bottom: 5px;
-        color: var(--highlight-color);
-        text-align: center;
-    }
-    #apod-content p {
-        line-height: 1.6;
-        margin-top: 10px;
-        font-size: 0.95em;
-        text-align: left;
-        color: var(--text-color-secondary);
-        font-family: var(--font-family-japanese);
-    }
-
-    /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
-    .hamburger-menu, .scrollable-menu, .nav-links {
-      display: none;
-    }
-  </style>
+  /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
+  .hamburger-menu, .scrollable-menu, .nav-links {
+    display: none;
+  }
+  /* 広告プレースホルダ */
+  .ad-placeholder {
+    height: 100px;
+    background-color: #33364d; /* 濃い背景に合うように調整 */
+    border: 1px dashed var(--highlight-color);
+    text-align: center;
+    line-height: 100px;
+    color: var(--text-color-secondary);
+    font-family: var(--font-family-zen-maru-gothic);
+    margin: 40px 0;
+    border-radius: 8px;
+  }
+  
+  /* 区切り線 */
+  .separator {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--highlight-color-dark), transparent);
+    margin: 60px 0;
+  }
+  /* 次の記事へのボタン */
+  .next-article-section .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .next-article-section .btn:hover {
+    background-color: #4c7cff;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
 
@@ -467,48 +558,48 @@
 
     </article>
   </div> 
-  
- <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting) e.target.classList.add('visible');
-        });
-      },{threshold:0.12});
-      document.querySelectorAll('.section').forEach(s=>io.observe(s));
-    });
-  </script>
+  
+ <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('visible');
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+  </script>
 
-  <script>
-    (function(){
-      const apodEl = document.getElementById('apod-content');
-      const API_KEY = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
-      const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+  <script>
+    (function(){
+      const apodEl = document.getElementById('apod-content');
+      const API_KEY = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
+      const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 
-      fetch(url).then(r=>r.json()).then(data=>{
-        if(data && data.url){
-          const isImage = data.media_type === 'image';
-          apodEl.innerHTML = '';
-          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
-          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
-          apodEl.appendChild(title); apodEl.appendChild(date);
-          if(isImage){
-            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.style.maxWidth='100%'; img.style.borderRadius='8px'; apodEl.appendChild(img);
-          } else {
-            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
-          }
-          if(data.explanation){
-            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
-          }
-        } else {
-          apodEl.textContent = 'APODデータの取得に失敗しました。';
-        }
-      }).catch(err=>{
-        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
-        console.error(err);
-      });
-    })();
-  </script>
+      fetch(url).then(r=>r.json()).then(data=>{
+        if(data && data.url){
+          const isImage = data.media_type === 'image';
+          apodEl.innerHTML = '';
+          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
+          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
+          apodEl.appendChild(title); apodEl.appendChild(date);
+          if(isImage){
+            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.style.maxWidth='100%'; img.style.borderRadius='8px'; apodEl.appendChild(img);
+          } else {
+            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
+          }
+          if(data.explanation){
+            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
+          }
+        } else {
+          apodEl.textContent = 'APODデータの取得に失敗しました。';
+        }
+      }).catch(err=>{
+        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+        console.error(err);
+      });
+    })();
+  </script>
 
 </body>
 </html>
