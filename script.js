@@ -417,3 +417,77 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(script);
     })();
 });
+// =======================================================
+// スクロール時のセクション・フェードインアニメーション処理
+// =======================================================
+document.addEventListener('DOMContentLoaded', function(){
+    // Intersection Observerで各セクションを監視
+    const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+            // 要素がビューポートに入ったら 'visible' クラスを追加
+            if(e.isIntersecting) e.target.classList.add('visible');
+        });
+    }, {threshold: 0.12}); // 12%が見えたら発火
+
+    // 全ての.section要素を監視対象に設定
+    document.querySelectorAll('.section').forEach(s => io.observe(s));
+});
+
+
+// =======================================================
+// APOD (Astronomy Picture of the Day) 読み込み処理
+// =======================================================
+(function(){
+    const apodEl = document.getElementById('apod-content');
+    // 実運用時は自身のAPIキーに置き換える必要があります
+    const API_KEY = 'DEMO_KEY'; 
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+
+    // APODデータを取得
+    fetch(url)
+        .then(r => r.json())
+        .then(data => {
+            if(data && data.url){
+                const isImage = data.media_type === 'image';
+                apodEl.innerHTML = '';
+                
+                // タイトルと日付
+                const title = document.createElement('div'); 
+                title.textContent = data.title || 'APOD';
+                const date = document.createElement('div'); 
+                date.className = 'meta'; 
+                date.textContent = data.date || '';
+                apodEl.appendChild(title); 
+                apodEl.appendChild(date);
+                
+                // メディア (画像または動画リンク)
+                if(isImage){
+                    const img = document.createElement('img'); 
+                    img.src = data.url; 
+                    img.alt = data.title || 'APOD image'; 
+                    img.style.maxWidth = '100%'; 
+                    img.style.borderRadius = '8px'; // スタイルはCSSファイルに移動するのが理想的ですが、インラインスタイルを元のコードから継承
+                    apodEl.appendChild(img);
+                } else {
+                    const link = document.createElement('a'); 
+                    link.href = data.url; 
+                    link.textContent = 'APODを表示する'; 
+                    link.target = '_blank'; 
+                    apodEl.appendChild(link);
+                }
+                
+                // 説明文
+                if(data.explanation){
+                    const ex = document.createElement('p'); 
+                    ex.textContent = data.explanation; 
+                    apodEl.appendChild(ex);
+                }
+            } else {
+                apodEl.textContent = 'APODデータの取得に失敗しました。';
+            }
+        })
+        .catch(err => {
+            apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+            console.error(err);
+        });
+})();
