@@ -1,394 +1,387 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>エミリーの星日記｜2025年11月10日〜16日の夜空より</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
-    :root {
-      /* カラーパレット */
-      --primary-color: #2962ff; /* 青系 */
-      --secondary-color: #64b5f6; /* 水色系 */
-      --text-color-primary: #f0f0f0; /* 明るい文字 */
-      --text-color-secondary: #cccccc; /* やや薄い文字 */
-      --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
-      --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
-      --border-color: #333; /* 線の色 */
-      --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
-      --highlight-color-light: #ffc0cb;
-      --highlight-color-dark: #f9a8d4;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エミリーの星日記｜2025年11月10日〜16日の夜空より</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+/* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+:root {
+	  /* カラーパレット */
+	  --primary-color: #2962ff; /* 青系 */
+	  --secondary-color: #64b5f6; /* 水色系 */
+	  --text-color-primary: #f0f0f0; /* 明るい文字 */
+	  --text-color-secondary: #cccccc; /* やや薄い文字 */
+	  --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
+	  --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
+	  --border-color: #333; /* 線の色 */
+	  --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
+	  --highlight-color-light: #ffc0cb;
+	  --highlight-color-dark: #f9a8d4;
 
-      /* シャドウ */
-      --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
-      --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
-      --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
-      --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
+	  /* シャドウ */
+	  --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
+	  --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+	  --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
+	  --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
 
-      /* フォントファミリー */
-      --font-family-japanese: 'Noto Sans JP', sans-serif;
-      --font-family-english: 'Montserrat', sans-serif;
-      --font-family-serif-popular: 'Merriweather', serif;
-      --font-family-handlee: 'Handlee', cursive;
-      --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+	  /* フォントファミリー */
+	  --font-family-japanese: 'Noto Sans JP', sans-serif;
+	  --font-family-english: 'Montserrat', sans-serif;
+	  --font-family-serif-popular: 'Merriweather', serif;
+	  --font-family-handlee: 'Handlee', cursive;
+	  --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
 
-      /* タイポグラフィ基本設定 */
-      --line-height-body: 1.8;
-      --letter-spacing-body: 0.01em;
-    }
+	  /* タイポグラフィ基本設定 */
+	  --line-height-body: 1.8;
+	  --letter-spacing-body: 0.01em;
+	}
 
-    /* --- 全体的な基本スタイル --- */
-    html {
-      scroll-behavior: smooth;
-    }
+/* --- 全体的な基本スタイル --- */
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-      font-size: 16px;
-      line-height: var(--line-height-body);
-      letter-spacing: var(--letter-spacing-body);
-      background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
-      color: var(--text-color-primary);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+  font-size: 16px;
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+  color: var(--text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
-    .container {
-      margin: 0 auto;
-      padding: 0;
-      box-sizing: border-box;
-      position: relative;
-      max-width: 1200px;
-    }
+.container {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 1200px;
+}
 
-    /* --- リンクスタイル --- */
-    a {
-      color: var(--highlight-color);
-      text-decoration: none;
-      transition: color 0.2s ease-in-out;
-    }
+/* --- リンクスタイル --- */
+a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
 
-    a:hover {
-      color: var(--highlight-color-light);
-      text-decoration: underline;
-    }
+a:hover {
+  color: var(--highlight-color-light);
+  text-decoration: underline;
+}
 
-    /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
-    #scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      background: var(--highlight-color);
-      z-index: 1000;
-      width: 0%;
-      transition: width 0.1s linear;
-    }
+/* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--highlight-color);
+  z-index: 1000;
+  width: 0%;
+  transition: width 0.1s linear;
+}
 
-    /* --- セクションの共通スタイル --- */
-    .section {
-      padding: 60px 20px;
-      margin: 0 auto;
-      max-width: 960px;
-      box-sizing: border-box;
-      text-align: center;
-      /* script.jsによるアニメーションの初期設定 */
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    /* script.jsによって追加されるクラス */
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* --- セクションの共通スタイル --- */
+.section {
+  padding: 60px 20px;
+  margin: 0 auto;
+  max-width: 960px;
+  box-sizing: border-box;
+  text-align: center;
+  /* script.jsによるアニメーションの初期設定 */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+/* script.jsによって追加されるクラス */
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    /* --- 個別記事の構造スタイル (article-detail内) --- */
-    .article-detail {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 30px;
-      background: var(--bg-color-secondary);
-      border-radius: 12px;
-      box-shadow: var(--box-shadow-medium);
-      color: var(--text-color-primary);
-      text-align: left;
-    }
-    /* article-detailの代わりに、article全体が背景を持つと想定し、`.article-detail`から`.article`へ移動 */
-    article {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-        background: var(--bg-color-secondary);
-        border-radius: 12px;
-        box-shadow: var(--box-shadow-medium);
-        color: var(--text-color-primary);
-        text-align: left;
-    }
-    .article-detail h1 {
-      font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
-      font-size: 2.8em;
-      color: var(--highlight-color);
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .article-detail p, article p {
-      font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-      font-size: 1.1em;
-      line-height: var(--line-height-body);
-      margin-bottom: 1.5em;
-      color: var(--text-color-primary);
-    }
-    .article-detail img, article img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 20px auto;
-      border-radius: 12px;
-      box-shadow: var(--box-shadow-light);
-    }
-    /* `img-wrap`内の画像に対するスタイル継承を修正 */
-    .img-wrap img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 20px auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow-light);
-    }
-    
-    /* 記事内 h2 スタイル */
-    .article-detail h2, article h2 {
-      font-family: var(--font-family-japanese);
-      font-size: 1.8em;
-      color: var(--primary-color);
-      margin-top: 2.5em;
-      margin-bottom: 1em;
-      position: relative;
-      padding-bottom: 0.5em;
-      border-bottom: 2px solid var(--border-color);
-      display: inline-block;
-      left: 0;
-    }
-    .article-detail h2::before, article h2::before {
-      content: "✨"; /* キラキラの絵文字を追加 */
-      margin-right: 10px;
-      font-size: 0.8em;
-    }
+/* --- 個別記事の構造スタイル (article-detail内) --- */
+/* セレクターをarticleに統一するか、article-detailを維持するかを考慮し、articleセレクターも追加 */
+.article-detail, article { /* articleセレクターをarticle-detailと結合 */
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--bg-color-secondary);
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-medium);
+  color: var(--text-color-primary);
+  text-align: left;
+}
 
-    /* 引用スタイル */
-    .quote {
-      background: rgba(255, 209, 220, 0.1);
-      border-left: 4px solid var(--highlight-color);
-      padding: 1rem;
-      margin: 1.5rem 0;
-      font-style: italic;
-      border-radius: 4px;
-      color: var(--text-color-primary);
-      font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-    }
+.article-detail h1, article h1 { /* article h1を追加 */
+  font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
+  font-size: 2.8em;
+  color: var(--highlight-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.article-detail p, article p {
+  font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+  font-size: 1.1em;
+  line-height: var(--line-height-body);
+  margin-bottom: 1.5em;
+  color: var(--text-color-primary);
+}
+.article-detail img, article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+}
+/* `img-wrap`内の画像に対するスタイル */
+.img-wrap img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-light);
+}
 
-    /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
-    #apod {
-      padding: 25px;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      background-color: var(--bg-color-primary); /* 背景色を濃くして目立たせる */
-      text-align: center;
-      max-width: 960px;
-      margin: 40px auto;
-      box-shadow: var(--box-shadow-pink-medium); /* ピンクのシャドウでハイライト */
-    }
-    .apod-card {
-        padding: 15px;
-        border-radius: 8px;
-        background-color: var(--bg-color-secondary);
-        color: var(--highlight-color);
-        font-size: 1.2em;
-        margin-bottom: 15px;
-    }
-    #apod-content > div:first-child {
-        font-family: var(--font-family-english);
-        font-size: 1.5em;
-        margin-bottom: 5px;
-        color: var(--highlight-color);
-        text-align: center;
-    }
-    #apod-content p {
-        line-height: 1.6;
-        margin-top: 10px;
-        font-size: 0.95em;
-        text-align: left;
-        color: var(--text-color-secondary);
-        font-family: var(--font-family-japanese);
-    }
+/* 記事内 h2 スタイル */
+.article-detail h2, article h2 {
+  font-family: var(--font-family-japanese);
+  font-size: 1.8em;
+  color: var(--primary-color);
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  position: relative;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid var(--border-color);
+  display: inline-block;
+  left: 0;
+}
+.article-detail h2::before, article h2::before {
+  content: "✨"; /* キラキラの絵文字を追加 */
+  margin-right: 10px;
+  font-size: 0.8em;
+}
 
-    /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
-    .hamburger-menu, .scrollable-menu, .nav-links {
-      display: none;
-    }
-  </style>
+/* 引用スタイル */
+.quote {
+  background: rgba(255, 209, 220, 0.1);
+  border-left: 4px solid var(--highlight-color);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  border-radius: 4px;
+  color: var(--text-color-primary);
+  font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+}
+
+/* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
+#apod {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--bg-color-primary); /* 背景色を濃くして目立たせる */
+  text-align: center;
+  max-width: 960px;
+  margin: 40px auto;
+  box-shadow: var(--box-shadow-pink-medium); /* ピンクのシャドウでハイライト */
+}
+.apod-card {
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--bg-color-secondary);
+  color: var(--highlight-color);
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+#apod-content > div:first-child {
+  font-family: var(--font-family-english);
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  color: var(--highlight-color);
+  text-align: center;
+}
+#apod-content p {
+  line-height: 1.6;
+  margin-top: 10px;
+  font-size: 0.95em;
+  text-align: left;
+  color: var(--text-color-secondary);
+  font-family: var(--font-family-japanese);
+  }
+  
+  /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
+  .hamburger-menu,
+  .scrollable-menu,
+  .nav-links {
+    display: none;
+  }
+</style>
 </head>
 <body>
-  <div class="container">
-    <article>
-      <header class="article-header">
-        <h1 class="hero">エミリーの星日記 — 11/10→11/16</h1>
-        <p class="meta">更新：2025年11月11日（この記事は公的な天文カレンダーと観測報告に基づいて作成しています）</p>
-        <p class="lead">夜空を一緒に眺めるあなたへ。今週は月の節目、惑星の見かけ上の動き、そして流星の季節が織りなす小さな劇場です。</p>
-        <p class="meta">冬の気配と月の節目、来訪者と流星が交差する七日間。</p>
-      </header>
+  <div class="container">
+    <article>
+      <header class="article-header">
+        <h1 class="hero">エミリーの星日記 — 11/10→11/16</h1>
+        <p class="meta">更新：2025年11月11日（この記事は公的な天文カレンダーと観測報告に基づいて作成しています）</p>
+        <p class="lead">夜空を一緒に眺めるあなたへ。今週は月の節目、惑星の見かけ上の動き、そして流星の季節が織りなす小さな劇場です。</p>
+        <p class="meta">冬の気配と月の節目、来訪者と流星が交差する七日間。</p>
+      </header>
 
-      <section class="section" id="intro">
-        <h2>— 夜の幕が上がるとき</h2>
-        <div class="img-wrap">
-          <img src="../images/intro-night-sky.jpg" alt="冬の気配を感じる夜空の風景" />
-        </div>
-        <p>友よ、夜は小さな教室だ──私はそう思っています。今週（11月10日〜11月16日）は特別授業のような七日間。11月12日には月が第三四半期（Last Quarter）を迎え、満ちた光の余韻が徐々に薄れていく節目の夜がやってきます。これは天文暦でも確認されている事実です（観測地により見え方は変わります）。</p>
+      <section class="section" id="intro">
+        <h2>— 夜の幕が上がるとき</h2>
+        <div class="img-wrap">
+          <img src="../images/intro-night-sky.jpg" alt="冬の気配を感じる夜空の風景" />
+        </div>
+        <p>友よ、夜は小さな教室だ──私はそう思っています。今週（11月10日〜11月16日）は特別授業のような七日間。11月12日には月が第三四半期（Last Quarter）を迎え、満ちた光の余韻が徐々に薄れていく節目の夜がやってきます。これは天文暦でも確認されている事実です（観測地により見え方は変わります）。</p>
 
-        <p>また、コミュニケーションを司る水星の見かけ上の逆行期間がこの期間に重なります。実際のエフェメリスに基づく運行現象で、連絡や旅程の見直しが現実的に起きやすい時期です。だから私はあなたに、言葉を投げる前の一呼吸を提案します。</p>
-      </section>
+        <p>また、コミュニケーションを司る水星の見かけ上の逆行期間がこの期間に重なります。実際のエフェメリスに基づく運行現象で、連絡や旅程の見直しが現実的に起きやすい時期です。だから私はあなたに、言葉を投げる前の一呼吸を提案します。</p>
+      </section>
 
-      <section class="section" id="events">
-        <h2>— 今週の事実（観測に基づく天体イベント）</h2>
-        <div class="img-wrap">
-          <img src="../images/events-chart.jpg" alt="天体イベントの図解とカレンダー" />
-        </div>
+      <section class="section" id="events">
+        <h2>— 今週の事実（観測に基づく天体イベント）</h2>
+        <div class="img-wrap">
+          <img src="../images/events-chart.jpg" alt="天体イベントの図解とカレンダー" />
+        </div>
 
-        <article>
-          <h3>11月10日（月）</h3>
-          <p>月は薄く欠けた形で夜空にあります。深夜〜明け方は空が澄みやすく、木星・土星など大型の惑星が南〜南東の高みに位置しやすい季節です。実際の惑星の位置はエフェメリスでご確認ください。</p>
-        </article>
+        <article>
+          <h3>11月10日（月）</h3>
+          <p>月は薄く欠けた形で夜空にあります。深夜〜明け方は空が澄みやすく、木星・土星など大型の惑星が南〜南東の高みに位置しやすい季節です。実際の惑星の位置はエフェメリスでご確認ください。</p>
+        </article>
 
-        <article>
-          <h3>11月11日（火）</h3>
-          <p>小天体「3I/ATLAS（インターステラー来訪者）」に関する観測報告が続報として出ています。こうした来訪天体は発見後の軌道解析や観測条件の更新により、観測可能性の報告が変化します。公式天文機関や観測サイトの最新情報を参照してください。</p>
-        </article>
+        <article>
+          <h3>11月11日（火）</h3>
+          <p>小天体「3I/ATLAS（インターステラー来訪者）」に関する観測報告が続報として出ています。こうした来訪天体は発見後の軌道解析や観測条件の更新により、観測可能性の報告が変化します。公式天文機関や観測サイトの最新情報を参照してください。</p>
+        </article>
 
-        <article>
-          <h3>11月12日（水） — 月の節目</h3>
-          <p>月は第三四半期（Last Quarter）を迎えます。半月に近いその姿は夜半前後に見られ、ムーンの星座（ムーンサイン）は時間帯により変わるため、感覚のトーンも夜ごとに少し異なります。</p>
-        </article>
+        <article>
+          <h3>11月12日（水） — 月の節目</h3>
+          <p>月は第三四半期（Last Quarter）を迎えます。半月に近いその姿は夜半前後に見られ、ムーンの星座（ムーンサイン）は時間帯により変わるため、感覚のトーンも夜ごとに少し異なります。</p>
+        </article>
 
-        <article>
-          <h3>11月13日（木）・14日（金）</h3>
-          <p>ムーンイングレス（ムーンが星座を移る現象）が続き、観察者の感覚に微かな変化をもたらします。これもエフェメリスと観測カレンダーに基づく事実です。</p>
-        </article>
+        <article>
+          <h3>11月13日（木）・14日（金）</h3>
+          <p>ムーンイングレス（ムーンが星座を移る現象）が続き、観察者の感覚に微かな変化をもたらします。これもエフェメリスと観測カレンダーに基づく事実です。</p>
+        </article>
 
-        <article>
-          <h3>11月15日（土）〜11月16日（日） — 流星の季節が近づく</h3>
-          <p>毎年11月中旬はしし座流星群（Leonids）の活動期で、例年11月16〜17日にかけてピークが報告されます。条件が良ければ高速で明るい流星が観察できますが、月明かり、天候、観察地の光害が観察に大きく影響することを忘れないでください。</p>
+        <article>
+          <h3>11月15日（土）〜11月16日（日） — 流星の季節が近づく</h3>
+          <p>毎年11月中旬はしし座流星群（Leonids）の活動期で、例年11月16〜17日にかけてピークが報告されます。条件が良ければ高速で明るい流星が観察できますが、月明かり、天候、観察地の光害が観察に大きく影響することを忘れないでください。</p>
 
-          <p>またトーリッド（Taurid）系列など他の流星活動が重なる年もあるため、観察時は複数の流星源が混在します。</p>
-        </article>
+          <p>またトーリッド（Taurid）系列など他の流星活動が重なる年もあるため、観察時は複数の流星源が混在します。</p>
+        </article>
 
-      </section>
+      </section>
 
-      <section class="section" id="astrology">
-        <h2>— 星読み（事実を土台にした詩的解釈）</h2>
-        <div class="img-wrap">
-          <img src="../images/astrology-desk.jpg" alt="月光の下で手帳を開くイメージ" />
-        </div>
+      <section class="section" id="astrology">
+        <h2>— 星読み（事実を土台にした詩的解釈）</h2>
+        <div class="img-wrap">
+          <img src="../images/astrology-desk.jpg" alt="月光の下で手帳を開くイメージ" />
+        </div>
 
-        <p>占星術は私にとって「星の配置を感受するレンズ」です。ただしこれは空想ではなく、惑星の見かけ上の運行（逆行やステーション、月相）という事実を土台にしています。以下は事実に基づく読みです。</p>
+        <p>占星術は私にとって「星の配置を感受するレンズ」です。ただしこれは空想ではなく、惑星の見かけ上の運行（逆行やステーション、月相）という事実を土台にしています。以下は事実に基づく読みです。</p>
 
-        <h3>水星逆行（見かけ上の逆行） — 見直しの風</h3>
-        <p>この時期の水星の見かけ上の逆行は、通信・移動・契約関連での再確認・修正が現実的に起きやすいことを示します。占星的なすすめとしては、重要な連絡や契約の締結は細心の注意を払い、確認作業を怠らないことです。</p>
+        <h3>水星逆行（見かけ上の逆行） — 見直しの風</h3>
+        <p>この時期の水星の見かけ上の逆行は、通信・移動・契約関連での再確認・修正が現実的に起きやすいことを示します。占星的なすすめとしては、重要な連絡や契約の締結は細心の注意を払い、確認作業を怠らないことです。</p>
 
-        <h3>木星の動き — 内向きの学び</h3>
-        <p>木星に関するステーションや逆行に関する報告は、外側への拡張よりも内側の価値観の再検討を促します。成長や拡大のテーマを内省的に扱う、そんな夜を選びたいものです。</p>
+        <h3>木星の動き — 内向きの学び</h3>
+        <p>木星に関するステーションや逆行に関する報告は、外側への拡張よりも内側の価値観の再検討を促します。成長や拡大のテーマを内省的に扱う、そんな夜を選びたいものです。</p>
 
-        <p>これらはすべて観測・暦上の事実を基にした読みです。詩的に語りつつも、現実的な注意（連絡の再確認、旅程の見直し）を忘れないでください。</p>
-      </section>
+        <p>これらはすべて観測・暦上の事実を基にした読みです。詩的に語りつつも、現実的な注意（連絡の再確認、旅程の見直し）を忘れないでください。</p>
+      </section>
 
-      <section class="section" id="conclusion">
-        <h2>— こぼれ星の後で私たちがすること</h2>
-        <div class="img-wrap">
-          <img src="../images/conclusion-couple-stars.jpg" alt="二人で星を眺めるシルエット" />
-        </div>
+      <section class="section" id="conclusion">
+        <h2>— こぼれ星の後で私たちがすること</h2>
+        <div class="img-wrap">
+          <img src="../images/conclusion-couple-stars.jpg" alt="二人で星を眺めるシルエット" />
+        </div>
 
-        <p>友よ、ここまで事実と観測に基づく今週の星の動きを並べました。最後に私からの小さな提案をひとつ。</p>
-        <ul>
-          <li>観察の時間帯：11月12日付近の月が薄まる頃は深夜〜未明が暗く星が見やすくなります。</li>
-          <li>来訪小天体（3I/ATLAS等）を追う場合は、公式機関や天文ニュース、Virtual Telescope等の観測速報を参照してください。</li>
-          <li>心の準備：水星逆行や木星の見かけ上の内向きの動きは「見直し」を助けます。書き直す、連絡を整理する、先延ばしにしていたことを小さく片付ける──そんな夜にしてみてください。</li>
-        </ul>
-        <div id="apod">
-          <div class="apod-card">
-            <strong>今日の宇宙の光（APOD）</strong>
-            <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
-          </div>
-        </div>
-      </section>
+        <p>友よ、ここまで事実と観測に基づく今週の星の動きを並べました。最後に私からの小さな提案をひとつ。</p>
+        <ul>
+          <li>観察の時間帯：11月12日付近の月が薄まる頃は深夜〜未明が暗く星が見やすくなります。</li>
+          <li>来訪小天体（3I/ATLAS等）を追う場合は、公式機関や天文ニュース、Virtual Telescope等の観測速報を参照してください。</li>
+          <li>心の準備：水星逆行や木星の見かけ上の内向きの動きは「見直し」を助けます。書き直す、連絡を整理する、先延ばしにしていたことを小さく片付ける──そんな夜にしてみてください。</li>
+        </ul>
+        <div id="apod">
+          <div class="apod-card">
+            <strong>今日の宇宙の光（APOD）</strong>
+            <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
+          </div>
+        </div>
+      </section>
 
-      <section class="section" id="sources">
-        <h2>参考・出典</h2>
-        <p>この記事の天文・占星情報は、天文暦（エフェメリス）、公的機関（NASA, ESA）、主要天文ニュースサイト、天文台・観測報告などの公開情報に基づいて作成されています。観測時は現地の天候や機材、光害を考慮してください。</p>
-      </section>
+      <section class="section" id="sources">
+        <h2>参考・出典</h2>
+        <p>この記事の天文・占星情報は、天文暦（エフェメリス）、公的機関（NASA, ESA）、主要天文ニュースサイト、天文台・観測報告などの公開情報に基づいて作成されています。観測時は現地の天候や機材、光害を考慮してください。</p>
+      </section>
 
-      <section class="section next-article-section" id="next">
-        <h2>次のお話へ</h2>
-        <p>よければ次は「11月17日〜11月23日」を一緒に追いましょう。しし座流星群のピーク後に広がる空の変化や、12月へ向けた月の動きの連続を詩にします。あなたの観測メモをぜひ共有してね。</p>
-        <p><a class="btn" href="/dear-emily/next-week">→ 次のお話：11/17〜11/23 の星日記を作る</a></p>
-      </section>
+      <section class="section next-article-section" id="next">
+        <h2>次のお話へ</h2>
+        <p>よければ次は「11月17日〜11月23日」を一緒に追いましょう。しし座流星群のピーク後に広がる空の変化や、12月へ向けた月の動きの連続を詩にします。あなたの観測メモをぜひ共有してね。</p>
+        <p><a class="btn" href="/dear-emily/next-week">→ 次のお話：11/17〜11/23 の星日記を作る</a></p>
+      </section>
 
-      <footer>
-        <p class="meta">エミリー — 夜空の案内人</p>
-      </footer>
+      <footer>
+        <p class="meta">エミリー — 夜空の案内人</p>
+      </footer>
 
-    </article>
-  </div>
+    </article>
+  </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting) e.target.classList.add('visible');
-        });
-      },{threshold:0.12});
-      document.querySelectorAll('.section').forEach(s=>io.observe(s));
-    });
-  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('visible');
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+  </script>
 
-  <script>
-    (function(){
-      const apodEl = document.getElementById('apod-content');
-      const API_KEY = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
-      const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+  <script>
+    (function(){
+      const apodEl = document.getElementById('apod-content');
+      const API_KEY = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
+      const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 
-      fetch(url).then(r=>r.json()).then(data=>{
-        if(data && data.url){
-          const isImage = data.media_type === 'image';
-          apodEl.innerHTML = '';
-          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
-          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
-          apodEl.appendChild(title); apodEl.appendChild(date);
-          if(isImage){
-            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.style.maxWidth='100%'; img.style.borderRadius='8px'; apodEl.appendChild(img);
-          } else {
-            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
-          }
-          if(data.explanation){
-            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
-          }
-        } else {
-          apodEl.textContent = 'APODデータの取得に失敗しました。';
-        }
-      }).catch(err=>{
-        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
-        console.error(err);
-      });
-    })();
-  </script>
+      fetch(url).then(r=>r.json()).then(data=>{
+        if(data && data.url){
+          const isImage = data.media_type === 'image';
+          apodEl.innerHTML = '';
+          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
+          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
+          apodEl.appendChild(title); apodEl.appendChild(date);
+          if(isImage){
+            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.style.maxWidth='100%'; img.style.borderRadius='8px'; apodEl.appendChild(img);
+          } else {
+            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
+          }
+          if(data.explanation){
+            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
+          }
+        } else {
+          apodEl.textContent = 'APODデータの取得に失敗しました。';
+        }
+      }).catch(err=>{
+        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+        console.error(err);
+      });
+    })();
+  </script>
 
 </body>
 </html>
