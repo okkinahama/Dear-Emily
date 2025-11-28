@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記 — 2025年11月24日〜11月30日</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            /* カラーパレット */
+            --primary-color: #2962ff; /* 青系 */
+            --secondary-color: #64b5f6; /* 水色系 */
+            --text-color-primary: #f0f0f0; /* 明るい文字 */
+            --text-color-secondary: #cccccc; /* やや薄い文字 */
+            --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
+            --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
+            --border-color: #333; /* 線の色 */
+            --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
+            --highlight-color-light: #ffc0cb;
+            --highlight-color-dark: #f9a8d4;
+
+            /* シャドウ */
+            --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
+            --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
+
+            /* フォントファミリー */
+            --font-family-japanese: 'Noto Sans JP', sans-serif;
+            --font-family-english: 'Montserrat', sans-serif;
+            --font-family-serif-popular: 'Merriweather', serif;
+            --font-family-handlee: 'Handlee', cursive;
+            --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+
+            /* タイポグラフィ基本設定 */
+            --line-height-body: 1.8;
+            --letter-spacing-body: 0.01em;
+        }
+
+        /* --- 全体的な基本スタイル --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 16px;
+            line-height: var(--line-height-body);
+            letter-spacing: var(--letter-spacing-body);
+            background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+            color: var(--text-color-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 1200px;
+        }
+
+        /* --- リンクスタイル --- */
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--highlight-color-light);
+            text-decoration: underline;
+        }
+
+        /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--highlight-color);
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* --- セクションの共通スタイル --- */
+        .section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 960px;
+            box-sizing: border-box;
+            text-align: center;
+            /* script.jsによるアニメーションの初期設定 */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        /* script.jsによって追加されるクラス */
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === 記事詳細ページのスタイル (article-detail) === */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
+        
+        /* 記事ブロックのh1スタイルをheroタイトルから変更 */
+        .article-header h1.hero {
+            /* 提案CSSのh1定義を継承 */
+            font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            margin-top: 0;
+            line-height: 1.2;
+            text-shadow: none;
+            text-align: center;
+        }
+
+        /* 本文のスタイル */
+        .article-detail p {
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+            text-align: left;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+        .article-header .lead {
+            font-size: 1.25em;
+            line-height: 2.0;
+            margin: 30px 0 0;
+            padding: 20px;
+            border-left: 5px solid var(--highlight-color);
+            background-color: rgba(26, 29, 46, 0.5);
+            text-align: left;
+            color: var(--text-color-primary);
+            font-style: italic;
+        }
+
+
+        .article-detail img, .img-wrap img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        
+        /* 記事内 h2 スタイルを提案CSSに統一 */
+        .article-detail h2 {
+            font-family: var(--font-family-japanese);
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+            text-align: left;
+        }
+        .article-detail h2::before {
+            content: "✨";
+            margin-right: 10px;
+            font-size: 0.8em;
+            margin-left: 0;
+        }
+        
+        /* 記事内 h3/h4 も左揃えに統一 */
+        .article-detail h3 {
+            font-family: var(--font-family-montserrat), sans-serif;
+            font-size: 1.6em;
+            color: var(--text-color-primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid var(--highlight-color);
+            text-align: left;
+        }
+        .article-detail h4 {
+            font-family: var(--font-family-japanese), sans-serif;
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px dotted var(--text-color-secondary);
+            text-align: left;
+        }
+        
+
+        /* 引用スタイル */
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            text-align: left;
+        }
+        /* 詩的な引用は中央寄せを維持 */
+        .quote.poem {
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 1.3em;
+            color: var(--highlight-color);
+            border-left: none;
+            border-top: 1px solid var(--highlight-color);
+            border-bottom: 1px solid var(--highlight-color);
+            padding: 25px 30px;
+            margin: 40px auto;
+            background-color: rgba(255, 209, 220, 0.05);
+            line-height: 1.7;
+            text-align: center;
+            font-style: normal;
+            white-space: pre-wrap;
+        }
+
+
+        /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
+        #apod {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-primary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-pink-medium);
+        }
+        .apod-card {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-color-secondary);
+            color: var(--highlight-color);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        #apod-content > div:first-child {
+            font-family: var(--font-family-english);
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-content p {
+            line-height: 1.6;
+            margin-top: 10px;
+            font-size: 0.95em;
+            text-align: left;
+            color: var(--text-color-secondary);
+            font-family: var(--font-family-japanese);
+        }
+        
+        /* APOD画像用のクラス */
+        .apod-img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+
+        /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
+        .hamburger-menu, .scrollable-menu, .nav-links {
+            display: none;
+        }
+        
+        /* 広告プレースホルダを提案CSSに置き換え */
+        .ad-placeholder {
+            height: 160px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-family: var(--font-family-zen-maru-gothic);
+            margin: 40px 0;
+        }
+        
+        /* 区切り線 */
+        .separator {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--highlight-color-dark), transparent);
+            margin: 60px 0;
+        }
+        /* 次の記事へのボタン */
+        .next-article-section .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .next-article-section .btn:hover {
+            background-color: #4c7cff;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        /* コンテンツ内のimg-placeholderの再定義 */
+        .img-placeholder {
+            width: 100%;
+            height: 420px;
+            background-color: var(--bg-color-primary); /* 変数を使用 */
+            color: var(--text-color-primary); /* 変数を使用 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 1rem;
+            box-shadow: var(--box-shadow-light); /* 変数を使用 */
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+        }
+        .caption {
+            font-size: 0.9rem;
+            color: var(--text-color-secondary);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <article class="article-detail">
+    
+        <header class="article-header">
+            <section class="section hero" id="intro">
+                <h1 class="hero">エミリーの星日記 — 11/24〜11/30</h1>
+                <p class="meta">太陽が射手へ踏み出す夜、惑星たちの方向転換と静かな再出発の週</p>
+
+                <div class="img-placeholder" role="img" aria-label="11月下旬の夜空イメージ">
+                    
+
+[Image of a deep blue night sky with a constellation of Sagittarius]
+
+                    ここに「11月下旬の夜空」イメージを挿入できます
+                </div>
+
+                <p class="lead">
+                    親愛なる、夜空を眺める友人へ。  
+                    11月の終わりに差し掛かるこの七夜は、空の中でゆっくりと季節と意味が交代する時です。  
+                    太陽が蠍から射手へ移り、言葉や思考の速度が内側で再調整される。私たちは温かな飲み物を片手に、変化の気配を共に聞く――そんな一週間です。  
+                </p>
+            </section>
+        </header>
+
+        <hr class="separator">
+
+        <section class="section" id="events">
+            <h2>今週の主な天文現象（事実ベース）</h2>
+
+            <h3>太陽：11月24日に射手座へ移行（太陽のサイン変化）</h3>
+            <p>
+                11月24日、太陽は蠍座から**射手座**へ入り、季節の感覚が次の段へ進みます。射手は「探求・旅・拡張」を象徴する星座で、外に向かうエネルギーが強まる時期の始まりを告げます。これは天体の幾何学上の事実であり、占星術的読みを加える際の基礎的な参照点です。
+            </p>
+
+            <h3>11月25日：水星と金星の接近（接合／コンジャンクション） — 朝方の観測好機</h3>
+            <p>
+                11月25日の早朝、地平線付近で**水星と金星が並ぶ**、珍しい接近が見られます。明るい金星のすぐ下に、水星が寄り添う形になり、双眼鏡を使うと観察がしやすくなります。観測の好機は日の出前の東〜東南の低空です。これは稀ではないにしても美しい朝の光景で、実際の天文記事で案内されています。
+            </p>
+            <div class="img-placeholder" role="img" aria-label="水星と金星が地平線近くで接近する星図">
+                
+                今週の観測ポイント（星図／惑星位置イメージを挿入してください）
+            </div>
+
+            <h3>11月27〜29：主要惑星の運行変化（逆行終了・順行への転換）</h3>
+            <p>
+                今週は占星術的に重要な「方向転換」の知らせが多くあります。具体的には、**土星が11月27日に順行へ戻る**（逆行終了）こと、また**11月29日に水星の順行化**（逆行終わり）などが報じられています。これらは通信、体系、責任といったテーマに実務的な影響を与えやすい節目です。
+            </p>
+
+            <h3>11月30：金星が射手座へ入りやすいタイミング（感情・愛情の配置変化）</h3>
+            <p>
+                月末にかけて**金星が射手座へ入る**ことで、人との関わりや美的好みがより自由で冒険的な色合いを帯びる可能性があります。これも占星術的事実に基づいた観察です（各天文・占星術カレンダー参照）。
+            </p>
+
+            <h3>流星・小規模活動メモ</h3>
+            <p>
+                この週は大規模な古典的流星群の「極大」には当たりませんが、低活動の流星群（例：December sigma Virginids が11月下旬から活動を始める）の活動期に入りつつあります。観測条件は月齢や地域によって左右されますから、暗い空と好天が望まれます。
+            </p>
+
+            <h3>個別の天体配置（例：11月24日の簡易エフェメリス抜粋）</h3>
+            <p>
+                11月24日時点の主要天体の黄経（トロピカル座標）やサインの位置に関する日次表はエフェメリスで確認できます。たとえば、11月24日の月は射手座（移行の初期）にあり、太陽は射手へ入った直後の位置付けとなります（詳細な度数はエフェメリス参照）。この種の数値的データは占星術の読みを行う際の基礎資料です。
+            </p>
+
+        </section>
+
+        <hr class="separator">
+
+        <section class="section" id="interpretation">
+            <h2>読み：星たちが教えてくれるこの週の気分</h2>
+
+            <p class="lead">
+                友よ、天体は淡々と動くけれど、その連なりは私たちの内面に確かな調律をもたらします。  
+                今週は「**射手**」という旅の星座が主役に立ち上がり、内から外へ、個々の世界を広げるような兆候が訪れます。  
+                しかし、その背後では水星や土星の「向きの変化」が、これまでのやり方を見直し、言葉や約束を整え直す機会を与えてくれます。
+            </p>
+
+            <p class="quote poem">
+                太陽は弓を引き、射手へと足を踏み入れる。  
+                私たちの胸の中の地図も、そっと縁取りを変える。
+            </p>
+
+            <h3>射手の太陽：遠くを向く意志と旅の匂い</h3>
+            <p>
+                太陽が射手へ入る日は、外に向かう好奇や学びの欲求が顔を出すことが多いものです。冬の到来を前に、気持ちだけは遠い地へ出かけたくなる、そんな気配。  
+                日本の行事に直結するわけではないが、古来、旅に出る季節の節目や年末の準備に似た「外へ向かう意図」が文化的感覚として重なることがあります。短い旅支度のように、心の中で小さな荷物をまとめる時間が訪れるかもしれません。
+            </p>
+
+            <h3>水星と金星の接近：朝の静寂で交わる言葉と美しさ</h3>
+            <p>
+                25日の水星—金星接近は「言葉」と「美意識」が朝の薄明で寄り添うような光景です。占星術的には、会話や対話のトーンが和らぎ、繊細な表現や短い挨拶が大事にされる時。日本的な挨拶文化、朝茶の一杯を交わすような些細なやり取りが、思いのほか豊かな意味を持つ可能性があります。
+            </p>
+
+            <h3>土星順行・水星順行：責任と伝達の再整備</h3>
+            <p>
+                土星の順行（11/27）や水星の順行（11/29）は、遅れてきた整理整頓のような働きをします。**土星**は構造や責任を司る惑星、順行化はプロジェクトや約束事を前に進めやすくするサインです。**水星**が順行になると、通信や学びの分野で流れが改善することが期待されます。仕事や人間関係での「誤解の解消」や「やり直し」が静かに進むかもしれません。
+            </p>
+
+            <h3>金星の射手入り（末日）：愛と関わりの冒険心</h3>
+            <p>
+                11/30頃に金星が射手座へ入ると、人との関わり方に自由さや冒険心が混じります。恋愛や友情においても、共に学ぶことや旅することに価値を見出すようなムードが出ます。年末の行事や会食の場で、新しい出会いや軽やかな会話が生まれる予感。
+            </p>
+
+            <div class="img-placeholder" role="img" aria-label="射手座の象徴的なイメージと星">
+                
+                占星術的・文化的イメージ（挿入可）
+            </div>
+
+        </section>
+
+        <hr class="separator">
+
+        <section class="section" id="daily-guide">
+            <h2>日ごとの星見メモ & 実用アドバイス</h2>
+
+            <h4>11月24日（月）</h4>
+            <p>
+                太陽が射手へ入る日。夕方〜夜にかけては、東の低空にまだ明るく残る惑星（場所によっては金星）を探してみてください。心の中で小さな「旅の計画」を立てるのに良い日です。射手らしい学びや本の購入、短い旅の計画メモを残すと気分が晴れます。
+            </p>
+
+            <h4>11月25日（火）</h4>
+            <p>
+                早朝の**水星—金星接近**が見どころ。日の出前の東南〜東の低空をチェック。観察には双眼鏡があると見つけやすいですが、太陽が昇り始める前に終えるよう注意してください。朝の静けさの中で、ちょっとした挨拶やメッセージを誰かに送ると、予想外に温かい返事が返ってくるかもしれません。
+            </p>
+
+            <h4>11月26日（水）</h4>
+            <p>
+                静かな夜。流星群の大きな極大は無い週ですが、暗い空が得られれば淡い流星を見つける楽しみがあります。星座なぞりを楽しむ時間としてよい夜です。寒さ対策をしっかりと。夜空観察は身体を冷やさない工夫が一番の観測サポートです。
+            </p>
+
+            <h4>11月27日（木）</h4>
+            <p>
+                **土星が順行へ戻る**日。仕事や責任に関する調整の好機です。天文的観測では、夜半過ぎに冬の星座が上がってきます。古い約束の再確認をするのにも向いている夜です。
+            </p>
+
+            <h4>11月28日（金）</h4>
+            <p>
+                週の後半。夜空は暗く、観察条件は良好なことが多いです。冬の星座の先触れが東の空に見え始める頃。星座の神話や伝承に思いを馳せながら、ゆっくりと星を辿ってみてください。
+            </p>
+
+            <h4>11月29日（土）</h4>
+            <p>
+                **水星の順行化**が報じられる日。通信トラブルや思い違いの修正をするのに良いタイミングです。もし過去数週間で連絡の行き違いがあったなら、今日を機に穏やかに話を切り出すと流れが変わるかもしれません。
+            </p>
+
+            <h4>11月30日（日）</h4>
+            <p>
+                **金星が射手へ入る**見込み。週末の夜は友人や家族と過ごす時間を少し冒険的にアレンジしてみてください。屋外での短い夜散歩や、星を見ながらのホットドリンクは、この季節の小さな贅沢です。
+            </p>
+
+            <div class="img-placeholder" role="img" aria-label="11月下旬の夜空の日別星図">
+                
+                日別観察マップ（挿入可）
+            </div>
+        </section>
+        
+        <div class="ad-placeholder">
+            広告スペース
+        </div>
+
+        <hr class="separator">
+
+        <section class="section" id="closing">
+            <h2>夜空の確認を終えて、あなたへ</h2>
+
+            <p class="lead">
+                友よ、星たちは移り変わるけれど、私たちに与える感覚はやはり「今を生きる手触り」です。  
+                今週は射手という拡張の風と、土星や水星という整理の手が同時に働き、外へ開く気持ちと内を整える作業が同居します。  
+                小さな問いでもいい、夜空を見上げるままに、あなたの一歩を書き留めてください。それがほんの少し先の未来を柔らかく導いてくれます。
+            </p>
+
+            <p class="quote poem">
+                弓はすでに引かれて、矢は夜の向こうへ。  
+                私はここであなたの隣に座り、息を合わせて見送る。  
+                夕暮れの残り香の中で、私たちはまた次の星を待つのです。
+            </p>
+
+            <p class="small">
+                もし今週、朝の接近を見られたら（25日の水星—金星）あるいは週末に空を見に行ったなら、どんな光景だったか教えてね。あなたの夜の記憶が、私には宝物になります。
+            </p>
+        </section>
+
+        <hr class="separator">
+
+        <section class="section next-article-section" id="next">
+            <h2>次のお話へ</h2>
+            <p>
+                来週は12月に向けた星の配置がさらに冬めきます。次回は「冬の星座と年の終わり — 星に聞く小さな総括」をお届けする予定です。  
+                また夜の縁側で会いましょう。あなたの見た星の記録や小さな観察メモを、よかったら送ってくださいね。
+            </p>
+            <p><a class="btn" href="/dear-emily/weekly/2025-12-01-12-07.html">→ 次のお話：冬の星座と年の終わり — 星に聞く小さな総括（目次へ）</a></p>
+        </section>
+
+        <footer class="section" id="credits">
+            <p class="meta small">
+                主なデータ出典（事実確認のため）：  
+                Sun→Sagittarius（太陽のサイン移動）：Ephemerisデータ／月・太陽の座移動情報。  
+                水星—金星接近（11/25 観測案内）：LiveScience（天文記事）。  
+                土星・水星の順行化（11/27、11/29）、金星の射手入り（11/30）：各種占星術ニュース（週間解説）。  
+                流星群・小規模活動（December sigma Virginids 等の活動期）：AMS／IMO の観測カレンダー。  
+                主要惑星の度数・日次位置（エフェメリス）：AppliedJyotish、Cafe Astrology などのエフェメリス表を参照。
+            </p>
+
+            <p class="small">注：占星術的な読みは、上記の実測データ（惑星の位置・月のサイン・月相）を基にエミリーの視点で解釈したものです。観測条件（天候・光害）は地域差があります。</p>
+        </footer>
+
+    </article>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                // .section.hero にはアニメーションを適用しないため除外
+                if(e.isIntersecting && !e.target.classList.contains('hero')) {
+                    e.target.classList.add('visible');
+                }
+            });
+        },{threshold:0.12});
+        document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+
+    // スクロールプログレスバーの処理（もし #scroll-progress 要素を復活させるなら必要）
+    // window.onscroll = () => {
+    //     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    //     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    //     let scrolled = (winScroll / height) * 100;
+    //     document.getElementById("scroll-progress").style.width = scrolled + "%";
+    // };
+</script>
+
+</body>
+</html>
