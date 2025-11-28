@@ -298,33 +298,51 @@
         </footer>
     </article>
 
-    <section id="apod-container-hero"> 
-        <h2 id="apod-title-hero">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
-        <div id="apod-media-container-hero">
-            <p>コンテンツを読み込み中...</p>
-        </div>
-        <p id="apod-explanation-hero"></p>
-        <p id="apod-copyright-hero"></p>
-    </section>
+ <div id="apod">
+          <div class="apod-card">
+            <strong>今日の宇宙の光（APOD）</strong>
+            <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('visible');
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+  </script>
 
-    <script>
-        // このスクリプトは、APOD（今日の宇宙の画像）の読み込みや、セクションのフェードインアニメーション（.section.visibleの追加）を制御するためのものです。
-        // 外部ファイル script.js の内容は不明なため、機能の動作保証はできませんが、構造上のエラーを防ぐために配置を維持します。
-        
-        // --- 簡易的なスクロールアニメーション用JSの追加（元のCSSを参照） ---
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // 一度表示されたら監視を停止
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
+  <script>
+    (function(){
+      const apodEl = document.getElementById('apod-content');
+      const apiKeyApod = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
+      const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
 
-        sections.forEach(section => observer.observe(section));
-        // --- APODの仮のJS関数は、APIキーがないため省略します ---
-    </script>
+      fetch(url).then(r=>r.json()).then(data=>{
+        if(data && data.url){
+          const isImage = data.media_type === 'image';
+          apodEl.innerHTML = '';
+          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
+          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
+          apodEl.appendChild(title); apodEl.appendChild(date);
+          if(isImage){
+            // apod-imgクラスをここで付与
+            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.className = 'apod-img'; apodEl.appendChild(img);
+          } else {
+            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
+          }
+          if(data.explanation){
+            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
+          }
+        } else {
+          apodEl.textContent = 'APODデータの取得に失敗しました。';
+        }
+      }).catch(err=>{
+        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+        console.error(err);
+      });
+    })();
+  </script>
 </body>
 </html>
