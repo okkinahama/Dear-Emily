@@ -403,6 +403,27 @@
             ―― エミリーより 🌙</p>
         </footer>
     </article>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                // .section.hero にはアニメーションを適用しないため除外
+                if(e.isIntersecting && !e.target.classList.contains('hero')) {
+                    e.target.classList.add('visible');
+                }
+            });
+        },{threshold:0.12});
+        document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+
+    // スクロールプログレスバーの処理（もし #scroll-progress 要素を復活させるなら必要）
+    // window.onscroll = () => {
+    //     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    //     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    //     let scrolled = (winScroll / height) * 100;
+    //     document.getElementById("scroll-progress").style.width = scrolled + "%";
+    // };
+</script>
 
  
 </body>
