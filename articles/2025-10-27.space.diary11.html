@@ -283,7 +283,54 @@
                 </figure>
 
                 <p>私はいつだって、あなたが夜空を見上げるたびに小さな勇気を持てるような言葉を探している。次の一週間も、月はまた顔を変え、彗星や流星はまた短い物語をくれます。どうか良い夜を。空は待っていてくれるから。 — エミリー</p>
+<div id="apod">
+          <div class="apod-card">
+            <strong>今日の宇宙の光（APOD）</strong>
+            <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('visible');
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+  </script>
 
+  <script>
+    (function(){
+      const apodEl = document.getElementById('apod-content');
+      const apiKeyApod = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
+      const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
+
+      fetch(url).then(r=>r.json()).then(data=>{
+        if(data && data.url){
+          const isImage = data.media_type === 'image';
+          apodEl.innerHTML = '';
+          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
+          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
+          apodEl.appendChild(title); apodEl.appendChild(date);
+          if(isImage){
+            // apod-imgクラスをここで付与
+            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.className = 'apod-img'; apodEl.appendChild(img);
+          } else {
+            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
+          }
+          if(data.explanation){
+            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
+          }
+        } else {
+          apodEl.textContent = 'APODデータの取得に失敗しました。';
+        }
+      }).catch(err=>{
+        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+        console.error(err);
+      });
+    })();
+  </script>
+          </div>
+        </div>
                 <div class="next-article-section">
                     <h3>次のお話へ</h3>
                     <p>もしよければ、次回は「冬の星座図鑑 — 冬至前に知っておきたい三つの星座と観察スポット」をお届けします。準備ができたら教えてね（観察写真や都市名があれば、より地域に合わせた観察ガイドを作るよ）。</p>
@@ -296,86 +343,8 @@
                 <p>主要参照：AMS（流星群情報）・TimeandDate（観測カレンダー）・MoonTracks（ムーンのサイン／イングレス）・LunaF（ムーンフェイズ）・People / LiveScience（彗星関連報道）。</p>
             </footer>
         </article>
-        <div class="section apod reveal" id="apod">
-            <h3>今週の宇宙の一枚（NASA APOD）</h3>
-            <div id="apod-container">
-                <p>（ここにNASAのAPODが自動で表示されます）</p>
-            </div>
-        </div>
+        
 
-    </div>
-
-    <section id="apod-container-article">
-        <h2 id="apod-title-article">今日の宇宙の神秘 - Astronomy Picture of the Day</h2>
-        <div id="apod-media-container-article">
-            <p>コンテンツを読み込み中...</p>
-        </div>
-        <p id="apod-explanation-article"></p>
-        <p id="apod-copyright-article"></p>
-    </section>
-
-    <script>
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // 一度表示されたら監視を停止
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-        // .article-detail内の.section要素を監視
-        document.querySelectorAll('.article-detail .section').forEach(section => observer.observe(section));
-        // APODセクションも監視対象に含める（ただし、元のコードでは`sections`にしか入っていないため、再取得）
-        document.querySelectorAll('#apod').forEach(section => observer.observe(section));
-
-
-        // APOD API Integration (仮のJavaScript)
-        const apodApiKey = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // あなたのNASA APIキーを設定してください
-        const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${apodApiKey}`;
-
-        async function fetchAPOD() {
-            try {
-                // 現在の日付を使用
-                const date = new Date().toISOString().split('T')[0];
-                const response = await fetch(`${apodUrl}&date=${date}`);
-                const data = await response.json();
-
-                const apodTitle = document.getElementById('apod-title-article');
-                const apodMediaContainer = document.getElementById('apod-media-container-article');
-                const apodExplanation = document.getElementById('apod-explanation-article');
-                const apodCopyright = document.getElementById('apod-copyright-article');
-
-                apodTitle.textContent = data.title;
-                apodExplanation.textContent = data.explanation;
-                apodCopyright.textContent = data.copyright ? `Image Credit & Copyright: ${data.copyright}` : '';
-
-                if (data.media_type === 'image') {
-                    const img = document.createElement('img');
-                    img.src = data.url;
-                    img.alt = data.title;
-                    apodMediaContainer.innerHTML = '';
-                    apodMediaContainer.appendChild(img);
-                } else if (data.media_type === 'video') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = data.url;
-                    iframe.frameBorder = '0';
-                    iframe.allow = 'autoplay; encrypted-media';
-                    iframe.allowFullscreen = true;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px'; // 適宜調整
-                    apodMediaContainer.innerHTML = '';
-                    apodMediaContainer.appendChild(iframe);
-                }
-            } catch (error) {
-                console.error('Error fetching APOD:', error);
-                document.getElementById('apod-media-container-article').innerHTML = '<p>今日の宇宙の画像は取得できませんでした。申し訳ありません。</p>';
-            }
-        }
-
-        // 実際のAPIキーを設定したらコメント解除してください
-        // fetchAPOD();
-    </script>
+    
 </body>
 </html>
