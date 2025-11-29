@@ -340,6 +340,54 @@
                 </p>
             </section>
         </article>
+        <div id="apod">
+          <div class="apod-card">
+            <strong>今日の宇宙の光（APOD）</strong>
+            <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('visible');
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+  </script>
+
+  <script>
+    (function(){
+      const apodEl = document.getElementById('apod-content');
+      const apiKeyApod = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
+      const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
+
+      fetch(url).then(r=>r.json()).then(data=>{
+        if(data && data.url){
+          const isImage = data.media_type === 'image';
+          apodEl.innerHTML = '';
+          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
+          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
+          apodEl.appendChild(title); apodEl.appendChild(date);
+          if(isImage){
+            // apod-imgクラスをここで付与
+            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.className = 'apod-img'; apodEl.appendChild(img);
+          } else {
+            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
+          }
+          if(data.explanation){
+            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
+          }
+        } else {
+          apodEl.textContent = 'APODデータの取得に失敗しました。';
+        }
+      }).catch(err=>{
+        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+        console.error(err);
+      });
+    })();
+  </script>
+          </div>
+        </div>
 
         <div class="next-article-section">
             <p>次のお話：</p>
@@ -354,61 +402,6 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // スクロール時のフェードインアニメーション
-            const sections = document.querySelectorAll('.section');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.2 });
-            sections.forEach(section => observer.observe(section));
-
-            // NASA APOD (Astronomy Picture of the Day) 取得
-            const NASA_API_KEY = '2xltSsPMjbXB66oDPVCdT6qPhKURghrTPdbhKEzj'; // カスタムキーを使用
-            const apodUrl = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`;
-            const apodContainer = document.getElementById("apod-container-article");
-
-            fetch(apodUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const mediaContainer = document.getElementById("apod-media-container-article");
-                    const title = document.getElementById("apod-title-article");
-                    const explanation = document.getElementById("apod-explanation-article");
-                    const copyright = document.getElementById("apod-copyright-article");
-
-                    title.textContent = data.title;
-                    explanation.textContent = data.explanation;
-
-                    if (data.media_type === "image") {
-                        mediaContainer.innerHTML = `<img src="${data.url}" alt="${data.title}"/>`;
-                    } else if (data.media_type === "video") {
-                        // YouTubeなどの埋め込み動画に対応し、アスペクト比を固定
-                        mediaContainer.innerHTML = `<iframe src="${data.url}" frameborder="0" allowfullscreen style="width: 100%; aspect-ratio: 16 / 9;"></iframe>`;
-                    }
-
-                    if (data.copyright) {
-                        copyright.textContent = `Copyright: ${data.copyright}`;
-                    } else {
-                        copyright.textContent = "出典: NASA / パブリックドメインの可能性";
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching APOD:', error);
-                    // エラー発生時、APODセクション全体を非表示にする
-                    if (apodContainer) {
-                        apodContainer.style.display = 'none';
-                    }
-                });
-        });
-    </script>
+    
 </body>
 </html>
