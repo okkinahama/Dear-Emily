@@ -454,3 +454,4 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(script);
     })();
 });
+document.querySelectorAll('.article-detail').forEach(el => el.classList.add('visible'));
