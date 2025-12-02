@@ -1,15 +1,17 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>エミリーの星日記 — 2025年12月1日〜12月7日</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記 — 2025年12月1日〜12月7日</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <style>
         /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
         :root {
             /* カラーパレット */
@@ -71,49 +73,41 @@
             max-width: 1200px;
         }
 
-        /* --- リンクスタイル --- */
         a {
             color: var(--highlight-color);
             text-decoration: none;
             transition: color 0.2s ease-in-out;
         }
-
         a:hover {
             color: var(--highlight-color-light);
             text-decoration: underline;
         }
 
-        /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: var(--highlight-color);
-            z-index: 1000;
-            width: 0%;
-            transition: width 0.1s linear;
-        }
-
-        /* --- セクションの共通スタイル --- */
         .section {
             padding: 60px 20px;
             margin: 0 auto;
             max-width: 960px;
             box-sizing: border-box;
             text-align: center;
-            /* script.jsによるアニメーションの初期設定 */
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1s ease, transform 1s ease;
         }
-        /* script.jsによって追加されるクラス */
         .section.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* === 記事詳細ページのスタイル (article-detail) === */
+        .article-header h1.hero {
+            font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            margin-top: 0;
+            line-height: 1.2;
+            text-align: center;
+        }
+
         .article-detail {
             max-width: 800px;
             margin: 40px auto;
@@ -124,21 +118,7 @@
             color: var(--text-color-primary);
             text-align: left;
         }
-        
-        /* 記事ブロックのh1スタイルをheroタイトルから変更 */
-        .article-header h1.hero {
-            /* 提案CSSのh1定義を継承 */
-            font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
-            font-size: 2.8em;
-            color: var(--highlight-color);
-            margin-bottom: 20px;
-            margin-top: 0;
-            line-height: 1.2;
-            text-shadow: none;
-            text-align: center;
-        }
 
-        /* 本文のスタイル */
         .article-detail p {
             font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
             font-size: 1.1em;
@@ -161,17 +141,6 @@
             font-style: italic;
         }
 
-
-        .article-detail img, .img-wrap img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 12px;
-            box-shadow: var(--box-shadow-light);
-        }
-        
-        /* 記事内 h2 スタイルを提案CSSに統一 */
         .article-detail h2 {
             font-family: var(--font-family-japanese);
             font-size: 1.8em;
@@ -185,14 +154,7 @@
             left: 0;
             text-align: left;
         }
-        .article-detail h2::before {
-            content: "✨";
-            margin-right: 10px;
-            font-size: 0.8em;
-            margin-left: 0;
-        }
-        
-        /* 記事内 h3/h4 も左揃えに統一 */
+
         .article-detail h3 {
             font-family: var(--font-family-montserrat), sans-serif;
             font-size: 1.6em;
@@ -203,19 +165,7 @@
             border-left: 4px solid var(--highlight-color);
             text-align: left;
         }
-        .article-detail h4 {
-            font-family: var(--font-family-japanese), sans-serif;
-            font-size: 1.3em;
-            color: var(--primary-color);
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding: 5px 0;
-            border-bottom: 1px dotted var(--text-color-secondary);
-            text-align: left;
-        }
-        
 
-        /* 引用スタイル */
         .quote {
             background: rgba(255, 209, 220, 0.1);
             border-left: 4px solid var(--highlight-color);
@@ -227,92 +177,22 @@
             font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
             text-align: left;
         }
-        /* 詩的な引用は中央寄せを維持 */
-        .quote.poem {
-            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-            font-size: 1.3em;
-            color: var(--highlight-color);
-            border-left: none;
-            border-top: 1px solid var(--highlight-color);
-            border-bottom: 1px solid var(--highlight-color);
-            padding: 25px 30px;
-            margin: 40px auto;
-            background-color: rgba(255, 209, 220, 0.05);
-            line-height: 1.7;
-            text-align: center;
-            font-style: normal;
-            white-space: pre-wrap;
-        }
 
-
-        /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
-        #apod {
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+        .img-placeholder {
+            width: 100%;
+            height: 420px;
             background-color: var(--bg-color-primary);
-            text-align: center;
-            max-width: 960px;
-            margin: 40px auto;
-            box-shadow: var(--box-shadow-pink-medium);
-        }
-        .apod-card {
-            padding: 15px;
-            border-radius: 8px;
-            background-color: var(--bg-color-secondary);
-            color: var(--highlight-color);
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-        #apod-content > div:first-child {
-            font-family: var(--font-family-english);
-            font-size: 1.5em;
-            margin-bottom: 5px;
-            color: var(--highlight-color);
-            text-align: center;
-        }
-        #apod-content p {
-            line-height: 1.6;
-            margin-top: 10px;
-            font-size: 0.95em;
-            text-align: left;
-            color: var(--text-color-secondary);
-            font-family: var(--font-family-japanese);
-        }
-        
-        /* APOD画像用のクラス */
-        .apod-img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
-
-        /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
-        .hamburger-menu, .scrollable-menu, .nav-links {
-            display: none;
-        }
-        
-        /* 広告プレースホルダを提案CSSに置き換え */
-        .ad-placeholder {
-            height: 160px;
-            background: #fff;
-            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-family: var(--font-family-zen-maru-gothic);
-            margin: 40px 0;
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 1rem;
+            box-shadow: var(--box-shadow-light);
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
         }
-        
-        /* 区切り線 */
-        .separator {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--highlight-color-dark), transparent);
-            margin: 60px 0;
-        }
-        /* 次の記事へのボタン */
+
         .next-article-section .btn {
             display: inline-block;
             padding: 12px 25px;
@@ -328,102 +208,155 @@
             transform: translateY(-2px);
             text-decoration: none;
         }
-        /* コンテンツ内のimg-placeholderの再定義 */
-        .img-placeholder {
-            width: 100%;
-            height: 420px;
-            background-color: var(--bg-color-primary); /* 変数を使用 */
-            color: var(--text-color-primary); /* 変数を使用 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin: 20px 0;
-            padding: 1rem;
-            box-shadow: var(--box-shadow-light); /* 変数を使用 */
-            font-family: var(--font-family-japanese);
-            font-size: 1.2em;
-        }
-        .caption {
-            font-size: 0.9rem;
-            color: var(--text-color-secondary);
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-   
-</style>
+    </style>
 </head>
 <body>
 
 <div class="container">
-<article class="article-detail">
+    <article class="article-detail">
+    
+        <header class="article-header">
+            <section class="section hero" id="intro">
+                <h1 class="hero">エミリーの星日記 — 2025年12月1日〜12月7日</h1>
+                <p class="meta">冬の足音とともに、惑星たちの囁きが聞こえる夜</p>
 
-<header class="article-header">
-<section class="section hero" id="intro">
-<h1 class="hero">エミリーの星日記 — 12/1〜12/7</h1>
-<p class="meta">冬の夜が深まる頃、星たちの静かな動きと新しい出会いを見つめる一週間</p>
+                <div class="img-placeholder" role="img" aria-label="12月初旬の冬の夜空イメージ">
+                    ここに「12月の夜空」イメージを挿入できます
+                </div>
 
-<div class="img-placeholder" role="img" aria-label="12月上旬の夜空イメージ">
-ここに夜空イメージを挿入
-</div>
+                <p class="lead">
+                    親愛なる、夜空を眺める友人へ。  <br>
+                    12月の扉を開いたこの七夜。冬の冷たい空気が頬を撫で、夜がすこし長くなり、私たちは静けさの中で星と語らう時間を取り戻す。  <br>
+                    今週は、内側へと沈みゆく惑星たちと、空の奥底で強く輝く星たち。月は大きく変化し、冬の星座がゆっくりと顔を出す―。<br>
+                    もしよければ、温かな帽子とブランケット、そして少しの好奇心を携えて、夜空の散歩に出かけましょう。
+                </p>
+            </section>
+        </header>
 
-<p class="lead">
-親愛なる夜空を眺める友人へ。  
-12月の始まり、この一週間は月の満ち欠けや惑星の配置が私たちの心を穏やかに揺らす時です。  
-冬の澄んだ空気を吸い込みながら、温かい飲み物を片手に、星たちの声を聞きましょう。
-</p>
-</section>
-</header>
+        <hr class="separator">
 
-<hr class="separator">
+        <section class="section" id="events">
+            <h2>✨ 今週の主な天文現象</h2>
 
-<section class="section" id="events">
-<h2>今週の主な天文現象</h2>
+            <h3>水星の朝の出現 — 年に一度の好機</h3>
+            <p>
+                12月7日、内惑星 Mercury が、この年いちばん好条件の “東方最大離角（Morning apparition）” を迎えます。北半球では夜明け前の東の地平線が開けた場所で、双眼鏡にも頼りつつ、ほんの数十分の静かな輝きに出会えるかもしれません。  
+                もし天気と地平が許すなら、数日前から薄明の東の空を眺めてみて。月や建物の明かりに惑わされないよう、始まりの空をそっと見つめて。:contentReference[oaicite:1]{index=1}
+            </p>
 
-<h3>太陽：射手座に滞在中</h3>
-<p>12月1日現在、太陽は射手座にあり、冒険心や学びの意欲をもたらします。冬至に向かう光の短さと、射手の拡張エネルギーが重なり、内と外のバランスを感じられる週です。</p>
+            <h3>宵の惑星たち — Jupiter と Saturn、そして天の川</h3>
+            <p>
+                冬の夜が深まりはじめると、夕暮れ後の南〜東の空には、まず Saturn、そしてやがて Jupiter が夜を支配します。  
+                木星は2026年1月の衝に向けて明るさを増し、夜通し輝きます。双眼鏡や小さな望遠鏡があれば、木星の四大衛星や縞模様、移ろう雲の帯をたどる楽しみも。:contentReference[oaicite:4]{index=4}  
+                土星は夕方の南西から南の空で、環を抱えた姿を小口径の望遠鏡で狙うのに良い時間です。もし薄明や街の明かりが少ない場所に居られたら、環の広がりを確かめたい。:contentReference[oaicite:5]{index=5}
+            </p>
 
-<h3>月：上弦前の細い月（12/3頃）</h3>
-<p>夜空で観察できる月は徐々に満ちる途中で、双眼鏡でもクレーターの陰影を楽しめます。上弦前の月は、物事を整えるタイミングと重なります。</p>
+            <h3>月の満ち欠けと深夜の星たち</h3>
+            <p>
+                12月上旬は月の満ち欠けが進み、夜ごとに月明かりの影響が変化していきます。特に月明かりが弱まる夜は、冬の星座たち――オリオン座、牡牛座、双子座、ぎょしゃ座、ふたごのあたりの星雲や散開星団が顔を出しやすくなるでしょう。  
+                冬の夜風に頬を冷たくされながら、星座の神話に想いを馳せる。そんな夜を迎えられたら、言葉にならないほど静かで温かい時間が待っているはず。
+            </p>
+        </section>
 
-<h3>惑星：金星・木星・火星の見どころ</h3>
-<p>明け方、東の低空に明るい金星と木星が並び、双眼鏡での観測にも適しています。火星はやや高めの南東に輝き、冬の星座の中で赤く目立ちます。</p>
+        <hr class="separator">
 
-<h3>流星群：小規模活動</h3>
-<p>この週は主要流星群の極大はありませんが、夜空の暗い場所では小規模な流星の観察も可能です。</p>
+        <section class="section" id="interpretation">
+            <h2>🌙 解釈と思索 — 冬の夜に聞こえる星たちの囁き</h2>
 
-<div class="img-placeholder" role="img" aria-label="惑星配置イメージ"></div>
-</section>
+            <p class="lead">
+                夜空はただの背景じゃない。星も惑星も月も、静かに“今”を語る朗読者。  
+                この週は、とくに内と外、過去と未来の行き来を誘うような配置がそっと私たちの心に触れると思うの。  
+            </p>
 
-<hr class="separator">
+            <p class="quote">
+                東の地平 水星のひそやかな眼差し  
+                宵の空 木星と土星が放つ光の約束  
+                月の満ち欠け 夜ごとに変わる景色  
+                冬の風の音 耳を澄ませば聞こえる、星たちの呼吸  
+            </p>
 
-<section class="section" id="interpretation">
-<h2>星たちが伝える週の気分</h2>
-<p class="lead">
-冬の冷たい空気に包まれながら、星たちは穏やかに動きます。射手座の太陽は、私たちに外へ向かう冒険心をもたらし、月や惑星の位置は日々の小さな選択を整える手助けをします。
-</p>
-<p class="quote poem">
-夜空を見上げれば、遠くの星たちが語りかける。  
-心を静め、明日への一歩をそっと踏み出す勇気をくれる。
-</p>
-</section>
+            <h3>水星の目覚め — 新しい朝への小さな誓い</h3>
+            <p>
+                水星が最も見やすくなるこの時期は、夜と朝の境い目に立つ惑星として、まるで「始まり」の象徴みたい。  
+                もしあなたが何か新しいことを始めたいと思っているなら――小さな一歩でもいい、その決意を、夜明け前の空に重ねてみて。  
+            </p>
 
-<hr class="separator">
+            <h3>巨きな惑星たち — 安定と変化の間で</h3>
+            <p>
+                JupiterとSaturn は、巨大だけれど確かな存在。冬の夜空にその存在を示すことで、私たちに「じっと待つ強さ」や「流れの中の安心感」を思い出させてくれる。  
+                年末が近づくこの季節、慌ただしさに心が揺れやすいけれど、星たちはいつだってそこにいて、静かに照らし続けてくれる。  
+            </p>
 
-<section class="section" id="daily-guide">
-<h2>日ごとの星見メモ</h2>
-<h4>12月1日（月）</h4>
-<p>射手座の太陽の光を感じながら、東の空の明るい星や惑星を探してみてください。</p>
-<h4>12月2日（火）</h4>
-<p>静かな夜、双眼鏡で月のクレーターを観察。心を落ち着ける時間に最適です。</p>
-<h4>12月3日（水）</h4>
-<p>上弦前の月。物事を整え、次の行動に向けて準備するのに良い日。</p>
-<h4>12月4日（木）〜12月7日（日）</h4>
-<p>冬の星座を東から順に見上げ、神話や文化を思い浮かべながら観察を楽しむことができます。</p>
+            <h3>冬の夜と、日本の暦が重なる時間</h3>
+            <p>
+                日本ではこの時期、旧暦では「霜月（しもつき）」の終わり、そして新しい月へと移る端境。空気は冷たく澄み、遠くの星まで見通せる。  
+                冬支度を終えて、炬燵（こたつ）やお茶をすすりながら、窓の外に広がる静かな夜空を眺めるのも、冬の風物詩。  
+                もし月明かりが強くて星が見えにくい夜は、月そのものを友として見つめるのもいい。月の満ち欠けや陰影に、昔話の残響を感じながら――。  
+            </p>
+        </section>
 
-<div class="img-placeholder" role="img" aria-label="日別観測マップ"></div>
-</section>
-         <div id="apod">
+        <hr class="separator">
+
+        <section class="section" id="daily-guide">
+            <h2>📅 日ごとの観察メモ</h2>
+
+            <h3>12月1日（月）〜 3日（水）</h3>
+            <p>
+                月は満ちゆく途中で、夜の初めは月明かりが弱め。夕方以降、Saturn を探してみて。宵の空の南西〜南あたりが狙いめ。双眼鏡でリングとともにその色合いを確かめられたら嬉しい。<br>
+                また、夜半すぎには Jupiter が昇りはじめ、冬の星座たちが顔を見せる時間へ。星図アプリを片手に、オリオン座や冬の大三角、ふたご座の星々に挨拶を。  
+            </p>
+
+            <h3>12月4日（木）</h3>
+            <p>
+                月はかなり満ち、月明かりが夜空を明るく染める日。暗い星雲や淡い星団は見づらいかもしれないけど、月そのもの――その光と影のコントラストを楽しむのに絶好の夜。<br>
+                月の海やクレーター、縁のギザギザを眺めるなら望遠鏡や双眼鏡を。寒さ対策と足元の安全に気をつけて、夜の月にゆっくりと顔を近づけてみて。  
+            </p>
+
+            <h3>12月5日（金）〜 6日（土）</h3>
+            <p>
+                月はほぼ満月に近づき、夜の大きな光。けれどその光の下でも、冬の星たち――オリオン、ふたご、ぎょしゃ、エリダヌスなどがほんのり顔を見せるかもしれない。<br>
+                Jupiter は夜を通して、Saturn は宵に。寒さ除けのホットドリンクと毛布をそえて、星と月と闇と光の交差を感じてみて。  
+            </p>
+
+            <h3>12月7日（日） — 水星の見やすい朝 & 冬の夜の準備</h3>
+            <p>
+                朝、東の地平線が開けた高台か見晴らしの良い場所で、夜明け前の空を見上げてみて。水星が、ひそやかに生まれるように光る瞬間を――初冬の冷気とともに迎えるのが、この週のハイライト。<br>
+                もしうまく見つけられたら、小さな双眼鏡でその点のそばを覗いてみて。朝の静けさと、始まりの予感に胸が震える夜明けになるはず。  
+            </p>
+        </section>
+
+        <hr class="separator">
+
+        <section class="section" id="closing">
+            <h2>夜空のしじまに、あなたへ</h2>
+
+            <p class="lead">
+                友よ、星や惑星はただそこにあるだけ。だけど、その静けさが、私たちの心の内側に小さな波紋を起こす。  
+                12月の夜風は冷たいけれど、その空気を通して、遠くの光がいっそう鮮やかに見える。  
+                あなたとこの夜空を分かち合うことで、寒さは少しあたたかく、闇は少しやさしくなる――そんな気がするの。  
+            </p>
+
+            <p class="quote poem">
+                冬の夜の息が 白くなるとき、  
+                星たちはひそやかに 輝きを増す。  
+                あなたの吐く白い息も、  
+                夜空の一部に 溶けていく。  
+            </p>
+
+            <p>
+                もしよければ、この週のどこかで夜空を見上げたとき、  
+                どんな星が輝いていたか、どんな風が吹いたか、私に教えて。  
+                あなたの見た夜が、私の宝物になる――。  
+            </p>
+        </section>
+
+        <section class="next-article-section">
+            <h2>次のお話へ</h2>
+            <p>来週は、12月中旬へ向けて、夜空の変化と、冬の星座たちの本領が見えてくるはず。  
+               またあなたと、星を数えられますように。</p>
+            <p><a class="btn" href="/dear-emily/weekly/2025-12-08-12-14.html">→ 次の記事も読む</a></p>
+        </section>
+ <div id="apod">
           <div class="apod-card">
             <strong>今日の宇宙の光（APOD）</strong>
             <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
@@ -469,27 +402,28 @@
       });
     })();
   </script>
-<hr class="separator">
+          </div>
+        </div>
+        <footer class="section" id="credits">
+            <p class="meta small">
+                参考データ：The Planetary Society「Night Sky: December 2025」、Sky at Night Magazine「Planets in the night sky December 2025」、Space & Telescope「Planets Visible Tonight」、Astronomy.com 観測情報など。<br>
+                惑星の配置、月の満ち欠け、明るさ、視認条件はこれらの公開情報に基づいています。  
+            </p>
+        </footer>
 
-<section class="section next-article-section" id="next">
-<h2>次のお話へ</h2>
-<p>来週は冬至直前の空と惑星たちを眺める週です。夜空で会いましょう。</p>
-<p><a class="btn" href="/dear-emily/weekly/2025-12-08-12-14.html">→ 次のお話</a></p>
-</section>
-
-</article>
+    </article>
 </div>
 
 <script>
-// IntersectionObserverでアニメーション
-document.addEventListener('DOMContentLoaded', function(){
-    const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-            if(e.isIntersecting) e.target.classList.add('visible');
-        });
-    },{threshold:0.12});
-    document.querySelectorAll('.section').forEach(s=>io.observe(s));
-});
+    document.addEventListener('DOMContentLoaded', function(){
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                if(e.isIntersecting) e.target.classList.add('visible');
+            });
+        },{threshold:0.12});
+        document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
 </script>
+
 </body>
 </html>
