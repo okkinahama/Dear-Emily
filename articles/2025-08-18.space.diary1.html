@@ -1,430 +1,496 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>エミリーの星日記 — 2025年8月18日〜8月24日</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記 — 2025年8月18日〜24日</title>
 
-<link rel="stylesheet" href="style.css">
-    <style>
-    /* -------------------------------------- */
-    /* --- 0. 変数定義 (カラーパレットとタイポグラフィ) --- */
-    /* -------------------------------------- */
-    :root {
-        /* == カラーパレット == */
-        --primary-color: #2962ff;         /* 青系 (見出し線など) */
-        --secondary-color: #64b5f6;       /* 水色系 */
-        --text-color-primary: #f0f0f0;    /* 明るい文字 (メイン) */
-        --text-color-secondary: #cccccc;  /* やや薄い文字 (説明文/著作権) */
-        --bg-color-primary: #0b0f1a;      /* 濃い背景 (宇宙の闇) */
-        --bg-color-secondary: #1a1d2e;    /* やや明るい背景 (記事ブロック) */
-        --border-color: #333;             /* 線の色 */
-        --highlight-color: #ffd1dc;       /* ハイライト色 (ピンク/桜色) */
-        --highlight-color-light: #ffc0cb;
-        --highlight-color-dark: #f9a8d4;
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+        <style>
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            /* カラーパレット */
+            --primary-color: #2962ff; /* 青系 */
+            --secondary-color: #64b5f6; /* 水色系 */
+            --text-color-primary: #f0f0f0; /* 明るい文字 */
+            --text-color-secondary: #cccccc; /* やや薄い文字 */
+            --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
+            --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
+            --border-color: #333; /* 線の色 */
+            --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
+            --highlight-color-light: #ffc0cb;
+            --highlight-color-dark: #f9a8d4;
 
-        /* == シャドウ == */
-        --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
-        --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
-        --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
+            /* シャドウ */
+            --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
+            --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
 
-        /* == フォントファミリー == */
-        --font-family-japanese: 'Noto Sans JP', sans-serif;
-        --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
-        --font-family-english: 'Montserrat', sans-serif;
-        --font-family-handlee: 'Handlee', cursive;
+            /* フォントファミリー */
+            --font-family-japanese: 'Noto Sans JP', sans-serif;
+            --font-family-english: 'Montserrat', sans-serif;
+            --font-family-serif-popular: 'Merriweather', serif;
+            --font-family-handlee: 'Handlee', cursive;
+            --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
 
-        /* == タイポグラフィ基本設定 == */
-        --line-height-body: 1.8;
-        --letter-spacing-body: 0.01em;
-    }
+            /* タイポグラフィ基本設定 */
+            --line-height-body: 1.8;
+            --letter-spacing-body: 0.01em;
+        }
 
-    /* -------------------------------------- */
-    /* --- 1. 基本リセットと全体スタイル --- */
-    /* -------------------------------------- */
-    html {
-        scroll-behavior: smooth;
-    }
+        /* --- 全体的な基本スタイル --- */
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden;
-        /* メインフォントはZen Maru Gothicを優先 */
-        font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese); 
-        font-size: 16px;
-        line-height: var(--line-height-body);
-        letter-spacing: var(--letter-spacing-body);
-        /* 宇宙の闇を表現するグラデーション */
-        background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary)); 
-        color: var(--text-color-primary);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 16px;
+            line-height: var(--line-height-body);
+            letter-spacing: var(--letter-spacing-body);
+            background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+            color: var(--text-color-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
 
-    .container {
-        margin: 0 auto;
-        padding: 0;
-        box-sizing: border-box;
-        position: relative;
-        max-width: 1200px;
-    }
+        .container {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 1200px;
+        }
 
-    /* --- リンクスタイル --- */
-    a {
-        color: var(--highlight-color);
-        text-decoration: none;
-        transition: color 0.2s ease-in-out;
-    }
+        /* --- リンクスタイル --- */
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
 
-    a:hover {
-        color: var(--highlight-color-light);
-        text-decoration: underline;
-    }
+        a:hover {
+            color: var(--highlight-color-light);
+            text-decoration: underline;
+        }
 
-    /* -------------------------------------- */
-    /* --- 2. 共通要素 (プログレスバー / セクション) --- */
-    /* -------------------------------------- */
+        /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--highlight-color);
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
 
-    /* スクロールプログレスバー */
-    #scroll-progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 4px;
-        background: var(--highlight-color);
-        z-index: 1000;
-        width: 0%;
-        transition: width 0.1s linear;
-    }
+        /* --- セクションの共通スタイル --- */
+        .section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 960px;
+            box-sizing: border-box;
+            text-align: center;
+            /* script.jsによるアニメーションの初期設定 */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        /* script.jsによって追加されるクラス */
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    /* セクションの共通スタイル (登場アニメーション用) */
-    .section {
-        padding: 60px 20px;
-        margin: 0 auto;
-        max-width: 960px;
-        box-sizing: border-box;
-        text-align: center;
-        /* アニメーション初期設定 */
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 1s ease, transform 1s ease;
-    }
-    
-    /* JavaScriptで追加されるアニメーション完了クラス */
-    .section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* ハンバーガーメニュー関連 (記事ページでは非表示を維持) */
-    .hamburger-menu, .scrollable-menu, .nav-links {
-        display: none;
-    }
-
-    /* -------------------------------------- */
-    /* --- 3. 記事詳細 (article-detail) スタイル --- */
-    /* -------------------------------------- */
-    .article-detail {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-        background: var(--bg-color-secondary);
-        border-radius: 12px;
-        box-shadow: var(--box-shadow-medium);
-        color: var(--text-color-primary);
-        text-align: left;
-    }
-
-    /* 記事タイトル */
-    .article-detail h1 {
-        font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
-        font-size: 2.8em;
-        color: var(--highlight-color);
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    /* 記事本文 */
-    .article-detail p {
-        font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-        font-size: 1.1em;
-        line-height: var(--line-height-body);
-        margin-bottom: 1.5em;
-        color: var(--text-color-primary);
-    }
-
-    /* 記事内画像 */
-    .article-detail img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 20px auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow-light);
-    }
-
-    /* 記事内 h2 スタイル (セクション見出し) */
-    .article-detail h2 {
-        font-family: var(--font-family-japanese);
-        font-size: 1.8em;
-        color: var(--primary-color);
-        margin-top: 2.5em;
-        margin-bottom: 1em;
-        position: relative;
-        padding-bottom: 0.5em;
-        border-bottom: 2px solid var(--border-color);
-        display: inline-block;
-        left: 0;
-    }
-    
-    /* h2装飾（キラキラ絵文字） */
-    .article-detail h2::before {
-        content: "✨"; 
-        margin-right: 10px;
-        font-size: 0.8em;
-    }
-
-    /* 引用/観測ポイントスタイル */
-    .quote {
-        background: rgba(255, 209, 220, 0.1); /* ハイライト色の薄い背景 */
-        border-left: 4px solid var(--highlight-color);
-        padding: 1rem;
-        margin: 1.5rem 0;
-        font-style: italic;
-        border-radius: 4px;
-        color: var(--text-color-primary);
-        font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-    }
-
-    /* -------------------------------------- */
-    /* --- 4. APOD (今日の宇宙の光) スタイル --- */
-    /* -------------------------------------- */
-
-    /* APODコンテナ全体 (IDをheroに統一) */
-    #apod-container-hero { 
-        padding: 25px;
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        background-color: var(--bg-color-secondary);
-        text-align: center;
-        max-width: 960px;
-        margin: 40px auto;
-        box-shadow: var(--box-shadow-medium);
-    }
-
-    /* APODタイトル */
-    #apod-title-hero { 
-        font-family: var(--font-family-english);
-        font-size: 1.8em;
-        margin-bottom: 20px;
-        color: var(--highlight-color);
-        text-align: center;
-    }
-
-    /* APOD メディア (画像/動画) コンテナ */
-    #apod-media-container-hero img, 
-    #apod-media-container-hero iframe { 
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 20px auto;
-        border-radius: 8px;
-        box-shadow: var(--box-shadow-light);
-    }
-
-    /* APOD 説明文 */
-    #apod-explanation-hero { 
-        line-height: 1.7;
-        margin-bottom: 15px;
-        font-size: 1em;
-        text-align: left;
-        color: var(--text-color-secondary);
-        font-family: var(--font-family-japanese);
-    }
-
-    /* APOD 著作権情報 */
-    #apod-copyright-hero { 
-        font-size: 0.85em;
-        color: var(--text-color-secondary);
-        text-align: right;
-        opacity: 0.8;
-    }
-</style>
-    <div id="scroll-progress"></div>
-</head>
-<body>
-    <article class="article-detail">
-        <section class="section">
-            <h1>エミリーの星日記 ✎</h1>
-            <p>―― 2025年8月18日〜24日の夜空より</p>
-            <p>こんにちは、愛しいあなたへ。<br>
-            今週の空は、小さな驚きと静かな物語をそっと届けてくれます。<br>
-            手紙を綴るように、この一週間の夜空のレシピをあなたへ贈ります。</p>
-            <img src="../images/2025-08-18.jpg" alt="夜空のイメージ">
-        </section>
-
-        <section class="section">
-            <h2>🌌 夢見る惑星パレード（2025年8月18〜20日早朝）</h2>
-            
-            <img src="../images/2025-08-18-1.jpg" alt="惑星パレードの想像イメージ">
-            <p>夜明け前の静けさの中、東の空に六つの惑星が並びました。<br>
-            金色に輝く<strong>金星</strong>、堂々と光る<strong>木星</strong>、地平線近くで小さく煌めく<strong>水星</strong>。少し離れて<strong>土星</strong>が見守り、望遠鏡を覗けばウラヌスやネプチューンまでが静かに加わります。</p>
-            <p>まるで宇宙の舞踏会。細い月が加わると、舞台はやさしい灯りに照らされた音楽会のようでした。</p>
-            <div class="quote">
-                <strong>観測ポイント：</strong>東の空、午前4時前後。肉眼で見えるのは水星・金星・木星・土星。望遠鏡があればウラヌス・ネプチューンも探せます。
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>✨ 願いをかける流星の余韻（2025年8月12〜13日夜の名残）</h2>
-            
-            <img src="../images/2025-08-18-2.jpg" alt="流れ星のイメージ">
-            <p>夏の風物詩、ペルセウス座流星群。ピークは過ぎましたが、夜空にはまだその名残が漂っていました。<br>
-            明るい月の光に隠されながらも、ときおり走る一筋の光は、星屑のケーキにふわりと散らした粉砂糖のよう。</p>
-            <p>ほんの一瞬の輝きに、あなたは願いを託しましたか？ その想いは、夜空のキャンバスに確かに描かれているのかもしれません。</p>
-            <div class="quote">
-                <strong>観測ポイント：</strong>深夜から明け方にかけて北東の空。暗い場所で空全体を見渡すのがコツです。
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>🪐 水星のひそやかな輝き（2025年8月19日早朝）</h2>
-            
-            <img src="../images/2025-08-18-3.jpg" alt="水星が地平線近くに輝くイメージ">
-            <p>明け方の空、地平線のすぐ上に小さな銀色の粒が現れます。それが<strong>水星</strong>。<br>
-            19日には**西方最大離角**を迎え、最も観測しやすい姿を見せてくれました。</p>
-            <p>儚くも確かな存在感。ほんの短い時間だけの輝きは、宇宙から届いた小さな秘密の贈り物のようです。</p>
-            <div class="quote">
-                <strong>観測ポイント：</strong>東の低い空。建物や山に遮られない場所がおすすめです。
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>🌙 月と惑星の静かな再会（2025年8月19〜21日早朝）</h2>
-            
-            <img src="../images/2025-08-18-4.jpg" alt="月と惑星の共演イメージ">
-            <p>夜明け前の空で、細い月が惑星たちのそばへと寄り添っていきます。<br>
-            19日から20日には木星や金星のそばに、21日には水星のすぐ近くに。</p>
-            <p>それは親しい友人と肩を並べて歩くような姿。見上げる私たちの心まで、やさしく寄り添ってくれるようでした。</p>
-            <div class="quote">
-                <strong>観測ポイント：</strong>日の出前の東の空。肉眼で十分楽しめますが、双眼鏡があればさらに美しく見えます。
-            </div>
-        </section>
+        /* === 記事詳細ページのスタイル (article-detail) === */
+        .article-detail {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-medium);
+            color: var(--text-color-primary);
+            text-align: left;
+        }
         
-        <div id="apod">
-          <div class="apod-card" id="apod-container-hero">
-            <div id="apod-title-hero"><strong>今日の宇宙の光（APOD）</strong></div>
-            <div id="apod-content-hero">読み込み中…（APIキーは設定が必要です）</div>
-            <div id="apod-media-container-hero"></div>
-            <div id="apod-explanation-hero"></div>
-            <div id="apod-copyright-hero"></div>
-          </div>
+        /* 記事ブロックのh1スタイルをheroタイトルから変更 */
+        .article-header h1.hero {
+            /* 提案CSSのh1定義を継承 */
+            font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin-bottom: 20px;
+            margin-top: 0;
+            line-height: 1.2;
+            text-shadow: none;
+            text-align: center;
+        }
+
+        /* 本文のスタイル */
+        .article-detail p {
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+            text-align: left;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+        .article-header .lead {
+            font-size: 1.25em;
+            line-height: 2.0;
+            margin: 30px 0 0;
+            padding: 20px;
+            border-left: 5px solid var(--highlight-color);
+            background-color: rgba(26, 29, 46, 0.5);
+            text-align: left;
+            color: var(--text-color-primary);
+            font-style: italic;
+        }
+
+
+        .article-detail img, .img-wrap img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        
+        /* 記事内 h2 スタイルを提案CSSに統一 */
+        .article-detail h2 {
+            font-family: var(--font-family-japanese);
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            position: relative;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            left: 0;
+            text-align: left;
+        }
+        .article-detail h2::before {
+            content: "✨";
+            margin-right: 10px;
+            font-size: 0.8em;
+            margin-left: 0;
+        }
+        
+        /* 記事内 h3/h4 も左揃えに統一 */
+        .article-detail h3 {
+            font-family: var(--font-family-montserrat), sans-serif;
+            font-size: 1.6em;
+            color: var(--text-color-primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid var(--highlight-color);
+            text-align: left;
+        }
+        .article-detail h4 {
+            font-family: var(--font-family-japanese), sans-serif;
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px dotted var(--text-color-secondary);
+            text-align: left;
+        }
+        
+
+        /* 引用スタイル */
+        .quote {
+            background: rgba(255, 209, 220, 0.1);
+            border-left: 4px solid var(--highlight-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--text-color-primary);
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            text-align: left;
+        }
+        /* 詩的な引用は中央寄せを維持 */
+        .quote.poem {
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 1.3em;
+            color: var(--highlight-color);
+            border-left: none;
+            border-top: 1px solid var(--highlight-color);
+            border-bottom: 1px solid var(--highlight-color);
+            padding: 25px 30px;
+            margin: 40px auto;
+            background-color: rgba(255, 209, 220, 0.05);
+            line-height: 1.7;
+            text-align: center;
+            font-style: normal;
+            white-space: pre-wrap;
+        }
+
+
+        /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
+        #apod {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--bg-color-primary);
+            text-align: center;
+            max-width: 960px;
+            margin: 40px auto;
+            box-shadow: var(--box-shadow-pink-medium);
+        }
+        .apod-card {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-color-secondary);
+            color: var(--highlight-color);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        #apod-content > div:first-child {
+            font-family: var(--font-family-english);
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: var(--highlight-color);
+            text-align: center;
+        }
+        #apod-content p {
+            line-height: 1.6;
+            margin-top: 10px;
+            font-size: 0.95em;
+            text-align: left;
+            color: var(--text-color-secondary);
+            font-family: var(--font-family-japanese);
+        }
+        
+        /* APOD画像用のクラス */
+        .apod-img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+
+        /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
+        .hamburger-menu, .scrollable-menu, .nav-links {
+            display: none;
+        }
+        
+        /* 広告プレースホルダを提案CSSに置き換え */
+        .ad-placeholder {
+            height: 160px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-family: var(--font-family-zen-maru-gothic);
+            margin: 40px 0;
+        }
+        
+        /* 区切り線 */
+        .separator {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--highlight-color-dark), transparent);
+            margin: 60px 0;
+        }
+        /* 次の記事へのボタン */
+        .next-article-section .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .next-article-section .btn:hover {
+            background-color: #4c7cff;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        /* コンテンツ内のimg-placeholderの再定義 */
+        .img-placeholder {
+            width: 100%;
+            height: 420px;
+            background-color: var(--bg-color-primary); /* 変数を使用 */
+            color: var(--text-color-primary); /* 変数を使用 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 1rem;
+            box-shadow: var(--box-shadow-light); /* 変数を使用 */
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+        }
+        .caption {
+            font-size: 0.9rem;
+            color: var(--text-color-secondary);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="dear-emily">
+
+<header class="site-header">
+    <h1>エミリーの星日記 ✎</h1>
+    <p class="subtitle">2025年8月18日〜24日の夜空より</p>
+</header>
+
+<main class="article-detail">
+
+    <!-- 導入 -->
+    <section class="section">
+        <h2>はじめに</h2>
+        <p>こんにちは、愛しいあなたへ。<br>
+        今週の空は、小さな驚きと静かな物語をそっと届けてくれます。<br>
+        手紙を綴るように、この一週間の夜空のレシピをあなたへ贈ります。</p>
+        <img src="../images/2025-08-18.jpg" alt="夜空のイメージ">
+    </section>
+
+    <!-- 惑星パレード -->
+    <section class="section">
+        <h2>🌌 夢見る惑星パレード（2025年8月18〜20日早朝）</h2>
+        <img src="../images/2025-08-18-1.jpg" alt="惑星パレードの想像イメージ">
+        <p>夜明け前の静けさの中、東の空に六つの惑星が並びました。<br>
+        金色に輝く<strong>金星</strong>、堂々と光る<strong>木星</strong>、地平線近くで小さく煌めく<strong>水星</strong>。少し離れて<strong>土星</strong>が見守り、望遠鏡を覗けばウラヌスやネプチューンまでが静かに加わります。</p>
+        <p>まるで宇宙の舞踏会。細い月が加わると、舞台はやさしい灯りに照らされた音楽会のようでした。</p>
+
+        <div class="quote">
+            <strong>観測ポイント：</strong> 東の空、午前4時前後。肉眼で見えるのは水星・金星・木星・土星。望遠鏡があればウラヌス・ネプチューンも探せます。
         </div>
+    </section>
 
-    <script>
-        // セクションアニメーション用スクリプト
-        document.addEventListener('DOMContentLoaded', function(){
-          const io = new IntersectionObserver((entries)=>{
-            entries.forEach(e=>{
-              if(e.isIntersecting) e.target.classList.add('visible');
-            });
-          },{threshold:0.12});
-          document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    <!-- 流星群の余韻 -->
+    <section class="section">
+        <h2>✨ 願いをかける流星の余韻（2025年8月12〜13日夜の名残）</h2>
+        <img src="../images/2025-08-18-2.jpg" alt="流れ星のイメージ">
+        <p>夏の風物詩、ペルセウス座流星群。ピークは過ぎましたが、夜空にはまだその名残が漂っていました。<br>
+        明るい月の光に隠されながらも、ときおり走る一筋の光は、星屑のケーキにふわりと散らした粉砂糖のよう。</p>
+        <p>ほんの一瞬の輝きに、あなたは願いを託しましたか？ その想いは、夜空のキャンバスに確かに描かれているのかもしれません。</p>
+
+        <div class="quote">
+            <strong>観測ポイント：</strong> 深夜から明け方にかけて北東の空。暗い場所で空全体を見渡すのがコツです。
+        </div>
+    </section>
+
+    <!-- 水星の輝き -->
+    <section class="section">
+        <h2>🪐 水星のひそやかな輝き（2025年8月19日早朝）</h2>
+        <img src="../images/2025-08-18-3.jpg" alt="水星が地平線近くに輝くイメージ">
+        <p>明け方の空、地平線のすぐ上に小さな銀色の粒が現れます。それが<strong>水星</strong>。<br>
+        19日には<strong>西方最大離角</strong>を迎え、最も観測しやすい姿を見せてくれました。</p>
+        <p>儚くも確かな存在感。ほんの短い時間だけの輝きは、宇宙から届いた小さな秘密の贈り物のようです。</p>
+
+        <div class="quote">
+            <strong>観測ポイント：</strong> 東の低い空。建物や山に遮られない場所がおすすめです。
+        </div>
+    </section>
+
+    <!-- 月と惑星の再会 -->
+    <section class="section">
+        <h2>🌙 月と惑星の静かな再会（2025年8月19〜21日早朝）</h2>
+        <img src="../images/2025-08-18-4.jpg" alt="月と惑星の共演イメージ">
+        <p>夜明け前の空で、細い月が惑星たちのそばへと寄り添っていきます。<br>
+        19日から20日には木星や金星のそばに、21日には水星のすぐ近くに。</p>
+        <p>それは親しい友人と肩を並べて歩くような姿。見上げる私たちの心まで、やさしく寄り添ってくれるようでした。</p>
+
+        <div class="quote">
+            <strong>観測ポイント：</strong> 日の出前の東の空。肉眼で十分楽しめますが、双眼鏡があればさらに美しく見えます。
+        </div>
+    </section>
+
+    <!-- 次のお話 -->
+    <section class="next-article-section">
+        <h2>次のお話</h2>
+        <p>次回は「夏の終わりと星のめぐり」をテーマにお届けします。<br>
+        また一緒に、夜空を散歩しましょう。</p>
+    </section>
+<div id="apod">
+          <div class="apod-card">
+            <strong>今日の宇宙の光（APOD）</strong>
+            <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) e.target.classList.add('visible');
         });
-    </script>
+      },{threshold:0.12});
+      document.querySelectorAll('.section').forEach(s=>io.observe(s));
+    });
+  </script>
 
-    <script>
-        // APOD読み込み用スクリプト
-        (function(){
-          const apodContentEl = document.getElementById('apod-content-hero');
-          const apodMediaEl = document.getElementById('apod-media-container-hero');
-          const apodExplanationEl = document.getElementById('apod-explanation-hero');
-          const apodCopyrightEl = document.getElementById('apod-copyright-hero');
-          const apodTitleEl = document.getElementById('apod-title-hero');
+  <script>
+    (function(){
+      const apodEl = document.getElementById('apod-content');
+      const apiKeyApod = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
+      const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
 
-          const apiKeyApod = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
-          const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
-          
-          // 初期状態をクリア
-          if(apodContentEl) apodContentEl.textContent = 'APODを読み込み中...';
-          
-          fetch(url).then(r=>r.json()).then(data=>{
-            if(data && data.url){
-              // ロード中のテキストを削除
-              if(apodContentEl) apodContentEl.style.display = 'none';
+      fetch(url).then(r=>r.json()).then(data=>{
+        if(data && data.url){
+          const isImage = data.media_type === 'image';
+          apodEl.innerHTML = '';
+          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
+          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
+          apodEl.appendChild(title); apodEl.appendChild(date);
+          if(isImage){
+            // apod-imgクラスをここで付与
+            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.className = 'apod-img'; apodEl.appendChild(img);
+          } else {
+            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
+          }
+          if(data.explanation){
+            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
+          }
+        } else {
+          apodEl.textContent = 'APODデータの取得に失敗しました。';
+        }
+      }).catch(err=>{
+        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+        console.error(err);
+      });
+    })();
+  </script>
+          </div>
+        </div>
+</main>
 
-              const isImage = data.media_type === 'image';
-              
-              // タイトルと日付を更新 (今回はdivで既に定義されているため、テキストのみ更新)
-              if (apodTitleEl) apodTitleEl.innerHTML = `<strong>今日の宇宙の光（APOD）：${data.title || ''}</strong>`;
-
-              if(isImage){
-                const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; apodMediaEl.appendChild(img);
-              } else {
-                const iframe = document.createElement('iframe');
-                iframe.src = data.url;
-                iframe.frameBorder = '0';
-                iframe.allowFullScreen = true;
-                iframe.style.width = '100%';
-                iframe.style.minHeight = '400px';
-                apodMediaEl.appendChild(iframe);
-              }
-              if(data.explanation && apodExplanationEl){
-                apodExplanationEl.textContent = data.explanation;
-              }
-              if(data.copyright && apodCopyrightEl){
-                apodCopyrightEl.textContent = `Credit/Copyright: ${data.copyright}`;
-              }
-            } else {
-              if(apodContentEl) apodContentEl.textContent = 'APODデータの取得に失敗しました。';
-            }
-          }).catch(err=>{
-            if(apodContentEl) apodContentEl.textContent = 'APODの読み込み中にエラーが発生しました。';
-            console.error(err);
-          });
-        })();
-    </script>
-                <footer class="closing section">
-            <h2>エミリーから、あなたへ</h2>
-            <img src="../images/2025-08-19-5.jpg" alt="エミリーからの手紙イメージ">
-            <p>今週の空は、まるで宇宙の小さなお茶会のようでした。<br>
-            惑星たちが列をなし、月がそっと寄り添い、流れ星が短い物語を描いていく。</p>
-            <p>それぞれの出来事は、宇宙のレシピに添えられた甘いお菓子や香り高いスパイスのよう。<br>
-            あなたの心にもきっと、やさしい余韻を残していることでしょう。</p>
-            <p>また夜空で会えますように。<br>
-            あなたの見上げるその先に、いつも小さな魔法を。<br><br>
-            ―― エミリーより 🌙</p>
-        </footer>
-    </article>
+<footer class="site-footer">
+    <p>© Dear Emily</p>
+</footer>
 <script>
     document.addEventListener('DOMContentLoaded', function(){
         const io = new IntersectionObserver((entries)=>{
             entries.forEach(e=>{
-                // .section.hero にはアニメーションを適用しないため除外
-                if(e.isIntersecting && !e.target.classList.contains('hero')) {
-                    e.target.classList.add('visible');
-                }
+                if(e.isIntersecting) e.target.classList.add('visible');
             });
         },{threshold:0.12});
         document.querySelectorAll('.section').forEach(s=>io.observe(s));
     });
-
-    // スクロールプログレスバーの処理（もし #scroll-progress 要素を復活させるなら必要）
-    // window.onscroll = () => {
-    //     let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    //     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    //     let scrolled = (winScroll / height) * 100;
-    //     document.getElementById("scroll-progress").style.width = scrolled + "%";
-    // };
 </script>
 
- 
 </body>
 </html>
