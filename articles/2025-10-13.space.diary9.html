@@ -12,7 +12,110 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
    <style>
-        /* style.cssで既に定義されている変数とスタイルを積極的に利用 */
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            /* カラーパレット */
+            --primary-color: #2962ff; /* 青系 */
+            --secondary-color: #64b5f6; /* 水色系 */
+            --text-color-primary: #f0f0f0; /* 明るい文字 */
+            --text-color-secondary: #cccccc; /* やや薄い文字 */
+            --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
+            --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
+            --border-color: #333; /* 線の色 */
+            --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
+            --highlight-color-light: #ffc0cb;
+            --highlight-color-dark: #f9a8d4;
+
+            /* シャドウ */
+            --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
+            --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
+            --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
+
+            /* フォントファミリー */
+            --font-family-japanese: 'Noto Sans JP', sans-serif;
+            --font-family-english: 'Montserrat', sans-serif;
+            --font-family-serif-popular: 'Merriweather', serif;
+            --font-family-handlee: 'Handlee', cursive;
+            --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+
+            /* タイポグラフィ基本設定 */
+            --line-height-body: 1.8;
+            --letter-spacing-body: 0.01em;
+        }
+
+        /* --- 全体的な基本スタイル --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 16px;
+            line-height: var(--line-height-body);
+            letter-spacing: var(--letter-spacing-body);
+            background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+            color: var(--text-color-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            max-width: 1200px;
+        }
+
+        /* --- リンクスタイル --- */
+        a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--highlight-color-light);
+            text-decoration: underline;
+        }
+
+        /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--highlight-color);
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* --- セクションの共通スタイル --- */
+        .section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 960px;
+            box-sizing: border-box;
+            text-align: center;
+            /* script.jsによるアニメーションの初期設定 */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        /* script.jsによって追加されるクラス */
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === 記事詳細ページのスタイル (article-detail) === */
         .article-detail {
             max-width: 800px;
             margin: 40px auto;
@@ -23,15 +126,56 @@
             color: var(--text-color-primary);
             text-align: left;
         }
-        .article-detail h1 {
-            font-family: var(--font-family-english); /* Montserrat */
+        
+        /* 記事ブロックのh1スタイルをheroタイトルから変更 */
+        .article-header h1.hero {
+            /* 提案CSSのh1定義を継承 */
+            font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
             font-size: 2.8em;
             color: var(--highlight-color);
             margin-bottom: 20px;
+            margin-top: 0;
+            line-height: 1.2;
+            text-shadow: none;
             text-align: center;
         }
+
+        /* 本文のスタイル */
+        .article-detail p {
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 1.1em;
+            line-height: var(--line-height-body);
+            margin-bottom: 1.5em;
+            color: var(--text-color-primary);
+            text-align: left;
+            overflow-wrap: break-word;
+            word-break: break-all;
+        }
+        .article-header .lead {
+            font-size: 1.25em;
+            line-height: 2.0;
+            margin: 30px 0 0;
+            padding: 20px;
+            border-left: 5px solid var(--highlight-color);
+            background-color: rgba(26, 29, 46, 0.5);
+            text-align: left;
+            color: var(--text-color-primary);
+            font-style: italic;
+        }
+
+
+        .article-detail img, .img-wrap img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow-light);
+        }
+        
+        /* 記事内 h2 スタイルを提案CSSに統一 */
         .article-detail h2 {
-            font-family: var(--font-family-japanese); /* Noto Sans JP */
+            font-family: var(--font-family-japanese);
             font-size: 1.8em;
             color: var(--primary-color);
             margin-top: 2.5em;
@@ -41,163 +185,175 @@
             border-bottom: 2px solid var(--border-color);
             display: inline-block;
             left: 0;
+            text-align: left;
         }
         .article-detail h2::before {
-            content: "✨"; /* キラキラの絵文字を追加 */
+            content: "✨";
             margin-right: 10px;
             font-size: 0.8em;
+            margin-left: 0;
         }
-        .article-detail p {
-            font-family: var(--font-family-japanese); /* Noto Sans JP */
-            font-size: 1.1em;
-            line-height: var(--line-height-body);
-            margin-bottom: 1.5em;
+        
+        /* 記事内 h3/h4 も左揃えに統一 */
+        .article-detail h3 {
+            font-family: var(--font-family-montserrat), sans-serif;
+            font-size: 1.6em;
             color: var(--text-color-primary);
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid var(--highlight-color);
+            text-align: left;
         }
-        .article-detail img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 12px;
-            box-shadow: var(--box-shadow-light);
+        .article-detail h4 {
+            font-family: var(--font-family-japanese), sans-serif;
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 1px dotted var(--text-color-secondary);
+            text-align: left;
         }
-        .caption {
-            font-family: var(--font-family-japanese); /* Noto Sans JP */
-            font-size: 0.9em;
-            color: var(--text-color-secondary);
-            text-align: center;
-            margin-top: -10px;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-        .section {
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        a {
-            color: var(--highlight-color);
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-        a:hover {
-            color: #ffc0cb;
-            text-decoration: underline;
-        }
+        
 
+        /* 引用スタイル */
         .quote {
             background: rgba(255, 209, 220, 0.1);
-            border-left: 4px solid var(--highlight-color); /* CSS変数を使用 */
+            border-left: 4px solid var(--highlight-color);
             padding: 1rem;
             margin: 1.5rem 0;
             font-style: italic;
             border-radius: 4px;
             color: var(--text-color-primary);
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            text-align: left;
         }
-        .points {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-        .points li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-            font-family: var(--font-family-japanese);
-            font-size: 1.05em;
-            line-height: 1.6;
-        }
-        .points li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--highlight-color); /* CSS変数を使用 */
-            font-size: 1.2em;
-            top: 0;
-        }
-
-        /* 次の記事へのリンクセクション */
-        .next-article-section {
-            margin-top: 60px;
-            text-align: center;
-            padding: 30px;
-            background: var(--bg-color-secondary);
-            border-radius: 12px;
-            box-shadow: var(--box-shadow-medium);
-            border: 1px solid var(--border-color);
-        }
-        .next-article-section h3 { /* h2からh3に変更されているため修正 */
-            font-family: var(--font-family-japanese);
+        /* 詩的な引用は中央寄せを維持 */
+        .quote.poem {
+            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
+            font-size: 1.3em;
             color: var(--highlight-color);
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-        .next-article-section a {
-            font-family: var(--font-family-japanese);
-            font-size: 1.2em;
-            font-weight: bold;
-            display: inline-block;
-            padding: 10px 20px;
-            border: 2px solid var(--highlight-color);
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        .next-article-section a:hover {
-            background-color: var(--highlight-color);
-            color: var(--bg-color-primary);
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(255, 209, 220, 0.6);
+            border-left: none;
+            border-top: 1px solid var(--highlight-color);
+            border-bottom: 1px solid var(--highlight-color);
+            padding: 25px 30px;
+            margin: 40px auto;
+            background-color: rgba(255, 209, 220, 0.05);
+            line-height: 1.7;
+            text-align: center;
+            font-style: normal;
+            white-space: pre-wrap;
         }
 
-        /* APODセクションのスタイル */
-        #apod-container-article {
+
+        /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
+        #apod {
             padding: 25px;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            background-color: var(--bg-color-secondary);
+            background-color: var(--bg-color-primary);
             text-align: center;
             max-width: 960px;
             margin: 40px auto;
-            box-shadow: var(--box-shadow-medium);
+            box-shadow: var(--box-shadow-pink-medium);
         }
-        #apod-title-article {
+        .apod-card {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--bg-color-secondary);
+            color: var(--highlight-color);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        #apod-content > div:first-child {
             font-family: var(--font-family-english);
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 1.5em;
+            margin-bottom: 5px;
             color: var(--highlight-color);
             text-align: center;
         }
-        #apod-media-container-article img, #apod-media-container-article iframe {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: var(--box-shadow-light);
-        }
-        #apod-media-container-article iframe {
-            /* ビデオのアスペクト比を16:9に設定 */
-            aspect-ratio: 16 / 9;
-        }
-        #apod-explanation-article {
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-size: 1em;
+        #apod-content p {
+            line-height: 1.6;
+            margin-top: 10px;
+            font-size: 0.95em;
             text-align: left;
             color: var(--text-color-secondary);
+            font-family: var(--font-family-japanese);
         }
-        #apod-copyright-article {
-            font-size: 0.85em;
+        
+        /* APOD画像用のクラス */
+        .apod-img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+
+        /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
+        .hamburger-menu, .scrollable-menu, .nav-links {
+            display: none;
+        }
+        
+        /* 広告プレースホルダを提案CSSに置き換え */
+        .ad-placeholder {
+            height: 160px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-family: var(--font-family-zen-maru-gothic);
+            margin: 40px 0;
+        }
+        
+        /* 区切り線 */
+        .separator {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--highlight-color-dark), transparent);
+            margin: 60px 0;
+        }
+        /* 次の記事へのボタン */
+        .next-article-section .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .next-article-section .btn:hover {
+            background-color: #4c7cff;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        /* コンテンツ内のimg-placeholderの再定義 */
+        .img-placeholder {
+            width: 100%;
+            height: 420px;
+            background-color: var(--bg-color-primary); /* 変数を使用 */
+            color: var(--text-color-primary); /* 変数を使用 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 1rem;
+            box-shadow: var(--box-shadow-light); /* 変数を使用 */
+            font-family: var(--font-family-japanese);
+            font-size: 1.2em;
+        }
+        .caption {
+            font-size: 0.9rem;
             color: var(--text-color-secondary);
-            text-align: right;
-            opacity: 0.8;
+            margin-top: 0.5rem;
+            text-align: center;
         }
+
+        
     </style>
 </head>
 <body>
