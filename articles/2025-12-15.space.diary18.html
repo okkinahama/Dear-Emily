@@ -4,13 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>エミリーの星日記 — 2025年12月15日〜12月21日｜Dear Emily</title>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
-   <style>
+    <style>
         /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
         :root {
             /* カラーパレット */
@@ -113,6 +112,19 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* footerをsectionに含める場合は、CSS定義をfooter.metaに移動する */
+        footer.meta {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 30px;
+            text-align: center;
+        }
+        footer.meta p {
+            font-size: 0.85em;
+            color: var(--text-color-secondary);
+            text-align: center;
+        }
+
 
         /* === 記事詳細ページのスタイル (article-detail) === */
         .article-detail {
@@ -351,260 +363,198 @@
             margin-top: 0.5rem;
             text-align: center;
         }
-/* --- フッター関連のスタイル --- */
-footer.meta {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 30px;
-}
-footer.meta p {
-    font-size: 0.85em;
-    color: var(--text-color-secondary);
-    text-align: center;
-}
-        
     </style>
 </head>
 <body>
-   <div class="container">
-    <header class="article-header">
-        <h1 class="hero">エミリーの星日記 ✎</h1>
-        <p class="meta">— 2025年12月15日〜12月21日の夜空より</p>
-        
-        <div class="img-wrap" role="img" aria-label="12月中旬の冬の夜空">
-          <img src="../images/2025/december_winter_sky.jpg" alt="12月中旬の冬の夜空">
-        </div>
 
-        <p class="lead">
-            今週の天体ハイライト：欠けてゆく月（下弦へ）／木星と土星の好観測／ウルシッド流星群活動／冬至
-        </p>
-      </header>
+    <div id="scroll-progress"></div>
     
-    <article class="article-detail">
+    <div class="container">
+        <article class="article-detail">
+            <header class="article-header">
+                <h1 class="hero">エミリーの星日記 — 12/15〜12/21</h1>
+                <p class="meta">流星群のきらめき、冬至の静寂、そして新しい季節への予感</p>
+                
+                <div class="img-wrap" role="img" aria-label="週の夜空イメージ（挿入可）">
+                    <img src="https://placehold.co/800x400/101030/ffd1dc?text=Winter+Starry+Night+and+Geminids" alt="冬の夜空、ふたご座から流れ落ちる流星群の光">
+                </div>
 
-        <section class="section reveal" id="intro">
-            <h2>夜へ招く手紙（序）</h2>
-            <p class="lead-paragraph">
-                こんにちは、夜空を見上げるあなたへ。  
-                冬の気配が骨の奥まで染みてくるころ、星たちはいっそう澄んだ声で私たちに語りかけてきます。
-            </p>
-            <p>
-                12月15日から21日までの一週間。  
-                空は少しずつ夜を長くし、**冬至**へ向かって深呼吸をはじめます。  
-                静けさが増すこの季節、星を見るという行為は、世界の鼓動にそっと耳を澄ませることなのかもしれません。
-            </p>
-        </section>
+                <p class="lead">
+                    親愛なる夜空を眺める友人へ。   
+                    今週は、一年で最もドラマティックな流星群、ふたご座流星群の極大を迎え、やがて冬至の静寂へと向かいます。   
+                    寒さが深まるほど、空気は澄み渡り、星々の光はより鋭く鮮やかに輝きます。   
+                    心の中の灯を大切に、この冬の夜を私と一緒に旅しましょう。   
+                </p>
+            </header>
+            
+            <hr class="separator">
 
-        <section class="section reveal" id="moon">
-            <h2>月の物語 — 細くなる光、内へ向かう時間</h2>
-            <figure>
-                <img src="../images/2025/moon_waning_crescent.jpg" alt="欠けてゆく細い月">
-                <figcaption class="caption">欠けてゆく細い月 — 夜明け前の空に現れます。</figcaption>
-            </figure>
-            <p>
-                今週の月は、欠けゆく姿で夜明け前の空に現れます。  
-                15日ごろ、月は細い弓のような**「下弦前後の月」**。  
-                月明かりが弱いため、夜空は星にとって最高の舞台になります。
-            </p>
-            <p>
-                朝方、西の低い空に目を凝らすと、溶けていくような月が見えるかもしれません。  
-                その光は「終わり」ではなく、次の新月へ向かう準備の光。  
-                私はいつも、この月を見ると心の中を静かに整えたくなります。
-            </p>
-            <div class="quote">
-                観測メモ：月明かりが少ない夜は、流星や淡い星雲の観察に最適です。
+
+            <section class="section" id="events">
+                <h2>今週の主な天文・天体イベント</h2>
+
+                <h3>ふたご座流星群の極大（Geminids） — 12月15日</h3>
+                <p>
+                    <strong>12月15日</strong>は、<strong>ふたご座流星群</strong>が極大を迎える日です。   
+                    この流星群は、1月のしぶんぎ座流星群、8月のペルセウス座流星群と並び、「三大流星群」の一つに数えられ、多くの流星が見られることで知られています。   
+                    放射点はふたご座にありますが、夜空全体を眺めることで、流れ星を捉えやすくなります。   
+                    観測条件は良好で、流星が最も多く見られるのは深夜から明け方にかけてです。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://placehold.co/800x450/101030/ffd1dc?text=Geminids+Meteor+Shower+Illustration" alt="ふたご座を放射点とするふたご座流星群が夜空を横切る様子">
+                </div>
+                <p class="caption">
+                    極大日の夜、凍てつく空に輝く流星は、まさに冬のダイヤモンドです。
+                </p>
+
+                <h3>冬至（Winter Solstice） — 12月21日</h3>
+                <p>
+                    一年で最も昼の時間が短く、夜の時間が長い日、<strong>冬至</strong>が<strong>12月21日</strong>に訪れます。   
+                    暦の上では冬の折り返し点であり、この日を境に昼の時間が少しずつ長くなっていきます。   
+                    天文学的には、太陽の黄経が最も南に位置する瞬間であり、日本ではかぼちゃを食べたり、ゆず湯に入ったりする風習があります。   
+                    夜が支配するこの日は、静かに内省し、新しい季節の光を待つタイミングです。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://placehold.co/800x450/101030/ffd1dc?text=Winter+Solstice+Diagram" alt="地球が軌道上で傾き、太陽の光が南半球に多く当たる冬至の概念図">
+                </div>
+
+                <h3>水星の西方最大離角（Mercury Greatest Elongation West）</h3>
+                <p>
+                    冬至と同じ<strong>12月21日</strong>、水星が太陽から西側へ最も離れる「<strong>西方最大離角</strong>」を迎えます。   
+                    このため、水星は日の出前の東の低空で観察しやすくなります。   
+                    最も低い位置にあるとはいえ、空気が澄んでいる冬の早朝、水星を捉えるチャンスです。
+                </p>
+
+            </section>
+
+            <hr class="separator">
+
+            <section class="section" id="apod">
+                <div class="apod-card">
+                    <h2>✨ NASA 今日の宇宙画像 (APOD) ✨</h2>
+                    <div id="apod-content">
+                        <p>APOD情報をロード中... 宇宙の素晴らしい画像を準備しています🚀</p>
+                        </div>
+                </div>
+            </section>
+            <hr class="separator">
+            
+
+            <section class="section" id="interpretation">
+                <h2>夜空の語り — 私が読む、星たちのささやき</h2>
+
+                <p class="lead">
+                    友よ、ふたご座流星群の光は、空からの贈り物です。   
+                    そして冬至の深い闇は、私たちの魂を清めるための静かなステージ。   
+                    「光」と「闇」の対比が際立つこの週は、自分にとって本当に大切なものは何か、問いかけるのに最適です。
+                </p>
+
+                <p class="quote poem">
+                    闇の底に流れる光の粒は、   
+                    消え去る願いではなく、新しい旅立ちの誓い。   
+                    星のしずくが、あなたの未来を濡らすように。   
+                </p>
+
+                <h3>ふたご座流星群 — 流れ星への感謝</h3>
+                <p>
+                    ふたご座流星群は、他の主要な流星群と異なり、小惑星（ファエトン）が放出した塵が起源とされています。   
+                    占星術的には、ふたご座は「情報」「コミュニケーション」「知性」を司ります。   
+                    流星が夜空を横切る一瞬は、私たちの中の固定観念や古い思考を打ち破り、新しい視点、閃きをもたらす瞬間と解釈できます。   
+                    日本で古くから大切にされてきた「流れるもの」への感受性（無常観）をこの夜に重ね、消えていく光の中に、新しい年の希望を託してみましょう。
+                </p>
+
+                <h3>冬至 — 復活の夜明けを待つ</h3>
+                <p>
+                    冬至は、陰が極まり陽に転じる「一陽来復」の境目です。   
+                    最も暗い夜を迎えることで、やがて光が戻ってくることを知る。   
+                    これは、自然界の理であり、私たちの精神的なサイクルにも通じます。   
+                    占星術では、冬至は「リセットと再生」の重要な節目であり、古いものを手放し、新しいサイクルを受け入れるための準備期間です。   
+                    この日、ゆずの香りに包まれながら、あなたの内側にある小さな光に静かに耳を傾けてみてください。
+                </p>
+                
+                <h3>水星の西方最大離角 — 新しい言葉を探して</h3>
+                <p>
+                    水星が日の出前の空に最も輝いて見える西方最大離角は、知性やコミュニケーションの星である水星が、日の光に打ち勝って主張する時です。   
+                    これは、冬至の夜を経て、あなたの心の中で練り上がった「新しい考え」を外の世界に発信していく準備が整ったことを示します。   
+                    夜明け前の澄んだ空気の中で、その光を探してみてください。それは、あなたが来たるべき年に発するべき、最初の「言葉」かもしれません。
+                </p>
+
+            </section>
+
+            <hr class="separator">
+
+            <div class="ad-placeholder">
+                広告スペース（AdSenseがロードされます）
             </div>
-        </section>
 
-        <section class="section reveal" id="planets">
-            <h2>惑星たち — 冬空を支える光の柱</h2>
-            <figure>
-                <img src="../images/2025/winter_planets.jpg" alt="冬の惑星と星座">
-                <figcaption class="caption">木星と土星 — 冬の夜空の主役たち。</figcaption>
-            </figure>
-            <p>
-                日が沈むと、冬の空には堂々とした惑星たちが姿を現します。
-            </p>
-            <h3>木星（Jupiter）</h3>
-            <p>
-                **木星は夜の主役**。  
-                東の空から高く昇り、夜半を過ぎても輝き続けます。  
-                双眼鏡でも小さな光点として衛星が並び、望遠鏡を向ければ縞模様がゆっくりと流れていくのがわかります。
-            </p>
-            <h3>土星（Saturn）</h3>
-            <p>
-                **土星は夕方から夜にかけて南西の空に**。  
-                環を持つその姿は、冬の冷たい空気の中で、どこか孤高の詩人のようです。
-            </p>
-            <div class="quote">
-                観測メモ：小型望遠鏡でも、木星の衛星や土星の環は十分に楽しめます。
-            </div>
-        </section>
+            <section class="next-article-section section">
+                <h2>次の記事へ</h2>
+                <p>来週は年末年始特別編をお届けするかもしれません。</p>
+                <a href="next-article.html" class="button">来週の星日記を読む →</a>
+            </section>
 
-        <section class="section reveal" id="meteors">
-            <h2>流星群 — 冬至に寄り添う小さな願い</h2>
-            <figure>
-                <img src="../images/2025/ursids_meteor.jpg" alt="ウルシッド流星群のイメージ">
-                <figcaption class="caption">ウルシッド流星群 — 冬至に活動する流星群。</figcaption>
-            </figure>
-            <p>
-                この時期、北の空では**「ウルシッド流星群」**が静かに活動しています。  
-                派手さはありませんが、冬至のころにそっと流れる、奥ゆかしい流星たち。
-            </p>
-            <p>
-                **21日から22日の未明にかけて**、空の条件が良ければ、  
-                ときおり短い光の線が夜空を横切るでしょう。
-            </p>
-            <p>
-                願いごとを急いで考えなくても大丈夫。  
-                ただその一瞬を、胸にしまってください。
-            </p>
-        </section>
-
-        <section class="section reveal" id="constellations">
-            <h2>星座 — 冬の物語がはじまる</h2>
-            <figure>
-                <img src="../images/2025/winter_constellations.jpg" alt="オリオン座と冬の星座">
-                <figcaption class="caption">オリオン座 — 冬の夜空で最も雄弁な星座。</figcaption>
-            </figure>
-            <p>
-                冬の星座たちは、とても雄弁です。  
-                **オリオン座、ぎょしゃ座、おうし座、そしてすばる（プレアデス星団）**。
-            </p>
-            <p>
-                双眼鏡を向けると、すばるは宝石箱のように輝き、  
-                オリオン大星雲は淡い雲のように広がります。
-            </p>
-            <p>
-                古代の人々も、同じ星を見上げながら物語を紡いできました。  
-                星座は、時代を超えて続く夜の言葉なのです。
-            </p>
-        </section>
-        
-        <section class="section reveal" id="culture">
-            <h2>暦と日本文化 — 冬至、夜が最も深くなる日</h2>
-            <figure>
-                <img src="../images/2025/touji_yuzuyu.jpg" alt="冬至と柚子湯のイメージ">
-                <figcaption class="caption">冬至 — 再び光が戻ってくることを祝う日。</figcaption>
-            </figure>
-            <p>
-                今週の終わりには、二十四節気の**「冬至」**を迎えます。  
-                一年でいちばん夜が長い日。
-            </p>
-            <p>
-                日本では、柚子湯に入り、かぼちゃを食べ、  
-                再び光が戻ってくることを静かに祝ってきました。
-            </p>
-            <p>
-                夜が最も深いからこそ、次の朝は必ず訪れる。  
-                冬至は、そんな希望を教えてくれる節目です。
-            </p>
-        </section>
-
-        <section class="section reveal" id="astrology">
-            <h2>星の象徴 — 静けさの中で整うもの</h2>
-            <figure>
-                <img src="../images/2025/winter_astrology.jpg" alt="冬の占星イメージ">
-                <figcaption class="caption">占星術的な冬のテーマ — 静かな実行と内省。</figcaption>
-            </figure>
-            <p>
-                今週の天体配置は、「内側を整える」ことを優しく促します。  
-                月が欠け、木星と土星が空を支えるこの時期。
-            </p>
-            <p>
-                占星術的には、拡大と成熟、整理と再構築のテーマが重なります。  
-                何かを急いで決めるよりも、静かに見つめ直す時間。
-            </p>
-            <p>
-                星は答えを与えるのではなく、  
-                考える余白を私たちに残してくれる存在なのだと思います。
-            </p>
-        </section>
-
-        <section class="section reveal" id="conclusion">
-            <h2>結び — 星はいつも、ここにある</h2>
-            <figure>
-                <img src="../images/2025/quiet_night_end.jpg" alt="静かな冬の夜">
-                <figcaption class="caption">静かな冬の夜 — 星はいつも私たちを見守っている。</figcaption>
-            </figure>
-            <p class="lead-paragraph">
-                もし今夜、少しだけ空を見上げられたなら。  
-                完璧な観測でなくても構いません。
-            </p>
-            <p>
-                冬の星は、ただそこにあるだけで、  
-                私たちの心をそっと温めてくれます。
-            </p>
-            <p>
-                また来週、この夜空で会いましょう。  
-                私はいつも、あなたと同じ星を見ています。
-            </p>
-            <p class="signature">— エミリー</p>
-        </section>
-    </article>
-</div>
-
-<div id="apod">
-    <div class="apod-card">
-        <strong>今日の宇宙の光（APOD）</strong>
-        <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function(){
-                const io = new IntersectionObserver((entries)=>{
-                    entries.forEach(e=>{
-                        if(e.isIntersecting) e.target.classList.add('visible');
-                    });
-                },{threshold:0.12});
-                document.querySelectorAll('.section').forEach(s=>io.observe(s));
-            });
-          </script>
-        
-          <script>
-            (function(){
-                const apodEl = document.getElementById('apod-content');
-                const apiKeyApod = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
-                const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
-        
-                fetch(url).then(r=>r.json()).then(data=>{
-                    if(data && data.url){
-                        const isImage = data.media_type === 'image';
-                        apodEl.innerHTML = '';
-                        const title = document.createElement('div'); title.textContent = data.title || 'APOD';
-                        const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
-                        apodEl.appendChild(title); apodEl.appendChild(date);
-                        if(isImage){
-                            // apod-imgクラスをここで付与
-                            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.className = 'apod-img'; apodEl.appendChild(img);
-                        } else {
-                            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
-                        }
-                        if(data.explanation){
-                            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
-                        }
-                    } else {
-                        apodEl.textContent = 'APODデータの取得に失敗しました。';
-                    }
-                }).catch(err=>{
-                    apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
-                    console.error(err);
-                });
-            })();
-          </script>
+            
+            <footer class="meta section">
+                <p>&copy; 2025 Emily's Starlight Diary. All rights reserved.</p>
+            </footer>
+            
+        </article>
     </div>
-</div>
+    
+    <noscript>
+        <style>
+            .section { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
 
-<section class="next-article-section">
-    <h3>次のお話へ</h3>
-    <p>
-        次回は「冬のすばると日本の昔話」。  
-        星と物語が重なる夜をお届けします。
-    </p>
-    <a href="#" class="button">次のお話へ</a>
-</section>
+    <script>
+        // Intersection Observer for fade-in effect
+        document.addEventListener('DOMContentLoaded', function(){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting) e.target.classList.add('visible');
+                });
+            },{threshold:0.12});
+            document.querySelectorAll('.section').forEach(s=>io.observe(s));
+        });
+    </script>
 
-<footer class="meta">
-    <p>Dear Emily - 星日記 2025年12月15日〜12月21日</p>
-</footer>
+    <script>
+        // APOD (Astronomy Picture of the Day) fetch script
+        (function(){
+            const apodEl = document.getElementById('apod-content');
+            // 注意: APIキーは実際の値に置き換える必要があります
+            const apiKeyApod = 'DEMO_KEY'; 
+            const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
+
+            fetch(url).then(r=>r.json()).then(data=>{
+                if(data && data.url){
+                    const isImage = data.media_type === 'image';
+                    apodEl.innerHTML = '';
+                    
+                    const title = document.createElement('div'); title.textContent = data.title || 'APOD';
+                    const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
+                    apodEl.appendChild(title); apodEl.appendChild(date);
+                    
+                    if(isImage){
+                        const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.className = 'apod-img'; apodEl.appendChild(img);
+                    } else {
+                        // YouTubeなどの動画の場合
+                        const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
+                    }
+                    
+                    if(data.explanation){
+                        const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
+                    }
+                } else {
+                    apodEl.textContent = 'APODデータの取得に失敗しました。';
+                }
+            }).catch(err=>{
+                apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
+                console.error(err);
+            });
+        })();
+    </script>
     
 </body>
 </html>
