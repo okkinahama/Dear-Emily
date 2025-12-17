@@ -1,540 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>エミリーの星日記｜今週の空（2025/10/27–11/02）</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記 — 2025年10月27日〜11月2日</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2597955691662954" crossorigin="anonymous"></script>
-   <style>
-        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+
+    <style>
+        /* --- 変数定義 --- */
         :root {
-            /* カラーパレット */
-            --primary-color: #2962ff; /* 青系 */
-            --secondary-color: #64b5f6; /* 水色系 */
-            --text-color-primary: #f0f0f0; /* 明るい文字 */
-            --text-color-secondary: #cccccc; /* やや薄い文字 */
-            --bg-color-primary: #0b0f1a; /* 濃い背景 (宇宙の闇) */
-            --bg-color-secondary: #1a1d2e; /* やや明るい背景 (記事ブロック) */
-            --border-color: #333; /* 線の色 */
-            --highlight-color: #ffd1dc; /* ハイライト色 (ピンク/桜色) */
+            --primary-color: #2962ff;
+            --secondary-color: #64b5f6;
+            --text-color-primary: #f0f0f0;
+            --text-color-secondary: #cccccc;
+            --bg-color-primary: #0b0f1a;
+            --bg-color-secondary: #1a1d2e;
+            --border-color: #333;
+            --highlight-color: #ffd1dc;
             --highlight-color-light: #ffc0cb;
             --highlight-color-dark: #f9a8d4;
-
-            /* シャドウ */
             --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.2);
             --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
-            --box-shadow-pink-light: 0 8px 20px rgba(255, 182, 193, 0.2);
             --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
-
-            /* フォントファミリー */
             --font-family-japanese: 'Noto Sans JP', sans-serif;
             --font-family-english: 'Montserrat', sans-serif;
-            --font-family-serif-popular: 'Merriweather', serif;
-            --font-family-handlee: 'Handlee', cursive;
             --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
-
-            /* タイポグラフィ基本設定 */
             --line-height-body: 1.8;
-            --letter-spacing-body: 0.01em;
         }
 
-        /* --- 全体的な基本スタイル --- */
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* --- 基本スタイル --- */
+        html { scroll-behavior: smooth; }
         body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            overflow-x: hidden;
+            margin: 0; padding: 0;
             font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-            font-size: 16px;
-            line-height: var(--line-height-body);
-            letter-spacing: var(--letter-spacing-body);
             background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
             color: var(--text-color-primary);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            line-height: var(--line-height-body);
+            overflow-x: hidden;
         }
 
-        .container {
-            margin: 0 auto;
-            padding: 0;
-            box-sizing: border-box;
-            position: relative;
-            max-width: 1200px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; position: relative; }
 
-        /* --- リンクスタイル --- */
-        a {
-            color: var(--highlight-color);
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-
-        a:hover {
-            color: var(--highlight-color-light);
-            text-decoration: underline;
-        }
-
-        /* --- スクロールプログレスバー用のスタイル (script.jsが参照) --- */
+        /* --- プログレスバー --- */
         #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: var(--highlight-color);
-            z-index: 1000;
-            width: 0%;
-            transition: width 0.1s linear;
+            position: fixed; top: 0; left: 0; height: 4px;
+            background: var(--highlight-color); z-index: 1000; width: 0%;
         }
 
-        /* --- セクションの共通スタイル --- */
+        /* --- セクションアニメーション --- */
         .section {
-            padding: 60px 20px;
-            margin: 0 auto;
-            max-width: 960px;
-            box-sizing: border-box;
-            text-align: center;
-            /* script.jsによるアニメーションの初期設定 */
-            opacity: 0;
-            transform: translateY(30px);
+            padding: 60px 20px; max-width: 960px; margin: 0 auto;
+            opacity: 0; transform: translateY(30px);
             transition: opacity 1s ease, transform 1s ease;
         }
-        /* script.jsによって追加されるクラス */
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .section.visible { opacity: 1; transform: translateY(0); }
 
-        /* === 記事詳細ページのスタイル (article-detail) === */
+        /* --- 記事詳細スタイル --- */
         .article-detail {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            background: var(--bg-color-secondary);
-            border-radius: 12px;
+            max-width: 800px; margin: 40px auto; padding: 30px;
+            background: var(--bg-color-secondary); border-radius: 12px;
             box-shadow: var(--box-shadow-medium);
-            color: var(--text-color-primary);
-            text-align: left;
         }
-        
-        /* 記事ブロックのh1スタイルをheroタイトルから変更 */
+
+        .article-header { text-align: center; margin-bottom: 40px; }
         .article-header h1.hero {
-            /* 提案CSSのh1定義を継承 */
             font-family: var(--font-family-english), var(--font-family-zen-maru-gothic);
-            font-size: 2.8em;
-            color: var(--highlight-color);
-            margin-bottom: 20px;
-            margin-top: 0;
-            line-height: 1.2;
-            text-shadow: none;
-            text-align: center;
+            font-size: 2.5em; color: var(--highlight-color); margin-bottom: 20px;
         }
 
-        /* 本文のスタイル */
-        .article-detail p {
-            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-            font-size: 1.1em;
-            line-height: var(--line-height-body);
-            margin-bottom: 1.5em;
-            color: var(--text-color-primary);
-            text-align: left;
-            overflow-wrap: break-word;
-            word-break: break-all;
-        }
-        .article-header .lead {
-            font-size: 1.25em;
-            line-height: 2.0;
-            margin: 30px 0 0;
-            padding: 20px;
-            border-left: 5px solid var(--highlight-color);
-            background-color: rgba(26, 29, 46, 0.5);
-            text-align: left;
-            color: var(--text-color-primary);
-            font-style: italic;
+        .lead {
+            font-size: 1.25em; padding: 20px; border-left: 5px solid var(--highlight-color);
+            background: rgba(26, 29, 46, 0.5); font-style: italic; text-align: left;
         }
 
+        .lead-paragraph { font-size: 1.15em; color: var(--highlight-color-light); margin-bottom: 1.5em; }
 
-        .article-detail img, .img-wrap img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-            border-radius: 12px;
-            box-shadow: var(--box-shadow-light);
+        h2 {
+            font-size: 1.8em; color: var(--primary-color); border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5em; margin-top: 2em; display: inline-block;
         }
-        
-        /* 記事内 h2 スタイルを提案CSSに統一 */
-        .article-detail h2 {
-            font-family: var(--font-family-japanese);
-            font-size: 1.8em;
-            color: var(--primary-color);
-            margin-top: 2.5em;
-            margin-bottom: 1em;
-            position: relative;
-            padding-bottom: 0.5em;
-            border-bottom: 2px solid var(--border-color);
-            display: inline-block;
-            left: 0;
-            text-align: left;
-        }
-        .article-detail h2::before {
-            content: "✨";
-            margin-right: 10px;
-            font-size: 0.8em;
-            margin-left: 0;
-        }
-        
-        /* 記事内 h3/h4 も左揃えに統一 */
-        .article-detail h3 {
-            font-family: var(--font-family-montserrat), sans-serif;
-            font-size: 1.6em;
-            color: var(--text-color-primary);
-            margin-top: 40px;
-            margin-bottom: 15px;
-            padding-left: 15px;
-            border-left: 4px solid var(--highlight-color);
-            text-align: left;
-        }
-        .article-detail h4 {
-            font-family: var(--font-family-japanese), sans-serif;
-            font-size: 1.3em;
-            color: var(--primary-color);
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding: 5px 0;
-            border-bottom: 1px dotted var(--text-color-secondary);
-            text-align: left;
-        }
-        
+        h2::before { content: "✨"; margin-right: 10px; }
 
-        /* 引用スタイル */
-        .quote {
-            background: rgba(255, 209, 220, 0.1);
-            border-left: 4px solid var(--highlight-color);
-            padding: 1rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            border-radius: 4px;
-            color: var(--text-color-primary);
-            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-            text-align: left;
+        h3 { border-left: 4px solid var(--highlight-color); padding-left: 15px; margin-top: 40px; }
+
+        /* --- 画像・キャプション --- */
+        .img-wrap img, figure img {
+            max-width: 100%; border-radius: 12px; box-shadow: var(--box-shadow-light);
+            display: block; margin: 20px auto;
         }
-        /* 詩的な引用は中央寄せを維持 */
-        .quote.poem {
-            font-family: var(--font-family-zen-maru-gothic), var(--font-family-japanese);
-            font-size: 1.3em;
-            color: var(--highlight-color);
-            border-left: none;
-            border-top: 1px solid var(--highlight-color);
-            border-bottom: 1px solid var(--highlight-color);
-            padding: 25px 30px;
-            margin: 40px auto;
-            background-color: rgba(255, 209, 220, 0.05);
-            line-height: 1.7;
-            text-align: center;
-            font-style: normal;
-            white-space: pre-wrap;
+        .caption, figcaption {
+            font-size: 0.9rem; color: var(--text-color-secondary);
+            text-align: center; margin-top: -10px; margin-bottom: 20px;
         }
 
+        /* --- リスト --- */
+        .points {
+            background: rgba(255, 209, 220, 0.05); padding: 25px 40px;
+            border-radius: 12px; border: 1px dashed var(--highlight-color-dark);
+        }
+        .points li { margin-bottom: 15px; }
 
-        /* APODセクションのスタイル (IDをscript.jsに合わせて変更) */
+        /* --- APOD (NASAデータ表示用クラス) --- */
         #apod {
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            background-color: var(--bg-color-primary);
-            text-align: center;
-            max-width: 960px;
-            margin: 40px auto;
-            box-shadow: var(--box-shadow-pink-medium);
+            padding: 25px; border-radius: 12px; background: var(--bg-color-primary);
+            box-shadow: var(--box-shadow-pink-medium); margin: 40px auto;
         }
-        .apod-card {
-            padding: 15px;
-            border-radius: 8px;
-            background-color: var(--bg-color-secondary);
-            color: var(--highlight-color);
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-        #apod-content > div:first-child {
-            font-family: var(--font-family-english);
-            font-size: 1.5em;
-            margin-bottom: 5px;
-            color: var(--highlight-color);
-            text-align: center;
-        }
-        #apod-content p {
-            line-height: 1.6;
-            margin-top: 10px;
-            font-size: 0.95em;
-            text-align: left;
-            color: var(--text-color-secondary);
-            font-family: var(--font-family-japanese);
-        }
-        
-        /* APOD画像用のクラス */
-        .apod-img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
+        .apod-title-container { font-weight: bold; color: var(--highlight-color); }
+        .apod-explanation { font-size: 0.9em; text-align: left; color: var(--text-color-secondary); }
+        .apod-img { max-width: 100%; border-radius: 8px; margin: 15px 0; }
+        .apod-header-reset { border: none; margin-top: 0; }
 
-
-        /* ハンバーガーメニュー関連（記事ページなので不要だが定義を保持） */
-        .hamburger-menu, .scrollable-menu, .nav-links {
-            display: none;
-        }
-        
-        /* 広告プレースホルダを提案CSSに置き換え */
-        .ad-placeholder {
-            height: 160px;
-            background: #fff;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-family: var(--font-family-zen-maru-gothic);
+        /* --- フッターと区切り線 --- */
+        .separator {
+            border: none; height: 1px;
+            background: linear-gradient(to right, transparent, var(--highlight-color-dark), transparent);
             margin: 40px 0;
         }
-        
-        /* 区切り線 */
-        .separator {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--highlight-color-dark), transparent);
-            margin: 60px 0;
-        }
-        /* 次の記事へのボタン */
-        .next-article-section .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .next-article-section .btn:hover {
-            background-color: #4c7cff;
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-        /* コンテンツ内のimg-placeholderの再定義 */
-        .img-placeholder {
-            width: 100%;
-            height: 420px;
-            background-color: var(--bg-color-primary); /* 変数を使用 */
-            color: var(--text-color-primary); /* 変数を使用 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin: 20px 0;
-            padding: 1rem;
-            box-shadow: var(--box-shadow-light); /* 変数を使用 */
-            font-family: var(--font-family-japanese);
-            font-size: 1.2em;
-        }
-        .caption {
-            font-size: 0.9rem;
-            color: var(--text-color-secondary);
-            margin-top: 0.5rem;
-            text-align: center;
-        }
+        .meta { font-size: 0.9em; color: var(--text-color-secondary); }
+        .footer-center { text-align: center; }
+        .copyright-text { margin-top: 40px; font-size: 0.8em; }
 
-        
+        .btn {
+            display: inline-block; padding: 12px 25px; background: var(--primary-color);
+            color: white; border-radius: 25px; font-weight: bold; text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); background: #4c7cff; }
     </style>
 </head>
 <body>
-   <div class="container">
-    <header class="article-header">
-        <h1 class="hero">エミリーの星日記 — 2025年10月27日〜11月2日</h1>
-        <p class="meta">夜と小さな流れ星、そして言葉がこぼれる場所へ。 — エミリーと一緒に歩く一週間の天文ノート</p>
-        
-        <div class="img-wrap" role="img" aria-label="週の夜空イメージ（挿入可）">
-          <!-- プレースホルダ画像を使用 -->
-          <img src="https://placehold.co/800x400/101030/ffd1dc?text=Deep+Autumn+Night+Sky" alt="夜空の深い青と星々の光、流星群が予想される夜のイメージ">
-        </div>
 
-        <p class="lead">
-          今週の天体ハイライト：オリオン座流星群の終盤／第一四分（半月）／水星の射手座入り
-        </p>
-      </header>
-    
-    <article class="article-detail">
+    <div id="scroll-progress"></div>
 
-        <!-- 起 -->
-        <section class="section reveal" id="ki">
-            <h2>夜へ招く手紙（序）</h2>
+    <div class="container">
+        <header class="article-header section">
+            <h1 class="hero">エミリーの星日記 — 2025年10月27日〜11月2日</h1>
+            <p class="meta">夜と小さな流れ星、そして言葉がこぼれる場所へ。 — エミリーと一緒に歩く一週間の天文ノート</p>
+            
+            <div class="img-wrap">
+                <img src="https://placehold.co/800x400/101030/ffd1dc?text=Deep+Autumn+Night+Sky" alt="夜空の深い青と星々の光">
+            </div>
 
-            <p class="lead-paragraph">
-                こんばんは、友だち。私はエミリー。今週は一緒に、街灯にゆれる影を抜けて、夜空の仲間たちを覗きに行く約束をしてきたよ。目を閉じれば、風が小さな約束を運んでくる。十月の余韻がまだ温かく残るこの季節、夜は少しだけ早くやってくるけれど、代わりに星がひとつひとつはっきりと顔を見せてくれる。
+            <p class="lead">
+                今週の天体ハイライト：オリオン座流星群の終盤／第一四分（半月）／水星の射手座入り
             </p>
+        </header>
 
-            <figure>
-                <img src="/images/week-2025-10-27-11-02-01.jpg" alt="穏やかな秋の夜空">
-                <figcaption class="caption">秋の空 — 表情を変える月と、まだ名残の流星群。</figcaption>
-            </figure>
+        <article class="article-detail">
 
-            <p>
-                まず大事なことを一つ伝えるね。オリオン座流星群（Orionids）は依然として活動期で、観測期間は10月2日〜11月7日頃とされています。まだしばらくの間、夜空の「ちらり」とした瞬間に願いを投げられる可能性があるよ。暗い場所で夜を待つと、尾を引く光に出会えるかもしれない。
-            </p>
-        </section>
+            <section class="section" id="ki">
+                <h2>夜へ招く手紙（序）</h2>
+                <p class="lead-paragraph">
+                    こんばんは、友だち。私はエミリー。今週は一緒に、街灯にゆれる影を抜けて、夜空の仲間たちを覗きに行く約束をしてきたよ。
+                </p>
+                <figure>
+                    <img src="https://placehold.co/800x450/1a1d2e/64b5f6?text=Autumn+Night+Sky+Scene" alt="穏やかな秋の夜空">
+                    <figcaption>秋の空 — 表情を変える月と、まだ名残の流星群。</figcaption>
+                </figure>
+                <p>
+                    まず大事なことを一つ伝えるね。オリオン座流星群（Orionids）は依然として活動期で、観測期間は10月2日〜11月7日頃とされています。まだしばらくの間、夜空の「ちらり」とした瞬間に願いを投げられる可能性があるよ。
+                </p>
+            </section>
 
-        <!-- 承 -->
-        <section class="section reveal" id="shou">
-            <h2>天文の事実を織り込む（観察の手引き）</h2>
+            <hr class="separator">
 
-            <p class="lead-paragraph">
-                ここからは、実際の天体の動きを一緒に見ていくよ。私はいつも、星の営みを「約束された季節の振る舞い」として受け取る。けれど、それを語るときはできるだけ事実を手放さないようにしている。だから今週の「見どころ」を、できるだけ確かな情報で伝えるね。
-            </p>
+            <section class="section" id="shou">
+                <h2>天文の事実を織り込む（観察の手引き）</h2>
+                <p class="lead-paragraph">
+                    ここからは、実際の天体の動きを一緒に見ていくよ。
+                </p>
+                
+                <h3>月の様子（ムーンフェイズ）</h3>
+                <p>
+                    この週の月は、<strong>10月29日ごろに「第一四分（First Quarter）」</strong>を迎えます。月が半分の形で夜空に顔を見せ、観察には都合の良いポイントのひとつだよ。
+                </p>
 
-            <figure>
-                <img src="/images/week-2025-10-27-11-02-02.jpg" alt="三日月と星たち">
-                <figcaption class="caption">月の形は日に日に変わる — 観察ノートに描いてみて。</figcaption>
-            </figure>
+                <h3>惑星の動き</h3>
+                <p>
+                    主要な惑星移動として、この週末にかけて注目されるのは<strong>水星が10月29日頃に射手座へ入る</strong>という点。
+                </p>
+                <p class="meta">
+                    （注）天体の厳密な入宮時間は地域差でズレがあります。ここでは国際的に公開されているエフェメリスを参照しています。
+                </p>
+            </section>
 
-            <h3>月の様子（ムーンフェイズとムーンサイン）</h3>
-            <p>
-                この週の月は、10月29日ごろに「第一四分（First Quarter）」を迎えます — 月が半分の形で夜空に顔を見せ、観察には都合の良いポイントのひとつだよ。
-            </p>
-
-            <p>
-                ムーンサインについては、地域や時刻差で細かく変わることがあるけれど、観測カレンダーでは10月27日〜28日は月が山羊座付近、10月29日以降は水瓶座へ入るタイミングと見られています。
-            </p>
-
-            <h3>惑星の動き（短い注目点）</h3>
-            <p>
-                主要な惑星移動として、この週末にかけて注目されるのは水星が10月29日頃に射手座へ入るという点。射手座に入る水星は、言葉や旅や学びに少し大胆さを与える傾向があるよ。実務やメールの文面にスパイスが入る気配も。
-            </p>
-
-            <p class="meta">
-                （注）天体の厳密な入宮時間は地域差でズレがあります。ここでは国際的に公開されているエフェメリスを参照しています。
-            </p>
-        </section>
-
-        <!-- 転 -->
-        <section class="section reveal" id="ten">
-            <h2>夜のドラマ（観察する・詩的解釈）</h2>
-
-            <p class="lead-paragraph">
-                さて、ここからは私の好きな部分。事実を手の内に持ちながら、夜空と会話をする時間だよ。科学は確かだけれど、詩はその間を縫う柔らかな糸。あなたは私の隣で、毛布を肩にかけて、同じ空を見上げてくれる？
-            </p>
-
-            <figure>
-                <img src="/images/week-2025-10-27-11-02-03.jpg" alt="流星の軌跡（イメージ）">
-                <figcaption class="caption">流星は短い言葉のように、心の上を走り抜ける。</figcaption>
-            </figure>
-
-            <p>
-                今週はオリオン座流星群が活動期の終盤に近づいているけれど、観測期間は11月7日頃まで続きます。ピークは先週だったけれど、まだ夜空の「ちらり」を楽しめるはず。街明かりから離れて、暖かい飲み物を持って、しばらく黙って空を見ていよう。
-            </p>
-
-            <p>
-                また、10月中旬〜下旬に話題になった新彗星（例：C/2025 R2（SWAN）など）についても、複数の観測報告が出ています。見えるかどうかは条件次第だけれど、双眼鏡を持って出かけるのも素敵だよ。
-            </p>
-
-            <p>
-                占星術的には、月が山羊→水瓶へ移るこの流れは「静かな実行」と「新しい視点」の揺れ動き。そこに水星の射手入りが重なると、言葉が遠くまで届く週になりそう。あなたが誰かに短い手紙を書きたくなるのは自然なことだよ。
-            </p>
-        </section>
-
-        <!-- 結 -->
-        <section class="section reveal" id="ketsu">
-            <h2>手をつなぎ、次の夜へ（結び）</h2>
-
-            <p class="lead-paragraph">最後に、私からあなたへの小さな提案。</p>
-
-            <ol class="points">
-                <li>暗い場所で夜を待つこと（流星に出会える確率が高まる）。</li>
-                <li>10月29日の半月（第一四分）の日に観察ノートをつけてみること。</li>
-                <li>言葉を交わしたくなったら、水星が動く週末を利用して小さなメッセージを送ること。</li>
-            </ol>
-
-            <figure>
-                <img src="/images/week-2025-10-27-11-02-04.jpg" alt="友と見る夜空（イメージ）">
-                <figcaption class="caption">星を友だちにする夜 — あなたと私の小さな約束。</figcaption>
-            </figure>
-
-            <p>
-                私はいつだって、あなたが夜空を見上げるたびに小さな勇気を持てるような言葉を探している。次の一週間も、月はまた顔を変え、彗星や流星は短い物語をくれる。どうか良い夜を。空は待っていてくれるから。 — エミリー
-            </p>
-        </section>
-    </article>
-</div>
-
-<div id="apod">
-          <div class="apod-card">
-            <strong>今日の宇宙の光（APOD）</strong>
-            <div id="apod-content">読み込み中…（APIキーは設定が必要です）</div>
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting) e.target.classList.add('visible');
-        });
-      },{threshold:0.12});
-      document.querySelectorAll('.section').forEach(s=>io.observe(s));
-    });
-  </script>
-
-  <script>
-    (function(){
-      const apodEl = document.getElementById('apod-content');
-      const apiKeyApod = 'DEMO_KEY'; // 実運用時は自身のAPIキーに置き換えてください
-      const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`;
-
-      fetch(url).then(r=>r.json()).then(data=>{
-        if(data && data.url){
-          const isImage = data.media_type === 'image';
-          apodEl.innerHTML = '';
-          const title = document.createElement('div'); title.textContent = data.title || 'APOD';
-          const date = document.createElement('div'); date.className='meta'; date.textContent = data.date || '';
-          apodEl.appendChild(title); apodEl.appendChild(date);
-          if(isImage){
-            // apod-imgクラスをここで付与
-            const img = document.createElement('img'); img.src = data.url; img.alt = data.title || 'APOD image'; img.className = 'apod-img'; apodEl.appendChild(img);
-          } else {
-            const link = document.createElement('a'); link.href = data.url; link.textContent = 'APODを表示する'; link.target='_blank'; apodEl.appendChild(link);
-          }
-          if(data.explanation){
-            const ex = document.createElement('p'); ex.textContent = data.explanation; apodEl.appendChild(ex);
-          }
-        } else {
-          apodEl.textContent = 'APODデータの取得に失敗しました。';
-        }
-      }).catch(err=>{
-        apodEl.textContent = 'APODの読み込み中にエラーが発生しました。';
-        console.error(err);
-      });
-    })();
-  </script>
-          </div>
-        </div>
-                <div class="next-article-section">
-                    <h3>次のお話へ</h3>
-                    <p>もしよければ、次回は「冬の星座図鑑 — 冬至前に知っておきたい三つの星座と観察スポット」をお届けします。準備ができたら教えてね（観察写真や都市名があれば、より地域に合わせた観察ガイドを作るよ）。</p>
-                    <a href="/dear-emily/next-article.html" class="button">次のお話へ</a>
+            <section class="section" id="apod">
+                <div class="apod-card">
+                    <h2 class="apod-header-reset">✨ NASA 今日の宇宙画像 ✨</h2>
+                    <div id="apod-content">
+                        <p>宇宙の素晴らしい画像を準備しています🚀</p>
+                    </div>
                 </div>
             </section>
 
-            <footer class="meta">
-                <p>参考資料（主要）：AMS（流星群カレンダー）、TimeandDate（夜空の見どころ）、MoonTracks（ムーン＆イングレス）、LunaF / Astro-Seek（ムーンフェイズ）、各ニュース記事（彗星報道）。</p>
-                <p>主要参照：AMS（流星群情報）・TimeandDate（観測カレンダー）・MoonTracks（ムーンのサイン／イングレス）・LunaF（ムーンフェイズ）・People / LiveScience（彗星関連報道）。</p>
-            </footer>
-        </article>
-        
+            <section class="section" id="ten">
+                <h2>夜のドラマ（観察する・詩的解釈）</h2>
+                <p class="lead-paragraph">
+                    さて、ここからは私の好きな部分。
+                </p>
+                <figure>
+                    <img src="https://placehold.co/800x450/101030/ffd1dc?text=Meteor+Trail+Illustration" alt="流星の軌跡">
+                    <figcaption>流星は短い言葉のように、心の上を走り抜ける。</figcaption>
+                </figure>
+                <p>
+                    今週はオリオン座流星群が活動期の終盤に近づいているけれど、観測期間は11月7日頃まで続きます。
+                </p>
+            </section>
 
-    
+            <section class="section" id="ketsu">
+                <h2>手をつなぎ、次の夜へ（結び）</h2>
+                <p class="lead-paragraph">最後に、私からあなたへの小さな提案。</p>
+                <ol class="points">
+                    <li>暗い場所で夜を待つこと。</li>
+                    <li>10月29日の半月の日に観察ノートをつけてみること。</li>
+                    <li>週末を利用して小さなメッセージを送ること。</li>
+                </ol>
+                <p>
+                    私はいつだって、あなたが夜空を見上げるたびに小さな勇気を持てるような言葉を探している。どうか良い夜を。空は待っていてくれるから。 — エミリー
+                </p>
+            </section>
+
+            <footer class="section footer-center">
+                <a href="#" class="btn">来週の星日記を予約する →</a>
+                <p class="copyright-text">&copy; 2025 Emily's Starlight Diary.</p>
+            </footer>
+
+        </article>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting) e.target.classList.add('visible');
+                });
+            },{threshold:0.1});
+            document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                const progress = document.getElementById("scroll-progress");
+                if(progress) progress.style.width = scrolled + "%";
+            });
+        });
+
+        (function(){
+            const apodEl = document.getElementById('apod-content');
+            fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+            .then(r=>r.json()).then(data=>{
+                if(data && data.url && apodEl){
+                    apodEl.innerHTML = ''; // クリア
+                    
+                    const title = document.createElement('div');
+                    title.className = 'apod-title-container';
+                    title.textContent = data.title;
+                    
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.className = 'apod-img';
+                    img.alt = data.title;
+                    
+                    const desc = document.createElement('p');
+                    desc.className = 'apod-explanation';
+                    desc.textContent = data.explanation.substring(0, 200) + '...';
+                    
+                    apodEl.appendChild(title);
+                    apodEl.appendChild(img);
+                    apodEl.appendChild(desc);
+                }
+            }).catch(() => {
+                if(apodEl) apodEl.textContent = '宇宙の画像は、また次の夜に。';
+            });
+        })();
+    </script>
 </body>
 </html>
