@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記：2026年1月5日〜11日の冬の宵空</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:400,700&family=Zen+Maru+Gothic&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            --primary-color: #2962ff;
+            --secondary-color: #64b5f6;
+            --text-color-primary: #f0f0f0;
+            --text-color-secondary: #cccccc;
+            --bg-color-primary: #0b0f1a;
+            --bg-color-secondary: #1a1d2e;
+            --border-color: #333;
+            --highlight-color: #ffd1dc;
+            --highlight-color-light: #ffc0cb;
+            --highlight-color-dark: #f9a8d4;
+
+            --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
+
+            --font-family-japanese: 'Noto Serif JP', serif;
+            --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+            --line-height-body: 1.8;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family-zen-maru-gothic), sans-serif;
+            background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+            color: var(--text-color-primary);
+            line-height: var(--line-height-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- ヘッダースタイル --- */
+        .site-header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .site-header h1 {
+            font-family: var(--font-family-japanese);
+            font-size: 2.8em;
+            color: var(--highlight-color);
+            margin: 0;
+            letter-spacing: 0.1em;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--text-color-secondary);
+            margin-top: 15px;
+        }
+
+        /* --- メインコンテンツ --- */
+        .article-detail {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            padding: 50px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: var(--font-family-japanese);
+            font-size: 1.9em;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        h2::before { content: "✨ "; font-size: 0.8em; vertical-align: middle; }
+
+        .article-detail img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.08);
+            border-left: 5px solid var(--highlight-color);
+            padding: 25px;
+            margin: 40px 0;
+            font-style: italic;
+            border-radius: 4px;
+            color: var(--highlight-color-light);
+        }
+
+        /* APOD セクション */
+        #apod {
+            margin: 80px auto 40px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            background-color: var(--bg-color-primary);
+            box-shadow: var(--box-shadow-pink-medium);
+            max-width: 800px;
+        }
+        .apod-card { text-align: center; }
+        .apod-title { font-family: var(--font-family-japanese); font-size: 1.4em; margin-bottom: 10px; color: var(--highlight-color); }
+        .apod-img { max-width: 100%; border-radius: 10px; margin: 20px 0; }
+
+        /* フッター・次のお話 */
+        .next-article-section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 60px;
+            border: 1px dashed var(--secondary-color);
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        strong { color: var(--highlight-color); }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <h1>エミリーの星日記 ✎</h1>
+    <p class="subtitle">2026年1月5日〜11日 — 冬の静寂を越えて星々と</p>
+</header>
+
+<main class="article-detail">
+
+    <section class="section">
+        <h2>冬のはじめ — 夜空が誘う宵の散歩</h2>
+        <img src="winter_starry_sky.jpg" alt="冬の星座が広がる夜空">
+        <p>
+            こんばんは、星を愛する友よ。冬の夜は、空気が鋭く澄み、星々が灯火のように浮かび上がる季節です。小寒を迎え、旧暦では霜月の余韻が残り、夜は深く、心には静けさが宿ります。この一週間、私たちは空を見上げるたびに、その静けさの中へと誘われるでしょう。
+        </p>
+        <p>
+            宵の空には「冬のダイヤモンド」が煌めきます。シリウス、プロキオン、カペラ、アルデバラン、リゲル、ベテルギウス、そしてポルックスとカストル — 明るい星たちが宝石のように散らばり、夜ごとに宇宙の詩を紡ぎ出します。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>月のリズム — 下弦へ向かう光と影</h2>
+        <img src="waning_moon_january.jpg" alt="下弦に向かう月">
+        <p>
+            この週の月は、満月をわずかに過ぎて、夜空を柔らかく照らしています。1月3日の満月は「ウルフムーン」と呼ばれ、夜空に狼の遠吠えが響くように大きく明るく見えました。
+        </p>
+        <p>
+            1月11日には下弦を迎え、月の明かりは次第にしっとりとした陰影を増していきます。この月光は星々との共演を柔らかく照らし、冬の夜を静謐な舞台へと変えるのです。
+        </p>
+        <div class="quote">
+            <p>月の光は、遠い海を照らすだけでなく、私たちの心の奥底に潜む静かな想いをも映し出してくれるように感じられます。</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>1月7日 深夜 — レグルス食の静かな劇場</h2>
+        
+        <p>
+            1月7日未明、月がしし座の1等星「レグルス」を隠す現象 — <strong>レグルス食</strong> が起こります。潜入（星が月の明るい縁に隠れる瞬間）は観察が難しくても、月の暗い縁からレグルスが再び姿を現す「出現」の瞬間は、肉眼や双眼鏡で観察する値打ちがあります。
+        </p>
+        <p>
+            東京では、潜入が深夜1時16分ごろ、出現が2時20分ごろと予想されています。空高くにある月とレグルスは、まるで夜のドレスを纏ったように静かに佇み、星座たちのささやきの中で儀式を繰り広げるでしょう。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>木星 — 冬の宵に輝く王者</h2>
+        
+        <p>
+            今週の主役は、この冬いちばんの目玉 — <strong>木星の衝（しょう）</strong> です。1月10日、木星が地球と太陽の反対側に位置し、一年で最も観察に適した状態になります。
+        </p>
+        <p>
+            ふたご座の中で木星は、宵の東の空から昇り、夜を通して南の空高くで輝きます。その明るさは月と比べても見劣りせず、肉眼でひと目でわかるほどです。
+        </p>
+        <div class="quote">
+            <p>木星は宇宙の灯台のように、冷たい夜空の中でひときわ明るく輝き、私たちの視線を優しく集めてくれます。</p>
+        </div>
+        <p>
+            双眼鏡や小さな望遠鏡があれば、ガリレオ衛星や木星の雲帯が見えるかもしれません。肉眼以上の世界が、静かな夜の宇宙であなたを待っています。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>しぶんぎ座流星群 — 早朝の贈り物</h2>
+        <img src="quadrantids_meteor_shower.jpg" alt="しぶんぎ座流星群の流れ星">
+        <p>
+            1月4日未明には三大流星群の一つ、<strong>しぶんぎ座流星群</strong> が極大を迎えました。月明かりの影響で条件は良くありませんでしたが、暗い空を見渡せばひとつふたつ、流れ星が夜空を横切ったはずです。
+        </p>
+        <p>
+            流星たちは静かに、しかし確かに冬の夜空の物語を刻んでいきます。流れ星を見つけたら、願いをひとつ、心の中で優しく呟いてみましょう。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>土星と宵の空の友達たち</h2>
+        
+        <p>
+            夕暮れの南西には、土星がゆったりとした姿で光っています。みずがめ座からうお座へ移るこの惑星は、宵の空のしっとりとした静けさに溶け込みながら輝きます。
+        </p>
+        <p>
+            1月23日には細い月と土星が近く見える夜もありますので、この季節は惑星たちの共演が続きます。双眼鏡でその環を追えば、冬の星空が一層深く心に刻まれるでしょう。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>冬の星座 — 宵空の詩</h2>
+        
+        <p>
+            冬の星座は、どこか物語を語るような配置を見せてくれます。オリオン座を中心に、シリウスやプロキオンが導く「冬のダイヤモンド」は、冬の夜空を宝石箱のように飾ります。
+        </p>
+        <p>
+            オリオン大星雲やプレアデス星団といった星雲・星団も、双眼鏡を向ければ淡く、しかし確かに宇宙の息吹を伝えてくれます。冬の夜は静かでも、その目には無限の宇宙が広がっているのです。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>冬の夜に寄せる想い</h2>
+        <img src="cozy_winter_observing_scene.jpg" alt="冬の夜の観望風景">
+        <p>
+            冬は静けさの季節です。寒さの中で夜空を見上げることは、まるで宇宙と心が対話するような時間。星の光は冷たい大気を越えて、あなたの心まで優しく届けられます。
+        </p>
+        <div class="quote">
+            <p>「星を見上げる瞬間は、宇宙がくれた静かな贈り物。あなたの心に、そっと寄り添ってくれる光。」</p>
+        </div>
+        <p>
+            寒さに震えながらも、温かい飲み物を片手に夜空を見上げてください。星々は静かに輝き、あなたのその視線を歓迎していることでしょう。
+        </p>
+    </section>
+
+    <section class="next-article-section">
+        <h2>次のお話</h2>
+        <p>
+            来週は1月12日〜18日の星空をお届けします。<br>
+            夜空に寄り添う星々や、月と土星の接近、そして冬の星雲・星団の世界を一緒に巡りましょう。どうぞお楽しみに。
+        </p>
+    </section>
+
+    <div id="apod">
+        <div class="apod-card">
+            <div class="apod-title">今日の宇宙の光 (APOD)</div>
+            <div id="apod-content">星々からデータを取得中...</div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <p>© Dear Emily | 星のささやきを届ける日記</p>
+</footer>
+
+<script>
+    // スクロール時のフェードイン制御
+    document.addEventListener('DOMContentLoaded', function(){
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                if(e.isIntersecting) e.target.classList.add('visible');
+            });
+        },{threshold:0.12});
+        document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+        // APOD APIの取得
+        const apodEl = document.getElementById('apod-content');
+        const apiKey = 'DEMO_KEY';
+        const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+        fetch(url).then(r=>r.json()).then(data=>{
+            if(data && data.url){
+                apodEl.innerHTML = `<div style="font-weight:bold; margin-bottom:10px;">${data.title}</div>`;
+                if(data.media_type === 'image'){
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.className = 'apod-img';
+                    apodEl.appendChild(img);
+                }
+                const p = document.createElement('p');
+                p.style.fontSize = '0.85em';
+                p.style.textAlign = 'left';
+                p.style.marginTop = '15px';
+                p.textContent = data.explanation;
+                apodEl.appendChild(p);
+            }
+        }).catch(() => {
+            apodEl.textContent = '宇宙の画像は雲に隠れてしまったようです（読み込みエラー）。';
+        });
+    });
+</script>
+
+</body>
+</html>
