@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記 — 2026年1月26日〜1月31日｜Dear Emily</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Zen+Maru+Gothic&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            --primary-color: #2962ff;
+            --secondary-color: #64b5f6;
+            --text-color-primary: #f0f0f0;
+            --text-color-secondary: #cccccc;
+            --bg-color-primary: #0b0f1a;
+            --bg-color-secondary: #1a1d2e;
+            --border-color: #333;
+            --highlight-color: #ffd1dc;
+            --highlight-color-light: #ffc0cb;
+            --highlight-color-dark: #f9a8d4;
+
+            --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --box-shadow-pink-medium: 0 12px 32px rgba(255, 182, 193, 0.4);
+
+            --font-family-japanese: 'Noto Serif JP', serif;
+            --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+            --line-height-body: 1.8;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family-zen-maru-gothic), sans-serif;
+            background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+            color: var(--text-color-primary);
+            line-height: var(--line-height-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- ヘッダースタイル --- */
+        .site-header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .site-header h1 {
+            font-family: var(--font-family-japanese);
+            font-size: 2.5em;
+            color: var(--highlight-color);
+            margin: 0;
+            letter-spacing: 0.1em;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--text-color-secondary);
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        /* --- メインコンテンツ --- */
+        .article-detail {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            padding: 50px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: var(--font-family-japanese);
+            font-size: 1.8em;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        h2::before { content: "✨ "; font-size: 0.8em; vertical-align: middle; }
+
+        .article-detail img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .quote {
+            background: rgba(255, 209, 220, 0.08);
+            border-left: 5px solid var(--highlight-color);
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 4px;
+            color: var(--highlight-color-light);
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* APOD セクション */
+        #apod {
+            margin: 80px auto 40px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            background-color: var(--bg-color-primary);
+            box-shadow: var(--box-shadow-pink-medium);
+            max-width: 800px;
+        }
+        .apod-card { text-align: center; }
+        .apod-title { font-family: var(--font-family-japanese); font-size: 1.4em; margin-bottom: 10px; color: var(--highlight-color); }
+        .apod-img { max-width: 100%; border-radius: 10px; margin: 20px 0; }
+
+        /* フッター・次のお話 */
+        .next-article-section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 60px;
+            border: 1px dashed var(--secondary-color);
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.9em;
+            color: var(--text-color-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        strong { color: var(--highlight-color); }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <h1>エミリーの星日記 ✎</h1>
+    <p class="subtitle">2026年1月26日〜1月31日<br>寒の底、満ちていく月の週</p>
+</header>
+
+<main class="article-detail">
+
+    <section class="section">
+        <img src="winter_sky.jpg" alt="澄んだ冬の夜空">
+        <p>
+            大寒のさなか。空気は重く澄み、夜は深い井戸のように底を持っている。<br>
+            一月の終わり、太陽は早く沈み、星々が整然と配置を取り戻す時間が長くなる。<br>
+            私はこの週、満ちていく月とともに空の変化を記した。
+        </p>
+        <p>
+            旧暦ではまだ年の始まりの余韻が残る頃。<br>
+            寒さは痛いほどだが、その分だけ星の輪郭は鋭い。<br>
+            冬の空は、嘘を許さない透明さを持っている。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Ⅰ．月のかたち</h2>
+        <img src="waxing_gibbous.jpg" alt="満ちていく月">
+        <p>
+            この週の月は上弦を過ぎ、日ごとに丸みを増していった。<br>
+            夕方にはすでに南東の空へ姿を見せ、夜半にかけて高く昇る。<br>
+            白く強い光は、星々の淡い輝きを押しのけながらも、夜そのものを静かに照らしていた。
+        </p>
+        <div class="quote">
+            満ちていく月は、闇を奪うのではなく、闇の質を変える。
+        </div>
+        <p>
+            双眼鏡を向けると、クレーターの影がまだ立体的に浮かび上がる。<br>
+            完全な満月に近づくにつれ、その陰影は浅くなるが、今はまだ境界線がはっきりと残っている。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Ⅱ．木星の光</h2>
+        <img src="jupiter_winter.jpg" alt="冬の空に輝く木星">
+        <p>
+            冬の宵、東の空にはひときわ明るい星がある。木星だ。<br>
+            2026年1月下旬、木星は夜を通して観測しやすい位置にあり、肉眼でも明らかに他の星と異なる強い光を放っている。
+        </p>
+        <p>
+            望遠鏡をのぞけば、縞模様とガリレオ衛星が並ぶ。小さな点が時間とともに位置を変える。<br>
+            それを見ていると、地球の自転さえも実感として伝わってくる。
+        </p>
+        <div class="quote">
+            木星の重さは、光になって届く。
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Ⅲ．冬の星座</h2>
+        <img src="orion_winter_triangle.jpg" alt="オリオン座と冬の大三角">
+        <p>
+            南の空にはオリオン座。三つ星が一直線に並び、ベテルギウスの赤とリゲルの青白が対照をなす。
+        </p>
+        <p>
+            シリウスは鋭く瞬き、プロキオン、カペラとともに冬の大三角を形づくる。<br>
+            空気が乾ききった夜には、星々はほとんど瞬かず、凍ったように光る。
+        </p>
+        <p>
+            プレアデス星団は双眼鏡で数を増やし、淡い青い光を密やかに集めている。
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>Ⅳ．遠い惑星</h2>
+        <img src="deep_planets.jpg" alt="遠い惑星のイメージ">
+        <p>
+            天王星と海王星は、肉眼では捉えにくい。だが冬の空は条件がよければ淡い惑星を許す。<br>
+            星図と照らし合わせ、双眼鏡で探す。
+        </p>
+        <p>
+            見えたかどうかは曖昧でも、そこに在るという事実が、夜をより深くする。
+        </p>
+        <div class="quote">
+            見えないことと、存在しないことは違う。
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Ⅴ．寒の底で</h2>
+        <img src="cold_quiet_night.jpg" alt="静かな冬の夜">
+        <p>
+            一月末の夜は静かだ。風が止むと、世界が音を失う。<br>
+            その沈黙の中で、星だけが時間を刻む。
+        </p>
+        <p>
+            満ちていく月は、やがて円へ近づく。<br>
+            冬の星座は変わらぬ配置を保ち、木星は重く光り続ける。
+        </p>
+        <p>
+            寒さはまだ続く。だが、光は確実に動いている。それだけは確かだ。
+        </p>
+    </section>
+
+    <section class="next-article-section">
+        <h2>次の記録</h2>
+        <p>
+            月がさらに満ち、夜がいっそう明るくなる頃の空を記す予定です。
+        </p>
+    </section>
+
+    <div id="apod">
+        <div class="apod-card">
+            <div class="apod-title">今日の宇宙の光 (APOD)</div>
+            <div id="apod-content">星々からデータを取得中...</div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <p>© Dear Emily | 星のささやきを届ける日記</p>
+</footer>
+
+<script>
+    // スクロール時のフェードイン制御
+    document.addEventListener('DOMContentLoaded', function(){
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(e=>{
+                if(e.isIntersecting) e.target.classList.add('visible');
+            });
+        },{threshold:0.12});
+        document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+        // APOD APIの取得
+        const apodEl = document.getElementById('apod-content');
+        const apiKey = 'DEMO_KEY';
+        const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+
+        fetch(url).then(r=>r.json()).then(data=>{
+            if(data && data.url){
+                apodEl.innerHTML = `<div style="font-weight:bold; margin-bottom:10px;">${data.title}</div>`;
+                if(data.media_type === 'image'){
+                    const img = document.createElement('img');
+                    img.src = data.url;
+                    img.className = 'apod-img';
+                    apodEl.appendChild(img);
+                }
+                const p = document.createElement('p');
+                p.style.fontSize = '0.85em';
+                p.style.textAlign = 'left';
+                p.style.marginTop = '15px';
+                p.textContent = data.explanation;
+                apodEl.appendChild(p);
+            }
+        }).catch(() => {
+            apodEl.textContent = '宇宙の画像は雲に隠れてしまったようです。';
+        });
+    });
+</script>
+
+</body>
+</html>
