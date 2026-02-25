@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>エミリーの星日記 — 2026年2月23日〜3月1日｜Dear Emily</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            --primary-color: #ffd1dc;
+            --secondary-color: #64b5f6;
+            --text-color-primary: #f0f4ef;
+            --text-color-secondary: #d1d1d1;
+            --bg-color-primary: #0a1128;
+            --bg-color-secondary: #161e3d;
+            --border-color: rgba(252, 246, 189, 0.3);
+            --highlight-color: #fcf6bd;
+            --mars-red: #e63946;
+            --box-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.5);
+            --font-family-japanese: 'Noto Serif JP', serif;
+            --font-family-zen-maru-gothic: 'Zen Maru Gothic', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0; padding: 0; width: 100%; overflow-x: hidden;
+            font-family: var(--font-family-japanese);
+            font-size: 16px; line-height: 1.8;
+            background: linear-gradient(to bottom, var(--bg-color-primary), var(--bg-color-secondary));
+            color: var(--text-color-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { margin: 0 auto; max-width: 1200px; position: relative; }
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--highlight-color); z-index: 1000; width: 0%; transition: width 0.1s linear; }
+        
+        .section { padding: 40px 20px; margin: 0 auto; max-width: 900px; box-sizing: border-box; text-align: left; opacity: 0; transform: translateY(30px); transition: opacity 1.2s ease, transform 1.2s ease; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .article-detail { max-width: 850px; margin: 40px auto; padding: 40px; background: rgba(22, 30, 61, 0.7); border-radius: 15px; box-shadow: var(--box-shadow-medium); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
+        
+        .article-header { text-align: center; margin-bottom: 60px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
+        .article-header h1.hero { font-size: 3rem; color: var(--highlight-color); margin-bottom: 10px; letter-spacing: 0.1em; }
+        .article-header .sub-title { font-size: 1.1rem; font-style: italic; color: var(--text-color-secondary); }
+        .article-header .lead { font-size: 1.2em; line-height: 1.8; margin: 30px 0; padding: 20px; border-left: 5px solid var(--highlight-color); background-color: rgba(255, 255, 255, 0.05); font-style: italic; text-align: left; }
+
+        .article-detail h2 { font-size: 1.8rem; color: var(--highlight-color); margin-top: 2.5em; border-left: 4px solid var(--highlight-color); padding-left: 20px; margin-bottom: 1.5em; }
+        .article-detail h3 { font-size: 1.4em; margin-top: 35px; color: var(--secondary-color); }
+        .article-detail p { font-size: 1.1em; margin-bottom: 1.5em; text-align: justify; }
+
+        .quote.poem { font-size: 1.1em; color: var(--text-color-primary); border: 1px dashed var(--highlight-color); border-radius: 15px; padding: 30px; margin: 40px auto; background: rgba(255, 255, 255, 0.05); position: relative; }
+        .quote.poem i { color: var(--highlight-color); margin-bottom: 15px; display: block; font-size: 1.5em; }
+        
+        .observation-note { background: rgba(230, 57, 70, 0.1); border-left: 4px solid var(--mars-red); padding: 25px; margin: 30px 0; border-radius: 0 10px 10px 0; }
+
+        .img-wrap img { max-width: 100%; border-radius: 10px; margin: 30px auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .separator { border: none; height: 1px; background: linear-gradient(to right, transparent, var(--highlight-color), transparent); margin: 60px 0; opacity: 0.3; }
+        
+        .next-article-section { text-align: center; background: rgba(252, 246, 189, 0.05); border-radius: 30px; padding: 50px 20px; margin-top: 60px; }
+        .button { display: inline-block; padding: 15px 40px; border: 1px solid var(--highlight-color); color: var(--highlight-color); text-decoration: none; transition: all 0.3s; margin-top: 20px; border-radius: 5px; font-weight: bold; }
+        .button:hover { background: var(--highlight-color); color: var(--bg-color-primary); }
+        
+        footer.meta { text-align: center; color: var(--text-color-secondary); font-size: 0.9em; padding: 40px 0; }
+        .right-align { text-align: right !important; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    
+    <div class="container">
+        <article class="article-detail">
+            <header class="article-header">
+                <h1 class="hero">Dear Emily</h1>
+                <span class="sub-title">エミリーの星日記 — 2026年2月23日〜3月1日</span>
+                
+                <p class="lead">
+                    「夜空を見上げるあなたへ。雨水の雫が星を洗う、静かな春の始まりの物語。」
+                </p>
+            </header>
+
+            <section class="section">
+                <h2>雨水の雫と、下弦の月</h2>
+                <p>こんばんは、私の大切な友人。エミリーです。今、あなたの街の空気はどんな匂いがしますか？</p>
+                <p>
+                    暦の上では二十四節気の「雨水（うすい）」を過ぎたばかり。空から降るものが雪から雨へと変わり、凍てついた大地がようやくその身を解きほぐし始める季節です。2026年のこの時期、私たちは冬の最後の厳しさと、春の確かな胎動が混ざり合う、不思議な境界線に立っています。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?auto=format&fit=crop&q=80&w=1000" alt="夜明け前の下弦の月">
+                </div>
+                <p>
+                    今週の幕開け、夜空の主役は「月」です。<strong>2月24日、月は下弦（かげん）を迎えます。</strong>旧暦では如月（きさらぎ）、二月の十日あまり。深夜にのぼり、夜明けの南の空で鋭い刃のように輝くその姿は、どこか凛としていて、それでいて「手放すこと」の美しさを教えてくれているようです。
+                </p>
+                <div class="quote poem">
+                    <i class="fas fa-moon"></i>
+                    <strong>2月24日：下弦の月（Last Quarter Moon）</strong><br>
+                    月のサイン：さそり座からいて座へ。内面を見つめ直し、不要な感情を夜風に預けるのに最適な時間です。夜明け前の南天、高い位置にある月をぜひ探してみてください。
+                </div>
+                <p>
+                    下弦の月は、新月に向かう準備期間。満月で満ち足りた心を一度空っぽにして、次のサイクルへ備える「静寂のデトックス」の時期でもあります。2026年2月の終わりの冷たい空気の中で、月光を浴びながら深呼吸をひとつ。それだけで、あなたの心に溜まった冬の澱（おり）が、雨水のようにさらさらと流れ出していくかもしれません。
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>真紅の王、火星の凱旋</h2>
+                <p>さて、今週最もエネルギーを放っているのは、間違いなくあの「赤い星」です。友人、夜が更けてから東から南の空を見上げてみてください。そこには、他のどの星よりも力強く、不敵な輝きを放つ星がいるはずです。そう、火星です。</p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80&w=1000" alt="赤く輝く火星">
+                </div>
+                <p>
+                    2026年2月19日に「衝（しょう）」を迎えたばかりの火星は、今まさに観測のベストシーズン。地球に最も接近しているため、その明るさは<strong>マイナス1.3等級（$-1.3\text{ mag}$）</strong>にも達します。これは冬の一等星たちを圧倒する輝きです。場所は「しし座」。百獣の王の胸元で、燃える心臓のように赤々と輝いています。
+                </p>
+                <div class="observation-note">
+                    <p><strong>【エミリーの観測ガイド：火星としし座】</strong><br>
+                    2026年2月23日から3月1日にかけて、火星はしし座のレグルスの近くに位置しています。肉眼でもその赤さははっきりと分かりますが、もし双眼鏡をお持ちなら、火星の少し西側にある「プレセペ星団（M44）」も一緒に探してみましょう。</p>
+                </div>
+                <p>
+                    占星術的な視点で見れば、火星は「情熱」や「行動力」の象徴。しし座にある火星は、自己表現やクリエイティビティを強く刺激します。冷たい夜風の中で火星を見つめる時、あなたの胸の奥で静かに燃えている望みは何ですか？
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>冬の六角形、去りゆく冬の巨人たち</h2>
+                <p>
+                    空の時計は着実に進んでいます。西の空には、冬のダイヤモンド（冬の六角形）が名残惜しそうに傾いています。ベテルギウス、シリウス、プロキオン、ポルックス、カペラ、そしてアルデバラン。
+                </p>
+                <p>
+                    2026年の今、この六角形の中に、もう一つの明るい輝きが紛れ込んでいます。それが<strong>木星</strong>です。おうし座からふたご座の境界付近に位置する木星は、<strong>マイナス2.3等級（$-2.3\text{ mag}$）</strong>という圧倒的な光度で、冬の星々を従える王のように君臨しています。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1538370965046-78c0d59db0a1?auto=format&fit=crop&q=80&w=1000" alt="冬の夜空と木星">
+                </div>
+                <div class="quote poem">
+                    <strong>暦の知恵：七十二候「霞始靆（かすみはじめてたなびく）」</strong><br>
+                    2月24日頃からは、遠くの景色がぼんやりと霞んで見えるようになる頃です。夜空も、冬の突き刺さるような鋭い透明度から、少しずつ柔らかな、潤いを含んだ光へと変わっていきます。
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>宵の明星と、消えゆく土星の影</h2>
+                <p>
+                    日没後のマジックアワーには、特別なドラマが繰り広げられています。一番星として輝くのは、美の女神・<strong>金星</strong>。2026年2月末、金星は「宵の明星」として、日ごとに高度を上げ、その輝きを増しています。
+                </p>
+                <p>
+                    一方で、これまでの夜を彩ってきた土星は、徐々に太陽の光の中に隠れようとしています。3月5日の合（コンジャンクション）を前に、土星は今週、西の地平線ギリギリにその姿を留めています。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1472552967324-a0313944346e?auto=format&fit=crop&q=80&w=1000" alt="夕暮れの金星">
+                </div>
+                <p>
+                    金星の華やかさと、土星の静かな退場。この二つの惑星の対比は、私たちの生活における「新しい出会い」と「古い習慣との別れ」を象徴しているのかもしれません。
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>エミリーの星空ダイアリー — あなたへの手紙</h2>
+                <p>
+                    2026年3月1日。今週末の夜空は月明かりに邪魔されることなく、深い闇が広がります。これを「月隠（つきごもり）」、転じて「晦（つごもり）」と呼びます。
+                </p>
+                <p>
+                    月がない夜は、星たちが一番自分らしく輝ける時間です。「春の大曲線」が、夜更けとともに天高く昇ってきます。アークトゥルスはオレンジ色、スピカは真珠のような白。春の空はまるで宝石箱をひっくり返したような色彩に満たされます。
+                </p>
+                <div class="quote poem">
+                    <i class="fas fa-heart"></i>
+                    <strong>今週のあなたへのメッセージ</strong><br>
+                    雲の上ではいつも、火星が赤くあなたを励まし、金星が美しくあなたを導いています。無理に答えを出さず、ただ「そこに在る」自分を慈しんでください。あなたは、この宇宙にとって欠かすことのできない、たった一つの大切な星なのですから。
+                </div>
+                <p>今夜も、良い夢を。そして、素晴らしい星空を。</p>
+                <p class="right-align">愛を込めて、エミリーより</p>
+            </section>
+
+            <section class="next-article-section section">
+                <h2>次のお話：雛祭りの新月と、春の星座たち</h2>
+                <p>来週は、3月3日の新月。旧暦の「桃の節句」にふさわしい、再生と願いの物語をお届けします。</p>
+                <a href="#" class="button">3月の星空を予約する <i class="fas fa-chevron-right"></i></a>
+            </section>
+
+            <footer class="meta">
+                <p>&copy; 2026 Emily's Starlight Diary. All rights reserved.</p>
+            </footer>
+            
+        </article>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting) e.target.classList.add('visible');
+                });
+            },{threshold:0.1});
+            document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('scroll-progress').style.width = scrolled + '%';
+            });
+        });
+    </script>
+</body>
+</html>
