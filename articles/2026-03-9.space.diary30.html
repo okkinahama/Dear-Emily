@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dear Emily — 啓蟄のしじまに、星を掬う（2026年3月9日〜3月15日）</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@300;400;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* --- 変数定義 (クラシック・ペーパー・スタイル) --- */
+        :root {
+            --sky-dark: #0a1128;
+            --star-gold: #f9d423;
+            --moon-silver: #e0e0e0;
+            --text-color: #333;
+            --bg-paper: #fdfcf8;
+            --accent-soft: #b0c4de;
+            --box-shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --font-family-japanese: 'Noto Serif JP', serif;
+            --font-family-header: 'Sawarabi Mincho', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0; padding: 0; width: 100%; overflow-x: hidden;
+            font-family: var(--font-family-japanese);
+            font-size: 16px; line-height: 1.8;
+            background-color: var(--sky-dark);
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { margin: 0 auto; max-width: 1200px; position: relative; }
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--star-gold); z-index: 1000; width: 0%; transition: width 0.1s linear; }
+        
+        /* 羊皮紙のような質感のメイン記事エリア */
+        .article-detail { 
+            max-width: 900px; 
+            margin: 40px auto; 
+            padding: 60px 80px; 
+            background-color: var(--bg-paper); 
+            border-radius: 2px; 
+            box-shadow: var(--box-shadow-subtle); 
+            position: relative;
+        }
+
+        .article-header { text-align: center; margin-bottom: 60px; border-bottom: 1px solid #ddd; padding-bottom: 40px; }
+        .article-header h1 { font-family: var(--font-family-header); font-size: 2.2rem; color: var(--sky-dark); margin-bottom: 10px; }
+        .article-header .date-range { font-style: italic; color: #666; font-size: 1.1rem; }
+
+        .section { margin-bottom: 60px; opacity: 0; transform: translateY(20px); transition: opacity 1.2s ease, transform 1.2s ease; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .dropcap { float: left; font-size: 4rem; line-height: 1; padding-right: 12px; color: var(--sky-dark); font-weight: bold; }
+
+        .article-detail h2 { font-size: 1.8rem; border-left: 4px solid var(--sky-dark); padding-left: 15px; margin-top: 2.5em; margin-bottom: 1.5em; color: var(--sky-dark); }
+        .article-detail p { font-size: 1.1em; margin-bottom: 1.5em; text-align: justify; }
+
+        .quote.poem { background-color: #f0f4f8; border-left: 4px solid var(--accent-soft); padding: 25px 30px; margin: 40px auto; font-style: italic; color: #2c3e50; }
+        .quote.poem strong { color: var(--sky-dark); display: block; margin-bottom: 10px; font-style: normal; }
+        
+        .img-wrap img { max-width: 100%; border-radius: 4px; margin: 30px auto; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        .next-article-section { text-align: right; border-top: 1px solid #ddd; padding-top: 30px; margin-top: 60px; }
+        .next-link { text-decoration: none; color: var(--sky-dark); font-weight: bold; font-size: 1.2rem; transition: color 0.3s; }
+        .next-link:hover { color: var(--star-gold); }
+        
+        footer.meta { text-align: center; color: var(--moon-silver); font-size: 0.9rem; padding: 40px 0; }
+        .right-align { text-align: right !important; margin-top: 20px; }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .article-detail { padding: 40px 20px; margin: 20px; }
+            .article-header h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    
+    <div class="container">
+        <article class="article-detail">
+            <header class="article-header">
+                <h1>Dear Emily ― 啓蟄のしじまに、星を掬う</h1>
+                <p class="date-range">2026年3月9日 〜 3月15日</p>
+            </header>
+
+            <section class="section">
+                <h2>星降るテラスへの招待状</h2>
+                <p>
+                    <span class="dropcap">こ</span>んばんは、夜空を眺める私の友人。エミリーの星日記へようこそ。2026年、3月の二週目がやってきました。窓を開けると、まだ指先を刺すような冷たさが残っていますが、その奥底には、確かに春の湿り気を帯びた風が混じっているのを感じませんか？
+                </p>
+                <p>
+                    日本の暦では、ちょうど「啓蟄（けいちつ）」の次候にあたる頃。私たちの心もまた、冬の長い沈黙を終えて、何か新しい物語を紡ぎたがっている……そんな気がしてなりません。今夜は少し厚手のストールを羽織って、温かいハーブティーを入れた水筒を片手に、私のテラスへいらしてください。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1532767153582-b1a0e5145009?auto=format&fit=crop&q=80&w=1000" alt="春を待つテラスと星空">
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>如月（きさらぎ）の月、その欠けゆく情景</h2>
+                <p>
+                    今週の空を主役として彩るのは、少しずつその身を削り、深夜の静寂に寄り添う「下弦」へと向かう月です。2026年3月、旧暦ではまだ「如月」。衣をさらに着るほどの寒さが残ることから「衣更着（きさらぎ）」とも呼ばれるこの時期、月は夜更けとともに東の地平線から顔を出します。
+                </p>
+                <p>
+                    3月11日の午後、月は正確に「下弦」を迎えます。この日、月は射手座（いてざ）の境界付近にあり、真夜中に昇って、夜明けの南の空で美しく半分に割れた姿を見せてくれるでしょう。下弦の月は、物事が収束し、内省へと向かうエネルギーを象徴します。
+                </p>
+                <div class="quote poem">
+                    <strong>【観測のポイント：下弦の月】</strong>
+                    3月11日の深夜から12日の明け方にかけて、南の空高くに注目してください。真っ直ぐな弦を上にした「弓」のような月が、冷たく澄んだ空気の中で青白く光っています。双眼鏡で見ると、クレーターの凹凸が最も立体的に浮かび上がります。
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>木星の君臨と、冬のダイヤモンドの終焉</h2>
+                <p>
+                    宵の空を見上げれば、そこには依然として圧倒的な存在感を放つ王者がいます。太陽系最大の惑星、木星です。2026年3月、木星は双子座と蟹座の境界あたり、冬の天の川のほとりに腰を下ろしています。
+                </p>
+                <p>
+                    オリオン座のベテルギウス、おおいぬ座のシリウス、こいぬ座のプロキオン――。これらが描く「冬の大三角」は、今週、夜が更けるとともに西の空へと大きく傾いていきます。季節が移ろうということは、これらの明るい星たちが私たちの視界から去っていくということ。それは新しい季節を迎えるための儀式なのです。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1446941611757-91d2c3bd3d45?auto=format&fit=crop&q=80&w=1000" alt="木星と冬の星座の共演">
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>東の空に「獅子」が吠える</h2>
+                <p>
+                    冬の星たちが西へ急ぐ頃、東の空からは堂々たる春の象徴、獅子座（ししざ）が昇ってきます。その胸元で誇り高く輝くのは、白い一等星レグルス。「小さな王」という名を持つこの星を見つけると、私はいつも「ああ、本当に春が来るのだな」と胸が高鳴ります。
+                </p>
+                <div class="quote poem">
+                    <strong>【エミリーの知恵袋：春の星座の探し方】</strong>
+                    北の空の「北斗七星」を見つけてください。ひしゃくの柄のカーブをそのまま南へ延長していくと、オレンジ色の「アルクトゥルス」にぶつかり、さらに伸ばすと「スピカ」にたどり着きます。これが「春の大曲線」です。
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>明けの明星、ヴィーナスの帰還</h2>
+                <p>
+                    さて、今週の最も美しいショーは、日の出前の東の空で繰り広げられます。午前5時過ぎの東の地平線に注目してください。そこには「明けの明星」として輝きを増している金星が、圧倒的な光を放っています。
+                </p>
+                <p>
+                    さらに興味深いことに、今週はその金星の近くに赤く妖しく光る火星も姿を見せています。愛の女神（ヴィーナス）と戦いの神（マーズ）が、春の黎明の中で密やかに寄り添う姿は、何とも詩的な光景です。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?auto=format&fit=crop&q=80&w=1000" alt="明け方の金星と火星">
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>結びに ―― 啓蟄の夜に、あなたへ</h2>
+                <p>
+                    今週の星巡り、いかがでしたでしょうか。冬から春へのバトンタッチが行われるこの一週間は、感性が研ぎ澄まされる時期です。日々の忙しさに心が乾いてしまったなら、ほんの数分で構いません、電気を消してベランダに出てみてください。
+                </p>
+                <p>
+                    啓蟄の虫たちが土を蹴立てるように、あなたの心にも、小さな、けれど確かな希望の芽が吹き出しますように。それでは、今夜も素晴らしい星空をお楽しみください。おやすみなさい、私の大切な友人。
+                </p>
+                <p class="right-align">愛を込めて、エミリーより</p>
+            </section>
+
+            <section class="next-article-section section">
+                <a href="#" class="next-link">次のお話：春分の日、光と闇が溶け合う瞬間に ―― <i class="fas fa-arrow-right"></i></a>
+            </section>
+        </article>
+    </div>
+
+    <footer class="meta">
+        <p>&copy; 2026 Emily's Star Diary. All rights reserved.</p>
+        <p>Using Nano Banana 2 for visual inspirations. Styled with Noto Serif JP.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting) e.target.classList.add('visible');
+                });
+            },{threshold:0.1});
+            document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('scroll-progress').style.width = scrolled + '%';
+            });
+        });
+    </script>
+</body>
+</html>
