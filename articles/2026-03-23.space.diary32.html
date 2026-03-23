@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dear Emily - エミリーの星日記 | 2026年3月23日〜3月29日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Shippori+Mincho:wght@400;700&family=Zen+Maru+Gothic:wght@300;400;700&family=Montserrat:wght@400;700&family=Noto+Serif+JP:wght@300;500;700&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #f39c12;
+            --text-color-primary: #e0e0e0;
+            --text-color-secondary: #bdc3c7;
+            --bg-color-primary: #050a1b;
+            --border-color: rgba(243, 156, 18, 0.3);
+            --box-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.5);
+            --font-family-japanese: 'Shippori Mincho', serif;
+            --font-family-english: 'Playfair Display', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0; padding: 0; width: 100%; overflow-x: hidden;
+            font-family: var(--font-family-japanese);
+            font-size: 16px; line-height: 1.8;
+            background-color: var(--bg-color-primary);
+            background-image: radial-gradient(circle at center, #1a2a4a 0%, #050a1b 100%);
+            color: var(--text-color-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { margin: 0 auto; max-width: 1200px; position: relative; }
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--secondary-color); z-index: 1000; width: 0%; transition: width 0.1s linear; }
+        
+        .section { padding: 40px 20px; margin: 0 auto; max-width: 900px; box-sizing: border-box; text-align: left; opacity: 0; transform: translateY(30px); transition: opacity 1.2s ease, transform 1.2s ease; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .article-detail { max-width: 850px; margin: 40px auto; padding: 40px; background: rgba(10, 17, 40, 0.8); border-radius: 15px; box-shadow: var(--box-shadow-medium); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        
+        .article-header { text-align: center; margin-bottom: 60px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
+        .article-header h1.hero { font-family: var(--font-family-english); font-size: 3.2rem; color: var(--primary-color); margin-bottom: 10px; letter-spacing: 3px; }
+        .article-header .sub-title { font-size: 1.1rem; color: var(--text-color-secondary); }
+
+        .date-badge { display: inline-block; background: var(--secondary-color); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; }
+
+        .article-detail h2 { font-size: 2rem; color: var(--secondary-color); margin-top: 2em; border-bottom: 1px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 1.5em; }
+        .article-detail p { font-size: 1.1em; margin-bottom: 1.5em; text-align: justify; text-indent: 1em; }
+
+        .quote.poem { font-size: 1.1em; color: #ecf0f1; border-left: 4px solid var(--secondary-color); padding: 25px 30px; margin: 40px auto; background: rgba(255, 255, 255, 0.03); font-style: italic; }
+        .quote.poem strong { color: var(--primary-color); display: block; margin-bottom: 10px; font-style: normal; }
+        
+        .img-wrap img { max-width: 100%; border-radius: 10px; margin: 30px auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .next-article-section { text-align: center; border-top: 1px dashed #7f8c8d; padding: 60px 20px; margin-top: 60px; }
+        .next-article-section h3 { color: var(--primary-color); font-size: 1.6em; }
+        .button { display: inline-block; padding: 15px 40px; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; transition: all 0.3s; margin-top: 20px; border-radius: 30px; font-weight: bold; }
+        .button:hover { background: var(--primary-color); color: #000; }
+        
+        footer.meta { text-align: center; color: #7f8c8d; font-size: 0.8rem; padding: 40px 0; opacity: 0.7; }
+        
+        .observation-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .article-header h1.hero { font-size: 2.2rem; }
+            .article-detail { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    
+    <div class="container">
+        <article class="article-detail">
+            <header class="article-header">
+                <h1 class="hero">Dear Emily</h1>
+                <span class="sub-title">〜星降る夜の対話：2026.03.23 — 03.29 春分、光の矢と獅子の目覚め〜</span>
+            </header>
+
+            <section class="section">
+                <div class="date-badge">Introduction</div>
+                <h2>序文：季節の狭間に迷い込む心地</h2>
+                <p>
+                    こんばんは、夜空を眺める大切な友人。エミリーです。窓を開けると、沈みゆく冬の寒さと、どこか湿り気を帯びた春の香りが混ざり合う、不思議な季節の狭間に迷い込んだような心地がしますね。
+                </p>
+                <p>
+                    2026年3月23日。暦の上では先ごろ「春分」を迎え、昼と夜の長さがちょうど手を取り合う、調和の時を過ごしています。旧暦では如月（きさらぎ）の後半。私たちの心はもう、薄桃色の春へと着替えを始めているのではないでしょうか。
+                </p>
+                <p>
+                    今週は、西の空で輝きを増す「宵の明星」金星と、日に日に満ちゆく月が、春の星座たちの間を旅する美しい一週間です。温かいハーブティーを淹れて、私と一緒に今週の天体スケジュールを紐解いてみましょう。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=1000" alt="春の夜空と木々のシルエット">
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">March 23-24, 2026</div>
+                <h2>夕星と「すばる」のランデブー</h2>
+                <p>
+                    今週の幕開け、太陽が地平線の向こうへと隠れた直後の西の空を見上げてください。そこには、ため息が出るほど美しい「宵の明星」金星が、ダイヤモンドを零したような輝きを放っています。
+                </p>
+                <p>
+                    2026年3月23日の夕暮れ、金星は牡羊座から牡牛座へと向かう境界付近に位置しています。そのすぐ近くには、プレアデス星団（すばる）が。双眼鏡をお持ちなら、ぜひレンズを向けてみてください。青白く震える星々が、春の湿った空気の中で潤んで見えるはずです。
+                </p>
+                <div class="quote poem">
+                    <strong>古典に想いを馳せて：</strong>
+                    「春の夜の　闇はあやなし　梅の花　色こそ見えね　香やは隠るる」<br>
+                    ――古今和歌集より。闇夜でも隠せない香りのように、春の星々もまた、霞に揺れながらその存在を強く主張しています。
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">March 25, 2026</div>
+                <h2>上弦の月、双子座の肩を抱いて</h2>
+                <p>
+                    週の中盤、3月25日は「上弦の月」です。月は双子座の足元から、兄のカストルと弟のポルックスへと近づいていきます。空に弓をかけたような形の月が、真夜中に西の空へと沈んでいくまで、双子座の兄弟たちの足元を優しく照らし続けます。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&q=80&w=1000" alt="上弦の月のクレーター">
+                </div>
+                <div class="quote poem">
+                    <strong>観測のポイント：</strong>
+                    <ul class="observation-list">
+                        <li>✦ <strong>月相：</strong>上弦。クレーターの影が最も立体的に見える時です。</li>
+                        <li>✦ <strong>見どころ：</strong>月のすぐ右上に、ポルックス（橙）とカストル（白）が並んでいます。</li>
+                        <li>✦ <strong>双眼鏡：</strong>明暗の境界線付近に注目。地形の陰影が浮き彫りになります。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">March 28-29, 2026</div>
+                <h2>獅子の心臓、レグルスとの逢瀬</h2>
+                <p>
+                    週末、月はさらに膨らみ、春の王者「獅子座」へと足を踏み入れます。3月28日から29日にかけて、月は獅子座の心臓部分に位置する1等星「レグルス」のすぐそばを通り抜けます。
+                </p>
+                <p>
+                    レグルスは「小さな王」という意味を持ちます。月がその傍らに寄り添う姿は、まるで女王が王に耳打ちをしているかのような、密やかで荘厳なランデブー。また、この夜には火星も双子座付近で赤く鋭い光を放っており、色彩のコントラストが夜空を彩ります。
+                </p>
+                <div class="quote poem">
+                    日本の古名で、レグルスを「火星の星」や「酒の旗星」と呼ぶ地域もあったそうです。力強さと、祝祭の予感。春の宵にふさわしい響きだと思いませんか？
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">Epilogue</div>
+                <h2>結びに：春の夜風に願いを託して</h2>
+                <p>
+                    今週の終わり、3月29日。北斗七星が天高く昇り、そこから弧を描くように「春の大曲線」が伸びています。うしかい座のアークトゥルス、おとめ座のスピカ。春分を過ぎ、世界が急速に動き出すこの時期、天体は私たちに「準備は整いましたか？」と問いかけているようです。
+                </p>
+                <p>
+                    友人よ。星々は何万年も変わらぬ軌道を描きながら、二度と同じ組み合わせにならない瞬間を私たちに見せてくれています。今夜、あなたが窓から見上げる風景も、あなたの人生において一度きりのもの。
+                </p>
+                <p>
+                    獅子の勇気と月の優しさを胸に、深く穏やかな眠りについてくださいね。おやすみなさい。
+                </p>
+                <p class="text-right">— あなたの親愛なる友人、エミリーより</p>
+            </section>
+
+            <section class="next-article-section section">
+                <h3>Next Story...</h3>
+                <p>次回は4月。卯月の訪れとともに、「ピンクムーン」の気配が漂い始めます。「乙女の指先と、春の満月」の物語をどうぞお楽しみに。</p>
+                <a href="#" class="button">4月の星日記をチェックする <i class="fas fa-arrow-right"></i></a>
+            </section>
+
+            <footer class="meta">
+                <p>&copy; 2026 Emily's Star Diary. All celestial events are simulated for March 2026.</p>
+                <p>Powered by Gemini 3 Flash | Mode: Free Tier</p>
+            </footer>
+            
+        </article>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting) e.target.classList.add('visible');
+                });
+            },{threshold:0.1});
+            document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('scroll-progress').style.width = scrolled + '%';
+            });
+        });
+    </script>
+</body>
+</html>

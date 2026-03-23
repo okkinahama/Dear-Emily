@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dear Emily - エミリーの星日記 | 2026年3月16日〜3月22日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Shippori+Mincho:wght@400;700&family=Zen+Maru+Gothic:wght@300;400;700&family=Montserrat:wght@400;700&family=Noto+Serif+JP:wght@300;500;700&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #f39c12;
+            --text-color-primary: #e0e0e0;
+            --text-color-secondary: #bdc3c7;
+            --bg-color-primary: #050a1b;
+            --border-color: rgba(243, 156, 18, 0.3);
+            --box-shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.5);
+            --font-family-japanese: 'Shippori Mincho', serif;
+            --font-family-english: 'Playfair Display', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0; padding: 0; width: 100%; overflow-x: hidden;
+            font-family: var(--font-family-japanese);
+            font-size: 16px; line-height: 1.8;
+            background-color: var(--bg-color-primary);
+            background-image: radial-gradient(circle at center, #1a2a4a 0%, #050a1b 100%);
+            color: var(--text-color-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { margin: 0 auto; max-width: 1200px; position: relative; }
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: var(--secondary-color); z-index: 1000; width: 0%; transition: width 0.1s linear; }
+        
+        .section { padding: 40px 20px; margin: 0 auto; max-width: 900px; box-sizing: border-box; text-align: left; opacity: 0; transform: translateY(30px); transition: opacity 1.2s ease, transform 1.2s ease; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .article-detail { max-width: 850px; margin: 40px auto; padding: 40px; background: rgba(10, 17, 40, 0.8); border-radius: 15px; box-shadow: var(--box-shadow-medium); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        
+        .article-header { text-align: center; margin-bottom: 60px; border-bottom: 1px solid var(--border-color); padding-bottom: 40px; }
+        .article-header h1.hero { font-family: var(--font-family-english); font-size: 3.2rem; color: var(--primary-color); margin-bottom: 10px; letter-spacing: 3px; }
+        .article-header .sub-title { font-size: 1.1rem; color: var(--text-color-secondary); }
+
+        .date-badge { display: inline-block; background: var(--secondary-color); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; }
+
+        .article-detail h2 { font-size: 2rem; color: var(--secondary-color); margin-top: 2em; border-bottom: 1px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 1.5em; }
+        .article-detail p { font-size: 1.1em; margin-bottom: 1.5em; text-align: justify; text-indent: 1em; }
+
+        .quote.poem { font-size: 1.1em; color: #ecf0f1; border-left: 4px solid var(--secondary-color); padding: 25px 30px; margin: 40px auto; background: rgba(255, 255, 255, 0.03); font-style: italic; }
+        .quote.poem strong { color: var(--primary-color); display: block; margin-bottom: 10px; font-style: normal; }
+        .quote.poem.centered { text-align: center; }
+        
+        .img-wrap img { max-width: 100%; border-radius: 10px; margin: 30px auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        ul.obs-list { list-style: none; padding-left: 0; }
+        ul.obs-list li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        ul.obs-list li::before { content: "✦"; position: absolute; left: 0; color: var(--primary-color); }
+
+        .next-article-section { text-align: center; border-top: 1px dashed #7f8c8d; padding: 60px 20px; margin-top: 60px; }
+        .next-article-section h3 { color: var(--primary-color); font-size: 1.6em; }
+        .button { display: inline-block; padding: 15px 40px; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; transition: all 0.3s; margin-top: 20px; border-radius: 30px; font-weight: bold; }
+        .button:hover { background: var(--primary-color); color: #000; }
+        
+        footer.meta { text-align: center; color: #7f8c8d; font-size: 0.8rem; padding: 40px 0; opacity: 0.7; }
+        
+        .equinox-formula { font-size: 0.9em; display: block; margin-top: 10px; }
+
+        .signature { text-align: right; }
+
+        @media (max-width: 768px) {
+            .article-header h1.hero { font-size: 2.2rem; }
+            .article-detail { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    
+    <div class="container">
+        <article class="article-detail">
+            <header class="article-header">
+                <h1 class="hero">Dear Emily</h1>
+                <span class="sub-title">〜星降る夜の対話：2026.03.16 — 03.22 春分、光の再生、そして太陽の欠片〜</span>
+            </header>
+
+            <section class="section">
+                <div class="date-badge">Introduction</div>
+                <h2>序：浅い春、天の扉が開くとき</h2>
+                <p>
+                    夜空を眺める大切な友人、あなたへ。エミリーです。窓を少し開けると、入り込んでくる風の中に、土の匂いと、どこか遠くの潮騒が混じっているような気がします。
+                </p>
+                <p>
+                    暦の上では「啓蟄」が過ぎ、土の下で眠っていた命たちが、太陽の温もりに誘われてゆっくりと瞳を開け始める季節。私たちの住むこの星が、長い冬の眠りから覚め、光に満ちた半分へと足を踏み入れようとしています。
+                </p>
+                <p>
+                    2026年3月16日。今週は、私たちが生きるこの地上と、遠い星々のドラマが重なり合う、とても特別な一週間になります。3月19日の「部分日食」、そして3月20日の「春分」。闇が極まったかと思えば、直後に光が溢れ出す……そんな、宇宙の大きな深呼吸を感じるような日々を一緒に紐解いていきましょう。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000" alt="春の夜空と再生の光">
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">March 16-18, 2026</div>
+                <h2>第1章：如月の終わり、朔に向かう静寂</h2>
+                <p>
+                    今週の幕開け、月は細い弓の形をして、夜明け前の東の空にそっと佇んでいます。旧暦では、今は二月の「如月（きさらぎ）」。衣を更に重ねて着るほど冷え込む日があることからその名がついたと言われますが、星空を見上げる私たちにとっても、まだ夜風は凛としています。
+                </p>
+                <p>
+                    占星術の視点では、この時期の月は魚座の領域を旅しています。魚座は十二星座の最後を締めくくるサイン。一つのサイクルが終わり、全てが渾然一体となって海へ還るような、浄化と手放しの時間です。
+                </p>
+                <div class="quote poem">
+                    <strong>観測のヒント：明け方の細い月</strong>
+                    3月17日の明け方、南東の低い空を見てください。驚くほど細くなった月が、明けの明星のような輝きを放ちながら、日の出前の薄明の中に溶け込んでいく様子が見えるはずです。双眼鏡があれば、月の影の部分が地球からの照り返しで薄明るく光る「地球照」を美しく捉えることができるでしょう。
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">March 19, 2026</div>
+                <h2>第2章：昼の星が欠けるとき（部分日食）</h2>
+                <p>
+                    3月19日の午前。太陽、月、そして地球が一直線に並び、私たちの頭上で「部分日食」が起こります。新月はただの新月ではありません。月が太陽の前を横切り、黄金の光をわずかに食い欠く、魔法のような時間が訪れます。
+                </p>
+                
+                <div class="quote poem">
+                    <strong>2026年3月19日 部分日食スケジュール（東京基準）</strong>
+                    <ul class="obs-list">
+                        <li>食の始まり：10:10頃</li>
+                        <li>食の最大（約15%ほど欠ける）：11:05頃</li>
+                        <li>食の終わり：12:00頃</li>
+                    </ul>
+                    ※観測には必ず「日食グラス」を使用してください。
+                </div>
+                <p>
+                    日食とは、宇宙が私たちに見せてくれる「影の絵本」のようです。魚座と牡羊座の境界で起こるこの日食は、過去の因縁を断ち切り、全く新しい自分として生まれ変わるための強力な後押しとなるでしょう。
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">March 20, 2026</div>
+                <h2>第3章：春分、ゼロ・ポイントの目覚め</h2>
+                <p>
+                    日食の興奮冷めやらぬ翌日、3月20日は「春分の日」です。太陽が天の赤道を南から北へと横切り、占星術における「牡羊座0度」へ到達する瞬間。時刻は、日本時間の午後5時46分。
+                </p>
+                <div class="quote poem centered">
+                    $$ \text{太陽の黄経 } \lambda = 0^\circ $$
+                    <span class="equinox-formula">この等式が成立する瞬間、陰と陽のバランスが完璧に整う「ゼロ・ポイント」を迎えます。</span>
+                </div>
+                [Image showing the sun's path on the vernal equinox]
+                <p>
+                    この日、太陽は文字通り「真東」から昇り、「真西」へと沈んでいきます。方位磁石を持って日没を待ってみてください。夕日が沈む位置が、これから夏に向けて少しずつ北へと寄り道していく、その変化の起点を自分の目で確認することができます。
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">March 21-22, 2026</div>
+                <h2>第4章：宵の明星と春のダイヤモンド</h2>
+                <p>
+                    週の後半、21日から22日にかけて。日は沈んでも、西の空にはまだ冬の名残と春の先触れが混ざり合っています。
+                </p>
+                <p>
+                    まず目に飛び込んでくるのは、宵の明星・金星です。2026年の3月、金星は「夕方の女王」として、夕焼けの残光の中で圧倒的な輝きを放っています。そして、空が高くなるにつれ、春の星座たちが主役に躍り出ます。
+                </p>
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4b4b4?auto=format&fit=crop&q=80&w=1000" alt="夜空を彩る春のダイヤモンド">
+                </div>
+                
+                <div class="quote poem">
+                    <strong>春のダイヤモンドの見つけ方：</strong>
+                    北斗七星の柄のカーブを伸ばす「春の大曲線」を辿り、アークトゥルス、スピカを探してください。そこにデネボラとコル・カロリを繋げば、夜空に巨大な「春のダイヤモンド」が完成します。
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="date-badge">Epilogue</div>
+                <h2>結：あなたの心に星を灯して</h2>
+                <p>
+                    3月22日の週の終わりには、生まれたばかりの「三日月」が西の低空に顔を出します。この月は、新しいサイクルの最初のサイン。
+                </p>
+                <p>
+                    日食で太陽が欠けるからこそ、私たちは普段当たり前にある光の尊さに気づくことができます。どうか忘れないでください。暗い夜があるからこそ、私たちは星を見つけることができるのです。
+                </p>
+                <p>
+                    今夜も、明日も。あなたの頭上には、優しい星の物語が流れています。良い夢を、そして素敵な春の目覚めを。
+                </p>
+                <p class="signature">— 愛を込めて、エミリーより</p>
+            </section>
+
+            <section class="next-article-section section">
+                <h3>Next Story...</h3>
+                <p>次回、3月23日からの日記では、満ちていく月と「桜の開花を待つ星々」の物語をお届けします。</p>
+                <a href="#" class="button">次のお話を待つ <i class="fas fa-arrow-right"></i></a>
+            </section>
+
+            <footer class="meta">
+                <p>&copy; 2026 Emily's Starry Diary. All rights reserved.</p>
+                <p>Powered by Dear Emily Standard Style Sheet v2.0</p>
+            </footer>
+            
+        </article>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting) e.target.classList.add('visible');
+                });
+            },{threshold:0.1});
+            document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('scroll-progress').style.width = scrolled + '%';
+            });
+        });
+    </script>
+</body>
+</html>
