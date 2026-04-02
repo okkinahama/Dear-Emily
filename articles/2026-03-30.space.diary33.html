@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記 — 2026年3月30日〜4月5日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Zen+Maru+Gothic:wght@300;400;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* --- 変数定義 (カラーパレットとタイポグラフィ) --- */
+        :root {
+            --primary-color: #e6b422; /* 黄金色・月光の色 */
+            --secondary-color: #1e90ff; /* アクセントブルー */
+            --text-color-primary: #fdfdfd;
+            --text-color-secondary: #bdc3c7;
+            --bg-color-primary: #05080f;
+            --bg-color-secondary: #0d1117;
+            --border-color: rgba(230, 180, 34, 0.3);
+            --highlight-color: #ffd1dc; /* 桜色 */
+
+            --box-shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --font-family-japanese: 'Shippori Mincho', 'Zen Maru Gothic', serif;
+            --font-family-english: 'Montserrat', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0; padding: 0; width: 100%; overflow-x: hidden;
+            font-family: var(--font-family-japanese);
+            font-size: 16px; line-height: 2.0;
+            background: var(--bg-color-primary);
+            color: var(--text-color-primary);
+        }
+
+        .container { margin: 0 auto; max-width: 1200px; position: relative; }
+
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 4px;
+            background: var(--primary-color); z-index: 1000; width: 0%;
+        }
+
+        .section {
+            padding: 60px 20px; max-width: 960px; margin: 0 auto;
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+        .section.visible { opacity: 1; transform: translateY(0); }
+
+        .article-detail {
+            max-width: 850px; margin: 40px auto; padding: 40px;
+            background: var(--bg-color-secondary); border-radius: 15px;
+            box-shadow: var(--box-shadow-medium); border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .article-header h1.hero {
+            font-family: var(--font-family-japanese);
+            font-size: 2.8em; color: var(--primary-color); text-align: center;
+            margin-bottom: 10px; letter-spacing: 0.2rem;
+            text-shadow: 0 0 20px rgba(230, 180, 34, 0.3);
+        }
+
+        .meta { text-align: center; color: var(--text-color-secondary); font-size: 1.1em; margin-bottom: 30px; }
+
+        .lead {
+            font-size: 1.15em; line-height: 1.9; margin: 30px 0; padding: 25px;
+            border-left: 4px solid var(--primary-color);
+            background-color: rgba(230, 180, 34, 0.05); font-style: italic;
+        }
+
+        .article-detail h2 {
+            font-size: 2rem; color: var(--primary-color); border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5em; margin-top: 2.5em; margin-bottom: 1.5em; display: block;
+        }
+
+        .article-detail h3 {
+            font-size: 1.5em; color: var(--highlight-color); margin-top: 40px;
+            border-left: 4px solid var(--highlight-color); padding-left: 15px;
+        }
+
+        .article-detail p { margin-bottom: 1.8em; font-size: 1.1em; text-align: justify; }
+
+        .img-wrap img {
+            width: 100%; border-radius: 8px; box-shadow: var(--box-shadow-medium); margin: 30px 0;
+            filter: brightness(0.9);
+        }
+
+        .quote-box {
+            border: 1px solid var(--border-color); padding: 3rem;
+            background: rgba(230, 180, 34, 0.03); margin: 4rem 0;
+            text-align: center; font-style: italic; border-radius: 4px;
+        }
+
+        .practical-list {
+            background: rgba(255, 255, 255, 0.03); padding: 30px 40px; border-radius: 12px;
+            list-style-type: "✦ "; text-align: left; line-height: 2.2;
+        }
+        .practical-list li strong { color: var(--primary-color); }
+        .obs-point { color: var(--secondary-color); display: block; font-size: 0.9em; margin-top: 4px; }
+
+        #apod { padding: 30px; border-radius: 12px; background-color: #000; margin: 50px 0; border: 1px solid rgba(255,255,255,0.1); }
+        .apod-img { width: 100%; border-radius: 8px; margin-top: 15px; }
+
+        .apod-title { border: none; text-align: center; padding: 0; }
+
+        #apod-content { text-align: center; }
+
+        footer.site-footer { text-align: center; padding: 60px; color: var(--text-color-secondary); font-size: 0.9em; }
+        .next-link { display: inline-block; margin-top: 40px; padding: 15px 40px; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; border-radius: 30px; transition: 0.4s; }
+        .next-link:hover { background: var(--primary-color); color: #000; }
+        
+        .footer-copyright { margin-top: 40px; opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+    
+    <div class="container">
+        <article class="article-detail">
+            <header class="article-header">
+                <h1 class="hero">エミリーの星日記</h1>
+                <p class="meta">2026.03.30 — 04.05｜弥生から卯月へ、境界線を渡る風の独白</p>
+                
+                <div class="img-wrap">
+                    <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=1200" alt="春の夜空の深淵">
+                </div>
+
+                <p class="lead">
+                    夢と現実の境目が、春の霞のように淡くなっていく。<br>
+                    魚座の底で重なる土星と海王星、そして清明の光。<br>
+                    揺らぎの中に宿る、再生の物語を一緒に辿りましょう。
+                </p>
+            </header>
+
+            <section class="section">
+                <h2>壱：花冷えの夜に、土星の溜息を聞く</h2>
+                <p>
+                    お元気ですか、エミリーです。今、私の部屋の窓からは、薄墨色に染まった夜空が見えています。2026年3月30日。暦の上では、一年のうちでもっとも「揺らぎ」の大きな時期を私たちは歩いています。
+                </p>
+                <p>
+                    街では早咲きの桜が散り始め、地面はピンク色の雪が積もったよう。今週、もっとも特筆すべきは、深い魚座の底で、現実を司る「土星」と、境界を溶かす「海王星」が密やかに重なり合っていることです。
+                </p>
+                <div class="quote-box">
+                    「夢と現実の境目が、春の霞のように淡くなっていく。」<br>
+                    それは、2026年という年が持つ、もっとも大きな星の叙事詩のひとつです。
+                </div>
+                <p>
+                    今週、私たちは「新月」へと向かう闇の抱擁の中にいます。月がその輝きを削ぎ落としていくにつれ、私たちの意識は自身の内側――深く、静かな精神の海へと沈み込んでいくでしょう。
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>弐：清明の光、天を洗う水の星座</h2>
+                <p>
+                    2026年3月31日、月は蠍座を通り、私たちの感情の深い部分を揺さぶります。そして4月4日、太陽が黄経15度を通過する瞬間、二十四節気の「清明（せいめい）」を迎えます。「清浄明潔」。万物が清らかで生き生きとするこの日、空もまた、冬の重い外套を脱ぎ捨てます。
+                </p>
+                
+                <ul class="practical-list">
+                    <li><strong>3月31日：下弦を過ぎた月</strong>
+                        <span class="obs-point">午前3時頃、南東の空。蠍座のアンタレスの赤さと月の共演。</span>
+                    </li>
+                    <li><strong>4月1日：宵の明星</strong>
+                        <span class="obs-point">日没直後の西の空。金星がマイナス4等級の圧倒的な輝きを放ちます。</span>
+                    </li>
+                    <li><strong>4月3日：火星と月の接近</strong>
+                        <span class="obs-point">日の出1時間前。魚座の境界で細い月と赤き火星が寄り添います。</span>
+                    </li>
+                    <li><strong>4月4日：二十四節気「清明」</strong>
+                        <span class="obs-point">牡羊座の半ばに達した太陽が、生命のエネルギーを地上へ注ぎます。</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="apod" class="section">
+                <h3 class="apod-title">✨ NASA 今日の宇宙画像 (APOD) ✨</h3>
+                <div id="apod-content">
+                    <p>宇宙の素晴らしい画像を読み込んでいます...</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>参：北斗七星の指し示す「結び」の作法</h2>
+                <p>
+                    天頂近くには大きな「北斗七星」が逆さまに懸かっています。このひしゃくの水を地上にこぼすかのように、春の雨が降るのかもしれません。この北斗七星の柄から辿る「春の大曲線」の先には、乙女座のスピカが青白く光っています。
+                </p>
+                <p>
+                    乙女座の月は、私たちの「生活」を整えるよう促しています。スピカが光る今週は、身の回りのものを一つ、丁寧に磨き上げるような些細な行為に幸運が宿ります。
+                </p>
+                <div class="quote-box">
+                    昔の人は、清明の時期に降る雨を「発火雨（はっかう）」と呼びました。桃の花を散らす雨です。散ることを惜しむのではなく、その花びらが土に還り、次の命を燃やす準備であることを、星たちは見守っています。
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>肆：境界線を越えて、新しい私へ</h2>
+                <p>
+                    今週の旅の終わり、4月5日は最も深い「闇」の夜です。けれど、闇が深ければ深いほど、次に生まれる光は強くなることを忘れないでください。
+                </p>
+                <p>
+                    魚座で重なる土星と海王星は、私たちに問いかけています。「あなたが本当に守りたい現実は何ですか？ そして、あなたが捨て去ることのできない夢は何ですか？」
+                </p>
+                <p>
+                    清明の風に吹かれながら、ただ夜空を見上げるだけでいい。あなたの瞳の中に映る光は、過去の光であると同時に、未来を照らす確かなガイドなのですから。
+                </p>
+            </section>
+
+            <footer class="site-footer">
+                <p class="caption">— 愛を込めて。エミリー</p>
+                <a href="#" class="next-link">NEXT: 4月13日 牡羊座の新月へ <i class="fas fa-chevron-right"></i></a>
+                <p class="footer-copyright">&copy; 2026 DEAR EMILY - STARRY DIARY. <br> 天文情報はシミュレーションに基づいています。</p>
+            </footer>
+
+        </article>
+    </div>
+
+    <script>
+        // Intersection Observer
+        document.addEventListener('DOMContentLoaded', function(){
+            const io = new IntersectionObserver((entries)=>{
+                entries.forEach(e=>{
+                    if(e.isIntersecting) e.target.classList.add('visible');
+                });
+            },{threshold:0.1});
+            document.querySelectorAll('.section').forEach(s=>io.observe(s));
+
+            // Scroll Progress
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll-progress").style.width = scrolled + "%";
+            });
+        });
+
+        // APOD API
+        (function(){
+            const apodEl = document.getElementById('apod-content');
+            const apiKeyApod = 'DEMO_KEY'; 
+            fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKeyApod}`)
+            .then(r=>r.json()).then(data=>{
+                if(data && data.url){
+                    apodEl.innerHTML = `<strong>${data.title}</strong><br><small>${data.date}</small>`;
+                    if(data.media_type === 'image'){
+                        const img = document.createElement('img');
+                        img.src = data.url; img.className = 'apod-img';
+                        apodEl.appendChild(img);
+                    }
+                    const ex = document.createElement('p');
+                    ex.style.fontSize = "0.9em"; ex.style.marginTop = "15px";
+                    ex.textContent = data.explanation;
+                    apodEl.appendChild(ex);
+                }
+            }).catch(()=> { apodEl.textContent = '宇宙の深淵からの画像は、また次回に。'; });
+        })();
+    </script>
+</body>
+</html>
