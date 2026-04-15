@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記｜2026.04.13-04.19 穀雨の雫、獅子の心臓</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --space-black: #03050a;
+            --star-gold: #b89a5e;
+            --regulus-white: #f8f9ff;
+            --nebula-indigo: #12162d;
+            --rain-blue: #5d8cae;
+            --sakura-end: #2d1b1e;
+            --text-gray: #d1d5db;
+        }
+
+        /* --- Base Styles --- */
+        body {
+            background-color: var(--space-black);
+            color: var(--text-gray);
+            font-family: 'Shippori Mincho', serif;
+            line-height: 2.8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            word-break: break-all;
+        }
+
+        /* --- Layout --- */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(3, 5, 10, 0.3), rgba(3, 5, 10, 1)),
+                        url('https://images.unsplash.com/photo-1532978379173-523e16f371f2?auto=format&fit=crop&q=80&w=2000') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        article {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 10rem 2.5rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.02), transparent);
+        }
+
+        .section {
+            margin-bottom: 18rem;
+            position: relative;
+        }
+
+        /* --- Typography --- */
+        .header-top {
+            font-size: 0.9rem;
+            letter-spacing: 0.8rem;
+            color: var(--star-gold);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            letter-spacing: 1.4rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            text-shadow: 0 0 50px rgba(184, 154, 94, 0.4);
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 0.5rem;
+            opacity: 0.8;
+            border-top: 1px solid rgba(184, 154, 94, 0.3);
+            padding-top: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 6rem;
+            color: var(--star-gold);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(transparent, var(--star-gold));
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 4.5rem;
+            text-align: justify;
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-indent: 1em;
+        }
+
+        .emily-sign {
+            text-align: right;
+            margin-top: 6rem;
+            font-size: 1.4rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .emily-name {
+            font-weight: bold;
+            color: var(--star-gold);
+            border-bottom: 2px solid var(--star-gold);
+        }
+
+        /* --- Components --- */
+        img {
+            width: 110%;
+            margin-left: -5%;
+            height: auto;
+            border-radius: 2px;
+            margin: 6rem 0;
+            filter: contrast(1.1) brightness(0.9);
+            box-shadow: 0 50px 100px rgba(0,0,0,1);
+        }
+
+        .quote-aside {
+            border-left: 1px solid var(--star-gold);
+            padding: 3rem 4rem;
+            background: rgba(184, 154, 94, 0.05);
+            margin: 8rem 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .observation-ledger {
+            background: var(--nebula-indigo);
+            border: 1px solid rgba(184, 154, 94, 0.2);
+            padding: 5rem;
+            margin: 6rem 0;
+            border-radius: 4px;
+        }
+
+        .observation-ledger h3 {
+            font-size: 1.8rem;
+            color: var(--star-gold);
+            margin-bottom: 4rem;
+            text-align: center;
+            letter-spacing: 0.3rem;
+        }
+
+        .event-card {
+            margin-bottom: 4rem;
+            border-bottom: 1px dotted rgba(255,255,255,0.1);
+            padding-bottom: 3rem;
+        }
+
+        .date-tag {
+            display: inline-block;
+            background: var(--star-gold);
+            color: var(--space-black);
+            padding: 3px 18px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Call to Action --- */
+        .next-article-section {
+            text-align: center;
+            padding: 15rem 2rem;
+            border-top: 1px solid rgba(184, 154, 94, 0.2);
+        }
+
+        .next-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            letter-spacing: 1rem;
+            margin-bottom: 2.5rem;
+            color: var(--star-gold);
+        }
+
+        .next-title {
+            font-size: 2.4rem;
+            color: #ffffff;
+            letter-spacing: 0.2rem;
+        }
+
+        .next-description {
+            max-width: 650px;
+            margin: 2.5rem auto;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            line-height: 2.2;
+        }
+
+        .btn-next {
+            display: inline-block;
+            margin-top: 5rem;
+            padding: 2rem 6.5rem;
+            border: 1px solid var(--star-gold);
+            color: var(--star-gold);
+            text-decoration: none;
+            transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+            letter-spacing: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-next:hover {
+            background: var(--star-gold);
+            color: var(--space-black);
+            box-shadow: 0 0 60px rgba(184, 154, 94, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 8rem 0;
+            background: #000;
+            border-top: 1px solid rgba(184, 154, 94, 0.15);
+        }
+
+        .footer-icon {
+            font-size: 2rem;
+            color: var(--star-gold);
+            margin-bottom: 2.5rem;
+            opacity: 0.4;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            letter-spacing: 0.5rem;
+            opacity: 0.3;
+            text-transform: uppercase;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2.2rem; }
+            article { padding: 4rem 1.5rem; }
+            img { width: 100%; margin-left: 0; }
+            .observation-ledger { padding: 2rem; }
+            .next-title { font-size: 1.8rem; }
+            .btn-next { padding: 1.5rem 3rem; letter-spacing: 0.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-top">Emily's Celestial Archives 2026</div>
+    <h1>エミリーの星日記</h1>
+    <p class="subtitle">2026.04.13 ― 04.19<br>「穀雨の雫、獅子の心臓が刻む鼓動」</p>
+</header>
+
+<article>
+
+<section class="section">
+    <h2>壱：弥生の雨、星を磨く「穀雨」の予兆</h2>
+    <img src="https://images.unsplash.com/photo-1534274988757-a28bf1f539cf?auto=format&fit=crop&q=80&w=2000" alt="夜の雨に濡れる都会の灯りと星空">
+    <p>
+        こんばんは、エミリーです。窓の外では、春の嵐の名残のような柔らかな雨が、アスファルトを深い紺色に染めています。
+    </p>
+    <p>
+        2026年4月13日。私たちは今、旧暦三月の「弥生（やよい）」の只中にいます。今週の終わり、4月19日には二十四節気の「穀雨（こくう）」を迎えます。「雨降って百穀を潤す」という言葉通り、この時期の雨は天からの恵みそのもの。占星術的に見れば、太陽が牡羊座の情熱的な領域から、牡牛座の豊穣な土の領域へと移行しようとする、非常に官能的で力強い端境期にあたります。
+    </p>
+    <p>
+        空の主役は、夕闇の中に美しく弧を描く「宵月（よいづき）」。新月を過ぎ、日に日にその厚みを増していく月の姿は、私たちが地上の雑多な出来事の中で見失いがちな「成長の確信」を、静かに物語っているようです。
+    </p>
+    <div class="quote-aside">
+        「雨の夜は、星が見えないのではありません。雲の向こうで星たちが、次に現れるときのために自分たちの光を雨水で磨いているのです。そう思うと、傘を打つ雨音も天上の旋律に聞こえてきませんか？」
+    </div>
+</section>
+
+<section class="section">
+    <h2>弐：レグルスの咆哮、あるいは「小さな王」の自尊心</h2>
+    <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bcc0?auto=format&fit=crop&q=80&w=2000" alt="春の夜空を支配する獅子座の星並び">
+    <p>
+        夜空の真ん中に目を向ければ、春の星座の王者「獅子座」が天頂を領有しています。その胸元で青白く輝くのが、一等星レグルス。この星は、黄道（太陽の通り道）のほぼ真上に位置する特別な星であり、古来より「ロイヤル・スター（王者の星）」として崇められてきました。
+    </p>
+    <p>
+        レグルスを観測する際、ぜひその「色」に注目してください。シリウスのような鋭い青ではなく、どこか気品のある、磨き抜かれた白銀の輝き。それは、真に自立した人間が持つ「静かな自尊心」の色のようです。今週、火星と土星が魚座の深い場所でコンジャンクション（重なり）を続け、私たちの感情を揺さぶる中で、このレグルスの揺るぎない輝きは、私たちが立ち戻るべき「内なる中心」を指し示しています。
+    </p>
+
+    <div class="observation-ledger">
+        <h3>今週の宙模様：2026年4月13日〜4月19日</h3>
+        
+        <div class="event-card">
+            <span class="date-tag">4月13日（月）</span>
+            <p><strong>月とアルデバランの至近接近</strong><br>
+            日没後の西の空。3日目の細い月が、おうし座の赤い瞳・アルデバランを掠めるように通過します。地球照を伴った月の暗部と、燃えるようなオレンジ色の巨星が双眼鏡の同一視野に収まる様子は、まさに天上の宝石細工です。</p>
+        </div>
+
+        <div class="event-card">
+            <span class="date-tag">4月15日（水）</span>
+            <p><strong>上弦の月 ── 蟹座の守護</strong><br>
+            月がちょうど半分に満ち、天の均衡を保ちます。蟹座にあるこの月は、私たちの「魂の器」を修復するエネルギーに満ちています。夜、南の空高くに浮かぶこの半月を見上げながら、自分自身を慈しむ時間を持ってください。</p>
+        </div>
+
+        <div class="event-card">
+            <span class="date-tag">4月17日（金）</span>
+            <p><strong>火星・土星の「魚座の結び」ピーク</strong><br>
+            夜明け前の東の低空。情熱（火星）と制約（土星）が、境界のない海（魚座）で完全に一つになります。あなたが抱いている夢を、単なる幻想で終わらせないための「覚悟」を固める、非常に厳粛なタイミングです。</p>
+        </div>
+
+        <div class="event-card">
+            <span class="date-tag">4月19日（日）</span>
+            <p><strong>二十四節気「穀雨」</strong><br>
+            春の最後の節気。月は獅子座へと入り、レグルスとランデブーを楽しみます。地上の生命が雨を受け取り、天を仰ぐ。生命の循環が最高潮に達する夜です。</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>参：銀河の窓から眺める、数千万年前の「今」</h2>
+    <img src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&q=80&w=2000" alt="銀河系外の美しいスパイラル銀河">
+    <p>
+        春の夜空の美しさは、目に映る一等星だけではありません。望遠鏡の倍率を上げると、獅子座の足元やおとめ座の指先に、淡い光のシミのような「銀河（アイランド・ユニバース）」が無数に顔を出します。
+    </p>
+    <p>
+        今の時期、私たちの銀河系を覆うガスや塵が少なくなるため、はるか数千万光年彼方の銀河たちを直接見通すことができるのです。これを天文学者は「銀河ののぞき窓」と呼びます。M65やM66といった銀河から届く光は、まだ地球上に恐竜が闊歩していた時代のものかもしれません。
+    </p>
+    <p>
+        「穀雨」の雨粒が地上の一粒の種を育むように、宇宙の深淵から届くこの古き光もまた、私たちの精神の一部を密やかに育んでいます。私たちが今、この瞬間に抱いている喜びや悲しみは、宇宙という巨大な編み目の中の、とても愛おしい、そして確かな一目（ひとめ）なのです。
+    </p>
+    <div class="quote-aside">
+        「銀河を眺めることは、自分の小ささを嘆くためではありません。これほど広大な宇宙の中で、心臓の鼓動を刻み、星を美しいと感じる『私』という奇跡を祝福するための儀式なのです。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>肆：結び ── 潤いの雨、そして咆哮へ</h2>
+    <img src="https://images.unsplash.com/photo-1518005020251-58296d8f81ad?auto=format&fit=crop&q=80&w=2000" alt="夜明け前の澄んだ空気と星々">
+    <p>
+        2026年4月19日。今週を締めくくる穀雨の夜、雨上がりの空気は驚くほど澄み渡っていることでしょう。
+    </p>
+    <p>
+        地上の花々は雨に打たれてその身を散らしますが、その芳醇な香りは夜風に乗って、天上の獅子座まで届くかのようです。月は満月に向けて力を蓄え、私たちの感情もまた、これからの「実り」に向けて大きなうねりを生み出し始めます。
+    </p>
+    <p>
+        もし、あなたが今、何かの岐路に立っているのなら、今夜は獅子座のレグルスを探してみてください。南の空、逆向きの「はてなマーク（ししの大きな鎌）」の端で、凛と光るその星を。その光は、あなたにこう囁いているはずです。
+    </p>
+    <p>
+        「雨を恐れるな。それはあなたが、次に高く吠えるための準備なのだから」と。
+    </p>
+    <p>
+        どうぞ、素晴らしい穀雨の一週間を。
+        星々があなたの行く末を、どこまでも清らかに照らしていますように。
+    </p>
+    <div class="emily-sign">
+        深い愛と、星の祝福を込めて。 <br>
+        <span class="emily-name">エミリー</span>
+    </div>
+</section>
+
+<section class="next-article-section">
+    <div class="next-label">NEXT ORBIT</div>
+    <h3 class="next-title">「蠍座の満月、禁じられた欲望のピンクムーン」</h3>
+    <p class="next-description">
+        次週、4月24日の満月。蠍座の深淵で満ちる「ピンクムーン」が、私たちの潜在意識に隠された真実の扉をこじ開けます。
+    </p>
+    <a href="#" class="btn-next">深淵を覗く</a>
+</section>
+
+</article>
+
+<footer>
+    <div class="footer-icon">
+        <i class="fas fa-feather-alt"></i>
+    </div>
+    <p class="copyright">
+        &copy; 2026 DEAR EMILY - STARRY DIARY PROJECT.
+    </p>
+</footer>
+
+</body>
+</html>
