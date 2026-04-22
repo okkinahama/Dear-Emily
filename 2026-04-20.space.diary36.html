@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記｜2026.04.20-04.26 蠍座の満月、深淵に咲くピンクムーン</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --space-black: #05070a;
+            --star-gold: #c5a059;
+            --pink-moon: #fce4ec;
+            --deep-obsidian: #0d0d12;
+            --scorpio-red: #8b0000;
+            --text-light: #f1f1f1;
+        }
+
+        /* --- Base Styles --- */
+        body {
+            background-color: var(--space-black);
+            color: var(--text-light);
+            font-family: 'Shippori Mincho', serif;
+            line-height: 2.8;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            word-break: break-all;
+        }
+
+        /* --- Layout --- */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(5, 7, 10, 0.4), rgba(5, 7, 10, 1)),
+                        url('https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&q=80&w=2000') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        article {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 10rem 2.5rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.02) 0%, transparent 100%);
+        }
+
+        .section {
+            margin-bottom: 18rem;
+            position: relative;
+        }
+
+        /* --- Typography --- */
+        .header-tag {
+            font-size: 0.9rem;
+            letter-spacing: 0.8rem;
+            color: var(--star-gold);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            letter-spacing: 1.4rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            text-shadow: 0 0 50px rgba(197, 160, 89, 0.4);
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 0.5rem;
+            opacity: 0.8;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+            padding-top: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 6rem;
+            color: var(--star-gold);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(transparent, var(--star-gold));
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 4.5rem;
+            text-align: justify;
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-indent: 1em;
+        }
+
+        .emily-sign-area {
+            text-align: right;
+            margin-top: 6rem;
+            font-size: 1.4rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .emily-name-styled {
+            font-weight: bold;
+            color: var(--star-gold);
+            border-bottom: 2px solid var(--star-gold);
+            padding-bottom: 5px;
+        }
+
+        /* --- Components --- */
+        img {
+            width: 110%;
+            margin-left: -5%;
+            height: auto;
+            border-radius: 2px;
+            margin: 6rem 0;
+            filter: contrast(1.1) brightness(0.85);
+            box-shadow: 0 50px 100px rgba(0,0,0,1);
+        }
+
+        .quote-panel-styled {
+            border-left: 1px solid var(--star-gold);
+            padding: 3rem 4rem;
+            background: rgba(197, 160, 89, 0.05);
+            margin: 8rem 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .observation-journal-container {
+            background: var(--deep-obsidian);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 5rem;
+            margin: 6rem 0;
+            border-radius: 4px;
+        }
+
+        .observation-journal-container h3 {
+            font-size: 1.8rem;
+            color: var(--star-gold);
+            margin-bottom: 4rem;
+            text-align: center;
+            letter-spacing: 0.3rem;
+        }
+
+        .event-detail-box {
+            margin-bottom: 4rem;
+            border-bottom: 1px dotted rgba(255,255,255,0.1);
+            padding-bottom: 3rem;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: var(--star-gold);
+            color: var(--space-black);
+            padding: 3px 18px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Call to Action --- */
+        .next-article-section {
+            text-align: center;
+            padding: 15rem 2rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .next-label-styled {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            letter-spacing: 1rem;
+            margin-bottom: 2.5rem;
+            color: var(--star-gold);
+        }
+
+        .next-title-styled {
+            font-size: 2.4rem;
+            color: #ffffff;
+            letter-spacing: 0.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .next-description-styled {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            line-height: 2.2;
+        }
+
+        .btn-next-styled {
+            display: inline-block;
+            margin-top: 5rem;
+            padding: 2rem 6.5rem;
+            border: 1px solid var(--star-gold);
+            color: var(--star-gold);
+            text-decoration: none;
+            transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+            letter-spacing: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-next-styled:hover {
+            background: var(--star-gold);
+            color: var(--space-black);
+            box-shadow: 0 0 60px rgba(197, 160, 89, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 8rem 0;
+            background: #000;
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
+        }
+
+        .footer-icon-styled {
+            font-size: 2rem;
+            color: var(--star-gold);
+            margin-bottom: 2.5rem;
+            opacity: 0.4;
+        }
+
+        .copyright-text {
+            font-size: 0.8rem;
+            letter-spacing: 0.5rem;
+            opacity: 0.3;
+            text-transform: uppercase;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2.2rem; }
+            article { padding: 4rem 1.5rem; }
+            img { width: 100%; margin-left: 0; }
+            .observation-journal-container { padding: 2rem; }
+            .next-title-styled { font-size: 1.8rem; }
+            .btn-next-styled { padding: 1.5rem 3rem; letter-spacing: 0.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-tag">Celestial Dialogue 2026 - Emily</div>
+    <h1>エミリーの星日記</h1>
+    <p class="subtitle">2026.04.20 ― 04.26<br>「蠍座の満月、深淵に咲くピンクムーン」</p>
+</header>
+
+<article>
+
+<section class="section">
+    <h2>壱：穀雨の雫と、変容を促す風</h2>
+    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=2000" alt="春の霧と月明かりの森">
+    <p>
+        こんばんは、エミリーです。暦の上では「穀雨（こくう）」のただ中。地上の花々は雨を含んで重たげに首を垂れ、代わりに瑞々しい若葉が世界を支配し始めています。2026年4月20日、私たちは春の穏やかな陽光から、一年で最も深い「感情の変容」をもたらす一週間へと足を踏み入れました。
+    </p>
+    <p>
+        旧暦では三月、すなわち「弥生（やよい）」の月も終盤。今週、夜空が私たちに用意しているのは、あまりにも官能的で、そして真摯な「蠍座の満月」というドラマです。
+    </p>
+    <p>
+        蠍座というサイン（星座）は、物事の表面をさらりと撫でることを良しとしません。暗い土の中に隠された真実、心の奥底で澱のように溜まった本音、そして死と再生。4月24日に訪れるこの満月は、あなたがこれまで「見ないふり」をしてきた自分自身の核心を、白銀の光で容赦なく、けれど慈しみを持って照らし出すでしょう。
+    </p>
+    <div class="quote-panel-styled">
+        「ピンクムーンという愛らしい名前の裏側には、脱皮を繰り返す蠍の鋭い針が隠されています。古い自分を脱ぎ捨てる痛みを知る者だけが、真に清らかな夜明けを迎えることができるのです。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>弐：こと座の矢と、満ちゆく月の眩耀</h2>
+    <img src="https://images.unsplash.com/photo-1502675135487-e75f8629d3ff?auto=format&fit=crop&q=80&w=2000" alt="夜空の流星と銀河">
+    <p>
+        満月へのカウントダウンが始まる中、今週は天上の「琴」が静かに音を奏でます。4月22日、こと座流星群が極大を迎えます。
+    </p>
+    <p>
+        あいにく、満月直前の月が夜空を明るく支配しているため、条件は決して良好とは言えません。しかし、だからこそ見つかった一条の光には特別な意味が宿ります。こと座の流星は時折、非常に明るい「火球」となって現れることがあるのです。月光という眩耀（げんよう）の中でも消えることのない強い光。それは、周囲の環境に流されず、自らの意志で輝こうとする魂の象徴のように私には思えます。
+    </p>
+
+    <div class="observation-journal-container">
+        <h3>今週の宙模様観測手帖：2026.04.20 - 04.26</h3>
+        
+        <div class="event-detail-box">
+            <span class="date-badge">4月20日（月）</span>
+            <p><strong>月と火星の未明の接近</strong><br>
+            夜明け前の東の空、双子座の領域で月が火星とランデブー。赤い火星の熱量を、月が静かに冷ますような、知的な情熱が湧き上がる配置です。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">4月22日（水）</span>
+            <p><strong>こと座流星群 極大</strong><br>
+            22世紀まで語り継がれるベガの輝きを放射点に。月が沈む深夜2時以降、北東の空をぼんやりと眺めてみてください。一筋の「矢」が、あなたの停滞した意識を撃ち抜いてくれるかもしれません。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">4月24日（金）</span>
+            <p><strong>蠍座の満月（ピンクムーン）</strong><br>
+            18時26分、望。蠍座4度で月が完全に満ちます。太陽は牡牛座、月は蠍座。肉体の五感と、魂の深層が綱引きをするような強い磁場が生まれます。瞑想や浄化のバスタイムを大切に。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">4月26日（日）</span>
+            <p><strong>月、射手座へ</strong><br>
+            蠍座の重厚な淵を抜け、月は自由な狩人・射手座へと飛び出します。重かった心がふっと軽くなり、遠くの地へ思いを馳せる、冒険の予感が満ちる日曜日です。</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>参：スピカの沈黙、アンタレスの脈動</h2>
+    <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=2000" alt="春の一等星スピカと蠍座の星々">
+    <p>
+        21時を過ぎる頃、南の空高くには「春のダイヤモンド」が誇らしげに輝いています。おとめ座のスピカは、その潔いまでの白さから「真珠星（しんじゅぼし）」と呼ばれてきました。
+    </p>
+    <p>
+        しかし今、東の地平線からは、そのスピカの平穏を脅かすような赤い鼓動が昇ってきています。蠍座の心臓、アンタレス。
+    </p>
+    <p>
+        スピカが象徴する「調和」と、アンタレスが象徴する「情念」。この対極にある二つの星が、今夜の空で共鳴しています。2026年という激動の時代において、私たちはスピカのように美しく整えられた自分でありたいと願いつつも、内側にはアンタレスのように激しく燃える「生への渇望」を抱えています。この矛盾こそが人間らしさであり、今週末の満月が私たちに「抱きしめなさい」と語りかけてくる正体なのです。
+    </p>
+    <div class="quote-panel-styled">
+        「完璧な真珠である必要はありません。傷つき、赤く脈打つその心臓こそが、あなたを今、生かしている一番美しい星なのですから。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>肆：結び ── 忘れ霜を越えて</h2>
+    <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&q=80&w=2000" alt="月光の下の夜桜と新緑">
+    <p>
+        2026年4月26日。蠍座の満月が残した深い余韻を抱えたまま、私たちは新しい一週間を迎えようとしています。
+    </p>
+    <p>
+        この時期、日本では「忘れ霜（わすれじも）」という美しい言葉が使われることがあります。春の温かさに心を許した頃、不意に降りる冷たい霜。それは一見、残酷なように思えますが、その寒さに耐えることで若葉はさらに強く、輝く緑へと変容します。
+    </p>
+    <p>
+        蠍座の満月があなたに見せた「本音」も、一時的にはあなたを動揺させ、冷たい霜のように感じさせるかもしれません。けれど、その感情を否定せずに受け入れたとき、あなたの魂は次のステージへと確実に向かい始めます。
+    </p>
+    <p>
+        さあ、今夜も窓を少しだけ開けて、春の夜気を吸い込んで。
+        月明かりに照らされた若葉のように、あなたという唯一無二の命が、明日も力強く芽吹きますように。
+    </p>
+    <div class="emily-sign-area">
+        深い愛と、星の祝福を込めて。 <br>
+        <span class="emily-name-styled">エミリー</span>
+    </div>
+</section>
+
+<section class="next-article-section">
+    <div class="next-label-styled">NEXT DESTINATION</div>
+    <h3 class="next-title-styled">「立夏の風、射手座の月が誘う未知への旅」</h3>
+    <p class="next-description-styled">
+        次週、いよいよ季節は「立夏」へ。重厚な蠍座の淵を抜け、自由と哲学のサイン・射手座の月とともに、私たちは新しい世界へ帆を上げます。
+    </p>
+    <a href="#" class="btn-next-styled">冒険の扉を開く</a>
+</section>
+
+</article>
+
+<footer>
+    <div class="footer-icon-styled">
+        <i class="fas fa-feather-alt"></i>
+    </div>
+    <p class="copyright-text">
+        &copy; 2026 DEAR EMILY - STARRY DIARY PROJECT.
+    </p>
+</footer>
+
+</body>
+</html>
