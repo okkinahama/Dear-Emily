@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記｜2026.05.04-05.10 立夏、ハレーの涙と沈黙の抱擁</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --space-black: #020408;
+            --star-gold: #c5a059;
+            --summer-green: #2a4d3a;
+            --halley-blue: #1b263b;
+            --deep-obsidian: #05050a;
+            --text-light: #fdfdfd;
+        }
+
+        /* --- Base Styles --- */
+        body {
+            background-color: var(--space-black);
+            color: var(--text-light);
+            font-family: 'Shippori Mincho', serif;
+            line-height: 3.2;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            word-break: break-all;
+        }
+
+        /* --- Layout --- */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(2, 4, 8, 0.2), rgba(2, 4, 8, 1)),
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        article {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 15rem 2.5rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.015) 0%, transparent 100%);
+        }
+
+        .section {
+            margin-bottom: 25rem;
+            position: relative;
+        }
+
+        /* --- Typography --- */
+        .header-tag {
+            font-size: 1rem;
+            letter-spacing: 1.2rem;
+            color: var(--star-gold);
+            margin-bottom: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 8vw, 4.2rem);
+            letter-spacing: 1.8rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            text-shadow: 0 0 70px rgba(197, 160, 89, 0.6);
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            letter-spacing: 0.8rem;
+            opacity: 0.9;
+            border-top: 1px solid rgba(197, 160, 89, 0.5);
+            padding-top: 3rem;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            margin-bottom: 8rem;
+            color: var(--star-gold);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 1px;
+            height: 150px;
+            background: linear-gradient(transparent, var(--star-gold));
+            margin-bottom: 2rem;
+        }
+
+        p {
+            margin-bottom: 7rem;
+            text-align: justify;
+            font-size: 1.45rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-indent: 1.5em;
+        }
+
+        .emily-sign-area {
+            text-align: right;
+            margin-top: 12rem;
+            font-size: 1.8rem;
+            letter-spacing: 0.4rem;
+        }
+
+        .emily-name-styled {
+            font-weight: bold;
+            color: var(--star-gold);
+            border-bottom: 2px solid var(--star-gold);
+            padding-bottom: 12px;
+        }
+
+        /* --- Components --- */
+        img {
+            width: 130%;
+            margin-left: -15%;
+            height: auto;
+            border-radius: 1px;
+            margin: 10rem 0;
+            filter: contrast(1.15) brightness(0.85);
+            box-shadow: 0 100px 200px rgba(0,0,0,1);
+        }
+
+        .quote-panel-styled {
+            border-left: 2px solid var(--star-gold);
+            padding: 6rem 8rem;
+            background: rgba(197, 160, 89, 0.06);
+            margin: 15rem 0;
+            font-style: italic;
+            position: relative;
+            font-size: 1.6rem;
+        }
+
+        .observation-journal-container {
+            background: var(--deep-obsidian);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 8rem;
+            margin: 12rem 0;
+            border-radius: 2px;
+        }
+
+        .observation-journal-container h3 {
+            font-size: 2.5rem;
+            color: var(--star-gold);
+            margin-bottom: 7rem;
+            text-align: center;
+            letter-spacing: 0.6rem;
+        }
+
+        .event-detail-box {
+            margin-bottom: 6rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 5rem;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: var(--star-gold);
+            color: var(--space-black);
+            padding: 6px 30px;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+        }
+
+        /* --- Call to Action --- */
+        .next-article-section {
+            text-align: center;
+            padding: 20rem 2rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+            background: linear-gradient(to bottom, transparent, #020305);
+        }
+
+        .btn-next-styled {
+            display: inline-block;
+            margin-top: 7rem;
+            padding: 3rem 10rem;
+            border: 1px solid var(--star-gold);
+            color: var(--star-gold);
+            text-decoration: none;
+            transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
+            letter-spacing: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .btn-next-styled:hover {
+            background: var(--star-gold);
+            color: var(--space-black);
+            box-shadow: 0 0 120px rgba(197, 160, 89, 0.6);
+        }
+
+        /* --- Footer Styles (Fixed for webhint) --- */
+        footer {
+            text-align: center;
+            padding: 15rem 0;
+            background: #000;
+        }
+
+        .footer-icon-styled i {
+            color: var(--star-gold);
+            font-size: 2.5rem;
+            opacity: 0.4;
+        }
+
+        .copyright-text {
+            font-size: 0.9rem;
+            letter-spacing: 0.8rem;
+            opacity: 0.4;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; letter-spacing: 0.8rem; }
+            h2 { font-size: 2.5rem; }
+            article { padding: 5rem 1.5rem; }
+            img { width: 100%; margin-left: 0; }
+            .observation-journal-container { padding: 3rem; }
+            .quote-panel-styled { padding: 3rem; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-tag">Celestial Dialogue 2026 - Emily</div>
+    <h1>エミリーの星日記</h1>
+    <p class="subtitle">2026.05.04 ― 05.10<br>「立夏、ハレーの涙と沈黙の抱擁」</p>
+</header>
+
+<article>
+
+<section class="section">
+    <h2>壱：立夏の雫、五感が目覚める瞬間</h2>
+    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=2000" alt="深く鮮やかな新緑と光">
+    <p>
+        こんばんは、エミリーです。暦をめくる指先に、初夏の確かな温もりを感じる季節となりました。2026年5月4日月曜日。地上のカレンダーが大型連休の終焉を惜しむ中、宇宙はもっと雄大な祝祭の幕を上げようとしています。
+    </p>
+    <p>
+        明日、5月5日は二十四節気の「立夏（りっか）」。北半球が太陽の光を最も力強く受け入れる季節の始まりです。この時期、日本では古来より「菖蒲湯（しょうぶゆ）」に入り、その強い香りで邪気を払う風習があります。これは単なるまじないではなく、私たちの「五感」を冬の眠りから完全に叩き起こすための、儀式でもあったのでしょう。
+    </p>
+    <p>
+        今週、夜空もまた「本能」と「感性」を象徴する牡牛座の支配下にあります。月は新月（5月17日）に向けて少しずつその光を絞り、星々の真の声を聴くための「静寂」を用意しています。2026年の立夏。それは、外側の喧騒から離れ、自分の肉体という名の神殿に、一番清らかな風を通すための時間なのです。
+    </p>
+    <div class="quote-panel-styled">
+        「立夏の風が新緑を揺らすとき、私たちの細胞もまた共鳴します。牡牛座の月が導くのは、理屈ではなく『肌で感じる』豊かさ。今夜、土の匂いや風の湿度に、かつてないほど敏感になっている自分に気づくはずです。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>弐：ハレー彗星の落とし物 ── みずがめ座η流星群</h2>
+    <img src="https://images.unsplash.com/photo-1445217143695-46712403d779?auto=format&fit=crop&q=80&w=2000" alt="夜明け前の流星群">
+    <p>
+        今週、あなたが天から受け取ることができる最も贅沢な贈り物は、5月6日未明に極大を迎える「みずがめ座η（エータ）流星群」です。
+    </p>
+    <p>
+        この流星群の正体は、あの有名なハレー彗星が宇宙に遺した「チリ」の帯。数千年の孤独な旅を続ける彗星の落とし物が、地球の大気と抱擁し、光り輝く死を迎える瞬間……。2026年の今年は、月明かりがほとんどないという最高の条件が整いました。
+    </p>
+    <p>
+        極大時刻は午前6時頃。夜明け前の東の空、暗闇が最も深くなるAM2時から4時頃が観測のゴールデンタイムです。高速で駆け抜ける鋭い光の筋は、あなたの心の奥底に眠る「忘れかけていた夢」を、一瞬にして呼び覚ますかもしれません。
+    </p>
+
+    <div class="observation-journal-container">
+        <h3>今週の宙模様観測手帖：2026.05.04 - 05.10</h3>
+        
+        <div class="event-detail-box">
+            <span class="date-badge">5月5日（火・祝）</span>
+            <p><strong>立夏・火星と海王星の共鳴</strong><br>
+            太陽が牡牛座へ。情熱の火星は魚座で海王星と重なっています。目に見えない理想を具現化する力が最も高まる日。菖蒲の葉を浮かべた風呂に入り、夢の輪郭を整えて。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">5月6日（水・祝）</span>
+            <p><strong>みずがめ座η流星群 極大</strong><br>
+            最高の観測条件。放射点が昇る明け方、南東の空を広く見渡してください。ハレー彗星の記憶を乗せた光が、1時間に15個から20個ほど、静寂を切り裂きます。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">5月8日（金）</span>
+            <p><strong>明け方の月と土星の邂逅</strong><br>
+            未明の空、水瓶座で細い逆三日月と土星が並びます。土星は私たちに「本質的な自立」を問いかけます。薄明の青の中で、揺るぎない自分を再確認する瞬間。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">5月10日（日）</span>
+            <p><strong>母の日の宵・金星と双子座の恋</strong><br>
+            夕暮れの西空。愛の惑星・金星が双子座で輝きを増しています。この夜、金星はまるで地上の母たちを祝福するダイヤモンドのように、気高く、そして優しく瞬きます。</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>参：スピカの真珠、蠍座の咆哮 ── 交代する星座たち</h2>
+    <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=2000" alt="春の一等星スピカと夜空">
+    <p>
+        21時を過ぎる頃、天頂付近には「春のダイヤモンド」が完成しています。その南端に輝く、おとめ座のスピカ。青白く澄んだその光は、日本では「真珠星（しんじゅぼし）」として愛されてきました。
+    </p>
+    <p>
+        しかし、その真珠が西へ傾き始める頃、南東の低空からは、もはや無視できないほどの「熱」が昇ってきます。蠍座の一等星、アンタレス。燃えるような赤を放つこの星は、まさに「夏の到来」を告げる王の目覚めです。
+    </p>
+    <p>
+        スピカの「清廉」と、アンタレスの「情念」。この二つのエネルギーが今週、私たちの心の中で激しくせめぎ合います。整えられた日常を守りたい自分と、全てを燃やして新しく生まれ変わりたい自分。立夏の風は、そのどちらもが「生命の正当な姿」であると、夜空の配置を通じて肯定してくれているのです。
+    </p>
+    <div class="quote-panel-styled">
+        「美しくある必要はありません。アンタレスの赤が教えてくれるのは、傷つきながらも命を燃やす、泥臭いまでの生命力。その鼓動こそが、今週のあなたを支える一番の星となります。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>肆：結び ── 母の日の夜、宇宙という名の母へ</h2>
+    <img src="https://images.unsplash.com/photo-1505506819647-681a446a06b3?auto=format&fit=crop&q=80&w=2000" alt="満天の星空と遠い銀河">
+    <p>
+        2026年5月10日。母の日。月はさらに細くなり、明け方の短い時間だけその姿を見せる「死と再生のフェーズ」へ入りました。
+    </p>
+    <p>
+        この夜、日没後の西の空で圧倒的な光を放つ金星を見上げてください。占星術において金星は、愛と調和、そして「母性」の原型でもあります。地上で母に感謝を伝えるのと同じように、私たちは今夜、全ての命を育む「宇宙という名の母」の懐に抱かれていることに気づくでしょう。
+    </p>
+    <p>
+        ハレー彗星が遺した涙が流星となり、立夏の風が新緑を撫で、蠍座の心臓が脈打つ。これら全てのドラマは、あなたがここに生きていることを祝福するために用意された舞台装置です。
+    </p>
+    <p>
+        さあ、今夜は少しだけ長く、夜空を仰いでみて。
+        たとえ明日が曇り空であっても、雲の向こう側には永遠の静寂と、あなたを愛してやまない星々が、変わらずそこに在るのですから。
+    </p>
+    <div class="emily-sign-area">
+        尽きせぬ愛と、星의 導きを。 <br>
+        <span class="emily-name-styled">エミリー</span>
+    </div>
+</section>
+
+<section class="next-article-section">
+    <div class="next-label-styled">NEXT HORIZON</div>
+    <h3 class="next-title-styled">「牡牛座の新月、闇に蒔く豊穣の種」</h3>
+    <p class="next-description-styled">
+        次週、月は完全に姿を消し、漆黒の夜が訪れます。牡牛座の新月。それは、目に見える豊かさではなく、魂が本当に欲している「本質的な安らぎ」を地に植える日。
+    </p>
+    <a href="#" class="btn-next-styled">未来を覗く</a>
+</section>
+
+</article>
+
+<footer>
+    <div class="footer-icon-styled">
+        <i class="fas fa-moon"></i>
+    </div>
+    <p class="copyright-text">
+        &copy; 2026 DEAR EMILY - STARRY DIARY PROJECT.
+    </p>
+</footer>
+
+</body>
+</html>
