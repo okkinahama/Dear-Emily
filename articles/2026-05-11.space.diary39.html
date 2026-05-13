@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記｜2026.05.11-05.17 豊穣の沈黙、牡牛座の新月</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- CSS Variables: 2026 Summer Collection --- */
+        :root {
+            --space-black: #020306;
+            --star-gold: #c5a059;
+            --deep-forest: #10241b;
+            --dawn-cobalt: #1a2a44;
+            --earth-taupe: #92817a;
+            --deep-obsidian: #050508;
+            --text-light: #f9f9f9;
+            --accent-glow: rgba(197, 160, 89, 0.5);
+        }
+
+        /* --- Global Reset & Base --- */
+        body {
+            background-color: var(--space-black);
+            color: var(--text-light);
+            font-family: 'Shippori Mincho', serif;
+            line-height: 3.4; /* 読みやすさを追求した行間 */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            word-break: break-all;
+        }
+
+        /* --- Typography & Layout --- */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(2, 3, 6, 0.4), rgba(2, 3, 6, 1)),
+                        url('https://images.unsplash.com/photo-1496081081097-328d41431111?auto=format&fit=crop&q=80&w=2000') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        article {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 18rem 3rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.01) 0%, transparent 100%);
+        }
+
+        .section {
+            margin-bottom: 30rem; /* セクション間の余白を大胆に */
+            position: relative;
+        }
+
+        .header-tag {
+            font-size: 1.1rem;
+            letter-spacing: 1.3rem;
+            color: var(--star-gold);
+            margin-bottom: 4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 9vw, 4.8rem);
+            letter-spacing: 2.2rem;
+            margin-bottom: 4rem;
+            color: #ffffff;
+            text-shadow: 0 0 80px var(--accent-glow);
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            letter-spacing: 1rem;
+            opacity: 0.9;
+            border-top: 1px solid rgba(197, 160, 89, 0.4);
+            padding-top: 4rem;
+        }
+
+        h2 {
+            font-size: 3.8rem;
+            margin-bottom: 12rem;
+            color: var(--star-gold);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 1px;
+            height: 200px;
+            background: linear-gradient(transparent, var(--star-gold));
+            margin-bottom: 2.5rem;
+        }
+
+        p {
+            margin-bottom: 9rem;
+            text-align: justify;
+            font-size: 1.55rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-indent: 1.5em;
+        }
+
+        /* --- Design Components --- */
+        img {
+            width: 140%;
+            margin-left: -20%;
+            height: auto;
+            border-radius: 2px;
+            margin: 15rem 0;
+            filter: contrast(1.1) brightness(0.75);
+            box-shadow: 0 150px 300px rgba(0,0,0,1);
+        }
+
+        .quote-panel-styled {
+            border-left: 3px solid var(--star-gold);
+            padding: 8rem 10rem;
+            background: rgba(197, 160, 89, 0.08);
+            margin: 20rem 0;
+            font-style: italic;
+            position: relative;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .observation-journal-container {
+            background: var(--deep-obsidian);
+            border: 1px solid rgba(197, 160, 89, 0.5);
+            padding: 12rem;
+            margin: 18rem 0;
+            border-radius: 4px;
+        }
+
+        .observation-journal-container h3 {
+            font-size: 3.2rem;
+            color: var(--star-gold);
+            margin-bottom: 10rem;
+            text-align: center;
+            letter-spacing: 1rem;
+        }
+
+        .event-detail-box {
+            margin-bottom: 10rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8rem;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: var(--star-gold);
+            color: var(--space-black);
+            padding: 10px 50px;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            font-size: 1.5rem;
+        }
+
+        /* --- Footer & CTA --- */
+        .next-article-section {
+            text-align: center;
+            padding: 30rem 3rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.4);
+            background: linear-gradient(to bottom, transparent, #010204);
+        }
+
+        .btn-next-styled {
+            display: inline-block;
+            margin-top: 10rem;
+            padding: 4rem 15rem;
+            border: 1px solid var(--star-gold);
+            color: var(--star-gold);
+            text-decoration: none;
+            transition: 3s cubic-bezier(0.19, 1, 0.22, 1);
+            letter-spacing: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+        }
+
+        .btn-next-styled:hover {
+            background: var(--star-gold);
+            color: var(--space-black);
+            box-shadow: 0 0 180px rgba(197, 160, 89, 0.8);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20rem 0;
+            background: #000;
+        }
+
+        .footer-icon-styled i {
+            color: var(--star-gold);
+            font-size: 4rem;
+            opacity: 0.6;
+        }
+
+        .copyright-text {
+            font-size: 1.1rem;
+            letter-spacing: 1.2rem;
+            opacity: 0.5;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            img { width: 100%; margin-left: 0; }
+            article { padding: 10rem 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; letter-spacing: 1.2rem; }
+            h2 { font-size: 3rem; }
+            .observation-journal-container { padding: 5rem; }
+            .quote-panel-styled { padding: 5rem; font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-tag">Celestial Dialogue 2026 - Emily</div>
+    <h1>エミリーの星日記</h1>
+    <p class="subtitle">2026.05.11 ― 05.17<br>「豊穣の沈黙、牡牛座の新月」</p>
+</header>
+
+<article>
+
+<section class="section">
+    <h2>壱：卯月の薫風、竹笋生ずる大地の深呼吸</h2>
+    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb773b09?auto=format&fit=crop&q=80&w=2000" alt="新緑の竹林と地面から顔を出す筍">
+    <p>
+        こんばんは、エミリーです。窓から流れ込む空気が、いつの間にか「涼しさ」から、湿り気を帯びた「瑞々しさ」へと装いを変えました。2026年5月11日月曜日。私たちは今、立夏の次候から末候へと向かう、生命が最も激しく、そして静かに蠢く一週間の入り口に立っています。
+    </p>
+    <p>
+        5月15日からは七十二候の「竹笋生（たけのこしょうず）」。冬の間に土の奥深くで力を蓄えていた筍が、雨の恵みを受けて一気に地上へと顔を出す頃です。旧暦では卯月（四月）のさなか。地上の緑が日に日にその彩度を上げる一方で、今週の夜空は、あえてその光を隠し、深い「沈黙」へと向かっていきます。
+    </p>
+    <p>
+        なぜなら、今週末の5月17日には、牡牛座（Taurus）で新月を迎えるからです。月が新月へと至るプロセスは、私たちが地上の活動を一度休め、自分の内側の「土壌」を整える時間に他なりません。筍が地上へ出る前に、土の中で根を張るように、あなたもまた、今週は「見えない部分」の充実に心を砕いてみませんか。
+    </p>
+    <div class="quote-panel-styled">
+        「新緑の鮮やかさは、その足元にある暗い土の力に支えられています。今週の闇は、あなたが夏に大きな花を咲かせるための、最も栄養豊かな『休息』なのです。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>弐：未明の鉄星、魚座の海に浮かぶ爪痕</h2>
+    <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=2000" alt="夜明け前の東の空に並ぶ惑星と細い月">
+    <p>
+        今週、最も厳かで、最も心を揺さぶる観測の機会は、日の出前の東の空に訪れます。魚座（Pisces）の境界付近。そこには、規律の土星と情熱の火星が、まるで双子の門番のように並び立っています。
+    </p>
+    <p>
+        5月11日から13日にかけて、月齢24から26という「爪のように細い月」が、この二つの惑星のそばを静かに通り抜けていきます。肉眼で見れば、今にも消え入りそうな光の糸が、鈍い銀色の土星と、微かに赤みを帯びた火星に寄り添う姿を確認できるでしょう。
+    </p>
+    <p>
+        もし双眼鏡をお持ちなら、月の「暗い部分」をぜひ覗いてみてください。太陽光が直接当たっていないはずの月の影が、地球の照り返しを受けてぼんやりと浮かび上がる「地球照（Earthshine）」が見えるはずです。それは、私たちが住むこの青い星が、宇宙に向けて放っている愛の反射。夜明け前のコバルトブルーの世界で、この淡い光を見つめる時、あなたは宇宙の孤独と、それゆえの連帯感を感じるかもしれません。
+    </p>
+
+    <div class="observation-journal-container">
+        <h3>今週の宙模様観測手帖：2026.05.11 - 05.17</h3>
+        
+        <div class="event-detail-box">
+            <span class="date-badge">5月11日（月）</span>
+            <p><strong>月と土星の接近（午前4時頃）</strong><br>
+            東の低空、魚座で月と土星が邂逅。土星の環は2026年、私たちの視線に対して非常に薄くなっており、望遠鏡では細い一本の線のように見えるかもしれません。その「規律」の美しさを感じて。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">5月13日（水）</span>
+            <p><strong>月と火星のランデブー（夜明け前）</strong><br>
+            月はいよいよ細さを極め、火星のすぐそばへ。行動力（火星）と感性（月）が混じり合うこの朝、ふと思いついたアイデアは、今後のあなたを支える重要な種になります。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">5月15日（金）</span>
+            <p><strong>宵の明星と木星の祝祭（日没後）</strong><br>
+            西の空高く、双子座に位置する金星（ヴィーナス）が、近くの木星（ジュピター）と共に輝きます。この2つの吉星が夜の帳を優雅に引き上げ、初夏の社交的な空気を演出します。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">5月17日（日）</span>
+            <p><strong>牡牛座の新月（15:10頃）</strong><br>
+            太陽と月が牡牛座の26度で重なります。五感を満たし、物質的な豊かさを定着させるための「始まりの刻」。夜には月が見えなくなりますが、その闇こそが「真実の願い」を描くキャンバスです。</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>参：宵の女王、双子座の風を纏う金星の誘惑</h2>
+    <img src="https://images.unsplash.com/photo-1532960401447-7dd05bef20b0?auto=format&fit=crop&q=80&w=2000" alt="夕暮れ時の西の空に輝く一番星">
+    <p>
+        未明の空が「規律と覚悟」を語るなら、日没後の西の空は「愛と可能性」の物語で溢れています。2026年の5月、金星はマイナス4.1等級という圧倒的な光度で、夕暮れの空に君臨しています。
+    </p>
+    <p>
+        現在、金星は双子座の領域を軽やかに渡っています。双子座の金星は、好奇心と対話の象徴。近くで微笑む木星の影響もあり、今週の私たちの心には、新しい知識を吸収したい、誰かと深く語り合いたいという欲求が自然と湧き上がってくるでしょう。
+    </p>
+    <p>
+        観測のポイントは、日没から約1時間後の「マジックアワー」です。西の地平線に茜色が残る中、宝石のように輝き出す金星を見つけたら、ぜひその周囲の恒星にも目を向けてください。ふたご座のカストルとポルックス、そしてさらに低い位置には、冬の残り香であるカペラが。去りゆく季節と、来たる季節の惑星たちが交差する、一瞬の美しさがそこにあります。
+    </p>
+    <div class="quote-panel-styled">
+        「美しさは、目に映るものだけではありません。金星の光を感じた時、あなたの胸の奥で小さく鳴る予感。それこそが、宇宙があなたに送っている、この春最大のメッセージなのです。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>肆：結び ── 5月17日、牡牛座新月に植える「本質」の種</h2>
+    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=2000" alt="新月の夜の漆黒の空と星屑">
+    <p>
+        2026年5月17日。日曜日。月は太陽の光に完全に抱かれ、私たちの視界から消え去ります。しかし、それは「不在」ではなく、牡牛座（Taurus）という「豊穣の大地」に、月という「感性」が深く潜り込んだことを意味します。
+    </p>
+    <p>
+        牡牛座は、私たちの肉体、五感、そしてこの地上で手にする実質的な豊かさを司るサインです。この新月に私たちがすべきことは、空虚な理想を追うことではありません。むしろ、今ここにある自分の身体を慈しみ、心地よいと感じる香りを嗅ぎ、美味しいと感じる食事を一口ずつ丁寧に味わうこと。
+    </p>
+    <p>
+        新月の夜、空には月が見えません。しかし、もしあなたがその暗闇の中で、自分の足の裏がしっかりと地面に触れている感覚を意識したなら、あなたはすでに牡牛座のエネルギーと共鳴しています。大地に深く根を張り、時間をかけて「本物の豊かさ」を育む決意。それが、この5月の闇が私たちに与えてくれる、最大のギフトです。
+    </p>
+    <p>
+        さあ、今夜は少しだけ早く灯りを消して。
+        暗闇の中で、あなたの鼓動と大地の息吹が重なる瞬間を、じっと待ってみてください。明日から満ち始める月の光が、あなたの願いを現実へと運び始めますように。
+    </p>
+    <div class="emily-sign-area">
+        時空を超えた愛と、星の導きを。 <br>
+        <span class="emily-name-styled">エミリー</span>
+    </div>
+</section>
+
+<section class="next-article-section">
+    <div class="next-label-styled">NEXT ORBIT</div>
+    <h3 class="next-title-styled">「小満、満ちゆく月と夏の女王ベガ」</h3>
+    <p class="next-description-styled">
+        次週、暦は「小満」へ。万物が満ち満ちる季節、夜空には「夏の大三角」がいよいよ存在感を増します。新月から満ちていく月が、こと座のベガ（織姫星）と奏でる光の旋律を綴ります。
+    </p>
+    <a href="#" class="btn-next-styled">次の物語を予約する</a>
+</section>
+
+</article>
+
+<footer>
+    <div class="footer-icon-styled">
+        <i class="fas fa-seedling"></i>
+    </div>
+    <p class="copyright-text">
+        &copy; 2026 DEAR EMILY - STARRY DIARY PROJECT.
+    </p>
+</footer>
+
+</body>
+</html>
