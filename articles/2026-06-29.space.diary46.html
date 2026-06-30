@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記｜2026.06.29-07.05 満天の苺月が照らす夏至の残り香と、水無月の夜に交わされる星々の密談</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- Master Masterpiece CSS --- */
+        :root {
+            --space-black: #02040a;
+            --star-gold: #c5a059;
+            --cosmic-blue: #0a1128;
+            --deep-obsidian: #050814;
+            --text-light: #f8fafc;
+            --text-muted: rgba(248, 250, 252, 0.88);
+            --accent-glow: rgba(197, 160, 89, 0.35);
+            --mist-gray: rgba(255, 255, 255, 0.03);
+            --strawberry-pink: rgba(233, 116, 139, 0.15);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--space-black);
+            color: var(--text-light);
+            font-family: 'Shippori Mincho', serif;
+            line-height: 2.6;
+            overflow-x: hidden;
+            word-break: break-all;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(2, 4, 10, 0.5), rgba(2, 4, 10, 1)),
+                        url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 24px;
+        }
+
+        article {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 15rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 25rem;
+            position: relative;
+        }
+
+        .header-tag {
+            font-size: 1.1rem;
+            letter-spacing: 1.2rem;
+            color: var(--star-gold);
+            margin-bottom: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            letter-spacing: 1.2rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            text-shadow: 0 0 60px var(--accent-glow);
+            line-height: 1.7;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            letter-spacing: 0.5rem;
+            opacity: 0.9;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+            padding-top: 3rem;
+            line-height: 2.2;
+            color: var(--star-gold);
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 7rem;
+            color: var(--star-gold);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            letter-spacing: 0.3rem;
+            line-height: 1.6;
+        }
+
+        h2::before {
+            content: '';
+            width: 1px;
+            height: 100px;
+            background: linear-gradient(transparent, var(--star-gold));
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 5rem;
+            text-align: justify;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            text-indent: 1.5em;
+            letter-spacing: 0.09em;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 8rem 0;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+        }
+
+        .quote-panel-styled {
+            border-left: 3px solid var(--star-gold);
+            padding: 4rem 5rem;
+            background: rgba(197, 160, 89, 0.02);
+            margin: 10rem 0;
+            font-size: 1.5rem;
+            line-height: 2.8;
+            color: #ffffff;
+            border-radius: 0 4px 4px 0;
+            text-align: justify;
+        }
+
+        .observation-journal-container {
+            background: var(--deep-obsidian);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            padding: 6rem 5rem;
+            margin: 15rem 0;
+            border-radius: 6px;
+            box-shadow: 0 35px 80px rgba(0,0,0,0.9);
+        }
+
+        .observation-journal-container h3 {
+            font-size: 2.2rem;
+            color: var(--star-gold);
+            margin-bottom: 6rem;
+            text-align: center;
+            letter-spacing: 0.5rem;
+        }
+
+        .event-detail-box {
+            margin-bottom: 5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding-bottom: 4rem;
+        }
+
+        .event-detail-box:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--star-gold), #b38f4b);
+            color: var(--space-black);
+            padding: 4px 24px;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            font-size: 1.15rem;
+            letter-spacing: 0.08rem;
+            border-radius: 2px;
+        }
+
+        .emily-sign-area {
+            text-align: right;
+            margin-top: 12rem;
+            font-size: 1.6rem;
+            letter-spacing: 0.3rem;
+            line-height: 3;
+        }
+
+        .emily-name-styled {
+            font-weight: bold;
+            color: var(--star-gold);
+            border-bottom: 1px solid var(--star-gold);
+            padding-bottom: 6px;
+            margin-left: 0.8rem;
+        }
+
+        .next-article-section {
+            text-align: center;
+            padding: 15rem 2rem 5rem 2rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.15);
+            background: linear-gradient(to bottom, transparent, #010205);
+        }
+
+        .next-label-styled {
+            font-size: 1.1rem;
+            letter-spacing: 1rem;
+            color: var(--star-gold);
+            margin-bottom: 2.5rem;
+            opacity: 0.8;
+        }
+
+        .next-title-styled {
+            font-size: 2.4rem;
+            color: #ffffff;
+            margin-bottom: 4rem;
+            letter-spacing: 0.2rem;
+            line-height: 1.6;
+        }
+
+        .next-description-styled {
+            font-size: 1.4rem;
+            max-width: 750px;
+            margin: 0 auto 4.5rem auto;
+            text-align: center;
+            text-indent: 0;
+            opacity: 0.85;
+            line-height: 2.6;
+        }
+
+        .btn-next-styled {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 2rem 6rem;
+            border: 1px solid var(--star-gold);
+            color: var(--star-gold);
+            text-decoration: none;
+            transition: all 0.5s ease;
+            letter-spacing: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            border-radius: 2px;
+        }
+
+        .btn-next-styled:hover {
+            background: var(--star-gold);
+            color: var(--space-black);
+            box-shadow: 0 0 40px rgba(197, 160, 89, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10rem 0;
+            background: #010204;
+            border-top: 1px solid rgba(255,255,255,0.005);
+        }
+
+        .footer-icon-styled i {
+            color: var(--star-gold);
+            font-size: 2rem;
+            opacity: 0.4;
+        }
+
+        .copyright-text {
+            font-size: 0.9rem;
+            letter-spacing: 0.5rem;
+            opacity: 0.35;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body { line-height: 2.4; }
+            article { padding: 8rem 1.5rem; }
+            h2 { font-size: 2rem; margin-bottom: 5rem; }
+            h2::before { height: 80px; }
+            p { font-size: 1.35rem; margin-bottom: 4rem; }
+            .quote-panel-styled { padding: 3rem 2rem; font-size: 1.35rem; }
+            .observation-journal-container { padding: 4rem 2rem; }
+            .btn-next-styled { padding: 1.5rem 3rem; letter-spacing: 0.5rem; }
+            .next-title-styled { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-tag">Celestial Symphony 2026 - Emily</div>
+    <h1>エミリーの星日記</h1>
+    <p class="subtitle">2026.06.29 ― 07.05<br>「満天の苺月が照らす夏至の残り香と、水無月の夜に交わされる星々の密談」</p>
+</header>
+
+<article>
+
+<section class="section">
+    <h2>起：水無月の夜に満ちる琥珀の光、南天低く渡る「ストロベリームーン」の誘い</h2>
+    <img src="https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?auto=format&fit=crop&q=80&w=2000" alt="初夏の穏やかな水辺の向こう、地平線近くで淡い琥珀色に染まりながら昇る美しきストロベリームーン">
+    <p>
+        皆様、こんばんは。エミリーです。窓の外から聞こえるしっとりとした雨音がいつしか遠のき、濡れた紫陽花が街灯の淡い光に照らされて、まるで露を帯びた宝石のように美しく輝いています。西暦2026年6月29日、月曜日。暦の上では、まもなく本格的な真夏への幕が上がろうとしていますが、地上にはまだ、しっとりとした夏至の残り香が優しく漂っていますね。私たちが生きる日常の時間はいとも簡単に過ぎ去っていきますが、天上の時計は寸分の狂いもなく、私たちを美しき宇宙のドラマへと誘ってくれます。夜の闇が完全に降りる前の、あの藍色とも紫ともつかない、マジックアワーの美しい空のグラデーションを見つめていると、私たちの魂もまた、広大な宇宙の星々の一部なのだという静かな実感が湧いてまいります。
+    </p>
+    <p>
+        今週の始まりを告げるのは、何と言っても日本の夜空を温かく染め上げる満月、通称「ストロベリームーン（苺月）」です。明日、6月30日（火）の夕刻、月は太陽のちょうど真向かいに位置し、完璧な真円を迎えます。この「ストロベリームーン」という可愛らしい名は、かつて北米の先住民族たちが、野生のイチゴを収穫する季節の目安としてこの６月の満月を呼んだことに由来しています。和暦、すなわち旧暦に目を向ければ、現在は「水無月（みなづき）」の十六日。古来より「既望（きぼう）」や「十六夜（いざよい）」と呼ばれ、満ち足りた光がほんの少しだけ躊躇（ためら）うように東の空から昇ってくる、大変風情のある月夜にあたります。水のない月と書く水無月ですが、これは「水の月」という意味であり、田んぼに水をたっぷりと張る季節であることを示しています。地上の水鏡が天の月を映し出す、そんな幻想的な風景が日本各地で広がっているのです。
+    </p>
+    <p>
+        天文学的に紐解くと、この時期の満月にはある特別な秘密があります。夏至が過ぎて間もないこの季節、太陽は一年で最も高い軌道を通りますが、その太陽と真向かいに位置する満月は、逆に「一年の中で最も低い軌道」を渡ることになります。南の空の低い場所をなぞるように進むため、光が地球の厚い大気の層を斜めに長く通り抜けることになり、波長の短い青い光は散乱され、私たちの目には暖色系の、まるで熟した苺や良質な琥珀を思わせる、淡いピンク色や濃いオレンジ色に染まって映るのです。今夜から明晩にかけて、地平線近くからぽっかりと姿を現す月を見上げる時、その独特の温かい色彩に、胸が締め付けられるような愛おしさを感じるのは決して偶然ではありません。低空を渡る月は、錯視によって普段よりもずっと大きく見えるため、その劇的な登場は私たちの視線を一瞬で釘付けにしてしまうでしょう。
+    </p>
+    <p>
+        望遠鏡をこのストロベリームーンに向けてみると、満月の強い光のためにクレーターの影は平坦になりますが、その代わりに「光条（レイ）」と呼ばれる、クレーターから四方に放たれた白い筋が鮮やかに浮かび上がっているのが見えます。特に南半球に位置する「ティコ（Tycho）」から広がる光条は、まるで月全体を包むひまわりの大輪のようで、地上の暗闇を白銀の世界へと変えてしまいます。また、月の海と呼ばれる平原部分は、その組成の違いから微かに青みがかったグレーや、緑を帯びた黒として観察され、静寂の海や危難の海といった情緒あふれる名前の通り、独自の静けさを湛えています。この光を双眼鏡で眺めているだけで、まるで自らの心が宇宙の深い静寂によって満たされていくような、不思議な安心感に包まれるのです。
+    </p>
+    <p>
+        占星術的な視点において、この満月は「射手座（Sagittarius）」の領域で起こります。射手座は、遥か彼方の地平線を見つめ、自らの精神を高めるための旅を司る「火」のサイン。私たちが日々の小さな枠組みにとらわれず、魂の底から望む理想郷へ向けて一本の矢を放つような、開放的でダイナミックなエネルギーに満ちあふれています。今回の満月は、あなたの中に眠る「未知なる世界への憧れ」を優しく刺激するでしょう。伝統的な東洋の星座、二十八宿で言えば、この満月は「箕宿（みしゅく）」や「尾宿（びしゅく）」のあたりを運行します。これらは龍の尾を象徴し、風を起こし、悪しきものを吹き飛ばす力があるとされてきました。これまで「自分には無理かもしれない」と心の奥底に仕舞い込んでいた願いがあるならば、この射手座の満月光浴を浴びながら、もう一度その夢に温かい命を吹き込んでみてください。
+    </p>
+    <p>
+        満月の夜、私たちはただその美しさに圧倒されるだけでなく、月の光を通じて自分自身の内面と対話することになります。宇宙の壮大な営みから見れば、私たちの悩みや迷いは、ほんの一瞬のまたたきに過ぎないのかもしれません。しかし、だからこそ、その一瞬をどれほど深く愛し、誰かと分かち合えるかが大切なのだと、南天に低く座す苺色の月は教えてくれている気がします。今夜は少しお気に入りの音楽のボリュームを下げて、窓辺に腰掛け、グラスに注いだ冷たいハーブティーに月影を映しながら、天上の至高の輝きに身をゆだねてみませんか。衣服を通り抜けて、直接心にまで届くようなその温かい光は、日々の生活で少しだけ強張ってしまったあなたの心を、ゆっくりと、確実に解きほぐしてくれるはずです。
+    </p>
+    <div class="quote-panel-styled">
+        「ストロベリームーンは、大気という地上特有のフィルターが織りなす、地球と月の密やかな協奏曲です。私たちが抱く不完全さや、時に心にかかる霧さえも、この光に照らされれば、すべて美しいグラデーションへと昇華されていきます。射手座の満月が照らす道を信じて、あなただけの新しい旅のステップを踏み出してみましょう。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>承：夏越の祓と清まる心、水無月の節目に星々が織りなす静かなアスペクト</h2>
+    <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=2000" alt="夏の気配が色濃くなる美しい森林の木々から差し込む光と、澄み切った夏の青空">
+    <p>
+        満月の余韻が夜空に静かに溶けていく中、地上の暦は一年のちょうど半分にあたる大きな節目を迎えます。明日、6月30日に行われる「夏越の祓（なごしのはらえ）」、あるいは「水無月祓（みなづきはらえ）」です。この日、日本各地の神社には青々とした茅（かや）で編まれた大きな「茅の輪（ちのわ）」が設けられます。人々は「水無月の夏越の祓する人は、千歳の命のぶというなり」という古歌を口ずさみながら、この輪を左まわり、右まわり、そして左まわりと８の字を描くようにくぐり抜けます。これは、半年の間に知らず知らずのうちに身に溜まってしまった心身の穢れや日々の迷いを祓い清め、これからの厳しい暑さを無事に乗り切れるよう祈りを捧げるための、伝統的な美しき通過儀礼なのです。
+    </p>
+    <p>
+        また、この日には氷を模した小豆の和菓子「水無月」を口にする風習もあります。かつて室町時代の宮中では、冬の間に氷室（ひむろ）に保存しておいた天然の氷を夏に取り寄せて口にすることで暑気払いをしていましたが、庶民にとって氷は手の届かない貴重品でした。そのため、白いういろうを氷の破片に見立て、その上に魔除けの意味を持つ赤い小豆を散らした和菓子が生み出されたのです。この風習ひとつをとっても、自然の猛威に対して常に謙虚であり続け、限られた暮らしの中で涼や健やかさを演出するという、日本人が培ってきた素晴らしい情緒と知恵の結晶を感じずにはいられません。
+    </p>
+    <p>
+        この地上のリセットの動きと同調するように、現在の星空の世界でも非常に美しいエネルギーの調和が形成されています。天上の太陽は「蟹座（Cancer）」の領域に滞在しており、私たちの「守るべきもの、愛する家族やコミュニティ、自らの心の安息所」を優しく照らし出しています。蟹座が持つ、どこまでも深く温かい母性的なエネルギーは、先述した夏越の祓の「自らを清め、内なる器を育む」という精神と驚くほど見事に合致しているのです。天の星々の配置と、地上の先人たちが編み出した暦の文化が、時空を超えて美しく共鳴し合っている事実に、私はいつも深い神秘を覚えざるを得ません。私たちが神社で茅の輪をくぐる時、実は頭上の星々もまた、大いなる調和の円環を描きながら、私たちの歩みを肯定してくれているのです。
+    </p>
+    <p>
+        さらに占星術的にこの配置を深く読み解くと、蟹座の太陽は、魚座にある精神の星・海王星や、蠍座にある深い変容の星・冥王星と、静かで生産的な角度（アスペクト）を結び始めています。これは、目に見えない大いなる流れや、過去から引き継いできた深い結びつきを再確認するのに最適な配置です。日々の忙しさの中で忘れがちになってしまう「目に見えない大切なもの」――誰かが注いでくれた愛情や、自分がこれまでに積み重ねてきた努力の軌跡――に意識を向けることで、これからの半年間を生き抜くための、強固な心の土台が整えられていきます。地上の茅の輪をくぐり抜けたあなたの心に、星々の清らかな光がまっすぐに染み込んでいくのを想像してみてください。
+    </p>
+    <p>
+        雨上がりの夜などは、大気が含む湿気がすべて地面に叩き落とされるため、夜空の透明度が驚くほど高くなる瞬間があります。そんな時、南の空にはさそり座の一等星「アンタレス」が、大気の中でまるで脈動するように赤く妖艶な輝きを放っているのが見つかるでしょう。夏越の祓を終えた清らかな心で、新緑と夜露の匂いが混ざり合う夜気を胸いっぱいに吸い込みながら、夜空のキャンバスに目を向けてみてください。天と地、そしてあなた自身の命が、ひとつの美しい旋律となって響き合っているのを感じられるはずです。自らを整えるという贅沢な時間を、今夜の星空とともに過ごしてみませんか。
+    </p>
+    <div class="quote-panel-styled">
+        「夏越の祓の茅の輪は、自然のサイクルと人間のバイオリズムを心地よく調律するための地上に描かれた幾何学です。蟹座の太陽が育む温かい愛の光を受け取りながら、自らの心の中にある不要な重荷を一度手放してみましょう。軽やかになった心には、これから始まる真夏の美しい星々の光が、より一層深く染み渡っていくはずです。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>転：宇宙が描く知的なパラドックス、遠日点通過と水星内合が告げる大いなる転換期</h2>
+    <img src="https://images.unsplash.com/photo-1504333631130-c8ae33a75e4e?auto=format&fit=crop&q=80&w=2000" alt="静寂に包まれた夜の地平線、太陽系の惑星たちがそれぞれの軌道を巡る天体のパノラマ">
+    <p>
+        今週の星空のドラマは、私たちの感情を揺さぶる叙情的な風景から、宇宙の構造そのものを体感させるような、極めてダイナミックで知的な天体イベントへと展開していきます。まず注目すべきは、7月3日（金）の午後8時頃に地球が「遠日点（えんじつてん）」を通過するという事実です。ご存知のように、地球をはじめとする太陽系の惑星たちは、完全な正円ではなく、わずかに潰れた楕円軌道を描きながら太陽の周りを公転しています。そのため、一年の中で地球と太陽の距離が最も近づく日（近日点）と、最も遠ざかる日（遠日点）が存在するのです。
+    </p>
+    <p>
+        この7月3日、地球と太陽の間の距離は約1億5210万キロメートルに達し、一年の中で最も離れた状態になります。北半球に暮らす私たちにとって、これほど汗ばむ夏の季節を迎えているにもかかわらず、物理的には太陽から最も遠い場所にいるというのは、最高に面白い宇宙のパラドックスだと思いませんか。私たちが体感する「季節の変化」は、太陽との物理的な距離によるものではなく、地球の自転軸（地軸）が23.4度傾いていることによって、太陽光が差し込む角度が変わるために生まれます。どれほど遠く離れていても、まっすぐに光を受け止めるその傾きがあるからこそ、地上は情熱的な夏を迎えることができるのです。これは私たちの人間関係や夢へのアプローチにも似ています。物理的な距離がどれほど離れていようとも、自らの軸をどこに向けているか、その姿勢こそが未来を熱く焦がす原動力になるのだと、地球の遠日点通過は教えてくれている気がします。
+    </p>
+    <p>
+        そして、もうひとつの重要な天体の動きが、7月5日（日）に起こる「水星の内合（ないごう）」です。太陽のすぐ内側を猛スピードで駆け抜けていく知性の星・水星が、地球と太陽のちょうど真ん中を通り抜ける瞬間です。月で言えば「新月（朔）」にあたるこの現象により、これまで夕方の西の低空で微かな輝きを見せていた水星は、一度太陽の圧倒的な光の中にその姿を完全に隠すことになります。内合の瞬間の水星は、太陽という巨大なエネルギーの源によって自らの軌道と知性を完全にリフレッシュされ、生まれ変わりの儀式を行っているかのようです。
+    </p>
+    <p>
+        この日を境に、水星の舞台は「夕方の空」から「明け方の東の空」へと劇的に反転します。占星術において、水星は「思考、コミュニケーション、情報、旅」を司る天体。その水星が内合を迎える今週末は、私たちの意識にとっても大きなリセットと方向転換のタイミングとなります。これまで頭の中でこんがらがっていた古い固定観念や、前に進まない計画があるならば、一度それを手放し、白紙に戻してみるのに最適な時間です。水星が太陽の裏側から新たな知恵の光を帯びて東の空へ回り込んでいくように、あなたの思考もまた、この週末を通じて驚くほどクリアに、そして洗練されたものへとアップデートされていくでしょう。
+    </p>
+    <p>
+        地上の望遠鏡で水星を追いかけることは、この時期は太陽に近すぎるため非常に危険で困難ですが、私たちの心眼はそのドラマをはっきりと捉えることができます。宇宙の天体たちがそれぞれの軌道上で、離れたり重なったりしながら完璧な幾何学（ジオメトリー）を紡ぎ出していること。そのスケールの大きな動きを想像するだけで、私たちが日常で抱える小さなこだわりや焦りは、夏の夜風に吹かれる霧のように、静かに消え去っていくはずです。週末の夜、静かに目を閉じて、自らを取り巻く惑星たちの壮大なダンスに意識を巡らせてみてください。
+    </p>
+    <div class="quote-panel-styled">
+        「地球が太陽から最も遠ざかる遠日点、そして水星が太陽と重なる内合。今週末は、宇宙の距離と配置が私たちに『内省とリセット』を促す神聖な時間です。物理的な距離の遠さに惑わされることなく、あなたの心の軸を本当に愛するものへと向け直すとき、新しい知性のサイクルが静かに幕を開けます。」
+    </div>
+</section>
+
+<section class="section">
+    <h2>結：射手座から山羊座へ繋ぐ月光のバトン、内に秘めた温もりを未来の光へ</h2>
+    <img src="https://images.unsplash.com/photo-1532974297617-c0f05fe48bff?auto=format&fit=crop&q=80&w=2000" alt="満天の天の川銀河が夜空を二つに裂くように流れ、その両岸で青白く鋭く輝くベガとアルタイル">
+    <p>
+        2026年7月5日、日曜日。今週の終わりを迎える夜、満月を過ぎて少しずつその身を削り始めた月は、射手座の隣にある「山羊座（Capricorn）」の領域へと静かに足を踏み入れていきます。月光のバトンは、理想を追い求める自由な旅から、地に足をつけ、自らの手で確かな現実を築き上げる具現化のフェーズへと手渡されたのです。夜空を見上げると、夜が更けるにつれて東南の空から昇ってくる月明かりが、地上の暗闇を優しく照らし出しています。真夏の本格的な到来を前に、宇宙は私たちに、一度ここで静かに呼吸を整え、自らの内なる土台を確認するよう促しているかのようです。
+    </p>
+    <p>
+        和暦（旧暦）の知恵に立ち返れば、この週末の月は水無月の二十日前後、いわゆる「更待月（ふけまちづき）」と呼ばれる美しい時間帯へと移行しています。夜が十分に更けた頃、忘れた頃にひっそりと東の空から昇ってくるこの月は、昼間の喧騒をすべて吸い取ったかのような、圧倒的な静寂と深い落ち着きを私たちに与えてくれます。大気が含む湿気によって、月の周囲に淡い「月のかさ（暈）」が現れることも多く、それはまるで、天が地球という美しい惑星を優しく包み込む薄衣のよう。古の人々は、この幻想的な光景に明日の天候の移り変わりを感じ取りながら、自然と寄り添い、日々の暮らしを営んできました。
+    </p>
+    <p>
+        今週、私たちはストロベリームーンという情熱的な光の祝福を受け、夏越の祓によって心身を清め、地球の遠日点通過や水星の内合という大いなる転換期を共にしてきました。天体たちの完璧な巡りは、私たちに「すべてのことには、ふさわしいタイミングがある」という至上の真理を教えてくれています。心の中に芽生えた小さな願いや、誰かを愛おしむ気持ち。それらは決して、すぐに形を成さなくとも良いのです。山羊座の月が教えてくれるように、地中の奥深くで根を伸ばすように、じっくりと時間をかけて育まれたものこそが、やがて地上の嵐にも負けない大樹へと育っていくのですから。
+    </p>
+    <p>
+        少し視線を上げて、天頂付近に目を移せば、そこには「夏の大三角」を形成する織姫星（こと座のベガ）と彦星（わし座のアルタイル）が、天の川の淡い光の帯を挟んで、すでに圧倒的な存在感を持って輝いています。双眼鏡をお持ちなら、ぜひこの二つの星の間をそっとスキャンしてみてください。肉眼ではただの白い雲のように見えていた天の川が、実は数え切れないほどの微細な星々の集まり、すなわち「銀河の砂粒」の集積であることに気づかされ、息をのむような感動が押し寄せます。何光年という途方もない孤独な宇宙の闇を越えて、今夜、地上の私たちの瞳の中で出会うその光。宇宙を旅する地球という船に乗って、私たちは今夜も、星々の海を航海しているのです。
+    </p>
+    <p>
+        今夜はもう、スマートフォンの画面を閉じて、部屋の明かりをすべて消してみましょう。暗闇に目が慣れていくにつれ、窓外の夜空が徐々にその本当の深みを露わにし、無数の星々があなたを優しく見守るように瞬き始めるのが分かるはずです。夏至の残り香を運ぶ夜風に髪をなびかせながら、満ち足りた心で深呼吸を一つ。今週あなたが出会った天上の美しいドラマたちが、あなたの進む行く手を、そしてあなたの愛する人たちの未来を、どこまでも優しく、温かく照らし続けてくれますように。どうぞ、素晴らしい星夜をお過ごしください。
+    </p>
+    <div class="emily-sign-area">
+        時空を超えた愛と、終わらない星の導きを。 <br>
+        <span class="emily-name-styled">エミリー</span>
+    </div>
+</section>
+
+<!-- 観測データの一覧化セクション -->
+<section class="section">
+    <div class="observation-journal-container">
+        <h3><i class="fas fa-book-open"></i> エミリーの天文観測手帳（2026年6月29日〜7月5日）</h3>
+        
+        <div class="event-detail-box">
+            <span class="date-badge">6月30日（火）</span>
+            <p><strong>射手座の満月「ストロベリームーン」（夕刻に東天より昇る）</strong><br>
+            2026年夏の最初を飾る満月です。一年の中で最も低い軌道を通るため、地平線近くでは大気の影響を受け、非常に美しい琥珀色や桃色に染まって見えます。南天の低い位置を移動するため、開けた場所での観測がおすすめです。旧暦水無月の十六夜の月としても非常に風情があります。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">7月3日（金）</span>
+            <p><strong>地球が遠日点を通過（午後8時頃）</strong><br>
+            地球が公転軌道上で、太陽から最も遠ざかる位置（遠日点）を通過します。太陽と地球の距離は約1億5210万キロメートルに達し、冬の近日点付近に比べて、太陽の見た目の大きさがほんの少しだけ小さくなります（肉眼では判別不能）。夏なのに太陽から一番遠いという、宇宙の軌道の不思議を感じられる日です。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">7月5日（日）</span>
+            <p><strong>水星が内合（ないごう）を迎える</strong><br>
+            夕方の西空で輝いていた水星が、地球と太陽のちょうど真ん中を通り抜ける「内合」を迎えます。これにより、水星は一時的に観測できなくなりますが、この日を境に水星は「夕方の空」から「明け方の東の空」へと回っていきます。惑星たちのダイナミックな追いかけっこの転換期です。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">今週の見どころ</span>
+            <p><strong>天の川と「夏の大三角」の観測（21:00頃）</strong><br>
+            東から天頂にかけて、こと座のベガ（織姫）とわし座のアルタイル（彦星）、はくちょう座のデネブが美しい三角形を描きます。市販の双眼鏡でベガとアルタイルの間を覗くと、視野いっぱいに広がる無数の星々の雲（銀河の腕）を観察することができ、夏の夜空の深さを体感できます。</p>
+        </div>
+    </div>
+</section>
+
+<section class="next-article-section">
+    <div class="next-label-styled">NEXT ORBIT</div>
+    <h3 class="next-title-styled">「伝統的な七夕の夜に架かる星の橋と、小暑の風が運ぶ真夏の調べ」</h3>
+    <p class="next-description-styled">
+        次週、地上の暦は二十四節気の「小暑」を迎え、いよいよ本格的な夏の盛りが始まります。そして訪れる、伝統的な七夕の夜。天の川の両岸でひときわ輝きを増す織姫と彦星の天文学的なロマンと、夜明け前の東の空に寄り添うように現れる細き三日月たちの美しいパレードの様子を、エミリーの言葉で丁寧にお届けします。どうぞお楽しみに。
+    </p>
+    <a href="#" class="btn-next-styled">次の物語を予約する</a>
+</section>
+
+</article>
+
+<footer>
+    <div class="footer-icon-styled">
+        <i class="fas fa-star"></i>
+    </div>
+    <p class="copyright-text">
+        &copy; 2026 DEAR EMILY - STARRY DIARY PROJECT. ALL RIGHTS RESERVED.
+    </p>
+</footer>
+
+</body>
+</html>
