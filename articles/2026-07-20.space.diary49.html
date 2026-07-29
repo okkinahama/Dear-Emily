@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エミリーの星日記｜2026.07.20-07.26 上弦の銀弓が奏でる大暑の序曲と、夜半の南天に浮かぶさそりの紅き心臓</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- Dear Emily Masterpiece Standard CSS --- */
+        :root {
+            --space-black: #010307;
+            --star-gold: #c5a059;
+            --star-gold-light: #e2c285;
+            --cosmic-blue: #060d22;
+            --deep-obsidian: #03050c;
+            --text-light: #f8fafc;
+            --text-muted: rgba(248, 250, 252, 0.88);
+            --accent-glow: rgba(197, 160, 89, 0.45);
+            --mist-gray: rgba(255, 255, 255, 0.03);
+            --stardust-white: #ffffff;
+            --nebula-crimson: #a83244;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--space-black);
+            color: var(--text-light);
+            font-family: 'Shippori Mincho', 'Zen Old Mincho', serif;
+            line-height: 3.0;
+            overflow-x: hidden;
+            word-break: break-all;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            min-height: 100vh;
+            background: linear-gradient(rgba(1, 3, 7, 0.6), rgba(1, 3, 7, 0.98)),
+                        url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 24px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(to top, var(--space-black), transparent);
+        }
+
+        article {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 12rem 2rem 8rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 24rem;
+            position: relative;
+        }
+
+        .header-tag {
+            font-size: 1.15rem;
+            letter-spacing: 1.3rem;
+            color: var(--star-gold);
+            margin-bottom: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5.5vw, 4.0rem);
+            letter-spacing: 1.1rem;
+            margin-bottom: 3.8rem;
+            color: var(--stardust-white);
+            text-shadow: 0 0 65px var(--accent-glow);
+            line-height: 1.8;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.38rem;
+            letter-spacing: 0.6rem;
+            opacity: 0.95;
+            border-top: 1px solid rgba(197, 160, 89, 0.35);
+            padding-top: 3.8rem;
+            line-height: 2.4;
+            color: var(--star-gold);
+        }
+
+        h2 {
+            font-size: 2.45rem;
+            margin-bottom: 7rem;
+            color: var(--star-gold);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.8rem;
+            letter-spacing: 0.38rem;
+            line-height: 1.7;
+        }
+
+        h2::before {
+            content: '';
+            width: 1px;
+            height: 100px;
+            background: linear-gradient(transparent, var(--star-gold));
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 5rem;
+            text-align: justify;
+            font-size: 1.55rem;
+            color: var(--text-muted);
+            text-indent: 1.5em;
+            letter-spacing: 0.095em;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 7.5rem 0;
+            box-shadow: 0 45px 90px rgba(0,0,0,0.92);
+            border: 1px solid rgba(197, 160, 89, 0.18);
+        }
+
+        .quote {
+            border-left: 3px solid var(--star-gold);
+            padding: 4.5rem 5.5rem;
+            background: rgba(197, 160, 89, 0.03);
+            margin: 9.5rem 0;
+            font-size: 1.55rem;
+            line-height: 2.9;
+            color: var(--stardust-white);
+            border-radius: 0 4px 4px 0;
+            text-align: justify;
+        }
+
+        .quote p {
+            margin-bottom: 0;
+            text-indent: 0;
+        }
+
+        .observation-journal-container {
+            background: var(--deep-obsidian);
+            border: 1px solid rgba(197, 160, 89, 0.28);
+            padding: 6.5rem 5.5rem;
+            margin: 16rem 0;
+            border-radius: 6px;
+            box-shadow: 0 40px 90px rgba(0,0,0,0.95);
+        }
+
+        .observation-journal-container h3 {
+            font-size: 2.25rem;
+            color: var(--star-gold);
+            margin-bottom: 6rem;
+            text-align: center;
+            letter-spacing: 0.55rem;
+        }
+
+        .event-detail-box {
+            margin-bottom: 5.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 4.8rem;
+        }
+
+        .event-detail-box:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--star-gold), #b38f4b);
+            color: var(--space-black);
+            padding: 5px 28px;
+            font-weight: 700;
+            margin-bottom: 2.8rem;
+            font-size: 1.18rem;
+            letter-spacing: 0.1rem;
+            border-radius: 2px;
+        }
+
+        .emily-sign-area {
+            text-align: right;
+            margin-top: 13rem;
+            font-size: 1.68rem;
+            letter-spacing: 0.38rem;
+            line-height: 3.2;
+        }
+
+        .emily-name-styled {
+            font-weight: bold;
+            color: var(--star-gold);
+            border-bottom: 1px solid var(--star-gold);
+            padding-bottom: 6px;
+            margin-left: 0.8rem;
+        }
+
+        .next-article-section {
+            text-align: center;
+            padding: 16rem 2rem 6rem 2rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            background: linear-gradient(to bottom, transparent, #010205);
+        }
+
+        .next-label-styled {
+            font-size: 1.15rem;
+            letter-spacing: 1.1rem;
+            color: var(--star-gold);
+            margin-bottom: 2.8rem;
+            opacity: 0.88;
+        }
+
+        .next-title-styled {
+            font-size: 2.45rem;
+            color: var(--stardust-white);
+            margin-bottom: 4.2rem;
+            letter-spacing: 0.28rem;
+            line-height: 1.7;
+        }
+
+        .next-description-styled {
+            font-size: 1.45rem;
+            max-width: 800px;
+            margin: 0 auto 4.8rem auto;
+            text-align: center;
+            text-indent: 0;
+            opacity: 0.9;
+            line-height: 2.8;
+        }
+
+        .btn-next-styled {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 2.2rem 6.5rem;
+            border: 1px solid var(--star-gold);
+            color: var(--star-gold);
+            text-decoration: none;
+            transition: all 0.5s ease;
+            letter-spacing: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            border-radius: 2px;
+        }
+
+        .btn-next-styled:hover {
+            background: var(--star-gold);
+            color: var(--space-black);
+            box-shadow: 0 0 45px rgba(197, 160, 89, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 11rem 0;
+            background: #010204;
+            border-top: 1px solid rgba(255,255,255,0.005);
+        }
+
+        .footer-icon-styled i {
+            color: var(--star-gold);
+            font-size: 2.2rem;
+            opacity: 0.48;
+        }
+
+        .copyright-text {
+            font-size: 0.98rem;
+            letter-spacing: 0.58rem;
+            opacity: 0.4;
+            margin-top: 2.8rem;
+        }
+
+        @media (max-width: 768px) {
+            body { line-height: 2.5; }
+            article { padding: 7rem 1.5rem; }
+            h2 { font-size: 1.98rem; margin-bottom: 4.8rem; }
+            h2::before { height: 75px; }
+            p { font-size: 1.38rem; margin-bottom: 4rem; }
+            .quote { padding: 3.2rem 2.2rem; font-size: 1.38rem; }
+            .observation-journal-container { padding: 3.8rem 2rem; }
+            .btn-next-styled { padding: 1.6rem 3.2rem; letter-spacing: 0.55rem; }
+            .next-title-styled { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-tag">Celestial Symphony 2026 - Emily</div>
+    <h1>エミリーの星日記</h1>
+    <p class="subtitle">2026.07.20 ― 07.26<br>「上弦の銀弓が奏でる大暑の序曲と、夜半の南天に浮かぶさそりの紅き心臓」</p>
+</header>
+
+<article>
+
+<!-- 起：大暑の到来と、天秤座からさそり座へ進む上弦の月 -->
+<section class="section">
+    <h2>起：太陽が獅子の領域へ躍り出る「大暑」、夕空に渡る半月の弓</h2>
+    <img src="https://images.unsplash.com/photo-1507499739999-097706ad8914?auto=format&fit=crop&q=80&w=2000" alt="夕暮れの茜色から深い群青へと移ろう南西の空に浮かぶ半月と、静かに瞬く夕星">
+    <p>
+        皆様、こんばんは。エミリーです。日中の強い日差しが大地を温め、夕暮れとともに立ち上る打ち水の匂いが心地よく鼻腔をくすぐる季節となりました。西暦2026年7月20日、月曜日。私たちが暮らす日本列島は今、夏という命の季節が最もその情熱を深める節目の週を迎えています。今週7月23日（木）、太陽は黄経120度の点を通過し、二十四節気の第十二節「大暑（たいしょ）」へと踏み込みます。和暦（旧暦）の暦の上では「文月（ふみづき）」の中旬。七十二候に目を向ければ、第三十四候「桐始結花（きりはじめてはなをむすぶ）」または「土潤溽暑（つちうるおうてあつむし）」の時期にあたり、青々とした桐の木が来春への約束を抱くように小さな実を結び始め、湿り気を帯んだ熱気が大気を包み込む頃です。
+    </p>
+    <p>
+        今週の夜空の主役は、前週の蟹座の新月（朔）から見事に息を吹き返し、光の面積を右側半分へと広げた「上弦の月（First Quarter Moon）」です。7月21日（火）の午後、月は天秤座の領域でちょうど太陽と90度の角度をなし、完璧な右半球の半月となります。日没直後の南西の空高くに目をやると、まるで白銀の弓を天に向かって引き絞ったかのような美しい弦月が佇んでいます。古来、日本の歌人たちはこの形を「半月（はんげつ）」あるいは「弓張月（ゆみはりづき）」と呼び、夜空という大海原を渡る銀の小舟になぞらえて愛でてきました。
+    </p>
+    <p>
+        占星術的な視点に目を向けても、今週は大きなエネルギーの転換点です。7月23日、太陽はそれまで身を置いていた「蟹座」の温かな情の部屋を離れ、自らのホームグラウンドである「獅子座（Leo）」へと堂々と足を踏み入れます。自己表現、創造性、そして堂々とした生命力の象徴である獅子座に太陽が戻るこの瞬間、地上に住む私たちの中にも「自分らしく輝きたい」という熱いモチベーションが沸き起こってきます。一方、月は天秤座で調和を奏でたあと、週末に向けて「さそり座（Scorpio）」の深い情緒の領域へと入り込んでいきます。華やかな太陽の光と、内に秘めた月の深い情念。このコントラストこそが、真夏の夜の醍醐味と言えるでしょう。
+    </p>
+    <p>
+        上弦の月を迎えた夜、月の明暗境界線（ターミネーター）の近くには、天体望遠鏡を持つ観察者にとって見逃せない幾何学的な光と影のドラマが繰り広げられます。月面のクレーター「ブランキヌス」「プープルバッハ」「ラカイユ」のリム（縁）だけに斜めからの太陽光線が差し込むことで、暗闇の中に「X」のアルファベットが白く浮かび上がる「月面X」や、すぐ近くのクレーターが織りなす「月面V」といった幻想的な影の芸術です。ほんの数時間しか現れないこの宇宙の悪戯を覗き込むとき、私たちは月という天体が無機質な岩石の球体ではなく、刻一刻と表情を変えるダイナミックな彫刻作品であることを実感させられます。
+    </p>
+    <p>
+        まだ完全な満月のように強烈すぎない上弦の月明かりは、夜の散歩を優しくエスコートしてくれます。夕涼みの風を受けながら見上げる空には、西に傾く金星（宵の明星）の眩い輝きと、天頂近くで銀弓を誇る月が美しい位置関係を描いています。今夜は少し遠回りをして、夜風の音と虫の音に耳を傾けながら、満ちゆく月の光を浴びてみてはいかがでしょうか。
+    </p>
+    <div class="quote">
+        <p>「太陽が獅子座へと還り、大暑の扉が開くとき、空には銀の弓を引き絞った上弦の月がそびえ立ちます。満ちゆく光は、私たちが内に秘めた情熱と可能性を静かに呼び覚ます合図なのです。」</p>
+    </div>
+</section>
+
+<!-- 承：さそり座と心臓アンタレス、夏の大三角の協奏曲 -->
+<section class="section">
+    <h2>承：南天にのたうつ巨大な蠍、心臓アンタレスが放つ脈動する朱</h2>
+    <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&q=80&w=2000" alt="南の夜空低くに鮮やかに描かれるさそり座のS字カーブと、その中央で紅く怪しく輝く一等星アンタレス">
+    <p>
+        上弦の月が南西の空へと傾き、深夜に向けて地平線へと沈んでいくと、真夏の夜空の「真の王座」がその圧倒的な姿を現します。南の空低く、地平線から這い上がるように大きなS字のカーブを描いて横たわる「さそり座（Scorpius）」です。全天88星座の中でも、これほど見事にモチーフとなった生物の姿をそのまま夜空に再現している星座は他にありません。大きな2つのハサミを北へと伸ばし、長い胴体を南の地平線すれすれまで伸ばしてから、鋭い毒針を再び天へと持ち上げているその佇まいは、一度見たら忘れられないほどの存在感を放っています。
+    </p>
+    <p>
+        さそり座の中心で、胸元を妖しく燃やしているのが、アルファ星「アンタレス（Antares）」です。ギリシャ語で「アンチ・アレス（火星に対抗するもの）」を意味するこの星は、太陽の約700倍という想像を絶する巨大な赤色超巨星です。もし仮にアンタレスを私たちの太陽系の中心に置いたとしたら、その表面は火星の軌道をも飲み込み、木星の近くにまで達するほどの規格外のスケールを誇ります。その命の終焉に近づいた老星が放つ脈動的な朱色の光は、和名でも「赤星（あかぼし）」や「酒酔い星（さかよいぼし）」、あるいはその不吉な色合いから「胸星（むねぼし）」と呼ばれ、古代日本人の心を揺さぶってきました。
+    </p>
+    <p>
+        今週7月23日から24日にかけて、上弦を過ぎて一段と太さを増した月が、このさそり座の領域へと足を踏み入れます。アンタレスのすぐ上を月がかすめていく「月とアンタレスの接近」は、夜空に浮かぶ白銀と紅蓮のコントラストを楽しめる絶好の観察機会です。双眼鏡を覗くと、白く輝く月面のクレーターのディテールと、そのすぐ側で燃えるアンタレスの暖かなオレンジ色の輝きが1つの視野の中に収まり、まるで宇宙の絵の具を溶かし合わせたかのような絵画的景観を楽しむことができます。
+    </p>
+    <p>
+        さそり座の毒針の先、ちょうど「尾の針」が天を突くあたりの天の川の中には、双眼鏡で絶対に覗いてほしい2つの素晴らしい散開星団が存在します。「M7（トレミー星団）」と「M6（バタフライ星団）」です。M7は肉眼でもぼんやりとした光の塊として確認できるほど明るく巨大な星の集まりで、古代ギリシャの天文学者プトレマイオス（トレミー）が紀元2世紀に記録を残したことからその名が付いています。一方のM6は、双眼鏡で覗くとまるで羽を広げた蝶（バタフライ）のような優美な星の配列が浮かび上がってくる実に可憐な星団です。
+    </p>
+    <p>
+        南の低空でさそり座が重厚な存在感を放つ一方で、頭上高くには「こと座のベガ（織姫星）」「わし座のアルタイル（彦星）」「はくちょう座のデネブ」が描く「夏の大三角」が天頂を占拠しています。月が西へと沈んだあとの深夜2時、夏の大三角を貫いて北東から南西へと流れる天の川の濃密な星屑の帯は、都市の喧騒を離れた場所であれば息をのむほどの迫力で迫ってきます。南天の蠍の火と、天頂の夏の大三角。このスケール感あふれる星々の競演は、私たちに時空を超えた宇宙の旅路を体感させてくれるのです。
+    </p>
+    <div class="quote">
+        <p>「さそりの胸で赤く鼓動するアンタレスは、数百万年という星の命の燃えさかる残火です。太い月光がその朱色をかすめるとき、私たちは自らの身体の中を流れる温かい血の巡りと、宇宙の命の鼓動が重なり合う奇跡を知るのです。」</p>
+    </div>
+</section>
+
+<!-- 転：ペルセウス座流星群の始まりと明け方の木星・火星・金星のドラマ -->
+<section class="section">
+    <h2>転：深夜を切り裂くファースト・メテオと、東天に集う夜明けの惑星たち</h2>
+    <img src="https://images.unsplash.com/photo-1507499739999-097706ad8914?auto=format&fit=crop&q=80&w=2000" alt="夜明け前の静けさに包まれた東の空に瞬く明るい惑星たちと、夜空を一直線に横切る流星の閃光">
+    <p>
+        物語は深夜から明け方へ、静寂が最も深まる時間帯へと移っていきます。今週7月下旬は、天文ファンが一年で最も胸を躍らせる夏の大イベント「ペルセウス座流星群（Perseids）」の活動が、いよいよ本格的に可視化し始める重要な週間です。流星群の母天体であるスイフト・タットル彗星が宇宙空間に残していったチリの帯へと、地球が毎年この時期に突入していくことで起こるこの現象。極大を迎えるのは8月12日前後ですが、すでに7月20日を過ぎた今週から、夜半過ぎの北東の空を中心に、非常にスピードの速い流星が時折すっと流れる姿が観測できるようになります。
+    </p>
+    <p>
+        ペルセウス座流星群の特徴は、流星の流れる速度が秒速約59kmと非常に速く、流れたあとに「流星痕（りゅうせいこん）」と呼ばれる緑や白のエメラルド色の光の筋が空に数秒間残ることが多い点にあります。月が西の地平線へと没した午前1時から3時にかけて、街灯の少ない暗い場所で寝転がり、北東のペルセウス座付近を中心に空全体をぼんやりと眺めてみてください。運が良ければ、夏の本番を前に静かに舞い降りる「ファースト・メテオ（走りの流星）」に出会うことができるはずです。静寂の中で一瞬だけ夜空を切り裂くその閃光は、願い事を唱える隙すらないほど一瞬ですが、見た者の心に消えない感動を刻み込んでくれます。
+    </p>
+    <p>
+        そして、流星を待つ夜明けてゆく東の空には、もう一つのドラマチックな舞台が用意されています。午前3時を過ぎ、東の地平線から薄明（はくめい）のグラデーションが広がリ始める頃、おうし座やふたご座の領域から、次々と明るい惑星たちが姿を現してくるのです。まず目に入るのは、おうし座のアルデバランの近くで力強く橙色の光を放つ太陽系第四惑星「火星（Mars）」です。前週にアルデバランとの大接近を終えた火星は、今週さらに東へと軌道を進め、その情熱的な朱色を明けてゆく空に染め上げています。
+    </p>
+    <p>
+        火星の後を追うようにして、東の低空から圧倒的な輝きをもって昇ってくるのが「木星（Jupiter）」です。マイナス2等を超えるその圧倒的な白銀の光芒は、朝焼けの明るさに負けることなく、夜明けの東天に君臨します。小型の天体望遠鏡や高倍率の双眼鏡を向ければ、木星の周囲に一直線に並ぶガリレオ衛星（イオ、エウロパ、ガニメデ、カリスト）が、まるで小さな真珠の粒のように輝いているのを確認できるでしょう。数時間前まで夜空を支配していたさそり座や夏の大三角が朝の光の中に溶けていく中で、最後に残る木星と火星の力強い光芒は、新しい一日への希望そのもののようです。
+    </p>
+    <p>
+        夜の暗闇が運んでくる流星の一閃と、朝の光の中で出迎えてくれる巨星たちの力強い輝き。深夜から明け方にかけてのこの時間の移ろいは、私たちがふだん忘れてしまいがちな「地球という惑星の自転」と「宇宙のダイナミズム」を、五感すべてを通して体感させてくれます。眠気と戦いながら迎えるこの静聖な朝の空気感こそ、天文観察者だけが味わえる至高の贅沢と言えるかもしれません。
+    </p>
+    <div class="quote">
+        <p>「夜半の静寂を切り裂く流星の痕跡と、朝焼けの東天に燦然と輝く木星の光。暗闇から光へと世界が生まれ変わるその狭間で、私たちは宇宙が紡ぐ永遠の巡り合わせに立ち会っているのです。」</p>
+    </div>
+</section>
+
+<!-- 結：日本文化と季節感、そして読者への温かいメッセージ -->
+<section class="section">
+    <h2>結：土潤い暑さ濃くなる季節に、星の温もりに抱かれて</h2>
+    <img src="https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&q=80&w=2000" alt="静寂に包まれた夏の夜の山並みと、その上に広がる満天の星空、遠くに見える小さな街明かり">
+    <p>
+        2026年7月25日（土）から26日（日）にかけての週末。今週もまた、天上の星々と地上を生きる私たちが紡いだ一週間の旅が、穏やかなエンディングを迎えようとしています。暦はいよいよ節気「大暑」の本格的な渦中へと入り、地上では蝉たちの合唱が朝から夕方まで響き渡り、夕立が過ぎ去ったあとの土からは、濃密な夏の匂いが立ち上っています。厳しい暑さに包まれる日中ですが、ひとたび夜の帳が下りれば、そこには昼間の喧騒とは無縁の、どこまでも清涼で静かな宇宙の深遠が広がっています。
+    </p>
+    <p>
+        週末の夜、月は満ちゆく太い月齢となってさそり座からいて座の領域へと進み、夏の天の川の最も濃密なエリアを照らしています。月明かりに照らされた夜の雲が月暈（つきがさ）をつくり、幻想的な光輪を夜空に描くこともあるでしょう。日本の古い風習では、この大暑の時期には「打ち水」や「涼み舟」、そして「夏越しの冷やし飴」など、厳しい暑さを工夫と風情によって打ち払う知恵が受け継がれてきました。夜空を見上げる「星涼み（ほしすずみ）」もまた、古人が大切にしてきた最高の夏の過ごし方の一つです。
+    </p>
+    <p>
+        今週私たちが巡ってきた空の旅を振り返ってみましょう。太陽が獅子座へ移り「大暑」が始まる中で、天秤座からさそり座へと渡っていった凛とした上弦の月。さそりの胸元で今も脈動し続ける老星アンタレスの朱き炎。夜半の静寂を静かに横切っていったペルセウス座流星群の走りの一閃。そして、明け方の東天で朝焼けのグラデーションに負けじと輝いた木星と火星の神々しい姿。それらはすべて、一度として同じ表情を繰り返すことのない、2026年夏の奇跡の瞬間たちです。
+    </p>
+    <p>
+        日常生活の中で私たちが直面する様々な出来事や多忙な日々。しかし、ふと立ち止まって頭上の夜空を見上げるとき、そこには何百万年、何億年という悠久の時間軸で輝き続ける星々が存在しています。自分の悩みや焦りが、膨大な宇宙のスケールの中にすっぽりと包み込まれ、ふっと心が軽くなる――そんな体験を、今夜空は見上げるすべての人に等しくプレゼントしてくれています。
+    </p>
+    <p>
+        大暑の夜風に身をゆだねながら、どうか今夜はベランダや庭先に出て、ほんの数分だけでも空を見上げてみてください。今週の星々が放つ溫かな光が、あなたの疲れた心と身体を優しく包み込み、明日への新しい活力となって満たしてくれることを願ってやみません。温かいハーブティーを一杯手に取って、どうぞ素晴らしい夏の夜をお過ごしください。
+    </p>
+    <div class="emily-sign-area">
+        時空を超えた愛と、終わらない星の導きを。 <br>
+        <span class="emily-name-styled">エミリー</span>
+    </div>
+</section>
+
+<!-- 観測データの一覧化セクション -->
+<section class="section">
+    <div class="observation-journal-container">
+        <h3><i class="fas fa-book-open"></i> エミリーの天文観測手帳（2026年7月20日〜7月26日）</h3>
+        
+        <div class="event-detail-box">
+            <span class="date-badge">7月21日（火）夕方〜夜</span>
+            <p><strong>天秤座での上弦の月（First Quarter Moon）＆月面X・Vの観察チャンス</strong><br>
+            月は上弦（半月）を迎え、日没後の南西の空高くに美しく輝きます。望遠鏡を使用すると、半月の明暗境界線付近に光と影が描く「月面X」や「月面V」といった有名な月面地形現象が一時的に観察可能です。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">7月23日（木）</span>
+            <p><strong>二十四節気「大暑（たいしょ）」＆ 太陽の獅子座（Leo）入り</strong><br>
+            太陽が黄経120度に達し、一年で最も暑さが厳しくなる「大暑」を迎えます。占星術的には太陽が本拠地である獅子座へと移行し、地上に力強いエネルギーと自己表現の意欲をもたらすタイミングとなります。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">7月23日（木）〜24日（金）</span>
+            <p><strong>満ちゆく月とさそり座一等星アンタレスの南天接近観測</strong><br>
+            南の空低くにて、上弦を過ぎて満ちゆく月がさそり座の赤色超巨星アンタレス（0.9等）に接近します。白銀の月光と、アンタレスの赤く脈動する輝きとの対比が肉眼・双眼鏡で非常に映える夜です。</p>
+        </div>
+
+        <div class="event-detail-box">
+            <span class="date-badge">7月25日（土）〜26日（日）</span>
+            <p><strong>ペルセウス座流星群の初期活動 ＆ 明け方の木星・火星並走（02:00〜04:00頃）</strong><br>
+            8月極大に向けてペルセウス座流星群の出現数が徐々に増加し始めます。月没後の深夜、北東の空を中心に流星を探索可能。また、夜明け前の東天では圧倒的な輝きの木星とおうし座方向の火星が並び立ちます。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 次のお話導線 -->
+<section class="next-article-section">
+    <div class="next-label-styled">NEXT ORBIT</div>
+    <h3 class="next-title-styled">「みずがめ座δ流星群の極大と、望月へと満ちゆく真夏の月が描く銀河の詩」</h3>
+    <p class="next-description-styled">
+        次週、7月最後の週末から8月の幕開けにかけて、夜空では「みずがめ座δ（デルタ）南流星群」が極大を迎えます。満月へと力強く太さを増していく月明かりと、南の空から放射状に飛ぶ流星たちの共演。大暑の深まりとともに巡ってくる新たな天上ドラマを、エミリーの詩的な語りでお届けいたします。どうぞお楽しみに。
+    </p>
+    <a href="#" class="btn-next-styled">次の物語を予約する</a>
+</section>
+
+</article>
+
+<footer>
+    <div class="footer-icon-styled">
+        <i class="fas fa-star"></i>
+    </div>
+    <p class="copyright-text">
+        &copy; 2026 DEAR EMILY - STARRY DIARY PROJECT. ALL RIGHTS RESERVED.
+    </p>
+</footer>
+
+</body>
+</html>
